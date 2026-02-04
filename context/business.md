@@ -4,36 +4,40 @@
 - **Name:** Craftiloo
 - **Founded:** 2017
 - **Type:** Family-owned e-commerce business
-- **Niche:** Children's craft kits and creative learning products
+- **Niche:** Craft kits and creative hobby products
 
 ## Products
 
-### Focus
-Premium quality craft kits for children that emphasize:
-- Fun, educational activities
-- Developing confidence and patience through problem-solving
-- Self-expression and independence
-- Small projects kids can easily finish
+### Brand Lines
+
+**1. Craftiloo (Main Brand) — Sewing Kits**
+- Sewing kits across all categories:
+  - Cross stitch
+  - Embroidery
+  - Latch hook
+  - Punch needle
+  - Needlepoint
+  - And more
+- **Barbie IP licensing** — Currently launching 8 new Barbie-branded sewing kits
+- High-quality, complete kits with everything needed
+- Pre-cut and pre-stamped fabrics to simplify crafting
+
+**2. Shinshin Creations — Fuse Beads**
+- Tiny 2.2mm fuse beads
+- Targeted at **adults** as a hobby
+- Create pictures and designs with fuse beads
 
 ### Design Principles
-- High-quality and safe materials exclusively
-- Fun designs kids are excited to engage with
-- Pre-cut and pre-stamped fabrics to simplify crafting
-- Themed kits with captivating narratives
-- Encouraging imaginative play, homemade gift-giving, or decoration
-- Complete kits with everything needed for hours of fun
-
-### Product Examples
-- Children's craft kits (various themes)
-- Bamboo Ashtray
-- Barbie-themed products
-- Creative learning products
+- High-quality and safe materials
+- Complete kits with everything included
+- Pre-cut and pre-stamped fabrics (sewing kits)
+- Themed kits with engaging designs
 
 ## Market
 
 ### Target Audience
-- Children and parents seeking quality educational craft activities
-- Focus on building confidence through achievable projects
+- **Craftiloo:** Primarily **grandparents and parents** buying sewing kits as gifts for children/grandchildren (the buyer is not the end user)
+- **Shinshin Creations:** Adults seeking a creative hobby
 
 ### Market Position
 - Hundreds of thousands of satisfied customers
@@ -41,14 +45,19 @@ Premium quality craft kits for children that emphasize:
 - Multi-marketplace presence
 
 ### Sales Channels
-- **Primary:** Amazon
-  - Amazon US (primary market)
-  - Amazon UK
-  - Amazon DE (Germany)
+- **Primary:** Amazon US
+- **Shopify** website
+- **Retail:** Barnes & Noble
 
 ## Competitors
-- Various craft kit brands (tracked in Notion competitor databases)
-- Competitor branding and product analysis maintained
+- **Kraftlab**
+- **Fanzbo**
+- **Krafun**
+- **Azerka**
+- **KLUTZ**
+- **Melissa and Doug**
+- **Creativity for Kids**
+- **Latch Kits**
 
 ## Departments
 
@@ -67,14 +76,13 @@ Premium quality craft kits for children that emphasize:
 
 | Tool | Purpose |
 |------|---------|
-| **Monday** | Task Management |
+| **Asana** | Task Management |
 | **Slack** | Direct Communication |
-| **Missive** | Email Management |
+| **Gmail** | Email |
 | **Notion** | Instructions, Databases & Workfiles |
 | **Toggl** | Time Tracking |
 | **Google Drive** | File Management |
 | **Apify** | Web scraping, automation, data extraction |
-| **Asana** | Additional project tracking |
 
 ## Resources
 
