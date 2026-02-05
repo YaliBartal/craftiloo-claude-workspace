@@ -13,12 +13,12 @@
 
 ### Communication Preferences
 - **Direct communication:** Slack for team discussions
-- **Email management:** Centralized through Missive
+- **Email management:** Direct email (no centralized platform)
 - **Documentation:** Notion for all instructions, databases, and workfiles
 - **Structured meetings:** Tracked in databases with clear agendas
 
 ### Task Management
-- **Platform:** Monday.com as primary task manager
+- **Platform:** Asana as primary task manager
 - **Status tracking:** Clear stages from Not Started to Completed
 - **Due dates:** Accountability through deadline management
 - **Tagging system:** Multi-dimensional categorization (Work, Urgent, Important, etc.)
@@ -34,15 +34,34 @@
 - **Product quality:** Premium, safe materials only - no compromises
 - **Customer satisfaction:** Focus on positive customer experiences (proven track record of hundreds of thousands of satisfied customers)
 - **Educational value:** Products must support child development and confidence building
-- **Market expansion:** Multi-marketplace strategy (US, UK, DE)
+- **Market expansion:** US-focused multi-marketplace strategy (Amazon + retail channels)
 - **Continuous improvement:** Iterative optimization through split testing
 
 ### Current Priorities (2026)
-1. Website redesign and checkout flow optimization
-2. Financial planning and budget management for Q1
-3. CRM platform evaluation and potential upgrade
-4. Brand manager recruitment
-5. Product development pipeline execution
+
+**Branding & Storefront**
+- Improve overall branding
+- Create a brand book
+- Launch new Amazon store design
+- Build a strong Barbie page on website
+
+**Channel Expansion**
+- Retail marketplaces: Target.com, Walmart.com, Michaels, Hobby Lobby, Bed Bath & Beyond
+- Physical retail store placement (actively pursuing)
+
+**Product Development - Barbie Kits**
+- 8 new Barbie kits launching (currently shipping to Amazon)
+- Develop 4 additional Barbie kits
+- Create ~4 new crafty non-branded kits
+
+**Financial**
+- Cash flow management (challenge due to Barbie growth)
+- Secure funding for Christmas order inventory
+
+**Social Media**
+- Hire social media experts
+- Build presence on Facebook and Instagram
+- Explore TikTok presence
 
 ## Product Philosophy
 
@@ -61,8 +80,8 @@
 ## Operational Preferences
 
 ### Multi-Channel Strategy
-- Amazon as primary sales channel
-- Focus on three main markets: US (primary), UK, DE
+- **Amazon US** as primary sales channel
+- **Retail marketplace expansion (2026):** Target.com, Walmart.com, Michaels, Hobby Lobby, Bed Bath & Beyond
 - Product tracking across all channels (ASIN, stock levels, keyword rankings)
 
 ### Inventory Management

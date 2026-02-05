@@ -1,10 +1,50 @@
 # Active Projects
 
-| Project | Status | Priority | Due Date | Next Step |
-|---------|--------|----------|----------|-----------|
-| Website Redesign Project | In Progress | High | Jan 10, 2026 | Update homepage, product pages, and checkout flow. Coordinate with design team for new assets. |
-| Quarterly Budget Review | Not Started | Medium | Jan 9, 2026 | Prepare financial reports and spending forecasts for Q1 2026. Schedule meeting with finance team. |
-| Research New CRM Solutions | Planning | Low | Jan 12, 2026 | Evaluate 3-5 CRM platforms that integrate with current tech stack. Focus on analytics and UX. |
+## 2026 Strategic Projects
+
+### Branding & Storefront
+
+| Project | Status | Priority | Notes |
+|---------|--------|----------|-------|
+| Brand Book Creation | Not Started | High | Define brand guidelines, visual identity |
+| New Amazon Store Design | Not Started | High | Refresh storefront to match new branding |
+| Barbie Website Page | Not Started | High | Create dedicated Barbie collection page |
+| Overall Branding Improvement | In Progress | High | Ongoing brand enhancement |
+
+### Channel Expansion
+
+| Project | Status | Priority | Notes |
+|---------|--------|----------|-------|
+| Target.com Marketplace | Planning | High | Retail marketplace expansion |
+| Walmart.com Marketplace | Planning | High | Retail marketplace expansion |
+| Michaels Marketplace | Planning | Medium | Retail marketplace expansion |
+| Hobby Lobby Marketplace | Planning | Medium | Retail marketplace expansion |
+| Bed Bath & Beyond Marketplace | Planning | Medium | Retail marketplace expansion |
+| Physical Retail Placement | In Progress | High | Pursuing store placement deals |
+
+### Product Development - Barbie Kits
+
+| Project | Status | Priority | Notes |
+|---------|--------|----------|-------|
+| 8 New Barbie Kits Launch | In Progress | High | Currently shipping to Amazon |
+| 4 Additional Barbie Kits | Planning | High | Development pipeline |
+| ~4 New Non-Branded Crafty Kits | Planning | Medium | Craftiloo brand expansion |
+
+### Financial
+
+| Project | Status | Priority | Notes |
+|---------|--------|----------|-------|
+| Cash Flow Management | In Progress | High | Challenge due to Barbie growth |
+| Christmas Inventory Funding | Not Started | High | Secure funding for Q4 order |
+
+### Social Media
+
+| Project | Status | Priority | Notes |
+|---------|--------|----------|-------|
+| Social Media Expert Hire | Not Started | High | Find and onboard expert(s) |
+| Facebook Presence | Not Started | Medium | Build brand presence |
+| Instagram Presence | Not Started | Medium | Build brand presence |
+| TikTok Exploration | Not Started | Low | Evaluate opportunity |
 
 ---
 
@@ -26,27 +66,19 @@
 
 ### Human Resources
 - **New Hire - Brand Manager** - In progress recruitment
-- **GPT Analysis** - New hire evaluation process
+- **Social Media Expert Recruitment** - New hiring priority
 
 ### Supply Chain
 - **Shipping from Israel** - Logistics coordination
 - **Supplier Management** - Ongoing vendor relationships
 - **Inspection Documentation** - Quality control processes
-
----
-
-## 2026 Planning
-
-**Strategic Planning Document:** 2026 Plans Diagram (Canva)
-- Focus on growth and expansion
-- New product development initiatives
-- Market expansion opportunities
+- **Barbie Kit Inventory** - Managing incoming 8 new kits
 
 ---
 
 ## Task Management System
 
-**Platform:** Monday.com
+**Platform:** Asana
 
 **Status Stages:**
 - Not Started
@@ -75,4 +107,4 @@
 
 ---
 
-*Last updated: 2026-02-03*
+*Last updated: 2026-02-05*
