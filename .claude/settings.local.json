@@ -18,7 +18,11 @@
       "mcp__claude_ai_Notion__notion-fetch",
       "mcp__claude_ai_Notion__notion-update-page",
       "mcp__claude_ai_Apify__apify-slash-rag-web-browser",
-      "mcp__claude_ai_Apify__get-actor-run"
+      "mcp__claude_ai_Apify__get-actor-run",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(git add:*)"
     ]
   }
 }

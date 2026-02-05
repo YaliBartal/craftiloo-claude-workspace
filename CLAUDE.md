@@ -105,6 +105,7 @@ Claude Code Workspace/
 | **Asana** | Task management, project tracking | ⚙️ Configured |
 | **Slack (Workspace 1)** | Message posting, channel management, team communication | ⚙️ Configured |
 | **Slack (Workspace 2)** | Message posting, channel management, team communication | ⚙️ Configured |
+| **GitHub** | Repository access, code search, issues, PRs | ⚙️ Configured |
 
 **To add:** Use `/mcp-builder` or see `.claude/skills/mcp-builder/`
 
