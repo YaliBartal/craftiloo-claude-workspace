@@ -39,6 +39,20 @@
 - **Craftiloo:** Primarily **grandparents and parents** buying sewing kits as gifts for children/grandchildren (the buyer is not the end user)
 - **Shinshin Creations:** Adults seeking a creative hobby
 
+### Customer Avatar (Craftiloo)
+
+| | Buyer | User |
+|---|---|---|
+| **Who** | Grandparents and parents | Girls aged 6-12 (boys less frequently) |
+| **Role** | Gift purchaser | End user/crafter |
+
+**Common Use Cases:**
+- Birthday gifts
+- Christmas gifts
+- Rainy day activities
+- Screen-free time
+- Summer crafts
+
 ### Market Position
 - Hundreds of thousands of satisfied customers
 - Numerous positive reviews
@@ -83,10 +97,12 @@
 | **Toggl** | Time Tracking |
 | **Google Drive** | File Management |
 | **Apify** | Web scraping, automation, data extraction |
+| **Seller Board** | Business information & analytics |
+| **Data Dive** | Keyword inspection & research |
+| **Titan** | Community membership |
 
 ## Resources
 
-- Master Product List (US, UK, DE databases)
 - Product catalog (Flipsnack and PDF)
 - New Products Plan (Google Sheets)
 - 2026 Plans Diagram (Canva)
