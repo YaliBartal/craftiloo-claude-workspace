@@ -10,7 +10,15 @@
       "Bash(curl:*)",
       "Bash(dir:*)",
       "Bash(git -C \"c:\\\\Users\\\\Dell\\\\OneDrive\\\\מסמכים\\\\craftiloo-claude-workspace\" diff)",
-      "Bash(git -C \"c:\\\\Users\\\\Dell\\\\OneDrive\\\\מסמכים\\\\craftiloo-claude-workspace\" log --oneline -5)"
+      "Bash(git -C \"c:\\\\Users\\\\Dell\\\\OneDrive\\\\מסמכים\\\\craftiloo-claude-workspace\" log --oneline -5)",
+      "Bash(git -C \"c:\\\\Users\\\\Dell\\\\OneDrive\\\\מסמכים\\\\craftiloo-claude-workspace\" config user.name \"Yali Bartal\")",
+      "Bash(git -C \"c:\\\\Users\\\\Dell\\\\OneDrive\\\\מסמכים\\\\craftiloo-claude-workspace\" config user.email \"bartalyali@gmail.com\")",
+      "Bash(git -C \"c:\\\\Users\\\\Dell\\\\OneDrive\\\\מסמכים\\\\craftiloo-claude-workspace\" push origin master)",
+      "mcp__claude_ai_Notion__notion-search",
+      "mcp__claude_ai_Notion__notion-fetch",
+      "mcp__claude_ai_Notion__notion-update-page",
+      "mcp__claude_ai_Apify__apify-slash-rag-web-browser",
+      "mcp__claude_ai_Apify__get-actor-run"
     ]
   }
 }

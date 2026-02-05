@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"c:\\\\Users\\\\Dell\\\\OneDrive\\\\מסמכים\\\\craftiloo-claude-workspace\" commit -m \"$\\(cat <<''EOF''\nUpdate business context with accurate brand and market info\n\n- Add two brand lines: Craftiloo \\(sewing kits\\) and Shinshin Creations \\(fuse beads\\)\n- Add Barbie IP licensing and 8 new kit launch\n- Update target audience, sales channels, competitors, and tech stack\n- Remove outdated info \\(bamboo products, Amazon UK/DE, Monday, Missive\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}
