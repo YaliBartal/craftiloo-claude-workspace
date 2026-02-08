@@ -1,6 +1,6 @@
 # Craftiloo Hero Products
 
-> Last updated: 2026-02-07 | Top-performing products with ASINs
+> Last updated: 2026-02-08 | Top-performing products with ASINs
 
 ---
 
@@ -16,6 +16,11 @@
 | Latch Hook - Rainbow Heart | Latch Hook | B0F8R652FX | Active |
 | Latch Hook Pencil Cases | Latch Hook | B08FYH13CL | Active |
 | Fairy Sewing Kit | Sewing | B09WQSBZY7 | Active |
+| Princess Lacing Card Kit | Lacing | B0FQC7YFX6 | Active |
+| Needlepoint Cat Wallet | Needlepoint | B09HVSLBS6 | Active |
+| Dessert Sewing Kit | Sewing | B096MYBLS1 | Active |
+| 10mm Big Fuse Beads | Fuse Beads | B07D6D95NG | Active |
+| Felt Unicorn Cross Stitch Kit | Cross Stitch | B0F6YTG1CH | Active |
 
 ---
 
@@ -248,6 +253,135 @@
 
 ---
 
+## 9. Princess Lacing Card Kit
+
+**ASIN:** B0FQC7YFX6
+**Amazon URL:** https://www.amazon.com/dp/B0FQC7YFX6
+**Brand on Amazon:** CRAFTILOO
+**Internal SKU:** 6P-KW6N-9F9J
+
+### Product Details
+- **Category:** Lacing cards
+- **Theme:** Princess
+- **Age:** 3+
+- **Projects:** 8 lacing cards
+
+### Kit Contents
+- 8 princess-themed lacing cards
+- Durable laces
+- Gem stickers for decoration
+- Reusable storage box
+- Instructions
+
+### Key Selling Points
+- Princess theme appeals to target demographic
+- Fine motor skill development
+- Mess-free, travel-friendly activity
+- Counting practice on back of cards
+- Gem stickers for extra creativity
+
+---
+
+## 10. Needlepoint Cat Wallet
+
+**ASIN:** B09HVSLBS6
+**Amazon URL:** https://www.amazon.com/dp/B09HVSLBS6
+**Brand on Amazon:** CRAFTILOO
+**Internal SKU:** TBD
+
+### Product Details
+- **Category:** Needlepoint
+- **Project:** Cat-themed wallet
+- **Age:** TBD
+
+### Key Selling Points
+- Functional finished product
+- Cat design popular with kids
+- Beginner-friendly needlepoint
+
+---
+
+## 11. Dessert Sewing Kit
+
+**ASIN:** B096MYBLS1
+**Amazon URL:** https://www.amazon.com/dp/B096MYBLS1
+**Brand on Amazon:** CRAFTILOO
+**Internal SKU:** JI-I7Y7-VC9R
+
+### Product Details
+- **Category:** Sewing
+- **Theme:** Mini Treats/Desserts
+- **Age:** 8+
+- **Projects:** 12 mini dessert figures
+
+### Kit Contents
+- 12 pre-cut figures
+- Embroidery floss
+- Glue
+- Beads
+- 12 key rings
+- Pins
+- Embroidery needles
+- Ribbons
+- Stuffing
+- Illustrated instructions
+
+### Key Selling Points
+- Fun dessert theme appeals to kids
+- 12 projects = great value
+- Makes keychains/charms
+- Pre-cut felt for easy assembly
+
+---
+
+## 12. 10mm Big Fuse Beads
+
+**ASIN:** B07D6D95NG
+**Amazon URL:** https://www.amazon.com/dp/B07D6D95NG
+**Brand on Amazon:** shinshin creation
+**Internal SKU:** O9-70DP-C5J6
+
+### Product Details
+- **Category:** Fuse Beads
+- **Bead Size:** 10mm (large/jumbo)
+- **Bead Count:** 1,500 beads
+- **Colors:** 15 colors
+- **Age:** 4-7
+
+### Kit Contents
+- 1,500 10mm melting beads (15 colors)
+- 2 large pegboards
+- 48 patterns (including English letters)
+- Ironing paper
+
+### Key Selling Points
+- Large beads ideal for younger children (ages 4-7)
+- Easier to handle than mini beads
+- 48 patterns included
+- Great for developing fine motor skills
+
+---
+
+## 13. Felt Unicorn Cross Stitch Kit
+
+**ASIN:** B0DFPQ5LGD
+**Amazon URL:** https://www.amazon.com/dp/B0DFPQ5LGD
+**Brand on Amazon:** CRAFTILOO
+**Internal SKU:** TBD
+
+### Product Details
+- **Category:** Cross Stitch
+- **Theme:** Unicorn
+- **Age:** 6+
+
+### Key Selling Points
+- Unicorn theme highly popular with girls
+- Felt material for durability
+- Beginner-friendly cross stitch
+- Makes keychains/charms
+
+---
+
 ## Quick Reference Card
 
 | Hero Product | ASIN | Price Point | Best For |
@@ -260,6 +394,11 @@
 | Latch Rainbow Heart | B0F8R652FX | Mid | Ages 6+ |
 | Latch Pencil Cases | B08FYH13CL | Mid | Ages 8-12 |
 | Fairy Sewing | B09WQSBZY7 | Budget | Girls 5-12 |
+| Princess Lacing Card | B0FQC7YFX6 | Budget | Ages 3+ |
+| Needlepoint Cat Wallet | B09HVSLBS6 | Mid | Kids 8-14 |
+| Dessert Sewing Kit | B096MYBLS1 | Mid | Ages 8+ |
+| 10mm Big Fuse Beads | B07D6D95NG | Mid | Ages 4-7 |
+| Felt Unicorn Cross Stitch | B0DFPQ5LGD | Mid | Girls 6+ |
 
 ---
 
