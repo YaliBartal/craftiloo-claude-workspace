@@ -51,6 +51,81 @@ When you learn something new about the user or business during ANY conversation,
 
 ---
 
+## Organization & File Management Standards
+
+**CRITICAL: Follow these standards for ALL work, ALL skills, ALL outputs.**
+
+### File Organization Hierarchy
+
+**Every output must be organized into clear, logical folders:**
+
+```
+outputs/
+├── {project-type}/         # e.g., research, data, reports
+│   ├── {specific-area}/    # e.g., market-intel, competitor-analysis
+│   │   ├── briefs/         # Main outputs (what user reads first)
+│   │   ├── reports/        # Detailed analysis (subfolders by type)
+│   │   ├── data/           # Raw data files (subfolders by type)
+│   │   ├── snapshots/      # Historical/comparison data
+│   │   ├── scripts/        # Automation scripts ONLY
+│   │   └── README.md       # Folder guide
+```
+
+### Naming Conventions (STRICT)
+
+**Use consistent, predictable naming:**
+
+| File Type | Format | Example |
+|-----------|--------|---------|
+| **Date-based outputs** | `YYYY-MM-DD-{descriptor}.ext` | `2026-02-09-morning-brief.md` |
+| **Subject-based outputs** | `{subject-slug}-YYYY-MM-DD.ext` | `cross-stitch-analysis-2026-02-09.md` |
+| **Data files** | `{type}-{subject}-YYYY-MM-DD.json` | `product-data-cross-stitch-2026-02-09.json` |
+| **Scripts** | `{action}_{subject}.py` | `generate_report.py`, `process_data.py` |
+
+**Rules:**
+- Use lowercase with hyphens (kebab-case) for file/folder names
+- Always include dates in format YYYY-MM-DD
+- Be descriptive but concise (max 50 chars for filename)
+- Group related files in subfolders, NOT with prefixes
+
+### Forbidden Practices
+
+**NEVER:**
+- ❌ Dump files in root folders
+- ❌ Mix scripts with output files in same folder
+- ❌ Create temp files without cleaning them up
+- ❌ Use ambiguous names like "output.json", "data.txt", "test.py"
+- ❌ Create 25+ files in one folder without subfolders
+- ❌ Use inconsistent naming (some with dates, some without)
+
+### Efficiency Targets
+
+**For every task:**
+- ✅ <80K tokens per operation
+- ✅ <$0.20 cost per operation (if using paid APIs)
+- ✅ <5 minutes execution time
+- ✅ Minimal file count (only what's necessary)
+- ✅ Self-documenting structure (user can navigate without asking)
+
+### Readability & Communication
+
+**User must be able to:**
+1. **See what you're doing** by looking at folder structure
+2. **Find outputs easily** by following logical hierarchy
+3. **Understand file purpose** from name alone
+4. **Navigate without confusion** (clear README in each major folder)
+
+### When Creating New Output Folders
+
+**Always include a README.md with:**
+- Folder purpose
+- Folder structure diagram
+- File naming conventions used
+- What goes where (table format)
+- Daily workflow (if applicable)
+
+---
+
 ## Folder Structure
 
 ```

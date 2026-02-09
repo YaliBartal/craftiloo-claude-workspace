@@ -15,16 +15,15 @@
 
 ## 1. Cross Stitch Kits for Kids
 
-| Rank | Brand | Est. Market Share | Strengths | Price Point |
-|------|-------|-------------------|-----------|-------------|
-| 1 | **CRAFTILOO** | ~22% | Category leader, 5-project kits, backpack charms, pre-stamped, strong reviews | Mid ($19-29) |
-| 2 | **Pllieay** | ~18% | 10-in-1 beginner kits, high volume, ages 7-13 | Budget ($8-15) |
-| 3 | **KRAFUN** | ~15% | "My First" line, felt keyrings, ages 5-13 | Mid ($12-20) |
-| 4 | **Caydo** | ~12% | Woodland animal patterns, felt unicorn sets | Budget ($8-14) |
-| 5 | **EZCRA** | ~10% | Beginner kits ages 5-8, jumbo needles | Budget ($10-16) |
-| 6 | **CraftLab** | ~8% | Parents Picks Award 2024, premium packaging | Mid-Premium ($15-25) |
+| Rank | Brand | ASIN(s) | Est. Market Share | Strengths | Price Point |
+|------|-------|---------|-------------------|-----------|-------------|
+| 1 | **CRAFTILOO** | **B08DDJCQKF** | ~22% | Category leader, 5-project kits, backpack charms, pre-stamped, strong reviews | Mid ($19-29) |
+| 2 | **Pllieay** | B08T5QC9FS | ~18% | 10-in-1 beginner kits, high volume, ages 7-13 | Budget ($8-15) |
+| 3 | **KRAFUN** | B0B7JHN4F1 | ~15% | "My First" line, felt keyrings, ages 5-13 | Mid ($12-20) |
+| 4 | **Caydo** | B0CM9JKNCC | ~12% | Woodland animal patterns, felt unicorn sets | Budget ($8-14) |
+| 5 | **EZCRA** | B0DFHN42QB | ~10% | Beginner kits ages 5-8, jumbo needles | Budget ($10-16) |
 
-**Craftiloo Products:** Cross Stitch Kit - Girls (B08DDJCQKF), Cats Cross Stitch Kit, My First Cross Stitch Kit, Felt Unicorn Cross Stitch Kit
+**Craftiloo Products:** Cross Stitch Kit - Girls (B08DDJCQKF), Cats Cross Stitch Kit, My First Cross Stitch Kit, Felt Unicorn Cross Stitch Kit (B0DFPQ5LGD)
 
 **Market Notes:** Craftiloo leads the kids' cross stitch niche with strong Amazon rankings and review counts. The broader adult cross stitch market is dominated by different players (DMC, Dimensions).
 
@@ -32,14 +31,13 @@
 
 ## 2. Embroidery Kits for Kids
 
-| Rank | Brand | Est. Market Share | Strengths | Price Point |
-|------|-------|-------------------|-----------|-------------|
-| 1 | **CRAFTILOO** | ~20% | Category leader, 10-pattern kits, stamped designs, video tutorials, strong reviews | Mid ($23-29) |
-| 2 | **CraftLab** | ~16% | Parents Picks Award Winner 2024, premium packaging | Mid-Premium ($18-25) |
-| 3 | **KRAFUN** | ~14% | "My First" beginner line, ages 7-13 | Mid ($12-20) |
-| 4 | **Pllieay** | ~12% | Punch needle kits, cross stitch combos | Budget ($8-15) |
-| 5 | **Caydo** | ~10% | Floral and animal patterns | Budget ($8-14) |
-| 6 | **EZCRA** | ~8% | Beginner needlepoint, pre-printed patterns | Budget ($10-16) |
+| Rank | Brand | ASIN(s) | Est. Market Share | Strengths | Price Point |
+|------|-------|---------|-------------------|-----------|-------------|
+| 1 | **CRAFTILOO** | **B09X55KL2C** | ~20% | Category leader, 10-pattern kits, stamped designs, video tutorials, strong reviews | Mid ($23-29) |
+| 2 | **CraftLab** | B087DYHMZ2 | ~16% | Parents Picks Award Winner 2024, premium packaging | Mid-Premium ($18-25) |
+| 3 | **KRAFUN** | B0D8171TF1 | ~14% | "My First" beginner line, ages 7-13 | Mid ($12-20) |
+| 4 | **Pllieay** | B08TC7423N | ~12% | Punch needle kits, cross stitch combos | Budget ($8-15) |
+| 5 | **Louise Maelys** | B0DP654CSV | ~10% | Beginner needlepoint, pre-printed patterns | Budget ($10-16) |
 
 **Craftiloo Products:** 10 Embroidery Patterns Kit (B09X55KL2C), Heart/Cat/Elephant Embroidery Kits
 
@@ -49,19 +47,18 @@
 
 ## 3. Embroidery Kits for Beginners (Adults)
 
-| Rank | Brand | Est. Market Share | Strengths | Price Point |
-|------|-------|-------------------|-----------|-------------|
-| 1 | **CYANFOUR** | ~16% | 4-6 stage learning kits, 38 stitches, video tutorials, step-by-step instructions | Budget-Mid ($20-30) |
-| 2 | **Santune** | ~14% | Best overall kit, 3-4 pack sets, bamboo hoops, floral patterns | Budget ($15-22) |
-| 3 | **Bradove** | ~12% | Stitch practice kits, comprehensive patterns, beginner-friendly | Budget-Mid ($18-25) |
-| 4 | **Caydo** | ~10% | Full range supplies, multiple hoop sizes, floral patterns | Budget ($12-18) |
-| 5 | **CRAFTILOO** | ~9% | 4 Flowers Kit, 17 stitches tutorial, premium packaging, video tutorials | Mid ($23-29) |
-| 6 | **ETSPIL** | ~8% | 4 floral patterns, 33 stitches, pre-printed fabric, video guide | Budget-Mid ($18-24) |
-| 7 | **Akacraft** | ~7% | Chinese plum blossom designs, beginner guide booklet, long-lasting threads | Mid ($18-25) |
-| 8 | **Craftwiz** | ~6% | Beginner embroidery kits, variety of patterns | Budget ($15-20) |
-| 9 | **BERYA** | ~5% | Flowers theme, video step-by-step instructions | Budget ($12-18) |
-| 10 | **wtisan** | ~4% | 4 sets with stamped flower patterns, relaxation focus | Budget ($15-20) |
-| 11 | **Uphome** | ~4% | 3 pack starter kits, wild flowers/plants patterns | Budget ($12-18) |
+| Rank | Brand | ASIN(s) | Est. Market Share | Strengths | Price Point |
+|------|-------|---------|-------------------|-----------|-------------|
+| 1 | **CYANFOUR** | B0CZHKSSL4, B0DMHY2HF3 | ~16% | 4-6 stage learning kits, 38 stitches, video tutorials, step-by-step instructions | Budget-Mid ($20-30) |
+| 2 | **Santune** | B0BB9N74SG | ~14% | Best overall kit, 3-4 pack sets, bamboo hoops, floral patterns | Budget ($15-22) |
+| 3 | **Bradove** | B0B762JW55 | ~12% | Stitch practice kits, comprehensive patterns, beginner-friendly | Budget-Mid ($18-25) |
+| 4 | **CRAFTILOO** | **B0DC69M3YD** | ~11% | 4 Flowers Kit, 17 stitches tutorial, premium packaging, video tutorials | Mid ($23-29) |
+| 5 | **ETSPIL** | B0C3ZVKB46 | ~8% | 4 floral patterns, 33 stitches, pre-printed fabric, video guide | Budget-Mid ($18-24) |
+| 6 | **Akacraft** | — | ~7% | Chinese plum blossom designs, beginner guide booklet, long-lasting threads | Mid ($18-25) |
+| 7 | **Craftwiz** | — | ~6% | Beginner embroidery kits, variety of patterns | Budget ($15-20) |
+| 8 | **BERYA** | — | ~5% | Flowers theme, video step-by-step instructions | Budget ($12-18) |
+| 9 | **wtisan** | — | ~4% | 4 sets with stamped flower patterns, relaxation focus | Budget ($15-20) |
+| 10 | **Uphome** | — | ~4% | 3 pack starter kits, wild flowers/plants patterns | Budget ($12-18) |
 
 **Craftiloo Products:** 4 Embroidery Flowers Kit (B0DC69M3YD)
 
@@ -71,13 +68,12 @@
 
 ## 4. Sewing Kits for Kids
 
-| Rank | Brand | Est. Market Share | Strengths | Price Point |
-|------|-------|-------------------|-----------|-------------|
-| 1 | **KRAFUN** | ~25% | "My First Sewing" line, stuffed animals, multiple SKUs | Mid ($12-22) |
-| 2 | **EZCRA** | ~18% | Unicorn Sewing Kit, beginner 8-in-1 kits, ages 4-8 | Budget-Mid ($12-18) |
-| 3 | **Klever Kits** | ~15% | Themed pillow projects, unicorn/mermaid | Mid ($14-20) |
-| 4 | **CRAFTILOO** | ~12% | Fairy/Ballerina/Dessert themes, pre-cut felt | Mid ($22-33) |
-| 5 | **Creativity for Kids** | ~10% | "Designed by You" Fashion Studio, brand recognition | Mid ($15-22) |
+| Rank | Brand | ASIN(s) | Est. Market Share | Strengths | Price Point |
+|------|-------|---------|-------------------|-----------|-------------|
+| 1 | **KRAFUN** | B091GXM2Y6, B0C2XYP6L3, B0CV1F5CFS | ~25% | "My First Sewing" line, stuffed animals, multiple SKUs | Mid ($12-22) |
+| 2 | **EZCRA** | B0CXY8JMTK, B0CYNNT2ZT | ~18% | Unicorn Sewing Kit, beginner 8-in-1 kits, ages 4-8 | Budget-Mid ($12-18) |
+| 3 | **Klever Kits** | B0CTTMWXYP | ~15% | Themed pillow projects, unicorn/mermaid | Mid ($14-20) |
+| 4 | **CRAFTILOO** | **B09WQSBZY7, B096MYBLS1** | ~12% | Fairy/Ballerina/Dessert themes, pre-cut felt | Mid ($22-33) |
 
 **Craftiloo Products:** Fairy Sewing Kit (B09WQSBZY7), Dessert Sewing Kit (B096MYBLS1), Ballerina Sewing Kit, Superhero/Pirates/Dogs kits
 
@@ -87,14 +83,12 @@
 
 ## 5. Latch Hook Kits
 
-| Rank | Brand | Est. Market Share | Strengths | Price Point |
-|------|-------|-------------------|-----------|-------------|
-| 1 | **LatchKits (PlayMonster)** | ~25% | Market leader, retail distribution (Target, Walmart), licensed characters | Mid ($12-18) |
-| 2 | **Dimensions Needlecrafts** | ~15% | Classic brand, wide variety, clear instructions | Mid ($10-20) |
-| 3 | **Vervaco** | ~10% | Kid-friendly large grid canvas, simple designs | Mid-Premium ($15-25) |
-| 4 | **CRAFTILOO** | ~8% | Pencil cases, rainbow heart pillow, googly eyes | Mid ($28-33) |
-| 5 | **MIAOLLUN** | ~7% | Various patterns, rug kits | Budget-Mid ($12-18) |
-| 6 | **Caydo** | ~6% | Budget-friendly, beginner focused | Budget ($8-14) |
+| Rank | Brand | ASIN(s) | Est. Market Share | Strengths | Price Point |
+|------|-------|---------|-------------------|-----------|-------------|
+| 1 | **LatchKits (PlayMonster)** | B06XRRN4VL, B0CX9H8YGR | ~25% | Market leader, retail distribution (Target, Walmart), licensed characters | Mid ($12-18) |
+| 2 | **Vervaco** | — | ~15% | Kid-friendly large grid canvas, simple designs | Mid-Premium ($15-25) |
+| 3 | **CRAFTILOO** | **B08FYH13CL, B0F8R652FX** | ~12% | Pencil cases, rainbow heart pillow, googly eyes | Mid ($28-33) |
+| 4 | **MIAOLLUN** | — | ~10% | Various patterns, rug kits | Budget-Mid ($12-18) |
 
 **Craftiloo Products:** Latch Hook Pencil Cases (B08FYH13CL), Rainbow Heart Pillow (B0F8R652FX), Wise Owl (B0FHMRQWRX)
 
@@ -102,11 +96,11 @@
 
 ## 6. Loom Knitting Kits for Kids
 
-| Rank | Brand | Est. Market Share | Strengths | Price Point |
-|------|-------|-------------------|-----------|-------------|
-| 1 | **Creativity for Kids (Faber-Castell)** | ~35% | Quick Knit Loom, strong brand, retail presence (Walmart) | Mid ($15-20) |
-| 2 | **Hapinest** | ~28% | Hat & Scarf Loom Kit, ages 8-12, 6 yarn skeins, faux fur pom poms | Mid ($18-25) |
-| 3 | **CRAFTILOO** | ~22% | Cat & Hat kit, Bunny Loom Kit, Loom & Crochet combo | Mid ($28-37) |
+| Rank | Brand | ASIN(s) | Est. Market Share | Strengths | Price Point |
+|------|-------|---------|-------------------|-----------|-------------|
+| 1 | **Creativity for Kids** | B004JIFCXO | ~35% | Quick Knit Loom, strong brand, retail presence (Walmart) | Mid ($15-20) |
+| 2 | **Hapinest** | B0B8W4FK4Q | ~28% | Hat & Scarf Loom Kit, ages 8-12, 6 yarn skeins, faux fur pom poms | Mid ($18-25) |
+| 3 | **CRAFTILOO** | **B0F8DG32H5** | ~22% | Cat & Hat kit, Bunny Loom Kit, Loom & Crochet combo | Mid ($28-37) |
 
 **Craftiloo Products:** Knitting Kit - Cat & Hat (B0F8DG32H5), Loom Knitting & Crochet Kit (B0DKD2S3JT), Bunny Loom Knitting Kit (B0D6GD3YNY)
 
@@ -116,16 +110,16 @@
 
 ## 7. Mini Fuse Beads (2.6mm)
 
-| Rank | Brand | Est. Market Share | Strengths | Price Point |
-|------|-------|-------------------|-----------|-------------|
-| 1 | **shinshin creation (Craftiloo)** | ~22% | Category leader, 24,000 beads/48 colors, 5 pegboards, metal tweezers, pastel line, adult-focused | Mid ($32-35) |
-| 2 | **INSCRAFT** | ~16% | 28,000 beads/48 colors, 7 pegboards, 15 ironing sheets, comprehensive accessories | Mid ($25-32) |
-| 3 | **ARTKAL** | ~14% | Food-grade materials, best color variety (110+ colors), compatible with Perler/Hama | Mid ($20-35) |
-| 4 | **LIHAO** | ~12% | 24,000 beads/48 colors, budget-friendly, multicolored kits | Budget ($18-25) |
-| 5 | **Perler** | ~10% | Legacy brand, mini line (2.5mm), brand recognition | Mid ($15-25) |
-| 6 | **FUNZBO** | ~8% | Kids-focused, beginner kits, fun patterns | Budget ($15-22) |
-| 7 | **Psykade** | ~6% | Mini bead kits, various color options | Budget ($15-20) |
-| 8 | **Hama** | ~5% | European leader since 1971, mini beads line, quality reputation | Mid-Premium ($20-30) |
+| Rank | Brand | ASIN(s) | Est. Market Share | Strengths | Price Point |
+|------|-------|---------|-------------------|-----------|-------------|
+| 1 | **shinshin creation (Craftiloo)** | **B09THLVFZK** | ~22% | Category leader, 24,000 beads/48 colors, 5 pegboards, metal tweezers, pastel line, adult-focused | Mid ($32-35) |
+| 2 | **INSCRAFT** | B0C5WQD914 | ~16% | 28,000 beads/48 colors, 7 pegboards, 15 ironing sheets, comprehensive accessories | Mid ($25-32) |
+| 3 | **ARTKAL** | B0FN4CT867 | ~14% | Food-grade materials, best color variety (110+ colors), compatible with Perler/Hama | Mid ($20-35) |
+| 4 | **LIHAO** | B08QV9CMFQ | ~12% | 24,000 beads/48 colors, budget-friendly, multicolored kits | Budget ($18-25) |
+| 5 | **Perler** | — | ~10% | Legacy brand, mini line (2.5mm), brand recognition | Mid ($15-25) |
+| 6 | **FUNZBO** | B0D5LF666P | ~8% | Kids-focused, beginner kits, fun patterns | Budget ($15-22) |
+| 7 | **Psykade** | — | ~6% | Mini bead kits, various color options | Budget ($15-20) |
+| 8 | **Hama** | — | ~5% | European leader since 1971, mini beads line, quality reputation | Mid-Premium ($20-30) |
 
 **Craftiloo Products:** 48 Mini Fuse Beads (B09THLVFZK), Mini Pastel Fuse Beads (B0CRZ8M2G1)
 
@@ -135,14 +129,14 @@
 
 ## 8. Lacing Cards
 
-| Rank | Brand | Est. Market Share | Strengths | Price Point |
-|------|-------|-------------------|-----------|-------------|
-| 1 | **Melissa & Doug** | ~35% | Brand trust, retail presence, durability, licensed characters | Mid ($10-15) |
-| 2 | **KRAFUN** | ~12% | Safari themes, craft kit approach | Budget-Mid ($8-12) |
-| 3 | **Serabeena** | ~8% | Safari animals, fine motor focus | Budget ($8-12) |
-| 4 | **CRAFTILOO** | ~7% | Princess theme, gem stickers, counting practice | Budget ($17) |
-| 5 | **Funrous** | ~6% | Recognition cards, educational focus | Budget ($6-10) |
-| 6 | **Lauri** | ~5% | Crepe rubber lacing, preschool focus | Budget ($8-12) |
+| Rank | Brand | ASIN(s) | Est. Market Share | Strengths | Price Point |
+|------|-------|---------|-------------------|-----------|-------------|
+| 1 | **Melissa & Doug** | B00JM5G05I | ~35% | Brand trust, retail presence, durability, licensed characters | Mid ($10-15) |
+| 2 | **KRAFUN** | B0BRYRD91V | ~12% | Safari themes, craft kit approach | Budget-Mid ($8-12) |
+| 3 | **Serabeena** | B0D178S25M | ~8% | Safari animals, fine motor focus | Budget ($8-12) |
+| 4 | **CRAFTILOO** | **B0FQC7YFX6** | ~7% | Princess theme, gem stickers, counting practice | Budget ($17) |
+| 5 | **Funrous** | — | ~6% | Recognition cards, educational focus | Budget ($6-10) |
+| 6 | **Lauri** | — | ~5% | Crepe rubber lacing, preschool focus | Budget ($8-12) |
 
 **Craftiloo Products:** Princess Lacing Card Kit (B0FQC7YFX6)
 
@@ -150,16 +144,16 @@
 
 ## Craftiloo Competitive Position Summary
 
-| Category | Craftiloo Rank | Est. Share | Top Competitor | Gap |
-|----------|----------------|------------|----------------|-----|
-| **Cross Stitch (Kids)** | **#1** | **~22%** | Pllieay (18%) | **+4%** |
-| **Embroidery (Kids)** | **#1** | **~20%** | CraftLab (16%) | **+4%** |
-| Embroidery (Beginners/Adults) | #5 | ~9% | CYANFOUR (16%) | -7% |
-| Sewing (Kids) | #4 | ~12% | KRAFUN (25%) | -13% |
-| Latch Hook | #4 | ~8% | LatchKits (25%) | -17% |
-| Knitting/Loom | #3 | ~22% | Creativity for Kids (35%) | -13% |
-| **Mini Fuse Beads (2.6mm)** | **#1** | **~22%** | INSCRAFT (16%) | **+6%** |
-| Lacing Cards | #4 | ~7% | Melissa & Doug (35%) | -28% |
+| Category | Craftiloo Rank | Est. Share | Top Competitor | Gap | Our ASIN(s) |
+|----------|----------------|------------|----------------|-----|-------------|
+| **Cross Stitch (Kids)** | **#1** | **~22%** | Pllieay (18%) | **+4%** | B08DDJCQKF |
+| **Embroidery (Kids)** | **#1** | **~20%** | CraftLab (16%) | **+4%** | B09X55KL2C |
+| Embroidery (Adults) | #4 | ~11% | CYANFOUR (16%) | -5% | B0DC69M3YD |
+| Sewing (Kids) | #4 | ~12% | KRAFUN (25%) | -13% | B09WQSBZY7, B096MYBLS1 |
+| Latch Hook | #3 | ~12% | LatchKits (25%) | -13% | B08FYH13CL, B0F8R652FX |
+| Knitting/Loom | #3 | ~22% | Creativity for Kids (35%) | -13% | B0F8DG32H5 |
+| **Mini Fuse Beads (2.6mm)** | **#1** | **~22%** | INSCRAFT (16%) | **+6%** | B09THLVFZK |
+| Lacing Cards | #4 | ~7% | Melissa & Doug (35%) | -28% | B0FQC7YFX6 |
 
 **Overall Position:** Craftiloo **leads the kids' cross stitch and embroidery categories**. In sewing kits, KRAFUN dominates with their "My First" line. Craftiloo is a mid-tier competitor in other categories.
 

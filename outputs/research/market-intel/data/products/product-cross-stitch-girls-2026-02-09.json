@@ -1,0 +1,396 @@
+[{
+  "source": "amazon",
+  "input": "B08DDJCQKF",
+  "asin": "B08DDJCQKF",
+  "product_title": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+  "product_url": "https://www.amazon.com/dp/B08DDJCQKF",
+  "product_byline": "Visit the CRAFTILOO Store",
+  "product_photo": "https://m.media-amazon.com/images/I/913PBQUxprL._AC_SL1500_.jpg",
+  "product_photos": [
+    "https://m.media-amazon.com/images/I/913PBQUxprL._AC_SL1500_.jpg",
+    "https://m.media-amazon.com/images/I/91tYbXdA8zL._AC_SL1500_.jpg",
+    "https://m.media-amazon.com/images/I/A1LeW003nDL._AC_SL1500_.jpg",
+    "https://m.media-amazon.com/images/I/91dSJWveAtL._AC_SL1500_.jpg",
+    "https://m.media-amazon.com/images/I/91TbMT3txIL._AC_SL1500_.jpg",
+    "https://m.media-amazon.com/images/I/91OFESbu7WL._AC_SL1500_.jpg",
+    "https://m.media-amazon.com/images/I/A1l0xOqIB+L._AC_SL1500_.jpg",
+    "https://m.media-amazon.com/images/I/91ZE1+SDpjL._AC_SL1500_.jpg",
+    "https://m.media-amazon.com/images/I/91vCrvYoZCL._AC_SL1500_.jpg"
+  ],
+  "product_videos": [
+    {
+      "id": "amzn1.vse.video.066d7761a8ba44499a08db605b77743d",
+      "title": "Cross Stitch Overview",
+      "video_url": "https://m.media-amazon.com/images/S/vse-vms-transcoding-artifact-us-east-1-prod/cb9140fc-a6e2-4b64-b771-b832bcfbd728/default.jobtemplate.hls.m3u8",
+      "video_height": "1080",
+      "video_width": "1920",
+      "thumbnail_url": "https://m.media-amazon.com/images/I/51qwM5BKAdL.SS40_BG85,85,85_BR-120_PKdp-play-icon-overlay__.jpg",
+      "product_asin": "B08DDJCQKF",
+      "parent_asin": "B0B1927HCG"
+    },
+    {
+      "id": "amzn1.vse.video.02a8a151c93943af8532bd5639d64e7d",
+      "title": "Cross stitch backpack",
+      "video_url": "https://m.media-amazon.com/images/S/vse-vms-transcoding-artifact-us-east-1-prod/8fd16795-fcc5-41cf-b1af-5563e0dbac68/default.jobtemplate.hls.m3u8",
+      "video_height": "1080",
+      "video_width": "1920",
+      "thumbnail_url": "https://m.media-amazon.com/images/I/51mfZmxqV8L.SS40_BG85,85,85_BR-120_PKdp-play-icon-overlay__.jpg",
+      "product_asin": "B08DDJCQKF",
+      "parent_asin": "B0B1927HCG"
+    },
+    {
+      "id": "amzn1.vse.video.001be3a9861843b6974512fc5fb1d291",
+      "title": "A Customer Review of the Backpack Cross Stitch Keychains!",
+      "video_url": "https://m.media-amazon.com/images/S/vse-vms-transcoding-artifact-us-east-1-prod/c90352ad-e395-4d63-9033-b22bb99bf445/default.vertical.jobtemplate.hls.m3u8",
+      "video_height": "1920",
+      "video_width": "1080",
+      "thumbnail_url": "https://m.media-amazon.com/images/I/B1mUIP-flaL.SS40_BG85,85,85_BR-120_PKdp-play-icon-overlay__.jpg",
+      "product_asin": "B08DDJCQKF",
+      "parent_asin": "B0B1927HCG"
+    },
+    {
+      "id": "amzn1.vse.video.0c0e100b80b04262b53ebec0378d7560",
+      "title": "Honest review of kids beginner cross stitch kit",
+      "video_url": "https://m.media-amazon.com/images/S/vse-vms-transcoding-artifact-us-east-1-prod/65a85281-b762-45f8-8c4b-5afece5eca96/default.jobtemplate.hls.m3u8",
+      "video_height": "1080",
+      "video_width": "1920",
+      "thumbnail_url": "https://m.media-amazon.com/images/I/A15t4NZcqGL.SS40_BG85,85,85_BR-120_PKdp-play-icon-overlay__.jpg",
+      "product_asin": "B08DDJCQKF",
+      "parent_asin": "B0B1927HCG"
+    },
+    {
+      "id": "amzn1.vse.video.0bc3784d05b74720b3f3673b4a087682",
+      "title": "A great set for a beginner, with adult help!",
+      "video_url": "https://m.media-amazon.com/images/S/vse-vms-transcoding-artifact-us-east-1-prod/a743b786-d68d-418d-873b-c74369041d05/default.vertical.jobtemplate.hls.m3u8",
+      "video_height": "1440",
+      "video_width": "1080",
+      "thumbnail_url": "https://m.media-amazon.com/images/I/B1I-M7olnhL.SS40_BG85,85,85_BR-120_PKdp-play-icon-overlay__.jpg",
+      "product_asin": "B08DDJCQKF",
+      "parent_asin": "B0B1927HCG"
+    },
+    {
+      "id": "amzn1.vse.video.090f489cb0834570a869b962c6aa163c",
+      "title": "Kid Review Cross stitch charms",
+      "video_url": "https://m.media-amazon.com/images/S/vse-vms-transcoding-artifact-us-east-1-prod/7ce392bb-6f51-45c8-adad-bc0f2b531971/default.jobtemplate.hls.m3u8",
+      "video_height": "1080",
+      "video_width": "1920",
+      "thumbnail_url": "https://m.media-amazon.com/images/I/51v7CC3k0nL.SS40_BG85,85,85_BR-120_PKdp-play-icon-overlay__.jpg",
+      "product_asin": "B08DDJCQKF",
+      "parent_asin": "B0B1927HCG"
+    },
+    {
+      "id": "amzn1.vse.video.0578924660d547458d33fb37032c9911",
+      "title": "Must Watch Before You Buy!",
+      "video_url": "https://m.media-amazon.com/images/S/vse-vms-transcoding-artifact-us-east-1-prod/7c0e4106-310d-4d10-bf51-89937f7ea3f6/default.vertical.jobtemplate.hls.m3u8",
+      "video_height": "1920",
+      "video_width": "1080",
+      "thumbnail_url": "https://m.media-amazon.com/images/I/71YnsbrYeQL.SS40_BG85,85,85_BR-120_PKdp-play-icon-overlay__.jpg",
+      "product_asin": "B08DDJCQKF",
+      "parent_asin": "B0B1927HCG"
+    }
+  ],
+  "product_price": "19.98",
+  "product_original_price": "$19.98",
+  "currency": "USD",
+  "product_num_offers": 4,
+  "product_star_rating": "4.5",
+  "product_num_ratings": 1278,
+  "rating_distribution": {
+    "1": 2,
+    "2": 2,
+    "3": 7,
+    "4": 14,
+    "5": 75
+  },
+  "top_reviews": [
+    {
+      "review_id": "R23ZGDYZIIIINH",
+      "review_title": "Great Gift to Teach Cross Stitch",
+      "review_comment": "Bought this for my greatgranddaughter for her birthday. We will have a Cross Stitch Day and this looks like the perfect way for her to learn. Everything she needs is in this kit including printed patterns, beautiful colors of thread, needle and a hoop for each project. Every pattern is small and able to be accomplished easily. Plus the pattern is printed in color to show her where to begin and how to proceed. These small projects will teach basics....then we will gradually introduce more challenging projects. I am very impressed by the quality and the price. I have shared my love of cross stitch with my five granddaughters and I hope to pass on my love of counted cross stitch to my greatgranddaughter.",
+      "review_star_rating": "5",
+      "review_link": "https://www.amazon.com/gp/customer-reviews/R23ZGDYZIIIINH",
+      "review_author_id": "AESKMNNTLVAMM4SXHVA3V7MXXOLQ",
+      "review_author": "sr139",
+      "review_author_url": "https://www.amazon.com/gp/profile/amzn1.account.AESKMNNTLVAMM4SXHVA3V7MXXOLQ",
+      "review_author_avatar": "https://m.media-amazon.com/images/S/amazon-avatars-global/default.png",
+      "review_images": [],
+      "review_video": null,
+      "review_date": "Reviewed in the United States on September 21, 2025",
+      "is_verified_purchase": true,
+      "helpful_vote_statement": "4 people found this helpful",
+      "reviewed_product_asin": "B08DDJCQKF",
+      "reviewed_product_variant": {
+        "Color": "Cross Stitch Backpack Charms"
+      },
+      "is_vine": false
+    },
+    {
+      "review_id": "R3N92F9OXARG9Y",
+      "review_title": "Great gift",
+      "review_comment": "Grandsons loves these , he’s 10 and loves crafting for gifts for his mom",
+      "review_star_rating": "5",
+      "review_link": "https://www.amazon.com/gp/customer-reviews/R3N92F9OXARG9Y",
+      "review_author_id": "AEH3Q6IC3VLAJJGCJQZWMWIVXR2Q",
+      "review_author": "Cheryl Heinzman",
+      "review_author_url": "https://www.amazon.com/gp/profile/amzn1.account.AEH3Q6IC3VLAJJGCJQZWMWIVXR2Q",
+      "review_author_avatar": "https://m.media-amazon.com/images/S/amazon-avatars-global/default.png",
+      "review_images": [],
+      "review_video": null,
+      "review_date": "Reviewed in the United States on January 17, 2026",
+      "is_verified_purchase": true,
+      "reviewed_product_asin": "B08DDJCQKF",
+      "reviewed_product_variant": {
+        "Color": "Superhero"
+      },
+      "is_vine": false
+    },
+    {
+      "review_id": "R3DXOXL9FIWVFE",
+      "review_title": "Very fun",
+      "review_comment": "I got these for a summer activity for my kids during summer. They are so cute, easy to learn and teach ( I was a complete beginner and picked it up easy so I could show my kids how) and the kids had so much fun! I love that it comes with everything you need to learn and complete, it was a great price and the quality isn’t too bad for what you’re getting.",
+      "review_star_rating": "5",
+      "review_link": "https://www.amazon.com/gp/customer-reviews/R3DXOXL9FIWVFE",
+      "review_author_id": "AGENPRGZRDQKPOQCOZ5HQXPVOJ5Q",
+      "review_author": "MyBookishHart",
+      "review_author_url": "https://www.amazon.com/gp/profile/amzn1.account.AGENPRGZRDQKPOQCOZ5HQXPVOJ5Q",
+      "review_author_avatar": "https://m.media-amazon.com/images/S/amazon-avatars-global/74eb3784-e603-4cad-be6e-bd08d47d55e0._CR0%2C0%2C386%2C386_UX460_.jpg",
+      "review_images": [
+        "https://m.media-amazon.com/images/I/71j4PXquslL.jpg"
+      ],
+      "review_video": null,
+      "review_date": "Reviewed in the United States on August 19, 2025",
+      "is_verified_purchase": true,
+      "helpful_vote_statement": "4 people found this helpful",
+      "reviewed_product_asin": "B08DDJCQKF",
+      "reviewed_product_variant": {
+        "Color": "Cross Stitch Backpack Charms"
+      },
+      "is_vine": false
+    },
+    {
+      "review_id": "R1SQV07F69SQO9",
+      "review_title": "Cute and easy project",
+      "review_comment": "I am an experienced needleworker who purchased this kit for my 9-year-old granddaughter. She enjoys crafts and I wanted to introduce her to an easy form of needlework. The kit has cute and easily- manageable designs and is decent quality for a beginner's set. It includes cotton floss, needles, needle threaders, nice hoops, key chains and fabric that is stamped with the various designs. The fabric is very stiff and difficult to evenly place in the hoops. The accompanying instructions are very good at describing how to do cross stitch. However, the instructions do not include how to attach the provided keychains to convert the finished cross-stitch hoops to the advertised backpack charms nor how to trim the excess fabric. These last 2 steps are not easy to do and children will definitely need help with them. Personally, I would find other ways to display the completed hoops since they won't last very long as backpack charms. That is exactly what we did - we hung a completed one on my granddaughter's desk and it looks really cute. This is a nice kit for a beginning cross stitch project, but I wouldn't count on it as a backpack charm.",
+      "review_star_rating": "4",
+      "review_link": "https://www.amazon.com/gp/customer-reviews/R1SQV07F69SQO9",
+      "review_author_id": "AGDF6W6YMONFYYYZM3CYFI2DDOKA",
+      "review_author": "LB",
+      "review_author_url": "https://www.amazon.com/gp/profile/amzn1.account.AGDF6W6YMONFYYYZM3CYFI2DDOKA",
+      "review_author_avatar": "https://m.media-amazon.com/images/S/amazon-avatars-global/default.png",
+      "review_images": [],
+      "review_video": null,
+      "review_date": "Reviewed in the United States on October 8, 2025",
+      "is_verified_purchase": true,
+      "helpful_vote_statement": "3 people found this helpful",
+      "reviewed_product_asin": "B08DDJCQKF",
+      "reviewed_product_variant": {
+        "Color": "Cross Stitch Backpack Charms"
+      },
+      "is_vine": false
+    },
+    {
+      "review_id": "R23YG8BSL68EUB",
+      "review_title": "Easy instructions",
+      "review_comment": "They look very nice my granddaughter will love them",
+      "review_star_rating": "5",
+      "review_link": "https://www.amazon.com/gp/customer-reviews/R23YG8BSL68EUB",
+      "review_author_id": "AHVBCEKDKJPV34UXBUWBSNW74AZQ",
+      "review_author": "Phyllis L. Lantz",
+      "review_author_url": "https://www.amazon.com/gp/profile/amzn1.account.AHVBCEKDKJPV34UXBUWBSNW74AZQ",
+      "review_author_avatar": "https://m.media-amazon.com/images/S/amazon-avatars-global/default.png",
+      "review_images": [],
+      "review_video": null,
+      "review_date": "Reviewed in the United States on December 5, 2025",
+      "is_verified_purchase": true,
+      "reviewed_product_asin": "B08DDJCQKF",
+      "reviewed_product_variant": {
+        "Color": "Cross Stitch Backpack Charms"
+      },
+      "is_vine": false
+    },
+    {
+      "review_id": "R2K0IOIYII9F3F",
+      "review_title": "Nice for an intro to stitching.",
+      "review_comment": "Recipient is enjoying working on her first stitching project.",
+      "review_star_rating": "5",
+      "review_link": "https://www.amazon.com/gp/customer-reviews/R2K0IOIYII9F3F",
+      "review_author_id": "AGHET7Z3HT7IEIDCQWZOBUAR5NJA",
+      "review_author": "Aunt C",
+      "review_author_url": "https://www.amazon.com/gp/profile/amzn1.account.AGHET7Z3HT7IEIDCQWZOBUAR5NJA",
+      "review_author_avatar": "https://m.media-amazon.com/images/S/amazon-avatars-global/default.png",
+      "review_images": [],
+      "review_video": null,
+      "review_date": "Reviewed in the United States on December 13, 2025",
+      "is_verified_purchase": true,
+      "reviewed_product_asin": "B08DDJCQKF",
+      "reviewed_product_variant": {
+        "Color": "Cross Stitch Backpack Charms"
+      },
+      "is_vine": false
+    },
+    {
+      "review_id": "R1RYAOS4QJK8PG",
+      "review_title": "Just ok",
+      "review_comment": "I got this for my daughter who wants to learn hand sewing. There weren’t many options for kits like this for kids, and this one is probably the best choice of kids kits. However, the instructions are pretty bare bones and kind of hard to understand for a beginner. It would be nice if there was a QR code or a way to watch a video tutorial. The yarn is pretty low quality and frayed easily. The size of the project is nice and manageable. It is also nice how the project is printed in color on the material.",
+      "review_star_rating": "3",
+      "review_link": "https://www.amazon.com/gp/customer-reviews/R1RYAOS4QJK8PG",
+      "review_author_id": "AFEGAQ7NB46LFBMV73JKVITJYFGQ",
+      "review_author": "butterfly531",
+      "review_author_url": "https://www.amazon.com/gp/profile/amzn1.account.AFEGAQ7NB46LFBMV73JKVITJYFGQ",
+      "review_author_avatar": "https://m.media-amazon.com/images/S/amazon-avatars-global/default.png",
+      "review_images": [],
+      "review_video": null,
+      "review_date": "Reviewed in the United States on December 26, 2024",
+      "is_verified_purchase": true,
+      "helpful_vote_statement": "8 people found this helpful",
+      "reviewed_product_asin": "B08DDJCQKF",
+      "reviewed_product_variant": {
+        "Color": "Cross Stitch Backpack Charms"
+      },
+      "is_vine": false
+    },
+    {
+      "review_id": "R2GDEX4S105201",
+      "review_title": "Definitely great for kids!",
+      "review_comment": "I got it for my 11 year old daughter cause she wanted to try cross stitch. The patterns are already printed on the fabric so makes it real easy for beginners.",
+      "review_star_rating": "5",
+      "review_link": "https://www.amazon.com/gp/customer-reviews/R2GDEX4S105201",
+      "review_author_id": "AGX7BQYACOLVDUGMVNQVXNBPLDWA",
+      "review_author": "Crystal Bush",
+      "review_author_url": "https://www.amazon.com/gp/profile/amzn1.account.AGX7BQYACOLVDUGMVNQVXNBPLDWA",
+      "review_author_avatar": "https://m.media-amazon.com/images/S/amazon-avatars-global/default.png",
+      "review_images": [],
+      "review_video": null,
+      "review_date": "Reviewed in the United States on November 13, 2025",
+      "is_verified_purchase": true,
+      "reviewed_product_asin": "B08DDJCQKF",
+      "reviewed_product_variant": {
+        "Color": "Cross Stitch Backpack Charms"
+      },
+      "is_vine": false
+    }
+  ],
+  "is_best_seller": false,
+  "is_amazon_choice": true,
+  "is_prime": true,
+  "climate_pledge_friendly": false,
+  "product_availability": "In Stock",
+  "sales_volume": "800+ bought in past month",
+  "about_product": [
+    "BEST CROSS STITCH KITS FOR BEGINNERS & GIRLS. 5 pre-printed patterns that girls love - heart, unicorn, cats, rainbow, and owl.",
+    "EASY TO DO CROSSSTITCH KIT FOR BEGINNERS. 5 small beautiful Pre-printed Patterns that your girl can complete in no time. Perfect as beginner cross stitch kits for kids with step-by-step instructions",
+    "PACKAGE & SIZE - 5 Hoops 2.75\", 5 11 CT pre-printed stamped embroidery canvas (Aida Cloth), 2 needles, high-quality cotton thread floss With easy-to-follow instructions. material safe for kids, this is the perfect beginner's embroidery kit for kids",
+    "AMAZING CRAFT GIFT IDEA: needlepoint kits for beginners in a beautiful box will make the perfect gift for your daughter, Grandaughter, niece, or goddaughter, for birthdays, Christmas, and any holiday",
+    "ORDER WITH CONFIDENCE. High-quality cross stitch for kids product.In case of any issue contact us to make your kids cross stitch experience perfect."
+  ],
+  "product_description": null,
+  "product_information": {
+    "Brand": "CRAFTILOO",
+    "Age Range (Description)": "8-99",
+    "Color": "Cross Stitch Backpack Charms",
+    "Theme": "Heart , Unicorn , Rainbow , Owl , Cat",
+    "Item dimensions L x W x H": "5.91 x 5.91 x 1.97 inches",
+    "Material": "Canvas, Cotton",
+    "Seasons": "All Seasons",
+    "Included Components": "5 Keychain Clips, 5 hoops, 5 pre-printed Patterns, Detailed Instructions Guide, Needles & Colorful Floss",
+    "Item Weight": "3.52 ounces",
+    "Size": "Small",
+    "Number of Pieces": "20",
+    "Paint Type": "Coton",
+    "Style": "Box",
+    "Special Feature": "Detailed Instructions Guide, Keychain Clips, Pre-printed patterns, Step by Step Video Tutorials, Stylish gift box",
+    "Art Craft Kit Type": "Cross stitch kit for kids",
+    "UPC": "093674059429",
+    "Cross-Stitch Pattern Type": "Stamped",
+    "Manufacturer": "Craftiloo",
+    "Product Dimensions": "5.91 x 5.91 x 1.97 inches",
+    "Item model number": "123",
+    "ASIN": "B08DDJCQKF",
+    "Best Sellers Rank": "#4,222 in Arts, Crafts & Sewing (See Top 100 in Arts, Crafts & Sewing)  #3 in Cross-Stitch Stamped Kits",
+    "Date First Available": "July 21, 2020"
+  },
+  "product_details": {
+    "Brand": "CRAFTILOO",
+    "Age Range (Description)": "8-99",
+    "Color": "Cross Stitch Backpack Charms",
+    "Theme": "Heart , Unicorn , Rainbow , Owl , Cat",
+    "Item dimensions L x W x H": "5.91 x 5.91 x 1.97 inches"
+  },
+  "category_path": [
+    {
+      "id": "2617941011",
+      "name": "Arts, Crafts & Sewing",
+      "link": "https://www.amazon.com/Arts-Crafts-Sewing/b/ref=dp_bc_1?ie=UTF8&node=2617941011"
+    },
+    {
+      "id": "2237329011",
+      "name": "Needlework",
+      "link": "https://www.amazon.com/Needlework-Supplies/b/ref=dp_bc_2?ie=UTF8&node=2237329011"
+    },
+    {
+      "id": "12897241",
+      "name": "Cross-Stitch",
+      "link": "https://www.amazon.com/cross-stitch/b/ref=dp_bc_3?ie=UTF8&node=12897241"
+    },
+    {
+      "id": "262619011",
+      "name": "Stamped Kits",
+      "link": "https://www.amazon.com/stamped-kits/b/ref=dp_bc_4?ie=UTF8&node=262619011"
+    }
+  ],
+  "product_variations": {
+    "color": [
+      {
+        "asin": "B08DDJCQKF",
+        "value": "Cross Stitch Backpack Charms",
+        "photo": "https://m.media-amazon.com/images/I/61JNkSnyzYL.jpg",
+        "is_available": true
+      },
+      {
+        "asin": "B0B18ZRRCQ",
+        "value": "Cats",
+        "photo": "https://m.media-amazon.com/images/I/61F8g30eqyL.jpg",
+        "is_available": true
+      },
+      {
+        "asin": "B08L8BHD4Z",
+        "value": "Superhero",
+        "photo": "https://m.media-amazon.com/images/I/51TtSt5za1L.jpg",
+        "is_available": true
+      },
+      {
+        "asin": "B0B18ZHYKR",
+        "value": "Wild Animals",
+        "photo": "https://m.media-amazon.com/images/I/61AYJeciCpL.jpg",
+        "is_available": true
+      },
+      {
+        "asin": "B0B1935V5N",
+        "value": "Dogs",
+        "photo": "https://m.media-amazon.com/images/I/61mVpeEbrlL.jpg",
+        "is_available": true
+      }
+    ]
+  },
+  "frequently_bought_together": [
+    {
+      "product_title": "This item:  Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+      "product_price": "$19.98",
+      "product_photo": "https://images-na.ssl-images-amazon.com/images/I/913PBQUxprL.jpg"
+    },
+    {
+      "product_title": "EZCRA Beginner Needlepoint Cross Stitch Kit for Kids Ages 5-8 – Easy Embroidery Starter Set with Jumbo Plastic Needles, Pre-Printed Patterns, Instructions – DIY Arts & Crafts Gift for Girls & Boys",
+      "product_price": "$17.99",
+      "product_url": "https://www.amazon.com/dp/B0DFHN42QB",
+      "product_photo": "https://images-na.ssl-images-amazon.com/images/I/81MWFr5E2iL.jpg"
+    },
+    {
+      "product_title": "Pllieay Kids 10-in-1 Cross Stitch Beginner Kit for Kids, Includes Instruction of 10 Different Patterns, 10 Blank Plastic Canvas for Needlework, and 14 Colored Threads, Needlepoint Starter Sewing Set",
+      "product_price": "$13.99",
+      "product_url": "https://www.amazon.com/dp/B0B5XQRT6L",
+      "product_photo": "https://images-na.ssl-images-amazon.com/images/I/81uOZNG7+AL.jpg"
+    }
+  ],
+  "country": "US",
+  "scraped_at": "2026-02-09T09:45:31.178Z"
+}]

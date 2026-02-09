@@ -22,6 +22,49 @@ Creates new project-specific skills in `.claude/skills/[skill-name]/`
 
 ---
 
+## ⚡ Organization Standards (ALWAYS Include in New Skills)
+
+**Every skill MUST include organization standards in its SKILL.md.**
+
+When creating a new skill, add this section after "What This Does":
+
+```markdown
+## ⚡ Organization & Efficiency Standards
+
+**CRITICAL: Follow these standards for EVERY run:**
+
+### File Organization
+```
+{output_location}/
+├── briefs/          # Main outputs (what user reads first)
+├── reports/         # Detailed analysis (subfolders by type)
+├── data/            # Raw data files (subfolders by type)
+├── snapshots/       # Historical/comparison data (if needed)
+├── scripts/         # Automation scripts ONLY
+└── README.md        # Folder guide
+```
+
+### Naming Conventions (STRICT)
+- **Date-based:** `YYYY-MM-DD-{descriptor}.ext`
+- **Subject-based:** `{subject-slug}-YYYY-MM-DD.ext`
+- **Data files:** `{type}-{subject}-YYYY-MM-DD.json`
+
+### Efficiency Targets
+- ✅ <80K tokens per run
+- ✅ <$0.20 cost (if using paid APIs)
+- ✅ <5 minutes execution
+- ✅ Minimal file count
+- ✅ Clean organization
+
+### Forbidden
+- ❌ Root folder dumps
+- ❌ Scripts mixed with outputs
+- ❌ Temp files without cleanup
+- ❌ Ambiguous names
+```
+
+---
+
 ## Process
 
 ### 1. Understand the Skill
