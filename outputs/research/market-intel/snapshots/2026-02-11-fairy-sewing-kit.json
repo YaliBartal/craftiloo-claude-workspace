@@ -1,0 +1,97 @@
+{
+  "date": "2026-02-11",
+  "time": "morning",
+  "run_type": "single_product_analysis",
+  "product": {
+    "asin": "B09WQSBZY7",
+    "title": "Fairy Sewing Kits for Little Girls 5 Easy Projects",
+    "brand": "CRAFTILOO",
+    "bsr": 11722,
+    "bsr_category": "Toys & Games",
+    "category_rank": 11,
+    "category": "Kids' Sewing Kits",
+    "price": 21.98,
+    "retail_price": 24.98,
+    "discount_pct": 12,
+    "reviews": 621,
+    "rating": 4.6,
+    "monthly_sales_estimate": "500+",
+    "in_stock": true,
+    "prime": true
+  },
+  "competitors": [
+    {
+      "asin": "B091GXM2Y6",
+      "brand": "KRAFUN",
+      "title": "My First Sewing Kit",
+      "category_rank": 1,
+      "bsr": 1113,
+      "price": 21.99,
+      "reviews": 3500,
+      "rating": 4.8,
+      "monthly_sales_estimate": "4K+",
+      "threat_level": "high"
+    },
+    {
+      "asin": "B0C2XYP6L3",
+      "brand": "KRAFUN",
+      "title": "Puppy & Kitten Sewing Kit",
+      "category_rank": 2,
+      "bsr": 5207,
+      "price": 21.99,
+      "reviews": 1870,
+      "rating": 4.6,
+      "monthly_sales_estimate": "800+",
+      "threat_level": "high"
+    },
+    {
+      "asin": "B0CYNNT2ZT",
+      "brand": "EZCRA",
+      "title": "Unicorn 4-in-1 Sewing Kit",
+      "category_rank": 3,
+      "bsr": 5470,
+      "price": 16.99,
+      "reviews": 391,
+      "rating": 4.8,
+      "monthly_sales_estimate": "700+",
+      "threat_level": "medium-high"
+    },
+    {
+      "asin": "B0CV1F5CFS",
+      "brand": "KRAFUN",
+      "title": "Sewing Bag Kit",
+      "category_rank": 8,
+      "bsr": 9706,
+      "price": 21.99,
+      "reviews": 592,
+      "rating": 4.7,
+      "monthly_sales_estimate": "800+",
+      "threat_level": "medium"
+    },
+    {
+      "asin": "B0CTTMWXYP",
+      "brand": "Klever Kits",
+      "title": "Unicorn/Mermaid Pillow Kit",
+      "category_rank": 10,
+      "bsr": 9966,
+      "price": 15.99,
+      "reviews": 731,
+      "rating": 4.5,
+      "monthly_sales_estimate": "1K+",
+      "threat_level": "medium"
+    }
+  ],
+  "market_position": {
+    "our_category_rank": 11,
+    "total_competitors_ahead": 10,
+    "main_threat": "KRAFUN",
+    "price_position": "mid-range",
+    "rating_gap": -0.2
+  },
+  "apify_usage": {
+    "run_id": "i4TTuc7urzWPOnkpK",
+    "dataset_id": "obebmZxe4V0Z2BHeG",
+    "products_scraped": 6,
+    "estimated_cost_usd": 0.01
+  }
+}
