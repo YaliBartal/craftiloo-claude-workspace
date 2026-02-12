@@ -1,0 +1,194 @@
+{
+  "date": "2026-02-11",
+  "time": "morning",
+  "source": "felt/amazon-product-scraper",
+  "hero_products": {
+    "B09THLVFZK": {
+      "title": "24,000 Mini Fuse Beads Kit 48 Colors",
+      "price": 32.98,
+      "rating": 4.7,
+      "sales": 500,
+      "category": "Arts, Crafts & Sewing",
+      "five_star_pct": 82
+    },
+    "B0DC69M3YD": {
+      "title": "4 Pack Embroidery Kit for Beginners",
+      "price": 24.98,
+      "rating": 4.5,
+      "sales": 100,
+      "category": "Arts, Crafts & Sewing",
+      "five_star_pct": 75
+    },
+    "B08DDJCQKF": {
+      "title": "Cross Stitch Kits For Beginners - 5 Stamped",
+      "price": 19.98,
+      "rating": 4.5,
+      "sales": 800,
+      "category": "Arts, Crafts & Sewing",
+      "five_star_pct": 74
+    },
+    "B09X55KL2C": {
+      "title": "10 Pre-Stamped Embroidery Patterns for Kids",
+      "price": 26.98,
+      "rating": 4.5,
+      "sales": 300,
+      "category": "Arts, Crafts & Sewing",
+      "five_star_pct": 75
+    },
+    "B0F8DG32H5": {
+      "title": "Knitting Kit for Kids - Hat & Cat",
+      "price": 26.98,
+      "rating": 4.6,
+      "sales": 100,
+      "category": "Arts, Crafts & Sewing",
+      "five_star_pct": 82
+    },
+    "B0F8R652FX": {
+      "title": "Latch Hook Kit Rainbow Heart Pillow",
+      "price": 24.98,
+      "rating": 4.4,
+      "sales": 200,
+      "category": "Arts, Crafts & Sewing",
+      "five_star_pct": 74
+    },
+    "B08FYH13CL": {
+      "title": "DIY 2 Rug Pencil Cases Latch Hook Kits",
+      "price": 19.98,
+      "rating": 4.4,
+      "sales": 100,
+      "category": "Arts, Crafts & Sewing",
+      "five_star_pct": 72
+    },
+    "B09WQSBZY7": {
+      "title": "Fairy Sewing Kits for Little Girls",
+      "price": 21.98,
+      "rating": 4.6,
+      "sales": 500,
+      "category": "Toys & Games",
+      "five_star_pct": 80
+    },
+    "B0FQC7YFX6": {
+      "title": "Princess Lacing Card Kit for Kids",
+      "price": 19.98,
+      "rating": 4.7,
+      "sales": 100,
+      "category": "Arts, Crafts & Sewing",
+      "five_star_pct": 78
+    },
+    "B09HVSLBS6": {
+      "title": "Pre Printed Needlepoint Wallet Kit Cat",
+      "price": 17.98,
+      "rating": 4.2,
+      "sales": 100,
+      "category": "Arts, Crafts & Sewing",
+      "five_star_pct": 61
+    },
+    "B096MYBLS1": {
+      "title": "12 Pre-Cut Mini Treats Dessert Sewing Kit",
+      "price": 22.98,
+      "rating": 4.6,
+      "sales": 100,
+      "category": "Toys & Games",
+      "five_star_pct": 77
+    },
+    "B07D6D95NG": {
+      "title": "Fuse Beads kit 1500 Large 10MM",
+      "price": 24.98,
+      "rating": 4.1,
+      "sales": 100,
+      "category": "Arts, Crafts & Sewing",
+      "five_star_pct": 63
+    },
+    "B0F6YTG1CH": {
+      "title": "My First Cross Stitch Kit Ages 6-12",
+      "price": 19.98,
+      "rating": 4.8,
+      "sales": 50,
+      "category": "Arts, Crafts & Sewing",
+      "five_star_pct": 83
+    }
+  },
+  "competitors": {
+    "B08T5QC9FS": {
+      "brand": "Pllieay",
+      "title": "Cross Stitch Beginner Kit 6pcs",
+      "price": 11.99,
+      "rating": 4.2,
+      "sales": 100,
+      "category": "Cross Stitch"
+    },
+    "B087DYHMZ2": {
+      "brand": "CraftLab",
+      "title": "Embroidery Sewing Kit 10 Projects",
+      "price": 29.97,
+      "rating": 4.5,
+      "sales": 100,
+      "category": "Embroidery Kids"
+    },
+    "B0CZHKSSL4": {
+      "brand": "CYANFOUR",
+      "title": "Embroidery Kit 4 Stages 38 Stitches",
+      "price": 14.99,
+      "rating": 4.4,
+      "sales": 7000,
+      "category": "Embroidery Adults"
+    },
+    "B091GXM2Y6": {
+      "brand": "KRAFUN",
+      "title": "My First Sewing Kit 7 Projects",
+      "price": 21.99,
+      "rating": 4.8,
+      "sales": 4000,
+      "category": "Sewing Kids"
+    },
+    "B0C5WQD914": {
+      "brand": "INSCRAFT",
+      "title": "28,000 Mini Fuse Beads 48 Colors",
+      "price": 28.98,
+      "rating": 4.5,
+      "sales": 500,
+      "category": "Mini Fuse Beads"
+    },
+    "B06XRRN4VL": {
+      "brand": "LatchKits",
+      "title": "Latch Hook Unicorn",
+      "price": 16.96,
+      "rating": 4.6,
+      "sales": 300,
+      "category": "Latch Hook"
+    },
+    "B004JIFCXO": {
+      "brand": "Creativity for Kids",
+      "title": "Quick Knit Loom Kit",
+      "price": 11.99,
+      "rating": 4.5,
+      "sales": 300,
+      "category": "Loom Knitting"
+    },
+    "B00JM5G05I": {
+      "brand": "Melissa & Doug",
+      "title": "Alphabet Wooden Lacing Cards",
+      "price": 25.49,
+      "rating": 4.8,
+      "sales": 300,
+      "category": "Lacing Cards"
+    }
+  },
+  "alerts": [
+    {
+      "severity": "high",
+      "category": "Adult Embroidery",
+      "message": "CYANFOUR dominating with 7000 sales vs our 100"
+    },
+    {
+      "severity": "high",
+      "category": "Kids Sewing",
+      "message": "KRAFUN dominating with 4000 sales vs our 500"
+    },
+    {
+      "severity": "medium",
+      "category": "Mini Fuse Beads",
+      "message": "INSCRAFT offering better value (28K beads at $28.98 vs our 24K at $32.98)"
+    }
+  ]
+}

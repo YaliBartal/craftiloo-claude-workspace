@@ -1,0 +1,220 @@
+{
+  "baseline_date": "2026-02-11",
+  "source": "saswave/amazon-product-scraper",
+  "note": "This is the baseline. All future reports compare against these BSR numbers.",
+  "hero_products": {
+    "B08DDJCQKF": {
+      "name": "Cross Stitch Kit - Girls",
+      "bsr": 3953,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 1,
+      "subcategory": "Cross-Stitch Stamped Kits",
+      "reviews": 1280,
+      "rating": 4.5,
+      "price": 19.98
+    },
+    "B0F6YTG1CH": {
+      "name": "My First Cross Stitch",
+      "bsr": 36552,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 18,
+      "subcategory": "Cross-Stitch Counted Kits",
+      "reviews": 40,
+      "rating": 4.8,
+      "price": 16.81
+    },
+    "B09X55KL2C": {
+      "name": "10 Embroidery Patterns",
+      "bsr": 13692,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 49,
+      "subcategory": "Embroidery Kits",
+      "reviews": 695,
+      "rating": 4.5,
+      "price": 22.70
+    },
+    "B0DC69M3YD": {
+      "name": "4 Embroidery Flowers (Adults)",
+      "bsr": 19016,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 67,
+      "subcategory": "Embroidery Kits",
+      "reviews": 659,
+      "rating": 4.5,
+      "price": 21.02
+    },
+    "B09WQSBZY7": {
+      "name": "Fairy Sewing Kit",
+      "bsr": 11717,
+      "bsr_category": "Toys & Games",
+      "subcategory_rank": 11,
+      "subcategory": "Kids' Sewing Kits",
+      "reviews": 621,
+      "rating": 4.6,
+      "price": 21.98
+    },
+    "B096MYBLS1": {
+      "name": "Dessert Sewing Kit",
+      "bsr": 68237,
+      "bsr_category": "Toys & Games",
+      "subcategory_rank": 57,
+      "subcategory": "Kids' Felt Craft Kits",
+      "reviews": 266,
+      "rating": 4.6,
+      "price": 19.33
+    },
+    "B08FYH13CL": {
+      "name": "Latch Hook Pencil Cases",
+      "bsr": 26147,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 19,
+      "subcategory": "Latch Hook Kits",
+      "reviews": 495,
+      "rating": 4.4,
+      "price": 16.81
+    },
+    "B0F8R652FX": {
+      "name": "Latch Hook Rainbow Heart",
+      "bsr": 13927,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 6,
+      "subcategory": "Latch Hook Kits",
+      "reviews": 43,
+      "rating": 4.4,
+      "price": 21.02
+    },
+    "B0F8DG32H5": {
+      "name": "Knitting Kit - Cat & Hat",
+      "bsr": 21999,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 30,
+      "subcategory": "Knitting Kits",
+      "reviews": 76,
+      "rating": 4.6,
+      "price": 22.70
+    },
+    "B09THLVFZK": {
+      "name": "Mini Fuse Beads 48 Colors",
+      "bsr": 5856,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 10,
+      "subcategory": "Fuse & Perler Beads",
+      "reviews": 2971,
+      "rating": 4.7,
+      "price": 32.98
+    },
+    "B07D6D95NG": {
+      "name": "10mm Big Fuse Beads",
+      "bsr": 24581,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 46,
+      "subcategory": "Fuse & Perler Beads",
+      "reviews": 103,
+      "rating": 4.1,
+      "price": 21.02
+    },
+    "B0FQC7YFX6": {
+      "name": "Princess Lacing Card Kit",
+      "bsr": 27265,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 25,
+      "subcategory": "Card Making Kits",
+      "reviews": 32,
+      "rating": 4.7,
+      "price": 16.81
+    },
+    "B09HVSLBS6": {
+      "name": "Needlepoint Cat Wallet",
+      "bsr": 24129,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 79,
+      "subcategory": "Sewing Project Kits",
+      "reviews": 173,
+      "rating": 4.2,
+      "price": 15.13
+    }
+  },
+  "competitors": {
+    "B08T5QC9FS": {
+      "name": "Pllieay Cross Stitch",
+      "brand": "Pllieay",
+      "bsr": 20832,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 13,
+      "subcategory": "Cross-Stitch Stamped Kits",
+      "reviews": 1042,
+      "rating": 4.6
+    },
+    "B087DYHMZ2": {
+      "name": "CraftLab Embroidery",
+      "brand": "CraftLab",
+      "bsr": 5063,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 18,
+      "subcategory": "Embroidery Kits",
+      "reviews": 1330,
+      "rating": 4.5
+    },
+    "B0CZHKSSL4": {
+      "name": "CYANFOUR Embroidery",
+      "brand": "CYANFOUR",
+      "bsr": 18298,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 1,
+      "subcategory": "Embroidery Kits",
+      "reviews": 117,
+      "rating": 4.6
+    },
+    "B091GXM2Y6": {
+      "name": "KRAFUN Sewing Kit",
+      "brand": "KRAFUN",
+      "bsr": 1112,
+      "bsr_category": "Toys & Games",
+      "subcategory_rank": 1,
+      "subcategory": "Kids' Sewing Kits",
+      "reviews": 7649,
+      "rating": 4.6
+    },
+    "B06XRRN4VL": {
+      "name": "LatchKits Latch Hook",
+      "brand": "LatchKits",
+      "bsr": 9649,
+      "bsr_category": "Toys & Games",
+      "subcategory_rank": 17,
+      "subcategory": "Latch & Rug Hook Kits",
+      "reviews": 1687,
+      "rating": 4.6
+    },
+    "B0C5WQD914": {
+      "name": "INSCRAFT Mini Fuse Beads",
+      "brand": "INSCRAFT",
+      "bsr": 10497,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 21,
+      "subcategory": "Fuse & Perler Beads",
+      "reviews": 385,
+      "rating": 4.5
+    },
+    "B00JM5G05I": {
+      "name": "Melissa & Doug Lacing Cards",
+      "brand": "Melissa & Doug",
+      "bsr": 23218,
+      "bsr_category": "Toys & Games",
+      "subcategory_rank": 168,
+      "subcategory": "Educational Flash Cards",
+      "reviews": 1032,
+      "rating": 4.8
+    },
+    "B004JIFCXO": {
+      "name": "Creativity for Kids Quick Knit Loom",
+      "brand": "Creativity for Kids",
+      "bsr": null,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": null,
+      "subcategory": "Knitting Kits",
+      "reviews": 3325,
+      "rating": 4.5,
+      "note": "BSR data not returned by scraper"
+    }
+  }
+}

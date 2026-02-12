@@ -1,0 +1,29 @@
+{
+  "date": "2026-02-12",
+  "source": "saswave/amazon-product-scraper",
+  "hero_products": {
+    "B08DDJCQKF": { "name": "Cross Stitch Girls", "bsr": 4118, "subcategory_rank": 1, "subcategory": "Cross-Stitch Stamped Kits", "reviews": 1281, "rating": 4.5 },
+    "B09THLVFZK": { "name": "Mini Fuse Beads 48", "bsr": 5882, "subcategory_rank": 10, "subcategory": "Fuse & Perler Beads", "reviews": 2971, "rating": 4.7 },
+    "B09WQSBZY7": { "name": "Fairy Sewing Kit", "bsr": 12040, "subcategory_rank": 11, "subcategory": "Kids' Sewing Kits", "reviews": 621, "rating": 4.6 },
+    "B09X55KL2C": { "name": "10 Embroidery Patterns", "bsr": 13646, "subcategory_rank": 47, "subcategory": "Embroidery Kits", "reviews": 695, "rating": 4.5 },
+    "B0F8R652FX": { "name": "Latch Hook Rainbow Heart", "bsr": 15808, "subcategory_rank": 7, "subcategory": "Latch Hook Kits", "reviews": 43, "rating": 4.4 },
+    "B0DC69M3YD": { "name": "4 Embroidery Flowers", "bsr": 20718, "subcategory_rank": 75, "subcategory": "Embroidery Kits", "reviews": 661, "rating": 4.6 },
+    "B0F8DG32H5": { "name": "Knitting Cat & Hat", "bsr": 22417, "subcategory_rank": 31, "subcategory": "Knitting Kits", "reviews": 76, "rating": 4.6 },
+    "B0FQC7YFX6": { "name": "Princess Lacing Card", "bsr": 24350, "subcategory_rank": 20, "subcategory": "Card Making Kits", "reviews": 32, "rating": 4.7 },
+    "B07D6D95NG": { "name": "10mm Big Fuse Beads", "bsr": 24575, "subcategory_rank": 42, "subcategory": "Fuse & Perler Beads", "reviews": 103, "rating": 4.1 },
+    "B08FYH13CL": { "name": "Latch Hook Pencil Cases", "bsr": 29607, "subcategory_rank": 20, "subcategory": "Latch Hook Kits", "reviews": 495, "rating": 4.4 },
+    "B09HVSLBS6": { "name": "Needlepoint Cat Wallet", "bsr": 32511, "subcategory_rank": 101, "subcategory": "Sewing Project Kits", "reviews": 173, "rating": 4.2 },
+    "B0F6YTG1CH": { "name": "My First Cross Stitch", "bsr": 46541, "subcategory_rank": 24, "subcategory": "Cross-Stitch Counted Kits", "reviews": 40, "rating": 4.8 },
+    "B096MYBLS1": { "name": "Dessert Sewing Kit", "bsr": 59631, "subcategory_rank": 56, "subcategory": "Kids' Felt Craft Kits", "reviews": 266, "rating": 4.6 }
+  },
+  "competitors": {
+    "B0CZHKSSL4": { "name": "CYANFOUR Embroidery", "bsr": 343, "subcategory_rank": 2, "subcategory": "Embroidery Kits", "reviews": 1216, "rating": 4.4 },
+    "B091GXM2Y6": { "name": "KRAFUN Sewing Kit", "bsr": 933, "subcategory_rank": 1, "subcategory": "Kids' Sewing Kits", "reviews": 3504, "rating": 4.8 },
+    "B06XRRN4VL": { "name": "LatchKits", "bsr": 6246, "subcategory_rank": 2, "subcategory": "Latch Hook Kits", "reviews": 7295, "rating": 4.6 },
+    "B0C5WQD914": { "name": "INSCRAFT Mini Fuse Beads", "bsr": 9259, "subcategory_rank": 16, "subcategory": "Fuse & Perler Beads", "reviews": 385, "rating": 4.5 },
+    "B08T5QC9FS": { "name": "Pllieay Cross Stitch", "bsr": 22242, "subcategory_rank": 87, "subcategory": "Embroidery Kits", "reviews": 1350, "rating": 4.2 },
+    "B00JM5G05I": { "name": "Melissa & Doug Lacing Cards", "bsr": 22241, "subcategory_rank": 161, "subcategory": "Educational Flash Cards", "reviews": 1032, "rating": 4.8 },
+    "B087DYHMZ2": { "name": "CraftLab Embroidery", "bsr": 34007, "subcategory_rank": 132, "subcategory": "Embroidery Kits", "reviews": 616, "rating": 4.5 },
+    "B004JIFCXO": { "name": "Creativity for Kids Knit Loom", "bsr": null, "subcategory_rank": null, "subcategory": "N/A", "reviews": 3325, "rating": 4.5 }
+  }
+}
