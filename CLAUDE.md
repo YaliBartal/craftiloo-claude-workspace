@@ -140,6 +140,9 @@ Claude Code Workspace/
 │       ├── skill-creator/ # Create new skills
 │       ├── mcp-builder/   # Add/build MCP connections
 │       ├── daily-prep/    # Daily task analysis
+│       ├── daily-market-intel/  # Morning market intelligence
+│       ├── listing-creator/     # Amazon listing generator
+│       ├── image-planner/       # Product image strategy planner
 │       └── automation-discovery-interview/  # 30-40 min workflow audit
 │
 ├── context/               # Persistent context files
@@ -164,6 +167,9 @@ Claude Code Workspace/
 | "Add an MCP" / "Connect to API" | → `.claude/skills/mcp-builder/` |
 | "Start my day" / "Daily prep" | → `.claude/skills/daily-prep/` |
 | "Automation audit" / "Map my workflows" | → `.claude/skills/automation-discovery-interview/` |
+| "Market check" / "Product pulse" | → `.claude/skills/daily-market-intel/` |
+| "Create a listing" / "Amazon listing" | → `.claude/skills/listing-creator/` |
+| "Image plan" / "Plan my images" | → `.claude/skills/image-planner/` |
 
 **New skills** → Always save to `.claude/skills/[skill-name]/SKILL.md` (project-local, not global)
 
