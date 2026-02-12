@@ -25,5 +25,134 @@
     "B00JM5G05I": { "name": "Melissa & Doug Lacing Cards", "bsr": 22241, "subcategory_rank": 161, "subcategory": "Educational Flash Cards", "reviews": 1032, "rating": 4.8 },
     "B087DYHMZ2": { "name": "CraftLab Embroidery", "bsr": 34007, "subcategory_rank": 132, "subcategory": "Embroidery Kits", "reviews": 616, "rating": 4.5 },
     "B004JIFCXO": { "name": "Creativity for Kids Knit Loom", "bsr": null, "subcategory_rank": null, "subcategory": "N/A", "reviews": 3325, "rating": 4.5 }
+  },
+  "keyword_rankings": {
+    "kids cross stitch kit": {
+      "volume": 6299,
+      "our_products": [
+        { "asin": "B08DDJCQKF", "name": "Cross Stitch Girls", "position": 1 },
+        { "asin": "B0F6YTG1CH", "name": "My First Cross Stitch", "position": 5 },
+        { "asin": "B09X55KL2C", "name": "10 Embroidery Patterns", "position": 14 }
+      ],
+      "competitors": [
+        { "asin": "B08T5QC9FS", "name": "Pllieay Cross Stitch", "position": 4 },
+        { "asin": "B087DYHMZ2", "name": "CraftLab Embroidery", "position": 43 }
+      ]
+    },
+    "embroidery kit for kids": {
+      "volume": 13067,
+      "our_products": [
+        { "asin": "B09X55KL2C", "name": "10 Embroidery Patterns", "position": 1 },
+        { "asin": "B08DDJCQKF", "name": "Cross Stitch Girls", "position": 2 }
+      ],
+      "competitors": [
+        { "asin": "B087DYHMZ2", "name": "CraftLab Embroidery", "position": 10 },
+        { "asin": "B08T5QC9FS", "name": "Pllieay Cross Stitch", "position": 16 }
+      ]
+    },
+    "embroidery kit for beginners": {
+      "volume": 103524,
+      "our_products": [
+        { "asin": "B0DC69M3YD", "name": "4 Embroidery Flowers", "position": null }
+      ],
+      "competitors": [
+        { "asin": "B0CZHKSSL4", "name": "CYANFOUR Embroidery", "position": 3 }
+      ]
+    },
+    "embroidery kits for adults": {
+      "volume": 32929,
+      "our_products": [
+        { "asin": "B0DC69M3YD", "name": "4 Embroidery Flowers", "position": null }
+      ],
+      "competitors": [
+        { "asin": "B0CZHKSSL4", "name": "CYANFOUR Embroidery", "position": 5 }
+      ]
+    },
+    "sewing kit for kids": {
+      "volume": 20874,
+      "our_products": [
+        { "asin": "B09WQSBZY7", "name": "Fairy Sewing Kit", "position": 4 }
+      ],
+      "competitors": [
+        { "asin": "B091GXM2Y6", "name": "KRAFUN Sewing Kit", "position": 1 }
+      ]
+    },
+    "kids sewing kit": {
+      "volume": 8940,
+      "our_products": [
+        { "asin": "B09WQSBZY7", "name": "Fairy Sewing Kit", "position": 7 },
+        { "asin": "B096MYBLS1", "name": "Dessert Sewing Kit", "position": 26 }
+      ],
+      "competitors": [
+        { "asin": "B091GXM2Y6", "name": "KRAFUN Sewing Kit", "position": 1 }
+      ]
+    },
+    "latch hook kits for kids": {
+      "volume": 16625,
+      "our_products": [
+        { "asin": "B0F8R652FX", "name": "Latch Hook Rainbow Heart", "position": 10 },
+        { "asin": "B08FYH13CL", "name": "Latch Hook Pencil Cases", "position": 14 }
+      ],
+      "competitors": [
+        { "asin": "B06XRRN4VL", "name": "LatchKits", "position": 1 }
+      ]
+    },
+    "latch kits": {
+      "volume": 1183,
+      "our_products": [
+        { "asin": "B0F8R652FX", "name": "Latch Hook Rainbow Heart", "position": 8 }
+      ],
+      "competitors": [
+        { "asin": "B06XRRN4VL", "name": "LatchKits", "position": 2 }
+      ]
+    },
+    "mini perler beads": {
+      "volume": 3242,
+      "our_products": [
+        { "asin": "B09THLVFZK", "name": "Mini Fuse Beads 48", "position": 1 }
+      ],
+      "competitors": [
+        { "asin": "B0C5WQD914", "name": "INSCRAFT Mini Fuse Beads", "position": 3 }
+      ]
+    },
+    "mini fuse beads": {
+      "volume": 2199,
+      "our_products": [
+        { "asin": "B09THLVFZK", "name": "Mini Fuse Beads 48", "position": 1 }
+      ],
+      "competitors": [
+        { "asin": "B0C5WQD914", "name": "INSCRAFT Mini Fuse Beads", "position": 4 }
+      ]
+    },
+    "loom knitting kit": {
+      "volume": 8102,
+      "our_products": [],
+      "competitors": [],
+      "note": "Scraper returned empty results"
+    },
+    "knitting kit for kids": {
+      "volume": 2699,
+      "our_products": [
+        { "asin": "B0F8DG32H5", "name": "Knitting Cat & Hat", "position": 6 }
+      ],
+      "competitors": [
+        { "asin": "B004JIFCXO", "name": "Creativity for Kids Knit Loom", "position": 3 }
+      ]
+    },
+    "lacing cards": {
+      "volume": 4524,
+      "our_products": [],
+      "competitors": [],
+      "note": "Scraper returned empty results"
+    },
+    "lacing cards for kids ages 3-5": {
+      "volume": 3510,
+      "our_products": [
+        { "asin": "B0FQC7YFX6", "name": "Princess Lacing Card", "position": null }
+      ],
+      "competitors": [
+        { "asin": "B00JM5G05I", "name": "Melissa & Doug Lacing Cards", "position": 1 }
+      ]
+    }
   }
 }
