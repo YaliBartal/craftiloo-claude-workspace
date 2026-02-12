@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automation Discovery Dashboard - Yalmi LLC</title>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tab-active { border-bottom: 3px solid; }
+    .card-expand { transition: max-height 0.3s ease-out; overflow: hidden; }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const dashboardData = {
+      overview: {
+        role: "Owner/Manager - Yalmi LLC (Craftiloo & ShinShin Creation)",
+        timeMapped: "46 hrs/week",
+        workflowsAnalyzed: 13,
+        keyFinding: "43% of your time (20 hrs/week) goes to Slack/chat. You're the approval bottleneck in multiple workflows. Your incoming brand manager can absorb 10+ hrs/week of delegation-ready tasks."
+      },
+
+      timeBreakdown: [
+        {
+          responsibility: "Slack/Chat with Employees & Suppliers",
+          timePerWeek: "20 hrs",
+          frequency: "Daily",
+          complexity: "High"
+        },
+        {
+          responsibility: "Shipments + Inspections",
+          timePerWeek: "4 hrs",
+          frequency: "Monthly burst",
+          complexity: "Medium"
+        },
+        {
+          responsibility: "Reviewing Assignments (Asana/Monday)",
+          timePerWeek: "4 hrs",
+          frequency: "Weekly",
+          complexity: "Medium"
+        },
+        {
+          responsibility: "Daily Account Check + Market Intel",
+          timePerWeek: "2.5 hrs",
+          frequency: "Daily",
+          complexity: "High"
+        },
+        {
+          responsibility: "Brand Comply (Mattel Licensing)",
+          timePerWeek: "2.5 hrs",
+          frequency: "Daily",
+          complexity: "Low"
+        },
+        {
+          responsibility: "Email Correspondence",
+          timePerWeek: "2.5 hrs",
+          frequency: "Daily",
+          complexity: "Medium"
+        },
+        {
+          responsibility: "Payments (Suppliers, Salaries)",
+          timePerWeek: "2 hrs",
+          frequency: "Weekly",
+          complexity: "Low"
+        },
+        {
+          responsibility: "Inventory + PO Management",
+          timePerWeek: "2 hrs",
+          frequency: "Monthly",
+          complexity: "Medium"
+        },
+        {
+          responsibility: "B&N Orders",
+          timePerWeek: "2 hrs",
+          frequency: "Variable",
+          complexity: "Medium"
+        },
+        {
+          responsibility: "Video Review",
+          timePerWeek: "2 hrs",
+          frequency: "Variable",
+          complexity: "Medium"
+        },
+        {
+          responsibility: "Hands-on Work (Design, Sewing, Photos)",
+          timePerWeek: "2 hrs",
+          frequency: "Weekly",
+          complexity: "High"
+        },
+        {
+          responsibility: "Content Uploads (Shopify/Mattel)",
+          timePerWeek: "0.5 hrs",
+          frequency: "Monthly",
+          complexity: "Low"
+        },
+        {
+          responsibility: "Accountant Coordination",
+          timePerWeek: "0.5 hrs",
+          frequency: "Monthly",
+          complexity: "Low"
+        }
+      ],
+
+      advisorLevel: [
+        {
+          workflow: "Daily Account Check + Strategic Decisions",
+          why: "Requires synthesizing sales data, profit margins, ad spend, and market position to make nuanced business decisions",
+          whatToBuild: "Keep using Claude as thinking partner. Market intel skill already gathering data. Add prompts for decision frameworks (when to add coupons, when to liquidate, PPC budget rules of thumb)",
+          implementation: [
+            "Continue refining daily-market-intel skill for data gathering",
+            "Create decision prompt templates: 'Given this data, should I...'",
+            "Document your decision patterns over time to build intuition library"
+          ],
+          impact: "Better decisions, not time savings. This work should stay with you."
+        },
+        {
+          workflow: "New Product Concept Development",
+          why: "Creative direction requires your business vision, market intuition, and brand positioning knowledge",
+          whatToBuild: "Use Claude for market research (already doing this), competitor analysis, and concept validation. Keep creative direction conversations with designers.",
+          implementation: [
+            "Create product concept brief template with standard sections",
+            "Use Claude to pre-research market gaps before designer conversations",
+            "Document successful product patterns for future reference"
+          ],
+          impact: "Faster concept development, but chat time with designers remains (and that's okay)"
+        },
+        {
+          workflow: "Design Evaluation & Feedback",
+          why: "Currently requires your eye for quality and brand consistency",
+          whatToBuild: "Create design guidelines document with 'good vs not good' examples. Over time, this enables delegation.",
+          implementation: [
+            "Document 10-15 examples of approved vs rejected designs with reasons",
+            "Create checklist: product prominence, color requirements, text placement rules",
+            "Train creative manager to do first-pass review using guidelines"
+          ],
+          impact: "Eventually reduce your involvement to final approval only. Short-term: 1-2 hrs to create guidelines."
+        }
+      ],
+
+      assistantLevel: [
+        {
+          workflow: "Inventory Management + PO Creation",
+          why: "Monthly process with clear structure: check inventory levels, calculate reorder quantities, generate PO",
+          whatToBuild: "Claude Skill that pulls inventory data, calculates reorder points based on sales velocity, and drafts PO for your review",
+          implementation: [
+            "Document your reorder logic (safety stock levels, lead times per supplier)",
+            "Create skill that connects to Seller Board/Data Dive for inventory data",
+            "Skill outputs: 'Products to reorder' list with quantities and draft PO"
+          ],
+          impact: "Reduce 8 hrs/month to 1-2 hrs/month (review + approve)"
+        },
+        {
+          workflow: "Supplier Decision Guidelines",
+          why: "Production issues and acceptance decisions follow patterns that can be documented",
+          whatToBuild: "Decision matrix document + train brand manager to handle routine decisions",
+          implementation: [
+            "Document acceptance criteria: functionality defects = reject, cosmetic <5% = accept with discount",
+            "Create escalation rules: when to involve you vs. decide independently",
+            "Give brand manager authority for routine approvals"
+          ],
+          impact: "Reduce supplier chat by 3-5 hrs/week once brand manager is trained"
+        },
+        {
+          workflow: "Shipment Decision Framework",
+          why: "AWD vs FBA decision is rule-based: urgent + good seller = FBA, else AWD",
+          whatToBuild: "Decision flowchart + investigate Amazon permissions workaround",
+          implementation: [
+            "Document the decision tree formally",
+            "Research Amazon sub-account permissions for AWD access",
+            "If permissions available, train employee on decision framework"
+          ],
+          impact: "Could delegate 2-3 hrs/week if permission issue resolved"
+        },
+        {
+          workflow: "Design Feedback Templates",
+          why: "A+ content and listing images follow patterns that can be templated",
+          whatToBuild: "Template library with pre-approved layouts, reducing back-and-forth",
+          implementation: [
+            "Audit last 20 approved designs, identify common patterns",
+            "Create 5-7 reusable templates for A+ content layouts",
+            "Designer uses templates as starting point, reducing iterations"
+          ],
+          impact: "Reduce design chat by 2-3 hrs/week"
+        }
+      ],
+
+      automationLevel: [
+        {
+          workflow: "Brand Comply Follow-up Reminders",
+          why: "When correction is pending >48 hrs, you manually remind designer. This is time-based and deterministic.",
+          whatToBuild: "Simple automation: if Brand Comply item pending >48 hrs, send Slack reminder to designer",
+          implementation: [
+            "Check if Brand Comply has API or email notifications",
+            "If yes: n8n workflow triggered by pending status",
+            "If no: calendar-based reminder system as fallback"
+          ],
+          impact: "Saves mental overhead of tracking pending items. ~30 min/week."
+        }
+      ],
+
+      quickWins: [
+        { action: "Write supplier acceptance criteria (1 page)", tool: "Google Doc or Notion" },
+        { action: "Document AWD vs FBA decision rules", tool: "Simple flowchart" },
+        { action: "Create first design guidelines doc with 5 good/bad examples", tool: "Google Doc with screenshots" },
+        { action: "Brief brand manager on Brand Comply upload process", tool: "30-min training session" },
+        { action: "Review B&N Notion page with brand manager", tool: "Already documented - just delegate" }
+      ],
+
+      notReady: [
+        { workflow: "Full Slack Reduction", reason: "Creative direction requires real-time collaboration. Focus on reducing operational chat, not creative chat." },
+        { workflow: "Payment Automation", reason: "Security and access limitations. Keep as-is unless you find a trusted payment delegate." },
+        { workflow: "AWD Screen Access Delegation", reason: "Amazon platform limitation. Research workarounds but may not be solvable." },
+        { workflow: "Automated Design Approval", reason: "Too judgment-heavy. First create guidelines, then delegate to human, then maybe AI-assist later." }
+      ],
+
+      nextSteps: {
+        thisWeek: "Write supplier acceptance criteria and AWD/FBA decision rules. Brief brand manager on Brand Comply process. These 3 actions can free up 5+ hrs/week once brand manager is onboarded.",
+        thisMonth: "Build inventory management skill (Claude + Seller Board data). Create design guidelines document with good/bad examples. Train brand manager on B&N orders (already documented in Notion).",
+        thisQuarter: "Investigate Brand Comply API for automated reminders. Evaluate if brand manager can take over supplier communication fully. Research Amazon sub-account permissions for AWD access."
+      }
+    };
+
+    function App() {
+      const [activeTab, setActiveTab] = React.useState('overview');
+      const [expandedCards, setExpandedCards] = React.useState({});
+
+      const toggleCard = (id) => {
+        setExpandedCards(prev => ({ ...prev, [id]: !prev[id] }));
+      };
+
+      const tabs = [
+        { id: 'overview', label: 'Overview', icon: '📊' },
+        { id: 'advisor', label: 'Advisor', icon: '🎯', color: 'blue' },
+        { id: 'assistant', label: 'Assistant', icon: '🛠️', color: 'green' },
+        { id: 'automation', label: 'Automation', icon: '⚡', color: 'orange' },
+        { id: 'delegation', label: 'Delegation', icon: '👥', color: 'purple' },
+        { id: 'roadmap', label: 'Roadmap', icon: '🗺️' }
+      ];
+
+      const WorkflowCard = ({ item, color, index }) => {
+        const id = `${color}-${index}`;
+        const isExpanded = expandedCards[id];
+        const colorClasses = {
+          blue: 'border-blue-500 bg-blue-50',
+          green: 'border-green-500 bg-green-50',
+          orange: 'border-orange-500 bg-orange-50',
+          purple: 'border-purple-500 bg-purple-50'
+        };
+
+        return (
+          <div className={`border-l-4 ${colorClasses[color]} p-4 rounded-r-lg mb-4`}>
+            <div
+              className="flex justify-between items-start cursor-pointer"
+              onClick={() => toggleCard(id)}
+            >
+              <div>
+                <h3 className="font-semibold text-lg">{item.workflow}</h3>
+                <p className="text-gray-600 text-sm mt-1">{item.why}</p>
+              </div>
+              <span className="text-xl">{isExpanded ? '−' : '+'}</span>
+            </div>
+
+            {isExpanded && (
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <div className="mb-3">
+                  <span className="font-medium">What to Build:</span>
+                  <p className="text-gray-700">{item.whatToBuild}</p>
+                </div>
+                <div className="mb-3">
+                  <span className="font-medium">Implementation:</span>
+                  <ol className="list-decimal list-inside text-gray-700 mt-1">
+                    {item.implementation.map((step, i) => (
+                      <li key={i} className="ml-2">{step}</li>
+                    ))}
+                  </ol>
+                </div>
+                <div className="bg-white p-2 rounded inline-block">
+                  <span className="font-medium">Impact:</span> {item.impact}
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      };
+
+      const DelegationCard = ({ title, items, color }) => {
+        return (
+          <div className={`bg-white p-6 rounded-xl shadow-sm mb-6`}>
+            <h3 className="font-semibold text-lg mb-4">{title}</h3>
+            <div className="space-y-3">
+              {items.map((item, i) => (
+                <div key={i} className={`p-4 rounded-lg border-l-4 ${color}`}>
+                  <div className="font-medium">{item.task}</div>
+                  <div className="text-gray-600 text-sm mt-1">{item.delegateTo}</div>
+                  <div className="text-gray-500 text-sm mt-2">{item.notes}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      };
+
+      const delegationTasks = {
+        brandManager: [
+          { task: "Brand Comply uploads & coordination", delegateTo: "Brand Manager", notes: "Relay work between designer and Mattel. No judgment needed - just upload, share feedback, re-upload." },
+          { task: "B&N order processing", delegateTo: "Brand Manager", notes: "Already documented in Notion. Train on the process and delegate fully." },
+          { task: "Video review (first pass)", delegateTo: "Brand Manager", notes: "Criteria: good English, good quality. You do final approval only for edge cases." },
+          { task: "Supplier communication (routine)", delegateTo: "Brand Manager", notes: "With decision guidelines doc. Escalate complex issues to you." },
+          { task: "Forwarder ID communication", delegateTo: "Brand Manager", notes: "Copy/paste task. Just needs the information." }
+        ],
+        creativeManager: [
+          { task: "Design review (first pass)", delegateTo: "Creative Manager", notes: "Once design guidelines doc is created, she can do first-pass review against checklist." }
+        ]
+      };
+
+      return (
+        <div className="max-w-5xl mx-auto p-6">
+          <header className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-800">Automation Discovery Dashboard</h1>
+            <p className="text-gray-600 mt-2">
+              {dashboardData.overview.role} • {dashboardData.overview.timeMapped} mapped • {dashboardData.overview.workflowsAnalyzed} workflows analyzed
+            </p>
+          </header>
+
+          {/* Tabs */}
+          <nav className="flex flex-wrap gap-1 border-b border-gray-200 mb-6">
+            {tabs.map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-4 py-3 font-medium transition-colors ${
+                  activeTab === tab.id
+                    ? `tab-active border-${tab.color || 'gray'}-500 text-gray-900`
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                {tab.icon} {tab.label}
+              </button>
+            ))}
+          </nav>
+
+          {/* Overview Tab */}
+          {activeTab === 'overview' && (
+            <div>
+              <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
+                <h2 className="text-xl font-semibold mb-4">Key Finding</h2>
+                <p className="text-lg text-gray-700">{dashboardData.overview.keyFinding}</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
+                <h2 className="text-xl font-semibold mb-4">Time Breakdown</h2>
+                <div className="space-y-3">
+                  {dashboardData.timeBreakdown.map((item, i) => (
+                    <div key={i} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div>
+                        <span className="font-medium">{item.responsibility}</span>
+                        <span className="text-gray-500 text-sm ml-2">({item.frequency})</span>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <span className={`px-2 py-1 rounded text-xs ${
+                          item.complexity === 'High' ? 'bg-red-100 text-red-700' :
+                          item.complexity === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
+                          'bg-green-100 text-green-700'
+                        }`}>
+                          {item.complexity}
+                        </span>
+                        <span className="font-semibold">{item.timePerWeek}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <h2 className="text-xl font-semibold mb-4">🚀 Quick Wins (This Week)</h2>
+                <div className="space-y-2">
+                  {dashboardData.quickWins.map((win, i) => (
+                    <div key={i} className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+                      <span className="text-green-600">✓</span>
+                      <span>{win.action}</span>
+                      <span className="text-sm text-gray-500">→ {win.tool}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Advisor Tab */}
+          {activeTab === 'advisor' && (
+            <div>
+              <div className="mb-4 p-4 bg-blue-50 rounded-lg">
+                <p className="text-blue-800">
+                  <strong>🎯 Advisor Level:</strong> These workflows require nuanced judgment.
+                  Use Claude as a strategic thinking partner—no automation needed.
+                </p>
+              </div>
+              {dashboardData.advisorLevel.length > 0 ? (
+                dashboardData.advisorLevel.map((item, i) => (
+                  <WorkflowCard key={i} item={item} color="blue" index={i} />
+                ))
+              ) : (
+                <p className="text-gray-500 italic">No workflows identified at this level.</p>
+              )}
+            </div>
+          )}
+
+          {/* Assistant Tab */}
+          {activeTab === 'assistant' && (
+            <div>
+              <div className="mb-4 p-4 bg-green-50 rounded-lg">
+                <p className="text-green-800">
+                  <strong>🛠️ Assistant Level:</strong> These workflows have repeatable structure.
+                  Build as Claude Skills with MCPs—manually triggered but streamlined.
+                </p>
+              </div>
+              {dashboardData.assistantLevel.length > 0 ? (
+                dashboardData.assistantLevel.map((item, i) => (
+                  <WorkflowCard key={i} item={item} color="green" index={i} />
+                ))
+              ) : (
+                <p className="text-gray-500 italic">No workflows identified at this level.</p>
+              )}
+            </div>
+          )}
+
+          {/* Automation Tab */}
+          {activeTab === 'automation' && (
+            <div>
+              <div className="mb-4 p-4 bg-orange-50 rounded-lg">
+                <p className="text-orange-800">
+                  <strong>⚡ Automation Level:</strong> These workflows are high-volume and deterministic.
+                  Build with n8n or similar—fully automated, no human trigger needed.
+                </p>
+              </div>
+              {dashboardData.automationLevel.length > 0 ? (
+                dashboardData.automationLevel.map((item, i) => (
+                  <WorkflowCard key={i} item={item} color="orange" index={i} />
+                ))
+              ) : (
+                <p className="text-gray-500 italic">No workflows ready for full automation yet. This is normal—most work belongs at Advisor or Assistant level.</p>
+              )}
+
+              {dashboardData.notReady.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="text-lg font-semibold mb-3 text-gray-700">❌ Not Ready for Automation</h3>
+                  {dashboardData.notReady.map((item, i) => (
+                    <div key={i} className="p-3 bg-gray-100 rounded-lg mb-2">
+                      <span className="font-medium">{item.workflow}:</span>
+                      <span className="text-gray-600 ml-2">{item.reason}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Delegation Tab */}
+          {activeTab === 'delegation' && (
+            <div>
+              <div className="mb-4 p-4 bg-purple-50 rounded-lg">
+                <p className="text-purple-800">
+                  <strong>👥 Delegation:</strong> These tasks don't need automation—they need a human with clear instructions.
+                  Your incoming brand manager is key to freeing up 10+ hrs/week.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
+                <h3 className="font-semibold text-lg mb-4">Brand Manager Tasks (Once Hired)</h3>
+                <div className="space-y-3">
+                  {delegationTasks.brandManager.map((item, i) => (
+                    <div key={i} className="p-4 rounded-lg border-l-4 border-purple-500 bg-purple-50">
+                      <div className="font-medium">{item.task}</div>
+                      <div className="text-gray-500 text-sm mt-2">{item.notes}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 p-3 bg-purple-100 rounded-lg">
+                  <strong>Estimated time freed:</strong> 8-10 hrs/week
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
+                <h3 className="font-semibold text-lg mb-4">Creative Manager Tasks (With Guidelines)</h3>
+                <div className="space-y-3">
+                  {delegationTasks.creativeManager.map((item, i) => (
+                    <div key={i} className="p-4 rounded-lg border-l-4 border-pink-500 bg-pink-50">
+                      <div className="font-medium">{item.task}</div>
+                      <div className="text-gray-500 text-sm mt-2">{item.notes}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 p-3 bg-pink-100 rounded-lg">
+                  <strong>Estimated time freed:</strong> 2-3 hrs/week
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <h3 className="font-semibold text-lg mb-4">Prerequisites for Delegation</h3>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                    <span className="text-gray-400">☐</span>
+                    <span>Supplier acceptance criteria document</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                    <span className="text-gray-400">☐</span>
+                    <span>AWD vs FBA decision flowchart</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                    <span className="text-gray-400">☐</span>
+                    <span>Design guidelines (good vs bad examples)</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                    <span className="text-green-600">✓</span>
+                    <span>B&N process documentation (already in Notion)</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                    <span className="text-gray-400">☐</span>
+                    <span>Video review criteria checklist</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Roadmap Tab */}
+          {activeTab === 'roadmap' && (
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-green-500">
+                <h3 className="font-semibold text-lg mb-2">📅 This Week</h3>
+                <p className="text-gray-700">{dashboardData.nextSteps.thisWeek}</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-500">
+                <h3 className="font-semibold text-lg mb-2">📅 This Month</h3>
+                <p className="text-gray-700">{dashboardData.nextSteps.thisMonth}</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-orange-500">
+                <h3 className="font-semibold text-lg mb-2">📅 This Quarter</h3>
+                <p className="text-gray-700">{dashboardData.nextSteps.thisQuarter}</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm mt-8">
+                <h3 className="font-semibold text-lg mb-4">Summary: Where Your Time Goes After Changes</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 bg-red-50 rounded-lg">
+                    <div className="text-sm text-red-600 font-medium">BEFORE</div>
+                    <div className="text-2xl font-bold text-red-700">46 hrs/week</div>
+                    <div className="text-sm text-gray-600">Operational + Strategic</div>
+                  </div>
+                  <div className="p-4 bg-green-50 rounded-lg">
+                    <div className="text-sm text-green-600 font-medium">AFTER (Projected)</div>
+                    <div className="text-2xl font-bold text-green-700">30-35 hrs/week</div>
+                    <div className="text-sm text-gray-600">More strategic focus</div>
+                  </div>
+                </div>
+                <div className="mt-4 p-4 bg-blue-50 rounded-lg">
+                  <div className="font-medium text-blue-800">Time freed for strategic work:</div>
+                  <div className="text-gray-700 mt-2">
+                    New product research • Product design • Retail expansion • TikTok/Social media
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <footer className="mt-12 pt-6 border-t border-gray-200 text-center text-gray-500 text-sm">
+            Generated by Automation Discovery Interview • {new Date().toLocaleDateString()}
+          </footer>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

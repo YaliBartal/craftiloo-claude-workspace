@@ -1,6 +1,6 @@
 ---
 name: daily-market-intel
-description: Morning market intelligence report for hero products vs competitors with week-over-week tracking
+description: Daily tracking of our hero products' BSR and rank vs competitors
 triggers:
   - market check
   - morning market
@@ -9,6 +9,7 @@ triggers:
   - daily market
   - product pulse
 output_location: outputs/research/market-intel/
+baseline_date: 2026-02-11
 ---
 
 # Daily Market Intelligence
@@ -17,370 +18,256 @@ output_location: outputs/research/market-intel/
 
 ---
 
-## What This Does
+## ⚠️ CORE PURPOSE
 
-Provides a daily morning briefing on your hero products' Amazon performance:
-- **Current rankings** and BSR (Best Seller Rank) for each hero product
-- **Competitor comparison** - how you stack up against top competitors in each category
-- **Week-over-week trends** - are you gaining or losing ground?
-- **Sales velocity signals** - review count changes, ranking movements
-- **Market alerts** - significant competitor moves, price changes, new entrants
+**This skill tracks ONE thing: Are we improving or declining?**
+
+Every daily report answers:
+1. What is our current BSR and rank?
+2. What is our position vs competitors?
+3. Did we improve or decline since yesterday?
+4. Did we improve or decline since baseline (2026-02-11)?
+
+**The baseline (2026-02-11) is the reference point for all future reports.**
 
 ---
 
-## ⚡ Organization & Efficiency Standards
+## 📊 Category Difficulty Context
 
-**CRITICAL: Follow these standards for EVERY run:**
+**IMPORTANT:** Not all categories are equal. Rankings must be interpreted in context.
 
-### File Organization
+| Category | Difficulty | Why |
+|----------|------------|-----|
+| **Toys & Games** | 🔴 HARD | Massive category, millions of products, intense competition |
+| **Arts, Crafts & Sewing** | 🟡 MEDIUM | Smaller category, easier to rank well |
+
+**What this means:**
+- BSR 5,000 in Toys & Games = EXCELLENT (top 0.01%)
+- BSR 5,000 in Arts & Crafts = GOOD (top 0.1%)
+- A product in Toys & Games with BSR 10,000 may be selling MORE than one in Arts & Crafts with BSR 5,000
+
+**Always note the category when reporting BSR.**
+
+---
+
+## 📁 File Organization
+
 ```
 market-intel/
-├── briefs/          # Daily briefs (MAIN OUTPUT - user reads these)
-├── reports/         # Detailed analysis (products/ and competitors/)
-├── data/            # Raw JSON data (products/, competitors/, search/)
-├── snapshots/       # Historical comparison data
-└── scripts/         # Python/automation scripts ONLY
+├── briefs/              # Daily reports (user reads these)
+│   └── YYYY-MM-DD.md    # One per day, consistent format
+├── snapshots/           # Raw data for comparison
+│   └── YYYY-MM-DD.json  # One per day
+└── baseline.json        # The baseline snapshot (2026-02-11)
 ```
-
-### Naming Conventions (STRICT)
-- **Briefs:** `YYYY-MM-DD-{time}.md` (e.g., `2026-02-09-morning.md`)
-- **Product reports:** `{product-slug}-YYYY-MM-DD.md`
-- **Competitor reports:** `{category-slug}-YYYY-MM-DD.md`
-- **Data files:** `{type}-{slug}-YYYY-MM-DD.json`
-- **Snapshots:** `YYYY-MM-DD-{time}.json`
-
-### Efficiency Targets
-- ✅ **<80K tokens** per run
-- ✅ **<$0.20 cost** (Apify + processing)
-- ✅ **<5 minutes** end-to-end
-- ✅ **No temp files** in root folder
-- ✅ **No duplicate files** with confusing names
-- ✅ **1 brief per run** (main output)
-- ✅ **1 snapshot per run** (for tomorrow's comparison)
-
-### What to Create
-**Every morning check:**
-- `briefs/YYYY-MM-DD-morning.md` ← User reads this FIRST
-- `snapshots/YYYY-MM-DD-morning.json` ← For tomorrow's comparison
-
-**Only if requested:**
-- Detailed product reports in `reports/products/`
-- Detailed competitor reports in `reports/competitors/`
-
-**Automatically organized:**
-- Raw data files in `data/` subfolders
-
-**NEVER in root folder:**
-- ❌ Python scripts (go to `scripts/`)
-- ❌ Temp files
-- ❌ Test files
-- ❌ Data files (go to `data/`)
 
 ---
 
-## Data Sources
+## 🔧 Apify Scraper Settings
 
-| Source | What We Get | How |
-|--------|-------------|-----|
-| **Apify** | Amazon product data (price, BSR, reviews, rating, rank) | `apify/amazon-product-scraper` or `junglee/amazon-product-scraper` |
-| **context/hero-products.md** | Your hero product ASINs | Local file |
-| **context/competitors.md** | Competitor brands and market context | Local file |
-| **Historical snapshots** | Previous day/week data for comparison | `outputs/research/market-intel/history/` |
-
----
-
-## Process
-
-### Phase 1: Load Context
-
-1. Read `context/hero-products.md` to get hero product ASINs
-2. Read `context/competitors.md` to understand competitive landscape
-3. Check for yesterday's snapshot in `outputs/research/market-intel/history/`
-
-### Phase 2: Collect Fresh Data
-
-**For each hero product ASIN:**
-
-Use Apify's Amazon Product Scraper to get:
-```json
-{
-  "asin": "B09THLVFZK",
-  "title": "...",
-  "price": 34.99,
-  "bsr": 12453,
-  "bsr_category": "Arts, Crafts & Sewing",
-  "sub_category_rank": 45,
-  "sub_category": "Fuse Beads",
-  "rating": 4.7,
-  "review_count": 2847,
-  "in_stock": true
-}
-```
-
-**Apify Actor to use:**
-- Primary: `junglee/amazon-product-scraper` (reliable, fast)
-- Alternative: `apify/amazon-product-scraper`
+**Actor:** `saswave/amazon-product-scraper`
+**Cost:** $0.001 per product
+**Success Rate:** 95%+
 
 **Input format:**
 ```json
 {
-  "asins": ["B09THLVFZK", "B0DC69M3YD", "B08DDJCQKF", ...],
-  "country": "US"
+  "asins": ["B08DDJCQKF", "B09WQSBZY7"],
+  "amazon_domain": "www.amazon.com"
 }
 ```
 
-### Phase 3: Competitor Analysis
+**Output fields we use:**
+| Field | What It Contains |
+|-------|------------------|
+| `bestsellerRanks` | Array with BSR in main category + subcategory |
+| `stars` | Rating (e.g., "4.5") |
+| `reviewsCount` | Number of reviews |
+| `price` | Current price |
+| `availability` | In stock or not |
 
-**REQUIRED: Automatically include top 3-4 competitors for each hero product category.**
-
-**Competitor Metrics to Track:**
-For EACH competitor, check and report:
-- ✅ **BSR** - Current Best Seller Rank
-- ✅ **BSR change** - vs yesterday (if baseline exists)
-- ✅ **Price** - Current price
-- ✅ **Price change** - Any deals or promotions vs yesterday
-- ✅ **Reviews** - Total review count
-- ✅ **Review velocity** - New reviews since yesterday
-- ✅ **Rating** - Star rating
-- ✅ **Category rank** - Position in category
-- ✅ **Market share estimate** - Based on BSR + category rank
-
-**Competitor Report Must Include:**
-1. **New deals** - Any price drops, Lightning Deals, coupons
-2. **Boosted review count** - Significant review increases (>5% in 24h)
-3. **Last night performance** - BSR improvements/declines
-4. **Market share shifts** - Are they gaining ground on us?
-
-**Competitor ASINs to Track by Category:**
-
-| Category | Our ASIN(s) | Competitor Brand | Competitor ASIN(s) |
-|----------|-------------|------------------|-------------------|
-| **Cross Stitch (Kids)** | B08DDJCQKF | Pllieay | B08T5QC9FS |
-| | | KRAFUN | B0B7JHN4F1 |
-| | | Caydo | B0CM9JKNCC |
-| | | EZCRA | B0DFHN42QB |
-| **Embroidery (Kids)** | B09X55KL2C | CraftLab | B087DYHMZ2 |
-| | | KRAFUN | B0D8171TF1 |
-| | | Pllieay | B08TC7423N |
-| | | Louise Maelys | B0DP654CSV |
-| **Embroidery (Adults)** | B0DC69M3YD | CYANFOUR | B0CZHKSSL4, B0DMHY2HF3 |
-| | | Santune | B0BB9N74SG |
-| | | Bradove | B0B762JW55 |
-| | | ETSPIL | B0C3ZVKB46 |
-| **Sewing (Kids)** | B09WQSBZY7, B096MYBLS1 | KRAFUN | B091GXM2Y6, B0C2XYP6L3, B0CV1F5CFS |
-| | | EZCRA | B0CXY8JMTK, B0CYNNT2ZT |
-| | | Klever Kits | B0CTTMWXYP |
-| **Latch Hook** | B08FYH13CL, B0F8R652FX | LatchKits | B06XRRN4VL, B0CX9H8YGR |
-| **Loom Knitting** | B0F8DG32H5 | Creativity for Kids | B004JIFCXO |
-| | | Hapinest | B0B8W4FK4Q |
-| **Mini Fuse Beads** | B09THLVFZK | INSCRAFT | B0C5WQD914 |
-| | | ARTKAL | B0FN4CT867 |
-| | | LIHAO | B08QV9CMFQ |
-| | | FUNZBO | B0D5LF666P |
-| **Lacing Cards** | B0FQC7YFX6 | Melissa & Doug | B00JM5G05I |
-| | | KRAFUN | B0BRYRD91V |
-| | | Serabeena | B0D178S25M |
-
-### Phase 4: Calculate Changes
-
-Compare today's data against:
-1. **Yesterday** (daily delta)
-2. **7 days ago** (weekly trend)
-3. **Competitors** (relative position)
-
-**Metrics to calculate:**
-```
-bsr_change_daily = today.bsr - yesterday.bsr
-bsr_change_weekly = today.bsr - week_ago.bsr
-review_velocity = (today.reviews - yesterday.reviews) / 1  # reviews per day
-rank_vs_competitor = your_bsr - competitor_bsr  # negative = you're winning
-```
-
-### Phase 5: Generate Report
+**Batching Rules:**
+| Rule | Requirement |
+|------|-------------|
+| Max ASINs per call | **5 ASINs** (never more) |
+| On timeout | STOP immediately, use data collected |
+| Mode | `async: true` then check results (don't block)
 
 ---
 
-## Output Format
+## 📋 MANDATORY REPORT FORMAT
 
-### Daily Market Intel Report
+**Every daily report MUST follow this exact format:**
 
 ```markdown
 # Market Intel - [DATE]
 
-## Quick Summary
-
-| Status | Count |
-|--------|-------|
-| Gaining Ground | 5 products |
-| Stable | 4 products |
-| Slipping | 2 products |
-| Alert | 1 product |
+**Baseline:** 2026-02-11 | **Days Since Baseline:** [X]
 
 ---
 
-## Hero Products Performance
+## Summary
 
-### [Product Name] - [ASIN]
-
-| Metric | Today | Yesterday | Weekly | Trend |
-|--------|-------|-----------|--------|-------|
-| BSR | 12,453 | 13,102 | 15,234 | Improving |
-| Category Rank | #45 | #48 | #52 | Improving |
-| Price | $34.99 | $34.99 | $34.99 | Stable |
-| Reviews | 2,847 | 2,841 | 2,798 | +6/day |
-| Rating | 4.7 | 4.7 | 4.7 | Stable |
-
-**vs Competitors:**
-- You: BSR 12,453 (Rank #1 in category)
-- INSCRAFT: BSR 18,234 (Rank #2) - you're ahead by 5,781
-- ARTKAL: BSR 22,456 (Rank #3)
-
-**Status: GAINING GROUND**
+| Metric | Count | vs Baseline |
+|--------|-------|-------------|
+| Products Improving (BSR ↓) | X | — |
+| Products Declining (BSR ↑) | X | — |
+| Products Stable | X | — |
 
 ---
 
-[Repeat for each hero product]
+## Our Products by Category
+
+### [Amazon Category] - [Difficulty: 🔴 HARD / 🟡 MEDIUM]
+
+| Product | ASIN | BSR | Subcategory Rank | Reviews | Rating | vs Baseline |
+|---------|------|-----|------------------|---------|--------|-------------|
+| [Name] | BXXXXXXXXX | #X,XXX | #X in [Subcategory] | X,XXX | X.X★ | ↑/↓ X,XXX |
+
+**Notes:** [Any observations about this category]
+
+---
+
+[Repeat for each Amazon category: Arts Crafts & Sewing, Toys & Games]
+
+---
+
+## Competitor Comparison
+
+### [Subcategory Name]
+
+| Rank | Brand | ASIN | BSR | Subcat Rank | Reviews | vs Us |
+|------|-------|------|-----|-------------|---------|-------|
+| #1 | [Brand] | BXXX | #X,XXX | #X | X,XXX | We're ahead/behind |
+| #2 | ... | ... | ... | ... | ... | ... |
+
+**Our Position:** #X of Y
 
 ---
 
 ## Alerts
 
-| Product | Alert | Details |
-|---------|-------|---------|
-| Fairy Sewing Kit | COMPETITOR PRICE DROP | KRAFUN dropped price by $3 |
-| Cross Stitch Girls | BSR SPIKE | Jumped 2,000 ranks - investigate |
+| Type | Product | Details |
+|------|---------|---------|
+| 🔴 BSR SPIKE | [Product] | BSR went from X to Y (+Z) |
+| 🟡 WATCH | [Product] | [What to monitor] |
+| 🟢 WIN | [Product] | [Good news] |
 
 ---
 
-## Competitor Movements
+## Data Notes
 
-| Competitor | Category | Change | Impact |
-|------------|----------|--------|--------|
-| KRAFUN | Kids Sewing | Price drop $3 | Monitor |
-| LatchKits | Latch Hook | New product launch | Research |
-
----
-
-## Recommendations
-
-1. **Capitalize on momentum** - Mini Fuse Beads showing strong improvement, consider PPC boost
-2. **Investigate alert** - Cross Stitch Girls BSR spike needs review
-3. **Competitive response** - Monitor KRAFUN price change impact this week
+- **Source:** Apify saswave/amazon-product-scraper
+- **Products scraped:** X hero + X competitors
+- **Missing data:** [List any that failed]
 ```
 
 ---
 
-## File Storage
+## 📈 Trend Indicators
 
-### Daily Snapshot
-Save raw data to: `outputs/research/market-intel/history/[YYYY-MM-DD].json`
+Use these consistently:
 
-```json
-{
-  "date": "2026-02-08",
-  "hero_products": {
-    "B09THLVFZK": {
-      "title": "48 Mini Fuse Beads Kit",
-      "bsr": 12453,
-      "category_rank": 45,
-      "price": 34.99,
-      "reviews": 2847,
-      "rating": 4.7,
-      "in_stock": true
-    }
-  },
-  "competitors": {
-    "B0XXXXXX": {...}
-  }
-}
-```
+| Symbol | Meaning |
+|--------|---------|
+| 📈 | Improving (BSR went DOWN = better) |
+| 📉 | Declining (BSR went UP = worse) |
+| ➡️ | Stable (change < 5%) |
+| ↑ X | Improved by X positions |
+| ↓ X | Declined by X positions |
+| — | No change or no data |
 
-### Daily Report
-Save report to: `outputs/research/market-intel/daily-report-[YYYY-MM-DD].md`
+**Remember:** LOWER BSR = BETTER (closer to #1)
 
 ---
 
-## Execution Checklist
+## 🎯 What to Track
 
-When user triggers this skill:
+### For Each Hero Product:
+1. **BSR** - Best Seller Rank (lower = better)
+2. **Category** - Which category it's in (affects interpretation)
+3. **Position vs Competitors** - Are we #1, #2, #3 in our niche?
+4. **Change vs Yesterday** - Daily movement
+5. **Change vs Baseline** - Overall progress since tracking started
 
-- [ ] Load hero product ASINs from `context/hero-products.md`
-- [ ] Load competitor context from `context/competitors.md`
-- [ ] Check for previous snapshots in history folder
-- [ ] Use Apify to scrape fresh Amazon data for all hero ASINs
-- [ ] Use Apify to scrape top 2-3 competitor products per category
-- [ ] Calculate daily and weekly deltas
-- [ ] Generate comparison against competitors
-- [ ] Identify any alerts (significant changes)
-- [ ] Generate markdown report
-- [ ] Save snapshot to history
-- [ ] Save report to daily reports
+### For Each Competitor:
+1. **BSR** - Their current rank
+2. **Change** - Are they improving or declining?
+3. **Gap to Us** - How far ahead/behind are we?
+
+---
+
+## 🏷️ Hero Products by Category
+
+| Category | Amazon Category | Difficulty | Our Products |
+|----------|-----------------|------------|--------------|
+| **Cross Stitch** | Arts, Crafts & Sewing | 🟡 MEDIUM | B08DDJCQKF, B0F6YTG1CH |
+| **Embroidery (Kids)** | Arts, Crafts & Sewing | 🟡 MEDIUM | B09X55KL2C |
+| **Embroidery (Adults)** | Arts, Crafts & Sewing | 🟡 MEDIUM | B0DC69M3YD |
+| **Sewing** | Toys & Games | 🔴 HARD | B09WQSBZY7, B096MYBLS1 |
+| **Latch Hook** | Arts, Crafts & Sewing | 🟡 MEDIUM | B08FYH13CL, B0F8R652FX |
+| **Knitting** | Arts, Crafts & Sewing | 🟡 MEDIUM | B0F8DG32H5 |
+| **Fuse Beads** | Arts, Crafts & Sewing | 🟡 MEDIUM | B09THLVFZK, B07D6D95NG |
+| **Lacing Cards** | Arts, Crafts & Sewing | 🟡 MEDIUM | B0FQC7YFX6 |
+| **Needlepoint** | Arts, Crafts & Sewing | 🟡 MEDIUM | B09HVSLBS6 |
+
+---
+
+## 🏆 Key Competitors by Category
+
+| Category | Competitor | ASIN | Notes |
+|----------|------------|------|-------|
+| **Cross Stitch** | Pllieay | B08T5QC9FS | Budget option |
+| | EZCRA | B0DFHN42QB | Ages 5-8 focus |
+| **Embroidery (Kids)** | CraftLab | B087DYHMZ2 | Award winner |
+| **Embroidery (Adults)** | CYANFOUR | B0CZHKSSL4 | Market leader |
+| **Sewing** | KRAFUN | B091GXM2Y6 | Dominant player |
+| **Latch Hook** | LatchKits | B06XRRN4VL | Market leader |
+| **Knitting** | Creativity for Kids | B004JIFCXO | Retail presence |
+| **Fuse Beads** | INSCRAFT | B0C5WQD914 | Value leader |
+| **Lacing Cards** | Melissa & Doug | B00JM5G05I | Brand leader |
+
+---
+
+## ⚠️ Error Handling
+
+| Issue | Action |
+|-------|--------|
+| Apify timeout | STOP, use data collected, note in report |
+| Batch fails | Skip batch, continue, note in report |
+| No baseline | Create baseline first |
+| Missing yesterday | Compare to baseline only |
+
+**NEVER wait indefinitely.** Partial data > No report.
+
+---
+
+## 📝 Baseline Rules
+
+1. **Baseline date:** 2026-02-11
+2. **Baseline file:** `snapshots/baseline.json` (copy of first snapshot)
+3. **All future reports compare to baseline**
+4. **Baseline never changes** unless explicitly requested
+
+---
+
+## ✅ Execution Checklist
+
+- [ ] Load previous snapshot (yesterday or baseline)
+- [ ] Scrape hero products (batches of 5)
+- [ ] Scrape key competitors (batches of 5)
+- [ ] Calculate changes vs yesterday AND vs baseline
+- [ ] Note category difficulty for each product
+- [ ] Generate report in MANDATORY FORMAT
+- [ ] Save snapshot for tomorrow
 - [ ] Present summary to user
 
 ---
 
-## Hero Products Reference
+## 💡 Key Reminders
 
-Quick reference of ASINs to track (from hero-products.md):
-
-| # | Product | ASIN | Category |
-|---|---------|------|----------|
-| 1 | 48 Mini Fuse Beads | B09THLVFZK | Fuse Beads |
-| 2 | 4 Embroidery Flowers Kit | B0DC69M3YD | Embroidery |
-| 3 | Cross Stitch Kit - Girls | B08DDJCQKF | Cross Stitch |
-| 4 | 10 Embroidery Patterns Kit | B09X55KL2C | Embroidery |
-| 5 | Knitting Kit - Cat & Hat | B0F8DG32H5 | Knitting |
-| 6 | Latch Hook - Rainbow Heart | B0F8R652FX | Latch Hook |
-| 7 | Latch Hook Pencil Cases | B08FYH13CL | Latch Hook |
-| 8 | Fairy Sewing Kit | B09WQSBZY7 | Sewing |
-| 9 | Princess Lacing Card Kit | B0FQC7YFX6 | Lacing |
-| 10 | Needlepoint Cat Wallet | B09HVSLBS6 | Needlepoint |
-| 11 | Dessert Sewing Kit | B096MYBLS1 | Sewing |
-| 12 | 10mm Big Fuse Beads | B07D6D95NG | Fuse Beads |
-| 13 | Felt Unicorn Cross Stitch | B0DFPQ5LGD | Cross Stitch |
-
----
-
-## API Costs Consideration
-
-**Apify usage:**
-- Amazon Product Scraper: ~$0.01-0.02 per product
-- 13 hero products + ~20 competitors = ~33 products
-- Daily cost estimate: ~$0.50-1.00
-
-**Recommendation:** Run full competitor scan weekly, hero products daily.
-
----
-
-## Error Handling
-
-| Issue | Action |
-|-------|--------|
-| Apify rate limit | Wait and retry after 60s |
-| Product not found | Flag in report, skip product |
-| No historical data | Mark as "First run - no comparison" |
-| Price/BSR = 0 | Product may be out of stock, flag it |
-
----
-
-## Limitations & Future Improvements
-
-**Current limitations:**
-- No direct sales data access (would need Amazon Seller Central API)
-- BSR is a proxy for sales velocity, not actual units
-- Review velocity is slow-moving metric
-
-**Future improvements to consider:**
-- Add Seller Board integration for actual sales data
-- Track search ranking for specific keywords (not just BSR)
-- Add advertising performance data
-- Weekly email summary via notification
-
----
-
-## Notes
-
-- Always ask before running if API costs are a concern
-- First run will have no comparison data - that's expected
-- Run consistently at same time each day for accurate trending
-- Consider running at 6-7 AM before work to have fresh data
+1. **Focus on OUR products first** - competitors are context
+2. **BSR is relative** - always note the category
+3. **Consistency matters** - same format every day
+4. **Baseline is sacred** - the reference point for progress
+5. **Lower BSR = Better** - we want numbers to go DOWN
