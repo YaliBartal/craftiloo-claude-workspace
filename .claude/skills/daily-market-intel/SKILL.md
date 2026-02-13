@@ -229,6 +229,53 @@ Use these consistently:
 
 ---
 
+## 🔍 Keyword Search Rankings
+
+**Actor:** `igview-owner/amazon-search-scraper`
+**Cost (BRONZE):** ~$0.09 per keyword (1 page)
+**Daily budget:** ~$1.26 for 14 keywords (top 2 per category)
+
+**Input format:**
+```json
+{
+  "query": "kids cross stitch kit",
+  "maxPages": 1,
+  "country": "US",
+  "language": "en_US",
+  "sortBy": "RELEVANCE"
+}
+```
+
+**Output fields we use:**
+| Field | What It Contains |
+|-------|------------------|
+| `title` | Product title (match to our products) |
+| `asin` | ASIN to match against hero/competitor lists |
+| `position` | Rank position on the search results page |
+| `badge` | Special badges like "Overall Pick", "Amazon's Choice" |
+
+**Top 2 Keywords Per Category:**
+
+| Category | Keyword 1 | Keyword 2 |
+|----------|-----------|-----------|
+| Cross Stitch | kids cross stitch kit | embroidery kit for kids |
+| Embroidery Adults | embroidery kit for beginners | embroidery kits for adults |
+| Sewing Kids | sewing kit for kids | kids sewing kit |
+| Latch Hook | latch hook kits for kids | latch kits |
+| Fuse Beads | mini perler beads | mini fuse beads |
+| Knitting | loom knitting kit | knitting kit for kids |
+| Lacing Cards | lacing cards | lacing cards for kids ages 3-5 |
+
+**Execution notes:**
+- Run keyword searches AFTER BSR scraping
+- Some keywords may return empty results on first try — re-run failed ones once
+- "loom knitting kit" and "lacing cards" have been unreliable (scraper limitation)
+- Results show position on page 1 only (maxPages: 1)
+- Track our position AND top competitor position for each keyword
+- First keyword baseline: 2026-02-12
+
+---
+
 ## ⚠️ Error Handling
 
 | Issue | Action |
@@ -254,11 +301,13 @@ Use these consistently:
 ## ✅ Execution Checklist
 
 - [ ] Load previous snapshot (yesterday or baseline)
-- [ ] Scrape hero products (batches of 5)
-- [ ] Scrape key competitors (batches of 5)
+- [ ] Scrape hero products (batches of 5, async mode)
+- [ ] Scrape key competitors (batches of 5, async mode)
 - [ ] Calculate changes vs yesterday AND vs baseline
 - [ ] Note category difficulty for each product
-- [ ] Generate report in MANDATORY FORMAT
+- [ ] Run keyword searches (top 2 per category, 14 total)
+- [ ] Re-run any failed keyword searches once
+- [ ] Generate report in MANDATORY FORMAT (BSR + keyword rankings)
 - [ ] Save snapshot for tomorrow
 - [ ] Present summary to user
 
