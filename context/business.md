@@ -101,6 +101,12 @@
 | **Data Dive** | Keyword inspection & research |
 | **Titan** | Community membership |
 
+## Notion Databases
+
+| Database/Page | Page ID | URL | Purpose |
+|--------------|---------|-----|---------|
+| **Product Listing Development** | `30557318-d05c-806a-a94f-f5a439d94d10` | [Link](https://www.notion.so/Product-Listing-Development-30557318d05c806aa94ff5a439d94d10) | Parent page for all product listings & image plans |
+
 ## Resources
 
 - Product catalog (Flipsnack and PDF)

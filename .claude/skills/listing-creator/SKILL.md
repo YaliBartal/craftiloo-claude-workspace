@@ -98,13 +98,27 @@ outputs/research/listings/
 
 **Load product specs from:**
 - `context/products.md` - Get exact product details, contents, pricing
+- `context/hero-products.md` - Get our ASIN, key selling points if it's a hero product
 - **Convert all measurements to inches/pounds for US market**
+
+### CRITICAL: Check Context Files Before Any Research
+
+**ALWAYS check these context files BEFORE scraping or searching for competitors/keywords:**
+
+| Context File | What It Contains | Use For |
+|-------------|-----------------|---------|
+| `context/competitors.md` | **Competitors by category with ASINs, market share, strengths/weaknesses** | Get competitor ASINs — DO NOT scrape for competitors if they exist here |
+| `context/search-terms.md` | **Search terms by category with volume and relevance scores** | Get keyword data with ACTUAL search volume — use these instead of guessing |
+| `context/hero-products.md` | **Our hero products with ASINs, contents, key selling points** | Get our own product ASIN and detailed info |
+| `context/products.md` | **Full product catalog with specs, contents, dimensions** | Get exact kit contents, measurements, pricing |
+
+**Lookup order:** Identify product category → check `context/competitors.md` for ASINs → check `context/search-terms.md` for keywords with volume → load product specs → only use Apify for data NOT in context files (reviews, Q&A, current pricing/BSR).
 
 ### Phase 2: Competitor Research
 
-**Find top 5-7 competitors in the niche:**
+**First: Check `context/competitors.md`** for the product's category. If competitors with ASINs are listed, USE THOSE. Only scrape Apify for additional data not in context files.
 
-Use Apify Amazon scraper with search query:
+If competitors are NOT in context files, use Apify Amazon scraper with search query:
 ```json
 {
   "searchTerms": ["{target keyword}"],
@@ -485,6 +499,76 @@ When user triggers this skill:
 3. **Test title in Amazon search** to see if it displays well
 4. **A/B test** different title structures over time
 5. **Update keywords** based on PPC search term reports
+
+---
+
+## Upload to Notion
+
+**After generating the listing, upload it to Notion.**
+
+### Notion Page ID (ALWAYS use this)
+
+**Parent page:** "Product Listing Development"
+**Page ID:** `30557318-d05c-806a-a94f-f5a439d94d10`
+**URL:** https://www.notion.so/Product-Listing-Development-30557318d05c806aa94ff5a439d94d10
+
+**ALWAYS create child pages under this parent page.** Do not ask the user which database to use.
+
+### Search Before Creating
+
+1. **Search for existing product page** using Notion MCP `notion-search` with the product name
+2. **If page exists** → append the listing section to it (don't create a duplicate)
+3. **If page doesn't exist** → create a new page
+
+### Page Properties
+
+When creating a new page or updating an existing one:
+
+| Property | Type | Value |
+|----------|------|-------|
+| **Title** | Title | `{Product Name}` |
+| **SKU** | Rich Text | `{SKU}` |
+| **Status** | Select | `Draft` |
+| **Date** | Date | `{YYYY-MM-DD}` |
+| **Primary Keywords** | Rich Text | `{keyword1}, {keyword2}, ...` |
+| **Has Listing** | Checkbox | `true` |
+
+### Page Content (Listing Section)
+
+Append these blocks to the page:
+
+1. **Divider**
+2. **Heading 2:** `Amazon Listing`
+3. **Heading 3:** `Title`
+4. **Quote block:** The optimized title (easy to copy)
+5. **Paragraph:** Character count and keyword placement notes
+6. **Heading 3:** `Bullet Points`
+7. **Numbered list:** All 5 bullets (each with its theme label in bold)
+8. **Heading 3:** `Backend Keywords`
+9. **Code block:** Backend keywords (easy to copy, no formatting issues)
+10. **Heading 3:** `Research Summary`
+11. **Toggle:** `Competitor Analysis` → competitor comparison table
+12. **Toggle:** `Keyword Strategy` → primary, secondary, long-tail keywords
+13. **Toggle:** `Customer Q&A Analysis` → Q&A themes, top questions, which bullet addresses each
+
+### Upload Rules
+
+- **Search before creating** — never duplicate pages
+- **Use quote blocks** for the title — visually distinct and easy to copy
+- **Use code blocks** for backend keywords — prevents formatting issues
+- **Use toggle blocks** for research sections — keeps the page scannable
+- **Update `Has Listing` checkbox** to `true`
+- **If an image plan already exists on the page**, append the listing section BEFORE the image plan section
+- **Tell the user** what you did: "Uploaded listing to Notion page: {product name}" or "Added listing to existing Notion page for {product name}"
+
+### Compatibility with Parent Skill
+
+This Notion structure is **compatible with the Product Listing Development skill** (`product-listing-development`). Both skills use the same:
+- Page properties (Title, SKU, Status, Date, checkboxes)
+- Section structure (Listing section + Image Plan section)
+- Database location (saved in `context/business.md`)
+
+If the parent skill runs, it handles Notion upload for both. If this skill runs standalone, it creates/updates the page with just the listing section.
 
 ---
 

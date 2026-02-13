@@ -143,6 +143,7 @@ Claude Code Workspace/
 │       ├── daily-market-intel/  # Morning market intelligence
 │       ├── listing-creator/     # Amazon listing generator
 │       ├── image-planner/       # Product image strategy planner
+│       ├── product-listing-development/  # Parent orchestrator (listing + images)
 │       └── automation-discovery-interview/  # 30-40 min workflow audit
 │
 ├── context/               # Persistent context files
@@ -170,6 +171,7 @@ Claude Code Workspace/
 | "Market check" / "Product pulse" | → `.claude/skills/daily-market-intel/` |
 | "Create a listing" / "Amazon listing" | → `.claude/skills/listing-creator/` |
 | "Image plan" / "Plan my images" | → `.claude/skills/image-planner/` |
+| "Full listing" / "Launch product" / "Listing + images" | → `.claude/skills/product-listing-development/` |
 
 **New skills** → Always save to `.claude/skills/[skill-name]/SKILL.md` (project-local, not global)
 
