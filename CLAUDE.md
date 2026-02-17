@@ -144,7 +144,9 @@ Claude Code Workspace/
 │       ├── listing-creator/     # Amazon listing generator
 │       ├── image-planner/       # Product image strategy planner
 │       ├── product-listing-development/  # Parent orchestrator (listing + images)
-│       └── automation-discovery-interview/  # 30-40 min workflow audit
+│       ├── automation-discovery-interview/  # 30-40 min workflow audit
+│       ├── ppc-portfolio-review/  # PPC campaign analysis & optimization
+│       └── search-term-analysis/  # Search term negation, promotion & discovery
 │
 ├── context/               # Persistent context files
 │   ├── profile.md         # Your preferences and goals
@@ -172,6 +174,9 @@ Claude Code Workspace/
 | "Create a listing" / "Amazon listing" | → `.claude/skills/listing-creator/` |
 | "Image plan" / "Plan my images" | → `.claude/skills/image-planner/` |
 | "Full listing" / "Launch product" / "Listing + images" | → `.claude/skills/product-listing-development/` |
+| "PPC review" / "Analyze portfolio" / "Campaign analysis" | → `.claude/skills/ppc-portfolio-review/` |
+| "Full account review" / "Review all portfolios" | → `.claude/skills/ppc-portfolio-review/` (Full Account mode) |
+| "Search term analysis" / "Negate terms" / "Keyword mining" | → `.claude/skills/search-term-analysis/` |
 
 **New skills** → Always save to `.claude/skills/[skill-name]/SKILL.md` (project-local, not global)
 

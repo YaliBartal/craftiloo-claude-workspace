@@ -65,10 +65,10 @@ outputs/research/product-launch/
 
 ### Efficiency Targets
 
-- <120K tokens per full run (both outputs)
-- <80K tokens if one output already exists
+- <200K tokens per full run (both outputs with all options and detail)
+- <120K tokens if one output already exists
 - <$0.30 cost per full run (Apify)
-- <15 minutes end-to-end
+- <20 minutes end-to-end
 - Minimal file count
 
 ---
@@ -236,7 +236,7 @@ Build keyword list from context files + competitor titles + Amazon autocomplete:
 
 ---
 
-## Step 3: Generate Listing
+## Step 3: Generate Listing (With Alternatives)
 
 **Use the shared research to generate the Amazon listing.**
 
@@ -249,14 +249,28 @@ Follow **ALL rules** from the listing-creator skill (`.claude/skills/listing-cre
 - **Q&A → Bullet mapping:** Most-asked questions drive bullet priority
 - **Keyword priority in title:** Highest volume → left, lowest → right
 
+### CRITICAL: Generate Multiple Options
+
+**Do not generate just one version. Generate options so the user can choose:**
+
+- **Titles:** 1 recommended + 2-3 alternatives (each prioritizing different keyword strategy)
+- **Bullets:** 1 recommended set + 2-3 alternative phrasings per bullet (each emphasizing different customer angles)
+- **Backend keywords:** 1 recommended set + overflow list for A/B testing
+
+For each alternative, note:
+- What it prioritizes differently
+- Which customer segment it speaks to
+- Which keyword strategy it favors
+
 ### Listing Output Structure
 
 Use the full listing template from the listing-creator skill, including:
-- Title with character count and keyword placement breakdown
-- 5 bullets with theme labels
-- Backend keywords
-- Research summary (competitors, keywords, Q&A mapping)
-- Copy-paste ready section
+- Recommended title + alternative titles with character counts and keyword placement breakdowns
+- 5 recommended bullets with theme labels + alternative phrasings per bullet
+- Backend keywords + overflow options
+- Full research data (competitors, keywords, Q&A mapping — not summarized)
+- Keyword placement map showing where every keyword lands
+- Copy-paste ready section (recommended version)
 
 **Save to:**
 1. `outputs/research/product-launch/{product-slug}/listing/{product-slug}-listing-YYYY-MM-DD.md`
@@ -264,7 +278,7 @@ Use the full listing template from the listing-creator skill, including:
 
 ---
 
-## Step 4: Generate Image Plan
+## Step 4: Generate Image Plan (With Multiple Options Per Image)
 
 **Use the shared research to generate the image plan.**
 
@@ -277,14 +291,38 @@ Follow **ALL rules** from the image-planner skill (`.claude/skills/image-planner
 - **Mobile-readable text** — legible at thumbnail size
 - **Match listing voice** — image text mirrors the bullet point tone and vocabulary
 
+### CRITICAL: Generate Multiple Options Per Image
+
+**For EACH image position (2-7), generate:**
+
+- **1 recommended copy set** (headline + supporting text + callouts)
+- **3-4 alternative copy options**, each targeting a different angle:
+  - **Option A:** Focus on keyword/SEO angle (maximizes Rufus indexing)
+  - **Option B:** Focus on emotional/gift-buyer angle (speaks to the purchaser's feelings)
+  - **Option C:** Focus on practical/informational angle (answers the most common Q&A question for this topic)
+  - **Option D (if applicable):** Focus on differentiation angle (highlights what competitors DON'T show)
+
+For each option, include:
+- Exact headline text
+- Exact supporting text / callouts
+- 1-2 sentence rationale (why this angle, what customer insight drives it)
+
+**Also provide:**
+- **2-3 visual approach options** per image (e.g., flat lay vs lifestyle vs infographic)
+- **Prop and styling alternatives**
+- **1-2 alternative image sequence orderings** for the full set
+
 ### Image Plan Output Structure
 
 Use the full image plan template from the image-planner skill, including:
-- Copy at a glance table (the 30-second designer reference)
+- Copy at a glance table — recommended version (the 30-second designer reference)
 - Copy guidelines and review-driven language
-- Image-by-image detail (text, placement, visual elements, photography notes)
-- Competitor image analysis
+- Image-by-image detail with ALL options (recommended + 3-4 alternatives per image)
+- Full visual direction per image (background, props, lighting, color palette)
+- Photography/design brief per image
+- Competitor image analysis (what each competitor does at each position)
 - Gaps exploited
+- Alternative image sequence options
 
 **Save to:**
 1. `outputs/research/product-launch/{product-slug}/image-plan/{product-slug}-image-plan-YYYY-MM-DD.md`
@@ -301,6 +339,18 @@ Use the full image plan template from the image-planner skill, including:
 **URL:** https://www.notion.so/Product-Listing-Development-30557318d05c806aa94ff5a439d94d10
 
 **ALWAYS create child pages under this parent page.** Do not ask the user which database to use — this is the permanent location.
+
+### Notion Upload Philosophy
+
+**Do NOT summarize. Upload the FULL detail.**
+
+The Notion page is the single source of truth for this product's listing development. It should contain everything — all options, all research, all competitor data, all copy alternatives. The user should never need to open the local markdown files because Notion has it all.
+
+- **Summary at the top** — a quick executive overview for scanning
+- **Full detail below** — every option, every data point, every competitor insight
+- **Multiple options per image** — so the user can pick and choose
+- **Multiple title/bullet alternatives** — so the user has real choices
+- **Complete research data** — not just conclusions, but the evidence behind them
 
 ### Notion Page Structure
 
@@ -323,40 +373,168 @@ Use the full image plan template from the image-planner skill, including:
 
 Build the page content in this order:
 
-**Section 1: Summary**
+---
+
+**Section 1: Executive Summary (Quick Scan)**
 - Heading 1: `{Product Name} — Listing Development`
 - Callout block: Quick stats — SKU, date, competitors analyzed, primary keywords, what was generated
+- Heading 3: `Strategic Summary`
+- Bulleted list summarizing:
+  - **Market position:** Where we sit vs competitors (price, rating, differentiation)
+  - **Top 3 competitive advantages** we're leveraging
+  - **Top 3 customer concerns** we're addressing
+  - **Primary keyword strategy:** Which keywords we're targeting and why
+  - **Image strategy in one line:** The narrative arc of our 7 images
+  - **Key decision:** The single most important strategic choice made and why
 
-**Section 2: Amazon Listing**
+---
+
+**Section 2: Amazon Listing (Full Detail)**
 - Divider
 - Heading 2: `Amazon Listing`
-- Heading 3: `Title`
-- Quote block: The optimized title (easy to copy)
-- Paragraph: Character count and keyword placement notes
-- Heading 3: `Bullet Points`
-- Numbered list: All 5 bullets (each with its theme label)
-- Heading 3: `Backend Keywords`
-- Code block: Backend keywords (easy to copy)
 
-**Section 3: Image Plan**
+- Heading 3: `Recommended Title`
+- Quote block: The primary recommended title (easy to copy)
+- Paragraph: Character count, keyword placement breakdown (which keyword sits where and why)
+
+- Heading 3: `Alternative Title Options`
+- Numbered list: 2-3 alternative title formulations, each with:
+  - The full title text
+  - Character count
+  - Brief note on what this version prioritizes differently (e.g., "Leads with brand" vs "Leads with category keyword")
+
+- Heading 3: `Bullet Points — Recommended`
+- Numbered list: All 5 bullets, each with:
+  - **Theme label in bold** (e.g., "Bullet 1: Complete Kit")
+  - The full bullet text
+  - Italic note: Which customer question(s) this bullet answers and the review/Q&A evidence
+
+- Heading 3: `Bullet Points — Alternatives`
+- Toggle for each bullet: `Bullet {#} Alternatives` containing:
+  - 2-3 alternative phrasings for that bullet
+  - Note on what each alternative emphasizes differently
+  - Which customer segment each speaks to most
+
+- Heading 3: `Backend Keywords`
+- Code block: Recommended backend keywords (easy to copy)
+- Paragraph: Byte count, what's excluded and why (already in title, brand names, etc.)
+- Toggle: `Additional Backend Keyword Options` → overflow keywords to swap in if testing
+
+- Heading 3: `Keyword Placement Map`
+- Table block showing: Keyword | Location (Title/Bullet#/Backend) | Search Volume | Why This Placement
+
+---
+
+**Section 3: Image Plan (Full Detail with Options)**
 - Divider
 - Heading 2: `Image Plan`
-- Heading 3: `Copy At a Glance`
-- Table block: Image # | Purpose | Headline Text | Supporting Text | Question Answered
-- Heading 3: `Image-by-Image Detail`
-- For each image position: Toggle block titled `Image {#}: {Purpose}` containing:
-  - All text/copy with placement guidance
-  - Visual description
-  - Photography/design notes
-  - Customer insight driving the copy
 
-**Section 4: Research**
+- Heading 3: `Image Narrative Arc`
+- Paragraph: 2-3 sentences explaining the story the 7 images tell in sequence — what the buyer's emotional journey is from Image 1 to Image 7
+
+- Heading 3: `Copy At a Glance — Recommended`
+- Table block: Image # | Purpose | Recommended Headline | Recommended Supporting Text | Question Answered
+
+- Heading 3: `Image-by-Image Detail`
+- For EACH image position, a Toggle block titled `Image {#}: {Purpose}` containing:
+
+  **Recommended Copy:**
+  - Table: Element | Exact Copy | Placement
+  - (Headline, supporting text, callouts, badges — all with exact wording and position)
+
+  **Alternative Copy Options (3-4 per image):**
+  - **Option A:** Headline: "{text}" / Supporting: "{text}" — *Why: {rationale, e.g., "Emphasizes safety for anxious gift buyers"}*
+  - **Option B:** Headline: "{text}" / Supporting: "{text}" — *Why: {rationale}*
+  - **Option C:** Headline: "{text}" / Supporting: "{text}" — *Why: {rationale}*
+  - (Each option targets a different angle, customer segment, or keyword emphasis)
+
+  **Customer Insight Driving This Image:**
+  - The specific review quotes, Q&A questions, or competitor gaps that justify this image
+  - How many customers asked this question (vote counts if available)
+  - What happens if we DON'T address this (lost sale scenario)
+
+  **Visual Direction:**
+  - Background: description
+  - Product position: description
+  - Props/Context: description
+  - Color palette / mood notes
+  - Lighting direction
+
+  **Photography/Design Brief:**
+  - Specific shot instructions
+  - Styling and prop list
+  - Text overlay placement mockup description (where text sits relative to product)
+  - Mobile thumbnail check: what must be visible at small size
+
+  **Competitor Comparison for This Image Position:**
+  - What competitors show in this same slot
+  - How our approach differs and why
+
+- Heading 3: `Alternative Image Sequence`
+- Toggle: `Alternative Image Order Options` containing:
+  - 1-2 alternative orderings of the 7 images with rationale for each
+  - Which ordering to A/B test first
+
+---
+
+**Section 4: Competitor Deep Dive (Full Data)**
 - Divider
-- Heading 2: `Research & Analysis`
-- Toggle: `Competitor Analysis` → competitor comparison table
-- Toggle: `Customer Q&A Insights` → Q&A themes, top questions, which bullet/image addresses each
-- Toggle: `Keyword Strategy` → primary, secondary, long-tail keywords
-- Toggle: `Review Insights` → customer language, concerns, emotional triggers, gift buyer language
+- Heading 2: `Competitor Analysis`
+
+- Heading 3: `Competitor Overview`
+- Table block: # | Brand | ASIN | Title | Price | BSR | Reviews | Rating | Key Strength | Key Weakness
+
+- Heading 3: `Competitor-by-Competitor Breakdown`
+- Toggle for EACH competitor: `{Brand} — {ASIN}` containing:
+  - **Title:** Full title text
+  - **Price:** Current price
+  - **BSR & Rating:** Rank, stars, review count
+  - **Bullet Points:** All 5 of their bullets (full text)
+  - **Image Strategy:** What images they use in what order, text overlays
+  - **Strengths:** What they do well (be specific — cite exact copy or image choices)
+  - **Weaknesses:** Where they fall short (missed Q&A topics, poor images, weak bullets)
+  - **What We're Doing Differently:** How our listing/images beat theirs on each weakness
+
+- Heading 3: `Competitive Gaps We're Exploiting`
+- Bulleted list: Each gap with evidence (e.g., "No competitor shows the finished result being used — 3 of 5 competitors only show kit contents")
+
+---
+
+**Section 5: Customer Research (Full Data)**
+- Divider
+- Heading 2: `Customer Research`
+
+- Heading 3: `Q&A Analysis`
+- Table block: Theme | Question | Source ASIN | Votes/Frequency | Addressed In (Bullet# / Image#)
+- (Include ALL scraped questions, not just top ones)
+
+- Heading 3: `Review Mining`
+- Toggle: `Customer Praise Language` → bulleted list of exact quotes and phrases customers use when happy
+- Toggle: `Customer Concern Language` → bulleted list of exact quotes and phrases from worried/negative reviews
+- Toggle: `Gift Buyer Language` → how gift purchasers describe the product, what they value
+- Toggle: `Emotional Triggers` → what makes someone click Buy (with evidence quotes)
+- Toggle: `Customer Vocabulary Bank` → list of words/phrases customers naturally use (for copy reference)
+
+- Heading 3: `Review-to-Copy Mapping`
+- Table block: Customer Quote/Theme | Where We Used It | Copy We Wrote | Why This Wording
+
+---
+
+**Section 6: Keyword Strategy (Full Data)**
+- Divider
+- Heading 2: `Keyword Strategy`
+
+- Heading 3: `Primary Keywords`
+- Table block: Keyword | Search Volume | Where Placed (Title/Bullet/Backend) | Competitor Usage (how many of top 5 use it)
+
+- Heading 3: `Secondary Keywords`
+- Table block: Same structure
+
+- Heading 3: `Long-Tail Keywords`
+- Table block: Same structure
+
+- Heading 3: `Keywords NOT Used (and Why)`
+- Bulleted list: Keywords considered but excluded, with reason (e.g., "too broad", "low relevance", "already covered by primary")
 
 ### Notion Upload Process
 
@@ -376,11 +554,14 @@ Build the page content in this order:
 ### Notion Upload Rules
 
 - **Search before creating** — never duplicate pages
-- **Use toggle blocks** for long sections — keeps the page scannable
+- **Use toggle blocks** for detailed sections — keeps the page scannable while preserving ALL data
 - **Use quote blocks** for copy-paste content (title, keywords) — visually distinct and easy to grab
 - **Use code blocks** for backend keywords — prevents formatting issues
+- **Use table blocks** wherever data has multiple columns — easier to scan than paragraphs
 - **Update checkboxes** (`Has Listing`, `Has Image Plan`) — so you can filter the database by completeness
 - **Always update date** to the most recent generation date
+- **NEVER truncate or summarize research** — if you scraped it, it goes on the page
+- **Include all options** — multiple titles, bullet alternatives, image copy alternatives. Let the user choose
 
 ---
 

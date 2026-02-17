@@ -41,9 +41,9 @@ outputs/research/image-plans/
 - **Data files:** `image-data-{product-slug}-YYYY-MM-DD.json`
 
 ### Efficiency Targets
-- ✅ <80K tokens per run
+- ✅ <150K tokens per run (includes all options and detail)
 - ✅ <$0.20 cost (if using paid APIs)
-- ✅ <5 minutes execution
+- ✅ <15 minutes execution
 - ✅ Minimal file count
 - ✅ Clean organization
 
@@ -129,24 +129,49 @@ Identify patterns:
 #### Layer 1: Text/Copy Quick Reference (TOP OF DOCUMENT)
 The very first thing in the brief. A scannable table showing:
 - Image number
-- Headline text (exact copy)
-- Supporting text / callouts (exact copy)
+- Recommended headline text (exact copy)
+- Recommended supporting text / callouts (exact copy)
 - Customer question it answers
 
 **This must be readable in 30 seconds.** A designer or photographer should be able to grab this table and know exactly what goes on each image.
 
-#### Layer 2: Image-by-Image Detail
+#### Layer 2: Image-by-Image Detail (WITH MULTIPLE OPTIONS)
 For EACH image position, provide:
+
+**Recommended Copy:**
 - Image type and visual description
 - ALL text/copy with exact wording
 - Placement guidance (where text goes on the image)
 - Customer insight driving this copy (why these words)
 - Photography/design notes
 
+**Alternative Copy Options (3-4 per image):**
+For each image position (2-7), generate 3-4 alternative copy sets beyond the recommended one:
+- **Option A (Keyword/SEO focus):** Maximizes Rufus-indexable terms — headline + supporting text + rationale
+- **Option B (Emotional/Gift-buyer focus):** Speaks to the purchaser's feelings — headline + supporting text + rationale
+- **Option C (Practical/Informational focus):** Directly answers the most common Q&A question for this topic — headline + supporting text + rationale
+- **Option D (Differentiation focus):** Highlights what competitors DON'T show — headline + supporting text + rationale
+
+Each option must include:
+- Exact headline text
+- Exact supporting text / callouts
+- 1-2 sentence rationale (why this angle, what customer insight drives it)
+
+**Visual Approach Options (2-3 per image):**
+- Option 1: e.g., Flat lay / overhead shot
+- Option 2: e.g., Lifestyle / in-context shot
+- Option 3: e.g., Infographic / graphic design approach
+- For each: brief description, pros/cons, when this works best
+
+**Competitor Comparison:**
+- What competitors show in this same image slot
+- How our recommended approach differs and why
+
 #### Layer 3: Supporting Analysis
-- Competitor breakdown
-- Review insights that drove copy decisions
-- Gaps exploited
+- Full competitor image breakdown (what each competitor does at each position)
+- Review insights that drove copy decisions (with actual quotes)
+- Gaps exploited (with evidence)
+- Alternative image sequence orderings (1-2 alternatives with rationale)
 - Implementation priority
 
 ### Step 5: Write the Copy
@@ -190,9 +215,9 @@ For each image, the text must be:
 
 ---
 
-## 📋 Image Text/Copy At a Glance
+## 📋 Image Text/Copy At a Glance (Recommended)
 
-> **Designer/photographer: Start here.** This table has everything you need to know about what text goes on each image.
+> **Designer/photographer: Start here.** This table has the RECOMMENDED text for each image. See Image-by-Image Detail below for 3-4 alternative options per image.
 
 | # | Image Purpose | Headline Text | Supporting Text / Callouts | Question It Answers |
 |---|--------------|---------------|---------------------------|-------------------|
@@ -200,6 +225,9 @@ For each image, the text must be:
 | 2 | [purpose] | **"[Exact headline]"** | [Callout 1] · [Callout 2] · [Callout 3] | [Question] |
 | 3 | [purpose] | **"[Exact headline]"** | [Callout 1] · [Callout 2] | [Question] |
 | ... | ... | ... | ... | ... |
+
+### Image Narrative Arc
+[2-3 sentences explaining the story the 7 images tell in sequence — what the buyer's emotional journey is from Image 1 to Image 7]
 
 ### Copy Notes
 - **Voice:** [Tone description — e.g., warm, parent-friendly, confident]
@@ -216,6 +244,8 @@ For each image, the text must be:
 **Image Type:** [Main/Lifestyle/Infographic/Comparison/etc.]
 **Customer Question:** "[Question this image answers]"
 
+#### Recommended Copy
+
 **📝 Text on This Image:**
 | Element | Exact Copy | Placement |
 |---------|-----------|-----------|
@@ -227,17 +257,83 @@ For each image, the text must be:
 
 **Why this copy:** [1-2 sentences explaining which customer insight/review drives this text]
 
-**Visual Elements:**
+#### Alternative Copy Options
+
+**Option A — Keyword/SEO Focus:**
+- Headline: "[Text]"
+- Supporting: "[Text]"
+- *Why: [Rationale — e.g., "Maximizes Rufus indexing with 'embroidery kit for kids' in headline"]*
+
+**Option B — Emotional/Gift-Buyer Focus:**
+- Headline: "[Text]"
+- Supporting: "[Text]"
+- *Why: [Rationale — e.g., "Speaks to gift-buying parents who want to see the child's reaction"]*
+
+**Option C — Practical/Informational Focus:**
+- Headline: "[Text]"
+- Supporting: "[Text]"
+- *Why: [Rationale — e.g., "Directly answers the #1 Q&A question: 'Is everything included?'"]*
+
+**Option D — Differentiation Focus:** *(if applicable)*
+- Headline: "[Text]"
+- Supporting: "[Text]"
+- *Why: [Rationale — e.g., "No competitor mentions video instructions — we highlight this gap"]*
+
+#### Customer Insight Driving This Image
+- [Specific review quotes, Q&A questions, or competitor gaps that justify this image]
+- [How many customers asked this question / vote counts]
+- [What happens if we DON'T address this — lost sale scenario]
+
+#### Visual Approach Options
+
+**Approach 1: [e.g., Flat Lay / Overhead]**
+- Description: [brief]
+- Pros: [when this works best]
+- Cons: [limitations]
+
+**Approach 2: [e.g., Lifestyle / In-Context]**
+- Description: [brief]
+- Pros: [when this works best]
+- Cons: [limitations]
+
+**Approach 3: [e.g., Infographic / Graphic Design]**
+- Description: [brief]
+- Pros: [when this works best]
+- Cons: [limitations]
+
+#### Recommended Visual Direction
 - Background: [description]
 - Product position: [description]
 - Props/Context: [description]
+- Color palette / mood: [description]
+- Lighting: [description]
 
-**Photography/Design Notes:**
-[Specific instructions]
+#### Photography/Design Brief
+- Shot instructions: [specific details]
+- Styling and prop list: [items needed]
+- Text overlay placement: [where text sits relative to product]
+- Mobile thumbnail check: [what must be visible at small size]
+
+#### Competitor Comparison (This Position)
+- [What competitors show in this slot]
+- [How our approach differs and why]
 
 ---
 
 [Repeat for each image]
+
+---
+
+## 🔄 Alternative Image Sequences
+
+### Current Recommended Order
+[List images 1-7 with one-line purpose each]
+
+### Alternative Order A
+[Reordered sequence with rationale — e.g., "Moves 'What's Included' to position 2 since it's the #1 customer question"]
+
+### Alternative Order B
+[Another reordering with rationale]
 
 ---
 
@@ -246,36 +342,55 @@ For each image, the text must be:
 ### Customer Review Insights (Copy Drivers)
 
 **What Customers Praise (use this language):**
-- [Quote/theme 1]
-- [Quote/theme 2]
+- "[Exact quote 1]" — [frequency / context]
+- "[Exact quote 2]" — [frequency / context]
+- "[Exact quote 3]" — [frequency / context]
 
 **What Customers Worry About (address in images):**
-- [Concern 1]
-- [Concern 2]
+- "[Concern 1 in customer words]" — [frequency / which image addresses it]
+- "[Concern 2 in customer words]" — [frequency / which image addresses it]
 
 **Emotional Triggers (leverage in copy):**
-- [Trigger 1]
-- [Trigger 2]
+- [Trigger 1 with evidence quote]
+- [Trigger 2 with evidence quote]
+
+**Gift Buyer Language:**
+- [How gift buyers describe the product — exact phrases]
+- [What gift buyers value most]
+
+**Customer Vocabulary Bank:**
+- [List of words/phrases customers naturally use — for copy reference]
 
 ### Competitor Image Analysis
 
-| Competitor | ASIN | Images Used | Strengths | Weaknesses | Text Strategy |
-|------------|------|------------|-----------|------------|---------------|
+#### Overview Table
+| Competitor | ASIN | # Images | Strengths | Weaknesses | Text Strategy |
+|------------|------|----------|-----------|------------|---------------|
+| ... | ... | ... | ... | ... | ... |
+
+#### Position-by-Position Competitor Comparison
+| Position | Competitor A | Competitor B | Competitor C | Our Approach | Why Different |
+|----------|-------------|-------------|-------------|-------------|---------------|
+| 1 | ... | ... | ... | ... | ... |
+| 2 | ... | ... | ... | ... | ... |
 | ... | ... | ... | ... | ... | ... |
 
 ### Gaps We're Exploiting
-- [Gap 1]
-- [Gap 2]
+- [Gap 1 — with evidence: "X of Y competitors don't show..."]
+- [Gap 2 — with evidence]
+- [Gap 3 — with evidence]
 
 ---
 
 ## ✅ Next Steps
 
-1. [ ] Review text/copy — approve or adjust wording
-2. [ ] Brief designer with copy table + image details
-3. [ ] Schedule photo shoot
-4. [ ] Create text overlay mockups
-5. [ ] A/B test and monitor
+1. [ ] Review recommended copy — approve or swap for an alternative option
+2. [ ] Choose visual approach per image (flat lay vs lifestyle vs infographic)
+3. [ ] Confirm image sequence order
+4. [ ] Brief designer with finalized copy table + image details
+5. [ ] Schedule photo shoot
+6. [ ] Create text overlay mockups
+7. [ ] A/B test copy alternatives on live listing
 ```
 
 ---
@@ -357,27 +472,50 @@ When creating a new page or updating an existing one:
 
 ### Page Content (Image Plan Section)
 
+**Do NOT summarize. Upload the FULL detail with all options.**
+
 Append these blocks to the page:
 
 1. **Divider**
 2. **Heading 2:** `Image Plan`
-3. **Heading 3:** `Copy At a Glance`
-4. **Table block:** Image # | Purpose | Headline Text | Supporting Text | Question Answered
-5. **Heading 3:** `Image-by-Image Detail`
-6. **For each image position:** Toggle block titled `Image {#}: {Purpose}` containing:
-   - All text/copy with placement guidance
-   - Visual description
-   - Photography/design notes
-   - Customer insight driving the copy
-7. **Heading 3:** `Competitor Image Analysis`
-8. **Toggle:** `Competitor Breakdown` → competitor image strategy table
-9. **Toggle:** `Review Insights Driving Copy` → customer language, concerns, emotional triggers
+3. **Paragraph:** Image narrative arc (2-3 sentences — the story the 7 images tell)
+4. **Heading 3:** `Copy At a Glance — Recommended`
+5. **Table block:** Image # | Purpose | Recommended Headline | Recommended Supporting Text | Question Answered
+6. **Heading 3:** `Image-by-Image Detail`
+7. **For EACH image position:** Toggle block titled `Image {#}: {Purpose}` containing:
+
+   **All of the following (do NOT skip any):**
+   - **Recommended copy** — table: Element | Exact Copy | Placement
+   - **Alternative Copy Option A (Keyword/SEO)** — headline + supporting text + rationale
+   - **Alternative Copy Option B (Emotional/Gift-buyer)** — headline + supporting text + rationale
+   - **Alternative Copy Option C (Practical/Informational)** — headline + supporting text + rationale
+   - **Alternative Copy Option D (Differentiation)** — headline + supporting text + rationale (if applicable)
+   - **Customer insight** — review quotes, Q&A questions, vote counts, what drives this image
+   - **Visual approach options** — 2-3 approaches (e.g., flat lay vs lifestyle vs infographic) with pros/cons
+   - **Recommended visual direction** — background, product position, props, color palette, lighting
+   - **Photography/design brief** — shot instructions, prop list, text overlay placement, mobile thumbnail check
+   - **Competitor comparison** — what competitors do at this position vs our approach
+
+8. **Heading 3:** `Alternative Image Sequences`
+9. **Toggle:** `Alternative Orderings` → 1-2 alternative image sequence orders with rationale for each
+10. **Heading 3:** `Competitor Image Analysis`
+11. **Toggle:** `Competitor Overview` → competitor image strategy table (# images, strengths, weaknesses, text strategy)
+12. **Toggle:** `Position-by-Position Comparison` → table showing what each competitor does at each slot vs our approach
+13. **Heading 3:** `Customer Research Driving Copy`
+14. **Toggle:** `Customer Praise Language` → exact quotes customers use when happy
+15. **Toggle:** `Customer Concern Language` → exact quotes from worried/negative reviews
+16. **Toggle:** `Gift Buyer Language` → how gift purchasers describe the product
+17. **Toggle:** `Emotional Triggers` → what makes someone click Buy, with evidence quotes
+18. **Toggle:** `Customer Vocabulary Bank` → list of natural customer words/phrases for copy reference
+19. **Toggle:** `Gaps We're Exploiting` → competitive gaps with evidence (e.g., "3 of 5 competitors don't show...")
 
 ### Upload Rules
 
 - **Search before creating** — never duplicate pages
-- **Use toggle blocks** for image detail — keeps the page scannable
-- **Use table blocks** for the copy-at-a-glance reference — easy for designers to scan
+- **Use toggle blocks** for image detail and research — keeps the page scannable while preserving ALL data
+- **Use table blocks** for copy-at-a-glance and comparisons — easy for designers to scan
+- **NEVER truncate or summarize** — if you generated it, upload it. All options, all research, all competitor data
+- **Include ALL alternative copy options** per image — the user picks, not you
 - **Update `Has Image Plan` checkbox** to `true`
 - **If a listing already exists on the page**, append the image plan section AFTER the listing section
 - **Tell the user** what you did: "Uploaded image plan to Notion page: {product name}" or "Added image plan to existing Notion page for {product name}"

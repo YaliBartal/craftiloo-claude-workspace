@@ -72,6 +72,7 @@
 - **Melissa and Doug**
 - **Creativity for Kids**
 - **Latch Kits**
+- **EZCRA** (gem art/sticker craft kits)
 
 ## Departments
 
