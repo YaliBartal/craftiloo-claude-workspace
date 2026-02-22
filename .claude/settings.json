@@ -7,8 +7,8 @@
       "Read",
       "Glob",
       "Grep",
-      "WebSearch",
-      "Webfetch",
+      "WebSearch", 
+      "WebFetch",
       "mcp__claude_ai_Apify__get-actor-run",
       "mcp__claude_ai_Apify__get-actor-output"
     ]

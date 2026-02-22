@@ -143,7 +143,11 @@ Claude Code Workspace/
 │       ├── daily-market-intel/  # Morning market intelligence
 │       ├── listing-creator/     # Amazon listing generator
 │       ├── image-planner/       # Product image strategy planner
-│       └── automation-discovery-interview/  # 30-40 min workflow audit
+│       ├── product-listing-development/  # Parent orchestrator (listing + images)
+│       ├── automation-discovery-interview/  # 30-40 min workflow audit
+│       ├── weekly-ppc-analysis/  # Weekly PPC analysis (campaign + search term + placement + targeting)
+│       ├── negative-keyword-generator/  # Proactive negative keyword generation from product knowledge
+│       └── customer-review-analyzer/  # Amazon review analysis for our products + competitors
 │
 ├── context/               # Persistent context files
 │   ├── profile.md         # Your preferences and goals
@@ -170,6 +174,11 @@ Claude Code Workspace/
 | "Market check" / "Product pulse" | → `.claude/skills/daily-market-intel/` |
 | "Create a listing" / "Amazon listing" | → `.claude/skills/listing-creator/` |
 | "Image plan" / "Plan my images" | → `.claude/skills/image-planner/` |
+| "Full listing" / "Launch product" / "Listing + images" | → `.claude/skills/product-listing-development/` |
+| "Weekly PPC" / "PPC analysis" / "PPC review" / "Campaign analysis" | → `.claude/skills/weekly-ppc-analysis/` |
+| "Search term analysis" / "Negate terms" / "Keyword mining" | → `.claude/skills/weekly-ppc-analysis/` |
+| "Generate negatives" / "Negative keywords" / "Negative keyword list" | → `.claude/skills/negative-keyword-generator/` |
+| "Review analysis" / "Customer reviews" / "What are customers saying" | → `.claude/skills/customer-review-analyzer/` |
 
 **New skills** → Always save to `.claude/skills/[skill-name]/SKILL.md` (project-local, not global)
 

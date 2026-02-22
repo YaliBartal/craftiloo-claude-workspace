@@ -54,10 +54,10 @@ outputs/research/listings/
 - **Keyword data:** `{product-slug}-keywords-YYYY-MM-DD.json`
 
 ### Efficiency Targets
-- <80K tokens per run
+- <120K tokens per run (includes all options and full research detail)
 - <$0.20 cost (if using paid APIs)
-- <10 minutes end-to-end
-- 1 final listing per run
+- <15 minutes end-to-end
+- 1 final listing per run (with alternatives)
 
 ---
 
@@ -98,13 +98,27 @@ outputs/research/listings/
 
 **Load product specs from:**
 - `context/products.md` - Get exact product details, contents, pricing
+- `context/hero-products.md` - Get our ASIN, key selling points if it's a hero product
 - **Convert all measurements to inches/pounds for US market**
+
+### CRITICAL: Check Context Files Before Any Research
+
+**ALWAYS check these context files BEFORE scraping or searching for competitors/keywords:**
+
+| Context File | What It Contains | Use For |
+|-------------|-----------------|---------|
+| `context/competitors.md` | **Competitors by category with ASINs, market share, strengths/weaknesses** | Get competitor ASINs — DO NOT scrape for competitors if they exist here |
+| `context/search-terms.md` | **Search terms by category with volume and relevance scores** | Get keyword data with ACTUAL search volume — use these instead of guessing |
+| `context/hero-products.md` | **Our hero products with ASINs, contents, key selling points** | Get our own product ASIN and detailed info |
+| `context/products.md` | **Full product catalog with specs, contents, dimensions** | Get exact kit contents, measurements, pricing |
+
+**Lookup order:** Identify product category → check `context/competitors.md` for ASINs → check `context/search-terms.md` for keywords with volume → load product specs → only use Apify for data NOT in context files (reviews, Q&A, current pricing/BSR).
 
 ### Phase 2: Competitor Research
 
-**Find top 5-7 competitors in the niche:**
+**First: Check `context/competitors.md`** for the product's category. If competitors with ASINs are listed, USE THOSE. Only scrape Apify for additional data not in context files.
 
-Use Apify Amazon scraper with search query:
+If competitors are NOT in context files, use Apify Amazon scraper with search query:
 ```json
 {
   "searchTerms": ["{target keyword}"],
@@ -485,6 +499,126 @@ When user triggers this skill:
 3. **Test title in Amazon search** to see if it displays well
 4. **A/B test** different title structures over time
 5. **Update keywords** based on PPC search term reports
+
+---
+
+## Upload to Notion
+
+**After generating the listing, upload it to Notion.**
+
+### Notion Page ID (ALWAYS use this)
+
+**Parent page:** "Product Listing Development"
+**Page ID:** `30557318-d05c-806a-a94f-f5a439d94d10`
+**URL:** https://www.notion.so/Product-Listing-Development-30557318d05c806aa94ff5a439d94d10
+
+**ALWAYS create child pages under this parent page.** Do not ask the user which database to use.
+
+### Search Before Creating
+
+1. **Search for existing product page** using Notion MCP `notion-search` with the product name
+2. **If page exists** → append the listing section to it (don't create a duplicate)
+3. **If page doesn't exist** → create a new page
+
+### Page Properties
+
+When creating a new page or updating an existing one:
+
+| Property | Type | Value |
+|----------|------|-------|
+| **Title** | Title | `{Product Name}` |
+| **SKU** | Rich Text | `{SKU}` |
+| **Status** | Select | `Draft` |
+| **Date** | Date | `{YYYY-MM-DD}` |
+| **Primary Keywords** | Rich Text | `{keyword1}, {keyword2}, ...` |
+| **Has Listing** | Checkbox | `true` |
+
+### Page Content (Listing Section)
+
+**Do NOT summarize. Upload the FULL detail with all options and research.**
+
+Append these blocks to the page:
+
+1. **Divider**
+2. **Heading 2:** `Amazon Listing`
+
+3. **Heading 3:** `Recommended Title`
+4. **Quote block:** The primary recommended title (easy to copy)
+5. **Paragraph:** Character count, keyword placement breakdown (which keyword sits where and why)
+
+6. **Heading 3:** `Alternative Title Options`
+7. **Numbered list:** 2-3 alternative title formulations, each with:
+   - The full title text
+   - Character count
+   - Brief note on what this version prioritizes differently
+
+8. **Heading 3:** `Bullet Points — Recommended`
+9. **Numbered list:** All 5 bullets, each with:
+   - **Theme label in bold** (e.g., "Bullet 1: Complete Kit")
+   - The full bullet text
+   - Italic note: Which customer question(s) this answers and the review/Q&A evidence
+
+10. **Heading 3:** `Bullet Points — Alternatives`
+11. **Toggle for each bullet:** `Bullet {#} Alternatives` containing:
+    - 2-3 alternative phrasings for that bullet
+    - Note on what each alternative emphasizes differently
+    - Which customer segment each speaks to most
+
+12. **Heading 3:** `Backend Keywords`
+13. **Code block:** Recommended backend keywords (easy to copy)
+14. **Paragraph:** Byte count, what's excluded and why
+15. **Toggle:** `Additional Backend Keyword Options` → overflow keywords to swap in if testing
+
+16. **Heading 3:** `Keyword Placement Map`
+17. **Table block:** Keyword | Location (Title/Bullet#/Backend) | Search Volume | Why This Placement
+
+18. **Heading 3:** `Competitor Deep Dive`
+19. **Table block:** # | Brand | ASIN | Title | Price | BSR | Reviews | Rating | Key Strength | Key Weakness
+20. **Toggle for EACH competitor:** `{Brand} — {ASIN}` containing:
+    - Full title text
+    - Price, BSR, rating, review count
+    - All 5 of their bullet points (full text)
+    - Strengths and weaknesses (specific, citing exact copy choices)
+    - What we're doing differently vs this competitor
+
+21. **Heading 3:** `Customer Q&A Analysis`
+22. **Table block:** Theme | Question | Source ASIN | Votes/Frequency | Addressed In (Bullet#)
+23. **(Include ALL scraped questions, not just top ones)**
+
+24. **Heading 3:** `Review Mining`
+25. **Toggle:** `Customer Praise Language` → exact quotes and phrases from happy customers
+26. **Toggle:** `Customer Concern Language` → exact quotes from worried/negative reviews
+27. **Toggle:** `Gift Buyer Language` → how gift purchasers describe the product
+28. **Toggle:** `Emotional Triggers` → what makes someone click Buy, with evidence quotes
+29. **Toggle:** `Customer Vocabulary Bank` → list of natural customer words/phrases
+
+30. **Heading 3:** `Full Keyword Strategy`
+31. **Toggle:** `Primary Keywords` → table: Keyword | Search Volume | Placement | Competitor Usage
+32. **Toggle:** `Secondary Keywords` → same table structure
+33. **Toggle:** `Long-Tail Keywords` → same table structure
+34. **Toggle:** `Keywords NOT Used (and Why)` → keywords considered but excluded with reasons
+
+### Upload Rules
+
+- **Search before creating** — never duplicate pages
+- **Use quote blocks** for the recommended title — visually distinct and easy to copy
+- **Use code blocks** for backend keywords — prevents formatting issues
+- **Use toggle blocks** for detailed sections — keeps the page scannable while preserving ALL data
+- **Use table blocks** for competitor data, keyword maps, Q&A analysis — easier to scan
+- **NEVER truncate or summarize research** — if you scraped it, upload it. All competitors, all Q&A, all keywords
+- **Include ALL alternative options** — multiple titles, bullet alternatives, keyword overflow. The user picks
+- **Update `Has Listing` checkbox** to `true`
+- **If an image plan already exists on the page**, append the listing section BEFORE the image plan section
+- **Tell the user** what you did: "Uploaded listing to Notion page: {product name}" or "Added listing to existing Notion page for {product name}"
+
+### Compatibility with Parent Skill
+
+This Notion structure is **compatible with the Product Listing Development skill** (`product-listing-development`). Both skills use the same:
+- Page properties (Title, SKU, Status, Date, checkboxes)
+- Section structure (Listing section + Image Plan section)
+- Database location (saved in `context/business.md`)
+
+If the parent skill runs, it handles Notion upload for both. If this skill runs standalone, it creates/updates the page with just the listing section.
 
 ---
 

@@ -1,8 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:github.com)",
-      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebSearch",
+      "WebFetch",
       "mcp__claude_ai_Apify__search-actors",
       "mcp__claude_ai_Apify__fetch-actor-details",
       "mcp__claude_ai_Apify__call-actor",

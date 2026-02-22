@@ -142,6 +142,19 @@
 
 ---
 
+## 9. Gem Art Kits (Kids)
+
+| Rank | Brand | ASIN(s) | Est. Market Share | Strengths | Price Point |
+|------|-------|---------|-------------------|-----------|-------------|
+| 1 | **EZCRA** | B0CWLTTZ2G | ~45% | Market leader, Amazon's Choice, 990+ stickers, 8 themes, 2K+/month, 4.7 stars, easel+hanger display | Budget-Mid ($14.99) |
+| 2 | **CRAFTILOO** | **TBD (BB07)** | New entrant | **Barbie IP** (unique in niche), 8 cards, gem stickers, satin ribbons, hanger | Mid ($TBD) |
+
+**Craftiloo Product:** BB07 — Barbie Stitch Card ($3.99 EXW)
+
+**Market Notes:** Extremely underdeveloped niche. EZCRA is essentially the only real competitor with this exact product type (card-based gem sticker craft). Most results under gem art/diamond art terms are diamond painting kits (completely different product). Barbie IP is a massive differentiator — no competitor has licensed characters in this space. EZCRA's weakness: age range overpromised (claims 3-8, but reviews show 3-4 year olds struggle with fine motor gem placement).
+
+---
+
 ## Craftiloo Competitive Position Summary
 
 | Category | Craftiloo Rank | Est. Share | Top Competitor | Gap | Our ASIN(s) |
@@ -154,6 +167,7 @@
 | Knitting/Loom | #3 | ~22% | Creativity for Kids (35%) | -13% | B0F8DG32H5 |
 | **Mini Fuse Beads (2.6mm)** | **#1** | **~22%** | INSCRAFT (16%) | **+6%** | B09THLVFZK |
 | Lacing Cards | #4 | ~7% | Melissa & Doug (35%) | -28% | B0FQC7YFX6 |
+| **Gem Art (Kids)** | **#2** | **New** | EZCRA (45%) | New entrant | BB07 (TBD) |
 
 **Overall Position:** Craftiloo **leads the kids' cross stitch and embroidery categories**. In sewing kits, KRAFUN dominates with their "My First" line. Craftiloo is a mid-tier competitor in other categories.
 

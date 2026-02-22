@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automation Discovery Dashboard — Head of PPC</title>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tab-active { border-bottom: 3px solid; }
+    .card-expand { transition: max-height 0.3s ease-out; overflow: hidden; }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const dashboardData = {
+      overview: {
+        role: "Head of PPC (Solo Operator)",
+        timeMapped: "10-14 hrs/week",
+        workflowsAnalyzed: 3,
+        keyFinding: "60-70% of PPC time is spent on repetitive, rule-based micro-bid-adjustments — 'zero-thought decisions' that follow predictable patterns from your SOP. Shifting these to Assistant/Automation level could free up 5-7 hours/week for strategic work like new campaign creation and experimentation."
+      },
+
+      timeBreakdown: [
+        {
+          responsibility: "Portfolio Review & Bid Management",
+          timePerWeek: "7-10 hrs",
+          frequency: "Weekly",
+          complexity: "Medium"
+        },
+        {
+          responsibility: "Morning Health Check (Seller Board → SC)",
+          timePerWeek: "~2 hrs",
+          frequency: "Daily (20 min/day)",
+          complexity: "Low"
+        },
+        {
+          responsibility: "New Campaign Creation & Experimentation",
+          timePerWeek: "1-2 hrs",
+          frequency: "Weekly (~5 campaigns)",
+          complexity: "High"
+        }
+      ],
+
+      advisorLevel: [
+        {
+          workflow: "Seasonal Strategy Shifts (Q4 vs. Rest of Year)",
+          why: "Requires high-level business judgment about when to shift from maintenance/profitability mode to aggressive push mode. Context-dependent on market conditions, inventory, and business goals.",
+          whatToBuild: "Use Claude as a strategic sparring partner — feed it your performance data and discuss timing, budget allocation, and aggression levels for seasonal transitions.",
+          implementation: [
+            "Before each seasonal transition, compile portfolio performance summaries",
+            "Use Claude to analyze historical performance patterns and recommend budget shifts",
+            "Discuss trade-offs with leadership using Claude-generated scenario analysis"
+          ],
+          impact: "Better-informed seasonal decisions, faster alignment with leadership"
+        },
+        {
+          workflow: "New Campaign Strategy & Experimentation",
+          why: "Creative/strategic work requiring judgment about which keyword gaps to fill, competitive positioning, and when to experiment vs. play it safe. This is where your expertise adds the most value.",
+          whatToBuild: "Use Claude as a research partner — analyze Data Dive competitor data, brainstorm keyword opportunities, evaluate campaign experiment results.",
+          implementation: [
+            "Share Data Dive competitor keyword data with Claude for gap analysis",
+            "Use Claude to generate campaign experiment hypotheses based on portfolio stage",
+            "After experiments run, use Claude to analyze results and recommend next steps"
+          ],
+          impact: "More time for strategic experimentation, higher quality campaign ideas"
+        },
+        {
+          workflow: "Portfolio Stage Transitions",
+          why: "Deciding when a product moves from Launch → Growth → Optimization → Maintenance requires holistic judgment about performance trends, market position, and business goals.",
+          whatToBuild: "Use Claude to evaluate stage-readiness by reviewing metrics against your SOP thresholds, but keep the final decision with you and leadership.",
+          implementation: [
+            "Define clear metric thresholds for each stage transition in the SOP",
+            "Periodically ask Claude to evaluate which portfolios might be ready to advance",
+            "Review recommendations with leadership during sync sessions"
+          ],
+          impact: "More systematic stage management, fewer portfolios stuck in the wrong stage"
+        }
+      ],
+
+      assistantLevel: [
+        {
+          workflow: "Morning Health Check Brief",
+          why: "Follows a consistent daily structure — same data sources (Seller Board), same metrics (sales, spend, BSR, net profit, true ACoS, YoY), same format. Currently takes 20 min/day of manual review.",
+          whatToBuild: "Claude Skill that generates a structured morning brief from Seller Board data — highlighting key changes, anomalies, and daily priorities.",
+          implementation: [
+            "Build a 'PPC Morning Brief' skill that accepts exported Seller Board data",
+            "Skill analyzes: sales vs. yesterday, spend vs. budget, BSR movement, YoY comparison",
+            "Output: prioritized list of portfolios needing attention today with specific flags"
+          ],
+          impact: "Reduce daily health check from 20 min to ~5 min — save ~1.5 hrs/week"
+        },
+        {
+          workflow: "Portfolio Performance Summary & Flagging",
+          why: "Reviewing 17 portfolios follows a repeatable process — sort by spend, check ACoS/CVR against thresholds, flag outliers. Structure exists but execution is time-consuming.",
+          whatToBuild: "Claude Skill that ingests campaign data export and generates a prioritized portfolio report — flagging campaigns outside thresholds with specific recommended actions.",
+          implementation: [
+            "Build a 'Portfolio Review' skill that processes Seller Central campaign data exports",
+            "Apply SOP rules: flag ACoS > 30%, CVR < 10%, catch-all ACoS > 25%, new campaign performance",
+            "Output: ranked list of portfolios with per-campaign action items (lower bid, cut keyword, increase budget, etc.)"
+          ],
+          impact: "Reduce portfolio review prep from hours to minutes — save ~3-4 hrs/week"
+        },
+        {
+          workflow: "Bid Adjustment Recommendations",
+          why: "Most bid adjustments follow deterministic rules from your SOP — but require looking at multiple data points per campaign. This is where the 'zero-thought decisions' live.",
+          whatToBuild: "Claude Skill that analyzes campaign-level data and generates specific bid adjustment recommendations based on your SOP decision tree.",
+          implementation: [
+            "Codify the SOP decision tree into the skill (ACoS thresholds × CVR × rank movement × campaign stage)",
+            "Skill outputs a spreadsheet-ready list: campaign name, current bid, recommended bid, reason",
+            "You review the list, approve/modify, and execute in bulk via Seller Central"
+          ],
+          impact: "Transform hours of campaign-by-campaign analysis into a 15-minute review — save ~4-5 hrs/week"
+        },
+        {
+          workflow: "Competitor Keyword Gap Analysis",
+          why: "Finding new keyword opportunities follows a pattern — check what competitors rank on, cross-reference with your current campaigns, identify gaps. Repeatable with clear data sources.",
+          whatToBuild: "Claude Skill that processes Data Dive competitor data and identifies keyword gaps worth targeting.",
+          implementation: [
+            "Build a skill that accepts Data Dive competitor keyword exports",
+            "Cross-reference against your current active campaigns and targets",
+            "Output: prioritized list of keyword opportunities with search volume, competitor rank, and recommended campaign type"
+          ],
+          impact: "Faster, more systematic keyword discovery — better campaign creation decisions"
+        }
+      ],
+
+      automationLevel: [
+        {
+          workflow: "Rule-Based Bid Adjustments (Future)",
+          why: "The 'zero-thought decisions' — if ACoS > X and CVR < Y for 7+ days, lower bid by Z% — are high-volume, completely deterministic, and follow clear rules from your SOP.",
+          whatToBuild: "n8n workflow connected to Amazon Advertising API that executes rule-based bid changes automatically based on your SOP thresholds.",
+          implementation: [
+            "First: validate the Assistant-level bid recommendation skill to confirm rules are accurate",
+            "Set up Amazon Advertising API access and n8n workflow",
+            "Implement rules as automated actions with safety guardrails (max % change per day, notification on execution)",
+            "Start with low-risk campaigns (maintenance-stage only), expand after proving reliability"
+          ],
+          impact: "Could automate 60-70% of portfolio review time — potential 5-7 hrs/week saved"
+        },
+        {
+          workflow: "Budget & Performance Alerts",
+          why: "Detecting when a campaign exceeds budget or when metrics deviate sharply is deterministic — clear triggers, clear thresholds, no judgment needed.",
+          whatToBuild: "Automated alerts (via n8n or similar) when campaigns hit spend limits, ACoS spikes, or BSR drops significantly.",
+          implementation: [
+            "Define alert thresholds based on SOP (e.g., ACoS > 50%, daily spend > 150% of target, BSR drop > 20%)",
+            "Set up n8n workflow to poll Amazon Advertising API daily",
+            "Send alerts via Slack with campaign details and recommended action"
+          ],
+          impact: "Proactive issue detection — catch problems same-day instead of during weekly review"
+        }
+      ],
+
+      quickWins: [
+        { action: "Paste one portfolio's campaign data into Claude and ask it to flag outlier campaigns against your SOP thresholds", tool: "Claude (conversation)" },
+        { action: "Build a simple morning brief skill that structures your Seller Board health check output", tool: "Claude Skill" },
+        { action: "Codify your SOP bid decision tree into a checklist Claude can apply to any campaign data", tool: "Claude Skill" },
+        { action: "Export Data Dive competitor data and ask Claude to identify keyword gaps vs. your current campaigns", tool: "Claude (conversation)" }
+      ],
+
+      notReady: [
+        { workflow: "Full Campaign Creation Automation", reason: "Requires too much strategic judgment — keyword selection, campaign type, bid levels, and stage awareness all depend on context that can't be fully systematized yet." },
+        { workflow: "Titan Tools Integration", reason: "Still familiarizing with the tool. Process not defined enough to build around. Continue exploring manually first, then revisit." },
+        { workflow: "Automated Portfolio Stage Transitions", reason: "Stage decisions involve holistic business judgment and leadership alignment. Keep at Advisor level." }
+      ],
+
+      nextSteps: {
+        thisWeek: "Quick Win: Paste one portfolio's campaign data into Claude and ask it to flag campaigns outside your SOP thresholds (ACoS > 30%, CVR < 10%, etc.). Test if Claude's analysis matches your own judgment. This validates the approach before building anything.",
+        thisMonth: "Build two Claude Skills: (1) 'PPC Morning Brief' — structures your daily health check from Seller Board data, and (2) 'Portfolio Review Assistant' — processes campaign exports and generates prioritized bid adjustment recommendations based on your SOP rules. Together these could save 5-6 hrs/week.",
+        thisQuarter: "Once the Assistant-level skills prove reliable and the decision rules are validated, explore Amazon Advertising API access for rule-based bid automation via n8n. Start with maintenance-stage portfolios only. Target: automate the 'zero-thought decisions' and free up 60-70% of your portfolio review time for strategic work."
+      }
+    };
+
+    function App() {
+      const [activeTab, setActiveTab] = React.useState('overview');
+      const [expandedCards, setExpandedCards] = React.useState({});
+
+      const toggleCard = (id) => {
+        setExpandedCards(prev => ({ ...prev, [id]: !prev[id] }));
+      };
+
+      const tabs = [
+        { id: 'overview', label: 'Overview', icon: '\u{1F4CA}' },
+        { id: 'advisor', label: 'Advisor', icon: '\u{1F3AF}', color: 'blue' },
+        { id: 'assistant', label: 'Assistant', icon: '\u{1F6E0}\u{FE0F}', color: 'green' },
+        { id: 'automation', label: 'Automation', icon: '\u{26A1}', color: 'orange' },
+        { id: 'roadmap', label: 'Roadmap', icon: '\u{1F5FA}\u{FE0F}' }
+      ];
+
+      const WorkflowCard = ({ item, color, index }) => {
+        const id = `${color}-${index}`;
+        const isExpanded = expandedCards[id];
+        const colorClasses = {
+          blue: 'border-blue-500 bg-blue-50',
+          green: 'border-green-500 bg-green-50',
+          orange: 'border-orange-500 bg-orange-50'
+        };
+
+        return (
+          <div className={`border-l-4 ${colorClasses[color]} p-4 rounded-r-lg mb-4`}>
+            <div
+              className="flex justify-between items-start cursor-pointer"
+              onClick={() => toggleCard(id)}
+            >
+              <div>
+                <h3 className="font-semibold text-lg">{item.workflow}</h3>
+                <p className="text-gray-600 text-sm mt-1">{item.why}</p>
+              </div>
+              <span className="text-xl ml-4 flex-shrink-0">{isExpanded ? '\u2212' : '+'}</span>
+            </div>
+
+            {isExpanded && (
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <div className="mb-3">
+                  <span className="font-medium">What to Build:</span>
+                  <p className="text-gray-700">{item.whatToBuild}</p>
+                </div>
+                <div className="mb-3">
+                  <span className="font-medium">Implementation:</span>
+                  <ol className="list-decimal list-inside text-gray-700 mt-1">
+                    {item.implementation.map((step, i) => (
+                      <li key={i} className="ml-2">{step}</li>
+                    ))}
+                  </ol>
+                </div>
+                <div className="bg-white p-2 rounded inline-block">
+                  <span className="font-medium">Impact:</span> {item.impact}
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      };
+
+      return (
+        <div className="max-w-5xl mx-auto p-6">
+          <header className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-800">Automation Discovery Dashboard</h1>
+            <p className="text-gray-600 mt-2">
+              {dashboardData.overview.role} &bull; {dashboardData.overview.timeMapped} mapped &bull; {dashboardData.overview.workflowsAnalyzed} workflows analyzed
+            </p>
+          </header>
+
+          {/* Tabs */}
+          <nav className="flex space-x-1 border-b border-gray-200 mb-6 overflow-x-auto">
+            {tabs.map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-4 py-3 font-medium transition-colors whitespace-nowrap ${
+                  activeTab === tab.id
+                    ? `tab-active border-${tab.color || 'gray'}-500 text-gray-900`
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                {tab.icon} {tab.label}
+              </button>
+            ))}
+          </nav>
+
+          {/* Overview Tab */}
+          {activeTab === 'overview' && (
+            <div>
+              <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
+                <h2 className="text-xl font-semibold mb-4">Key Finding</h2>
+                <p className="text-lg text-gray-700">{dashboardData.overview.keyFinding}</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
+                <h2 className="text-xl font-semibold mb-4">Time Breakdown</h2>
+                <div className="space-y-3">
+                  {dashboardData.timeBreakdown.map((item, i) => (
+                    <div key={i} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div>
+                        <span className="font-medium">{item.responsibility}</span>
+                        <span className="text-gray-500 text-sm ml-2">({item.frequency})</span>
+                      </div>
+                      <div className="flex items-center gap-4">
+                        <span className={`px-2 py-1 rounded text-xs ${
+                          item.complexity === 'High' ? 'bg-red-100 text-red-700' :
+                          item.complexity === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
+                          'bg-green-100 text-green-700'
+                        }`}>
+                          {item.complexity}
+                        </span>
+                        <span className="font-semibold">{item.timePerWeek}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
+                <h2 className="text-xl font-semibold mb-4">{'\u{1F680}'} Quick Wins (This Week)</h2>
+                <div className="space-y-2">
+                  {dashboardData.quickWins.map((win, i) => (
+                    <div key={i} className="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
+                      <span className="text-green-600 mt-0.5">{'\u2713'}</span>
+                      <div>
+                        <span>{win.action}</span>
+                        <span className="text-sm text-gray-500 block">{'\u2192'} {win.tool}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm">
+                <h2 className="text-xl font-semibold mb-4">Tools & Context</h2>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <span className="font-medium block mb-1">Tools Used</span>
+                    <span className="text-gray-600 text-sm">Seller Central, Seller Board, Data Dive, Titan Tools (Chrome extension)</span>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <span className="font-medium block mb-1">Portfolios Managed</span>
+                    <span className="text-gray-600 text-sm">14 product portfolios + 2 catch-all + 1 shield = 17 total</span>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <span className="font-medium block mb-1">Key Metrics</span>
+                    <span className="text-gray-600 text-sm">ACoS (~30% target), CVR (~10% target), BSR, 7-day window minus last 2 days</span>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <span className="font-medium block mb-1">Campaign Structure</span>
+                    <span className="text-gray-600 text-sm">Auto + Broad + Product Targeting + Single Keywords per portfolio (stage-dependent)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Advisor Tab */}
+          {activeTab === 'advisor' && (
+            <div>
+              <div className="mb-4 p-4 bg-blue-50 rounded-lg">
+                <p className="text-blue-800">
+                  <strong>{'\u{1F3AF}'} Advisor Level:</strong> These workflows require nuanced judgment.
+                  Use Claude as a strategic thinking partner — no automation needed.
+                </p>
+              </div>
+              {dashboardData.advisorLevel.length > 0 ? (
+                dashboardData.advisorLevel.map((item, i) => (
+                  <WorkflowCard key={i} item={item} color="blue" index={i} />
+                ))
+              ) : (
+                <p className="text-gray-500 italic">No workflows identified at this level.</p>
+              )}
+            </div>
+          )}
+
+          {/* Assistant Tab */}
+          {activeTab === 'assistant' && (
+            <div>
+              <div className="mb-4 p-4 bg-green-50 rounded-lg">
+                <p className="text-green-800">
+                  <strong>{'\u{1F6E0}\u{FE0F}'} Assistant Level:</strong> These workflows have repeatable structure.
+                  Build as Claude Skills with MCPs — manually triggered but streamlined. <strong>This is where the biggest near-term wins are.</strong>
+                </p>
+              </div>
+              {dashboardData.assistantLevel.length > 0 ? (
+                dashboardData.assistantLevel.map((item, i) => (
+                  <WorkflowCard key={i} item={item} color="green" index={i} />
+                ))
+              ) : (
+                <p className="text-gray-500 italic">No workflows identified at this level.</p>
+              )}
+            </div>
+          )}
+
+          {/* Automation Tab */}
+          {activeTab === 'automation' && (
+            <div>
+              <div className="mb-4 p-4 bg-orange-50 rounded-lg">
+                <p className="text-orange-800">
+                  <strong>{'\u{26A1}'} Automation Level:</strong> These workflows are high-volume and deterministic.
+                  Build with n8n or similar — fully automated, no human trigger needed. <strong>Pursue these after validating Assistant-level skills first.</strong>
+                </p>
+              </div>
+              {dashboardData.automationLevel.length > 0 ? (
+                dashboardData.automationLevel.map((item, i) => (
+                  <WorkflowCard key={i} item={item} color="orange" index={i} />
+                ))
+              ) : (
+                <p className="text-gray-500 italic">No workflows ready for full automation yet. This is normal — most work belongs at Advisor or Assistant level.</p>
+              )}
+
+              {dashboardData.notReady.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="text-lg font-semibold mb-3 text-gray-700">{'\u274C'} Not Ready for Automation</h3>
+                  {dashboardData.notReady.map((item, i) => (
+                    <div key={i} className="p-3 bg-gray-100 rounded-lg mb-2">
+                      <span className="font-medium">{item.workflow}:</span>
+                      <span className="text-gray-600 ml-2">{item.reason}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Roadmap Tab */}
+          {activeTab === 'roadmap' && (
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-green-500">
+                <h3 className="font-semibold text-lg mb-2">{'\u{1F4C5}'} This Week</h3>
+                <p className="text-gray-700">{dashboardData.nextSteps.thisWeek}</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-blue-500">
+                <h3 className="font-semibold text-lg mb-2">{'\u{1F4C5}'} This Month</h3>
+                <p className="text-gray-700">{dashboardData.nextSteps.thisMonth}</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border-l-4 border-orange-500">
+                <h3 className="font-semibold text-lg mb-2">{'\u{1F4C5}'} This Quarter</h3>
+                <p className="text-gray-700">{dashboardData.nextSteps.thisQuarter}</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-sm mt-8">
+                <h3 className="font-semibold text-lg mb-4">Potential Time Savings Summary</h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                    <span>Morning Brief Skill</span>
+                    <span className="font-semibold text-green-700">~1.5 hrs/week</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                    <span>Portfolio Review Assistant Skill</span>
+                    <span className="font-semibold text-green-700">~3-4 hrs/week</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                    <span>Bid Adjustment Recommendations Skill</span>
+                    <span className="font-semibold text-green-700">~4-5 hrs/week</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-orange-50 rounded-lg">
+                    <span>Rule-Based Bid Automation (Future)</span>
+                    <span className="font-semibold text-orange-700">~5-7 hrs/week</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-gray-100 rounded-lg border-t-2 border-gray-300 mt-2">
+                    <span className="font-bold">Combined Potential (with overlap)</span>
+                    <span className="font-bold text-gray-800">~6-8 hrs/week freed</span>
+                  </div>
+                </div>
+                <p className="text-gray-500 text-sm mt-3">* Note: Time savings overlap — bid recommendations and portfolio review address the same core workflow. Combined realistic savings: 6-8 hrs/week, redirected toward strategic campaign work.</p>
+              </div>
+            </div>
+          )}
+
+          <footer className="mt-12 pt-6 border-t border-gray-200 text-center text-gray-500 text-sm">
+            Generated by Automation Discovery Interview &bull; {new Date().toLocaleDateString()}
+          </footer>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

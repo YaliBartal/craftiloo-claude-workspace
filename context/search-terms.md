@@ -301,6 +301,52 @@
 
 ---
 
+## 10. Gem Art Kits (Kids)
+
+| # | Search Term | Volume | Relevance |
+|---|-------------|--------|-----------|
+| 1 | gem art kit for kids | TBD | 100% |
+| 2 | gem art for kids | TBD | 100% |
+| 3 | gem art kit | TBD | 100% |
+| 4 | gem sticker kit for kids | TBD | 100% |
+| 5 | gem sticker craft kit | TBD | 100% |
+| 6 | gem painting kit for kids | TBD | 100% |
+| 7 | gem craft kit for kids | TBD | 100% |
+| 8 | gem art for kids ages 4-8 | TBD | 100% |
+| 9 | gem stickers for crafts kids | TBD | 100% |
+| 10 | gem art activity kit | TBD | 100% |
+| 11 | gem art sticker kit | TBD | 100% |
+| 12 | diamond art for kids | TBD | 80% |
+| 13 | diamond art kits for kids | TBD | 80% |
+| 14 | diamond painting for kids | TBD | 80% |
+| 15 | diamond art for kids ages 4-8 | TBD | 80% |
+
+**Gift/broad terms (how grandparents & parents search):**
+- arts and crafts for kids ages 4-8: TBD (70%)
+- craft kits for girls ages 4-8: TBD (70%)
+- gifts for girls age 5 6 7 8: TBD (60%)
+- sticker craft kit for kids: TBD (80%)
+- sparkle art for kids: TBD (80%)
+- jewel art kit for kids: TBD (90%)
+- rhinestone craft kit for kids: TBD (80%)
+
+**Barbie-specific long-tail (zero competition):**
+- barbie craft kit: TBD (100%)
+- barbie arts and crafts: TBD (100%)
+- barbie art kit for kids: TBD (100%)
+- barbie gem art: TBD (100%)
+- barbie craft kit for girls: TBD (100%)
+- barbie sticker craft: TBD (100%)
+
+**Niche notes:**
+- New, underdeveloped niche — main competitor is EZCRA (B0CWLTTZ2G)
+- "Diamond art" terms have high volume but are technically different products (drill-based) — shoppers overlap
+- Most search results for these terms aren't the same card-based gem sticker product
+- Barbie IP gives unique positioning no competitor has
+- Volumes TBD — pull from Data Dive
+
+---
+
 ## Quick Reference: Top Universal Search Terms
 
 These terms work across multiple categories:
