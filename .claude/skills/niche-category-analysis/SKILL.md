@@ -80,17 +80,31 @@ Use the Amazon search scraper to find the top products for each niche keyword.
 - Run for each additional keyword (1 page each)
 - Deduplicate results by ASIN
 
-#### Step 1.2: Identify Top 15 Competitors
+#### Step 1.2: Identify Top 15 Competitors — WITH PRODUCT-TYPE FILTERING
 
-From search results, select the **top 15 products** based on:
+**CRITICAL: Amazon search results often mix different product types that share keywords.**
+
+Before building your competitor list, **verify each product IS the same product type** as the niche you're researching.
+
+**Product-Type Verification step (mandatory):**
+1. Identify the **core product definition** — e.g., "quilt kit = a kit to make a quilt (no-sew fleece or patchwork). NOT a sewing kit that makes stuffed animals or accessories."
+2. Review each search result title and bullet points
+3. **EXCLUDE** products that are a different product type, even if they rank for the same keyword
+4. Note the excluded products and WHY they were excluded (document the keyword blending issue)
+
+**Example:** Searching "quilt kit for kids" returns sewing kits (KRAFUN, EZCRA, etc.) alongside actual quilt kits (Melissa & Doug, Made By Me). The sewing kits are NOT competitors for a quilt kit — they are competing for the same keyword but serve a different customer need. Exclude them.
+
+**After filtering,** select the **true competitors** based on:
 1. Organic rank position (top of search = more relevant)
 2. Review count (social proof / market presence)
 3. BSR (actual sales velocity)
 
 Exclude:
 - Sponsored-only products with no organic presence
-- Products clearly outside the niche (wrong category)
+- Products of a **different product type** (even if they rank for the keyword)
 - Variation duplicates (keep the parent/best-selling variation)
+
+**If fewer than 5 true competitors exist:** That is a SIGNAL, not a problem. A niche with <5 quality competitors means low competition — document this prominently as an opportunity. Do NOT pad the list with non-matching products.
 
 #### Step 1.3: Scrape Product Details
 

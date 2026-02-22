@@ -1,0 +1,66 @@
+{
+  "mcpServers": {
+    "apify": {
+      "command": "npx",
+      "args": ["-y", "@apify/mcp-server-apify"],
+      "env": {
+        "APIFY_API_TOKEN": "${APIFY_API_TOKEN}"
+      }
+    },
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "@notionhq/mcp-server-notion"],
+      "env": {
+        "NOTION_API_KEY": "${NOTION_API_KEY}"
+      }
+    },
+    "asana": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-asana"],
+      "env": {
+        "ASANA_PERSONAL_ACCESS_TOKEN": "${ASANA_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "slack-workspace-1": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
+      "env": {
+        "SLACK_BOT_TOKEN": "${SLACK_WORKSPACE_1_BOT_TOKEN}",
+        "SLACK_TEAM_ID": "${SLACK_WORKSPACE_1_TEAM_ID}"
+      }
+    },
+    "slack-workspace-2": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
+      "env": {
+        "SLACK_BOT_TOKEN": "${SLACK_WORKSPACE_2_BOT_TOKEN}",
+        "SLACK_TEAM_ID": "${SLACK_WORKSPACE_2_TEAM_ID}"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "sellerboard": {
+      "command": "python3",
+      "args": ["mcp-servers/sellerboard/server.py"],
+      "env": {
+        "SELLERBOARD_INVENTORY_REPORT": "${SELLERBOARD_INVENTORY_REPORT}",
+        "SELLERBOARD_SALES_DETAILED": "${SELLERBOARD_SALES_DETAILED}",
+        "SELLERBOARD_SALES_SUMMARY": "${SELLERBOARD_SALES_SUMMARY}",
+        "SELLERBOARD_DAILY_DASHBOARD": "${SELLERBOARD_DAILY_DASHBOARD}",
+        "SELLERBOARD_PPC_MARKETING": "${SELLERBOARD_PPC_MARKETING}"
+      }
+    },
+    "datadive": {
+      "command": "python3",
+      "args": ["mcp-servers/datadive/server.py"],
+      "env": {
+        "DATADIVE_API_KEY": "${DATADIVE_API_KEY}"
+      }
+    }
+  }
+}
