@@ -146,7 +146,8 @@ Claude Code Workspace/
 │       ├── product-listing-development/  # Parent orchestrator (listing + images)
 │       ├── automation-discovery-interview/  # 30-40 min workflow audit
 │       ├── weekly-ppc-analysis/  # Weekly PPC analysis (campaign + search term + placement + targeting)
-│       └── negative-keyword-generator/  # Proactive negative keyword generation from product knowledge
+│       ├── negative-keyword-generator/  # Proactive negative keyword generation from product knowledge
+│       └── customer-review-analyzer/  # Amazon review analysis for our products + competitors
 │
 ├── context/               # Persistent context files
 │   ├── profile.md         # Your preferences and goals
@@ -177,6 +178,7 @@ Claude Code Workspace/
 | "Weekly PPC" / "PPC analysis" / "PPC review" / "Campaign analysis" | → `.claude/skills/weekly-ppc-analysis/` |
 | "Search term analysis" / "Negate terms" / "Keyword mining" | → `.claude/skills/weekly-ppc-analysis/` |
 | "Generate negatives" / "Negative keywords" / "Negative keyword list" | → `.claude/skills/negative-keyword-generator/` |
+| "Review analysis" / "Customer reviews" / "What are customers saying" | → `.claude/skills/customer-review-analyzer/` |
 
 **New skills** → Always save to `.claude/skills/[skill-name]/SKILL.md` (project-local, not global)
 

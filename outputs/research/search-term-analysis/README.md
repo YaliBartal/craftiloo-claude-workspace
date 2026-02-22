@@ -1,6 +1,8 @@
-# Search Term Analysis
+# Search Term Analysis (Archived)
 
-Automated search term report analysis for PPC campaign optimization.
+**Status:** Archived — this skill was merged into `weekly-ppc-analysis` on 2026-02-19.
+
+Historical search term analysis from the standalone skill. New search term analysis goes to `ppc-weekly/`.
 
 ## Folder Structure
 

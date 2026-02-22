@@ -85,12 +85,12 @@ outputs/research/ppc-weekly/
 
 ### Auto-Detection (Preferred)
 
-**The skill automatically checks `outputs/research/ppc-weekly/input/` for CSV files.**
+**The skill automatically checks `outputs/research/ppc-weekly/input/` for CSV or Excel files.**
 
 When the skill starts:
-1. Glob for `outputs/research/ppc-weekly/input/*.csv`
-2. Read the **first row (headers)** of each CSV to identify report type
-3. Match each CSV to a report type using these rules:
+1. Glob for `outputs/research/ppc-weekly/input/*.*` (supports .csv, .xlsx, .xls)
+2. Read the **first row (headers)** of each file to identify report type
+3. Match each file to a report type using these rules:
 
 | Report Type | Identifying Columns |
 |-------------|-------------------|
@@ -102,8 +102,8 @@ When the skill starts:
 4. Report what was found:
    - If **all 4 types detected** → proceed automatically
    - If **some missing** → tell user exactly which report type(s) are missing and ask them to add
-   - If **duplicates of same type** → ask user which to use
-   - If **no CSVs found** → tell user: "Drop your 4 Seller Central exports (Campaign, Search Term, Placement, Targeting) into `outputs/research/ppc-weekly/input/` and run again."
+   - If **duplicates of same type** → ask user which to use (prefer .csv over .xlsx for speed)
+   - If **no files found** → tell user: "Drop your 4 Seller Central exports (Campaign, Search Term, Placement, Targeting) into `outputs/research/ppc-weekly/input/` and run again."
 
 ### How to Export from Seller Central
 
@@ -154,18 +154,22 @@ All exports should cover **the same 7-day window, excluding the last 2 days** (p
 
 ### Step 1: Find & Load Data
 
-1. **Auto-detect:** Glob for `outputs/research/ppc-weekly/input/*.csv`
-2. Read first row of each CSV to identify report type (see auto-detection rules above)
+1. **Auto-detect:** Glob for `outputs/research/ppc-weekly/input/*.*` (supports .csv, .xlsx, .xls)
+2. Read first row of each file to identify report type (see auto-detection rules above)
 3. If all 4 found → tell user: "Found all 4 reports — analyzing now."
 4. If any missing → tell user which are missing and stop
-5. Read all 4 CSV files
+5. If duplicates of same type → prefer .csv over .xlsx for speed, or ask user which to use
+6. Read all 4 files
 
 ### Step 2: Load Previous Snapshot (for WoW Comparison)
 
+**MANDATORY:** Always check for previous week's analysis. This is not optional — every report must show how we've improved or worsened compared to last week.
+
 1. Glob for `outputs/research/ppc-weekly/snapshots/*/summary.json`
 2. If snapshots exist → load the **most recent** `summary.json` (sort by folder date)
-3. If no snapshots → note this is the first run (no WoW comparison available)
-4. Store previous data for comparison in later steps
+3. **Also check for previous brief:** Glob for `outputs/research/ppc-weekly/briefs/weekly-ppc-analysis-*.md` and load the most recent one (excluding the one being created now). This gives richer context than just the summary.json numbers — it shows what actions were recommended and whether they appear to have been taken.
+4. If no snapshots → note this is the first run (no WoW comparison available)
+5. Store previous data for comparison in later steps
 
 ### Step 3: Parse Campaign Report
 
@@ -245,16 +249,23 @@ Assess each portfolio's stage per the PPC SOP lifecycle:
 - Data is less precise, spend is strategic not reactive
 - These campaigns support dominance, not ranking discovery
 
-**If unsure, ask the user** what stage a portfolio is in. Don't guess.
+**Portfolio stages are stored in `context/business.md` under "PPC Portfolio Stages".** Load this table at the start of every analysis. If a portfolio is NOT in the table, ask the user what stage it's in.
+
+**Phase mapping:**
+- **General** → Catch-all / Shield (account-wide, use catch-all/shield rules)
+- **Launch** → Stage 1-2 (rank velocity > efficiency, ACoS flexibility permitted)
+- **Scaling** → Stage 3 (ACoS discipline, defend rankings)
 
 **Stage-specific thresholds:**
 
-| Metric | Stage 1 (Launch Initial) | Stage 2 (Launch Targeted) | Stage 3 (Scale Profitability) | Stage 4 (Scale Domination) |
-|--------|--------------------------|---------------------------|-------------------------------|----------------------------|
-| **ACoS target** | Flexible (rank > profit) | ~40% (flexible) | ~30% (enforced) | Strategic (impression-driven) |
-| **Primary KPI** | Rank velocity | CVR + Rank stability | ACoS + Rank retention | Impression share |
-| **CVR focus** | Secondary | PRIMARY metric | Target 10%+ | Less precise |
-| **High ACoS tolerance** | Yes — rank movement justifies | Moderate | Low | N/A (different metrics) |
+| Metric | Launch (Stage 1-2) | Scaling (Stage 3) | General (Catch-All/Shield) |
+|--------|-------------------|-------------------|---------------------------|
+| **ACoS target** | Flexible (rank > profit) | ~30% (goal, not hard line) | 20-25% |
+| **Primary KPI** | Rank velocity + CVR | ACoS + Rank retention | Efficiency |
+| **CVR target** | Secondary | ~10% (goal, not hard line) | Monitor only |
+| **High ACoS tolerance** | Yes — rank movement justifies | Low — but some compromise is OK | Very low |
+
+**IMPORTANT: The 30% ACoS and 10% CVR are goals, not hard lines.** Not every campaign in every portfolio needs to hit these exactly. Some campaigns/portfolios may reasonably operate above these targets if they provide strategic value (TOS ranking, brand defense, discovery). Use judgment — flag outliers but don't treat every campaign above 30% ACoS as a red flag.
 
 ### Step 6: Campaign-by-Campaign Analysis
 
@@ -550,6 +561,16 @@ If a previous snapshot `summary.json` was loaded in Step 2:
    - **New problems** — campaigns that went from healthy to P1, new bleeders
    - **Trends** — is the account getting better or worse overall?
 
+5. **State of PPC assessment (MANDATORY):**
+   Write a clear, honest paragraph assessing the overall state of the PPC account compared to last week. Be specific:
+   - Where have we improved? (Name portfolios, campaigns, metrics)
+   - Where have we gotten worse or slacked? (Name portfolios, campaigns, metrics)
+   - Are previous P1 actions being addressed or are they still open?
+   - Overall trend: improving, stable, or declining?
+   - What's the single most important thing to fix this week?
+
+   This should read like a manager's weekly check-in — not just data tables, but an honest narrative of what's happening.
+
 ### Step 12: Generate Unified Report
 
 Output the full analysis as a structured markdown report following the exact output format below.
@@ -660,6 +681,10 @@ Generate a markdown report with these sections in this exact order:
 ### Previous P1 Actions Status
 - [ ] {action from last week} — **{Addressed / Still Open}**
 - [ ] {action from last week} — **{Addressed / Still Open}**
+
+### State of the PPC — Honest Assessment
+
+{2-4 paragraph narrative: Where we improved, where we slacked, what's the trend, what's the #1 priority this week. Be specific — name portfolios and campaigns, don't be vague.}
 
 ---
 

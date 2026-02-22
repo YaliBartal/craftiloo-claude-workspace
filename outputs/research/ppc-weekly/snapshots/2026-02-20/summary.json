@@ -1,0 +1,238 @@
+{
+  "date": "2026-02-20",
+  "data_window": "Feb 08-14, 2026",
+  "account": {
+    "spend": 5266.26,
+    "sales": 15719.5,
+    "acos": 33.50144724704984,
+    "roas": 2.984945673020322,
+    "orders": 627,
+    "clicks": 7682,
+    "cvr": 8.161936995574068,
+    "zero_order_spend": 230.94,
+    "active_portfolios": 18,
+    "active_campaigns": 124
+  },
+  "portfolios": {
+    "fairy family": {
+      "spend": 584.75,
+      "sales": 1553.8600000000001,
+      "acos": 37.63209040711518,
+      "roas": 2.6573065412569474,
+      "orders": 66,
+      "cvr": 10.662358642972535,
+      "stage": "To be determined",
+      "status": "HEALTHY"
+    },
+    ".Catch All Auto": {
+      "spend": 861.51,
+      "sales": 3881.7100000000005,
+      "acos": 22.19408456582279,
+      "roas": 4.505705099186313,
+      "orders": 160,
+      "cvr": 5.698005698005698,
+      "stage": "To be determined",
+      "status": "HEALTHY"
+    },
+    "Cross stitch backpack charms": {
+      "spend": 488.53,
+      "sales": 1377.0800000000004,
+      "acos": 35.475789351381174,
+      "roas": 2.8188238183939585,
+      "orders": 62,
+      "cvr": 13.163481953290871,
+      "stage": "To be determined",
+      "status": "HEALTHY"
+    },
+    "fuse beads": {
+      "spend": 770.0699999999999,
+      "sales": 2419.5200000000004,
+      "acos": 31.8273872503637,
+      "roas": 3.1419481345851685,
+      "orders": 73,
+      "cvr": 9.170854271356783,
+      "stage": "To be determined",
+      "status": "HEALTHY"
+    },
+    "Latch hook kits": {
+      "spend": 110.85000000000001,
+      "sales": 351.66,
+      "acos": 31.52192458624808,
+      "roas": 3.1723951285520973,
+      "orders": 15,
+      "cvr": 12.295081967213115,
+      "stage": "To be determined",
+      "status": "HEALTHY"
+    },
+    "Embroidery for kids": {
+      "spend": 306.96000000000004,
+      "sales": 720.44,
+      "acos": 42.60729554161346,
+      "roas": 2.347015897836852,
+      "orders": 28,
+      "cvr": 8.408408408408409,
+      "stage": "To be determined",
+      "status": "NEEDS ATTENTION"
+    },
+    "Stitch Dictionary All": {
+      "spend": 0.14,
+      "sales": 0.0,
+      "acos": 0,
+      "roas": 0.0,
+      "orders": 0,
+      "cvr": 0.0,
+      "stage": "To be determined",
+      "status": "HEALTHY"
+    },
+    "4 Flowers embroidery": {
+      "spend": 366.26,
+      "sales": 539.57,
+      "acos": 67.87997850139925,
+      "roas": 1.4731884453666795,
+      "orders": 22,
+      "cvr": 4.365079365079365,
+      "stage": "To be determined",
+      "status": "RED FLAG"
+    },
+    "Dessert Family": {
+      "spend": 102.91,
+      "sales": 159.85999999999999,
+      "acos": 64.37507819341924,
+      "roas": 1.5533961714119133,
+      "orders": 7,
+      "cvr": 7.07070707070707,
+      "stage": "To be determined",
+      "status": "RED FLAG"
+    },
+    "No Portfolio": {
+      "spend": 74.49000000000001,
+      "sales": 147.88,
+      "acos": 50.371923180957545,
+      "roas": 1.9852329171700895,
+      "orders": 6,
+      "cvr": 5.825242718446602,
+      "stage": "To be determined",
+      "status": "RED FLAG"
+    },
+    "biggie beads": {
+      "spend": 155.67000000000002,
+      "sales": 699.4399999999999,
+      "acos": 22.25637652979527,
+      "roas": 4.493094366287659,
+      "orders": 26,
+      "cvr": 18.30985915492958,
+      "stage": "To be determined",
+      "status": "TOP PERFORMER"
+    },
+    "Shield All": {
+      "spend": 202.98,
+      "sales": 845.2600000000001,
+      "acos": 24.0139128788775,
+      "roas": 4.164252635727658,
+      "orders": 33,
+      "cvr": 13.360323886639677,
+      "stage": "To be determined",
+      "status": "TOP PERFORMER"
+    },
+    "Latch Hook Pillow": {
+      "spend": 287.61,
+      "sales": 859.3000000000001,
+      "acos": 33.4702664959851,
+      "roas": 2.987726435103091,
+      "orders": 35,
+      "cvr": 11.217948717948719,
+      "stage": "To be determined",
+      "status": "HEALTHY"
+    },
+    "Cat And Hat Knitting": {
+      "spend": 247.27000000000004,
+      "sales": 822.36,
+      "acos": 30.068339899800577,
+      "roas": 3.325757269381647,
+      "orders": 26,
+      "cvr": 8.227848101265822,
+      "stage": "To be determined",
+      "status": "HEALTHY"
+    },
+    "Cross And Embroidery Kits": {
+      "spend": 161.04999999999998,
+      "sales": 401.6,
+      "acos": 40.10209163346613,
+      "roas": 2.4936355169202113,
+      "orders": 20,
+      "cvr": 8.438818565400844,
+      "stage": "To be determined",
+      "status": "NEEDS ATTENTION"
+    },
+    "Needlepoint": {
+      "spend": 130.61,
+      "sales": 160.74,
+      "acos": 81.25544357347269,
+      "roas": 1.230686777428987,
+      "orders": 9,
+      "cvr": 4.0,
+      "stage": "To be determined",
+      "status": "RED FLAG"
+    },
+    "punch needle Plush heart": {
+      "spend": 6.38,
+      "sales": 19.98,
+      "acos": 31.931931931931928,
+      "roas": 3.1316614420062696,
+      "orders": 1,
+      "cvr": 14.285714285714285,
+      "stage": "To be determined",
+      "status": "HEALTHY"
+    },
+    "princess lacing cards": {
+      "spend": 408.2199999999999,
+      "sales": 759.2400000000001,
+      "acos": 53.76692481955638,
+      "roas": 1.859879476752732,
+      "orders": 38,
+      "cvr": 11.209439528023598,
+      "stage": "To be determined",
+      "status": "RED FLAG"
+    }
+  },
+  "placement": {
+    "top_of_search": {
+      "spend": 0,
+      "sales": 0,
+      "acos": 0,
+      "orders": 0
+    },
+    "rest_of_search": {
+      "spend": 0,
+      "sales": 0,
+      "acos": 0,
+      "orders": 0
+    },
+    "product_pages": {
+      "spend": 0,
+      "sales": 0,
+      "acos": 0,
+      "orders": 0
+    }
+  },
+  "search_terms": {
+    "total_terms": 165,
+    "zero_order_terms": 11,
+    "zero_order_spend": 230.94,
+    "p1_negations": 18,
+    "p1_promotions": 14,
+    "estimated_savings": 516.98
+  },
+  "p1_actions": [
+    "princess lacing cards | Negate 'b0cp8vj56s' | $64.89 recoverable",
+    "Cat And Hat Knitting | Negate 'loom knitting kit' | $60.90 recoverable",
+    "Cross stitch backpack charms | Negate 'embroidery kit for kids' | $58.94 recoverable",
+    "4 Flowers embroidery | Negate 'embroidery for beginners' | $49.97 recoverable",
+    "4 Flowers embroidery | Negate 'beginner needlepoint kits for adults' | $35.28 recoverable",
+    "No Portfolio | Negate 'beginner crochet kit for kids' | $33.65 recoverable",
+    "fuse beads | Negate 'mini fuse beads kit' | $27.92 recoverable",
+    "4 Flowers embroidery | Negate 'b0bb9n74sg' | $25.01 recoverable",
+    "Cross stitch backpack charms | Negate 'beginner cross stitch kits for kids' | $24.71 recoverable",
+    "fuse beads | Negate 'b0c5wqd914' | $24.33 recoverable"
+  ]
+}

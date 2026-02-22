@@ -297,6 +297,109 @@ When analyzing a specific portfolio, identify terms that clearly belong to OTHER
 - Always mark with **[REVIEW]** — cannibalization may be acceptable
 - Do NOT negate terms that are broadly relevant to multiple products
 
+### Category 8: Color/Attribute Modifiers (Negative PHRASE — CONDITIONAL)
+
+Color and attribute terms that indicate the searcher wants a **specific single-color item**, not a multi-color craft kit. These are from the TitanOS "Never KWs" methodology.
+
+**Master Color Modifier List (70 terms):**
+
+amethyst, ash, beige, black, blue, blush, bronze, brown, caramel, cerulean, charcoal, clear, cobalt, coffee, copper, coral, cream, creme, cyan, ebony, egg shell, eggplant, fuchsia, gold, graphite, gray, green, grey, hazel, hot pink, indigo, iron, ivory, lapis, lavendar, lilac, lime, magenta, maroon, mauve, metallic, mint, navy, nickel, onyx, orange, peach, pearl, periwinkle, pewter, red, rose, rust, sage, sand, sapphire, seafoam, silver, sky, slate, smoke, snow, tan, tawny, teal, turquoise, violet, walnut, white, yellow
+
+**CRITICAL — Apply per-product logic before negating:**
+
+| Product Type | Color Negation Rule |
+|-------------|---------------------|
+| **Fuse Beads (any)** | **DO NOT negate colors.** Fuse bead kits ARE multi-color products. Customers search "blue fuse beads", "red perler beads" for specific color refills. Also "iron" is a tracked keyword ("iron beads"). |
+| **Latch Hook kits** | Negate most colors EXCEPT those in the product design (e.g., if kit makes a rainbow unicorn, keep "pink", "purple", "white") |
+| **Cross Stitch kits** | Negate most colors — customers search by design theme, not thread color |
+| **Embroidery kits** | Negate most colors — same logic as cross stitch |
+| **Sewing kits (felt)** | Negate most colors — customers search by character/theme, not felt color |
+| **Lacing Cards** | Negate most colors — product is multi-color by nature |
+
+**Per-product exceptions to always check:**
+- "iron" → NEVER negate for fuse beads (tracked keyword: "iron beads")
+- "gold", "silver" → May indicate material preference, not just color. Flag as [REVIEW] for jewelry-adjacent categories
+- "clear" → May mean transparent/see-through for some products. Flag as [REVIEW]
+- Colors that match the product's design theme → DO NOT negate (e.g., "pink" for a pink fairy cross stitch kit)
+
+### Category 9: Competitor Brands (Negative EXACT — HUMAN REVIEW REQUIRED)
+
+Competitor brand names from TitanOS research. These are ALWAYS flagged for human decision, NEVER auto-negated.
+
+**Known Craftiloo Competitors (from TitanOS + business.md):**
+
+| # | Brand | Category Focus |
+|---|-------|---------------|
+| 1 | Kraftlab | Craft kits |
+| 2 | Fanzbo | Craft kits |
+| 3 | Krafun | Craft kits |
+| 4 | Azerka | Craft kits |
+| 5 | KLUTZ | Craft kits |
+| 6 | Melissa and Doug | Kids crafts |
+| 7 | Creativity for Kids | Kids crafts |
+| 8 | Latch Kits | Latch hook |
+| 9 | EZCRA | Gem art/sticker |
+| 10 | AHCo. | Craft supplies |
+| 11 | VGOODALL | Craft supplies |
+| 12 | Hapinest | Kids crafts |
+| 13 | READAEER | Craft supplies |
+| 14 | UCDRMA | Craft supplies |
+| 15 | Katech | Craft supplies |
+| 16 | BeKnitting | Knitting kits |
+| 17 | PREBOX | Craft kits |
+| 18 | QXHOL | Craft supplies |
+| 19 | Coopay | Craft supplies |
+| 20 | Aeelike | Craft supplies |
+| 21 | IQKidz | Kids crafts |
+| 22 | Olikraft | Craft kits |
+| 23 | Frola | Craft supplies |
+| 24 | Made By Me | Kids crafts |
+| 25 | WONVOC | Craft supplies |
+| 26 | FLYOUTH | Craft supplies |
+| 27 | novelinks | Craft supplies |
+| 28 | AUTHENTIC KNITTING BOARD | Knitting |
+| 29 | cureder | Craft supplies |
+| 30 | Mira HandCrafts | Yarn/crafts |
+| 31 | YGSEPCC | Craft supplies |
+| 32 | The Woobles | Crochet kits |
+| 33 | SNOUUOSN | Craft supplies |
+| 34 | S & E TEACHER'S EDITION | Education crafts |
+| 35 | JAPCHET | Craft supplies |
+| 36 | Tatahu | Craft supplies |
+| 37 | Granny Squirrel | Craft kits |
+| 38 | WAYION | Craft supplies |
+| 39 | FUNiOi | Kids crafts |
+| 40 | Hobbspring | Craft kits |
+| 41 | HIERYQHE | Craft supplies |
+| 42 | Minatee | Craft supplies |
+| 43 | WaldyWop | Craft kits |
+| 44 | NBEADS | Beading supplies |
+| 45 | WodGod | Craft supplies |
+| 46 | PKHOUHYI | Craft supplies |
+| 47 | Boye | Knitting/crochet |
+| 48 | MAHITOI | Craft supplies |
+| 49 | Disracker | Craft supplies |
+| 50 | SAYHALO | Craft supplies |
+| 51 | Yuhoo | Craft supplies |
+| 52 | Thyle | Craft supplies |
+| 53 | Andgiv | Craft supplies |
+| 54 | BOLDNOVA | Craft supplies |
+| 55 | CYCHIRV | Craft supplies |
+| 56 | Crochetta | Crochet kits |
+| 57 | ULIONTAC | Craft supplies |
+
+**Competitor ASINs (72 known):**
+
+B08YS42GPG, B0CCN877BL, B0B5RBBGC9, B09C1KQG2J, B0CZF266QH, B0B7JF9FW2, B0C2XYP6L3, B07PPD8Q8V, B0CL22LLSY, B08CVSB189, B0DF7Q6P5J, B0BMFV811F, B0D9NSPBSS, B0DG7VK3HX, B0CN8Z1XKM, B0D4V9B9SH, B0D45DCDWJ, B0CND45Y4Z, B08BC56MQ8, B0D5QZ5CZF, B0CB6WDB7S, B09GK6WQQ1, B0CKQZ3BRV, B0D26CVQSH, B08C7SWHY7, B00ZSE93LA, B0CHVF4VFX, B09X55KL2C, B0DP5N76G4, B0D9WH15DW, B0BPJBTXN7, B096Z5MCHJ, B07HBGHS5W, B0CYG4676W, B0CWDZ3Y7T, B0BZP4FRMR, B0DPLZWBZL, B0DHH1QBYN, B0DJRLQDHH, B0DN1ZG6Q7, B001TC0UGC, B0DJFZLJFL, B0CJXQTM35, B096N2Q2YV, B0B8W4FK4Q, B08FYH13CL, B0D9XZGP79, B0C74JCL87, B0DMSQQSPY, B0DFPYD2RW, B0C689CVY4, B0BNH7FLJC, B0DKD2S3JT, B0CZ9MDYQ3, B0CQHL4R7X, B0D9L9XWGV, B00JYGPLUK, B0DKX5G74Q, B0DCHB6CLJ, B0CZDGNM8L, B09Q63J9RV, B0DK2V2D83, B0CKGYD2ZF, B0CHBF4RR3, B0DT72GZXP, B0DS7TGGC2, B08CZQ3ZMY, B08Y1W2JMJ, B0F1MFR5KN, B0DBZHG3KD, B0BNK1HSXL, B09DTHQH3Q
+
+**Rules for competitor brand negation:**
+- **NEVER auto-negate** — always present for human review
+- Brand-name searches often have decent conversion if your product is competitive
+- Only negate competitor brands if search term data shows high spend + zero orders for that brand
+- **NEVER negate Perler or Hama** — these are category names for fuse beads, not just brands
+- **NEVER negate CRAFTILOO or shinshin creation** — own brands
+- Consider negating brands from unrelated categories (e.g., "The Woobles" for fuse beads — they're crochet only)
+
 ---
 
 ## Output Format
@@ -382,6 +485,20 @@ When analyzing a specific portfolio, identify terms that clearly belong to OTHER
 |---|------|-----------|-------------|
 | 1 | {term} | {other portfolio} | Prevents cannibalization |
 
+### Color/Attribute Modifiers
+> Color terms that indicate searcher wants a specific single-color item.
+> **Conditional** — skip this section if product IS multi-color (e.g., fuse beads).
+
+| # | Term | Why Negate |
+|---|------|-----------|
+| 1 | {color} | Product is multi-design kit, not single-color item |
+
+### Competitor Brand Terms (Human Decision Required)
+
+| # | Brand | Recommendation |
+|---|-------|----------------|
+| 1 | {brand} | {Keep if converting / Negate if high spend + 0 orders} |
+
 ---
 
 ## Flagged for Review [BORDERLINE]
@@ -422,6 +539,8 @@ When analyzing a specific portfolio, identify terms that clearly belong to OTHER
 | Specific irrelevant | — | X | X |
 | High-spend zero-order | — | X | X |
 | Cross-portfolio | — | X | X |
+| Color/attribute modifiers | X | — | X |
+| Competitor brands | — | X | X |
 | **TOTAL** | **X** | **X** | **X** |
 
 ---
@@ -474,12 +593,13 @@ If a search term file was provided, archive it to:
 Before delivering the review list, verify:
 
 - [ ] Product profile is accurate (correct SKU, category, age range, contents)
-- [ ] All negative categories generated (craft types, product types, age, intent, specifics)
+- [ ] All negative categories generated (craft types, product types, age, intent, specifics, color modifiers, competitor brands)
 - [ ] Every term cross-referenced against `context/search-terms.md` — no protected terms negated
 - [ ] Product's own category terms are NOT negated
 - [ ] Product title words are NOT negated
 - [ ] Barbie terms handled correctly (preserved on Barbie products, consider negating on non-Barbie)
 - [ ] Shinshin/fuse beads age targeting correct (adults for mini beads, kids for biggie beads)
+- [ ] Color/attribute modifiers evaluated per-product (skipped for multi-color products like fuse beads)
 - [ ] Competitor brand terms flagged separately for human decision (not auto-negated)
 - [ ] Borderline terms clearly marked with [REVIEW]
 - [ ] Match types correct (phrase for categories, exact for specific terms)

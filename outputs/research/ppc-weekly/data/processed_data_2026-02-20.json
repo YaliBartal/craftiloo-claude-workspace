@@ -1,0 +1,4101 @@
+{
+  "date": "2026-02-20",
+  "data_window": "Feb 08-14, 2026",
+  "account_metrics": {
+    "spend": 5266.26,
+    "sales": 15719.5,
+    "orders": 627,
+    "clicks": 7682,
+    "impressions": 822663,
+    "acos": 33.50144724704984,
+    "roas": 2.984945673020322,
+    "cvr": 8.161936995574068
+  },
+  "portfolios": {
+    "fairy family": {
+      "spend": 584.75,
+      "sales": 1553.8600000000001,
+      "orders": 66,
+      "clicks": 619,
+      "impressions": 49165,
+      "acos": 37.63209040711518,
+      "roas": 2.6573065412569474,
+      "cvr": 10.662358642972535,
+      "campaign_count": 15
+    },
+    ".Catch All Auto": {
+      "spend": 861.51,
+      "sales": 3881.7100000000005,
+      "orders": 160,
+      "clicks": 2808,
+      "impressions": 411704,
+      "acos": 22.19408456582279,
+      "roas": 4.505705099186313,
+      "cvr": 5.698005698005698,
+      "campaign_count": 6
+    },
+    "Cross stitch backpack charms": {
+      "spend": 488.53,
+      "sales": 1377.0800000000004,
+      "orders": 62,
+      "clicks": 471,
+      "impressions": 25296,
+      "acos": 35.475789351381174,
+      "roas": 2.8188238183939585,
+      "cvr": 13.163481953290871,
+      "campaign_count": 9
+    },
+    "fuse beads": {
+      "spend": 770.0699999999999,
+      "sales": 2419.5200000000004,
+      "orders": 73,
+      "clicks": 796,
+      "impressions": 76740,
+      "acos": 31.8273872503637,
+      "roas": 3.1419481345851685,
+      "cvr": 9.170854271356783,
+      "campaign_count": 11
+    },
+    "Latch hook kits": {
+      "spend": 110.85000000000001,
+      "sales": 351.66,
+      "orders": 15,
+      "clicks": 122,
+      "impressions": 9403,
+      "acos": 31.52192458624808,
+      "roas": 3.1723951285520973,
+      "cvr": 12.295081967213115,
+      "campaign_count": 9
+    },
+    "Embroidery for kids": {
+      "spend": 306.96000000000004,
+      "sales": 720.44,
+      "orders": 28,
+      "clicks": 333,
+      "impressions": 16188,
+      "acos": 42.60729554161346,
+      "roas": 2.347015897836852,
+      "cvr": 8.408408408408409,
+      "campaign_count": 9
+    },
+    "Stitch Dictionary All": {
+      "spend": 0.14,
+      "sales": 0.0,
+      "orders": 0,
+      "clicks": 2,
+      "impressions": 111,
+      "acos": 0,
+      "roas": 0.0,
+      "cvr": 0.0,
+      "campaign_count": 2
+    },
+    "4 Flowers embroidery": {
+      "spend": 366.26,
+      "sales": 539.57,
+      "orders": 22,
+      "clicks": 504,
+      "impressions": 41439,
+      "acos": 67.87997850139925,
+      "roas": 1.4731884453666795,
+      "cvr": 4.365079365079365,
+      "campaign_count": 13
+    },
+    "Dessert Family": {
+      "spend": 102.91,
+      "sales": 159.85999999999999,
+      "orders": 7,
+      "clicks": 99,
+      "impressions": 6250,
+      "acos": 64.37507819341924,
+      "roas": 1.5533961714119133,
+      "cvr": 7.07070707070707,
+      "campaign_count": 4
+    },
+    "No Portfolio": {
+      "spend": 74.49000000000001,
+      "sales": 147.88,
+      "orders": 6,
+      "clicks": 103,
+      "impressions": 62657,
+      "acos": 50.371923180957545,
+      "roas": 1.9852329171700895,
+      "cvr": 5.825242718446602,
+      "campaign_count": 3
+    },
+    "biggie beads": {
+      "spend": 155.67000000000002,
+      "sales": 699.4399999999999,
+      "orders": 26,
+      "clicks": 142,
+      "impressions": 11528,
+      "acos": 22.25637652979527,
+      "roas": 4.493094366287659,
+      "cvr": 18.30985915492958,
+      "campaign_count": 3
+    },
+    "Shield All": {
+      "spend": 202.98,
+      "sales": 845.2600000000001,
+      "orders": 33,
+      "clicks": 247,
+      "impressions": 19391,
+      "acos": 24.0139128788775,
+      "roas": 4.164252635727658,
+      "cvr": 13.360323886639677,
+      "campaign_count": 4
+    },
+    "Latch Hook Pillow": {
+      "spend": 287.61,
+      "sales": 859.3000000000001,
+      "orders": 35,
+      "clicks": 312,
+      "impressions": 29839,
+      "acos": 33.4702664959851,
+      "roas": 2.987726435103091,
+      "cvr": 11.217948717948719,
+      "campaign_count": 8
+    },
+    "Cat And Hat Knitting": {
+      "spend": 247.27000000000004,
+      "sales": 822.36,
+      "orders": 26,
+      "clicks": 316,
+      "impressions": 27571,
+      "acos": 30.068339899800577,
+      "roas": 3.325757269381647,
+      "cvr": 8.227848101265822,
+      "campaign_count": 10
+    },
+    "Cross And Embroidery Kits": {
+      "spend": 161.04999999999998,
+      "sales": 401.6,
+      "orders": 20,
+      "clicks": 237,
+      "impressions": 7454,
+      "acos": 40.10209163346613,
+      "roas": 2.4936355169202113,
+      "cvr": 8.438818565400844,
+      "campaign_count": 5
+    },
+    "Needlepoint": {
+      "spend": 130.61,
+      "sales": 160.74,
+      "orders": 9,
+      "clicks": 225,
+      "impressions": 14481,
+      "acos": 81.25544357347269,
+      "roas": 1.230686777428987,
+      "cvr": 4.0,
+      "campaign_count": 5
+    },
+    "punch needle Plush heart": {
+      "spend": 6.38,
+      "sales": 19.98,
+      "orders": 1,
+      "clicks": 7,
+      "impressions": 159,
+      "acos": 31.931931931931928,
+      "roas": 3.1316614420062696,
+      "cvr": 14.285714285714285,
+      "campaign_count": 2
+    },
+    "princess lacing cards": {
+      "spend": 408.2199999999999,
+      "sales": 759.2400000000001,
+      "orders": 38,
+      "clicks": 339,
+      "impressions": 13287,
+      "acos": 53.76692481955638,
+      "roas": 1.859879476752732,
+      "cvr": 11.209439528023598,
+      "campaign_count": 6
+    }
+  },
+  "portfolio_details": {
+    "fairy family": {
+      "campaigns": [
+        {
+          "name": "fairy sewing - SPM MK broad",
+          "type": "Multi Keyword (MK)",
+          "spend": 245.91,
+          "sales": 519.78,
+          "orders": 22,
+          "clicks": 241,
+          "impressions": 24808,
+          "ctr": 0.971,
+          "cpc": 1.0203734,
+          "budget": 35.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 47.31,
+          "roas": 2.11,
+          "cvr": 9.12863070539419
+        },
+        {
+          "name": "fairy sewing - SPM SK kids sewing kits age 5-8 TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 98.73,
+          "sales": 288.74,
+          "orders": 11,
+          "clicks": 106,
+          "impressions": 10771,
+          "ctr": 0.984,
+          "cpc": 0.9314150999999999,
+          "budget": 14.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 34.193,
+          "roas": 2.92,
+          "cvr": 10.377358490566039
+        },
+        {
+          "name": "fairy sewing - SPM SK sewing kit for kids TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 52.83,
+          "sales": 163.86,
+          "orders": 7,
+          "clicks": 52,
+          "impressions": 1518,
+          "ctr": 3.4259999999999997,
+          "cpc": 1.0159615,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 32.241,
+          "roas": 3.1,
+          "cvr": 13.461538461538462
+        },
+        {
+          "name": "fairy sewing - auto",
+          "type": "Auto",
+          "spend": 40.37,
+          "sales": 219.8,
+          "orders": 10,
+          "clicks": 54,
+          "impressions": 1781,
+          "ctr": 3.032,
+          "cpc": 0.7475925999999999,
+          "budget": 18.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 18.367,
+          "roas": 5.44,
+          "cvr": 18.51851851851852
+        },
+        {
+          "name": "fairy sewing - SPM MK kids sewing kit root",
+          "type": "Multi Keyword (MK)",
+          "spend": 40.11,
+          "sales": 109.9,
+          "orders": 5,
+          "clicks": 46,
+          "impressions": 2620,
+          "ctr": 1.756,
+          "cpc": 0.8719565,
+          "budget": 8.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 36.497,
+          "roas": 2.74,
+          "cvr": 10.869565217391305
+        },
+        {
+          "name": "fairy sewing - manual - product targeting",
+          "type": "Product Targeting (PAT)",
+          "spend": 28.71,
+          "sales": 65.94,
+          "orders": 3,
+          "clicks": 19,
+          "impressions": 985,
+          "ctr": 1.9290000000000003,
+          "cpc": 1.5110526,
+          "budget": 4.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 43.54,
+          "roas": 2.3,
+          "cvr": 15.789473684210526
+        },
+        {
+          "name": "fairy sewing - SPM SK sewing for kids TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 23.41,
+          "sales": 26.98,
+          "orders": 1,
+          "clicks": 24,
+          "impressions": 1783,
+          "ctr": 1.346,
+          "cpc": 0.9754166999999999,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 86.768,
+          "roas": 1.15,
+          "cvr": 4.166666666666666
+        },
+        {
+          "name": "fairy sewing - SPM MK sewing kit kids root TOS",
+          "type": "Multi Keyword (MK)",
+          "spend": 20.73,
+          "sales": 65.94,
+          "orders": 3,
+          "clicks": 32,
+          "impressions": 1966,
+          "ctr": 1.628,
+          "cpc": 0.6478125,
+          "budget": 14.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 31.438,
+          "roas": 3.18,
+          "cvr": 9.375
+        },
+        {
+          "name": "ballerina sewing - manual TOS crafts for kids PUSH",
+          "type": "TOS Push",
+          "spend": 12.48,
+          "sales": 48.96,
+          "orders": 2,
+          "clicks": 17,
+          "impressions": 882,
+          "ctr": 1.9269999999999998,
+          "cpc": 0.7341176,
+          "budget": 26.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 25.490000000000002,
+          "roas": 3.92,
+          "cvr": 11.76470588235294
+        },
+        {
+          "name": "fairy sewing - SPM MK sewing kit root TOS",
+          "type": "Multi Keyword (MK)",
+          "spend": 10.09,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 12,
+          "impressions": 616,
+          "ctr": 1.9480000000000002,
+          "cpc": 0.8408333,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "fairy sewing - SPM SK doll making kit TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 4.7,
+          "sales": 21.98,
+          "orders": 1,
+          "clicks": 4,
+          "impressions": 315,
+          "ctr": 1.27,
+          "cpc": 1.175,
+          "budget": 11.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 21.383,
+          "roas": 4.68,
+          "cvr": 25.0
+        },
+        {
+          "name": "fairy sewing - SPM fairy sewing kit for kids TOS",
+          "type": "TOS Push",
+          "spend": 4.53,
+          "sales": 21.98,
+          "orders": 1,
+          "clicks": 5,
+          "impressions": 11,
+          "ctr": 45.455,
+          "cpc": 0.9059999999999999,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 20.61,
+          "roas": 4.85,
+          "cvr": 20.0
+        },
+        {
+          "name": "fairy sewing - SPM SK sewing kit for kids ages 8-12  TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 1.92,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 5,
+          "impressions": 441,
+          "ctr": 1.134,
+          "cpc": 0.384,
+          "budget": 30.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "B0BNDVTTSH Ballerina LOW BID MANUAL TARGETING",
+          "type": "Manual targeting",
+          "spend": 0.12,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 1,
+          "impressions": 188,
+          "ctr": 0.532,
+          "cpc": 0.12,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "B09WQSBZY7 Fairy LOW BID MANUAL TARGETING",
+          "type": "Manual targeting",
+          "spend": 0.11,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 1,
+          "impressions": 480,
+          "ctr": 0.208,
+          "cpc": 0.11,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        }
+      ],
+      "spend": 584.75,
+      "sales": 1553.8600000000001,
+      "orders": 66,
+      "clicks": 619,
+      "impressions": 49165,
+      "acos": 37.63209040711518,
+      "roas": 2.6573065412569474,
+      "cvr": 10.662358642972535,
+      "campaign_count": 15
+    },
+    ".Catch All Auto": {
+      "campaigns": [
+        {
+          "name": "CATCH ALL NGO - OLD",
+          "type": "Auto",
+          "spend": 349.36,
+          "sales": 1461.18,
+          "orders": 62,
+          "clicks": 796,
+          "impressions": 86758,
+          "ctr": 0.9169999999999999,
+          "cpc": 0.43889449999999997,
+          "budget": 50.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 23.909,
+          "roas": 4.18,
+          "cvr": 7.788944723618091
+        },
+        {
+          "name": "Catch All - Auto - 0.29 - Incrementum",
+          "type": "Auto",
+          "spend": 257.56,
+          "sales": 1258.51,
+          "orders": 54,
+          "clicks": 813,
+          "impressions": 123567,
+          "ctr": 0.658,
+          "cpc": 0.316802,
+          "budget": 60.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 20.465,
+          "roas": 4.89,
+          "cvr": 6.642066420664207
+        },
+        {
+          "name": "catch all - auto - 0.19 incrumentum",
+          "type": "Auto",
+          "spend": 119.69,
+          "sales": 555.48,
+          "orders": 24,
+          "clicks": 702,
+          "impressions": 113519,
+          "ctr": 0.618,
+          "cpc": 0.1704986,
+          "budget": 100.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 21.547,
+          "roas": 4.64,
+          "cvr": 3.418803418803419
+        },
+        {
+          "name": "Catch All - Auto - 0.39 - Incrementum",
+          "type": "Auto",
+          "spend": 117.51,
+          "sales": 442.68,
+          "orders": 14,
+          "clicks": 418,
+          "impressions": 74650,
+          "ctr": 0.5599999999999999,
+          "cpc": 0.2811244,
+          "budget": 20.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 26.545,
+          "roas": 3.77,
+          "cvr": 3.349282296650718
+        },
+        {
+          "name": "Catch All - Auto - 0.49 - Incrementum",
+          "type": "Auto",
+          "spend": 12.93,
+          "sales": 61.94,
+          "orders": 2,
+          "clicks": 42,
+          "impressions": 7423,
+          "ctr": 0.5660000000000001,
+          "cpc": 0.3078571,
+          "budget": 25.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 20.875,
+          "roas": 4.79,
+          "cvr": 4.761904761904762
+        },
+        {
+          "name": "Catch All - Auto - 0.15 - incrementum",
+          "type": "Auto",
+          "spend": 4.46,
+          "sales": 101.92,
+          "orders": 4,
+          "clicks": 37,
+          "impressions": 5787,
+          "ctr": 0.639,
+          "cpc": 0.1205405,
+          "budget": 100.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 4.376,
+          "roas": 22.85,
+          "cvr": 10.81081081081081
+        }
+      ],
+      "spend": 861.51,
+      "sales": 3881.7100000000005,
+      "orders": 160,
+      "clicks": 2808,
+      "impressions": 411704,
+      "acos": 22.19408456582279,
+      "roas": 4.505705099186313,
+      "cvr": 5.698005698005698,
+      "campaign_count": 6
+    },
+    "Cross stitch backpack charms": {
+      "campaigns": [
+        {
+          "name": "B08DDJCQKF Cross stitch girl broad 2",
+          "type": "Broad",
+          "spend": 245.14,
+          "sales": 571.84,
+          "orders": 26,
+          "clicks": 216,
+          "impressions": 8029,
+          "ctr": 2.69,
+          "cpc": 1.1349074000000001,
+          "budget": 35.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 42.869,
+          "roas": 2.33,
+          "cvr": 12.037037037037036
+        },
+        {
+          "name": "B08DDJCQKF Cross girl - auto",
+          "type": "Auto",
+          "spend": 87.47,
+          "sales": 333.68,
+          "orders": 15,
+          "clicks": 82,
+          "impressions": 1586,
+          "ctr": 5.17,
+          "cpc": 1.0667073,
+          "budget": 12.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 26.214,
+          "roas": 3.81,
+          "cvr": 18.29268292682927
+        },
+        {
+          "name": "Dog & CAT & Safari animals Cross Stitch Kits - SP - Exact",
+          "type": "Manual targeting",
+          "spend": 42.67,
+          "sales": 129.9,
+          "orders": 5,
+          "clicks": 66,
+          "impressions": 9553,
+          "ctr": 0.6910000000000001,
+          "cpc": 0.6465152000000001,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 32.848,
+          "roas": 3.04,
+          "cvr": 7.575757575757576
+        },
+        {
+          "name": "B08DDJCQKF Cross stitch girl broad",
+          "type": "Broad",
+          "spend": 41.9,
+          "sales": 159.84,
+          "orders": 8,
+          "clicks": 37,
+          "impressions": 2897,
+          "ctr": 1.277,
+          "cpc": 1.1324324,
+          "budget": 6.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 26.214,
+          "roas": 3.81,
+          "cvr": 21.62162162162162
+        },
+        {
+          "name": "cross girl - SPM SK cross stitch kits for kids TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 41.52,
+          "sales": 59.94,
+          "orders": 3,
+          "clicks": 36,
+          "impressions": 2020,
+          "ctr": 1.7819999999999998,
+          "cpc": 1.1533333000000001,
+          "budget": 25.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 69.269,
+          "roas": 1.44,
+          "cvr": 8.333333333333332
+        },
+        {
+          "name": "cross girl - SPM MK more general adult root TOS",
+          "type": "Multi Keyword (MK)",
+          "spend": 27.89,
+          "sales": 121.88,
+          "orders": 5,
+          "clicks": 29,
+          "impressions": 905,
+          "ctr": 3.2039999999999997,
+          "cpc": 0.9617241,
+          "budget": 23.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 22.883,
+          "roas": 4.37,
+          "cvr": 17.24137931034483
+        },
+        {
+          "name": "cross girl - SPM brand shield",
+          "type": "Brand Shield",
+          "spend": 0.84,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 2,
+          "impressions": 151,
+          "ctr": 1.325,
+          "cpc": 0.42,
+          "budget": 35.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "B0B18ZRRCQ - Cats Cross Stitch Kits - CG PAT Vol2 - Incr - SP - Default Pat - um5gbcjh",
+          "type": "Manual targeting",
+          "spend": 0.75,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 2,
+          "impressions": 51,
+          "ctr": 3.9219999999999997,
+          "cpc": 0.375,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "cross girl - manual TOS beginner cross stitch kits PUSH",
+          "type": "TOS Push",
+          "spend": 0.35,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 1,
+          "impressions": 104,
+          "ctr": 0.962,
+          "cpc": 0.35,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        }
+      ],
+      "spend": 488.53,
+      "sales": 1377.0800000000004,
+      "orders": 62,
+      "clicks": 471,
+      "impressions": 25296,
+      "acos": 35.475789351381174,
+      "roas": 2.8188238183939585,
+      "cvr": 13.163481953290871,
+      "campaign_count": 9
+    },
+    "fuse beads": {
+      "campaigns": [
+        {
+          "name": "mini fuse beads TOS push - mini root",
+          "type": "TOS Push",
+          "spend": 179.85,
+          "sales": 467.7,
+          "orders": 14,
+          "clicks": 182,
+          "impressions": 20932,
+          "ctr": 0.869,
+          "cpc": 0.9881868,
+          "budget": 30.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 38.454,
+          "roas": 2.6,
+          "cvr": 7.6923076923076925
+        },
+        {
+          "name": "mini fuse beads - SPM MK broad mini root",
+          "type": "Multi Keyword (MK)",
+          "spend": 174.78,
+          "sales": 463.0,
+          "orders": 14,
+          "clicks": 150,
+          "impressions": 13658,
+          "ctr": 1.098,
+          "cpc": 1.1652,
+          "budget": 25.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 37.749,
+          "roas": 2.65,
+          "cvr": 9.333333333333334
+        },
+        {
+          "name": "48 Minibeads - broad auto",
+          "type": "Broad",
+          "spend": 107.35,
+          "sales": 292.2,
+          "orders": 9,
+          "clicks": 164,
+          "impressions": 24272,
+          "ctr": 0.676,
+          "cpc": 0.6545732,
+          "budget": 16.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 36.739,
+          "roas": 2.72,
+          "cvr": 5.487804878048781
+        },
+        {
+          "name": "mini fuse beads - SPM SK fuse bead kit TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 104.2,
+          "sales": 201.86,
+          "orders": 6,
+          "clicks": 92,
+          "impressions": 12463,
+          "ctr": 0.738,
+          "cpc": 1.1326087,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 51.62,
+          "roas": 1.94,
+          "cvr": 6.521739130434782
+        },
+        {
+          "name": "mini fuse beads-  SPM MK multi root TOS",
+          "type": "Multi Keyword (MK)",
+          "spend": 98.02,
+          "sales": 358.18,
+          "orders": 11,
+          "clicks": 92,
+          "impressions": 1262,
+          "ctr": 7.290000000000001,
+          "cpc": 1.0654348,
+          "budget": 14.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 27.366,
+          "roas": 3.65,
+          "cvr": 11.956521739130435
+        },
+        {
+          "name": "48 mini perler beads tos push",
+          "type": "TOS Push",
+          "spend": 49.64,
+          "sales": 366.74,
+          "orders": 11,
+          "clicks": 67,
+          "impressions": 1610,
+          "ctr": 4.1610000000000005,
+          "cpc": 0.7408955,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 13.535,
+          "roas": 7.39,
+          "cvr": 16.417910447761194
+        },
+        {
+          "name": "mini fuse beads - SPM MP product targeting",
+          "type": "Product Targeting (PAT)",
+          "spend": 49.19,
+          "sales": 201.88,
+          "orders": 6,
+          "clicks": 37,
+          "impressions": 697,
+          "ctr": 5.308,
+          "cpc": 1.3294595,
+          "budget": 13.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 24.366,
+          "roas": 4.1,
+          "cvr": 16.216216216216218
+        },
+        {
+          "name": "mini fuse beads - SPM MK BROAD shinshin creation root",
+          "type": "Multi Keyword (MK)",
+          "spend": 3.53,
+          "sales": 67.96,
+          "orders": 2,
+          "clicks": 5,
+          "impressions": 1465,
+          "ctr": 0.34099999999999997,
+          "cpc": 0.706,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 5.194,
+          "roas": 19.25,
+          "cvr": 40.0
+        },
+        {
+          "name": "mini fuse beads TOS push - mini root other",
+          "type": "TOS Push",
+          "spend": 2.74,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 5,
+          "impressions": 334,
+          "ctr": 1.497,
+          "cpc": 0.5479999999999999,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "48 mini beads - SP  mini perler TOS push",
+          "type": "TOS Push",
+          "spend": 0.72,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 1,
+          "impressions": 25,
+          "ctr": 4.0,
+          "cpc": 0.72,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "B07PXN4K8N 22000 beads LOW BID Product Targeting",
+          "type": "Product Targeting (PAT)",
+          "spend": 0.05,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 1,
+          "impressions": 22,
+          "ctr": 4.545,
+          "cpc": 0.05,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        }
+      ],
+      "spend": 770.0699999999999,
+      "sales": 2419.5200000000004,
+      "orders": 73,
+      "clicks": 796,
+      "impressions": 76740,
+      "acos": 31.8273872503637,
+      "roas": 3.1419481345851685,
+      "cvr": 9.170854271356783,
+      "campaign_count": 11
+    },
+    "Latch hook kits": {
+      "campaigns": [
+        {
+          "name": "latch hook - SPM for kids root TOS",
+          "type": "TOS Push",
+          "spend": 56.7,
+          "sales": 229.78,
+          "orders": 9,
+          "clicks": 53,
+          "impressions": 3586,
+          "ctr": 1.478,
+          "cpc": 1.0698113,
+          "budget": 21.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 24.676000000000002,
+          "roas": 4.05,
+          "cvr": 16.9811320754717
+        },
+        {
+          "name": "latch hook - manual - product targeting",
+          "type": "Product Targeting (PAT)",
+          "spend": 25.24,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 25,
+          "impressions": 2060,
+          "ctr": 1.214,
+          "cpc": 1.0095999999999998,
+          "budget": 5.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "Latch Hook kits - SP - Auto",
+          "type": "Auto",
+          "spend": 14.02,
+          "sales": 101.9,
+          "orders": 5,
+          "clicks": 25,
+          "impressions": 2421,
+          "ctr": 1.0330000000000001,
+          "cpc": 0.5608,
+          "budget": 6.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 13.758999999999999,
+          "roas": 7.27,
+          "cvr": 20.0
+        },
+        {
+          "name": "latch hook - SPM SK hook rug kits for kids TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 5.22,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 5,
+          "impressions": 168,
+          "ctr": 2.976,
+          "cpc": 1.044,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "latch hook kits - manual TOS competitor keyword push",
+          "type": "TOS Push",
+          "spend": 4.52,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 5,
+          "impressions": 352,
+          "ctr": 1.4200000000000002,
+          "cpc": 0.904,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "latch hook kits exact TOS push",
+          "type": "TOS Push",
+          "spend": 2.04,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 3,
+          "impressions": 325,
+          "ctr": 0.923,
+          "cpc": 0.68,
+          "budget": 55.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "Latch Hook kits - SP - Product Target",
+          "type": "Product Targeting (PAT)",
+          "spend": 1.33,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 4,
+          "impressions": 205,
+          "ctr": 1.951,
+          "cpc": 0.3325,
+          "budget": 25.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "latch hook - SPM MK latch hook kit root TOS",
+          "type": "Multi Keyword (MK)",
+          "spend": 1.14,
+          "sales": 19.98,
+          "orders": 1,
+          "clicks": 1,
+          "impressions": 82,
+          "ctr": 1.22,
+          "cpc": 1.14,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 5.7059999999999995,
+          "roas": 17.53,
+          "cvr": 100.0
+        },
+        {
+          "name": "Latch Hook kits - SP - Exact",
+          "type": "Manual targeting",
+          "spend": 0.64,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 1,
+          "impressions": 204,
+          "ctr": 0.49,
+          "cpc": 0.64,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        }
+      ],
+      "spend": 110.85000000000001,
+      "sales": 351.66,
+      "orders": 15,
+      "clicks": 122,
+      "impressions": 9403,
+      "acos": 31.52192458624808,
+      "roas": 3.1723951285520973,
+      "cvr": 12.295081967213115,
+      "campaign_count": 9
+    },
+    "Embroidery for kids": {
+      "campaigns": [
+        {
+          "name": "embroidery beginner - SPM MK broad TOS",
+          "type": "Multi Keyword (MK)",
+          "spend": 140.99,
+          "sales": 363.72,
+          "orders": 14,
+          "clicks": 144,
+          "impressions": 8505,
+          "ctr": 1.693,
+          "cpc": 0.9790971999999999,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 38.763,
+          "roas": 2.58,
+          "cvr": 9.722222222222223
+        },
+        {
+          "name": "embroidery beginners - SPM SK embroidery kit for beginners TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 64.65,
+          "sales": 174.86,
+          "orders": 7,
+          "clicks": 63,
+          "impressions": 1437,
+          "ctr": 4.3839999999999995,
+          "cpc": 1.0261905,
+          "budget": 35.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 36.972,
+          "roas": 2.7,
+          "cvr": 11.11111111111111
+        },
+        {
+          "name": "embroidery beginner - manual - product targeting",
+          "type": "Product Targeting (PAT)",
+          "spend": 48.3,
+          "sales": 127.9,
+          "orders": 5,
+          "clicks": 58,
+          "impressions": 1561,
+          "ctr": 3.7159999999999997,
+          "cpc": 0.8327585999999999,
+          "budget": 7.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 37.763999999999996,
+          "roas": 2.65,
+          "cvr": 8.620689655172415
+        },
+        {
+          "name": "B09X55KL2C 10 Embroidery kit - SP - EXACT",
+          "type": "Manual targeting",
+          "spend": 30.24,
+          "sales": 53.96,
+          "orders": 2,
+          "clicks": 31,
+          "impressions": 1655,
+          "ctr": 1.873,
+          "cpc": 0.9754839,
+          "budget": 4.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 56.042,
+          "roas": 1.78,
+          "cvr": 6.451612903225806
+        },
+        {
+          "name": "embroidery beginner - SPM MK needlepoint root TOS",
+          "type": "Multi Keyword (MK)",
+          "spend": 20.88,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 31,
+          "impressions": 2198,
+          "ctr": 1.41,
+          "cpc": 0.6735483999999999,
+          "budget": 8.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "embroidery beginner - SPM SK easy embroidery kit beginner TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 1.27,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 1,
+          "impressions": 104,
+          "ctr": 0.962,
+          "cpc": 1.27,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "B09X55KL2C 10 embroidery LOW BID AUTO TOS",
+          "type": "Auto",
+          "spend": 0.3,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 1,
+          "impressions": 14,
+          "ctr": 7.142999999999999,
+          "cpc": 0.3,
+          "budget": 10.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "B09X55KL2C 10 embroidery LOW BID AUTO low bid",
+          "type": "Auto",
+          "spend": 0.25,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 3,
+          "impressions": 465,
+          "ctr": 0.645,
+          "cpc": 0.0833333,
+          "budget": 10.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "B09X55KL2C 10 embroidery LOW BID Manual Research",
+          "type": "Manual targeting",
+          "spend": 0.08,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 1,
+          "impressions": 249,
+          "ctr": 0.402,
+          "cpc": 0.08,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        }
+      ],
+      "spend": 306.96000000000004,
+      "sales": 720.44,
+      "orders": 28,
+      "clicks": 333,
+      "impressions": 16188,
+      "acos": 42.60729554161346,
+      "roas": 2.347015897836852,
+      "cvr": 8.408408408408409,
+      "campaign_count": 9
+    },
+    "Stitch Dictionary All": {
+      "campaigns": [
+        {
+          "name": "Stitch Dictionary CAT LOW BID Manual Targeting",
+          "type": "Manual targeting",
+          "spend": 0.08,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 1,
+          "impressions": 82,
+          "ctr": 1.22,
+          "cpc": 0.08,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "Stitch Dictionary LOW BID Manual Targeting",
+          "type": "Manual targeting",
+          "spend": 0.06,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 1,
+          "impressions": 29,
+          "ctr": 3.4479999999999995,
+          "cpc": 0.06,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        }
+      ],
+      "spend": 0.14,
+      "sales": 0.0,
+      "orders": 0,
+      "clicks": 2,
+      "impressions": 111,
+      "acos": 0,
+      "roas": 0.0,
+      "cvr": 0.0,
+      "campaign_count": 2
+    },
+    "4 Flowers embroidery": {
+      "campaigns": [
+        {
+          "name": "4 flowers - SPM MK broad ultra targeted",
+          "type": "Multi Keyword (MK)",
+          "spend": 84.41,
+          "sales": 164.87,
+          "orders": 7,
+          "clicks": 146,
+          "impressions": 16426,
+          "ctr": 0.889,
+          "cpc": 0.5781507,
+          "budget": 12.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 51.198,
+          "roas": 1.95,
+          "cvr": 4.794520547945205
+        },
+        {
+          "name": "4 flowers - SPM SK embroidery for beginners TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 54.51,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 54,
+          "impressions": 4722,
+          "ctr": 1.1440000000000001,
+          "cpc": 1.0094444,
+          "budget": 11.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - up and down",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "4 flowers - SPM SK beginners embroidery kit for adults TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 51.11,
+          "sales": 177.86,
+          "orders": 7,
+          "clicks": 86,
+          "impressions": 5803,
+          "ctr": 1.482,
+          "cpc": 0.5943023000000001,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 28.736,
+          "roas": 3.48,
+          "cvr": 8.13953488372093
+        },
+        {
+          "name": "4 flowers- shield brand self target",
+          "type": "Brand Shield",
+          "spend": 48.22,
+          "sales": 24.98,
+          "orders": 1,
+          "clicks": 62,
+          "impressions": 3731,
+          "ctr": 1.662,
+          "cpc": 0.7777419000000001,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 193.034,
+          "roas": 0.52,
+          "cvr": 1.6129032258064515
+        },
+        {
+          "name": "SO | Embroidery Kit | B0DC69M3YD | SPM | PT | 4 flowers",
+          "type": "Product Targeting (PAT)",
+          "spend": 33.33,
+          "sales": 24.98,
+          "orders": 1,
+          "clicks": 32,
+          "impressions": 2371,
+          "ctr": 1.35,
+          "cpc": 1.0415625,
+          "budget": 5.0,
+          "targeting": "Manual targeting",
+          "bidding": "ruleBased",
+          "acos": 133.42700000000002,
+          "roas": 0.75,
+          "cvr": 3.125
+        },
+        {
+          "name": "4 flowers - SPM SK easy embroidery kits for beginners TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 26.81,
+          "sales": 96.92,
+          "orders": 4,
+          "clicks": 36,
+          "impressions": 3419,
+          "ctr": 1.053,
+          "cpc": 0.7447221999999999,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - up and down",
+          "acos": 27.662,
+          "roas": 3.62,
+          "cvr": 11.11111111111111
+        },
+        {
+          "name": "4 flowers - SPM SK beginner needlepoint kits for adults TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 22.79,
+          "sales": 24.98,
+          "orders": 1,
+          "clicks": 21,
+          "impressions": 925,
+          "ctr": 2.27,
+          "cpc": 1.0852381,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 91.233,
+          "roas": 1.1,
+          "cvr": 4.761904761904762
+        },
+        {
+          "name": "4 flowers - shield brand asins",
+          "type": "Brand Shield",
+          "spend": 18.84,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 24,
+          "impressions": 1083,
+          "ctr": 2.2159999999999997,
+          "cpc": 0.785,
+          "budget": 7.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "4 flowers - SPM SK embroidery starter kit beginner TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 13.62,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 11,
+          "impressions": 315,
+          "ctr": 3.492,
+          "cpc": 1.2381818,
+          "budget": 17.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "SO | Embroidery Kit | B0BWSGRTB1| SPM | PT | Brand's ASINs",
+          "type": "Product Targeting (PAT)",
+          "spend": 8.03,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 17,
+          "impressions": 1280,
+          "ctr": 1.328,
+          "cpc": 0.47235289999999996,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "SO | Embroidery Kit | B0BWSGRTB1 | SPM | CAT | Embroidery Kits",
+          "type": "Manual targeting",
+          "spend": 2.86,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 12,
+          "impressions": 940,
+          "ctr": 1.277,
+          "cpc": 0.2383333,
+          "budget": 35.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "SO | Embroidery Kit | B0DC69M3YD | SPM | SK | crossstitching kits adult beginner",
+          "type": "Single Keyword (SK)",
+          "spend": 1.28,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 2,
+          "impressions": 249,
+          "ctr": 0.803,
+          "cpc": 0.64,
+          "budget": 25.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "SO | Emroidery Kit | SPM | Defence | Brand KW",
+          "type": "Manual targeting",
+          "spend": 0.45,
+          "sales": 24.98,
+          "orders": 1,
+          "clicks": 1,
+          "impressions": 175,
+          "ctr": 0.571,
+          "cpc": 0.45,
+          "budget": 30.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 1.8010000000000002,
+          "roas": 55.51,
+          "cvr": 100.0
+        }
+      ],
+      "spend": 366.26,
+      "sales": 539.57,
+      "orders": 22,
+      "clicks": 504,
+      "impressions": 41439,
+      "acos": 67.87997850139925,
+      "roas": 1.4731884453666795,
+      "cvr": 4.365079365079365,
+      "campaign_count": 13
+    },
+    "Dessert Family": {
+      "campaigns": [
+        {
+          "name": "dessert sewing - SPM SK sewing kit for kids ages 8-12 TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 57.14,
+          "sales": 113.9,
+          "orders": 5,
+          "clicks": 47,
+          "impressions": 3044,
+          "ctr": 1.544,
+          "cpc": 1.2157447000000001,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Fixed bids",
+          "acos": 50.166999999999994,
+          "roas": 1.99,
+          "cvr": 10.638297872340425
+        },
+        {
+          "name": "dessert sewing - SPM MK broad sewing kit root",
+          "type": "Multi Keyword (MK)",
+          "spend": 18.63,
+          "sales": 22.98,
+          "orders": 1,
+          "clicks": 19,
+          "impressions": 696,
+          "ctr": 2.73,
+          "cpc": 0.9805263,
+          "budget": 2.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - up and down",
+          "acos": 81.07,
+          "roas": 1.23,
+          "cvr": 5.263157894736842
+        },
+        {
+          "name": "dessert sewing - SPM SK beginner sewing kit for kids TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 15.59,
+          "sales": 22.98,
+          "orders": 1,
+          "clicks": 12,
+          "impressions": 488,
+          "ctr": 2.459,
+          "cpc": 1.2991667,
+          "budget": 2.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 67.842,
+          "roas": 1.47,
+          "cvr": 8.333333333333332
+        },
+        {
+          "name": "dessert sewing - SPM SK sewing for kids TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 11.55,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 21,
+          "impressions": 2022,
+          "ctr": 1.039,
+          "cpc": 0.55,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        }
+      ],
+      "spend": 102.91,
+      "sales": 159.85999999999999,
+      "orders": 7,
+      "clicks": 99,
+      "impressions": 6250,
+      "acos": 64.37507819341924,
+      "roas": 1.5533961714119133,
+      "cvr": 7.07070707070707,
+      "campaign_count": 4
+    },
+    "No Portfolio": {
+      "campaigns": [
+        {
+          "name": "Biggie Auto",
+          "type": "Auto",
+          "spend": 40.7,
+          "sales": 124.9,
+          "orders": 5,
+          "clicks": 74,
+          "impressions": 60774,
+          "ctr": 0.122,
+          "cpc": 0.55,
+          "budget": 45.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Fixed bids",
+          "acos": 32.586,
+          "roas": 3.07,
+          "cvr": 6.756756756756757
+        },
+        {
+          "name": "knitting bunny - SP - TOS beginners crochet kit for kids",
+          "type": "TOS Push",
+          "spend": 30.78,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 25,
+          "impressions": 1706,
+          "ctr": 1.465,
+          "cpc": 1.2312,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "bunny knitting - SPM knitting for kids TOS",
+          "type": "TOS Push",
+          "spend": 3.01,
+          "sales": 22.98,
+          "orders": 1,
+          "clicks": 4,
+          "impressions": 177,
+          "ctr": 2.26,
+          "cpc": 0.7525,
+          "budget": 14.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 13.098,
+          "roas": 7.63,
+          "cvr": 25.0
+        }
+      ],
+      "spend": 74.49000000000001,
+      "sales": 147.88,
+      "orders": 6,
+      "clicks": 103,
+      "impressions": 62657,
+      "acos": 50.371923180957545,
+      "roas": 1.9852329171700895,
+      "cvr": 5.825242718446602,
+      "campaign_count": 3
+    },
+    "biggie beads": {
+      "campaigns": [
+        {
+          "name": "biggie beads - SPM MK broad TOS",
+          "type": "Multi Keyword (MK)",
+          "spend": 111.3,
+          "sales": 549.56,
+          "orders": 20,
+          "clicks": 87,
+          "impressions": 8769,
+          "ctr": 0.992,
+          "cpc": 1.2793103000000001,
+          "budget": 35.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 20.253,
+          "roas": 4.94,
+          "cvr": 22.988505747126435
+        },
+        {
+          "name": "biggie auto",
+          "type": "Auto",
+          "spend": 42.27,
+          "sales": 149.88,
+          "orders": 6,
+          "clicks": 53,
+          "impressions": 2555,
+          "ctr": 2.0740000000000003,
+          "cpc": 0.7975472,
+          "budget": 10.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 28.203,
+          "roas": 3.55,
+          "cvr": 11.320754716981133
+        },
+        {
+          "name": "biggie beads - SPM SK 10mm fuse beads TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 2.1,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 2,
+          "impressions": 204,
+          "ctr": 0.98,
+          "cpc": 1.05,
+          "budget": 11.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        }
+      ],
+      "spend": 155.67000000000002,
+      "sales": 699.4399999999999,
+      "orders": 26,
+      "clicks": 142,
+      "impressions": 11528,
+      "acos": 22.25637652979527,
+      "roas": 4.493094366287659,
+      "cvr": 18.30985915492958,
+      "campaign_count": 3
+    },
+    "Shield All": {
+      "campaigns": [
+        {
+          "name": "shield product - cross stitch kits",
+          "type": "Brand Shield",
+          "spend": 88.94,
+          "sales": 307.72,
+          "orders": 12,
+          "clicks": 111,
+          "impressions": 6973,
+          "ctr": 1.592,
+          "cpc": 0.8012613000000001,
+          "budget": 8.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 28.903000000000002,
+          "roas": 3.46,
+          "cvr": 10.81081081081081
+        },
+        {
+          "name": "shield product - latch hook kits",
+          "type": "Brand Shield",
+          "spend": 74.41,
+          "sales": 304.74,
+          "orders": 12,
+          "clicks": 88,
+          "impressions": 6534,
+          "ctr": 1.347,
+          "cpc": 0.8455682,
+          "budget": 8.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 24.418,
+          "roas": 4.1,
+          "cvr": 13.636363636363635
+        },
+        {
+          "name": "shield brand name - manual and broad",
+          "type": "Brand Shield",
+          "spend": 31.73,
+          "sales": 192.84,
+          "orders": 8,
+          "clicks": 38,
+          "impressions": 5100,
+          "ctr": 0.745,
+          "cpc": 0.835,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 16.454,
+          "roas": 6.08,
+          "cvr": 21.052631578947366
+        },
+        {
+          "name": "shield product - latch hook pillow",
+          "type": "Brand Shield",
+          "spend": 7.9,
+          "sales": 39.96,
+          "orders": 1,
+          "clicks": 10,
+          "impressions": 784,
+          "ctr": 1.276,
+          "cpc": 0.79,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 19.77,
+          "roas": 5.06,
+          "cvr": 10.0
+        }
+      ],
+      "spend": 202.98,
+      "sales": 845.2600000000001,
+      "orders": 33,
+      "clicks": 247,
+      "impressions": 19391,
+      "acos": 24.0139128788775,
+      "roas": 4.164252635727658,
+      "cvr": 13.360323886639677,
+      "campaign_count": 4
+    },
+    "Latch Hook Pillow": {
+      "campaigns": [
+        {
+          "name": "latch hook pillow - SPM product targeting",
+          "type": "Product Targeting (PAT)",
+          "spend": 115.27,
+          "sales": 174.86,
+          "orders": 7,
+          "clicks": 121,
+          "impressions": 8312,
+          "ctr": 1.456,
+          "cpc": 0.9526446,
+          "budget": 18.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 65.92099999999999,
+          "roas": 1.52,
+          "cvr": 5.785123966942149
+        },
+        {
+          "name": "latch hook pillow - SPM broad",
+          "type": "Broad",
+          "spend": 83.67,
+          "sales": 369.7,
+          "orders": 15,
+          "clicks": 103,
+          "impressions": 18588,
+          "ctr": 0.5539999999999999,
+          "cpc": 0.8123300999999999,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 22.631999999999998,
+          "roas": 4.42,
+          "cvr": 14.563106796116504
+        },
+        {
+          "name": "latch hook pillow - SPM latch hook kit for kids TOS",
+          "type": "TOS Push",
+          "spend": 60.66,
+          "sales": 239.8,
+          "orders": 10,
+          "clicks": 47,
+          "impressions": 875,
+          "ctr": 5.371,
+          "cpc": 1.2906383,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 25.296000000000003,
+          "roas": 3.95,
+          "cvr": 21.27659574468085
+        },
+        {
+          "name": "latch hook pillow - SPA auto",
+          "type": "Auto",
+          "spend": 15.53,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 25,
+          "impressions": 502,
+          "ctr": 4.9799999999999995,
+          "cpc": 0.6212,
+          "budget": 3.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "latch hook pillow - SPM SK latch hook kits for beginners TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 4.86,
+          "sales": 24.98,
+          "orders": 1,
+          "clicks": 4,
+          "impressions": 119,
+          "ctr": 3.361,
+          "cpc": 1.215,
+          "budget": 13.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 19.456,
+          "roas": 5.14,
+          "cvr": 25.0
+        },
+        {
+          "name": "latch hook pillow - SPM other root TOS",
+          "type": "TOS Push",
+          "spend": 4.19,
+          "sales": 49.96,
+          "orders": 2,
+          "clicks": 8,
+          "impressions": 797,
+          "ctr": 1.004,
+          "cpc": 0.52375,
+          "budget": 2.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 8.387,
+          "roas": 11.92,
+          "cvr": 25.0
+        },
+        {
+          "name": "latch hook pillow - SPM latch hook kit root TOS",
+          "type": "TOS Push",
+          "spend": 2.18,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 3,
+          "impressions": 525,
+          "ctr": 0.571,
+          "cpc": 0.7266667,
+          "budget": 4.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "latch hook pillow - SPM hook rug kits for kids TOS",
+          "type": "TOS Push",
+          "spend": 1.25,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 1,
+          "impressions": 121,
+          "ctr": 0.826,
+          "cpc": 1.25,
+          "budget": 7.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        }
+      ],
+      "spend": 287.61,
+      "sales": 859.3000000000001,
+      "orders": 35,
+      "clicks": 312,
+      "impressions": 29839,
+      "acos": 33.4702664959851,
+      "roas": 2.987726435103091,
+      "cvr": 11.217948717948719,
+      "campaign_count": 8
+    },
+    "Cat And Hat Knitting": {
+      "campaigns": [
+        {
+          "name": "cat knitting - SPM broad",
+          "type": "Broad",
+          "spend": 87.75,
+          "sales": 155.88,
+          "orders": 6,
+          "clicks": 82,
+          "impressions": 3172,
+          "ctr": 2.585,
+          "cpc": 1.070122,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 56.293000000000006,
+          "roas": 1.78,
+          "cvr": 7.317073170731707
+        },
+        {
+          "name": "cat knitting - SPM product targeting",
+          "type": "Product Targeting (PAT)",
+          "spend": 51.2,
+          "sales": 134.9,
+          "orders": 5,
+          "clicks": 64,
+          "impressions": 3752,
+          "ctr": 1.706,
+          "cpc": 0.8,
+          "budget": 14.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 37.954,
+          "roas": 2.63,
+          "cvr": 7.8125
+        },
+        {
+          "name": "cat knitting - SPM SK loom knitting kit TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 49.82,
+          "sales": 26.98,
+          "orders": 1,
+          "clicks": 55,
+          "impressions": 6477,
+          "ctr": 0.849,
+          "cpc": 0.9058181999999999,
+          "budget": 16.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - up and down",
+          "acos": 184.655,
+          "roas": 0.54,
+          "cvr": 1.8181818181818181
+        },
+        {
+          "name": "cat knitting - SPA auto",
+          "type": "Auto",
+          "spend": 31.61,
+          "sales": 454.64,
+          "orders": 12,
+          "clicks": 77,
+          "impressions": 10791,
+          "ctr": 0.714,
+          "cpc": 0.4105195,
+          "budget": 6.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 6.952999999999999,
+          "roas": 14.38,
+          "cvr": 15.584415584415584
+        },
+        {
+          "name": "cat knitting - SPM knitting kit for kids TOS",
+          "type": "TOS Push",
+          "spend": 11.61,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 12,
+          "impressions": 1885,
+          "ctr": 0.637,
+          "cpc": 0.9675,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "cat knitting - SPM SK knitting beginner kit TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 5.83,
+          "sales": 26.98,
+          "orders": 1,
+          "clicks": 11,
+          "impressions": 663,
+          "ctr": 1.659,
+          "cpc": 0.53,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 21.609,
+          "roas": 4.63,
+          "cvr": 9.090909090909092
+        },
+        {
+          "name": "cat knitting - SPM SK loom kit for kids TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 3.36,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 4,
+          "impressions": 193,
+          "ctr": 2.073,
+          "cpc": 0.84,
+          "budget": 8.5,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - up and down",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "cat knitting - SPM other root TOS",
+          "type": "TOS Push",
+          "spend": 2.91,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 7,
+          "impressions": 479,
+          "ctr": 1.461,
+          "cpc": 0.4157143,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "cat knitting - SPM SK loom animals kit for kids TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 2.83,
+          "sales": 22.98,
+          "orders": 1,
+          "clicks": 3,
+          "impressions": 44,
+          "ctr": 6.8180000000000005,
+          "cpc": 0.9433333,
+          "budget": 14.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 12.315,
+          "roas": 8.12,
+          "cvr": 33.33333333333333
+        },
+        {
+          "name": "cat knitting - SPM knitting kit for beginners TOS",
+          "type": "TOS Push",
+          "spend": 0.35,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 1,
+          "impressions": 115,
+          "ctr": 0.8699999999999999,
+          "cpc": 0.35,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        }
+      ],
+      "spend": 247.27000000000004,
+      "sales": 822.36,
+      "orders": 26,
+      "clicks": 316,
+      "impressions": 27571,
+      "acos": 30.068339899800577,
+      "roas": 3.325757269381647,
+      "cvr": 8.227848101265822,
+      "campaign_count": 10
+    },
+    "Cross And Embroidery Kits": {
+      "campaigns": [
+        {
+          "name": "cross embroidery - small kit SPM broad and phrase",
+          "type": "Broad",
+          "spend": 74.2,
+          "sales": 139.86,
+          "orders": 7,
+          "clicks": 102,
+          "impressions": 1378,
+          "ctr": 7.402,
+          "cpc": 0.727451,
+          "budget": 14.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 53.053,
+          "roas": 1.88,
+          "cvr": 6.862745098039216
+        },
+        {
+          "name": "cross embroidery - small kit SPA auto",
+          "type": "Auto",
+          "spend": 34.9,
+          "sales": 119.88,
+          "orders": 6,
+          "clicks": 68,
+          "impressions": 1561,
+          "ctr": 4.356,
+          "cpc": 0.5132353,
+          "budget": 15.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 29.112,
+          "roas": 3.43,
+          "cvr": 8.823529411764707
+        },
+        {
+          "name": "cross embroidery -  small kit SPM SK cross stitch kits for kids TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 22.69,
+          "sales": 121.88,
+          "orders": 6,
+          "clicks": 26,
+          "impressions": 1655,
+          "ctr": 1.5709999999999997,
+          "cpc": 0.8726923,
+          "budget": 24.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 18.617,
+          "roas": 5.37,
+          "cvr": 23.076923076923077
+        },
+        {
+          "name": "cross embroidery - small kit SPM SK beginner cross stitch kits for kids TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 18.54,
+          "sales": 19.98,
+          "orders": 1,
+          "clicks": 27,
+          "impressions": 2589,
+          "ctr": 1.043,
+          "cpc": 0.6866667,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 92.793,
+          "roas": 1.08,
+          "cvr": 3.7037037037037033
+        },
+        {
+          "name": "cross embroidery - small kit SPM MK cross stitch root TOS",
+          "type": "Multi Keyword (MK)",
+          "spend": 10.72,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 14,
+          "impressions": 271,
+          "ctr": 5.1659999999999995,
+          "cpc": 0.7657143000000001,
+          "budget": 25.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        }
+      ],
+      "spend": 161.04999999999998,
+      "sales": 401.6,
+      "orders": 20,
+      "clicks": 237,
+      "impressions": 7454,
+      "acos": 40.10209163346613,
+      "roas": 2.4936355169202113,
+      "cvr": 8.438818565400844,
+      "campaign_count": 5
+    },
+    "Needlepoint": {
+      "campaigns": [
+        {
+          "name": "needlepoint - SPM MK broad and phrase TOS",
+          "type": "Multi Keyword (MK)",
+          "spend": 68.78,
+          "sales": 71.92,
+          "orders": 4,
+          "clicks": 99,
+          "impressions": 5688,
+          "ctr": 1.7409999999999999,
+          "cpc": 0.6947475,
+          "budget": 10.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - up and down",
+          "acos": 95.634,
+          "roas": 1.05,
+          "cvr": 4.040404040404041
+        },
+        {
+          "name": "needlepoint - SPA auto TOS",
+          "type": "Auto",
+          "spend": 34.77,
+          "sales": 52.86,
+          "orders": 3,
+          "clicks": 75,
+          "impressions": 5774,
+          "ctr": 1.299,
+          "cpc": 0.4636,
+          "budget": 5.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 65.778,
+          "roas": 1.52,
+          "cvr": 4.0
+        },
+        {
+          "name": "needlepoint - SPM SK needlepoint kits for beginners TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 13.82,
+          "sales": 35.96,
+          "orders": 2,
+          "clicks": 32,
+          "impressions": 2137,
+          "ctr": 1.497,
+          "cpc": 0.431875,
+          "budget": 15.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 38.432,
+          "roas": 2.6,
+          "cvr": 6.25
+        },
+        {
+          "name": "needlepoint - SPM SK kids needlepoint kit TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 9.61,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 12,
+          "impressions": 491,
+          "ctr": 2.444,
+          "cpc": 0.8008333000000001,
+          "budget": 8.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "needlepoint - SPM SK needlepoint kit for kids TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 3.63,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 7,
+          "impressions": 391,
+          "ctr": 1.79,
+          "cpc": 0.5185714,
+          "budget": 8.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        }
+      ],
+      "spend": 130.61,
+      "sales": 160.74,
+      "orders": 9,
+      "clicks": 225,
+      "impressions": 14481,
+      "acos": 81.25544357347269,
+      "roas": 1.230686777428987,
+      "cvr": 4.0,
+      "campaign_count": 5
+    },
+    "punch needle Plush heart": {
+      "campaigns": [
+        {
+          "name": "punch needle - SPM SK kids punch needle kit TOS PUSH",
+          "type": "Single Keyword (SK)",
+          "spend": 5.56,
+          "sales": 19.98,
+          "orders": 1,
+          "clicks": 5,
+          "impressions": 72,
+          "ctr": 6.944,
+          "cpc": 1.112,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 27.828000000000003,
+          "roas": 3.59,
+          "cvr": 20.0
+        },
+        {
+          "name": "punch needle - SPM SK punch needle kit for kids ages 8-12",
+          "type": "Single Keyword (SK)",
+          "spend": 0.82,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 2,
+          "impressions": 87,
+          "ctr": 2.299,
+          "cpc": 0.41,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        }
+      ],
+      "spend": 6.38,
+      "sales": 19.98,
+      "orders": 1,
+      "clicks": 7,
+      "impressions": 159,
+      "acos": 31.931931931931928,
+      "roas": 3.1316614420062696,
+      "cvr": 14.285714285714285,
+      "campaign_count": 2
+    },
+    "princess lacing cards": {
+      "campaigns": [
+        {
+          "name": "princess lacing - SPM MK broad TOS",
+          "type": "Multi Keyword (MK)",
+          "spend": 185.16,
+          "sales": 299.7,
+          "orders": 15,
+          "clicks": 103,
+          "impressions": 1752,
+          "ctr": 5.8790000000000004,
+          "cpc": 1.7976698999999998,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 61.782000000000004,
+          "roas": 1.62,
+          "cvr": 14.563106796116504
+        },
+        {
+          "name": "princess lacing - SPM MP product targeting",
+          "type": "Product Targeting (PAT)",
+          "spend": 103.33,
+          "sales": 159.84,
+          "orders": 8,
+          "clicks": 72,
+          "impressions": 1498,
+          "ctr": 4.806,
+          "cpc": 1.4351389,
+          "budget": 8.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 64.646,
+          "roas": 1.55,
+          "cvr": 11.11111111111111
+        },
+        {
+          "name": "princess lacing - SPA auto",
+          "type": "Auto",
+          "spend": 94.23,
+          "sales": 259.74,
+          "orders": 13,
+          "clicks": 146,
+          "impressions": 9723,
+          "ctr": 1.502,
+          "cpc": 0.645411,
+          "budget": 8.0,
+          "targeting": "Automatic targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 36.279,
+          "roas": 2.76,
+          "cvr": 8.904109589041095
+        },
+        {
+          "name": "princess lacing - SPM SK lacing cards for kids ages 3-5 TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 12.03,
+          "sales": 0.0,
+          "orders": 0,
+          "clicks": 8,
+          "impressions": 116,
+          "ctr": 6.897,
+          "cpc": 1.50375,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 0.0,
+          "roas": 0.0,
+          "cvr": 0.0
+        },
+        {
+          "name": "princess lacing - SPM MK lacing root TOS",
+          "type": "Multi Keyword (MK)",
+          "spend": 11.65,
+          "sales": 19.98,
+          "orders": 1,
+          "clicks": 9,
+          "impressions": 197,
+          "ctr": 4.569,
+          "cpc": 1.2944444,
+          "budget": 20.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 58.30800000000001,
+          "roas": 1.72,
+          "cvr": 11.11111111111111
+        },
+        {
+          "name": "princess lacing - SPM SK toddler sewing kit TOS",
+          "type": "Single Keyword (SK)",
+          "spend": 1.82,
+          "sales": 19.98,
+          "orders": 1,
+          "clicks": 1,
+          "impressions": 1,
+          "ctr": 100.0,
+          "cpc": 1.82,
+          "budget": 13.0,
+          "targeting": "Manual targeting",
+          "bidding": "Dynamic bids - down only",
+          "acos": 9.109,
+          "roas": 10.98,
+          "cvr": 100.0
+        }
+      ],
+      "spend": 408.2199999999999,
+      "sales": 759.2400000000001,
+      "orders": 38,
+      "clicks": 339,
+      "impressions": 13287,
+      "acos": 53.76692481955638,
+      "roas": 1.859879476752732,
+      "cvr": 11.209439528023598,
+      "campaign_count": 6
+    }
+  },
+  "placement_totals": {
+    "Top of Search (first page)": {
+      "spend": 0,
+      "sales": 0,
+      "orders": 0,
+      "clicks": 0,
+      "acos": 0,
+      "cvr": 0
+    },
+    "Rest of Search": {
+      "spend": 0,
+      "sales": 0,
+      "orders": 0,
+      "clicks": 0,
+      "acos": 0,
+      "cvr": 0
+    },
+    "Product Pages": {
+      "spend": 0,
+      "sales": 0,
+      "orders": 0,
+      "clicks": 0,
+      "acos": 0,
+      "cvr": 0
+    }
+  },
+  "target_types": {
+    "Product/ASIN": {
+      "spend": 1962.5900000000001,
+      "sales": 6003.569999999999,
+      "orders": 254,
+      "clicks": 4145,
+      "acos": 32.690382555712695,
+      "cvr": 6.127864897466828
+    },
+    "Keyword (Phrase)": {
+      "spend": 369.47999999999996,
+      "sales": 897.4800000000001,
+      "orders": 37,
+      "clicks": 347,
+      "acos": 41.16860542853322,
+      "cvr": 10.662824207492795
+    },
+    "Keyword (Broad)": {
+      "spend": 1263.79,
+      "sales": 2614.160000000001,
+      "orders": 107,
+      "clicks": 1284,
+      "acos": 48.34401872876944,
+      "cvr": 8.333333333333332
+    },
+    "Keyword (Exact)": {
+      "spend": 1463.3099999999997,
+      "sales": 3242.160000000001,
+      "orders": 119,
+      "clicks": 1536,
+      "acos": 45.13379968909613,
+      "cvr": 7.747395833333333
+    }
+  },
+  "search_term_counts": {
+    "total": 165,
+    "negate_p1": 18,
+    "negate_p2": 36,
+    "promote_p1": 14,
+    "promote_p2": 8,
+    "high_acos": 16,
+    "opportunities": 19
+  },
+  "negate_p1": [
+    [
+      "b0cp8vj56s",
+      {
+        "campaigns": [
+          "princess lacing - SPM MP product targeting"
+        ],
+        "spend": 64.89,
+        "sales": 59.94,
+        "orders": 3,
+        "clicks": 44,
+        "impressions": 1214,
+        "acos": 108.25825825825825,
+        "cvr": 6.8181818181818175,
+        "ctr": 3.6243822075782535
+      }
+    ],
+    [
+      "loom knitting kit",
+      {
+        "campaigns": [
+          "cat knitting - SPM SK loom knitting kit TOS"
+        ],
+        "spend": 60.9,
+        "sales": 26.98,
+        "orders": 1,
+        "clicks": 66,
+        "impressions": 6785,
+        "acos": 225.72275759822088,
+        "cvr": 1.5151515151515151,
+        "ctr": 0.9727339719970524
+      }
+    ],
+    [
+      "embroidery kit for kids",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross stitch girl broad 2",
+          "cross embroidery - small kit SPM broad and phrase",
+          "embroidery beginners - SPM SK embroidery kit for beginners TOS"
+        ],
+        "spend": 58.94,
+        "sales": 53.96,
+        "orders": 2,
+        "clicks": 62,
+        "impressions": 1078,
+        "acos": 109.22905856189769,
+        "cvr": 3.225806451612903,
+        "ctr": 5.75139146567718
+      }
+    ],
+    [
+      "embroidery for beginners",
+      {
+        "campaigns": [
+          "4 flowers - SPM SK embroidery for beginners TOS"
+        ],
+        "spend": 49.97,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 48,
+        "impressions": 3069,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 1.5640273704789833
+      }
+    ],
+    [
+      "beginner needlepoint kits for adults",
+      {
+        "campaigns": [
+          "4 flowers - SPM SK beginner needlepoint kits for adults TOS"
+        ],
+        "spend": 35.28,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 31,
+        "impressions": 696,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 4.454022988505748
+      }
+    ],
+    [
+      "beginner crochet kit for kids",
+      {
+        "campaigns": [
+          "knitting bunny - SP - TOS beginners crochet kit for kids"
+        ],
+        "spend": 33.65,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 28,
+        "impressions": 1293,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 2.165506573859242
+      }
+    ],
+    [
+      "mini fuse beads kit",
+      {
+        "campaigns": [
+          "mini fuse beads TOS push - mini root"
+        ],
+        "spend": 27.92,
+        "sales": 26.38,
+        "orders": 1,
+        "clicks": 33,
+        "impressions": 2473,
+        "acos": 105.83775587566339,
+        "cvr": 3.0303030303030303,
+        "ctr": 1.334411645774363
+      }
+    ],
+    [
+      "b0bb9n74sg",
+      {
+        "campaigns": [
+          "SO | Embroidery Kit | B0DC69M3YD | SPM | PT | 4 flowers"
+        ],
+        "spend": 25.01,
+        "sales": 24.98,
+        "orders": 1,
+        "clicks": 22,
+        "impressions": 1737,
+        "acos": 100.1200960768615,
+        "cvr": 4.545454545454546,
+        "ctr": 1.266551525618883
+      }
+    ],
+    [
+      "beginner cross stitch kits for kids",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross stitch girl broad 2",
+          "cross embroidery - small kit SPM SK beginner cross stitch kits for kids TOS"
+        ],
+        "spend": 24.71,
+        "sales": 19.98,
+        "orders": 1,
+        "clicks": 32,
+        "impressions": 2785,
+        "acos": 123.67367367367368,
+        "cvr": 3.125,
+        "ctr": 1.1490125673249552
+      }
+    ],
+    [
+      "b0c5wqd914",
+      {
+        "campaigns": [
+          "mini fuse beads - SPM MP product targeting"
+        ],
+        "spend": 24.33,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 21,
+        "impressions": 389,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 5.3984575835475574
+      }
+    ],
+    [
+      "lacing cards for kids ages 3-5",
+      {
+        "campaigns": [
+          "princess lacing - SPM MP product targeting",
+          "princess lacing - SPM SK lacing cards for kids ages 3-5 TOS"
+        ],
+        "spend": 23.67,
+        "sales": 19.98,
+        "orders": 1,
+        "clicks": 15,
+        "impressions": 152,
+        "acos": 118.46846846846847,
+        "cvr": 6.666666666666667,
+        "ctr": 9.868421052631579
+      }
+    ],
+    [
+      "toddler sewing kit",
+      {
+        "campaigns": [
+          "princess lacing - SPM MK broad TOS"
+        ],
+        "spend": 17.53,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 7,
+        "impressions": 81,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 8.641975308641975
+      }
+    ],
+    [
+      "toddler sewing kits ages 2-4",
+      {
+        "campaigns": [
+          "princess lacing - SPM MK broad TOS"
+        ],
+        "spend": 13.4,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 7,
+        "impressions": 156,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 4.487179487179487
+      }
+    ],
+    [
+      "kids embroidery kits age 5-8",
+      {
+        "campaigns": [
+          "B09X55KL2C 10 Embroidery kit - SP - EXACT"
+        ],
+        "spend": 12.28,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 11,
+        "impressions": 312,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 3.5256410256410255
+      }
+    ],
+    [
+      "craftiloo embroidery kit for beginners",
+      {
+        "campaigns": [
+          "shield brand name - manual and broad"
+        ],
+        "spend": 12.23,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 14,
+        "impressions": 1336,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 1.0479041916167664
+      }
+    ],
+    [
+      "cross stitch kits kids",
+      {
+        "campaigns": [
+          "cross girl - SPM SK cross stitch kits for kids TOS"
+        ],
+        "spend": 11.63,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 7,
+        "impressions": 80,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 8.75
+      }
+    ],
+    [
+      "beginner cross stitch kits",
+      {
+        "campaigns": [
+          "cross girl - SPM MK more general adult root TOS"
+        ],
+        "spend": 11.04,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 11,
+        "impressions": 185,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 5.9459459459459465
+      }
+    ],
+    [
+      "b09thlvfzk",
+      {
+        "campaigns": [
+          "Catch All - Auto - 0.39 - Incrementum"
+        ],
+        "spend": 9.6,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 56,
+        "impressions": 17469,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 0.3205678630717271
+      }
+    ]
+  ],
+  "negate_p2": [
+    [
+      "b06xrrn4vl",
+      {
+        "campaigns": [
+          "latch hook - manual - product targeting",
+          "latch hook pillow - SPM product targeting"
+        ],
+        "spend": 97.45,
+        "sales": 124.9,
+        "orders": 5,
+        "clicks": 100,
+        "impressions": 7220,
+        "acos": 78.02241793434747,
+        "cvr": 5.0,
+        "ctr": 1.3850415512465373
+      }
+    ],
+    [
+      "sewing kits for kids 8-12",
+      {
+        "campaigns": [
+          "dessert sewing - SPM SK sewing kit for kids ages 8-12 TOS"
+        ],
+        "spend": 36.44,
+        "sales": 45.96,
+        "orders": 2,
+        "clicks": 23,
+        "impressions": 601,
+        "acos": 79.28633594429938,
+        "cvr": 8.695652173913043,
+        "ctr": 3.826955074875208
+      }
+    ],
+    [
+      "kids sewing kits ages 8-12",
+      {
+        "campaigns": [
+          "fairy sewing - SPM MK sewing kit kids root TOS",
+          "fairy sewing - SPM MK broad"
+        ],
+        "spend": 31.38,
+        "sales": 43.96,
+        "orders": 2,
+        "clicks": 30,
+        "impressions": 1442,
+        "acos": 71.3830755232029,
+        "cvr": 6.666666666666667,
+        "ctr": 2.0804438280166435
+      }
+    ],
+    [
+      "b0cx9h8ygr",
+      {
+        "campaigns": [
+          "latch hook pillow - SPM product targeting"
+        ],
+        "spend": 24.02,
+        "sales": 24.98,
+        "orders": 1,
+        "clicks": 23,
+        "impressions": 2405,
+        "acos": 96.15692554043235,
+        "cvr": 4.3478260869565215,
+        "ctr": 0.9563409563409564
+      }
+    ],
+    [
+      "cross stitch kits",
+      {
+        "campaigns": [
+          "CATCH ALL NGO - OLD",
+          "CATCH ALL NGO - OLD"
+        ],
+        "spend": 18.39,
+        "sales": 19.98,
+        "orders": 1,
+        "clicks": 37,
+        "impressions": 2631,
+        "acos": 92.04204204204204,
+        "cvr": 2.7027027027027026,
+        "ctr": 1.4063093880653743
+      }
+    ],
+    [
+      "cross stitch for kids",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross stitch girl broad 2",
+          "Dog & CAT & Safari animals Cross Stitch Kits - SP - Exact",
+          "shield product - cross stitch kits"
+        ],
+        "spend": 18.28,
+        "sales": 19.98,
+        "orders": 1,
+        "clicks": 21,
+        "impressions": 904,
+        "acos": 91.4914914914915,
+        "cvr": 4.761904761904762,
+        "ctr": 2.3230088495575223
+      }
+    ],
+    [
+      "kids needlepoint kit",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross stitch girl broad 2",
+          "embroidery beginner - SPM MK needlepoint root TOS",
+          "needlepoint - SPM SK kids needlepoint kit TOS"
+        ],
+        "spend": 17.82,
+        "sales": 19.98,
+        "orders": 1,
+        "clicks": 24,
+        "impressions": 850,
+        "acos": 89.1891891891892,
+        "cvr": 4.166666666666666,
+        "ctr": 2.823529411764706
+      }
+    ],
+    [
+      "needlepoint kits for beginners",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross girl - auto",
+          "needlepoint - SPM SK needlepoint kits for beginners TOS"
+        ],
+        "spend": 13.959999999999999,
+        "sales": 17.98,
+        "orders": 1,
+        "clicks": 28,
+        "impressions": 1819,
+        "acos": 77.64182424916574,
+        "cvr": 3.571428571428571,
+        "ctr": 1.5393073117097307
+      }
+    ],
+    [
+      "mini beads",
+      {
+        "campaigns": [
+          "48 Minibeads - broad auto"
+        ],
+        "spend": 9.94,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 13,
+        "impressions": 159,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 8.176100628930817
+      }
+    ],
+    [
+      "embroidery starter kit for beginners",
+      {
+        "campaigns": [
+          "4 flowers - SPM SK embroidery starter kit beginner TOS"
+        ],
+        "spend": 9.61,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 8,
+        "impressions": 314,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 2.547770700636943
+      }
+    ],
+    [
+      "needlepoint kit",
+      {
+        "campaigns": [
+          "needlepoint - SPM MK broad and phrase TOS",
+          "needlepoint - SPM MK broad and phrase TOS"
+        ],
+        "spend": 9.55,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 16,
+        "impressions": 728,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 2.197802197802198
+      }
+    ],
+    [
+      "hook rug kits for kids",
+      {
+        "campaigns": [
+          "latch hook pillow - SPM hook rug kits for kids TOS",
+          "latch hook - SPM SK hook rug kits for kids TOS"
+        ],
+        "spend": 9.219999999999999,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 10,
+        "impressions": 123,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 8.130081300813007
+      }
+    ],
+    [
+      "embroidery kit for beginners",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross girl - auto",
+          "4 flowers - SPM MK broad ultra targeted"
+        ],
+        "spend": 8.51,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 14,
+        "impressions": 1246,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 1.1235955056179776
+      }
+    ],
+    [
+      "embroidery kit kids",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross stitch girl broad 2",
+          "embroidery beginners - SPM SK embroidery kit for beginners TOS"
+        ],
+        "spend": 7.529999999999999,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 7,
+        "impressions": 63,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 11.11111111111111
+      }
+    ],
+    [
+      "b0bkl8s9n5",
+      {
+        "campaigns": [
+          "princess lacing - SPA auto"
+        ],
+        "spend": 7.37,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 9,
+        "impressions": 184,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 4.891304347826087
+      }
+    ],
+    [
+      "b0cynnt2zt",
+      {
+        "campaigns": [
+          "princess lacing - SPA auto"
+        ],
+        "spend": 7.34,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 12,
+        "impressions": 220,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 5.454545454545454
+      }
+    ],
+    [
+      "kids knitting kit",
+      {
+        "campaigns": [
+          "cat knitting - SPM broad"
+        ],
+        "spend": 7.32,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 7,
+        "impressions": 368,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 1.9021739130434785
+      }
+    ],
+    [
+      "knitting kit for kids",
+      {
+        "campaigns": [
+          "cat knitting - SPM knitting kit for kids TOS"
+        ],
+        "spend": 7.32,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 6,
+        "impressions": 361,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 1.662049861495845
+      }
+    ],
+    [
+      "b08pkfhcms",
+      {
+        "campaigns": [
+          "fairy sewing - manual - product targeting"
+        ],
+        "spend": 7.3,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 4,
+        "impressions": 194,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 2.0618556701030926
+      }
+    ],
+    [
+      "b0dc69m3yd",
+      {
+        "campaigns": [
+          "4 flowers- shield brand self target"
+        ],
+        "spend": 7.25,
+        "sales": 0.0,
+        "orders": 0,
+        "clicks": 10,
+        "impressions": 1101,
+        "acos": 0,
+        "cvr": 0.0,
+        "ctr": 0.9082652134423252
+      }
+    ]
+  ],
+  "promote_p1": [
+    [
+      "latch hook kits for kids",
+      {
+        "campaigns": [
+          "shield product - latch hook kits",
+          "latch hook - SPM for kids root TOS",
+          "latch hook pillow - SPM latch hook kit for kids TOS",
+          "latch hook pillow - SPM broad",
+          "latch hook pillow - SPM broad"
+        ],
+        "spend": 130.81,
+        "sales": 464.6,
+        "orders": 19,
+        "clicks": 116,
+        "impressions": 5586,
+        "acos": 28.155402496771416,
+        "cvr": 16.379310344827587,
+        "ctr": 2.076620121732904
+      }
+    ],
+    [
+      "fuse beads kit",
+      {
+        "campaigns": [
+          "48 Minibeads - broad auto",
+          "mini fuse beads - SPM SK fuse bead kit TOS",
+          "mini fuse beads - SPM MK broad mini root"
+        ],
+        "spend": 104.01,
+        "sales": 269.82,
+        "orders": 8,
+        "clicks": 117,
+        "impressions": 17348,
+        "acos": 38.547920836112965,
+        "cvr": 6.837606837606838,
+        "ctr": 0.6744293290292829
+      }
+    ],
+    [
+      "fuse beads",
+      {
+        "campaigns": [
+          "mini fuse beads-  SPM MK multi root TOS"
+        ],
+        "spend": 85.64,
+        "sales": 292.22,
+        "orders": 9,
+        "clicks": 82,
+        "impressions": 983,
+        "acos": 29.30668674286496,
+        "cvr": 10.975609756097562,
+        "ctr": 8.341810783316378
+      }
+    ],
+    [
+      "perler beads",
+      {
+        "campaigns": [
+          "48 mini perler beads tos push",
+          "biggie beads - SPM MK broad TOS"
+        ],
+        "spend": 57.47,
+        "sales": 199.86,
+        "orders": 6,
+        "clicks": 76,
+        "impressions": 2201,
+        "acos": 28.75512859001301,
+        "cvr": 7.894736842105263,
+        "ctr": 3.452975920036347
+      }
+    ],
+    [
+      "cross stitch kits for kids",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross stitch girl broad 2",
+          "cross embroidery -  small kit SPM SK cross stitch kits for kids TOS",
+          "cross girl - SPM SK cross stitch kits for kids TOS"
+        ],
+        "spend": 55.65,
+        "sales": 161.84,
+        "orders": 8,
+        "clicks": 56,
+        "impressions": 3450,
+        "acos": 34.38581314878893,
+        "cvr": 14.285714285714285,
+        "ctr": 1.6231884057971016
+      }
+    ],
+    [
+      "beginner embroidery kit for adults",
+      {
+        "campaigns": [
+          "4 flowers - SPM SK beginners embroidery kit for adults TOS",
+          "4 flowers - SPM MK broad ultra targeted"
+        ],
+        "spend": 44.3,
+        "sales": 116.9,
+        "orders": 5,
+        "clicks": 76,
+        "impressions": 5882,
+        "acos": 37.8956372968349,
+        "cvr": 6.578947368421052,
+        "ctr": 1.292077524651479
+      }
+    ],
+    [
+      "cross stitch kits for beginners",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross stitch girl broad 2",
+          "B08DDJCQKF Cross stitch girl broad",
+          "B08DDJCQKF Cross girl - auto",
+          "CATCH ALL NGO - OLD"
+        ],
+        "spend": 35.91,
+        "sales": 159.84,
+        "orders": 6,
+        "clicks": 43,
+        "impressions": 2210,
+        "acos": 22.466216216216214,
+        "cvr": 13.953488372093023,
+        "ctr": 1.9457013574660633
+      }
+    ],
+    [
+      "b08fyh13cl",
+      {
+        "campaigns": [
+          "shield product - latch hook kits"
+        ],
+        "spend": 35.88,
+        "sales": 109.9,
+        "orders": 5,
+        "clicks": 44,
+        "impressions": 4657,
+        "acos": 32.647861692447684,
+        "cvr": 11.363636363636363,
+        "ctr": 0.9448142581060769
+      }
+    ],
+    [
+      "easy embroidery kits for beginners",
+      {
+        "campaigns": [
+          "4 flowers - SPM SK easy embroidery kits for beginners TOS"
+        ],
+        "spend": 35.39,
+        "sales": 96.92,
+        "orders": 4,
+        "clicks": 46,
+        "impressions": 4918,
+        "acos": 36.51465125877012,
+        "cvr": 8.695652173913043,
+        "ctr": 0.9353395689304594
+      }
+    ],
+    [
+      "b091gxm2y6",
+      {
+        "campaigns": [
+          "Catch All - Auto - 0.29 - Incrementum",
+          "fairy sewing - manual - product targeting",
+          "princess lacing - SPA auto"
+        ],
+        "spend": 27.75,
+        "sales": 85.92,
+        "orders": 4,
+        "clicks": 39,
+        "impressions": 1349,
+        "acos": 32.297486033519554,
+        "cvr": 10.256410256410255,
+        "ctr": 2.891030392883618
+      }
+    ],
+    [
+      "kids cross stitch kit",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross stitch girl broad 2",
+          "CATCH ALL NGO - OLD",
+          "embroidery beginner - manual - product targeting"
+        ],
+        "spend": 27.64,
+        "sales": 88.92,
+        "orders": 4,
+        "clicks": 31,
+        "impressions": 472,
+        "acos": 31.084120557804766,
+        "cvr": 12.903225806451612,
+        "ctr": 6.567796610169492
+      }
+    ],
+    [
+      "b08qv9cmfq",
+      {
+        "campaigns": [
+          "mini fuse beads - SPM MP product targeting"
+        ],
+        "spend": 26.47,
+        "sales": 135.92,
+        "orders": 4,
+        "clicks": 19,
+        "impressions": 333,
+        "acos": 19.47469099470277,
+        "cvr": 21.052631578947366,
+        "ctr": 5.7057057057057055
+      }
+    ],
+    [
+      "kids embroidery kit",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross girl - auto",
+          "embroidery beginner - SPM MK broad TOS",
+          "embroidery beginner - SPM MK broad TOS"
+        ],
+        "spend": 21.07,
+        "sales": 127.9,
+        "orders": 5,
+        "clicks": 18,
+        "impressions": 123,
+        "acos": 16.47380766223612,
+        "cvr": 27.77777777777778,
+        "ctr": 14.634146341463413
+      }
+    ],
+    [
+      "craftiloo latch hook kits for kids",
+      {
+        "campaigns": [
+          "shield brand name - manual and broad"
+        ],
+        "spend": 8.19,
+        "sales": 69.94,
+        "orders": 3,
+        "clicks": 9,
+        "impressions": 1251,
+        "acos": 11.71003717472119,
+        "cvr": 33.33333333333333,
+        "ctr": 0.7194244604316548
+      }
+    ]
+  ],
+  "promote_p2": [
+    [
+      "biggie beads",
+      {
+        "campaigns": [
+          "biggie beads - SPM MK broad TOS"
+        ],
+        "spend": 10.72,
+        "sales": 49.96,
+        "orders": 2,
+        "clicks": 8,
+        "impressions": 75,
+        "acos": 21.45716573258607,
+        "cvr": 25.0,
+        "ctr": 10.666666666666668
+      }
+    ],
+    [
+      "2.6mm fuse beads",
+      {
+        "campaigns": [
+          "mini fuse beads-  SPM MK multi root TOS",
+          "mini fuse beads - SPM MK broad mini root"
+        ],
+        "spend": 10.649999999999999,
+        "sales": 61.36,
+        "orders": 2,
+        "clicks": 9,
+        "impressions": 78,
+        "acos": 17.356584093872225,
+        "cvr": 22.22222222222222,
+        "ctr": 11.538461538461538
+      }
+    ],
+    [
+      "needlepoint kits for kids",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross stitch girl broad 2",
+          "embroidery beginner - SPM MK needlepoint root TOS",
+          "needlepoint - SPM MK broad and phrase TOS"
+        ],
+        "spend": 10.329999999999998,
+        "sales": 37.96,
+        "orders": 2,
+        "clicks": 11,
+        "impressions": 147,
+        "acos": 27.212855637513165,
+        "cvr": 18.181818181818183,
+        "ctr": 7.482993197278912
+      }
+    ],
+    [
+      "beginner embroidery kit kids",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross girl - auto",
+          "B09X55KL2C 10 Embroidery kit - SP - EXACT"
+        ],
+        "spend": 8.870000000000001,
+        "sales": 39.96,
+        "orders": 2,
+        "clicks": 8,
+        "impressions": 194,
+        "acos": 22.197197197197198,
+        "cvr": 25.0,
+        "ctr": 4.123711340206185
+      }
+    ],
+    [
+      "sewing kits for kids",
+      {
+        "campaigns": [
+          "fairy sewing - SPM SK sewing kit for kids TOS"
+        ],
+        "spend": 8.34,
+        "sales": 43.96,
+        "orders": 2,
+        "clicks": 9,
+        "impressions": 102,
+        "acos": 18.97179253867152,
+        "cvr": 22.22222222222222,
+        "ctr": 8.823529411764707
+      }
+    ],
+    [
+      "kids knitting kits for beginners",
+      {
+        "campaigns": [
+          "cat knitting - SPM broad"
+        ],
+        "spend": 4.82,
+        "sales": 53.96,
+        "orders": 2,
+        "clicks": 3,
+        "impressions": 15,
+        "acos": 8.93254262416605,
+        "cvr": 66.66666666666666,
+        "ctr": 20.0
+      }
+    ],
+    [
+      "cross stitch kits for kids 8-12",
+      {
+        "campaigns": [
+          "cross embroidery - small kit SPM broad and phrase"
+        ],
+        "spend": 3.72,
+        "sales": 46.96,
+        "orders": 2,
+        "clicks": 4,
+        "impressions": 12,
+        "acos": 7.921635434412266,
+        "cvr": 50.0,
+        "ctr": 33.33333333333333
+      }
+    ],
+    [
+      "embroidery kits for kids",
+      {
+        "campaigns": [
+          "embroidery beginners - SPM SK embroidery kit for beginners TOS"
+        ],
+        "spend": 3.51,
+        "sales": 46.96,
+        "orders": 2,
+        "clicks": 4,
+        "impressions": 70,
+        "acos": 7.474446337308346,
+        "cvr": 50.0,
+        "ctr": 5.714285714285714
+      }
+    ]
+  ],
+  "high_acos": [
+    [
+      "kids sewing kits age 5-8",
+      {
+        "campaigns": [
+          "shield product - latch hook kits",
+          "fairy sewing - SPM SK kids sewing kits age 5-8 TOS",
+          "fairy sewing - SPM MK broad"
+        ],
+        "spend": 152.03,
+        "sales": 379.9,
+        "orders": 14,
+        "clicks": 164,
+        "impressions": 17494,
+        "acos": 40.018425901553044,
+        "cvr": 8.536585365853659,
+        "ctr": 0.937464273465188
+      }
+    ],
+    [
+      "mini fuse beads",
+      {
+        "campaigns": [
+          "mini fuse beads TOS push - mini root"
+        ],
+        "spend": 96.31,
+        "sales": 197.88,
+        "orders": 6,
+        "clicks": 108,
+        "impressions": 14154,
+        "acos": 48.67091166363453,
+        "cvr": 5.555555555555555,
+        "ctr": 0.7630351844001695
+      }
+    ],
+    [
+      "b08ddjcqkf",
+      {
+        "campaigns": [
+          "Catch All - Auto - 0.29 - Incrementum",
+          "shield product - cross stitch kits"
+        ],
+        "spend": 73.43,
+        "sales": 159.84,
+        "orders": 7,
+        "clicks": 102,
+        "impressions": 8065,
+        "acos": 45.93968968968969,
+        "cvr": 6.862745098039216,
+        "ctr": 1.264724116553007
+      }
+    ],
+    [
+      "kids sewing kit",
+      {
+        "campaigns": [
+          "fairy sewing - SPM MK kids sewing kit root",
+          "fairy sewing - SPM MK broad",
+          "fairy sewing - SPM MK broad"
+        ],
+        "spend": 73.14,
+        "sales": 136.88,
+        "orders": 6,
+        "clicks": 74,
+        "impressions": 7324,
+        "acos": 53.433664523670366,
+        "cvr": 8.108108108108109,
+        "ctr": 1.010376843255052
+      }
+    ],
+    [
+      "mini perler beads",
+      {
+        "campaigns": [
+          "mini fuse beads TOS push - mini root"
+        ],
+        "spend": 42.63,
+        "sales": 100.92,
+        "orders": 3,
+        "clicks": 38,
+        "impressions": 3994,
+        "acos": 42.241379310344826,
+        "cvr": 7.894736842105263,
+        "ctr": 0.9514271407110666
+      }
+    ],
+    [
+      "b0b8w4fk4q",
+      {
+        "campaigns": [
+          "cat knitting - SPM product targeting"
+        ],
+        "spend": 36.49,
+        "sales": 76.94,
+        "orders": 3,
+        "clicks": 44,
+        "impressions": 2730,
+        "acos": 47.426566155445805,
+        "cvr": 6.8181818181818175,
+        "ctr": 1.611721611721612
+      }
+    ],
+    [
+      "sewing for kids",
+      {
+        "campaigns": [
+          "fairy sewing - SPM SK sewing for kids TOS",
+          "dessert sewing - SPM SK sewing for kids TOS"
+        ],
+        "spend": 33.8,
+        "sales": 70.94,
+        "orders": 3,
+        "clicks": 46,
+        "impressions": 3660,
+        "acos": 47.64589794192275,
+        "cvr": 6.521739130434782,
+        "ctr": 1.2568306010928962
+      }
+    ],
+    [
+      "sewing kit for kids",
+      {
+        "campaigns": [
+          "fairy sewing - SPM SK sewing kit for kids TOS",
+          "dessert sewing - SPM MK broad sewing kit root"
+        ],
+        "spend": 31.28,
+        "sales": 70.94,
+        "orders": 3,
+        "clicks": 28,
+        "impressions": 855,
+        "acos": 44.093600225542716,
+        "cvr": 10.714285714285714,
+        "ctr": 3.274853801169591
+      }
+    ],
+    [
+      "sewing kit for kids ages 8-12",
+      {
+        "campaigns": [
+          "dessert sewing - SPM SK sewing kit for kids ages 8-12 TOS"
+        ],
+        "spend": 30.57,
+        "sales": 45.96,
+        "orders": 2,
+        "clicks": 33,
+        "impressions": 2488,
+        "acos": 66.51436031331592,
+        "cvr": 6.0606060606060606,
+        "ctr": 1.3263665594855305
+      }
+    ],
+    [
+      "kids sewing",
+      {
+        "campaigns": [
+          "fairy sewing - SPM MK kids sewing kit root"
+        ],
+        "spend": 27.96,
+        "sales": 43.96,
+        "orders": 2,
+        "clicks": 38,
+        "impressions": 2562,
+        "acos": 63.60327570518653,
+        "cvr": 5.263157894736842,
+        "ctr": 1.483216237314598
+      }
+    ],
+    [
+      "lacing cards for kids ages 4-8",
+      {
+        "campaigns": [
+          "princess lacing - SPM MK broad TOS"
+        ],
+        "spend": 16.94,
+        "sales": 39.96,
+        "orders": 2,
+        "clicks": 10,
+        "impressions": 92,
+        "acos": 42.392392392392395,
+        "cvr": 20.0,
+        "ctr": 10.869565217391305
+      }
+    ],
+    [
+      "fuse bead kit",
+      {
+        "campaigns": [
+          "mini fuse beads - SPM SK fuse bead kit TOS",
+          "mini fuse beads - SPM MK broad mini root"
+        ],
+        "spend": 16.45,
+        "sales": 34.98,
+        "orders": 1,
+        "clicks": 14,
+        "impressions": 1808,
+        "acos": 47.02687249857062,
+        "cvr": 7.142857142857142,
+        "ctr": 0.7743362831858407
+      }
+    ],
+    [
+      "b087dyhmz2",
+      {
+        "campaigns": [
+          "embroidery beginner - manual - product targeting"
+        ],
+        "spend": 15.66,
+        "sales": 26.98,
+        "orders": 1,
+        "clicks": 19,
+        "impressions": 570,
+        "acos": 58.042994810971095,
+        "cvr": 5.263157894736842,
+        "ctr": 3.3333333333333335
+      }
+    ],
+    [
+      "embroidery kit for beginners kids",
+      {
+        "campaigns": [
+          "B08DDJCQKF Cross girl - auto",
+          "embroidery beginner - SPM MK broad TOS"
+        ],
+        "spend": 15.600000000000001,
+        "sales": 26.98,
+        "orders": 1,
+        "clicks": 15,
+        "impressions": 150,
+        "acos": 57.82060785767236,
+        "cvr": 6.666666666666667,
+        "ctr": 10.0
+      }
+    ],
+    [
+      "sewing cards for kids ages 3-5",
+      {
+        "campaigns": [
+          "princess lacing - SPM MP product targeting",
+          "princess lacing - SPM MK broad TOS"
+        ],
+        "spend": 8.28,
+        "sales": 19.98,
+        "orders": 1,
+        "clicks": 5,
+        "impressions": 35,
+        "acos": 41.44144144144144,
+        "cvr": 20.0,
+        "ctr": 14.285714285714285
+      }
+    ],
+    [
+      "lacing cards",
+      {
+        "campaigns": [
+          "princess lacing - SPM MK lacing root TOS"
+        ],
+        "spend": 8.22,
+        "sales": 19.98,
+        "orders": 1,
+        "clicks": 6,
+        "impressions": 80,
+        "acos": 41.14114114114114,
+        "cvr": 16.666666666666664,
+        "ctr": 7.5
+      }
+    ]
+  ],
+  "top_targets_zero_orders": [
+    [
+      "embroidery for beginners",
+      "4 flowers - SPM SK embroidery for beginners TOS",
+      57.59,
+      56
+    ],
+    [
+      "beginners crochet kit for kids",
+      "knitting bunny - SP - TOS beginners crochet kit for kids",
+      38.28,
+      31
+    ],
+    [
+      "beginner needlepoint kits for adults",
+      "4 flowers - SPM SK beginner needlepoint kits for adults TOS",
+      36.96,
+      33
+    ],
+    [
+      "loose-match",
+      "biggie auto",
+      32.19,
+      38
+    ],
+    [
+      "asin=\"B0C5WQD914\"",
+      "mini fuse beads - SPM MP product targeting",
+      25.42,
+      22
+    ],
+    [
+      "loom knitting kit",
+      "cat knitting - SPM broad",
+      23.86,
+      29
+    ],
+    [
+      "asin=\"B0DC69M3YD\"",
+      "4 flowers- shield brand self target",
+      20.07,
+      24
+    ],
+    [
+      "substitutes",
+      "B07PXN4K8N 22000 beads LOW BID AUTO TOS",
+      19.02,
+      32
+    ],
+    [
+      "lacing cards for kids ages 3-5",
+      "princess lacing - SPM SK lacing cards for kids ages 3-5 TOS",
+      15.03,
+      9
+    ],
+    [
+      "sewing for kids",
+      "dessert sewing - SPM SK sewing for kids TOS",
+      14.9,
+      28
+    ],
+    [
+      "loose-match",
+      "Biggie Auto",
+      14.52,
+      24
+    ],
+    [
+      "embroidery for kids",
+      "embroidery beginner - SPM MK broad TOS",
+      13.13,
+      12
+    ],
+    [
+      "embroidery kit for kids",
+      "cross embroidery - small kit SPM broad and phrase",
+      12.46,
+      16
+    ],
+    [
+      "kids embroidery kits age 5-8",
+      "B09X55KL2C 10 Embroidery kit - SP - EXACT",
+      12.28,
+      11
+    ],
+    [
+      "loose-match",
+      "latch hook pillow - SPA auto",
+      11.98,
+      20
+    ]
+  ],
+  "top_targets_performing": [
+    [
+      "loose-match",
+      "CATCH ALL NGO - OLD",
+      319.72,
+      58,
+      23.8352
+    ],
+    [
+      "substitutes",
+      "Catch All - Auto - 0.29 - Incrementum",
+      153.31,
+      24,
+      27.469
+    ],
+    [
+      "loose-match",
+      "Catch All - Auto - 0.29 - Incrementum",
+      93.2,
+      19,
+      22.4779
+    ],
+    [
+      "fuse bead",
+      "mini fuse beads-  SPM MK multi root TOS",
+      86.58,
+      9,
+      29.6284
+    ],
+    [
+      "latch hook kit for kids",
+      "latch hook pillow - SPM latch hook kit for kids TOS",
+      64.21,
+      10,
+      25.7046
+    ],
+    [
+      "asin=\"B08FYH13CL\"",
+      "shield product - latch hook kits",
+      62.9,
+      10,
+      24.688
+    ],
+    [
+      "perler beads",
+      "48 mini perler beads tos push",
+      58.19,
+      7,
+      24.9914
+    ],
+    [
+      "substitutes",
+      "catch all - auto - 0.19 incrumentum",
+      56.31,
+      12,
+      21.4318
+    ],
+    [
+      "loose-match",
+      "catch all - auto - 0.19 incrumentum",
+      51.83,
+      10,
+      24.0176
+    ],
+    [
+      "craftiloo",
+      "shield brand name - manual and broad",
+      41.98,
+      7,
+      26.4258
+    ],
+    [
+      "sewing kit for kids",
+      "fairy sewing - SPM SK sewing kit for kids TOS",
+      41.29,
+      7,
+      13.2035
+    ],
+    [
+      "asin=\"B087DYHMZ2\"",
+      "embroidery beginner - manual - product targeting",
+      38.96,
+      5,
+      30.4613
+    ],
+    [
+      "beginner cross stitch kits for kids",
+      "B08DDJCQKF Cross stitch girl broad 2",
+      37.81,
+      8,
+      23.6549
+    ],
+    [
+      "close-match",
+      "fairy sewing - auto",
+      37.8,
+      7,
+      23.7945
+    ],
+    [
+      "latch hook kit for kids",
+      "latch hook pillow - SPM broad",
+      35.9,
+      5,
+      29.9416
+    ]
+  ]
+}

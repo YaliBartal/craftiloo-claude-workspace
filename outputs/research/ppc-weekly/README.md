@@ -16,6 +16,7 @@ ppc-weekly/
 │       ├── targeting-report.csv
 │       └── summary.json
 ├── data/          # Processed/intermediate data
+├── scripts/       # Python & PowerShell processing scripts
 └── README.md      # This file
 ```
 
@@ -42,3 +43,4 @@ ppc-weekly/
 | `briefs/` | Final analysis reports |
 | `snapshots/` | Archived CSVs + summary.json per week |
 | `data/` | Any intermediate processed files |
+| `scripts/` | Python & PowerShell processing scripts |
