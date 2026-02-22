@@ -32,21 +32,26 @@ Every daily report answers:
 
 ---
 
-## 📊 Category Difficulty Context
+## 📊 BSR Normalization & Sales Velocity
 
-**IMPORTANT:** Not all categories are equal. Rankings must be interpreted in context.
+**IMPORTANT:** BSR is NOT comparable across categories without normalization. A product in Toys & Games with BSR 10,000 sells MORE than one in Arts & Crafts with BSR 5,000.
 
-| Category | Difficulty | Why |
-|----------|------------|-----|
-| **Toys & Games** | 🔴 HARD | Massive category, millions of products, intense competition |
-| **Arts, Crafts & Sewing** | 🟡 MEDIUM | Smaller category, easier to rank well |
+**Sales Velocity Reference Points:**
 
-**What this means:**
-- BSR 5,000 in Toys & Games = EXCELLENT (top 0.01%)
-- BSR 5,000 in Arts & Crafts = GOOD (top 0.1%)
-- A product in Toys & Games with BSR 10,000 may be selling MORE than one in Arts & Crafts with BSR 5,000
+| BSR | Toys & Games (Est. Daily Sales) | Arts, Crafts & Sewing (Est. Daily Sales) |
+|-----|--------------------------------|------------------------------------------|
+| 1,000 | ~2,500 | ~1,700 |
+| 5,000 | ~1,000 | ~680 |
+| 10,000 | ~570 | ~390 |
+| 25,000 | ~250 | ~170 |
+| 50,000 | ~130 | ~90 |
+| 100,000 | ~65 | ~45 |
 
-**Always note the category when reporting BSR.**
+**Category multiplier:** Toys & Games BSR ≈ 1.46x the sales velocity of Arts, Crafts & Sewing at the same BSR.
+
+**HOW TO USE THIS:** When reporting, present ALL products in a **single unified table** sorted by estimated daily sales (highest to lowest). This lets the user instantly see which products are actually selling the most, regardless of category.
+
+**Do NOT split products into separate Toys & Games vs Arts & Crafts tables.** One list, sorted by sales velocity.
 
 ---
 
@@ -116,19 +121,16 @@ market-intel/
 
 ---
 
-## Our Products by Category
+## Our Products (Unified by Sales Velocity)
 
-### [Amazon Category] - [Difficulty: 🔴 HARD / 🟡 MEDIUM]
+| # | Product | ASIN | Category | BSR | Est. Daily Sales | Subcat Rank | Reviews | Rating | vs Yesterday | vs Baseline |
+|---|---------|------|----------|-----|-----------------|-------------|---------|--------|-------------|-------------|
+| 1 | [Top seller] | BXXX | T&G / AC&S | #X,XXX | ~XXX | #X in [Sub] | X,XXX | X.X★ | ↑/↓ X | ↑/↓ X |
+| 2 | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
 
-| Product | ASIN | BSR | Subcategory Rank | Reviews | Rating | vs Baseline |
-|---------|------|-----|------------------|---------|--------|-------------|
-| [Name] | BXXXXXXXXX | #X,XXX | #X in [Subcategory] | X,XXX | X.X★ | ↑/↓ X,XXX |
+*Sorted by Est. Daily Sales (highest → lowest). Use BSR-to-sales reference table for conversion.*
 
-**Notes:** [Any observations about this category]
-
----
-
-[Repeat for each Amazon category: Arts Crafts & Sewing, Toys & Games]
+**Notes:** [Observations about movers, trends, anomalies]
 
 ---
 
@@ -145,6 +147,16 @@ market-intel/
 
 ---
 
+## New / Rising Competitors
+
+| Niche | Brand | ASIN | Found On Keyword | Position | BSR | Reviews | Alert |
+|-------|-------|------|-----------------|----------|-----|---------|-------|
+| [Category] | [Brand] | BXXX | [keyword] | #X | #X,XXX | X | 🆕 New / 📈 Rising |
+
+*No new competitors detected* (if none found)
+
+---
+
 ## Alerts
 
 | Type | Product | Details |
@@ -152,13 +164,15 @@ market-intel/
 | 🔴 BSR SPIKE | [Product] | BSR went from X to Y (+Z) |
 | 🟡 WATCH | [Product] | [What to monitor] |
 | 🟢 WIN | [Product] | [Good news] |
+| 🆕 NEW COMPETITOR | [Product] | [Brand] appearing at #X for [keyword] |
 
 ---
 
 ## Data Notes
 
 - **Source:** Apify saswave/amazon-product-scraper
-- **Products scraped:** X hero + X competitors
+- **Products scraped:** X hero + X competitors (all with ASINs from competitors.md)
+- **Keywords searched:** 27 (top 3 × 9 categories)
 - **Missing data:** [List any that failed]
 ```
 
@@ -213,19 +227,76 @@ Use these consistently:
 
 ---
 
-## 🏆 Key Competitors by Category
+## 🏆 Competitor Scraping — ALL ASINs from competitors.md
 
-| Category | Competitor | ASIN | Notes |
-|----------|------------|------|-------|
-| **Cross Stitch** | Pllieay | B08T5QC9FS | Budget option |
-| | EZCRA | B0DFHN42QB | Ages 5-8 focus |
-| **Embroidery (Kids)** | CraftLab | B087DYHMZ2 | Award winner |
-| **Embroidery (Adults)** | CYANFOUR | B0CZHKSSL4 | Market leader |
-| **Sewing** | KRAFUN | B091GXM2Y6 | Dominant player |
-| **Latch Hook** | LatchKits | B06XRRN4VL | Market leader |
-| **Knitting** | Creativity for Kids | B004JIFCXO | Retail presence |
-| **Fuse Beads** | INSCRAFT | B0C5WQD914 | Value leader |
-| **Lacing Cards** | Melissa & Doug | B00JM5G05I | Brand leader |
+**RULE: Scrape EVERY competitor that has an ASIN in `context/competitors.md`.** Skip competitors with "—" (no ASIN). This is mandatory — do not cherry-pick.
+
+**Full competitor ASIN list (from competitors.md):**
+
+| Category | Brand | ASIN(s) |
+|----------|-------|---------|
+| **Cross Stitch** | Pllieay | B08T5QC9FS |
+| | KRAFUN | B0B7JHN4F1 |
+| | Caydo | B0CM9JKNCC |
+| | EZCRA | B0DFHN42QB |
+| **Embroidery (Kids)** | CraftLab | B087DYHMZ2 |
+| | KRAFUN | B0D8171TF1 |
+| | Pllieay | B08TC7423N |
+| | Louise Maelys | B0DP654CSV |
+| **Embroidery (Adults)** | CYANFOUR | B0CZHKSSL4, B0DMHY2HF3 |
+| | Santune | B0BB9N74SG |
+| | Bradove | B0B762JW55 |
+| | ETSPIL | B0C3ZVKB46 |
+| **Sewing** | KRAFUN | B091GXM2Y6, B0C2XYP6L3, B0CV1F5CFS |
+| | EZCRA | B0CXY8JMTK, B0CYNNT2ZT |
+| | Klever Kits | B0CTTMWXYP |
+| **Latch Hook** | LatchKits | B06XRRN4VL, B0CX9H8YGR |
+| **Knitting** | Creativity for Kids | B004JIFCXO |
+| | Hapinest | B0B8W4FK4Q |
+| **Fuse Beads** | INSCRAFT | B0C5WQD914 |
+| | ARTKAL | B0FN4CT867 |
+| | LIHAO | B08QV9CMFQ |
+| | FUNZBO | B0D5LF666P |
+| **Lacing Cards** | Melissa & Doug | B00JM5G05I |
+| | KRAFUN | B0BRYRD91V |
+| | Serabeena | B0D178S25M |
+| **Gem Art** | EZCRA | B0CWLTTZ2G |
+
+**Total: ~31 unique competitor ASINs** (7 batches of 5, async mode)
+
+**When competitors.md is updated with new ASINs, automatically include them in future runs.** Always re-read `context/competitors.md` at the start of each run to catch additions.
+
+---
+
+## 🆕 New Competitor Detection
+
+**PURPOSE:** Identify new or rising competitors that aren't yet in `context/competitors.md`.
+
+**HOW:** During the keyword search step (below), scan the top 10 results for each keyword. Flag any product that:
+1. **Is NOT in our hero products list** AND **NOT in our competitors list**
+2. **Ranks in the top 10** for one of our tracked keywords
+3. **Has a BSR that's improving** (compare to previous run if available)
+
+**What to look for:**
+- New ASINs appearing in top search positions that weren't there before
+- Products with low review counts but high rankings (suggests rapid sales velocity — new entrant gaining traction)
+- Products from brands not in `context/competitors.md`
+
+**Report format (add to daily brief):**
+
+```markdown
+## New / Rising Competitors
+
+| Niche | Brand | ASIN | Found On Keyword | Position | BSR | Reviews | Alert |
+|-------|-------|------|-----------------|----------|-----|---------|-------|
+| [Category] | [Brand] | BXXX | [keyword] | #X | #X,XXX | X | 🆕 New / 📈 Rising |
+```
+
+**If new competitors are found:**
+- Flag them in the Alerts section as 🟡 WATCH
+- If they appear in 2+ consecutive daily runs, suggest adding them to `context/competitors.md`
+
+**If no new competitors found:** Simply note "No new competitors detected" in the report.
 
 ---
 
@@ -233,7 +304,7 @@ Use these consistently:
 
 **Actor:** `igview-owner/amazon-search-scraper`
 **Cost (BRONZE):** ~$0.09 per keyword (1 page)
-**Daily budget:** ~$1.26 for 14 keywords (top 2 per category)
+**Daily budget:** ~$1.89 for 21 keywords (top 3 per category)
 
 **Input format:**
 ```json
@@ -254,17 +325,23 @@ Use these consistently:
 | `position` | Rank position on the search results page |
 | `badge` | Special badges like "Overall Pick", "Amazon's Choice" |
 
-**Top 2 Keywords Per Category:**
+**Top 3 Keywords Per Category (from `context/search-terms.md`):**
 
-| Category | Keyword 1 | Keyword 2 |
-|----------|-----------|-----------|
-| Cross Stitch | kids cross stitch kit | embroidery kit for kids |
-| Embroidery Adults | embroidery kit for beginners | embroidery kits for adults |
-| Sewing Kids | sewing kit for kids | kids sewing kit |
-| Latch Hook | latch hook kits for kids | latch kits |
-| Fuse Beads | mini perler beads | mini fuse beads |
-| Knitting | loom knitting kit | knitting kit for kids |
-| Lacing Cards | lacing cards | lacing cards for kids ages 3-5 |
+| Category | Keyword 1 | Keyword 2 | Keyword 3 |
+|----------|-----------|-----------|-----------|
+| Cross Stitch | embroidery kit for kids | kids cross stitch kit | beginner cross stitch kits for kids |
+| Embroidery Kids | kids embroidery kit | embroidery kit for beginners kids | kids embroidery kits ages 8-12 |
+| Embroidery Adults | embroidery kit for beginners | embroidery kits for adults | needle point kits adults |
+| Sewing Kids | sewing kit for kids | kids sewing kit | sewing kits for kids 8-12 |
+| Latch Hook | latch hook kits for kids | hook rug kits for kids | latch kits |
+| Fuse Beads | mini perler beads | mini beads | mini fuse beads |
+| Knitting | loom knitting kit | knitting loom kit | knitting kit for kids |
+| Lacing Cards | lacing cards | lacing cards for kids ages 3-5 | lacing cards for kids ages 4-8 |
+| Needlepoint | needlepoint kits for kids | kids needlepoint kit | beginner cross stitch kits for kids |
+
+**Total: 27 keyword searches** (9 categories × 3 keywords)
+
+**IMPORTANT:** Always pull keywords from `context/search-terms.md` — if the file is updated with better terms, use those instead of the hardcoded list above.
 
 **Execution notes:**
 - Run keyword searches AFTER BSR scraping
@@ -272,6 +349,7 @@ Use these consistently:
 - "loom knitting kit" and "lacing cards" have been unreliable (scraper limitation)
 - Results show position on page 1 only (maxPages: 1)
 - Track our position AND top competitor position for each keyword
+- **Scan top 10 results for unknown ASINs** (feeds New Competitor Detection)
 - First keyword baseline: 2026-02-12
 
 ---
@@ -301,13 +379,17 @@ Use these consistently:
 ## ✅ Execution Checklist
 
 - [ ] Load previous snapshot (yesterday or baseline)
+- [ ] Re-read `context/competitors.md` to get latest competitor ASINs
+- [ ] Re-read `context/search-terms.md` to get latest top 3 keywords per category
 - [ ] Scrape hero products (batches of 5, async mode)
-- [ ] Scrape key competitors (batches of 5, async mode)
+- [ ] Scrape ALL competitors with ASINs (~31 ASINs, ~7 batches of 5, async mode)
+- [ ] Calculate estimated daily sales velocity for each product (use BSR reference table)
 - [ ] Calculate changes vs yesterday AND vs baseline
-- [ ] Note category difficulty for each product
-- [ ] Run keyword searches (top 2 per category, 14 total)
+- [ ] Build unified product table sorted by estimated daily sales (single list, not split by category)
+- [ ] Run keyword searches (top 3 per category, 27 total)
 - [ ] Re-run any failed keyword searches once
-- [ ] Generate report in MANDATORY FORMAT (BSR + keyword rankings)
+- [ ] Scan keyword results for new/unknown competitors (New Competitor Detection)
+- [ ] Generate report in MANDATORY FORMAT (unified BSR + keywords + new competitors)
 - [ ] Save snapshot for tomorrow
 - [ ] Present summary to user
 

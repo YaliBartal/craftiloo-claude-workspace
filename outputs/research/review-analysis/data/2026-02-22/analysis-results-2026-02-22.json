@@ -1,0 +1,1100 @@
+{
+  "products": {
+    "B08DDJCQKF": {
+      "name": "Craftiloo Cross Stitch Kit - Girls",
+      "brand": "CRAFTILOO",
+      "is_ours": true,
+      "reviews_analyzed": 50,
+      "average_rating": 4.4,
+      "star_distribution": {
+        "5": 35,
+        "4": 6,
+        "3": 5,
+        "2": 2,
+        "1": 2
+      },
+      "satisfaction_rate": 0.82,
+      "dissatisfaction_rate": 0.08,
+      "photo_review_pct": 0.12,
+      "verified_purchase_pct": 0.98,
+      "newest_review_date": "2026-02-16",
+      "oldest_review_date": "2024-09-08",
+      "complaint_themes": {
+        "missing_incomplete_contents": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 3.0,
+          "quotes": [
+            "I bought this kit for my 8 year old daughter for Christmas.",
+            "Only 4 of the 5 patterns were in the box. It was expensive to begin with, but particularly with a missing piece.",
+            "I bought these for my crafty 9 year daughter."
+          ]
+        },
+        "material_quality": {
+          "frequency": 6,
+          "pct_of_reviews": 0.12,
+          "avg_stars": 2.5,
+          "quotes": [
+            "This cross stitch kit is NOT for children.",
+            "These kits are a nightmare for beginners.",
+            "I bought this kit for my 8 year old daughter for Christmas."
+          ]
+        },
+        "age_appropriateness_negative": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 2.8,
+          "quotes": [
+            "Limited instructions. If you’ve never done cross stitch, you’re going to need help",
+            "This cross stitch kit is NOT for children.",
+            "We were all disappointed greatly because it was described as 8+ for the age."
+          ]
+        },
+        "hoop_fabric_fit": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 2.2,
+          "quotes": [
+            "This cross stitch kit is NOT for children.",
+            "These kits are a nightmare for beginners.",
+            "The hoop doesn’t fit on the fabric- too small. Plenty of floss and designs are great. Just need either lighter weight fabric or larger hoop."
+          ]
+        }
+      },
+      "praise_themes": {
+        "gift_success": {
+          "frequency": 12,
+          "pct_of_reviews": 0.24,
+          "avg_stars": 5.0,
+          "quotes": [
+            "I am very pleased with the kit I purchased. It was a gift and the person I gave it to was very excited to get started with the projects.",
+            "My 8 year old granddaughter loved it! She was excited to work on the cat first.",
+            "Grandsons loves these , he’s 10 and loves crafting for gifts for his mom"
+          ]
+        },
+        "engagement_entertainment": {
+          "frequency": 10,
+          "pct_of_reviews": 0.2,
+          "avg_stars": 4.9,
+          "quotes": [
+            "I am very pleased with the kit I purchased. It was a gift and the person I gave it to was very excited to get started with the projects.",
+            "Clear instructions. Kit contains all necessary supplies. 9 yr old learned quickly and completed first project in a few hours",
+            "My 8 year old wanted to learn cross stitching like my older daughter so I got her this kit to practice and she loves it! It has the imprint on the canvas so she can follow the pattern and colors easily 👍."
+          ]
+        },
+        "ease_of_use": {
+          "frequency": 18,
+          "pct_of_reviews": 0.36,
+          "avg_stars": 4.8,
+          "quotes": [
+            "Clear instructions. Kit contains all necessary supplies. 9 yr old learned quickly and completed first project in a few hours",
+            "This is a nice set but my young 6 year old struggled with this set.",
+            "Very nice for beginners"
+          ]
+        },
+        "complete_kit": {
+          "frequency": 8,
+          "pct_of_reviews": 0.16,
+          "avg_stars": 4.6,
+          "quotes": [
+            "Clear instructions. Kit contains all necessary supplies. 9 yr old learned quickly and completed first project in a few hours",
+            "Came with everything you need to complete the project. My granddaughters loved them.",
+            "My daughter and I are excited to complete one of the cross stitch projects in this kit."
+          ]
+        },
+        "educational_value": {
+          "frequency": 10,
+          "pct_of_reviews": 0.2,
+          "avg_stars": 4.9,
+          "quotes": [
+            "My 6-year-old granddaughter is wanting to learn cross stitching, and this is a great way for her to learn.",
+            "Clear instructions. Kit contains all necessary supplies. 9 yr old learned quickly and completed first project in a few hours",
+            "It was a great teaching too to introduce cross stitch to a young person!"
+          ]
+        },
+        "cute_designs": {
+          "frequency": 14,
+          "pct_of_reviews": 0.28,
+          "avg_stars": 4.7,
+          "quotes": [
+            "This is a nice set but my young 6 year old struggled with this set.",
+            "I purchased as part of a birthday gift. I haven't given them to the birthday girl yet .I don't know a more detailed response.",
+            "So cute Great for a beginner don’t matter the age"
+          ]
+        },
+        "finished_result": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 5.0,
+          "quotes": [
+            "This is the first time I have ever cross stitched.",
+            "This is so much fun for my daughter who is 10. Keeps her busy and off her screens. She is always excited and feel accomplished when one is finished",
+            "Bought this for my greatgranddaughter for her birthday."
+          ]
+        }
+      },
+      "feature_requests": [
+        {
+          "request": "My daughter and I are excited to complete one of the cross stitch projects in this kit. Everything is there and although I haven’t cross stitched in many years, I could understand the directions very ...",
+          "frequency": 1,
+          "quote": "Very cute and fun, but…",
+          "stars": 4
+        },
+        {
+          "request": "I got this for my daughter who wants to learn hand sewing. There weren’t many options for kits like this for kids, and this one is probably the best choice of kids kits. However, the instructions are ...",
+          "frequency": 1,
+          "quote": "Just ok",
+          "stars": 3
+        }
+      ],
+      "gift_mentions": [
+        {
+          "context": "for son",
+          "quote": "I am very pleased with the kit I purchased. It was a gift and the person I gave it to was very excited to get started with the projects.",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "My 6-year-old granddaughter is wanting to learn cross stitching, and this is a great way for her to learn.",
+          "stars": 4
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "My 8 year old granddaughter loved it! She was excited to work on the cat first. I’m going to try to see if I can put a plastic cover on the finished f...",
+          "stars": 5
+        },
+        {
+          "context": "for grandson",
+          "quote": "Grandsons loves these , he’s 10 and loves crafting for gifts for his mom",
+          "stars": 5
+        },
+        {
+          "context": "birthday gift",
+          "quote": "I purchased as part of a birthday gift. I haven't given them to the birthday girl yet .I don't know a more detailed response.",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "Bought this for my granddaughter and she loved it!!!",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "This kit is very simple and perfect for my 9 year old granddaughter. The only issue I had was the cross stitch material was quite heavy and not easy t...",
+          "stars": 5
+        },
+        {
+          "context": "for daughter",
+          "quote": "I bought this kit for my 8 year old daughter for Christmas. It’s cute, but disappointing. It’s supposed to come with all the threads needed for each d...",
+          "stars": 2
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "Came with everything you need to complete the project. My granddaughters loved them.",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "They look very nice my granddaughter will love them",
+          "stars": 5
+        },
+        {
+          "context": "Christmas gift",
+          "quote": "Perfect Christmas gift!",
+          "stars": 5
+        },
+        {
+          "context": "for child/kids",
+          "quote": "Love it!",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "Perfect for my 8 year old granddaughter to learn how to cross stitch.",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "Granddaughters loved it.",
+          "stars": 5
+        },
+        {
+          "context": "gift purchase",
+          "quote": "This is a gift. Arrived on time and as expected.",
+          "stars": 5
+        },
+        {
+          "context": "for child/kids",
+          "quote": "My kid is learning how to cross stitch so I bought her this and it’s absolutely perfect. She is going and going nonstop!! it’s super fun for parents t...",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "I am an experienced needleworker who purchased this kit for my 9-year-old granddaughter. She enjoys crafts and I wanted to introduce her to an easy fo...",
+          "stars": 4
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "Bought this for my greatgranddaughter for her birthday. We will have a Cross Stitch Day and this looks like the perfect way for her to learn. Everythi...",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "We were all disappointed greatly because it was described as 8+ for the age. This is not for a beginner 8 year old. I would say 12. My 16 year old gra...",
+          "stars": 3
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "Cute cross stitch kits for my granddaughter. Great value. Everything included to complete project.",
+          "stars": 5
+        }
+      ],
+      "age_mentions": [
+        {
+          "age": "6 year old",
+          "sentiment": "positive",
+          "quote": "My 6-year-old granddaughter is wanting to learn cross stitching, and this is a great way for her to learn.",
+          "stars": 4
+        },
+        {
+          "age": "9 year old",
+          "sentiment": "positive",
+          "quote": "Clear instructions. Kit contains all necessary supplies. 9 yr old learned quickly and completed first project in a few hours",
+          "stars": 5
+        },
+        {
+          "age": "6 year old",
+          "sentiment": "positive",
+          "quote": "This is a nice set but my young 6 year old struggled with this set. Works better for a little older of kids. Color is accurate and is very pretty colo...",
+          "stars": 4
+        },
+        {
+          "age": "8 year old",
+          "sentiment": "positive",
+          "quote": "My 8 year old granddaughter loved it! She was excited to work on the cat first. I’m going to try to see if I can put a plastic cover on the finished f...",
+          "stars": 5
+        },
+        {
+          "age": "9 year old",
+          "sentiment": "positive",
+          "quote": "This kit is very simple and perfect for my 9 year old granddaughter. The only issue I had was the cross stitch material was quite heavy and not easy t...",
+          "stars": 5
+        },
+        {
+          "age": "8 year old",
+          "sentiment": "positive",
+          "quote": "My 8 year old wanted to learn cross stitching like my older daughter so I got her this kit to practice and she loves it! It has the imprint on the can...",
+          "stars": 5
+        },
+        {
+          "age": "8 year old",
+          "sentiment": "negative",
+          "quote": "I bought this kit for my 8 year old daughter for Christmas. It’s cute, but disappointing. It’s supposed to come with all the threads needed for each d...",
+          "stars": 2
+        },
+        {
+          "age": "11 year old",
+          "sentiment": "positive",
+          "quote": "I got it for my 11 year old daughter cause she wanted to try cross stitch. The patterns are already printed on the fabric so makes it real easy for be...",
+          "stars": 5
+        },
+        {
+          "age": "8 year old",
+          "sentiment": "positive",
+          "quote": "Perfect for my 8 year old granddaughter to learn how to cross stitch.",
+          "stars": 5
+        },
+        {
+          "age": "10 year old",
+          "sentiment": "positive",
+          "quote": "My 10 year old and myself enjoyed learning how to cross stitch with this kit. I did the owl and she did the heart. She fell in love with a new hobby! ...",
+          "stars": 5
+        },
+        {
+          "age": "9 year old",
+          "sentiment": "positive",
+          "quote": "I am an experienced needleworker who purchased this kit for my 9-year-old granddaughter. She enjoys crafts and I wanted to introduce her to an easy fo...",
+          "stars": 4
+        },
+        {
+          "age": "8 year old",
+          "sentiment": "mixed",
+          "quote": "We were all disappointed greatly because it was described as 8+ for the age. This is not for a beginner 8 year old. I would say 12. My 16 year old gra...",
+          "stars": 3
+        },
+        {
+          "age": "8 year old",
+          "sentiment": "mixed",
+          "quote": "We were all disappointed greatly because it was described as 8+ for the age. This is not for a beginner 8 year old. I would say 12. My 16 year old gra...",
+          "stars": 3
+        },
+        {
+          "age": "16 year old",
+          "sentiment": "mixed",
+          "quote": "We were all disappointed greatly because it was described as 8+ for the age. This is not for a beginner 8 year old. I would say 12. My 16 year old gra...",
+          "stars": 3
+        },
+        {
+          "age": "9 year old",
+          "sentiment": "positive",
+          "quote": "I bought these for my crafty 9 year daughter. She likes the designs and found the patterns easy to follow because they marked directly on the fabric a...",
+          "stars": 4
+        }
+      ],
+      "photo_reviews_count": 6,
+      "competitor_mentions": []
+    },
+    "B08T5QC9FS": {
+      "name": "Pllieay Cross Stitch Kit for Kids",
+      "brand": "Pllieay",
+      "is_ours": false,
+      "reviews_analyzed": 50,
+      "average_rating": 3.66,
+      "star_distribution": {
+        "5": 24,
+        "4": 8,
+        "3": 4,
+        "2": 5,
+        "1": 9
+      },
+      "satisfaction_rate": 0.64,
+      "dissatisfaction_rate": 0.28,
+      "photo_review_pct": 0.06,
+      "verified_purchase_pct": 0.98,
+      "newest_review_date": "2026-02-08",
+      "oldest_review_date": "2022-03-31",
+      "complaint_themes": {
+        "missing_incomplete_contents": {
+          "frequency": 5,
+          "pct_of_reviews": 0.1,
+          "avg_stars": 2.6,
+          "quotes": [
+            "Came incomplete.. no hoops were provided even though it was in the description",
+            "Very cute set! I bought it for my 8 year old daughter and she was so excited to get it.",
+            "The designs are so cute, but one of the hoops came without a part to hold it together."
+          ]
+        },
+        "instruction_quality": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 1.7,
+          "quotes": [
+            "Basically no instructions, fabric and looms did not fit together even with a good amount of force.",
+            "Bought for an 8 year old but it was hard to follow the colors.",
+            "Bought for 10 yr old."
+          ]
+        },
+        "material_quality": {
+          "frequency": 9,
+          "pct_of_reviews": 0.18,
+          "avg_stars": 2.1,
+          "quotes": [
+            "Couldn’t use hoop, it was too small and the printed fabric was too stiff.",
+            "Save your money.",
+            "No."
+          ]
+        },
+        "hoop_fabric_fit": {
+          "frequency": 6,
+          "pct_of_reviews": 0.12,
+          "avg_stars": 2.5,
+          "quotes": [
+            "Couldn’t use hoop, it was too small and the printed fabric was too stiff.",
+            "Save your money.",
+            "The designs are so cute, but one of the hoops came without a part to hold it together."
+          ]
+        },
+        "thread_needle_issues": {
+          "frequency": 5,
+          "pct_of_reviews": 0.1,
+          "avg_stars": 1.6,
+          "quotes": [
+            "The needle threading hole is to small for the thread. Had to go buy stronger needles to complete the project",
+            "Couldn’t use hoop, it was too small and the printed fabric was too stiff.",
+            "Separating floss to have it frizz. Then cut the floss is too muchfor a beginners."
+          ]
+        },
+        "value_price": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 1.5,
+          "quotes": [
+            "Basically no instructions, fabric and looms did not fit together even with a good amount of force.",
+            "Save your money.",
+            "Bought for 10 yr old."
+          ]
+        },
+        "size_scale": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 1.8,
+          "quotes": [
+            "Couldn’t use hoop, it was too small and the printed fabric was too stiff.",
+            "Everything is tiny and cheap. Terrible product.",
+            "The designs are so cute, but one of the hoops came without a part to hold it together."
+          ]
+        }
+      },
+      "praise_themes": {
+        "gift_success": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 4.2,
+          "quotes": [
+            "Sewing Kit We'll find out when our granddaughter opens her birthday presents, but it looks very nice and appealing.",
+            "Given as a gift and appreciated by the recipient, seemed to find instructions easy to follow and enjoy the activity.",
+            "I gave this to a great niece who is 8."
+          ]
+        },
+        "engagement_entertainment": {
+          "frequency": 7,
+          "pct_of_reviews": 0.14,
+          "avg_stars": 5.0,
+          "quotes": [
+            "This cross stitch kit is a great beginner option, especially for kids.",
+            "Wonderful beginner kit. I used a few other colors that are not included in the kit due to customizing the design. Enjoyed these.",
+            "This is great started pack for beginners."
+          ]
+        },
+        "ease_of_use": {
+          "frequency": 19,
+          "pct_of_reviews": 0.38,
+          "avg_stars": 4.7,
+          "quotes": [
+            "This cross stitch kit is a great beginner option, especially for kids.",
+            "Wonderful beginner kit. I used a few other colors that are not included in the kit due to customizing the design. Enjoyed these.",
+            "Bought these for my 10yr old son who liked to take over my cross stitching."
+          ]
+        },
+        "complete_kit": {
+          "frequency": 5,
+          "pct_of_reviews": 0.1,
+          "avg_stars": 5.0,
+          "quotes": [
+            "This cross stitch kit is a great beginner option, especially for kids.",
+            "Wonderful beginner kit. I used a few other colors that are not included in the kit due to customizing the design. Enjoyed these.",
+            "Easy patterns and you get everything you need. Good for beginners."
+          ]
+        },
+        "educational_value": {
+          "frequency": 7,
+          "pct_of_reviews": 0.14,
+          "avg_stars": 4.9,
+          "quotes": [
+            "I got these for a younger relative that is just learning how to do cross-stitches and these worked well to help learn the basic cross-stitch and to follow a pattern.",
+            "Rings are hard to get on this stiff fabric but very easy for child to learn to needlepoint!",
+            "Granddaughter wanted to learn how to cross stitch. Perfect beginner project. Easy to do and understand. Better than being on her phone."
+          ]
+        },
+        "repeat_purchase": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 5.0,
+          "quotes": [
+            "This is great started pack for beginners.",
+            "Recommended",
+            "Super simple patterns to follow. Once complete the design washes off with cold water. 10/10 would buy again!"
+          ]
+        }
+      },
+      "feature_requests": [
+        {
+          "request": "Wonderful but wish it would come with a needle threader!!! LOL",
+          "frequency": 1,
+          "quote": "Great beginner cross stitch",
+          "stars": 5
+        },
+        {
+          "request": "This was my first attempt at cross stitching. Its great for learning. Just watch a few YouTube videos and then dive into these. They vary from very simple lines(the heart) to slightly more complex(the...",
+          "frequency": 1,
+          "quote": "Great for beginners",
+          "stars": 5
+        }
+      ],
+      "gift_mentions": [
+        {
+          "context": "for granddaughter",
+          "quote": "Sewing Kit We'll find out when our granddaughter opens her birthday presents, but it looks very nice and appealing.",
+          "stars": 4
+        },
+        {
+          "context": "gift purchase",
+          "quote": "Given as a gift and appreciated by the recipient, seemed to find instructions easy to follow and enjoy the activity.",
+          "stars": 4
+        },
+        {
+          "context": "for niece",
+          "quote": "No. This is too cheaply made to be any good. Unless you’re a seasoned pro, it’s unwieldy and cumbersome. The “fabric” is so hard to fit into the hoops...",
+          "stars": 1
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "Arrived quickly, well packaged will be great for my granddaughters",
+          "stars": 5
+        },
+        {
+          "context": "for great-niece",
+          "quote": "I gave this to a great niece who is 8. The supplies were nice except the embroidery hood didn’t work on the material provided. Very good beginner proj...",
+          "stars": 4
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "Granddaughter wanted to learn how to cross stitch. Perfect beginner project. Easy to do and understand. Better than being on her phone.",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "Lovely for my granddaughter, very educational",
+          "stars": 5
+        },
+        {
+          "context": "for child/kids",
+          "quote": "Good colored patterns. Easy to see. The bad was when i opened it to find it partially completed. The rest of the orange thread was also missing as wel...",
+          "stars": 3
+        },
+        {
+          "context": "for niece",
+          "quote": "I purchased this as a gift for my niece. It comes with items as promised, but the instructions are super -minimalistic : just a few sentences on the 2...",
+          "stars": 3
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "The small canvas and stamped on design (which promises to come off in water when completed) are ideal for children just learning this craft. Both my g...",
+          "stars": 5
+        }
+      ],
+      "age_mentions": [
+        {
+          "age": "10 year old",
+          "sentiment": "positive",
+          "quote": "Bought these for my 10yr old son who liked to take over my cross stitching. He loves them simple, quick patterns so he never gets bored of using the s...",
+          "stars": 5
+        },
+        {
+          "age": "10 year old",
+          "sentiment": "positive",
+          "quote": "Bought these for my 10yr old son who liked to take over my cross stitching. He loves them simple, quick patterns so he never gets bored of using the s...",
+          "stars": 5
+        },
+        {
+          "age": "9 year old",
+          "sentiment": "negative",
+          "quote": "No. This is too cheaply made to be any good. Unless you’re a seasoned pro, it’s unwieldy and cumbersome. The “fabric” is so hard to fit into the hoops...",
+          "stars": 1
+        },
+        {
+          "age": "8 year old",
+          "sentiment": "negative",
+          "quote": "Very cute set! I bought it for my 8 year old daughter and she was so excited to get it. I got the hoop around the heart piece and thats when we realiz...",
+          "stars": 2
+        },
+        {
+          "age": "8 year old",
+          "sentiment": "mixed",
+          "quote": "Bought for an 8 year old but it was hard to follow the colors. The fabric was also very stiff. The company reached out to me to try to make my situati...",
+          "stars": 3
+        },
+        {
+          "age": "13 year old",
+          "sentiment": "positive",
+          "quote": "Easy for beginners",
+          "stars": 5
+        },
+        {
+          "age": "10 year old",
+          "sentiment": "negative",
+          "quote": "Bought for 10 yr old. Needles were extremely difficult to thread(I am an experienced sewer) The hoops were worthless- not sure of their purpose. Minim...",
+          "stars": 1
+        },
+        {
+          "age": "6 year old",
+          "sentiment": "positive",
+          "quote": "My 6 year old son is very crafty, and this kit is perfect for him. He's detail oriented and finishes things through, so if you have someone who is sim...",
+          "stars": 5
+        },
+        {
+          "age": "6 year old",
+          "sentiment": "positive",
+          "quote": "My 6 year old son is very crafty, and this kit is perfect for him. He's detail oriented and finishes things through, so if you have someone who is sim...",
+          "stars": 5
+        }
+      ],
+      "photo_reviews_count": 3,
+      "competitor_mentions": [
+        {
+          "direction": "competitor is better",
+          "competitor": "unknown",
+          "quote": "Basically no instructions, fabric and looms did not fit together even with a good amount of force. Spend the extra $5 and get a better product than th...",
+          "stars": 1
+        }
+      ]
+    },
+    "B0B7JHN4F1": {
+      "name": "KRAFUN Cross Stitch Kit for Kids",
+      "brand": "KRAFUN",
+      "is_ours": false,
+      "reviews_analyzed": 50,
+      "average_rating": 4.54,
+      "star_distribution": {
+        "5": 35,
+        "4": 10,
+        "3": 3,
+        "2": 1,
+        "1": 1
+      },
+      "satisfaction_rate": 0.9,
+      "dissatisfaction_rate": 0.04,
+      "photo_review_pct": 0.06,
+      "verified_purchase_pct": 0.98,
+      "newest_review_date": "2026-02-18",
+      "oldest_review_date": "2022-11-28",
+      "complaint_themes": {
+        "age_appropriateness_negative": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 4.0,
+          "quotes": [
+            "Directions are very hard to read for a child.",
+            "I gave this to my 8 year old granddaughter.",
+            "I’m cross stitching a Christmas stocking for our new baby."
+          ]
+        }
+      },
+      "praise_themes": {
+        "gift_success": {
+          "frequency": 13,
+          "pct_of_reviews": 0.26,
+          "avg_stars": 4.7,
+          "quotes": [
+            "My 8 year old loved it and it keeps her occupied for hours making gifts for her friends and our family. The projects are very easy and quick to make.",
+            "Perfect age range good value for the money durability great colors",
+            "Arrived on time and looks like what was pictured. It is a Christmas gift."
+          ]
+        },
+        "engagement_entertainment": {
+          "frequency": 12,
+          "pct_of_reviews": 0.24,
+          "avg_stars": 4.9,
+          "quotes": [
+            "My 8 year old loved it and it keeps her occupied for hours making gifts for her friends and our family. The projects are very easy and quick to make.",
+            "I bought the Cross Stitch Kits for Kids hoping to keep my kids busy for at least the length of a cup of coffee, and honestly, this kit deserves a medal.",
+            "We were very impressed with this kit! Perfect for beginners, and so many fun projects."
+          ]
+        },
+        "ease_of_use": {
+          "frequency": 9,
+          "pct_of_reviews": 0.18,
+          "avg_stars": 4.7,
+          "quotes": [
+            "Great starters kit.",
+            "We were very impressed with this kit! Perfect for beginners, and so many fun projects.",
+            "Great for a little girl who loves crafting and learning new things. I have a new cross stitch buddy"
+          ]
+        },
+        "complete_kit": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 4.7,
+          "quotes": [
+            "Great starters kit.",
+            "Perfect entry point for my 6 year old to get the hang of the cross stitch mechanics.",
+            "I’m cross stitching a Christmas stocking for our new baby."
+          ]
+        },
+        "educational_value": {
+          "frequency": 8,
+          "pct_of_reviews": 0.16,
+          "avg_stars": 4.6,
+          "quotes": [
+            "We are so happy with this product! I love to cross-stitch and my 9-year-old daughter wants to learn.",
+            "Great for a little girl who loves crafting and learning new things. I have a new cross stitch buddy",
+            "Got this for my daughter for Christmas she wanted to learn and really loved it"
+          ]
+        },
+        "cute_designs": {
+          "frequency": 11,
+          "pct_of_reviews": 0.22,
+          "avg_stars": 4.5,
+          "quotes": [
+            "Directions are very hard to read for a child.",
+            "We were very impressed with this kit! Perfect for beginners, and so many fun projects.",
+            "My 6 year old loves this and wants to work on it daily."
+          ]
+        },
+        "repeat_purchase": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 5.0,
+          "quotes": [
+            "We are so happy with this product! I love to cross-stitch and my 9-year-old daughter wants to learn.",
+            "We were very impressed with this kit! Perfect for beginners, and so many fun projects.",
+            "My 6 year old loves these."
+          ]
+        },
+        "finished_result": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 4.7,
+          "quotes": [
+            "I bought the Cross Stitch Kits for Kids hoping to keep my kids busy for at least the length of a cup of coffee, and honestly, this kit deserves a medal.",
+            "This turned out way cuter than I thought it would. Purchased for my 6 and 10 year old and they both had fun completing these.",
+            "I gave this to my 8 year old granddaughter."
+          ]
+        }
+      },
+      "feature_requests": [
+        {
+          "request": "I wish the instructions were a little clearer. They are just pictures and sometimes you have to guess at where they are supposed to thread through.",
+          "frequency": 1,
+          "quote": "Good starter craft",
+          "stars": 4
+        }
+      ],
+      "gift_mentions": [
+        {
+          "context": "gift purchase",
+          "quote": "My 8 year old loved it and it keeps her occupied for hours making gifts for her friends and our family. The projects are very easy and quick to make.",
+          "stars": 5
+        },
+        {
+          "context": "gift purchase",
+          "quote": "Perfect age range good value for the money durability great colors",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "Directions are very hard to read for a child. Honestly I had a hard time understanding them. Cute product but my granddaughter got frustrated before s...",
+          "stars": 4
+        },
+        {
+          "context": "Christmas gift",
+          "quote": "Arrived on time and looks like what was pictured. It is a Christmas gift.",
+          "stars": 5
+        },
+        {
+          "context": "gift purchase",
+          "quote": "My 6 year old loves these. This is her second sewing kit. This one is more advanced. Requires some adult help because the criss cross is a little tric...",
+          "stars": 5
+        },
+        {
+          "context": "for daughter",
+          "quote": "Got this for my daughter for Christmas she wanted to learn and really loved it",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "But together we are moving towards the goal, and with my help my granddaughter is doing better every day. Thank you, it is very useful for the child's...",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "This was a gift for my 7 yo granddaughter; I wanted to get her interested in needlework so we could work on projects together. I'm not sure if this mo...",
+          "stars": 4
+        },
+        {
+          "context": "birthday gift",
+          "quote": "Very well received birthday present. She's so excited!",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "I gave this to my 8 year old granddaughter. She loved it, but being a perfectionist, it was challenging. Eventually (after her tears, & adult positivi...",
+          "stars": 4
+        },
+        {
+          "context": "for daughter",
+          "quote": "I’m cross stitching a Christmas stocking for our new baby. My 6 year old daughter wants to do what I do. I bought her another child’s cross stitch tha...",
+          "stars": 4
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "My granddaughter loved it",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "Great kit for kids to start embroidering. My 5 year old granddaughter loved it.",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "A fun activity for my granddaughter. Kept her busy all day.",
+          "stars": 5
+        }
+      ],
+      "age_mentions": [
+        {
+          "age": "8 year old",
+          "sentiment": "positive",
+          "quote": "Great starters kit. Everyone included to get started. Easy to follow instructions, minimal assistance needed for child under 8 years. But they get so ...",
+          "stars": 5
+        },
+        {
+          "age": "6 year old",
+          "sentiment": "positive",
+          "quote": "Was a little difficult for my 6 year old. Good value for the money, decent quality of yarn. But it keeps her busy!",
+          "stars": 4
+        },
+        {
+          "age": "9 year old",
+          "sentiment": "positive",
+          "quote": "We are so happy with this product! I love to cross-stitch and my 9-year-old daughter wants to learn. There are 7 projects that are scaffolded in a way...",
+          "stars": 5
+        },
+        {
+          "age": "8 year old",
+          "sentiment": "positive",
+          "quote": "My 8 year old loved it and it keeps her occupied for hours making gifts for her friends and our family. The projects are very easy and quick to make.",
+          "stars": 5
+        },
+        {
+          "age": "6 year old",
+          "sentiment": "positive",
+          "quote": "My 6 year old loves these. This is her second sewing kit. This one is more advanced. Requires some adult help because the criss cross is a little tric...",
+          "stars": 5
+        },
+        {
+          "age": "6 year old",
+          "sentiment": "positive",
+          "quote": "My 6 year old loves this and wants to work on it daily. I like that the instructions have good graphics and suggest the order to do the crafts, so the...",
+          "stars": 5
+        },
+        {
+          "age": "7 year old",
+          "sentiment": "positive",
+          "quote": "This was a gift for my 7 yo granddaughter; I wanted to get her interested in needlework so we could work on projects together. I'm not sure if this mo...",
+          "stars": 4
+        },
+        {
+          "age": "10 year old",
+          "sentiment": "positive",
+          "quote": "This turned out way cuter than I thought it would. Purchased for my 6 and 10 year old and they both had fun completing these.",
+          "stars": 5
+        },
+        {
+          "age": "11 year old",
+          "sentiment": "mixed",
+          "quote": "11 year loves it",
+          "stars": 3
+        },
+        {
+          "age": "6 year old",
+          "sentiment": "positive",
+          "quote": "Perfect entry point for my 6 year old to get the hang of the cross stitch mechanics. She worked on these off and on all day to complete her keychains ...",
+          "stars": 5
+        },
+        {
+          "age": "7 year old",
+          "sentiment": "positive",
+          "quote": "This kit is a fun starter to cross stitching. Perfect for my little crafter to do with some assistance. I love that it has several projects all in one...",
+          "stars": 5
+        },
+        {
+          "age": "8 year old",
+          "sentiment": "positive",
+          "quote": "I gave this to my 8 year old granddaughter. She loved it, but being a perfectionist, it was challenging. Eventually (after her tears, & adult positivi...",
+          "stars": 4
+        },
+        {
+          "age": "6 year old",
+          "sentiment": "positive",
+          "quote": "I’m cross stitching a Christmas stocking for our new baby. My 6 year old daughter wants to do what I do. I bought her another child’s cross stitch tha...",
+          "stars": 4
+        },
+        {
+          "age": "8 year old",
+          "sentiment": "positive",
+          "quote": "My 8 year old was easily able to learn how to do basic cross stitch with this kit. The illustrated instructions are easy to understand. You can make 4...",
+          "stars": 4
+        },
+        {
+          "age": "9 year old",
+          "sentiment": "positive",
+          "quote": "My 9 year old picked up the basic crossstitch pretty fast. Counting the stitches was more difficult. It’s a great kit for beginners. Would suggest for...",
+          "stars": 4
+        },
+        {
+          "age": "12 year old",
+          "sentiment": "positive",
+          "quote": "My 9 year old picked up the basic crossstitch pretty fast. Counting the stitches was more difficult. It’s a great kit for beginners. Would suggest for...",
+          "stars": 4
+        },
+        {
+          "age": "5 year old",
+          "sentiment": "positive",
+          "quote": "I bought this for my 5 year old boy and we worked on it last night. It is a good challenge for him and was a lot of fun creating something. He had to ...",
+          "stars": 5
+        },
+        {
+          "age": "5 year old",
+          "sentiment": "positive",
+          "quote": "My granddaughter loved it",
+          "stars": 5
+        },
+        {
+          "age": "6 year old",
+          "sentiment": "positive",
+          "quote": "Pretty cool kit. Just right for beginners. Short, easy steps. Easy to see results. Purchased for my 6 year old daughter. She can pause as soon as she ...",
+          "stars": 5
+        },
+        {
+          "age": "6 year old",
+          "sentiment": "positive",
+          "quote": "Bought for my 6 year old. This is great for beginners! Large enough for little fingers to maneuver and parents to help. It definitely practices patien...",
+          "stars": 4
+        },
+        {
+          "age": "5 year old",
+          "sentiment": "positive",
+          "quote": "Great kit for kids to start embroidering. My 5 year old granddaughter loved it.",
+          "stars": 5
+        },
+        {
+          "age": "13 year old",
+          "sentiment": "positive",
+          "quote": "Why did you pick this product vs others?: My 13 year old autistic daughter loves its alittle complicated but she figure it out",
+          "stars": 5
+        }
+      ],
+      "photo_reviews_count": 3,
+      "competitor_mentions": [
+        {
+          "direction": "competitor is better",
+          "competitor": "unknown",
+          "quote": "Directions are very hard to read for a child. Honestly I had a hard time understanding them. Cute product but my granddaughter got frustrated before s...",
+          "stars": 4
+        }
+      ]
+    },
+    "B0CM9JKNCC": {
+      "name": "Caydo Cross Stitch Kit for Kids",
+      "brand": "Caydo",
+      "is_ours": false,
+      "reviews_analyzed": 19,
+      "average_rating": 3.84,
+      "star_distribution": {
+        "5": 12,
+        "4": 1,
+        "3": 1,
+        "2": 1,
+        "1": 4
+      },
+      "satisfaction_rate": 0.68,
+      "dissatisfaction_rate": 0.26,
+      "photo_review_pct": 0.0,
+      "verified_purchase_pct": 1.0,
+      "newest_review_date": "2025-12-27",
+      "oldest_review_date": "2024-02-29",
+      "complaint_themes": {
+        "material_quality": {
+          "frequency": 4,
+          "pct_of_reviews": 0.21,
+          "avg_stars": 2.0,
+          "quotes": [
+            "Flimsy and the string was extremely hard to threat",
+            "The pattern is the exact same color as the floss. Can’t tell what I’ve done or where I’m going. Pattern doesn’t wash off.",
+            "This is temu level garbage. Absolute garbage. Do not buy it. Instructions are a joke. Would give 0 stars if I could"
+          ]
+        },
+        "color_accuracy": {
+          "frequency": 2,
+          "pct_of_reviews": 0.11,
+          "avg_stars": 2.5,
+          "quotes": [
+            "The pattern is the exact same color as the floss. Can’t tell what I’ve done or where I’m going. Pattern doesn’t wash off.",
+            "Tl;dr great kits, check them carefully to make sure all the parts are included and are undamaged."
+          ]
+        }
+      },
+      "praise_themes": {
+        "engagement_entertainment": {
+          "frequency": 8,
+          "pct_of_reviews": 0.42,
+          "avg_stars": 4.9,
+          "quotes": [
+            "Great way to introduce cross stitching to your kids.",
+            "My 6 year old daughter wanted to try cross stitching out so I thought this would be a great way to start out and they have been so fun and engaging for her she needs help threading the needle but she is getting closer to getting it herself.",
+            "Got this for my kiddo who’s never cross stitched before! She got right to it and loves it! I can’t recommend it enough for beginners!"
+          ]
+        },
+        "ease_of_use": {
+          "frequency": 5,
+          "pct_of_reviews": 0.26,
+          "avg_stars": 5.0,
+          "quotes": [
+            "Super cute! Great age range, quality, size, and it was super easy to use! Would recommend!😃",
+            "Good for beginners. Color coded so no counting stitches.",
+            "Got this for my kiddo who’s never cross stitched before! She got right to it and loves it! I can’t recommend it enough for beginners!"
+          ]
+        },
+        "cute_designs": {
+          "frequency": 2,
+          "pct_of_reviews": 0.11,
+          "avg_stars": 5.0,
+          "quotes": [
+            "Super cute! Great age range, quality, size, and it was super easy to use! Would recommend!😃",
+            "Cute, will keep my daughter entertained for the holidays. As described"
+          ]
+        },
+        "repeat_purchase": {
+          "frequency": 4,
+          "pct_of_reviews": 0.21,
+          "avg_stars": 5.0,
+          "quotes": [
+            "Super cute! Great age range, quality, size, and it was super easy to use! Would recommend!😃",
+            "Got this for my kiddo who’s never cross stitched before! She got right to it and loves it! I can’t recommend it enough for beginners!",
+            "I’ve been cross stitching for 30 years, and when my son expressed an interest in learning i thought a printed pattern kit would be useful."
+          ]
+        }
+      },
+      "feature_requests": [],
+      "gift_mentions": [
+        {
+          "context": "for son",
+          "quote": "I’ve been cross stitching for 30 years, and when my son expressed an interest in learning i thought a printed pattern kit would be useful. This kit is...",
+          "stars": 5
+        },
+        {
+          "context": "for granddaughter",
+          "quote": "Bought for our 6 year old granddaughter and she loves it. Would recommend",
+          "stars": 5
+        }
+      ],
+      "age_mentions": [
+        {
+          "age": "6 year old",
+          "sentiment": "positive",
+          "quote": "My 6 year old daughter wanted to try cross stitching out so I thought this would be a great way to start out and they have been so fun and engaging fo...",
+          "stars": 5
+        },
+        {
+          "age": "8 year old",
+          "sentiment": "mixed",
+          "quote": "Tl;dr great kits, check them carefully to make sure all the parts are included and are undamaged. I teach a beginner cross stitch class to 8 year olds...",
+          "stars": 3
+        },
+        {
+          "age": "6 year old",
+          "sentiment": "positive",
+          "quote": "Bought for our 6 year old granddaughter and she loves it. Would recommend",
+          "stars": 5
+        }
+      ],
+      "photo_reviews_count": 0,
+      "competitor_mentions": [
+        {
+          "direction": "better than competitor",
+          "competitor": "Bucilla/Dimensions",
+          "quote": "I’ve been cross stitching for 30 years, and when my son expressed an interest in learning i thought a printed pattern kit would be useful. This kit is...",
+          "stars": 5
+        },
+        {
+          "direction": "worse than Temu",
+          "competitor": "Temu",
+          "quote": "This is temu level garbage. Absolute garbage. Do not buy it. Instructions are a joke. Would give 0 stars if I could",
+          "stars": 1
+        }
+      ]
+    }
+  }
+}

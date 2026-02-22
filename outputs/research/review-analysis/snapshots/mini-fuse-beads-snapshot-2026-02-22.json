@@ -1,0 +1,561 @@
+{
+  "date": "2026-02-22",
+  "mode": "deep_dive",
+  "category": "Mini Fuse Beads (2.6mm)",
+  "apify_actor": "junglee/amazon-reviews-scraper",
+  "apify_cost_estimate": 0.80,
+  "products": {
+    "B09THLVFZK": {
+      "name": "48 Mini Fuse Beads Kit",
+      "brand": "shinshin creation",
+      "is_ours": true,
+      "reviews_analyzed": 50,
+      "average_rating": 4.62,
+      "star_distribution": {
+        "5": 43,
+        "4": 2,
+        "3": 1,
+        "2": 1,
+        "1": 3
+      },
+      "satisfaction_rate": 0.90,
+      "dissatisfaction_rate": 0.08,
+      "photo_review_pct": 0.28,
+      "verified_purchase_pct": 0.90,
+      "newest_review_date": "2026-02-13",
+      "oldest_review_date": "2025-03-12",
+      "complaint_themes": {
+        "pegboard_warping": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 4.33,
+          "example_quote": "Do NOT use the iron to melt the beads while it's still on the pegboard! Half of my boards have warped and are unusable."
+        },
+        "size_confusion": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 4.33,
+          "example_quote": "They were much smaller then regular ones"
+        },
+        "color_balance": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 4.33,
+          "example_quote": "Too many shades of blue and not enough of others. I find myself particularly in more need of grays, white and black."
+        },
+        "missing_contents": {
+          "frequency": 2,
+          "pct_of_reviews": 0.04,
+          "avg_stars": 1.5,
+          "example_quote": "I received a kit that clearly had been previously used. Beads were missing and the package was damaged."
+        }
+      },
+      "praise_themes": {
+        "color_variety": {
+          "frequency": 18,
+          "pct_of_reviews": 0.36,
+          "avg_stars": 4.94,
+          "example_quote": "There was every color you could think of!"
+        },
+        "great_value": {
+          "frequency": 10,
+          "pct_of_reviews": 0.20,
+          "avg_stars": 5.0,
+          "example_quote": "Incredible value for the price."
+        },
+        "gift_success": {
+          "frequency": 9,
+          "pct_of_reviews": 0.18,
+          "avg_stars": 5.0,
+          "example_quote": "Great Christmas gift! My granddaughter loved it."
+        },
+        "detail_quality": {
+          "frequency": 8,
+          "pct_of_reviews": 0.16,
+          "avg_stars": 4.88,
+          "example_quote": "Beads half the size means double the detail!"
+        },
+        "tweezers_quality": {
+          "frequency": 6,
+          "pct_of_reviews": 0.12,
+          "avg_stars": 5.0,
+          "example_quote": "The tweezers are amazing!!"
+        },
+        "engagement": {
+          "frequency": 8,
+          "pct_of_reviews": 0.16,
+          "avg_stars": 5.0,
+          "example_quote": "Hours of fun for my granddaughter and me."
+        },
+        "organization_packaging": {
+          "frequency": 6,
+          "pct_of_reviews": 0.12,
+          "avg_stars": 5.0,
+          "example_quote": "The colors are separated so it's no hassle."
+        },
+        "durability": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 5.0,
+          "example_quote": "They're incredibly durable, vibrant, and a great price."
+        },
+        "brand_compatibility": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 5.0,
+          "example_quote": "The beads work well with both Perler and Artkal brands."
+        },
+        "repeat_purchase": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 5.0,
+          "example_quote": "Once we're out, we'll definitely order again."
+        }
+      },
+      "feature_requests": [
+        {
+          "request": "Single color refill bags (especially black, white, dark green)",
+          "frequency": 3,
+          "example_quote": "I really hope the seller makes it available to purchase one color of beads as I'm running out of black, white and dark green!"
+        },
+        {
+          "request": "More balanced color distribution (fewer blues, more greens/neutrals)",
+          "frequency": 3,
+          "example_quote": "Too many shades of blue and not enough of others."
+        }
+      ],
+      "quality_flags": [
+        {
+          "severity": "MEDIUM",
+          "theme": "Pegboard warping under heat",
+          "frequency": 3,
+          "example_quote": "Even with my small crafting iron and short melting time, half of my boards have warped and are unusable."
+        }
+      ],
+      "gift_mentions": 9,
+      "age_mentions": {
+        "under_6": {"positive": 0, "negative": 1},
+        "6_to_8": {"positive": 1, "negative": 0},
+        "9_to_12": {"positive": 1, "negative": 0},
+        "teens_plus": {"positive": 5, "negative": 0},
+        "adults": {"positive": 8, "negative": 0},
+        "adult_help_needed": 1
+      },
+      "competitor_comparison_mentions": [
+        {
+          "direction": "better_than",
+          "competitor": "Perler",
+          "quote": "These melted better than the 5mm perler brand beads"
+        }
+      ]
+    },
+    "B0C5WQD914": {
+      "name": "INSCRAFT Mini Fuse Beads Kit",
+      "brand": "INSCRAFT",
+      "is_ours": false,
+      "reviews_analyzed": 50,
+      "average_rating": 4.02,
+      "star_distribution": {
+        "5": 28,
+        "4": 5,
+        "3": 11,
+        "2": 2,
+        "1": 4
+      },
+      "satisfaction_rate": 0.66,
+      "dissatisfaction_rate": 0.12,
+      "photo_review_pct": 0.20,
+      "verified_purchase_pct": 0.94,
+      "newest_review_date": "2026-02-07",
+      "oldest_review_date": "2024-02-05",
+      "complaint_themes": {
+        "melting_fusing_issues": {
+          "frequency": 9,
+          "pct_of_reviews": 0.18,
+          "avg_stars": 2.33,
+          "example_quote": "They completely melt into a puddle under an iron even on the lowest setting."
+        },
+        "size_confusion": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 2.25,
+          "example_quote": "Does not make it clear these are MINIATURE fuse beads."
+        },
+        "bead_quality_inconsistency": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 1.67,
+          "example_quote": "The beads are all different diameter as well as different lengths. Not cut cleanly."
+        },
+        "not_enough_black_beads": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 3.33,
+          "example_quote": "Make sure you buy an extra bag of black beads. The kit doesn't come with enough."
+        },
+        "board_issues": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 2.67,
+          "example_quote": "The boards themselves when attached to each other, do not stay together at all."
+        }
+      },
+      "praise_themes": {
+        "color_variety": {
+          "frequency": 12,
+          "pct_of_reviews": 0.24,
+          "avg_stars": 4.83,
+          "example_quote": "Such a variety of colors."
+        },
+        "great_value": {
+          "frequency": 8,
+          "pct_of_reviews": 0.16,
+          "avg_stars": 4.88,
+          "example_quote": "Great value for the money."
+        },
+        "gift_success": {
+          "frequency": 5,
+          "pct_of_reviews": 0.10,
+          "avg_stars": 5.0,
+          "example_quote": "My 11yr old Granddaughter loves these!"
+        },
+        "detail_quality": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 4.75,
+          "example_quote": "Perfect for details you can't get with normal perler beads."
+        }
+      },
+      "feature_requests": [
+        {
+          "request": "Single color refill bags (black)",
+          "frequency": 3,
+          "example_quote": "A refill bag of just black isn't available through inscraft so I'll have to order from another seller/brand."
+        },
+        {
+          "request": "Include instructions/heat settings",
+          "frequency": 3,
+          "example_quote": "The kit does not include instructions. Heat settings, patterns, anything."
+        }
+      ],
+      "quality_flags": [
+        {
+          "severity": "HIGH",
+          "theme": "Inconsistent melting/fusing",
+          "frequency": 9,
+          "example_quote": "They completely melt into a puddle under an iron even on the lowest setting."
+        },
+        {
+          "severity": "HIGH",
+          "theme": "Bead dimensional inconsistency",
+          "frequency": 3,
+          "example_quote": "The beads are all different diameter and different lengths."
+        }
+      ],
+      "gift_mentions": 5,
+      "age_mentions": {
+        "under_6": {"positive": 0, "negative": 1},
+        "6_to_8": {"positive": 1, "negative": 0},
+        "9_to_12": {"positive": 2, "negative": 0},
+        "teens_plus": {"positive": 2, "negative": 0},
+        "adults": {"positive": 4, "negative": 0},
+        "adult_help_needed": 2
+      },
+      "competitor_comparison_mentions": [
+        {
+          "direction": "worse_than",
+          "competitor": "Perler",
+          "quote": "Beads are different material from brand name Perler Beads...almost sticky or tacky, not smooth like Perler beads."
+        }
+      ]
+    },
+    "B0FN4CT867": {
+      "name": "ARTKAL Fuse Bead Starter Kit",
+      "brand": "ARTKAL",
+      "is_ours": false,
+      "reviews_analyzed": 9,
+      "average_rating": 4.89,
+      "star_distribution": {
+        "5": 8,
+        "4": 1,
+        "3": 0,
+        "2": 0,
+        "1": 0
+      },
+      "satisfaction_rate": 1.0,
+      "dissatisfaction_rate": 0.0,
+      "photo_review_pct": 0.44,
+      "verified_purchase_pct": 0.11,
+      "newest_review_date": "2026-01-14",
+      "oldest_review_date": "2025-10-19",
+      "complaint_themes": {
+        "pegboard_fragility": {
+          "frequency": 1,
+          "pct_of_reviews": 0.11,
+          "avg_stars": 4.0,
+          "example_quote": "The plastic clear bead trays are thin and a few broke in the package during shipping."
+        }
+      },
+      "praise_themes": {
+        "color_variety": {
+          "frequency": 6,
+          "pct_of_reviews": 0.67,
+          "avg_stars": 5.0,
+          "example_quote": "So many colors to choose from, the creative possibilities are endless."
+        },
+        "complete_kit": {
+          "frequency": 5,
+          "pct_of_reviews": 0.56,
+          "avg_stars": 5.0,
+          "example_quote": "This is a great set to get started. It includes everything you need."
+        },
+        "giftable_packaging": {
+          "frequency": 3,
+          "pct_of_reviews": 0.33,
+          "avg_stars": 5.0,
+          "example_quote": "The packaging is also very giftable."
+        }
+      },
+      "feature_requests": [],
+      "quality_flags": [],
+      "gift_mentions": 3,
+      "age_mentions": {
+        "5_to_8": {"positive": 1, "negative": 0},
+        "9_to_12": {"positive": 1, "negative": 0},
+        "teens_plus": {"positive": 1, "negative": 0},
+        "adults": {"positive": 3, "negative": 0}
+      },
+      "competitor_comparison_mentions": [],
+      "note": "Only 9 reviews, 8 unverified (likely Vine/seeded). Data is directional only."
+    },
+    "B08QV9CMFQ": {
+      "name": "LIHAO Mini Fuse Beads Kit",
+      "brand": "LIHAO",
+      "is_ours": false,
+      "reviews_analyzed": 50,
+      "average_rating": 3.74,
+      "star_distribution": {
+        "5": 22,
+        "4": 10,
+        "3": 7,
+        "2": 5,
+        "1": 6
+      },
+      "satisfaction_rate": 0.64,
+      "dissatisfaction_rate": 0.22,
+      "photo_review_pct": 0.20,
+      "verified_purchase_pct": 0.96,
+      "newest_review_date": "2026-01-02",
+      "oldest_review_date": "2023-03-27",
+      "complaint_themes": {
+        "melting_fusing_disaster": {
+          "frequency": 9,
+          "pct_of_reviews": 0.18,
+          "avg_stars": 2.11,
+          "example_quote": "Completely melted the beads into LIQUID and the board is deformed. It's cheap garbage."
+        },
+        "size_confusion": {
+          "frequency": 10,
+          "pct_of_reviews": 0.20,
+          "avg_stars": 3.1,
+          "example_quote": "Soooo tiny. The pictures were so misleading."
+        },
+        "bead_quality_issues": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 1.75,
+          "example_quote": "Beads too small. Beads were slightly different sizes along with the holes being all wonky."
+        },
+        "ironing_paper_defective": {
+          "frequency": 1,
+          "pct_of_reviews": 0.02,
+          "avg_stars": 1.0,
+          "example_quote": "The ironing paper is A PIECE OF PLASTIC THAT MELTS ONCE IT MAKES CONTACT WITH THE IRON."
+        },
+        "patterns_dont_fit_boards": {
+          "frequency": 2,
+          "pct_of_reviews": 0.04,
+          "avg_stars": 3.0,
+          "example_quote": "The provided paper with the designs do not line up with the pegboards."
+        },
+        "fragile_finished_product": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 3.33,
+          "example_quote": "Much more soft and fragile than other brands."
+        }
+      },
+      "praise_themes": {
+        "color_variety": {
+          "frequency": 10,
+          "pct_of_reviews": 0.20,
+          "avg_stars": 4.60,
+          "example_quote": "All beautiful and different colors."
+        },
+        "kids_engagement": {
+          "frequency": 5,
+          "pct_of_reviews": 0.10,
+          "avg_stars": 5.0,
+          "example_quote": "My 8 year old was so happy to receive this as a gift."
+        },
+        "good_value": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 4.75,
+          "example_quote": "Good value for the price."
+        }
+      },
+      "feature_requests": [
+        {
+          "request": "Better size labeling on listing",
+          "frequency": 10,
+          "example_quote": "Could use better description to let buyers be more aware of the sizing."
+        },
+        {
+          "request": "More beads per color",
+          "frequency": 3,
+          "example_quote": "Not very many of each color. Would recommend buying two boxes."
+        }
+      ],
+      "quality_flags": [
+        {
+          "severity": "CRITICAL",
+          "theme": "Defective ironing paper (melts on contact)",
+          "frequency": 1,
+          "example_quote": "The ironing paper is A PIECE OF PLASTIC THAT MELTS ONCE IT MAKES CONTACT WITH THE IRON."
+        },
+        {
+          "severity": "HIGH",
+          "theme": "Beads melt into liquid/gummy mass",
+          "frequency": 9,
+          "example_quote": "Completely melted the beads into LIQUID and the board is deformed."
+        },
+        {
+          "severity": "HIGH",
+          "theme": "Bead dimensional inconsistency",
+          "frequency": 4,
+          "example_quote": "Beads were slightly different sizes along with the holes in the middle being all wonky."
+        }
+      ],
+      "gift_mentions": 5,
+      "age_mentions": {
+        "under_6": {"positive": 0, "negative": 2},
+        "6_to_8": {"positive": 1, "negative": 1},
+        "9_to_12": {"positive": 2, "negative": 0},
+        "teens_plus": {"positive": 1, "negative": 0},
+        "adults": {"positive": 3, "negative": 0},
+        "adult_help_needed": 1
+      },
+      "competitor_comparison_mentions": [
+        {
+          "direction": "worse_than",
+          "competitor": "Perler",
+          "quote": "Not as good as perler they melt different."
+        },
+        {
+          "direction": "worse_than",
+          "competitor": "Other brands",
+          "quote": "These beads have a lower heat point so they will melt much faster. I highly recommend not mixing these with other brands."
+        }
+      ]
+    }
+  },
+  "competitive_gaps": {
+    "our_advantages": [
+      {
+        "competitor_asin": "B0C5WQD914",
+        "their_complaint": "Inconsistent melting/fusing",
+        "their_frequency": 9,
+        "our_frequency": 1
+      },
+      {
+        "competitor_asin": "B0C5WQD914",
+        "their_complaint": "Bead dimensional inconsistency",
+        "their_frequency": 3,
+        "our_frequency": 0
+      },
+      {
+        "competitor_asin": "B0C5WQD914",
+        "their_complaint": "Board connectivity issues",
+        "their_frequency": 3,
+        "our_frequency": 0
+      },
+      {
+        "competitor_asin": "B08QV9CMFQ",
+        "their_complaint": "Beads melt into liquid/gummy mass",
+        "their_frequency": 9,
+        "our_frequency": 0
+      },
+      {
+        "competitor_asin": "B08QV9CMFQ",
+        "their_complaint": "Defective ironing paper",
+        "their_frequency": 1,
+        "our_frequency": 0
+      },
+      {
+        "competitor_asin": "B08QV9CMFQ",
+        "their_complaint": "Patterns don't fit pegboards",
+        "their_frequency": 2,
+        "our_frequency": 0
+      },
+      {
+        "competitor_asin": "B08QV9CMFQ",
+        "their_complaint": "Fragile finished product",
+        "their_frequency": 3,
+        "our_frequency": 0
+      }
+    ],
+    "our_gaps": [
+      {
+        "competitor_asin": "B0FN4CT867",
+        "their_praise": "Giftable packaging specifically called out",
+        "their_frequency": 3,
+        "our_frequency": 0
+      },
+      {
+        "competitor_asin": "B0C5WQD914",
+        "their_praise": "STEM/educational institutional use",
+        "their_frequency": 1,
+        "our_frequency": 0
+      }
+    ]
+  },
+  "ppc_keyword_insights": [
+    {
+      "phrase": "pixel art",
+      "frequency": 3,
+      "already_tracked": false,
+      "closest_search_term": "N/A - new term"
+    },
+    {
+      "phrase": "keychains",
+      "frequency": 4,
+      "already_tracked": false,
+      "closest_search_term": "N/A - new term"
+    },
+    {
+      "phrase": "screen-free",
+      "frequency": 3,
+      "already_tracked": false,
+      "closest_search_term": "N/A - new term"
+    },
+    {
+      "phrase": "art therapy",
+      "frequency": 2,
+      "already_tracked": false,
+      "closest_search_term": "N/A - new term"
+    },
+    {
+      "phrase": "EDC / rave / kandi",
+      "frequency": 2,
+      "already_tracked": false,
+      "closest_search_term": "N/A - new niche"
+    },
+    {
+      "phrase": "jewelry making beads",
+      "frequency": 3,
+      "already_tracked": false,
+      "closest_search_term": "N/A - new term"
+    }
+  ]
+}

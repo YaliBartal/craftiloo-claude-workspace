@@ -1,0 +1,916 @@
+{
+  "scrape_date": "2026-02-22",
+  "niche": "quilt kit for kids",
+  "marketplace": "Amazon.com",
+  "total_products": 15,
+  "source": "Apify saswave/amazon-product-scraper",
+  "notes": {
+    "pricing": "Scraper returned prices in EUR. USD estimates calculated at ~1.08x conversion rate. Verify actual USD prices on Amazon.",
+    "was_price": "This scraper does not capture was-price/original price data. Would need a different scraper or manual check.",
+    "coupons": "Coupon/deal data not captured by this scraper. Would need additional scraping or manual check."
+  },
+  "products": [
+    {
+      "asin": "B072JH19F8",
+      "title": "Melissa & Doug Created by Me! Flower Fleece Quilt No-Sew Craft Kit (48 squares, 4 feet x 5 feet)",
+      "url": "https://www.amazon.com/dp/B072JH19F8",
+      "brand": "Melissa & Doug",
+      "price_eur_raw": "17.5389148",
+      "price_usd_estimated": 18.94,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Toys & Games",
+        "main_rank": 12256,
+        "subcategories": [
+          {
+            "rank": 14,
+            "category": "Kids' Sewing Kits"
+          }
+        ]
+      },
+      "rating_stars": 4.7,
+      "review_count": 7217,
+      "category_breadcrumb": "Toys & Games > Kids' Sewing Kits",
+      "bullet_points": [
+        "Fleece",
+        "Imported",
+        "Knot-together no-sew fleece quilt craft kit with flower pattern and coordinating colors",
+        "Includes 48 12-inch by 12-inch fleece squares with slotted fringe for easy tying",
+        "Top quality, thick, fuzzy, and super-soft material",
+        "Detailed illustrated instructions and lots of design ideas to spark creativity; approximately 4' x 5' assembled",
+        "Makes a great gift for 6- to 9-year-olds, for hands-on, screen-free play"
+      ],
+      "bullet_count": 7,
+      "date_first_available": null,
+      "number_of_variations": 0,
+      "variant_asins": [],
+      "coupon_or_deal": null,
+      "product_dimensions": "48 x 60 x 0.39 inches",
+      "weight": "0.1 Kilograms",
+      "material": "Fleece",
+      "age_range": "72 months to 120 months",
+      "theme": "Floral",
+      "availability": "In Stock",
+      "seller_name": "Amazon.com",
+      "seller_id": "",
+      "delivery_estimate": "Friday, March 6",
+      "fastest_delivery": "Monday, March 2",
+      "main_image_url": "https://m.media-amazon.com/images/I/81VlKzCytQL.jpg",
+      "total_images": 10,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/81VlKzCytQL.jpg",
+        "https://m.media-amazon.com/images/I/81PKnVzozBL.jpg",
+        "https://m.media-amazon.com/images/I/815ekGQCtsL.jpg",
+        "https://m.media-amazon.com/images/I/81b2MrT5UNL.jpg",
+        "https://m.media-amazon.com/images/I/3d497b968f504873a561bbd9cfc352a5.jpg",
+        "https://m.media-amazon.com/images/I/91G4fxxJJRL.jpg",
+        "https://m.media-amazon.com/images/I/815QfqHwfGL.jpg",
+        "https://m.media-amazon.com/images/I/81hYu-thuAL.jpg",
+        "https://m.media-amazon.com/images/I/81AMPgWneJL.jpg",
+        "https://m.media-amazon.com/images/I/81h2C-AwTPL.jpg"
+      ],
+      "store_url": "https://www.amazon.com/stores/MelissaDoug/page/4B0F33F8-CB44-4B94-AB1A-A2434A78D674",
+      "reviews_link": "https://www.amazon.com/product-reviews/B072JH19F8/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B091GXM2Y6",
+      "title": "KRAFUN My First Sewing Kit for Beginner Kids Arts & Crafts, 7 Easy DIY Projects of Stuffed Animal Dolls and Plush Pillow Craft, Instructions & Felt, Gift for Girls, Boys, Learn to Sew, Embroidery",
+      "url": "https://www.amazon.com/dp/B091GXM2Y6",
+      "brand": "KRAFUN",
+      "price_eur_raw": "18.6499389",
+      "price_usd_estimated": 20.14,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Toys & Games",
+        "main_rank": 599,
+        "subcategories": [
+          {
+            "rank": 1,
+            "category": "Kids' Sewing Kits"
+          }
+        ]
+      },
+      "rating_stars": 4.8,
+      "review_count": 3563,
+      "category_breadcrumb": "Toys & Games > Kids' Sewing Kits",
+      "bullet_points": [
+        "🎁 Perfect As A Gift 🎁: Celebrate embroidery kits joy and fun with your friends and family. Comes with reusable and beautiful box to hold all the basic sewing kit materials. Great way to introduce beginners to learn Art & Craft skills! Kids sewing kits keeping your children focusing on their creativity and ability to complete complex tasks",
+        "🦄 Make 7 Easy Projects 🦄 : Make a total of 7 beginner Sewing Art & Craft kit with Bag, Ornament, Pillow, Mini Card Holder, Organizer & Mini Rainbow. Tools and precise visual step-by-step instructions for stress-free learning also included for plush craft.",
+        "🐻 Great For 5+ Years Old Kids 🐻: Great gift for 5+ years old kids who is starting to learn sewing the first time! Families and friends can also share the fun and complete the kids arts crafts together. Learning sewing, crafting skills and create your cute and fun arts and crafts for girls",
+        "🐱 Safe Tools & Materials 🐱 Plastic needle tools are provided, ensure the safety of children during usage. All materials are all from reliable and secure source. All our products are tested thoroughly for safety standards, making sure your kids can enjoy kids sewing kits without any worries.",
+        "✂️ Easy No Mess Crafting ✂️: No glue required and no more mess! All fabric come with pre-punched holes and pre-cut shapes, simply follow directly with plastic needle tools or hands. Also comes with clear graphical instructions for the stuffed animals sewing kit."
+      ],
+      "bullet_count": 5,
+      "date_first_available": null,
+      "number_of_variations": 0,
+      "variant_asins": [],
+      "coupon_or_deal": null,
+      "product_dimensions": "10.24 x 10.24 x 1.57 inches",
+      "weight": "‎4.1 ounces",
+      "material": "Fabric",
+      "age_range": "Kid",
+      "theme": "Animal",
+      "availability": "In Stock",
+      "seller_name": "KraFun",
+      "seller_id": "A39Y72PLWBMKIM",
+      "delivery_estimate": "Friday, March 6",
+      "fastest_delivery": "Monday, March 2",
+      "main_image_url": "https://m.media-amazon.com/images/I/81jzlyCHT2L.jpg",
+      "total_images": 8,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/81jzlyCHT2L.jpg",
+        "https://m.media-amazon.com/images/I/81ZEcO3k6pL.jpg",
+        "https://m.media-amazon.com/images/I/81s-UXG2SuL.jpg",
+        "https://m.media-amazon.com/images/I/81vu+aj0vmL.jpg",
+        "https://m.media-amazon.com/images/I/81s+lm+Cy3L.jpg",
+        "https://m.media-amazon.com/images/I/030e9a07a0e84263ac5c4033ae982e61.jpg",
+        "https://m.media-amazon.com/images/I/81pK543as6L.jpg",
+        "https://m.media-amazon.com/images/I/71cDjv5OL-L.jpg"
+      ],
+      "store_url": "",
+      "reviews_link": "https://www.amazon.com/product-reviews/B091GXM2Y6/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B07HBGHS5W",
+      "title": "Melissa & Doug Fleece Quilt No-Sew Craft Kit, Multi",
+      "url": "https://www.amazon.com/dp/B07HBGHS5W",
+      "brand": "Melissa & Doug",
+      "price_eur_raw": "24.4170869",
+      "price_usd_estimated": 26.37,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Toys & Games",
+        "main_rank": 59642,
+        "subcategories": [
+          {
+            "rank": 47,
+            "category": "Kids' Sewing Kits"
+          }
+        ]
+      },
+      "rating_stars": 4.7,
+      "review_count": 2458,
+      "category_breadcrumb": "Toys & Games > Kids' Sewing Kits",
+      "bullet_points": [
+        "Knot-together no-sew fleece blanket craft kit with butterfly pattern and coordinating colors",
+        "Includes 40 12\" x 12\" fleece squares with slotted fringe for easy tying",
+        "Top quality, thick, fuzzy, and super-soft material",
+        "Detailed illustrated instructions and lots of design ideas to spark creativity",
+        "Ages 6+; 3.5’ x 5’ assembled"
+      ],
+      "bullet_count": 5,
+      "date_first_available": null,
+      "number_of_variations": 0,
+      "variant_asins": [],
+      "coupon_or_deal": null,
+      "product_dimensions": "12 x 4 x 14 inches",
+      "weight": "4.8 ounces",
+      "material": "Fleece",
+      "age_range": "Kid",
+      "theme": "Butterfly",
+      "availability": "In Stock",
+      "seller_name": "Amazon.com",
+      "seller_id": "",
+      "delivery_estimate": "Wednesday, March 4",
+      "fastest_delivery": "Thursday, February 26",
+      "main_image_url": "https://m.media-amazon.com/images/I/81Owsx7FYHL.jpg",
+      "total_images": 10,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/81Owsx7FYHL.jpg",
+        "https://m.media-amazon.com/images/I/81Ie0-u5isL.jpg",
+        "https://m.media-amazon.com/images/I/81p0b-Jw2dL.jpg",
+        "https://m.media-amazon.com/images/I/81rckt8UcEL.jpg",
+        "https://m.media-amazon.com/images/I/cf6aae34d8b24ee3adae16026def2954.jpg",
+        "https://m.media-amazon.com/images/I/81tsBS+mH2L.jpg",
+        "https://m.media-amazon.com/images/I/81wsQtH4S+L.jpg",
+        "https://m.media-amazon.com/images/I/81P6DK4zmqL.jpg",
+        "https://m.media-amazon.com/images/I/71EzKH790wL.jpg",
+        "https://m.media-amazon.com/images/I/719wFtnjoxL.jpg"
+      ],
+      "store_url": "https://www.amazon.com/stores/MelissaDoug/page/4B0F33F8-CB44-4B94-AB1A-A2434A78D674",
+      "reviews_link": "https://www.amazon.com/product-reviews/B07HBGHS5W/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B0751FPJ34",
+      "title": "50 Pieces Multi-Colors Fabric Patchwork Mixed Squares Bundle Sewing Quilting Craft, 50 Colors (10 x 10 cm)",
+      "url": "https://www.amazon.com/dp/B0751FPJ34",
+      "brand": "Mudder",
+      "price_eur_raw": "8.4726189",
+      "price_usd_estimated": 9.15,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Arts, Crafts & Sewing",
+        "main_rank": 31408,
+        "subcategories": [
+          {
+            "rank": 761,
+            "category": "Craft & Hobby Fabric"
+          }
+        ]
+      },
+      "rating_stars": 4.0,
+      "review_count": 2424,
+      "category_breadcrumb": "Arts, Crafts & Sewing > Craft & Hobby Fabric",
+      "bullet_points": [
+        "Abundant fabric cloth: 10 x 10 cm fabric squares; Package includes 50 pieces patchwork in 50 different colors, can meet your diverse needs",
+        "Cuttable and soft: made of with a variety of colors, they are easy to cut to the appropriate size according to the color of your clothing",
+        "Vibrant color: beautiful chic and rich colors provide you with the inspiration and desire to DIY work; You can apply this pack to make a mixed colors play mat",
+        "Pre-cut fabrics: coordinated designs and colors for a quick and easy project and convenience; Good for making patchwork cushions for the children",
+        "Good sewing material: suitable for arts and crafts, DIY, sewing, scrapbooking, dolls clothes, wallet, sewing toys, tildas, patchwork, quilting and other sewing projects, beginner practice"
+      ],
+      "bullet_count": 5,
+      "date_first_available": null,
+      "number_of_variations": 0,
+      "variant_asins": [],
+      "coupon_or_deal": null,
+      "product_dimensions": "3.94\"L x 3.94\"W",
+      "weight": "65 Grams",
+      "material": "Cotton",
+      "age_range": "",
+      "theme": "",
+      "availability": "In Stock",
+      "seller_name": "Tatuo US",
+      "seller_id": "A3GXTQQIYFAW4P",
+      "delivery_estimate": "Friday, March 6",
+      "fastest_delivery": "Monday, March 2",
+      "main_image_url": "https://m.media-amazon.com/images/I/71YJeQoi7eL.jpg",
+      "total_images": 3,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/71YJeQoi7eL.jpg",
+        "https://m.media-amazon.com/images/I/912nwYfMTLL.jpg",
+        "https://m.media-amazon.com/images/I/91SkkB5msUL.jpg"
+      ],
+      "store_url": "",
+      "reviews_link": "https://www.amazon.com/product-reviews/B0751FPJ34/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B0977NTKHY",
+      "title": "Craft-Tastic Let’s Learn to Sew – Mini Sewing Kit, Arts and Crafts, Art Supplies, Embroidery Kit for Beginners, Includes Sewing Supplies, Easy-to-Follow Instructions, Arts & Crafts, Ages 7+",
+      "url": "https://www.amazon.com/dp/B0977NTKHY",
+      "brand": "Craft-tastic",
+      "price_eur_raw": "15.8935814",
+      "price_usd_estimated": 17.17,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Arts, Crafts & Sewing",
+        "main_rank": 7265,
+        "subcategories": [
+          {
+            "rank": 29,
+            "category": "Sewing Project Kits"
+          }
+        ]
+      },
+      "rating_stars": 4.6,
+      "review_count": 2139,
+      "category_breadcrumb": "Arts, Crafts & Sewing > Sewing Project Kits",
+      "bullet_points": [
+        "9 FUN CRAFT PROJECTS IN ONE KIT: Easy-to-make crafts that are “sew” much fun! Fabric, thread, and stuffing included to make scrunchies, a needle book & pin cushion, a stuffie, a pouch, phone case, and pins.",
+        "EASY-TO-FOLLOW INSTRUCTIONS: A 34 page full-color instruction booklet uses fun and age-appropriate projects to teach kids the sewing basics and graduate them through more advanced techniques.",
+        "HIGH QUALITY REUSABLE MATERIALS: Kit includes items they will keep and use again; like a measuring tape, pins, and needles.",
+        "PERFECT PRESENT TO TEACH LIFE SKILLS: Craft projects will teach kids how to sew a running stitch, blanket stitch, whip stitch, and how to decorate with embroidery. Kids will learn life skills they can use on future projects.",
+        "COMPLETE ARTS & CRAFTS KIT: Comes with everything you need to get started!"
+      ],
+      "bullet_count": 5,
+      "date_first_available": null,
+      "number_of_variations": 0,
+      "variant_asins": [],
+      "coupon_or_deal": null,
+      "product_dimensions": "10 x 2 x 10 inches",
+      "weight": "12.8 Ounces",
+      "material": "Fabric",
+      "age_range": "Kid",
+      "theme": "",
+      "availability": "In Stock",
+      "seller_name": "Amazon.com",
+      "seller_id": "",
+      "delivery_estimate": "Thursday, March 5",
+      "fastest_delivery": "Monday, March 2",
+      "main_image_url": "https://m.media-amazon.com/images/I/61l5pzsT-jL.jpg",
+      "total_images": 6,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/61l5pzsT-jL.jpg",
+        "https://m.media-amazon.com/images/I/81HsgfPR3GL.jpg",
+        "https://m.media-amazon.com/images/I/71SjaYMvENL.jpg",
+        "https://m.media-amazon.com/images/I/81xgecAXH1L.jpg",
+        "https://m.media-amazon.com/images/I/81m9dkLymDL.jpg",
+        "https://m.media-amazon.com/images/I/81yXqpxvosL.jpg"
+      ],
+      "store_url": "",
+      "reviews_link": "https://www.amazon.com/product-reviews/B0977NTKHY/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B00ZSE93LA",
+      "title": "Woodland Animals Kids Sewing Kit, Educational Beginner Arts & Crafts Gift for Boys and Girls Ages 7 to 13 DIY Learn to Sew Embroidery",
+      "url": "https://www.amazon.com/dp/B00ZSE93LA",
+      "brand": "CraftLab",
+      "price_eur_raw": "25.4178567",
+      "price_usd_estimated": 27.45,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Toys & Games",
+        "main_rank": 43244,
+        "subcategories": [
+          {
+            "rank": 39,
+            "category": "Kids' Sewing Kits"
+          }
+        ]
+      },
+      "rating_stars": 4.7,
+      "review_count": 1904,
+      "category_breadcrumb": "Toys & Games > Kids' Sewing Kits",
+      "bullet_points": [
+        "MEANINGFUL PLAY - Adorable woodland animal sewing kit compels kids to learn hand sewing & creative play; Great gender neutral gift for girls & boys ages 7-12",
+        "COMPLETE KIT - Includes 5 pre-cut animal projects, embroidery thread, needles, pins, scissors, glue, stuffing & carry case for portable fun",
+        "PERFECT FOR CRAFT PARTIES - Easy to follow instructions & supplies for 5+ kids make it a hit for playdates & birthdays",
+        "DEVELOPS SKILLS - Encourages imagination, builds confidence & practical skills like sewing",
+        "HAPPIER KIDS - Engaging hands-on activities make kids happier & teach about themselves, others & the world"
+      ],
+      "bullet_count": 5,
+      "date_first_available": null,
+      "number_of_variations": 0,
+      "variant_asins": [],
+      "coupon_or_deal": null,
+      "product_dimensions": "9.75 x 7 x 3.5 inches",
+      "weight": "‎13.6 ounces",
+      "material": "Fabric",
+      "age_range": "7 - 13",
+      "theme": "woodland animals",
+      "availability": "In Stock",
+      "seller_name": "Craft-Lab",
+      "seller_id": "A12RAZN87P9115",
+      "delivery_estimate": "Monday, March 9",
+      "fastest_delivery": "Monday, March 2",
+      "main_image_url": "https://m.media-amazon.com/images/I/71rlTvlpJbL.jpg",
+      "total_images": 9,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/71rlTvlpJbL.jpg",
+        "https://m.media-amazon.com/images/I/71bMA1Rwn+L.jpg",
+        "https://m.media-amazon.com/images/I/71O3pbYgmDL.jpg",
+        "https://m.media-amazon.com/images/I/71ai7yzdQbL.jpg",
+        "https://m.media-amazon.com/images/I/712IShr6ZjL.jpg",
+        "https://m.media-amazon.com/images/I/00e1d9d61a824468bf396c79c99045bc.jpg",
+        "https://m.media-amazon.com/images/I/71k+t4vEy4L.jpg",
+        "https://m.media-amazon.com/images/I/71I4mirhlfL.jpg",
+        "https://m.media-amazon.com/images/I/71kxqo2fYOL.jpg"
+      ],
+      "store_url": "",
+      "reviews_link": "https://www.amazon.com/product-reviews/B00ZSE93LA/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B0C2XYP6L3",
+      "title": "KRAFUN Easy Sewing Kit for Beginner Kids Arts & Crafts, 8 Easy DIY Projects of Stuffed Animal Dolls of Puppies & Kittens, Dogs and Cats, Instructions & Felt, Gift for Girls, Boys, Learn to Sew",
+      "url": "https://www.amazon.com/dp/B0C2XYP6L3",
+      "brand": "KRAFUN",
+      "price_eur_raw": "18.6499389",
+      "price_usd_estimated": 20.14,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Toys & Games",
+        "main_rank": 3281,
+        "subcategories": [
+          {
+            "rank": 3,
+            "category": "Kids' Sewing Kits"
+          }
+        ]
+      },
+      "rating_stars": 4.6,
+      "review_count": 1901,
+      "category_breadcrumb": "Toys & Games > Kids' Sewing Kits",
+      "bullet_points": [
+        "🎁 Perfect As A Gift 🎁: Celebrate embroidery kits joy and fun with your friends and family. Comes with reusable and beautiful box to hold all the basic sewing kit materials. Great way to introduce beginners to learn Art & Craft skills! Kids sewing kits keeping your children focusing on their creativity and ability to complete complex tasks",
+        "🐶 Make 8 Easy Projects 🐶 : Make a total of 8 beginner Sewing Art & Craft kit with cute dogs and cats plush dolls. Tools and precise visual step-by-step instructions for stress-free learning also included for plush craft.",
+        "🐱 Great For 5+ Years Old Kids 🐱: Great gift for 5+ years old kids who is starting to learn sewing the first time! Families and friends can also share the fun and complete the kids arts crafts together. Learning sewing, crafting skills and create your cute and fun arts and crafts for girls",
+        "🧰 Safe Tools & Materials 🧰 Plastic needle tools are provided, ensure the safety of children during usage. All materials are all from reliable and secure source. All our products are tested thoroughly for safety standards, making sure your kids can enjoy kids sewing kits without any worries.",
+        "✂️ Easy No Mess Crafting ✂️: No glue required and no more mess! All fabric come with pre-punched holes and pre-cut shapes, simply follow directly with plastic needle tools or hands. Also comes with clear graphical instructions for the stuffed animals puppy and kitten sewing kit."
+      ],
+      "bullet_count": 5,
+      "date_first_available": null,
+      "number_of_variations": 2,
+      "variant_asins": [
+        "B08PKFHCMS",
+        "B0C2XJXXM1"
+      ],
+      "coupon_or_deal": null,
+      "product_dimensions": "9.84 x 9.84 x 1.18 inches",
+      "weight": "‎10.2 ounces",
+      "material": "Fabric",
+      "age_range": "Kid",
+      "theme": "Animal",
+      "availability": "In Stock",
+      "seller_name": "KraFun",
+      "seller_id": "A39Y72PLWBMKIM",
+      "delivery_estimate": "Friday, March 6",
+      "fastest_delivery": "Monday, March 2",
+      "main_image_url": "https://m.media-amazon.com/images/I/81Iapc1EWbL.jpg",
+      "total_images": 8,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/81Iapc1EWbL.jpg",
+        "https://m.media-amazon.com/images/I/81r7NqwPpUL.jpg",
+        "https://m.media-amazon.com/images/I/817X2kVvzbL.jpg",
+        "https://m.media-amazon.com/images/I/81U+k0B0WuL.jpg",
+        "https://m.media-amazon.com/images/I/81p5hOUdAWL.jpg",
+        "https://m.media-amazon.com/images/I/055b33c274234639ad70c34f8b11884a.jpg",
+        "https://m.media-amazon.com/images/I/81Wd1rkEF+L.jpg",
+        "https://m.media-amazon.com/images/I/71cDjv5OL-L.jpg"
+      ],
+      "store_url": "",
+      "reviews_link": "https://www.amazon.com/product-reviews/B0C2XYP6L3/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B09CR5RX65",
+      "title": "Made By Me Easy-to-Knot Quilt Making by Horizon Group USA, Create a 59” x 39” Fleece Quilt, No Cutting or Sewing Necessary, Includes 20 Fabric Squares & Felt Embellishments, Learn 4 Ways to Knot",
+      "url": "https://www.amazon.com/dp/B09CR5RX65",
+      "brand": "Made By Me",
+      "price_eur_raw": "16.5127017",
+      "price_usd_estimated": 17.83,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Arts, Crafts & Sewing",
+        "main_rank": 31159,
+        "subcategories": [
+          {
+            "rank": 97,
+            "category": "Sewing Project Kits"
+          }
+        ]
+      },
+      "rating_stars": 4.4,
+      "review_count": 795,
+      "category_breadcrumb": "Arts, Crafts & Sewing > Sewing Project Kits",
+      "bullet_points": [
+        "Felt,Fleece",
+        "CREATE A LARGE FLEECE QUILT: Knot, pull & repeat — in just 3 easy steps, you can create your own 59-inch by 39-inch fleece quilt!",
+        "NO CUTTING, NO SEWING: This quilt-making kit comes with 20 pre-cut, pre-measured fleece squares that come ready to knot or braid — no cutting or sewing required!",
+        "LEARN 4 EASY WAYS TO KNOT: Braid it, knot it, double weave it, pull it through — follow the picture-based instructions to learn how to tie a little love into every square you connect!",
+        "PRETTY FELT EMBELLISHMENTS: Make your quilt completely your own — peel and stick the felt stickers onto the colorful squares!",
+        "SET INCLUDES: 20 Fleece Squares (4 Yellow, 4 Purple, 4 Pink, 4 Light Blue, 4 Light Green), 4 Printed Fleece Squares, 1 Sheet of Adhesive Felt Stickers, Easy-to-Follow Instructions"
+      ],
+      "bullet_count": 6,
+      "date_first_available": null,
+      "number_of_variations": 1,
+      "variant_asins": [
+        "B00QW5F3OU"
+      ],
+      "coupon_or_deal": null,
+      "product_dimensions": "11.81 x 2.95 x 11.81 inches",
+      "weight": "6.4 ounces",
+      "material": "Fleece",
+      "age_range": "Adult",
+      "theme": "Love",
+      "availability": "In Stock",
+      "seller_name": "Amazon.com",
+      "seller_id": "",
+      "delivery_estimate": "Friday, March 6",
+      "fastest_delivery": "Monday, March 2",
+      "main_image_url": "https://m.media-amazon.com/images/I/81ZSW4citGL.jpg",
+      "total_images": 10,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/81ZSW4citGL.jpg",
+        "https://m.media-amazon.com/images/I/811G-tNyuQL.jpg",
+        "https://m.media-amazon.com/images/I/81vmmOkCQuL.jpg",
+        "https://m.media-amazon.com/images/I/81g4f2KR+iL.jpg",
+        "https://m.media-amazon.com/images/I/0b83108f72ff4b14b87f22db8d7ad764.jpg",
+        "https://m.media-amazon.com/images/I/81tHQVoifiL.jpg",
+        "https://m.media-amazon.com/images/I/81WUG1lpGpL.jpg",
+        "https://m.media-amazon.com/images/I/816j0twrwqL.jpg",
+        "https://m.media-amazon.com/images/I/81oXexlFFOL.jpg",
+        "https://m.media-amazon.com/images/I/71Ophq8tVJS.jpg"
+      ],
+      "store_url": "https://www.amazon.com/stores/MadebyMe/page/BD69D520-FFD8-4D22-8799-EC7717010C69",
+      "reviews_link": "https://www.amazon.com/product-reviews/B09CR5RX65/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B0CTTMWXYP",
+      "title": "Klever Kits 7 Sewing Projects- My First Kids Sewing Kit- Easy DIY Arts and Crafts for Girls, Craft Kits, Birthday Gifts for Kids Aged 6+, Unicorn and Mermaid Pillow",
+      "url": "https://www.amazon.com/dp/B0CTTMWXYP",
+      "brand": "Klever Kits",
+      "price_eur_raw": "16.9537189",
+      "price_usd_estimated": 18.31,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Toys & Games",
+        "main_rank": 7977,
+        "subcategories": [
+          {
+            "rank": 10,
+            "category": "Kids' Sewing Kits"
+          }
+        ]
+      },
+      "rating_stars": 4.5,
+      "review_count": 750,
+      "category_breadcrumb": "Toys & Games > Kids' Sewing Kits",
+      "bullet_points": [
+        "Variety of Easy Sewing Projects: Create 6 beginner-friendly sewing projects, including mini pillow, accessories organizer, keychain ,card holders, cup sleeves, and string bags. Our kit includes all the tools and step-by-step instructions needed for stress-free learning, ensuring a delightful crafting experience.",
+        "Mess-Free Craft Kit for Kids: Say goodbye to messy glue, sharp scissors and complicated setups. Our kit offers pre-punched holes and pre-cut shapes, along with clear graphical instructions, ensuring easy and enjoyable crafting experiences for kids and beginners alike.",
+        "Suitable for 6+ Years Old: Designed specifically for children aged 6 and older, our kit is great for those eager to explore the world of sewing for the first time. With jumbo plastic needles that prioritize safety without sacrificing the joy of sewing, kids can confidently develop their skills.",
+        "Perfect Gift for Girls: Delight sibilings and family with the joy of embroidery kits. Our kit comes in a charming packaging with comprehensive materials,, making it a great gift. It's a fantastic way to introduce beginners to the world of Art & Craft, keeping kids focused on creativity and completing engaging projects.",
+        "Family Bonding Activity: Engaging in sewing activities as a family provides a wonderful opportunity for bonding, as parents and children can work together to create beautiful crafts, share ideas, and support each other's creativity, strengthening their familial bonds in the process."
+      ],
+      "bullet_count": 5,
+      "date_first_available": null,
+      "number_of_variations": 0,
+      "variant_asins": [],
+      "coupon_or_deal": null,
+      "product_dimensions": "9.84 x 8.66 x 1.57 inches",
+      "weight": "0.21 Kilograms",
+      "material": "Plastic",
+      "age_range": "Kid",
+      "theme": "Fashion",
+      "availability": "In Stock",
+      "seller_name": "JoyinDirect",
+      "seller_id": "A32YAMCBWZ6409",
+      "delivery_estimate": "Wednesday, March 4",
+      "fastest_delivery": "Thursday, February 26",
+      "main_image_url": "https://m.media-amazon.com/images/I/81fTRaoeutL.jpg",
+      "total_images": 7,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/81fTRaoeutL.jpg",
+        "https://m.media-amazon.com/images/I/81fhlFyXeML.jpg",
+        "https://m.media-amazon.com/images/I/81knfELcPLL.jpg",
+        "https://m.media-amazon.com/images/I/81c3JfOLMtL.jpg",
+        "https://m.media-amazon.com/images/I/06dbe91b51654bbf8785231c3bb0505f.jpg",
+        "https://m.media-amazon.com/images/I/81p4qTtYHzL.jpg",
+        "https://m.media-amazon.com/images/I/91Uao0cspXL.jpg"
+      ],
+      "store_url": "https://www.amazon.com/stores/KleverKits/page/718828C8-4A97-4EEB-BD7E-F5FD40039E45",
+      "reviews_link": "https://www.amazon.com/product-reviews/B0CTTMWXYP/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B0CV1F5CFS",
+      "title": "KRAFUN My First Sewing Bag Kit Arts & Crafts for Beginner Kids, 6 Easy DIY Sewing Handbag Pouch Sleeve Projects of Animal Theme, Instructions Learn to Sew & Felt Embroidery, Gift for Girls & Boys",
+      "url": "https://www.amazon.com/dp/B0CV1F5CFS",
+      "brand": "KRAFUN",
+      "price_eur_raw": "18.6499389",
+      "price_usd_estimated": 20.14,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Toys & Games",
+        "main_rank": 7187,
+        "subcategories": [
+          {
+            "rank": 8,
+            "category": "Kids' Sewing Kits"
+          }
+        ]
+      },
+      "rating_stars": 4.7,
+      "review_count": 613,
+      "category_breadcrumb": "Toys & Games > Kids' Sewing Kits",
+      "bullet_points": [
+        "🎁 Perfect As A Gift 🎁: Celebrate embroidery kits joy and fun with your friends and family. Comes with reusable and beautiful box to hold all the basic sewing bag kit materials. Great way to introduce beginners to learn Art & Craft skills! Kids sewing kits keeping your children focusing on their creativity and ability to complete complex tasks",
+        "🦙 Make 6 Easy Bag Projects 🦙 : Make a total of 6 beginner Sewing Art & Craft kit with various handbag, pouch, mini card holder, sleeve, string bag. Tools and precise visual step-by-step instructions for stress-free learning also included for making your own lovely sewing bags.",
+        "👜 Great For 5+ Years Old Kids 👜: Great gift for 5+ years old kids who is starting to learn sewing the first time! Families and friends can also share the fun and complete the kids arts crafts together. Learning sewing, crafting skills and create your cute and fun arts and crafts for girls",
+        "🦄 Safe Tools & Materials 🦄 Plastic needle tools are provided, ensure the safety of children during usage. All materials are all from reliable and secure source. All our products are tested thoroughly for safety standards, making sure your kids can enjoy kids sewing kits without any worries.",
+        "✂️ Easy No Mess Crafting ✂️: No glue required and no more mess! All fabric come with pre-punched holes and pre-cut shapes, simply follow directly with plastic needle tools or hands. Also comes with clear graphical instructions for the sewing bag beginner craft kit."
+      ],
+      "bullet_count": 5,
+      "date_first_available": null,
+      "number_of_variations": 0,
+      "variant_asins": [],
+      "coupon_or_deal": null,
+      "product_dimensions": "9.84 x 9.84 x 1.18 inches",
+      "weight": "0.24 Kilograms",
+      "material": "Fabric, Plastic",
+      "age_range": "5-12",
+      "theme": "Animal",
+      "availability": "In Stock",
+      "seller_name": "KraFun",
+      "seller_id": "A39Y72PLWBMKIM",
+      "delivery_estimate": "Wednesday, March 4",
+      "fastest_delivery": "Thursday, February 26",
+      "main_image_url": "https://m.media-amazon.com/images/I/81p0a-4BKJL.jpg",
+      "total_images": 7,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/81p0a-4BKJL.jpg",
+        "https://m.media-amazon.com/images/I/81C54khwDEL.jpg",
+        "https://m.media-amazon.com/images/I/815Cj5vVoQL.jpg",
+        "https://m.media-amazon.com/images/I/81JoSU-7lEL.jpg",
+        "https://m.media-amazon.com/images/I/00849e3430604477bdd4b3a0d694b21a.jpg",
+        "https://m.media-amazon.com/images/I/81W1VVoJRiL.jpg",
+        "https://m.media-amazon.com/images/I/814YguB1AYL.jpg"
+      ],
+      "store_url": "",
+      "reviews_link": "https://www.amazon.com/product-reviews/B0CV1F5CFS/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B09WQSBZY7",
+      "title": "Fairy Sewing Kits for Little Girls 5 Easy Projects for Childrens Kid Crafts Make Your Own Felt Pillow Plush Craft Kit My First Sewing Kit Learn to Sew",
+      "url": "https://www.amazon.com/dp/B09WQSBZY7",
+      "brand": "CRAFTILOO",
+      "price_eur_raw": "18.6414578",
+      "price_usd_estimated": 20.13,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Toys & Games",
+        "main_rank": 9806,
+        "subcategories": [
+          {
+            "rank": 12,
+            "category": "Kids' Sewing Kits"
+          }
+        ]
+      },
+      "rating_stars": 4.7,
+      "review_count": 608,
+      "category_breadcrumb": "Toys & Games > Kids' Sewing Kits",
+      "bullet_points": [
+        "FAIRY CRAFT KITS FOR KIDS: Encourage creativity and promote fine motor skills in kids with this beginner sewing kit featuring magical fairies and their mushroom home. These plush crafts for kids make a wonderful activity during small slumber parties, playdates, or birthdays.",
+        "TEACH SEWING AND LIFE SKILLS: Our craft kits for kids over the age of 5 teach basic sewing skills and patience. Your little ones will enjoy learning various types of stitches on the felt fabric with holes for easy sewing using the step-by-step instructions to create cute plush dolls.",
+        "QUALITY FABRICS AND FLOSS: Featuring everything you need to start crafting these adorable plush dolls, this beginner sewing kit includes precut felt for 5 magical fairies with mushroom house, needles, embroidery floss, stuffing, clear glue, and an easy illustrated guide.",
+        "FUN FOR GIFTS AND PARTIES: A great activity for birthday and slumber parties, this sewing craft kit makes a unique way to spend time with your kids away from the tv and screens. Give this kids’ sewing kit as a birthday or Christmas gift.",
+        "ORDER WITH CONFIDENCE: We are positive that you will enjoy these fairy crafts for girls ages 5-12. If for any reason you are unhappy with your purchase, please contact our customer service and we will do our best to resolve any problems."
+      ],
+      "bullet_count": 5,
+      "date_first_available": null,
+      "number_of_variations": 5,
+      "variant_asins": [
+        "B0BNDVTTSH",
+        "B0CDH84QDP",
+        "B0BP8GCK1G",
+        "B0C3YQ5RG1",
+        "B0B8TFW4MN"
+      ],
+      "coupon_or_deal": null,
+      "product_dimensions": "5.91 x 5.91 x 1.97 inches",
+      "weight": "0.14 Kilograms",
+      "material": "Fabric",
+      "age_range": "Kid",
+      "theme": "Fantasy",
+      "availability": "In Stock",
+      "seller_name": "Harmony Classics",
+      "seller_id": "A2PW6HZ2II214U",
+      "delivery_estimate": "Monday, March 9",
+      "fastest_delivery": "Monday, March 2",
+      "main_image_url": "https://m.media-amazon.com/images/I/81m5SKmFqrL.jpg",
+      "total_images": 8,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/81m5SKmFqrL.jpg",
+        "https://m.media-amazon.com/images/I/81haHIGpyAL.jpg",
+        "https://m.media-amazon.com/images/I/91tQ3L1c4YL.jpg",
+        "https://m.media-amazon.com/images/I/717W1alWjkL.jpg",
+        "https://m.media-amazon.com/images/I/0407a40c08114c1ca1b25d5c4423d697.jpg",
+        "https://m.media-amazon.com/images/I/811eu2a8uRL.jpg",
+        "https://m.media-amazon.com/images/I/81jdoh+2dHL.jpg",
+        "https://m.media-amazon.com/images/I/719D6LSf02L.jpg"
+      ],
+      "store_url": "",
+      "reviews_link": "https://www.amazon.com/product-reviews/B09WQSBZY7/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B0CJZ3JV3K",
+      "title": "kullaloo - Sewing Kit for Kids & Beginners - Cut & Sew Fabric Panel – Sewing Patterns Pre-Printed on The Fabric - DIY Rag Doll Kit with Clothes - Betsy Bear Sewing Project - Incl. Video Instructions",
+      "url": "https://www.amazon.com/dp/B0CJZ3JV3K",
+      "brand": "kullaloo",
+      "price_eur_raw": "",
+      "price_usd_estimated": null,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Arts, Crafts & Sewing",
+        "main_rank": 11270,
+        "subcategories": [
+          {
+            "rank": 42,
+            "category": "Sewing Project Kits"
+          }
+        ]
+      },
+      "rating_stars": 4.5,
+      "review_count": 277,
+      "category_breadcrumb": "Arts, Crafts & Sewing > Sewing Project Kits",
+      "bullet_points": [
+        "Charming Sewing Project for Teenagers & Adults – This lovely cut-and-sew fabric panel features a teddy bear doll with matching clothes and accessories. Complete 11 fun projects with easy-to-follow, pre-printed instructions right on the fabric. Great for teenagers and adults with intermediate sewing skills!",
+        "All-in-One Fabric Panel – Includes pre-printed patterns on high-quality 100% cotton fabric. Just cut, sew, and craft your doll and her wardrobe—no extra sewing patterns required.",
+        "6-7 Hours of Crafting Fun – Difficulty: INTERMEDIATE Ideal for those with intermediate sewing skills, this kit offers 6-7 hours of creative sewing enjoyment. Perfect for teenagers and adults with experience ready for the next challenge!",
+        "High-Quality Materials – Made from 100% cotton with bright digital prints, the fabric panel measures 61” x 31”, is machine washable at 40°C, and safe for low-heat drying.",
+        "Additional Materials Needed – Requires 0.3 lbs (150g) toy filling, a 35\" (90cm) elastic band (1/4\" width), and matching thread (not included)."
+      ],
+      "bullet_count": 5,
+      "date_first_available": null,
+      "number_of_variations": 7,
+      "variant_asins": [
+        "B09M9BSLLD",
+        "B0FDLB6HDJ",
+        "B0CJZ58CGB",
+        "B0FDL769GS",
+        "B09LRDBTB1",
+        "B0FDLCG3HX",
+        "B09LTFCBT5"
+      ],
+      "coupon_or_deal": null,
+      "product_dimensions": null,
+      "weight": "7.04 ounces",
+      "material": "Cotton",
+      "age_range": "",
+      "theme": "",
+      "availability": "This item cannot be shipped to your selected delivery location. Please choose a different delivery location.",
+      "seller_name": "",
+      "seller_id": "",
+      "delivery_estimate": "",
+      "fastest_delivery": "",
+      "main_image_url": "https://m.media-amazon.com/images/I/91GD-EIVR4L.jpg",
+      "total_images": 9,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/91GD-EIVR4L.jpg",
+        "https://m.media-amazon.com/images/I/71GjNigPySL.jpg",
+        "https://m.media-amazon.com/images/I/81KKmfJwTgL.jpg",
+        "https://m.media-amazon.com/images/I/819u9PCor-L.jpg",
+        "https://m.media-amazon.com/images/I/0442150ae4f94569afc9c6fcff968d17.jpg",
+        "https://m.media-amazon.com/images/I/71s+cH3rQNL.jpg",
+        "https://m.media-amazon.com/images/I/81xd7iOwG2L.jpg",
+        "https://m.media-amazon.com/images/I/81TWR5cE1AL.jpg",
+        "https://m.media-amazon.com/images/I/819u9PCor-L.jpg"
+      ],
+      "store_url": "",
+      "reviews_link": "https://www.amazon.com/product-reviews/B0CJZ3JV3K/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B0CXY8JMTK",
+      "title": "EZCRA Unicorn Sewing Kit for Kids - 8-in-1 Kids Sewing Kit - Easy to Do Craft Kits for Ages 4-8 - Sewing Crafts - Extra Felt Stickers for Decoration - No Mess with Full Instructions",
+      "url": "https://www.amazon.com/dp/B0CXY8JMTK",
+      "brand": "EZCRA",
+      "price_eur_raw": "18.6499389",
+      "price_usd_estimated": 20.14,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Toys & Games",
+        "main_rank": 6520,
+        "subcategories": [
+          {
+            "rank": 7,
+            "category": "Kids' Sewing Kits"
+          }
+        ]
+      },
+      "rating_stars": 4.7,
+      "review_count": 262,
+      "category_breadcrumb": "Toys & Games > Kids' Sewing Kits",
+      "bullet_points": [
+        "💛Perfect for Kids💛Unleash your child's creativity with our Mess Free Animal Sewing and Sticker Kit. Our sewing kit requires easy yet gentle hand movements, hence boosting your child's motor skills and basic sewing skills. Perfect as gift for your children/ grandchildren, and enjoy valuable family time together.",
+        "🌸8 Easy Projects, with all tools needed🌸 This kit includes: 8 Beginner-Friendly Animal Projects such as Unicorn and Bunny, 8 sets of Decorative Stickers and Jumbo Plastic Needle.",
+        "🌟No Mess, Easy-to-Follow Instructions🌟This sticker kit provides a mess-free crafting experience, including Step-by-step instructions and basic sewing skill brief, pre-punched holes, pre-cut shapes and jumbo plastic needles that prioritize children's safety without sacrificing their joy.",
+        "✅ Safe for your Kid✅ All material used are non-toxic and free from harmful chemicals. All our products are tested and comply with the higest level of safety standards.",
+        "🥳Sewing with Stickers - What's more fun than that?🥳 This kit is a best of both worlds: a stress-free way for your kid to learn sewing for the first time, while unleashing their creativity to decor their sewing projects with our colorful stickers, which sparks endless combination and hours of creative play.",
+        "👻For Kids Age 4-8👻Suitable for kids that are 4-8 years old, this sewing and sticker kit provides an engaging way for children to explore their creativity while honing their motor and hand-eye coordination skills.",
+        "🥰 30-Day Guarantee🥰 Shop confidently with our 30 days hassle-free returns, in case your are not satified with our product in any way. If you come across any questions or queries about the product, material or anything else, feel free to reach out to our 24/7 support team."
+      ],
+      "bullet_count": 7,
+      "date_first_available": null,
+      "number_of_variations": 0,
+      "variant_asins": [],
+      "coupon_or_deal": null,
+      "product_dimensions": "8 x 6 x 0.5 inches",
+      "weight": "0.27 Kilograms",
+      "material": "Polyester",
+      "age_range": "Kid",
+      "theme": "Animal",
+      "availability": "In Stock",
+      "seller_name": "EZCRASTORE",
+      "seller_id": "A2TEUCI3BQQ3AS",
+      "delivery_estimate": "Friday, March 6",
+      "fastest_delivery": "Monday, March 2",
+      "main_image_url": "https://m.media-amazon.com/images/I/81B+1gZzJaL.jpg",
+      "total_images": 8,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/81B+1gZzJaL.jpg",
+        "https://m.media-amazon.com/images/I/81S8WRrsffL.jpg",
+        "https://m.media-amazon.com/images/I/813Qa68H0-L.jpg",
+        "https://m.media-amazon.com/images/I/81W4ZbVYT8L.jpg",
+        "https://m.media-amazon.com/images/I/0dc8af91d0954fcf8566c2025b12e69a.jpg",
+        "https://m.media-amazon.com/images/I/81ErRWHO-zL.jpg",
+        "https://m.media-amazon.com/images/I/81MCE26uRcL.jpg",
+        "https://m.media-amazon.com/images/I/81O9oH1oxtL.jpg"
+      ],
+      "store_url": "",
+      "reviews_link": "https://www.amazon.com/product-reviews/B0CXY8JMTK/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B08GYD1298",
+      "title": "50 Pcs 4\" x 4\" Craft Fabric, Craft Bundle Patchwork, Pre-Cut Quilt Squares, Quilting Fabric Bundles with Sewing Kit for DIY Artcraft Pattern",
+      "url": "https://www.amazon.com/dp/B08GYD1298",
+      "brand": "ZYNA",
+      "price_eur_raw": "15.096358",
+      "price_usd_estimated": 16.3,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Arts, Crafts & Sewing",
+        "main_rank": 215880,
+        "subcategories": [
+          {
+            "rank": 7232,
+            "category": "Craft & Hobby Fabric"
+          }
+        ]
+      },
+      "rating_stars": 4.0,
+      "review_count": 185,
+      "category_breadcrumb": "Arts, Crafts & Sewing > Craft & Hobby Fabric",
+      "bullet_points": [
+        "Package : 50 PCS different Fabric Quilting Cloth+1Sets Sewing Supplies Kit(16*Golden Tail Needles, 1*Tape Measure, 2*White shirt buttons, 2*Black shirt buttons, 5*Snap-fasteners,1*needle threader, 1*Thimble,10*Safety Pins, 1*Metal scissors，7*Sewing Thread",
+        "Various Patterns : these square bundles fabrics are designed with various patterns, such as polka dots, stripes, gingham, prints, flowers, etc., which can give you more choices to make many craft projects and sewing DIY craft",
+        "Wide applications : the quilting cotton fabric is suitable for a range of craft projects, such as bag, wallet, purse, baby clothes, quilting patchwork, kids bedding, dolls, curtain, cushion, home decoration sewing and many other sewing crafts",
+        "Mechanical cutting : The patchwork is clean and even. A bunch of pre-cut squares is easy to sew. The square cotton fabric is ideal for cutting shapes. The material is also cotton, environmentally friendly, soft, soft and breathable material.",
+        "If you have any questions pls feel free to contact us for this cotton quilting clothes"
+      ],
+      "bullet_count": 5,
+      "date_first_available": null,
+      "number_of_variations": 0,
+      "variant_asins": [],
+      "coupon_or_deal": null,
+      "product_dimensions": null,
+      "weight": null,
+      "material": "Cotton",
+      "age_range": "",
+      "theme": "",
+      "availability": "In Stock",
+      "seller_name": "Shopping, commerce",
+      "seller_id": "A1FE68VGGC7WQT",
+      "delivery_estimate": "Monday, March 9",
+      "fastest_delivery": "Monday, March 2",
+      "main_image_url": "https://m.media-amazon.com/images/I/71nY4cW3t1L.jpg",
+      "total_images": 7,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/71nY4cW3t1L.jpg",
+        "https://m.media-amazon.com/images/I/81OweGBarhL.jpg",
+        "https://m.media-amazon.com/images/I/7176hmNlPfL.jpg",
+        "https://m.media-amazon.com/images/I/71G8HccMJIL.jpg",
+        "https://m.media-amazon.com/images/I/81kjbqypNrL.jpg",
+        "https://m.media-amazon.com/images/I/710kEV7ZxtL.jpg",
+        "https://m.media-amazon.com/images/I/71NaxFqouFL.jpg"
+      ],
+      "store_url": "https://www.amazon.com/ZYNA/b/ref=bl_dp_s_mw_37020772011",
+      "reviews_link": "https://www.amazon.com/product-reviews/B08GYD1298/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    },
+    {
+      "asin": "B00RLSMTUS",
+      "title": "Fun Express DIY Knot Tie Quilt Kit for Kids - No Sew Fleece Blanket Making Kit with 24 Pre-Cut Squares | Craft Kits for Girls Ages 6-12 | Perfect for School, Church Groups & Creative Activities",
+      "url": "https://www.amazon.com/dp/B00RLSMTUS",
+      "brand": "Fun Express",
+      "price_eur_raw": "24.0099941",
+      "price_usd_estimated": 25.93,
+      "currency_note": "Scraper returned EUR; USD estimated at 1.08x rate",
+      "was_price": null,
+      "bsr": {
+        "main_category": "Arts, Crafts & Sewing",
+        "main_rank": 88161,
+        "subcategories": [
+          {
+            "rank": 2407,
+            "category": "Craft & Hobby Fabric"
+          }
+        ]
+      },
+      "rating_stars": 4.0,
+      "review_count": 48,
+      "category_breadcrumb": "Arts, Crafts & Sewing > Craft & Hobby Fabric",
+      "bullet_points": [
+        "Complete no sew blanket kit includes everything needed: 24 pre-cut white fleece squares with easy-tie holes plus 96 vibrant 12-inch satin cords in assorted colors for endless creative possibilities",
+        "Perfect craft kit for girls ages 6-12 and kids of all skill levels: Simple knot-tying design requires no sewing, making it ideal for beginners while still engaging enough for experienced young crafters",
+        "Educational and entertaining group activity: Ideal for school classrooms, church groups, birthday parties, and family crafting sessions - keeps multiple children engaged while developing fine motor skills",
+        "Create personalized gifts and keepsakes: Kids can design unique quilted blankets to give as heartfelt presents or keep as cherished memories - finished size approximately 48x48 inches when assembled",
+        "Premium quality materials ensure lasting results: Soft fleece squares and durable satin cords create a cozy blanket that withstands regular use - machine washable for easy care and long-lasting enjoyment"
+      ],
+      "bullet_count": 5,
+      "date_first_available": null,
+      "number_of_variations": 0,
+      "variant_asins": [],
+      "coupon_or_deal": null,
+      "product_dimensions": "8 x 8 x 1 inches",
+      "weight": null,
+      "material": "satin",
+      "age_range": "Kid",
+      "theme": "Church",
+      "availability": "In Stock",
+      "seller_name": "Fun-Express",
+      "seller_id": "AV7IJG7WQV56Y",
+      "delivery_estimate": "Thursday, March 5",
+      "fastest_delivery": "Monday, March 2",
+      "main_image_url": "https://m.media-amazon.com/images/I/719ybyXVtxL.jpg",
+      "total_images": 3,
+      "image_urls": [
+        "https://m.media-amazon.com/images/I/719ybyXVtxL.jpg",
+        "https://m.media-amazon.com/images/I/315Y4PQwTkL.jpg",
+        "https://m.media-amazon.com/images/I/51lqmN7O73L.jpg"
+      ],
+      "store_url": "",
+      "reviews_link": "https://www.amazon.com/product-reviews/B00RLSMTUS/ref=cm_cr_dp_mb_show_all_top?ie=UTF8&reviewerType=all_reviews"
+    }
+  ]
+}

@@ -1,0 +1,549 @@
+{
+  "date": "2026-02-22",
+  "mode": "deep_dive",
+  "category": "Cross Stitch",
+  "apify_actor": "junglee/amazon-reviews-scraper",
+  "apify_cost_estimate": 0.12,
+  "products": {
+    "B08DDJCQKF": {
+      "name": "Cross Stitch Kit - Girls",
+      "brand": "CRAFTILOO",
+      "is_ours": true,
+      "reviews_analyzed": 50,
+      "average_rating": 4.4,
+      "star_distribution": {
+        "5": 35,
+        "4": 6,
+        "3": 5,
+        "2": 2,
+        "1": 2
+      },
+      "satisfaction_rate": 0.82,
+      "dissatisfaction_rate": 0.08,
+      "photo_review_pct": 0.12,
+      "verified_purchase_pct": 0.98,
+      "newest_review_date": "2026-02-16",
+      "oldest_review_date": "2024-09-08",
+      "complaint_themes": {
+        "material_quality": {
+          "frequency": 6,
+          "pct_of_reviews": 0.12,
+          "avg_stars": 2.5,
+          "example_quote": "These kits are a nightmare for beginners."
+        },
+        "hoop_fabric_fit": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 2.2,
+          "example_quote": "The hoop doesn't fit on the fabric- too small."
+        },
+        "age_appropriateness": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 2.8,
+          "example_quote": "This cross stitch kit is NOT for children."
+        },
+        "missing_incomplete_contents": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 3.0,
+          "example_quote": "Only 4 of the 5 patterns were in the box."
+        }
+      },
+      "praise_themes": {
+        "ease_of_use": {
+          "frequency": 18,
+          "pct_of_reviews": 0.36,
+          "avg_stars": 4.8,
+          "example_quote": "Clear instructions. Kit contains all necessary supplies. 9 yr old learned quickly."
+        },
+        "cute_designs": {
+          "frequency": 14,
+          "pct_of_reviews": 0.28,
+          "avg_stars": 4.7,
+          "example_quote": "So cute Great for a beginner don't matter the age"
+        },
+        "gift_success": {
+          "frequency": 12,
+          "pct_of_reviews": 0.24,
+          "avg_stars": 5.0,
+          "example_quote": "My 8 year old granddaughter loved it! She was excited to work on the cat first."
+        },
+        "engagement_entertainment": {
+          "frequency": 10,
+          "pct_of_reviews": 0.20,
+          "avg_stars": 4.9,
+          "example_quote": "This is so much fun for my daughter who is 10. Keeps her busy and off her screens."
+        },
+        "educational_value": {
+          "frequency": 10,
+          "pct_of_reviews": 0.20,
+          "avg_stars": 4.9,
+          "example_quote": "It was a great teaching tool to introduce cross stitch to a young person!"
+        },
+        "complete_kit": {
+          "frequency": 8,
+          "pct_of_reviews": 0.16,
+          "avg_stars": 4.6,
+          "example_quote": "Came with everything you need to complete the project."
+        },
+        "finished_result": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 5.0,
+          "example_quote": "This is the first time I have ever cross stitched."
+        }
+      },
+      "feature_requests": [
+        {
+          "request": "Better/clearer instructions for complete beginners",
+          "frequency": 2,
+          "example_quote": "The instructions are limited for someone who has never done cross stitch."
+        }
+      ],
+      "quality_flags": [
+        {
+          "severity": "MEDIUM",
+          "theme": "Material quality (thread tangling, fabric thinness)",
+          "frequency": 6,
+          "example_quote": "These kits are a nightmare for beginners."
+        },
+        {
+          "severity": "MEDIUM",
+          "theme": "Hoop/fabric fit (hoop too small for fabric)",
+          "frequency": 4,
+          "example_quote": "The hoop doesn't fit on the fabric- too small."
+        }
+      ],
+      "gift_mentions": 20,
+      "age_mentions": {
+        "age_6": {"positive": 2, "negative": 0},
+        "age_8": {"positive": 3, "negative": 1},
+        "age_9": {"positive": 3, "negative": 0},
+        "age_10": {"positive": 1, "negative": 0},
+        "age_11": {"positive": 1, "negative": 0},
+        "age_16": {"positive": 0, "negative": 0, "mixed": 1},
+        "adult_help_needed": 3
+      },
+      "competitor_comparison_mentions": []
+    },
+    "B08T5QC9FS": {
+      "name": "Cross Stitch Kit for Kids (10-in-1)",
+      "brand": "Pllieay",
+      "is_ours": false,
+      "reviews_analyzed": 50,
+      "average_rating": 3.66,
+      "star_distribution": {
+        "5": 24,
+        "4": 8,
+        "3": 4,
+        "2": 5,
+        "1": 9
+      },
+      "satisfaction_rate": 0.64,
+      "dissatisfaction_rate": 0.28,
+      "photo_review_pct": 0.06,
+      "verified_purchase_pct": 0.98,
+      "newest_review_date": "2026-02-08",
+      "oldest_review_date": "2022-03-31",
+      "complaint_themes": {
+        "material_quality": {
+          "frequency": 9,
+          "pct_of_reviews": 0.18,
+          "avg_stars": 2.1,
+          "example_quote": "Thread quality is poor and tangles easily."
+        },
+        "hoop_fabric_fit": {
+          "frequency": 6,
+          "pct_of_reviews": 0.12,
+          "avg_stars": 2.5,
+          "example_quote": "The hoops are way too small for the fabric pieces."
+        },
+        "missing_incomplete_contents": {
+          "frequency": 5,
+          "pct_of_reviews": 0.10,
+          "avg_stars": 2.6,
+          "example_quote": "Missing supplies from the kit."
+        },
+        "thread_needle_issues": {
+          "frequency": 5,
+          "pct_of_reviews": 0.10,
+          "avg_stars": 1.6,
+          "example_quote": "Thread keeps breaking and needle is impossible to use."
+        },
+        "value_price": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 1.5,
+          "example_quote": "Not worth the money."
+        },
+        "size_scale": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 1.8,
+          "example_quote": "Much smaller than expected."
+        },
+        "instruction_quality": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 1.7,
+          "example_quote": "Instructions are virtually nonexistent."
+        }
+      },
+      "praise_themes": {
+        "ease_of_use": {
+          "frequency": 19,
+          "pct_of_reviews": 0.38,
+          "avg_stars": 4.7,
+          "example_quote": "Great for learning the basics of cross stitch."
+        },
+        "engagement_entertainment": {
+          "frequency": 7,
+          "pct_of_reviews": 0.14,
+          "avg_stars": 5.0,
+          "example_quote": "Kept the kids busy for hours."
+        },
+        "educational_value": {
+          "frequency": 7,
+          "pct_of_reviews": 0.14,
+          "avg_stars": 4.9,
+          "example_quote": "Great teaching tool for patience and fine motor skills."
+        },
+        "complete_kit": {
+          "frequency": 5,
+          "pct_of_reviews": 0.10,
+          "avg_stars": 5.0,
+          "example_quote": "Everything you need is included."
+        },
+        "gift_success": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 4.2,
+          "example_quote": "Granddaughter loved this gift."
+        },
+        "repeat_purchase": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 5.0,
+          "example_quote": "Buying another one for a different grandchild."
+        }
+      },
+      "feature_requests": [
+        {
+          "request": "Include needle threaders",
+          "frequency": 1,
+          "example_quote": "Wonderful but wish it would come with a needle threader!"
+        }
+      ],
+      "quality_flags": [
+        {
+          "severity": "HIGH",
+          "theme": "Material quality (thread and fabric)",
+          "frequency": 9,
+          "example_quote": "Thread quality is poor and tangles easily."
+        },
+        {
+          "severity": "MEDIUM",
+          "theme": "Hoop/fabric fit",
+          "frequency": 6,
+          "example_quote": "The hoops are way too small for the fabric pieces."
+        }
+      ],
+      "gift_mentions": 10,
+      "age_mentions": {
+        "age_6": {"positive": 2, "negative": 0},
+        "age_8": {"positive": 0, "negative": 1, "mixed": 1},
+        "age_9": {"positive": 0, "negative": 1},
+        "age_10": {"positive": 2, "negative": 1},
+        "age_13": {"positive": 1, "negative": 0},
+        "adult_help_needed": 2
+      },
+      "competitor_comparison_mentions": [
+        {
+          "direction": "competitor_is_better",
+          "competitor": "unknown",
+          "quote": "1-star reviewer says a different kit was better"
+        }
+      ]
+    },
+    "B0B7JHN4F1": {
+      "name": "Cross Stitch Kit for Kids (Felt Keyrings)",
+      "brand": "KRAFUN",
+      "is_ours": false,
+      "reviews_analyzed": 50,
+      "average_rating": 4.54,
+      "star_distribution": {
+        "5": 35,
+        "4": 10,
+        "3": 3,
+        "2": 1,
+        "1": 1
+      },
+      "satisfaction_rate": 0.90,
+      "dissatisfaction_rate": 0.04,
+      "photo_review_pct": 0.06,
+      "verified_purchase_pct": 0.98,
+      "newest_review_date": "2026-02-18",
+      "oldest_review_date": "2022-11-28",
+      "complaint_themes": {
+        "age_appropriateness": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 4.0,
+          "example_quote": "A bit advanced for my 5 year old but she'll grow into it."
+        }
+      },
+      "praise_themes": {
+        "gift_success": {
+          "frequency": 13,
+          "pct_of_reviews": 0.26,
+          "avg_stars": 4.7,
+          "example_quote": "Perfect birthday gift for my granddaughter."
+        },
+        "engagement_entertainment": {
+          "frequency": 12,
+          "pct_of_reviews": 0.24,
+          "avg_stars": 4.9,
+          "example_quote": "Kept her busy for hours, she loves it."
+        },
+        "cute_designs": {
+          "frequency": 11,
+          "pct_of_reviews": 0.22,
+          "avg_stars": 4.5,
+          "example_quote": "The designs are adorable."
+        },
+        "ease_of_use": {
+          "frequency": 9,
+          "pct_of_reviews": 0.18,
+          "avg_stars": 4.7,
+          "example_quote": "Easy enough for a 6 year old to follow."
+        },
+        "educational_value": {
+          "frequency": 8,
+          "pct_of_reviews": 0.16,
+          "avg_stars": 4.6,
+          "example_quote": "Great for developing patience and fine motor skills."
+        },
+        "repeat_purchase": {
+          "frequency": 4,
+          "pct_of_reviews": 0.08,
+          "avg_stars": 5.0,
+          "example_quote": "Already ordered another one."
+        },
+        "complete_kit": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 4.7,
+          "example_quote": "Has everything needed to get started."
+        },
+        "finished_result": {
+          "frequency": 3,
+          "pct_of_reviews": 0.06,
+          "avg_stars": 4.7,
+          "example_quote": "The finished keyrings look great."
+        }
+      },
+      "feature_requests": [
+        {
+          "request": "Clearer instructions (pictures only, hard to guess threading)",
+          "frequency": 1,
+          "example_quote": "I wish the instructions were a little clearer."
+        }
+      ],
+      "quality_flags": [],
+      "gift_mentions": 14,
+      "age_mentions": {
+        "age_5": {"positive": 3, "negative": 0},
+        "age_6": {"positive": 7, "negative": 0},
+        "age_7": {"positive": 2, "negative": 0},
+        "age_8": {"positive": 4, "negative": 0},
+        "age_9": {"positive": 2, "negative": 0},
+        "age_10": {"positive": 1, "negative": 0},
+        "age_11": {"positive": 0, "negative": 0, "mixed": 1},
+        "age_12": {"positive": 1, "negative": 0},
+        "age_13": {"positive": 1, "negative": 0},
+        "adult_help_needed": 0
+      },
+      "competitor_comparison_mentions": [
+        {
+          "direction": "competitor_is_better",
+          "competitor": "unknown",
+          "quote": "4-star reviewer mentions trying another kit first"
+        }
+      ]
+    },
+    "B0CM9JKNCC": {
+      "name": "Cross Stitch Kit for Kids (Woodland Animals)",
+      "brand": "Caydo",
+      "is_ours": false,
+      "reviews_analyzed": 19,
+      "average_rating": 3.84,
+      "star_distribution": {
+        "5": 12,
+        "4": 1,
+        "3": 1,
+        "2": 1,
+        "1": 4
+      },
+      "satisfaction_rate": 0.68,
+      "dissatisfaction_rate": 0.26,
+      "photo_review_pct": 0.0,
+      "verified_purchase_pct": 1.0,
+      "newest_review_date": "2025-12-27",
+      "oldest_review_date": "2024-02-29",
+      "complaint_themes": {
+        "material_quality": {
+          "frequency": 4,
+          "pct_of_reviews": 0.21,
+          "avg_stars": 2.0,
+          "example_quote": "Materials feel cheap and flimsy."
+        },
+        "color_accuracy": {
+          "frequency": 2,
+          "pct_of_reviews": 0.11,
+          "avg_stars": 2.5,
+          "example_quote": "Colors don't match what's shown in the listing."
+        }
+      },
+      "praise_themes": {
+        "engagement_entertainment": {
+          "frequency": 8,
+          "pct_of_reviews": 0.42,
+          "avg_stars": 4.9,
+          "example_quote": "Kept kids entertained for hours."
+        },
+        "ease_of_use": {
+          "frequency": 5,
+          "pct_of_reviews": 0.26,
+          "avg_stars": 5.0,
+          "example_quote": "Easy for kids to pick up."
+        },
+        "repeat_purchase": {
+          "frequency": 4,
+          "pct_of_reviews": 0.21,
+          "avg_stars": 5.0,
+          "example_quote": "Buying more for gifts."
+        },
+        "cute_designs": {
+          "frequency": 2,
+          "pct_of_reviews": 0.11,
+          "avg_stars": 5.0,
+          "example_quote": "Cute woodland animals."
+        }
+      },
+      "feature_requests": [],
+      "quality_flags": [
+        {
+          "severity": "MEDIUM",
+          "theme": "Material quality",
+          "frequency": 4,
+          "example_quote": "Materials feel cheap and flimsy."
+        }
+      ],
+      "gift_mentions": 2,
+      "age_mentions": {
+        "age_6": {"positive": 2, "negative": 0},
+        "age_8": {"positive": 0, "negative": 0, "mixed": 1},
+        "adult_help_needed": 0
+      },
+      "competitor_comparison_mentions": [
+        {
+          "direction": "better_than",
+          "competitor": "Bucilla/Dimensions",
+          "quote": "5-star: better than Bucilla/Dimensions kits"
+        },
+        {
+          "direction": "worse_than",
+          "competitor": "Temu",
+          "quote": "1-star: worse than Temu quality"
+        }
+      ]
+    }
+  },
+  "competitive_gaps": {
+    "our_advantages": [
+      {
+        "competitor_asin": "B08T5QC9FS",
+        "their_complaint": "instruction_quality",
+        "their_frequency": 3,
+        "our_frequency": 0
+      },
+      {
+        "competitor_asin": "B08T5QC9FS",
+        "their_complaint": "thread_needle_issues",
+        "their_frequency": 5,
+        "our_frequency": 0
+      },
+      {
+        "competitor_asin": "B08T5QC9FS",
+        "their_complaint": "value_price",
+        "their_frequency": 4,
+        "our_frequency": 0
+      },
+      {
+        "competitor_asin": "B08T5QC9FS",
+        "their_complaint": "size_scale",
+        "their_frequency": 4,
+        "our_frequency": 0
+      },
+      {
+        "competitor_asin": "B0CM9JKNCC",
+        "their_complaint": "color_accuracy",
+        "their_frequency": 2,
+        "our_frequency": 0
+      }
+    ],
+    "our_gaps": [
+      {
+        "competitor_asin": "B0B7JHN4F1",
+        "their_praise": "repeat_purchase",
+        "their_frequency": 4,
+        "our_frequency": 0
+      },
+      {
+        "competitor_asin": "B0B7JHN4F1",
+        "their_praise": "zero_material_complaints",
+        "their_frequency": 0,
+        "our_frequency": 6
+      }
+    ]
+  },
+  "ppc_keyword_insights": [
+    {
+      "phrase": "cross stitch kit for kids",
+      "frequency": 8,
+      "already_tracked": true,
+      "closest_search_term": "kids cross stitch kit"
+    },
+    {
+      "phrase": "screen free activity",
+      "frequency": 3,
+      "already_tracked": false,
+      "closest_search_term": "none"
+    },
+    {
+      "phrase": "backpack charms",
+      "frequency": 4,
+      "already_tracked": false,
+      "closest_search_term": "none"
+    },
+    {
+      "phrase": "beginner cross stitch",
+      "frequency": 6,
+      "already_tracked": true,
+      "closest_search_term": "beginner cross stitch kits for kids"
+    },
+    {
+      "phrase": "granddaughter gift craft",
+      "frequency": 5,
+      "already_tracked": false,
+      "closest_search_term": "none"
+    },
+    {
+      "phrase": "keychain craft kit",
+      "frequency": 3,
+      "already_tracked": false,
+      "closest_search_term": "cross stitch keychain kit"
+    }
+  ]
+}
