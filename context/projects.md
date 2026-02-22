@@ -107,4 +107,10 @@
 
 ---
 
-*Last updated: 2026-02-05*
+### API & Data Integration
+- **Amazon SP-API Integration** - Research completed 2026-02-22. Next: register as developer, set up credentials, deploy MCP server. See `outputs/research/market-intel/sp-api-research-2026-02-22.md`
+- **Amazon Advertising API** - Separate from SP-API; needed for PPC data integration with Claude workflows
+
+---
+
+*Last updated: 2026-02-22*

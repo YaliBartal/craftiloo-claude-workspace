@@ -66,7 +66,7 @@ outputs/research/ppc-weekly/
 
 - **< 80K tokens** per analysis
 - **< 5 minutes** execution time
-- **No paid API calls** — works entirely from user-provided data
+- **No paid API calls** — works from user-provided data + Seller Board auto-reports + DataDive API (included in subscription)
 
 ### Forbidden Practices
 
@@ -160,6 +160,97 @@ All exports should cover **the same 7-day window, excluding the last 2 days** (p
 4. If any missing → tell user which are missing and stop
 5. If duplicates of same type → prefer .csv over .xlsx for speed, or ask user which to use
 6. Read all 4 files
+
+### Step 1b: Fetch DataDive Rank Radar Data (for Rank-Aware PPC Decisions)
+
+**MANDATORY:** Always fetch DataDive Rank Radar data. This replaces ALL "check Data Dive" manual callouts with actual automated rank data.
+
+**Why this matters:** The PPC SOP says never cut bids on a campaign if the keyword's organic rank is improving. Without rank data, we had to flag every decision with "check Data Dive manually." Now we pull it directly.
+
+**API Details:**
+- **Base URL:** `https://api.datadive.tools`
+- **Auth:** Header `x-api-key` with value from `.env` → `DATADIVE_API_KEY`
+
+**How to fetch:**
+
+1. **List Rank Radars:**
+   ```
+   GET /v1/niches/rank-radars?pageSize=50
+   ```
+   Returns all active Rank Radars with ASIN, keywordCount, top10KW, top10SV, top50KW, top50SV.
+
+2. **For each Rank Radar, fetch keyword rankings:**
+   ```
+   GET /v1/niches/rank-radars/{rankRadarId}?startDate={7daysAgo}&endDate={today}
+   ```
+   Returns per keyword: `keyword`, `searchVolume`, and `ranks` array with daily `organicRank` and `impressionRank`.
+
+3. **Match Rank Radar ASINs to PPC portfolios:**
+   - Cross-reference Rank Radar ASINs with campaign ad group ASINs
+   - Each portfolio typically maps to 1-2 hero ASINs
+
+4. **Extract for each keyword tracked in Rank Radar:**
+
+   | Metric | Source Field | Use |
+   |--------|-------------|-----|
+   | **Organic Rank (today)** | `ranks[-1].organicRank` | Current position |
+   | **Organic Rank (7 days ago)** | `ranks[0].organicRank` | WoW rank comparison |
+   | **Rank Direction** | Compare first vs last | Improving / Stable / Declining |
+   | **Impression Rank** | `ranks[-1].impressionRank` | Sponsored position |
+   | **Search Volume** | `searchVolume` | Keyword importance |
+
+5. **Build a rank movement table per portfolio:**
+   - Keywords improving (rank going down = better)
+   - Keywords declining (rank going up = worse)
+   - Keywords stable (< 3 position change)
+
+6. **If DataDive fetch fails** (API error, timeout, rate limit):
+   - Note: "DataDive rank data unavailable — rank-aware callouts deferred to manual check"
+   - Continue with PPC-only analysis as before
+   - Do NOT block the entire analysis
+
+### Step 1c: Fetch Seller Board Data (for TACoS + Profitability Context)
+
+**MANDATORY:** Always fetch Seller Board data to unlock TACoS and profit-level analysis.
+
+1. **Fetch the Daily Dashboard report** using WebFetch on the URL from `.env` → `SELLERBOARD_DAILY_DASHBOARD`
+   - URL: `https://app.sellerboard.com/en/automation/reports?id=913d974aa62049cca4493b384553adaf&format=csv&t=9cf6b6e82d14453e89d923b881b333b8`
+   - This returns daily aggregate data: total sales, organic sales, PPC sales, ad spend, profit, margin, sessions
+
+2. **Fetch the Sales Detailed report** using WebFetch on the URL from `.env` → `SELLERBOARD_SALES_DETAILED`
+   - URL: `https://app.sellerboard.com/en/automation/reports?id=0440a7773b7049e2a359b670a7a172a5&format=csv&t=9cf6b6e82d14453e89d923b881b333b8`
+   - This returns per-ASIN data: organic/PPC/sponsored sales split, FBA fees, COGS, net profit, ACOS, sessions
+
+3. **Filter to match the PPC data window** — only use Seller Board rows from the same date range as the 4 PPC exports
+4. **Extract key metrics for each ASIN and account-wide:**
+
+   | Metric | Source Column(s) | Use |
+   |--------|-----------------|-----|
+   | **Total Revenue** (organic + PPC) | SalesOrganic + SalesPPC | TACoS denominator |
+   | **Organic Sales** | SalesOrganic | Organic vs paid split |
+   | **PPC Sales** | SalesPPC, SalesSponsoredProducts, SalesSponsoredDisplay | Cross-validate with PPC reports |
+   | **Ad Spend** | SponsoredProducts + SponsoredDisplay + Google ads + Facebook ads | Total ad spend including non-Amazon |
+   | **Net Profit** | NetProfit | Profitability context |
+   | **Margin %** | Margin column or NetProfit / Total Sales | Profit health |
+   | **COGS** | Cost of Goods | Unit economics |
+   | **FBA Fees** | AmazonFees | Fee burden |
+   | **Sessions** | Sessions | Traffic context |
+   | **Unit Session %** | Unit Session Percentage | Conversion at listing level |
+
+5. **Calculate TACoS:**
+   - **TACoS = Total Ad Spend / Total Revenue (organic + paid) × 100**
+   - Calculate account-wide AND per-portfolio (match ASINs to portfolios)
+   - This is the KPI that was previously impossible without Seller Board
+
+6. **Calculate Organic Sales Ratio:**
+   - **Organic Ratio = Organic Sales / Total Sales × 100**
+   - Shows PPC dependency — higher organic % = healthier
+   - Per portfolio and account-wide
+
+7. **If Seller Board fetch fails** (URL expired, timeout, etc.):
+   - Note: "Seller Board data unavailable — TACoS and profitability sections skipped"
+   - Continue with PPC-only analysis as before
+   - Do NOT block the entire analysis
 
 ### Step 2: Load Previous Snapshot (for WoW Comparison)
 
@@ -359,20 +450,29 @@ Check campaign start dates from the campaign report:
 - Note any campaigns < 14 days old as "In evaluation period" — don't make premature decisions on these
 - For campaigns in evaluation: Scale if ACoS <35% and CVR >8%. Pause if ACoS >60% and CVR <5%.
 
-#### Rank-Aware Decision Callouts
+#### Rank-Aware Decision Making (Automated via DataDive API)
 
 **Critical SOP principle:** PPC decisions must consider rank movement, not just ACoS/CVR in isolation.
 
-The 4 reports do NOT contain rank data. When the decision matrix suggests an action that could be affected by rank movement, explicitly flag it:
+**DataDive Rank Radar data is now fetched automatically in Step 1b.** Use it to make rank-informed decisions instead of flagging for manual checks.
 
-| Scenario | Skill Recommendation | Rank Callout |
-|----------|---------------------|-------------|
-| High ACoS SK/TOS campaign | Lower bids or pause | **STOP — Check Data Dive first.** If rank is improving, SOP says maintain spend. |
-| ACoS 30-45%, campaign gaining traction | Minor bid reduction | **Check Data Dive.** If keyword is moving from #22→#18, SOP says maintain. |
-| Low ACoS, keyword ranked well | Harvest profit | SOP says lower TOS bid -15% when rank is improving and ACoS is low. Verify rank in Data Dive. |
-| Hero keyword losing position | Not visible in reports | **Flag for Data Dive review** — if hero keyword dropped 5+ spots, SOP says increase TOS bid or create dedicated SK. |
+**How to apply rank data to campaign decisions:**
 
-Always include a "Data Dive Checks Needed" section listing campaigns where rank context would change the recommendation.
+| Scenario | Without Rank Data | With DataDive Rank Data |
+|----------|------------------|------------------------|
+| High ACoS SK/TOS campaign | "Check Data Dive" | If `organicRank` improved 3+ positions this week → **MAINTAIN spend** (rank velocity > efficiency). If rank is flat/declining → **Lower bids per matrix.** |
+| ACoS 30-45%, campaign gaining traction | "Check Data Dive" | If keyword moved from e.g. #22→#18 → **Maintain — rank is improving.** If stagnant → **Minor bid reduction.** |
+| Low ACoS, keyword ranked well | "Verify rank" | If `organicRank` < 10 and improving → **Lower TOS bid -15% per SOP** (organic rank carrying the weight). If rank is slipping → **Hold bids.** |
+| Hero keyword losing position | "Flag for review" | If `organicRank` worsened 5+ spots → **P1 ACTION: Increase TOS bid or create dedicated SK.** |
+
+**Rank movement classification:**
+- **Improving:** organicRank decreased by 3+ positions (closer to #1) over the 7-day window
+- **Stable:** organicRank changed by < 3 positions
+- **Declining:** organicRank increased by 3+ positions (further from #1)
+
+**If DataDive data is unavailable:** Fall back to flagging with "DataDive unavailable — check rank manually before acting" for TOS/SK campaigns with high ACoS.
+
+Always include a **"Rank Movement Summary"** section showing keyword rank changes from DataDive alongside PPC performance.
 
 #### CTR as Listing Quality Indicator
 
@@ -604,7 +704,14 @@ After generating the report:
     "cvr": 0.00,
     "zero_order_spend": 0.00,
     "active_portfolios": 0,
-    "active_campaigns": 0
+    "active_campaigns": 0,
+    "tacos": 0.00,
+    "total_revenue": 0.00,
+    "organic_sales": 0.00,
+    "organic_ratio": 0.00,
+    "net_profit": 0.00,
+    "profit_margin": 0.00,
+    "sessions": 0
   },
   "portfolios": {
     "portfolio-name": {
@@ -668,6 +775,9 @@ Generate a markdown report with these sections in this exact order:
 | Total Orders | X | X | {+/- X} | {+/- X%} |
 | Account CVR | X% | X% | {+/- X pp} | — |
 | Zero-Order Spend | ${X} | ${X} | {+/- $X} | — |
+| TACoS | X% | X% | {+/- X pp} | — |
+| Net Profit | ${X} | ${X} | {+/- $X} | {+/- X%} |
+| Organic Ratio | X% | X% | {+/- X pp} | — |
 | P1 Actions | X | X | {+/- X} | — |
 
 ### Top Improvements This Week
@@ -711,10 +821,72 @@ Generate a markdown report with these sections in this exact order:
 |----------|---------------|
 | CVR < 5% (any portfolio) | {List affected portfolios or "None"} |
 | ACoS > 50% for 7+ days (any portfolio) | {List affected portfolios or "None"} |
-| Hero keywords dropping (requires Data Dive) | {Flag for Data Dive review} |
+| Hero keywords dropping (from DataDive) | {List keywords that dropped 5+ spots, or "None"} |
 | No new test campaigns in last 2 weeks | {Yes/No — SOP expects 1-2/week} |
 
-**Note on TACoS:** Total ACoS (ad spend / total revenue including organic) is a key monthly KPI per SOP but cannot be calculated from PPC reports alone — requires Sellerboard data. Track separately.
+### Keyword Rank Movement (from DataDive Rank Radar)
+
+> Only include if DataDive data was successfully fetched. If unavailable, note: "DataDive data unavailable — rank section skipped."
+
+#### Account-Wide Rank Summary
+
+| Metric | Value |
+|--------|-------|
+| Total Keywords Tracked | {X} across {Y} Rank Radars |
+| Keywords in Top 10 | {X} (SV: {X}) |
+| Keywords in Top 50 | {X} (SV: {X}) |
+| Keywords Improving (7d) | {X} |
+| Keywords Declining (7d) | {X} |
+| Keywords Stable (7d) | {X} |
+
+#### Top Rank Improvements This Week
+
+| Keyword | Portfolio | Search Vol | Rank 7d Ago | Rank Now | Change | PPC Action Impact |
+|---------|-----------|-----------|-------------|----------|--------|-------------------|
+| {keyword} | {portfolio} | {sv} | #{old} | #{new} | +{X} | {Maintain spend / Can reduce bids} |
+
+#### Top Rank Declines This Week (P1 Attention)
+
+| Keyword | Portfolio | Search Vol | Rank 7d Ago | Rank Now | Change | PPC Action Needed |
+|---------|-----------|-----------|-------------|----------|--------|-------------------|
+| {keyword} | {portfolio} | {sv} | #{old} | #{new} | -{X} | {Increase TOS bid / Create SK / Investigate} |
+
+#### Rank vs PPC Spend Correlation
+
+For each portfolio, show whether PPC spend is translating to rank improvements:
+
+| Portfolio | Ad Spend | Keywords Improving | Keywords Declining | Rank ROI Assessment |
+|-----------|----------|-------------------|-------------------|---------------------|
+| {name} | ${X} | {X} | {X} | {Spend driving rank / Spend not translating / Mixed} |
+
+### TACoS & Profitability (from Seller Board)
+
+> Only include this section if Seller Board data was successfully fetched. If unavailable, note: "Seller Board data unavailable — TACoS section skipped."
+
+| Metric | Value | vs Last Week | Target | Status |
+|--------|-------|-------------|--------|--------|
+| **TACoS** (Ad Spend / Total Revenue) | X% | {+/- X pp} | <15% | {OK / Above / Red Flag} |
+| **Total Revenue** (organic + PPC) | ${X} | {+/- $X} | — | — |
+| **Organic Sales** | ${X} (X%) | {+/- $X} | — | — |
+| **PPC Sales** | ${X} (X%) | {+/- $X} | — | — |
+| **Organic Ratio** | X% | {+/- X pp} | >60% | {Healthy / PPC Dependent / Over-Reliant} |
+| **Net Profit** | ${X} | {+/- $X} | — | — |
+| **Profit Margin** | X% | {+/- X pp} | — | — |
+| **Sessions** | X | {+/- X} | — | — |
+
+**TACoS Interpretation:**
+- <10% = Excellent organic strength, PPC is efficient layer
+- 10-15% = Healthy balance of paid/organic
+- 15-25% = PPC dependency growing, watch organic rankings
+- >25% = Over-reliant on PPC — organic strategy needs attention
+
+#### Per-Portfolio TACoS
+
+| Portfolio | Ad Spend | Total Revenue | TACoS | Organic % | Net Profit | Margin |
+|-----------|----------|--------------|-------|-----------|------------|--------|
+| {name} | ${X} | ${X} | X% | X% | ${X} | X% |
+
+**Profitability Assessment:** {2-3 sentences on overall profit health — which portfolios are profitable, which are being subsidized by others, and whether PPC spend is justified by total revenue growth.}
 
 ---
 
@@ -998,6 +1170,12 @@ Before delivering the report, verify:
 
 ### Data Loading & Processing
 - [ ] All 4 report types correctly identified and loaded
+- [ ] DataDive Rank Radar data fetched (all active Rank Radars + keyword rankings for PPC date window) — or failure noted
+- [ ] Rank Radar ASINs matched to PPC portfolios
+- [ ] Rank movement calculated per keyword (7-day direction: improving/stable/declining)
+- [ ] Seller Board data fetched (Daily Dashboard + Sales Detailed) — or failure noted
+- [ ] Seller Board data filtered to match PPC export date window
+- [ ] TACoS calculated (account-wide + per-portfolio)
 - [ ] Only ENABLED campaigns with activity are analyzed (PAUSED/ARCHIVED filtered out)
 - [ ] Campaigns sorted by spend (highest first) within each portfolio
 - [ ] Data includes CTR calculations (Clicks ÷ Impressions × 100)
@@ -1017,10 +1195,13 @@ Before delivering the report, verify:
 - [ ] Experimental campaign cadence: Noted if portfolios are creating new campaigns weekly without learning
 
 ### Rank & Red Flag Checks
-- [ ] Rank-aware callouts: Flagged decisions that require Data Dive rank checks (especially TOS cuts, new keyword launches)
+- [ ] DataDive rank data integrated into campaign decisions (no more "check Data Dive" — use actual rank movement)
+- [ ] Rank Movement Summary section included (account-wide + per-portfolio + top improvements + top declines)
+- [ ] High-ACoS TOS/SK campaigns evaluated against actual rank direction before recommending bid cuts
+- [ ] Hero keyword rank drops identified from Rank Radar data and flagged as P1 actions
 - [ ] CTR flagged as listing quality indicator: <0.3% = listing problem, not just bid problem
 - [ ] Red flags identified: CVR <5%, ACoS >50% for 7+ days, hero keyword rank drops, impression share losses
-- [ ] TACoS note included: "Requires Sellerboard — not available from these 4 reports"
+- [ ] TACoS calculated from Seller Board data (or unavailability noted)
 
 ### Placement & Targeting
 - [ ] Placement data analyzed per portfolio and account-wide
