@@ -7,8 +7,10 @@
       "Read",
       "Glob",
       "Grep",
-      "WebSearch", 
-      "Webfetch"
+      "WebSearch",
+      "Webfetch",
+      "mcp__claude_ai_Apify__get-actor-run",
+      "mcp__claude_ai_Apify__get-actor-output"
     ]
   }
 }
