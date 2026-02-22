@@ -90,6 +90,49 @@ When skill triggers:
 
 ## Process
 
+### Step 0b: Fetch DataDive Keyword Data (Optional Enhancement)
+
+**PURPOSE:** Use DataDive's Master Keyword List and Rank Radar to enhance negative keyword generation with search volume and relevancy data.
+
+**API Details:**
+- **Base URL:** `https://api.datadive.tools`
+- **Auth:** Header `x-api-key` with value from `.env` → `DATADIVE_API_KEY`
+
+**How to use:**
+
+1. **Match the product's category to a DataDive niche:**
+   - Call `GET /v1/niches?pageSize=50` to list all niches
+   - Find the niche matching this product's category (by `heroKeyword` or `nicheLabel`)
+
+2. **Fetch Master Keyword List:**
+   ```
+   GET /v1/niches/{nicheId}/keywords
+   ```
+   Returns per keyword: `keyword`, `searchVolume`, `relevancy`, `asinRanks` (organic), `sponsoredAsinRanks`
+
+3. **Use the data for smarter negation decisions:**
+
+   | DataDive Field | Use for Negation |
+   |---------------|-----------------|
+   | `relevancy = "Outlier"` | Keywords marked as outliers are low-relevancy — strong negative candidates if high search volume (would drive irrelevant traffic) |
+   | `searchVolume` | Prioritize negating high-volume irrelevant terms (more wasted spend potential) |
+   | `asinRanks` | If our ASIN ranks well on a keyword, do NOT negate it (even if it seems irrelevant — the market disagrees) |
+   | `sponsoredAsinRanks` | If we're advertising on a keyword, flag it for review before negating |
+
+4. **Fetch Keyword Roots (for root-level negation):**
+   ```
+   GET /v1/niches/{nicheId}/roots
+   ```
+   Returns root words with `frequency` and `broadSearchVolume`.
+   - Roots with LOW frequency + LOW broadSearchVolume in the niche = likely irrelevant → negative phrase candidates
+   - Roots with HIGH frequency = core niche terms → NEVER negate
+
+5. **Add a new output section: "DataDive-Informed Negatives"**
+   - List keywords from the Master Keyword List with `relevancy = "Outlier"` that are also NOT in our tracked search terms
+   - These are keywords DataDive identified as irrelevant to the niche but that may still trigger our broad/auto campaigns
+
+6. **If DataDive fetch fails:** Continue with existing product-knowledge-based approach. Note: "DataDive data unavailable — using product knowledge only."
+
 ### Step 1: Gather Product Intelligence
 
 1. **Identify the product(s)** from user's portfolio selection
@@ -141,6 +184,7 @@ Before presenting the list, check every generated term against:
 4. **Cross-category check** — Cross stitch and embroidery share significant audience overlap. Do NOT auto-negate one from the other unless user explicitly requests it
 5. **Barbie check** — If this IS a Barbie product, preserve all Barbie-related terms. If NOT, consider adding "barbie" as a negative
 6. **Shinshin check** — Fuse bead products target ADULTS. Do NOT negate "adult" terms for fuse beads
+7. **DataDive rank check** — If DataDive data was fetched (Step 0b), check `asinRanks` for our ASIN on each keyword. If we rank organically on a keyword, do NOT negate it — the market considers it relevant even if it seems off. Flag as [REVIEW] instead.
 
 Flag any borderline terms with **[REVIEW]** marker.
 
@@ -485,6 +529,14 @@ B08YS42GPG, B0CCN877BL, B0B5RBBGC9, B09C1KQG2J, B0CZF266QH, B0B7JF9FW2, B0C2XYP6
 |---|------|-----------|-------------|
 | 1 | {term} | {other portfolio} | Prevents cannibalization |
 
+### DataDive Outlier Keywords (Low Relevancy, High Volume)
+> Keywords DataDive flagged as "Outlier" relevancy in the Master Keyword List — likely irrelevant to the niche but may trigger broad/auto campaigns. Prioritized by search volume.
+> *Only included if DataDive data was successfully fetched.*
+
+| # | Term | Search Volume | Relevancy | Our Rank | Why Consider Negating |
+|---|------|-------------|-----------|----------|----------------------|
+| 1 | {keyword} | {sv} | Outlier | {rank or "Not ranked"} | High volume irrelevant term — wasted ad spend risk |
+
 ### Color/Attribute Modifiers
 > Color terms that indicate searcher wants a specific single-color item.
 > **Conditional** — skip this section if product IS multi-color (e.g., fuse beads).
@@ -516,6 +568,8 @@ B08YS42GPG, B0CCN877BL, B0B5RBBGC9, B09C1KQG2J, B0CZF266QH, B0B7JF9FW2, B0C2XYP6
 | Cross-referenced against search-terms.md | ✅ {X} tracked terms checked |
 | Product title terms excluded | ✅ No title terms negated |
 | Own category terms preserved | ✅ {category} terms preserved |
+| DataDive rank check | ✅ No keywords where we rank organically were negated / ⚠️ DataDive unavailable |
+| DataDive outlier keywords included | ✅ {X} outlier terms added / ⚠️ DataDive unavailable |
 | Competitor brands flagged separately | ✅ Listed below for your decision |
 
 ---
@@ -539,6 +593,7 @@ B08YS42GPG, B0CCN877BL, B0B5RBBGC9, B09C1KQG2J, B0CZF266QH, B0B7JF9FW2, B0C2XYP6
 | Specific irrelevant | — | X | X |
 | High-spend zero-order | — | X | X |
 | Cross-portfolio | — | X | X |
+| DataDive outlier keywords | X | X | X |
 | Color/attribute modifiers | X | — | X |
 | Competitor brands | — | X | X |
 | **TOTAL** | **X** | **X** | **X** |

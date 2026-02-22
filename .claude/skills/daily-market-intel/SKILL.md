@@ -170,9 +170,11 @@ market-intel/
 
 ## Data Notes
 
-- **Source:** Apify saswave/amazon-product-scraper
+- **Source (BSR/rank):** Apify saswave/amazon-product-scraper
+- **Source (sales/profit):** Seller Board automated reports
 - **Products scraped:** X hero + X competitors (all with ASINs from competitors.md)
 - **Keywords searched:** 27 (top 3 × 9 categories)
+- **Seller Board data:** {Available / Unavailable}
 - **Missing data:** [List any that failed]
 ```
 
@@ -376,20 +378,199 @@ Use these consistently:
 
 ---
 
+## 📡 DataDive API Integration — Competitor Data + Keyword Ranks
+
+**PURPOSE:** Supplement Apify scraping with DataDive's richer competitor data (sales estimates, revenue, BSR) and add keyword rank tracking to the daily report.
+
+**API Details:**
+- **Base URL:** `https://api.datadive.tools`
+- **Auth:** Header `x-api-key` with value from `.env` → `DATADIVE_API_KEY`
+- **Cost:** Included in DataDive subscription (no per-call cost)
+
+### What DataDive Adds to Daily Market Intel
+
+| Data | Source Before | Source Now | Improvement |
+|------|-------------|-----------|-------------|
+| **BSR** | Apify product scraper | Apify + DataDive competitors | Cross-validation, more reliable |
+| **Sales estimates** | BSR-to-sales lookup table | DataDive `competitors.sales` field | Actual Jungle Scout estimates vs our rough table |
+| **Revenue estimates** | Manual (units x price) | DataDive `competitors.revenue` field | Direct from Jungle Scout data |
+| **Keyword organic rank** | Apify search scraper (position on page) | DataDive Rank Radar (`organicRank`) | Daily tracked, historical, more accurate |
+| **Keyword sponsored rank** | Not tracked | DataDive Rank Radar (`impressionRank`) | NEW — shows our PPC position per keyword |
+| **Search volume per keyword** | Not available | DataDive MKL (`searchVolume`) | NEW — can prioritize keywords by volume |
+| **Competitor strength** | Manual assessment | DataDive `competitorsStrength` | NEW — automated assessment |
+
+### How to Fetch
+
+**Step 1: Fetch Competitor Data for Each Category**
+
+For each niche relevant to our hero products, call:
+```
+GET /v1/niches/{nicheId}/competitors
+```
+
+**Key nicheIds (from DataDive account — 23 niches total):**
+Map each hero product category to its DataDive niche(s). Use `GET /v1/niches` to list all and match by `heroKeyword`.
+
+**Extract per competitor:**
+
+| Field | What It Contains | Replaces |
+|-------|------------------|----------|
+| `asin` | Competitor ASIN | Apify ASIN |
+| `bsr` | Current BSR | Apify BSR |
+| `sales` / `salesLowerRange` / `salesHigherRange` | Monthly sales estimate | Our BSR-to-sales table |
+| `revenue` / `revenueLowerRange` / `revenueHigherRange` | Monthly revenue estimate | Manual calculation |
+| `price` | Current price | Apify price |
+| `rating` | Star rating | Apify rating |
+| `reviewCount` | Review count | Apify reviewCount |
+| `kwRankedOnP1` | Keywords ranked on page 1 | Not available before |
+| `advertisedKws` | Keywords being advertised | Not available before |
+
+**Step 2: Fetch Keyword Rankings from Rank Radar**
+
+For each hero product's Rank Radar:
+```
+GET /v1/niches/rank-radars/{rankRadarId}?startDate={yesterday}&endDate={today}
+```
+
+**15 active Rank Radars tracking our hero products.** Use `GET /v1/niches/rank-radars` to list all.
+
+**Extract per keyword:**
+- `keyword` — the search term
+- `searchVolume` — monthly search volume
+- `ranks[].organicRank` — our organic position (daily)
+- `ranks[].impressionRank` — our sponsored/PPC position (daily)
+
+**Step 3: Merge into Daily Report**
+
+Add keyword rank data to the report in a new section (see report format addition below).
+
+### How to Display in Report
+
+**Add a Keyword Rank Snapshot section:**
+
+```markdown
+## Keyword Rank Snapshot (from DataDive Rank Radar)
+
+### Our Hero Products — Top Keyword Positions
+
+| Product | ASIN | Top 10 KWs | Top 10 SV | Top 50 KWs | Top 50 SV | vs Yesterday |
+|---------|------|-----------|-----------|-----------|-----------|-------------|
+| {name} | {ASIN} | {X} | {sv} | {X} | {sv} | {+/- X KWs in top 10} |
+
+### Key Rank Movements Today
+
+| Keyword | Product | Search Vol | Yesterday | Today | Change | Alert |
+|---------|---------|-----------|-----------|-------|--------|-------|
+| {kw} | {product} | {sv} | #{X} | #{Y} | {+/- X} | {Improving / Declining / Lost page 1} |
+```
+
+**Also enhance the Competitor Comparison table with DataDive data:**
+- Add `Est. Monthly Sales` and `Est. Revenue` columns (from DataDive, not BSR table)
+- Add `P1 Keywords` column (keywords ranked on page 1)
+- Cross-validate BSR from Apify vs DataDive — flag discrepancies > 20%
+
+### Execution Priority
+
+1. **Apify scraping runs FIRST** (existing flow — BSR, reviews, ratings)
+2. **DataDive API runs SECOND** (enrichment — sales estimates, keyword ranks)
+3. **Merge and cross-validate** — use DataDive sales estimates as primary, Apify BSR as validation
+4. If DataDive fails, fall back to Apify-only data (existing behavior)
+
+### Fallback
+
+If DataDive API fetch fails:
+- Note: "DataDive data unavailable — using Apify + BSR estimates only"
+- Continue with existing Apify-based analysis
+- Do NOT block the report
+
+---
+
+## 💰 Seller Board Integration — Actual Sales Data
+
+**PURPOSE:** Supplement BSR estimates with REAL sales, revenue, and profit data from Seller Board.
+
+BSR estimates are approximations. Seller Board gives us actual numbers. Combining both creates the most accurate picture.
+
+### How to Fetch
+
+1. **Fetch the Daily Dashboard report** using WebFetch:
+   - URL: `https://app.sellerboard.com/en/automation/reports?id=913d974aa62049cca4493b384553adaf&format=csv&t=9cf6b6e82d14453e89d923b881b333b8`
+   - Returns daily aggregate: sales, units, ad spend, profit, margin
+
+2. **Fetch the Sales Detailed report** using WebFetch:
+   - URL: `https://app.sellerboard.com/en/automation/reports?id=0440a7773b7049e2a359b670a7a172a5&format=csv&t=9cf6b6e82d14453e89d923b881b333b8`
+   - Returns per-ASIN breakdown: organic/PPC sales, fees, COGS, net profit, sessions
+
+3. **Filter to yesterday's date** (or most recent available date)
+
+### Data to Extract Per Hero Product
+
+| Metric | Source | Used For |
+|--------|--------|----------|
+| **Actual Units Sold** | Units columns | Compare vs BSR estimate |
+| **Actual Revenue** | Sales columns | Real revenue, not estimated |
+| **Organic vs PPC Sales** | SalesOrganic, SalesPPC | PPC dependency per product |
+| **Net Profit** | NetProfit | Product-level profitability |
+| **Sessions** | Sessions | Traffic context |
+
+### How to Display in Report
+
+Add a **Sales Reality Check** column group to the unified product table:
+
+```markdown
+## Our Products (Unified by Sales Velocity)
+
+| # | Product | ASIN | Category | BSR | Est. Daily Sales | **Actual Units** | **Actual Revenue** | **Profit** | Subcat Rank | Reviews | Rating | vs Yesterday | vs Baseline |
+|---|---------|------|----------|-----|-----------------|-----------------|-------------------|-----------|-------------|---------|--------|-------------|-------------|
+```
+
+Also add an **Account Snapshot** section at the top:
+
+```markdown
+## Account Snapshot (from Seller Board)
+
+| Metric | Yesterday | 7-Day Avg | vs Last Week |
+|--------|-----------|-----------|-------------|
+| Total Revenue | ${X} | ${X}/day | {+/- X%} |
+| Total Units | X | X/day | {+/- X%} |
+| Net Profit | ${X} | ${X}/day | {+/- X%} |
+| Profit Margin | X% | X% | {+/- X pp} |
+| Ad Spend | ${X} | ${X}/day | {+/- X%} |
+| TACoS | X% | X% | {+/- X pp} |
+```
+
+### Fallback
+
+If Seller Board fetch fails:
+- Note: "Seller Board unavailable — using BSR estimates only"
+- Continue with BSR-based analysis as before
+- Do NOT block the report
+
+---
+
 ## ✅ Execution Checklist
 
 - [ ] Load previous snapshot (yesterday or baseline)
+- [ ] **Fetch Seller Board daily dashboard + sales detailed**
+- [ ] **Extract yesterday's actual sales, profit, and sessions per ASIN**
 - [ ] Re-read `context/competitors.md` to get latest competitor ASINs
 - [ ] Re-read `context/search-terms.md` to get latest top 3 keywords per category
 - [ ] Scrape hero products (batches of 5, async mode)
 - [ ] Scrape ALL competitors with ASINs (~31 ASINs, ~7 batches of 5, async mode)
 - [ ] Calculate estimated daily sales velocity for each product (use BSR reference table)
+- [ ] **Fetch DataDive competitor data (sales estimates, revenue, P1 keywords) for each niche**
+- [ ] **Fetch DataDive Rank Radar keyword rankings for each hero product**
+- [ ] **Cross-validate Apify BSR vs DataDive BSR — flag discrepancies > 20%**
+- [ ] **Use DataDive sales estimates as primary source (more accurate than BSR table)**
+- [ ] **Merge Seller Board actual sales into the product table (where available)**
 - [ ] Calculate changes vs yesterday AND vs baseline
 - [ ] Build unified product table sorted by estimated daily sales (single list, not split by category)
+- [ ] **Include Account Snapshot section from Seller Board data**
 - [ ] Run keyword searches (top 3 per category, 27 total)
 - [ ] Re-run any failed keyword searches once
 - [ ] Scan keyword results for new/unknown competitors (New Competitor Detection)
-- [ ] Generate report in MANDATORY FORMAT (unified BSR + keywords + new competitors)
+- [ ] **Include Keyword Rank Snapshot section from DataDive data**
+- [ ] Generate report in MANDATORY FORMAT (unified BSR + keywords + new competitors + rank snapshot)
 - [ ] Save snapshot for tomorrow
 - [ ] Present summary to user
 

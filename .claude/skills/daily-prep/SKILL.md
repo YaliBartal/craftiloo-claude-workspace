@@ -33,6 +33,45 @@ Check and read these files if they exist:
 
 Use this to understand their business and preferences.
 
+### 1b. Pull Yesterday's Business Snapshot (from Seller Board)
+
+**Before asking the user about their day, fetch a quick business pulse:**
+
+1. **Fetch the Daily Dashboard report** using WebFetch:
+   - URL: `https://app.sellerboard.com/en/automation/reports?id=913d974aa62049cca4493b384553adaf&format=csv&t=9cf6b6e82d14453e89d923b881b333b8`
+
+2. **Extract yesterday's key metrics:**
+   - Total Revenue
+   - Total Units Sold
+   - Net Profit
+   - Profit Margin %
+   - Ad Spend
+   - TACoS (Ad Spend / Total Revenue)
+
+3. **Optionally fetch the Inventory report** to flag stock alerts:
+   - URL: `https://app.sellerboard.com/en/automation/reports?id=0b0c4f03962c4066bc2b22db045edcd2&format=csv&t=9cf6b6e82d14453e89d923b881b333b8`
+   - Flag any products with **<7 days of stock left**
+   - Flag any products with **reorder recommended NOW**
+
+4. **Present the snapshot BEFORE asking about their day:**
+
+```
+## Yesterday's Business Pulse
+
+| Metric | Yesterday | 7-Day Avg |
+|--------|-----------|-----------|
+| Revenue | ${X} | ${X}/day |
+| Units | X | X/day |
+| Profit | ${X} | ${X}/day |
+| Margin | X% | X% |
+| Ad Spend | ${X} | ${X}/day |
+| TACoS | X% | X% |
+
+**Stock Alerts:** {any low-stock or reorder-now products, or "All good"}
+```
+
+5. **If Seller Board fetch fails:** Skip this section silently, proceed with normal daily prep flow.
+
 ### 2. Ask One Question
 
 > "What's on your to-do list today?"

@@ -150,6 +150,12 @@ Claude Code Workspace/
 │       ├── customer-review-analyzer/  # Amazon review analysis for our products + competitors
 │       └── niche-category-analysis/  # New niche/category deep-dive research & viability
 │
+├── mcp-servers/           # Custom MCP server implementations
+│   ├── sellerboard/       # Seller Board CSV report server
+│   │   └── server.py
+│   └── datadive/          # DataDive API server (keywords, ranks, competitors)
+│       └── server.py
+│
 ├── context/               # Persistent context files
 │   ├── profile.md         # Your preferences and goals
 │   ├── projects.md        # Active projects tracker
@@ -198,8 +204,63 @@ Claude Code Workspace/
 | **Slack (Workspace 1)** | Message posting, channel management, team communication | ⚙️ Configured |
 | **Slack (Workspace 2)** | Message posting, channel management, team communication | ⚙️ Configured |
 | **GitHub** | Repository access, code search, issues, PRs | ⚙️ Configured |
+| **Seller Board** | Sales, profit, inventory, PPC, daily dashboard (5 CSV reports) | ⚙️ Configured |
+| **DataDive** | Keyword rank tracking, competitor data, search volume, niche research (12 tools) | ⚙️ Configured |
 
-**To add:** Use `/mcp-builder` or see `.claude/skills/mcp-builder/`
+**Seller Board MCP Server** (`mcp-servers/sellerboard/server.py`):
+
+Custom Python MCP server exposing 6 tools for all Seller Board CSV reports.
+
+| Tool | Report | Key Data |
+|------|--------|----------|
+| `get_inventory_report` | FBA Inventory | Stock levels, ROI, margin, reorder recs, velocity |
+| `get_sales_detailed_report` | Sales Detailed (59 cols) | Per-ASIN: organic/PPC sales, fees, COGS, profit, ACOS, sessions |
+| `get_sales_summary_report` | Sales Summary (41 cols) | Daily financials, ad spend by channel, profit by ASIN |
+| `get_daily_dashboard_report` | Daily Dashboard (31 cols) | Daily aggregate: revenue, units, ad spend, profit, margin |
+| `get_ppc_marketing_report` | PPC Marketing (15 cols) | PPC sales, organic turnover, TACOS, ROAS, ACOS, CPC, conversion |
+| `get_all_reports_summary` | All 5 combined | Complete business snapshot |
+
+**Env variables** (5 report URLs in `.env`, auth token embedded):
+`SELLERBOARD_INVENTORY_REPORT`, `SELLERBOARD_SALES_DETAILED`, `SELLERBOARD_SALES_SUMMARY`, `SELLERBOARD_DAILY_DASHBOARD`, `SELLERBOARD_PPC_MARKETING`
+
+**Skills using Seller Board data:**
+- **Weekly PPC Analysis** → TACoS, profitability, organic vs PPC split
+- **Daily Market Intel** → Actual sales/profit alongside BSR estimates
+- **Daily Prep** → Yesterday's business pulse + stock alerts
+
+**If reports stop working** → tokens may have expired in Seller Board → Settings → Automation → Reports
+
+**DataDive MCP Server** (`mcp-servers/datadive/server.py`):
+
+Custom Python MCP server exposing 12 tools for all DataDive API endpoints. Auth via `x-api-key` header. Built-in rate limiting (1 req/sec).
+
+| Tool | Endpoint | Key Data |
+|------|----------|----------|
+| `get_profile` | Account Profile | Token balance, account info |
+| `list_niches` | List Niches | nicheId, nicheLabel, heroKeyword (23 active) |
+| `get_niche_keywords` | Master Keyword List | keyword, searchVolume, relevancy, organic/sponsored ranks |
+| `get_niche_competitors` | Competitor Data | ASIN, BSR, sales, revenue, rating, reviews, P1 keywords |
+| `get_niche_ranking_juices` | Ranking Juice | Title/bullets/description optimization scores |
+| `get_niche_roots` | Keyword Roots | Root words, frequency, broadSearchVolume |
+| `run_ai_copywriter` | AI Copywriter | Optimized listing copy (4 modes: cosmo, ranking-juice, nlp, cosmo-rufus) |
+| `list_rank_radars` | List Rank Radars | 15 active radars, keyword counts, top10/50 stats |
+| `get_rank_radar_data` | Rank Radar Data | Daily organicRank + impressionRank per keyword |
+| `create_niche_dive` | Create Dive | Token-consuming niche discovery from seed ASIN |
+| `get_niche_dive_status` | Dive Status | in_progress/success/error + results |
+| `get_niche_overview` | Niche Overview | Combined competitors + keywords + roots snapshot |
+
+**Env variable:** `DATADIVE_API_KEY` in `.env`
+
+**Skills using DataDive data:**
+- **Weekly PPC Analysis** → Rank Radar data replaces "check Data Dive" callouts with automated rank-aware decisions
+- **Daily Market Intel** → Competitor sales/revenue estimates + keyword rank tracking
+- **Negative Keyword Generator** → Master Keyword List relevancy scores + outlier keyword identification
+
+**Other skills that benefit:**
+- **Niche Category Analysis** → `create_niche_dive` + `get_niche_competitors` for automated competitor discovery
+- **Listing Creator** → `get_niche_keywords` for search volume data; `get_niche_ranking_juices` for optimization gaps
+
+**If API stops working** → check DATADIVE_API_KEY in .env. Rate limit: 1 request/second (built into MCP server).
 
 ---
 
