@@ -45,24 +45,18 @@ Every daily report answers:
 
 ---
 
-## 📊 BSR Normalization & Sales Velocity
+## 📊 Sales Data — Use DataDive Only
 
-**IMPORTANT:** BSR is NOT comparable across categories without normalization. A product in Toys & Games with BSR 10,000 sells MORE than one in Arts & Crafts with BSR 5,000.
+**DO NOT estimate sales from BSR.** BSR-to-sales tables are wildly inaccurate for our category/volume.
 
-**Sales Velocity Reference Points:**
+**Primary sales source:** DataDive Competitor data (`sales` field = Jungle Scout monthly estimate)
+- Use `dd_sales_mo` as the sales metric
+- Convert to daily: `dd_sales_mo / 30`
+- For hero products not found in DataDive niches, show "—" (no estimate)
 
-| BSR | Toys & Games (Est. Daily Sales) | Arts, Crafts & Sewing (Est. Daily Sales) |
-|-----|--------------------------------|------------------------------------------|
-| 1,000 | ~2,500 | ~1,700 |
-| 5,000 | ~1,000 | ~680 |
-| 10,000 | ~570 | ~390 |
-| 25,000 | ~250 | ~170 |
-| 50,000 | ~130 | ~90 |
-| 100,000 | ~65 | ~45 |
+**Sort the unified product table by DataDive monthly sales** (highest to lowest). Products without DataDive data go at the bottom.
 
-**Category multiplier:** Toys & Games BSR ≈ 1.46x the sales velocity of Arts, Crafts & Sewing at the same BSR.
-
-**HOW TO USE THIS:** Present ALL products in a **single unified table** sorted by estimated daily sales (highest to lowest). One list, not split by category.
+**BSR is still tracked** for trend direction (improving/declining) but NOT used for sales volume estimation.
 
 ---
 
@@ -439,12 +433,12 @@ If Seller Board fetch fails:
 
 ---
 
-## Our Products (Unified by Sales Velocity)
+## Our Products (Unified by DataDive Sales)
 
-| # | Product | ASIN | Category | BSR | Est. Daily Sales | DataDive Mo Sales | Subcat Rank | Reviews | Rating | vs Yesterday | vs Baseline |
-|---|---------|------|----------|-----|-----------------|------------------|-------------|---------|--------|-------------|-------------|
+| # | Product | ASIN | Category | BSR | DD Sales/mo | DD Revenue/mo | Subcat Rank | Reviews | Rating | Price | vs Yesterday | vs Baseline |
+|---|---------|------|----------|-----|------------|--------------|-------------|---------|--------|-------|-------------|-------------|
 
-*Sorted by Est. Daily Sales (highest → lowest). DataDive monthly sales where available.*
+*Sorted by DataDive monthly sales (highest → lowest). Products without DD data at bottom. Do NOT estimate sales from BSR.*
 
 ---
 
