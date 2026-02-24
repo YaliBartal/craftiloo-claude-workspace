@@ -289,24 +289,62 @@ async def get_marketplace_participations() -> str:
 @mcp.tool()
 async def get_orders(
     days_back: int = 7,
+    date: str = "",
     marketplace: str = "US",
-    max_results: int = 50,
+    max_results: int = 500,
 ) -> str:
-    """Fetch recent orders from Amazon.
-    Returns order IDs, status, dates, totals. Default: last 7 days."""
-    after = (datetime.utcnow() - timedelta(days=days_back)).strftime("%Y-%m-%dT00:00:00Z")
+    """Fetch recent orders from Amazon with full pagination.
+    Returns order IDs, status, dates, totals (note: totals include tax).
+
+    Args:
+        days_back: Number of days to look back (default 7). Ignored if date is set.
+        date: Specific date in YYYY-MM-DD format (e.g. '2026-02-23'). Fetches only that day.
+        marketplace: US, CA, or MX.
+        max_results: Max orders to return (default 500, auto-paginates).
+    """
+    if date:
+        after = f"{date}T00:00:00Z"
+        before = f"{date}T23:59:59Z"
+    else:
+        after = (datetime.utcnow() - timedelta(days=days_back)).strftime("%Y-%m-%dT00:00:00Z")
+        before = None
+
     params = {
         "MarketplaceIds": _marketplace_id(marketplace),
         "CreatedAfter": after,
-        "MaxResultsPerPage": min(max_results, 100),
+        "MaxResultsPerPage": 100,
     }
-    data = await api_get("/orders/v0/orders", params=params)
-    if isinstance(data, str):
-        return data
+    if before:
+        params["CreatedBefore"] = before
 
-    orders = data.get("payload", {}).get("Orders", [])
+    all_orders = []
+    pages = 0
+    max_pages = (max_results // 100) + 1
+
+    while pages < max_pages:
+        data = await api_get("/orders/v0/orders", params=params)
+        if isinstance(data, str):
+            if all_orders:
+                break  # return what we have
+            return data
+
+        payload = data.get("payload", {})
+        orders = payload.get("Orders", [])
+        all_orders.extend(orders)
+        pages += 1
+
+        next_token = payload.get("NextToken")
+        if not next_token or len(all_orders) >= max_results:
+            break
+
+        # Use NextToken for next page (replaces other params)
+        params = {
+            "MarketplaceIds": _marketplace_id(marketplace),
+            "NextToken": next_token,
+        }
+
     results = []
-    for o in orders[:max_results]:
+    for o in all_orders[:max_results]:
         total = o.get("OrderTotal", {})
         results.append({
             "OrderId": o.get("AmazonOrderId", ""),
@@ -317,7 +355,35 @@ async def get_orders(
             "Channel": o.get("SalesChannel", ""),
             "FulfillmentChannel": o.get("FulfillmentChannel", ""),
         })
-    return format_json(results, title=f"Orders (last {days_back} days)")
+
+    label = f"Orders for {date}" if date else f"Orders (last {days_back} days)"
+    summary = f"**Fetched {len(results)} orders across {pages} page(s).**\n\n"
+
+    # Add quick stats
+    shipped = [r for r in results if r["Status"] == "Shipped"]
+    pending = [r for r in results if r["Status"] == "Pending"]
+    canceled = [r for r in results if r["Status"] == "Canceled"]
+    total_units = sum(r["Items"] for r in results)
+    shipped_totals = []
+    for r in shipped:
+        try:
+            amt = float(r["Total"].replace(" USD", "").strip())
+            shipped_totals.append(amt)
+        except (ValueError, AttributeError):
+            pass
+
+    summary += f"| Metric | Value |\n| --- | --- |\n"
+    summary += f"| Total orders | {len(results)} |\n"
+    summary += f"| Shipped | {len(shipped)} |\n"
+    summary += f"| Pending | {len(pending)} |\n"
+    summary += f"| Canceled | {len(canceled)} |\n"
+    summary += f"| Total units | {total_units} |\n"
+    if shipped_totals:
+        summary += f"| Shipped revenue (incl. tax) | ${sum(shipped_totals):,.2f} |\n"
+        summary += f"| Avg order value (incl. tax) | ${sum(shipped_totals)/len(shipped_totals):,.2f} |\n"
+    summary += f"\n*Note: Order totals include sales tax. For pre-tax prices, use get_order_items on individual orders.*\n\n"
+
+    return f"## {label}\n\n{summary}" + format_json(results)
 
 
 @mcp.tool()
@@ -430,23 +496,46 @@ async def get_item_offers(
 @mcp.tool()
 async def get_fba_inventory(
     marketplace: str = "US",
-    max_results: int = 50,
 ) -> str:
-    """Get FBA inventory summaries.
-    Returns SKU, ASIN, fulfillable quantity, inbound, reserved, unfulfillable stock levels."""
+    """Get FBA inventory summaries with full pagination.
+    Returns ALL SKUs with ASIN, fulfillable quantity, inbound, reserved stock levels."""
+    mp_id = _marketplace_id(marketplace)
     params = {
         "details": "true",
         "granularityType": "Marketplace",
-        "granularityId": _marketplace_id(marketplace),
-        "marketplaceIds": _marketplace_id(marketplace),
+        "granularityId": mp_id,
+        "marketplaceIds": mp_id,
     }
-    data = await api_get("/fba/inventory/v1/summaries", params=params)
-    if isinstance(data, str):
-        return data
 
-    summaries = data.get("payload", {}).get("inventorySummaries", [])
+    all_summaries = []
+    pages = 0
+    max_pages = 20  # safety cap (~1000 SKUs)
+
+    while pages < max_pages:
+        data = await api_get("/fba/inventory/v1/summaries", params=params)
+        if isinstance(data, str):
+            if all_summaries:
+                break
+            return data
+
+        summaries = data.get("payload", {}).get("inventorySummaries", [])
+        all_summaries.extend(summaries)
+        pages += 1
+
+        next_token = data.get("pagination", {}).get("nextToken")
+        if not next_token:
+            break
+
+        params = {
+            "details": "true",
+            "granularityType": "Marketplace",
+            "granularityId": mp_id,
+            "marketplaceIds": mp_id,
+            "nextToken": next_token,
+        }
+
     results = []
-    for s in summaries[:max_results]:
+    for s in all_summaries:
         inv = s.get("inventoryDetails", {})
         results.append({
             "ASIN": s.get("asin", ""),
@@ -457,7 +546,8 @@ async def get_fba_inventory(
             "Inbound": inv.get("inboundWorkingQuantity", 0) + inv.get("inboundShippedQuantity", 0) + inv.get("inboundReceivingQuantity", 0),
             "Reserved": inv.get("reservedQuantity", {}).get("totalReservedQuantity", 0),
         })
-    return format_json(results, title="FBA Inventory")
+
+    return format_json(results, title=f"FBA Inventory ({len(results)} SKUs, {pages} pages)")
 
 
 @mcp.tool()

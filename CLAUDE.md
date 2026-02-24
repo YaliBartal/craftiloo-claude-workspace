@@ -184,7 +184,13 @@ Claude Code Workspace/
 │   │   └── server.py
 │   ├── datadive/          # DataDive API server (keywords, ranks, competitors)
 │   │   └── server.py
-│   └── amazon-sp-api/     # Amazon SP-API (orders, catalog, inventory, pricing, reports)
+│   ├── amazon-sp-api/     # Amazon SP-API (orders, catalog, inventory, pricing, reports)
+│   │   └── server.py
+│   ├── notion/            # Notion API server (pages, blocks, databases, 28 tools)
+│   │   └── server.py
+│   ├── slack/             # Slack multi-workspace server (messages, channels, files, scheduling, 16 tools)
+│   │   └── server.py
+│   └── asana/             # Asana API server (projects, tasks, sections, comments, search, 26 tools)
 │       └── server.py
 │
 ├── context/               # Persistent context files
@@ -230,15 +236,41 @@ Claude Code Workspace/
 
 | Service | Purpose | Status |
 |---------|---------|--------|
-| **Apify** | Web scraping, automation, data extraction | ⚙️ Configured |
-| **Notion** | Database access, page creation, content management | ⚙️ Configured |
-| **Asana** | Task management, project tracking | ⚙️ Configured |
-| **Slack (Workspace 1)** | Message posting, channel management, team communication | ⚙️ Configured |
-| **Slack (Workspace 2)** | Message posting, channel management, team communication | ⚙️ Configured |
+| **Apify** | Actor runner — run scrapers, check status, get results (custom Python MCP, 7 tools) | ⚙️ Configured |
+| **Notion** | Full workspace management — pages, blocks, databases, comments, search (28 tools) | ⚙️ Configured |
+| **Asana** | Project/task management — tasks, projects, sections, subtasks, comments, search, dependencies (custom Python MCP, 26 tools) | ⚙️ Configured |
+| **Slack** | Multi-workspace messaging, channels, search, scheduled messages, file upload (custom Python MCP, 16 tools) | ⚙️ Configured |
 | **GitHub** | Repository access, code search, issues, PRs | ⚙️ Configured |
 | **Seller Board** | Sales, profit, inventory, PPC, daily dashboard (5 CSV reports) | ⚙️ Configured |
 | **DataDive** | Keyword rank tracking, competitor data, search volume, niche research (12 tools) | ⚙️ Configured |
 | **Amazon SP-API** | Orders, catalog, inventory, pricing, reports — direct Amazon data (13 tools) | ⚙️ Configured |
+
+**Apify MCP Server** (`mcp-servers/apify/server.py`):
+
+Custom Python MCP server for Apify Platform API. Auth: Bearer token. Rate limiting: 0.5s between requests.
+
+| Tool | API | Key Data |
+|------|-----|----------|
+| `search_store_actors` | Store Search | Find actors by use case — name, stats, actorId |
+| `run_actor` | Run Actor (async) | Start actor, get run ID + dataset ID |
+| `run_actor_sync` | Run Actor (sync) | Run + wait + return results (max 300s) |
+| `get_run_status` | Run Details | Status, timing, compute units, dataset ID |
+| `get_run_dataset` | Dataset Items | Scraped data from completed runs |
+| `list_recent_runs` | List Runs | Recent runs with status, filterable by actor |
+| `abort_run` | Abort Run | Cancel a running/ready actor |
+
+**Env variable:** `APIFY_API_TOKEN` in `.env`
+
+**Commonly used actors:**
+- `saswave~amazon-product-scraper` — Product data (BSR, price, reviews, ratings)
+- `igview-owner~amazon-search-scraper` — Keyword search results (position, badges, prices)
+
+**Skills using Apify data:**
+- **Daily Market Intel** → Product scraping for BSR/price/review snapshots
+- **Customer Review Analyzer** → Review scraping for competitor analysis
+- **Niche Category Analysis** → Competitor product discovery
+
+**If API stops working** → check APIFY_API_TOKEN in .env. Get token from Apify Console → Settings → Integrations.
 
 **Seller Board MCP Server** (`mcp-servers/sellerboard/server.py`):
 
@@ -321,6 +353,151 @@ Custom Python MCP server for direct Amazon Selling Partner API access. Auth: LWA
 **Registered roles:** Product Listing, Pricing, Brand Analytics, Amazon Fulfillment
 
 **If API stops working** → Check if app is still authorized in Seller Central → Apps & Services → Manage Your Apps. Refresh token is permanent unless app is de-authorized.
+
+**Notion MCP Server** (`mcp-servers/notion/server.py`):
+
+Custom Python MCP server replacing the official `@notionhq/notion-mcp-server`. Full workspace access with 28 tools in 7 groups. Auth: Bearer token. Rate limiting: 0.33s between requests (~3/sec).
+
+| Tool | Group | Key Capability |
+|------|-------|----------------|
+| `search` | Search | Search pages/databases by title across workspace |
+| `get_self` | Search | Verify integration connection |
+| `get_page` | Pages | Page metadata + all properties |
+| `get_page_property` | Pages | Single property with pagination |
+| `create_page` | Pages | Create page (with optional initial content) |
+| `update_page` | Pages | Update properties / archive |
+| `move_page` | Pages | Move to new parent |
+| `archive_page` | Pages | Soft-delete convenience wrapper |
+| `get_blocks` | Blocks | Direct child blocks (auto-paginates) |
+| `get_block` | Blocks | Single block details |
+| `append_blocks` | Blocks | Raw JSON blocks (auto-chunks at 100) |
+| `append_markdown` | Blocks | **Simplified markdown → Notion blocks** |
+| `update_block` | Blocks | Update block content |
+| `delete_block` | Blocks | Delete block + children |
+| `get_page_tree` | Blocks | **Recursive full page content (max 3 levels)** |
+| `get_database` | Databases | Schema, properties, types |
+| `query_database` | Databases | Filter + sort + auto-paginate |
+| `update_database` | Databases | Update title/description/schema |
+| `create_database` | Databases | Create inline database with properties |
+| `get_comments` | Comments | All comments on page/block |
+| `add_comment` | Comments | Add discussion comment |
+| `get_user` | Users | User name, email, type |
+| `list_users` | Users | All workspace users |
+| `create_page_with_content` | Higher-level | **Page + full markdown content in one call** |
+| `replace_page_content` | Higher-level | **Delete all blocks + append new content** |
+| `find_or_create_page` | Higher-level | **Search → return if found, create if not** |
+| `delete_all_blocks` | Higher-level | Clear all blocks from a page |
+| `get_child_pages` | Higher-level | List child pages under a parent |
+
+**Env variable:** `NOTION_API_KEY` in `.env`
+
+**Key features:**
+- Auto-pagination (up to 1000 items)
+- Auto-chunking (100-block limit handled transparently)
+- Simplified markdown input (`append_markdown`, `create_page_with_content`)
+- Recursive page reading (`get_page_tree`)
+- Dedup pattern (`find_or_create_page`)
+
+**Skills using Notion:**
+- **Product Listing Development** → `find_or_create_page` + `append_markdown` for full product pages
+- **Listing Creator** → Listing content uploaded to Notion
+- **Image Planner** → Image plan content uploaded to Notion
+
+**If API stops working** → Check NOTION_API_KEY in .env. Ensure pages/databases are shared with the integration in Notion settings.
+
+**Slack MCP Server** (`mcp-servers/slack/server.py`):
+
+Custom Python MCP server replacing the official `@modelcontextprotocol/server-slack` NPM package. Single server handles both workspaces via a `workspace` parameter with alias support. Auth: Bot token per workspace. Rate limiting: 1 req/sec (Slack Tier 2).
+
+**Workspaces:**
+
+| Key | Aliases | Team ID | Description |
+|-----|---------|---------|-------------|
+| `craft` | `crafti` | T06KHD4CS6N | Workspace 1 (craft crafti craftiloo) |
+| `craftiloo` | — | T01Q3BTU0DA | Workspace 2 (craftiloo) |
+
+**Tools (16):**
+
+| Tool | Group | Slack API Method | Key Capability |
+|------|-------|------------------|----------------|
+| `list_workspaces` | Utility | — | Show configured workspaces + aliases |
+| `list_channels` | Channels | `conversations.list` | List channels with pagination |
+| `get_channel_info` | Channels | `conversations.info` | Channel details: topic, purpose, members |
+| `set_channel_topic` | Channels | `conversations.setTopic` | Update channel topic |
+| `post_message` | Messages | `chat.postMessage` | Post to channel |
+| `reply_to_thread` | Messages | `chat.postMessage` (threaded) | Reply in thread |
+| `add_reaction` | Messages | `reactions.add` | Add emoji reaction |
+| `get_channel_history` | Messages | `conversations.history` | Recent messages |
+| `get_thread_replies` | Messages | `conversations.replies` | Thread replies |
+| `search_messages` | Messages | `search.messages` | Search across channels (needs user token) |
+| `get_users` | Users | `users.list` | List workspace users |
+| `get_user_profile` | Users | `users.profile.get` | User details |
+| `upload_snippet` | Files | `files.upload` | Upload text/code snippet |
+| `schedule_message` | Scheduling | `chat.scheduleMessage` | Schedule future message |
+| `list_scheduled_messages` | Scheduling | `chat.scheduledMessages.list` | View pending messages |
+| `delete_scheduled_message` | Scheduling | `chat.deleteScheduledMessage` | Cancel scheduled message |
+
+**Env variables:** `SLACK_WORKSPACE_{N}_BOT_TOKEN`, `_TEAM_ID`, `_NAME`, `_ALIASES`
+
+**Key features:**
+- Multi-workspace with aliases (`craft`/`crafti` → WS1, `craftiloo` → WS2)
+- Auto channel name resolution (pass `general` instead of `C01ABC123`)
+- Channel cache (populated on first use per workspace)
+- Scope-aware error messages (shows needed vs provided scopes)
+
+**Note:** `search_messages` requires a user token (`xoxp-`) with `search:read` scope. Bot tokens (`xoxb-`) will get a `missing_scope` error.
+
+**If API stops working** → Check bot tokens in .env. Verify app is still installed in each workspace at https://api.slack.com/apps.
+
+**Asana MCP Server** (`mcp-servers/asana/server.py`):
+
+Custom Python MCP server replacing the NPM `@roychri/mcp-server-asana` package. Full project/task management with 26 tools in 8 groups. Auth: Personal Access Token (Bearer). Rate limiting: 0.2s between requests (~5/sec).
+
+**Tools (24):**
+
+| Tool | Group | Asana API | Key Capability |
+|------|-------|-----------|----------------|
+| `get_me` | User | `GET /users/me` | Current user info + workspace list |
+| `list_workspaces` | User | `GET /workspaces` | All workspaces/organizations |
+| `list_users` | User | `GET /workspaces/{gid}/users` | Users in a workspace |
+| `list_teams` | Teams | `GET /organizations/{gid}/teams` | Teams in an organization |
+| `list_projects` | Projects | `GET /workspaces/{gid}/projects` | Projects, filterable by team |
+| `get_project` | Projects | `GET /projects/{gid}` | Full project details + members + custom fields |
+| `create_project` | Projects | `POST /projects` | Create project with name, dates, team, color |
+| `list_sections` | Sections | `GET /projects/{gid}/sections` | Sections within a project |
+| `create_section` | Sections | `POST /projects/{gid}/sections` | Create section with ordering |
+| `move_task_to_section` | Sections | `POST /sections/{gid}/addTask` | Move task between sections |
+| `list_tasks` | Tasks | `GET /projects/{gid}/tasks` | Tasks by project, section, or assignee |
+| `get_task` | Tasks | `GET /tasks/{gid}` | Full task details + notes + custom fields |
+| `create_task` | Tasks | `POST /tasks` | Create task with assignee, dates, section |
+| `update_task` | Tasks | `PUT /tasks/{gid}` | Update name, notes, completed, dates, assignee |
+| `delete_task` | Tasks | `DELETE /tasks/{gid}` | Permanently delete a task |
+| `list_subtasks` | Subtasks | `GET /tasks/{gid}/subtasks` | Child tasks under a parent |
+| `create_subtask` | Subtasks | `POST /tasks/{gid}/subtasks` | Create subtask under parent |
+| `get_task_stories` | Comments | `GET /tasks/{gid}/stories` | Comments + activity history |
+| `add_comment` | Comments | `POST /tasks/{gid}/stories` | Add comment to a task |
+| `list_tags` | Tags | `GET /workspaces/{gid}/tags` | All tags in workspace |
+| `add_tag_to_task` | Tags | `POST /tasks/{gid}/addTag` | Tag a task |
+| `remove_tag_from_task` | Tags | `POST /tasks/{gid}/removeTag` | Remove tag from task |
+| `search_tasks` | Search | `GET /workspaces/{gid}/tasks/search` | Full-text search with filters |
+| `add_dependency` | Dependencies | `POST /tasks/{gid}/addDependencies` | Set task dependency |
+| `get_dependencies` | Dependencies | `GET /tasks/{gid}/dependencies` | Tasks this task depends on |
+| `get_dependents` | Dependencies | `GET /tasks/{gid}/dependents` | Tasks blocked by this task |
+
+**Env variable:** `ASANA_PERSONAL_ACCESS_TOKEN` in `.env`
+
+**Key features:**
+- Auto-pagination (up to 1000 items across 10 pages)
+- Full CRUD for tasks, projects, sections, subtasks
+- Task search with text, assignee, project, date, completion filters
+- Dependency management (blockers + dependents)
+- Comment/activity history on tasks
+- Section-based task organization
+
+**Skills using Asana:**
+- **Daily Prep** → Task lists, upcoming deadlines, assigned work
+
+**If API stops working** → Check ASANA_PERSONAL_ACCESS_TOKEN in .env. Get token from https://app.asana.com/0/my-apps → Create Personal Access Token.
 
 ---
 

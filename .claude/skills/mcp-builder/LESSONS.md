@@ -46,7 +46,33 @@
 **Tokens/cost:** ~XX K tokens
 -->
 
-_No runs logged yet._
+### Run: 2026-02-24
+**Goals:**
+- [x] Build custom Asana MCP server to replace NPM package
+- [x] Register 26 tools covering projects, tasks, sections, subtasks, comments, tags, search, dependencies
+- [x] Update .mcp.json, CLAUDE.md, folder structure
+
+**Result:** ✅ Success
+
+**What happened:**
+- Built `mcp-servers/asana/server.py` following existing server pattern (dotenv loader, rate limiter, httpx async client, formatted output)
+- Replaced NPM `@roychri/mcp-server-asana` with custom Python server in .mcp.json
+- 26 tools in 8 groups: User (3), Teams (1), Projects (3), Sections (3), Tasks (5), Subtasks (2), Comments (2), Tags (3), Search (1), Dependencies (3)
+- Auto-pagination helper for list endpoints
+- Full CRUD for tasks and projects
+- Updated CLAUDE.md with complete tool table and documentation
+
+**What didn't work:**
+- Nothing — clean build
+
+**Is this a repeat error?** No
+
+**Lesson learned:**
+- The existing server pattern (notion, slack, datadive) is well-established and easy to replicate
+- Asana API is straightforward REST with Bearer token auth — no OAuth dance needed for PAT
+- Tool count: always verify with `mcp._tool_manager._tools` after building
+
+**Tokens/cost:** ~30K tokens
 
 ---
 
