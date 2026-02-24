@@ -1,0 +1,703 @@
+{
+  "fetchDate": "2026-02-23",
+  "nicheCount": 8,
+  "totalCompetitors": 64,
+  "niches": [
+    {
+      "nicheId": "b4Nisjv3xy",
+      "nicheLabel": "Cross Stitch Kits for Kids",
+      "competitorCount": 8,
+      "competitors": [
+        {
+          "asin": "B08DDJCQKF",
+          "sales": 5934,
+          "revenue": 130429.32,
+          "price": 24.98,
+          "rating": 4.5,
+          "reviewCount": 1237,
+          "kwRankedOnP1": 116,
+          "advertisedKws": 25
+        },
+        {
+          "asin": "B0B97Q1Q4T",
+          "sales": 4004,
+          "revenue": 88047.96,
+          "price": 21.99,
+          "rating": 4.5,
+          "reviewCount": 229,
+          "kwRankedOnP1": 65,
+          "advertisedKws": 34
+        },
+        {
+          "asin": "B0DFHN42QB",
+          "sales": 2995,
+          "revenue": 53880.05,
+          "price": 17.99,
+          "rating": 4.6,
+          "reviewCount": 113,
+          "kwRankedOnP1": 95,
+          "advertisedKws": 26
+        },
+        {
+          "asin": "B08T5QC9FS",
+          "sales": 1143,
+          "revenue": 13704.57,
+          "price": 11.99,
+          "rating": 4.3,
+          "reviewCount": 1651,
+          "kwRankedOnP1": 92,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B087DYHMZ2",
+          "sales": 1096,
+          "revenue": 32847.12,
+          "price": 29.97,
+          "rating": 4.5,
+          "reviewCount": 605,
+          "kwRankedOnP1": 46,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B09M8DKHH6",
+          "sales": 440,
+          "revenue": 8355.6,
+          "price": 20.59,
+          "rating": 4.5,
+          "reviewCount": 214,
+          "kwRankedOnP1": 54,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0F8QZZQQM",
+          "sales": 372,
+          "revenue": 10036.56,
+          "price": 26.98,
+          "rating": 4.8,
+          "reviewCount": 30,
+          "kwRankedOnP1": 21,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B08QCX1Z5V",
+          "sales": 333,
+          "revenue": 5657.67,
+          "price": 16.99,
+          "rating": 4.3,
+          "reviewCount": 622,
+          "kwRankedOnP1": 56,
+          "advertisedKws": 9
+        }
+      ]
+    },
+    {
+      "nicheId": "Er21lin0KC",
+      "nicheLabel": "Beginners Embroidery Kit for Kids",
+      "competitorCount": 7,
+      "competitors": [
+        {
+          "asin": "B0C3ZVKB46",
+          "sales": 12319,
+          "revenue": 209176.62,
+          "price": 19.98,
+          "rating": 4.4,
+          "reviewCount": 1938,
+          "kwRankedOnP1": 264,
+          "advertisedKws": 101
+        },
+        {
+          "asin": "B0CZHKSSL4",
+          "sales": 6178,
+          "revenue": 104717.1,
+          "price": 16.95,
+          "rating": 4.5,
+          "reviewCount": 1187,
+          "kwRankedOnP1": 268,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0B762JW55",
+          "sales": 3343,
+          "revenue": 83508.14,
+          "price": 24.98,
+          "rating": 4.6,
+          "reviewCount": 1924,
+          "kwRankedOnP1": 238,
+          "advertisedKws": 64
+        },
+        {
+          "asin": "B0CH8VJ97G",
+          "sales": 2322,
+          "revenue": 48715.56,
+          "price": 20.98,
+          "rating": 4.5,
+          "reviewCount": 755,
+          "kwRankedOnP1": 117,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0BB9N74SG",
+          "sales": 1833,
+          "revenue": 45788.34,
+          "price": 24.98,
+          "rating": 4.6,
+          "reviewCount": 2801,
+          "kwRankedOnP1": 182,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0C8F87C6Y",
+          "sales": 1067,
+          "revenue": 31999.33,
+          "price": 29.99,
+          "rating": 4.7,
+          "reviewCount": 738,
+          "kwRankedOnP1": 169,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0DC69M3YD",
+          "sales": 525,
+          "revenue": 13114.5,
+          "price": 24.98,
+          "rating": 4.5,
+          "reviewCount": 633,
+          "kwRankedOnP1": 169,
+          "advertisedKws": 0
+        }
+      ]
+    },
+    {
+      "nicheId": "gfot2FZUBU",
+      "nicheLabel": "Embroidery Stitch Practice Kit",
+      "competitorCount": 10,
+      "competitors": [
+        {
+          "asin": "B08DDJCQKF",
+          "sales": 1258,
+          "revenue": 25134.84,
+          "price": 19.98,
+          "rating": 4.5,
+          "reviewCount": 1278,
+          "kwRankedOnP1": 42,
+          "advertisedKws": 11
+        },
+        {
+          "asin": "B0DFHN42QB",
+          "sales": 670,
+          "revenue": 12053.3,
+          "price": 17.99,
+          "rating": 4.6,
+          "reviewCount": 164,
+          "kwRankedOnP1": 28,
+          "advertisedKws": 18
+        },
+        {
+          "asin": "B09X55KL2C",
+          "sales": 441,
+          "revenue": 11898.18,
+          "price": 26.98,
+          "rating": 4.5,
+          "reviewCount": 694,
+          "kwRankedOnP1": 29,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0B7JHN4F1",
+          "sales": 397,
+          "revenue": 5951.03,
+          "price": 14.99,
+          "rating": 4.6,
+          "reviewCount": 274,
+          "kwRankedOnP1": 18,
+          "advertisedKws": 16
+        },
+        {
+          "asin": "B0DP654CSV",
+          "sales": 397,
+          "revenue": 8730.03,
+          "price": 21.99,
+          "rating": 4.5,
+          "reviewCount": 38,
+          "kwRankedOnP1": 17,
+          "advertisedKws": 17
+        },
+        {
+          "asin": "B0D944GMKK",
+          "sales": 291,
+          "revenue": 6399.09,
+          "price": 21.99,
+          "rating": 4.4,
+          "reviewCount": 19,
+          "kwRankedOnP1": 15,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0FP5FGNLK",
+          "sales": 221,
+          "revenue": 4196.79,
+          "price": 17.99,
+          "rating": 3.9,
+          "reviewCount": 167,
+          "kwRankedOnP1": 20,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B09HVDNFMR",
+          "sales": 192,
+          "revenue": 3452.16,
+          "price": 17.98,
+          "rating": 4.2,
+          "reviewCount": 173,
+          "kwRankedOnP1": 8,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0D75S8P78",
+          "sales": 104,
+          "revenue": 2074.8,
+          "price": 19.95,
+          "rating": 4.3,
+          "reviewCount": 52,
+          "kwRankedOnP1": 19,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0FK57P8PV",
+          "sales": 87,
+          "revenue": 1565.13,
+          "price": 18.99,
+          "rating": 4.1,
+          "reviewCount": 47,
+          "kwRankedOnP1": 11,
+          "advertisedKws": 10
+        }
+      ]
+    },
+    {
+      "nicheId": "RmbSD3OH6t",
+      "nicheLabel": "Sewing Kit for Kids (New)",
+      "competitorCount": 10,
+      "competitors": [
+        {
+          "asin": "B091GXM2Y6",
+          "sales": 5697,
+          "revenue": 125277.03,
+          "price": 21.99,
+          "rating": 4.8,
+          "reviewCount": 3488,
+          "kwRankedOnP1": 258,
+          "advertisedKws": 1
+        },
+        {
+          "asin": "B0C2XYP6L3",
+          "sales": 1913,
+          "revenue": 42066.87,
+          "price": 21.99,
+          "rating": 4.6,
+          "reviewCount": 1865,
+          "kwRankedOnP1": 288,
+          "advertisedKws": 121
+        },
+        {
+          "asin": "B09WQSBZY7",
+          "sales": 1333,
+          "revenue": 29299.34,
+          "price": 17.98,
+          "rating": 4.6,
+          "reviewCount": 617,
+          "kwRankedOnP1": 251,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B08JYF1Z9F",
+          "sales": 1195,
+          "revenue": 23888.05,
+          "price": 20.99,
+          "rating": 4.7,
+          "reviewCount": 3968,
+          "kwRankedOnP1": 223,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0CXY8JMTK",
+          "sales": 1195,
+          "revenue": 26278.05,
+          "price": 21.99,
+          "rating": 4.8,
+          "reviewCount": 252,
+          "kwRankedOnP1": 234,
+          "advertisedKws": 54
+        },
+        {
+          "asin": "B091KVKZ8B",
+          "sales": 677,
+          "revenue": 18258.69,
+          "price": 26.97,
+          "rating": 4.7,
+          "reviewCount": 835,
+          "kwRankedOnP1": 247,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "0545906520",
+          "sales": 312,
+          "revenue": 4742.4,
+          "price": 15.2,
+          "rating": 4.6,
+          "reviewCount": 6005,
+          "kwRankedOnP1": 72,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B089MCPDRS",
+          "sales": 275,
+          "revenue": 6319.5,
+          "price": 22.98,
+          "rating": 4.6,
+          "reviewCount": 890,
+          "kwRankedOnP1": 163,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B096MYBLS1",
+          "sales": 188,
+          "revenue": 4320.24,
+          "price": 22.98,
+          "rating": 4.6,
+          "reviewCount": 266,
+          "kwRankedOnP1": 128,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B08HH8XV33",
+          "sales": 156,
+          "revenue": 4207.32,
+          "price": 26.97,
+          "rating": 4.7,
+          "reviewCount": 404,
+          "kwRankedOnP1": 41,
+          "advertisedKws": 0
+        }
+      ]
+    },
+    {
+      "nicheId": "VqBgB5QQ07",
+      "nicheLabel": "Latch Hook Kit for Kids",
+      "competitorCount": 10,
+      "competitors": [
+        {
+          "asin": "B08CDS6QJH",
+          "sales": 2415,
+          "revenue": null,
+          "price": 17.99,
+          "rating": 3.9,
+          "reviewCount": 881,
+          "kwRankedOnP1": 0,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B092SW839H",
+          "sales": 170,
+          "revenue": 2206.6,
+          "price": 12.98,
+          "rating": 3.9,
+          "reviewCount": 68,
+          "kwRankedOnP1": 0,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B09HH315NQ",
+          "sales": 105,
+          "revenue": 2308.95,
+          "price": 0,
+          "rating": 3.3,
+          "reviewCount": 4,
+          "kwRankedOnP1": 0,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B09X1M6Z7T",
+          "sales": 19,
+          "revenue": 341.81,
+          "price": 17.99,
+          "rating": 4.1,
+          "reviewCount": 97,
+          "kwRankedOnP1": 0,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B098XDJKQL",
+          "sales": 9,
+          "revenue": 170.91,
+          "price": 18.99,
+          "rating": 4.1,
+          "reviewCount": 22,
+          "kwRankedOnP1": 0,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B09QWG72PK",
+          "sales": 3,
+          "revenue": null,
+          "price": 0,
+          "rating": 4.1,
+          "reviewCount": 212,
+          "kwRankedOnP1": 0,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B087THPK7C",
+          "sales": 0,
+          "revenue": 0,
+          "price": 24.99,
+          "rating": 4,
+          "reviewCount": 380,
+          "kwRankedOnP1": 0,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B09F984N1T",
+          "sales": 0,
+          "revenue": null,
+          "price": 29.99,
+          "rating": 4.4,
+          "reviewCount": 11,
+          "kwRankedOnP1": 0,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B09K63BGYK",
+          "sales": 0,
+          "revenue": 0,
+          "price": 8.49,
+          "rating": 3,
+          "reviewCount": 1,
+          "kwRankedOnP1": 0,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B09MJ2KBT5",
+          "sales": 0,
+          "revenue": 0,
+          "price": 20.99,
+          "rating": 4.1,
+          "reviewCount": 58,
+          "kwRankedOnP1": 0,
+          "advertisedKws": 0
+        }
+      ]
+    },
+    {
+      "nicheId": "AY4AlnSj9g",
+      "nicheLabel": "Mini Perler Beads",
+      "competitorCount": 8,
+      "competitors": [
+        {
+          "asin": "B09THLVFZK",
+          "sales": 2044,
+          "revenue": 59235.12,
+          "price": 28.98,
+          "rating": 4.6,
+          "reviewCount": 2922,
+          "kwRankedOnP1": 74,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0C5WQD914",
+          "sales": 1018,
+          "revenue": 27465.64,
+          "price": 26.98,
+          "rating": 4.5,
+          "reviewCount": 321,
+          "kwRankedOnP1": 72,
+          "advertisedKws": 1
+        },
+        {
+          "asin": "B08QV9CMFQ",
+          "sales": 805,
+          "revenue": 15286.95,
+          "price": 18.99,
+          "rating": 4.2,
+          "reviewCount": 1064,
+          "kwRankedOnP1": 57,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0D5LF666P",
+          "sales": 764,
+          "revenue": 20612.72,
+          "price": 26.98,
+          "rating": 4.5,
+          "reviewCount": 125,
+          "kwRankedOnP1": 59,
+          "advertisedKws": 26
+        },
+        {
+          "asin": "B0CBTKKTF9",
+          "sales": 39,
+          "revenue": 1442.61,
+          "price": 36.99,
+          "rating": 3.6,
+          "reviewCount": 28,
+          "kwRankedOnP1": 15,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B01M0EP7S2",
+          "sales": 19,
+          "revenue": 436.81,
+          "price": 22.99,
+          "rating": 4.6,
+          "reviewCount": 621,
+          "kwRankedOnP1": 13,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0BZRWVPN5",
+          "sales": 5,
+          "revenue": null,
+          "price": 26.99,
+          "rating": 4.4,
+          "reviewCount": 173,
+          "kwRankedOnP1": 0,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B07M8KVTSR",
+          "sales": 0,
+          "revenue": 0,
+          "price": 23.99,
+          "rating": 4.2,
+          "reviewCount": 1313,
+          "kwRankedOnP1": 0,
+          "advertisedKws": 0
+        }
+      ]
+    },
+    {
+      "nicheId": "O6b4XATpTj",
+      "nicheLabel": "Loom Knitting",
+      "competitorCount": 4,
+      "competitors": [
+        {
+          "asin": "B0B8W4FK4Q",
+          "sales": 814,
+          "revenue": 16271.86,
+          "price": 19.99,
+          "rating": 4.5,
+          "reviewCount": 391,
+          "kwRankedOnP1": 250,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0F8DG32H5",
+          "sales": 258,
+          "revenue": 7476.84,
+          "price": 28.98,
+          "rating": 4.9,
+          "reviewCount": 31,
+          "kwRankedOnP1": 110,
+          "advertisedKws": 31
+        },
+        {
+          "asin": "B0DKD2S3JT",
+          "sales": 133,
+          "revenue": 3854.34,
+          "price": 28.98,
+          "rating": 4.5,
+          "reviewCount": 55,
+          "kwRankedOnP1": 93,
+          "advertisedKws": 5
+        },
+        {
+          "asin": "B004JIFCXO",
+          "sales": null,
+          "revenue": null,
+          "price": 15,
+          "rating": 4.5,
+          "reviewCount": 3280,
+          "kwRankedOnP1": 269,
+          "advertisedKws": 0
+        }
+      ]
+    },
+    {
+      "nicheId": "Aw4EQhG6bP",
+      "nicheLabel": "Lacing Cards for Kids Ages 3-5",
+      "competitorCount": 7,
+      "competitors": [
+        {
+          "asin": "B0B58BZ5KV",
+          "sales": 2434,
+          "revenue": 34051.66,
+          "price": 13.99,
+          "rating": 4.7,
+          "reviewCount": 919,
+          "kwRankedOnP1": 36,
+          "advertisedKws": 16
+        },
+        {
+          "asin": "B0CP8VJ56S",
+          "sales": 1504,
+          "revenue": 15025,
+          "price": 9.99,
+          "rating": 4.7,
+          "reviewCount": 1049,
+          "kwRankedOnP1": 41,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B00JM5G05I",
+          "sales": 639,
+          "revenue": 14483,
+          "price": 25.49,
+          "rating": 4.8,
+          "reviewCount": 1030,
+          "kwRankedOnP1": 34,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B000O7ISY4",
+          "sales": 630,
+          "revenue": 7049.7,
+          "price": 5,
+          "rating": 4.7,
+          "reviewCount": 7296,
+          "kwRankedOnP1": 37,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0D3LVN8JW",
+          "sales": 241,
+          "revenue": 2889.59,
+          "price": 11.99,
+          "rating": 4.8,
+          "reviewCount": 52,
+          "kwRankedOnP1": 36,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0D3LTRKMJ",
+          "sales": 121,
+          "revenue": 1450.79,
+          "price": 11.99,
+          "rating": 4.6,
+          "reviewCount": 48,
+          "kwRankedOnP1": 34,
+          "advertisedKws": 0
+        },
+        {
+          "asin": "B0FQC7YFX6",
+          "sales": 109,
+          "revenue": 2177.82,
+          "price": 19.98,
+          "rating": 4.8,
+          "reviewCount": 30,
+          "kwRankedOnP1": 21,
+          "advertisedKws": 0
+        }
+      ]
+    }
+  ]
+}

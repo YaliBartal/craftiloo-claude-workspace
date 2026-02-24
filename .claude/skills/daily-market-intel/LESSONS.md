@@ -1,87 +1,74 @@
-# Lessons Learned - Daily Market Intel Skill
+# Lessons Learned — Daily Market Intel
 
-## Issue: First Run Inefficiency (2026-02-09)
-
-**Problem:** Used 60% of context budget trying to fetch Apify run data via API when user already had the output.
-
-### What Went Wrong
-
-1. **Assumed API access** - Tried multiple Apify API endpoints without checking if data already existed
-2. **No upfront question** - Should have asked "where is the scraper output?" immediately
-3. **API endpoint confusion** - Wasted attempts on incorrect endpoints
-4. **Didn't check existing files first** - Should have looked for recent JSON files before fetching
-
-### Root Cause
-
-The skill instructions said "Use Apify MCP to scrape" but didn't handle the case where:
-- User already ran the scraper manually
-- Data exists but in a different location
-- API access might not work as expected
-
-### Solution
-
-**Updated workflow:**
-
-1. **ASK FIRST:**
-   ```
-   "Do you have fresh scraper data, or should I run a new Apify scrape?"
-   ```
-
-2. **CHECK FOR EXISTING DATA:**
-   ```bash
-   # Look for recent JSON files
-   find outputs/ -name "*.json" -mtime -1
-   ```
-
-3. **ONLY THEN fetch via API if needed**
-
-### Skill Updates Needed
-
-**SKILL.md Phase 1 should be:**
-
-```markdown
-### Phase 1: Data Location Check
-
-1. ASK USER: "Do you have fresh Amazon data from a recent scraper run, or should I pull new data?"
-
-2. IF USER HAS DATA:
-   - Ask for file location
-   - Read and process immediately
-
-3. IF NEED FRESH DATA:
-   - Check for existing recent files in outputs/
-   - Only then use Apify API to scrape
-
-4. NEVER waste time trying API endpoints without confirming approach first
-```
-
-## General Principles
-
-**Before any data operation:**
-- [ ] Ask where data is if not obvious
-- [ ] Check for recent files first
-- [ ] Confirm approach before executing
-- [ ] Don't assume API access works
-
-**Context efficiency:**
-- [ ] Be direct - ask questions early
-- [ ] Don't retry failed approaches multiple times
-- [ ] If blocked, ask user for guidance immediately
-
-## File Organization
-
-**Keep outputs/ clean:**
-- No temp scripts (use .gitignore)
-- Clear naming: `amazon_products_YYYY-MM-DD.json`
-- Separate by purpose: `/data` vs `/research`
-
-## Next Improvements
-
-1. **Add data source detection** - Auto-detect recent JSON files
-2. **Better error messages** - "Can't access Apify API - please provide JSON file"
-3. **Streamlined flow** - Question → Data → Report (3 steps max)
+> **Living document.** Claude MUST read this before every run and write to it after every run.
 
 ---
 
-*Issue date: 2026-02-09*
-*Status: Skill needs update for efficiency*
+## How to Use This File
+
+### Before Every Run
+1. Read this entire file
+2. Check **Known Issues** for active problems to avoid
+3. Check **Repeat Errors** — if you hit the same issue again, flag it to the user immediately
+4. Apply all lessons to your execution plan
+
+### After Every Run
+1. Add a new entry under **Run Log** using the template below
+2. If something went wrong, add it to **Known Issues**
+3. If a Known Issue happened again, move it to **Repeat Errors** and increment the count
+4. If you solved a Known Issue, move it to **Resolved Issues**
+
+---
+
+## Run Log
+
+<!-- Add new entries at the TOP (newest first). Use this exact format: -->
+
+### Run: 2026-02-09
+**Goals:**
+- [ ] Fetch competitor data via Apify API
+- [ ] Generate daily market intel brief
+
+**Result:** ⚠️ Partial
+
+**What happened:**
+- Eventually completed the report after user provided data manually
+
+**What didn't work:**
+- Assumed API access to Apify would work — tried multiple endpoints without checking if data already existed
+- No upfront question — should have asked "where is the scraper output?" immediately
+- Wasted attempts on incorrect API endpoints
+- Didn't check for existing JSON files in outputs/ before fetching
+- Used 60% of context budget on failed API calls
+
+**Is this a repeat error?** No — first run
+
+**Lesson learned:**
+- ASK FIRST: "Do you have fresh scraper data, or should I run a new scrape?"
+- CHECK for existing recent files in outputs/ before fetching via API
+- Don't retry failed API approaches — ask user for guidance immediately
+- Be direct with questions early to save context budget
+
+**Tokens/cost:** ~60% of budget wasted on failed API calls
+
+---
+
+## Known Issues
+
+### Issue: Data Source Assumptions
+- **First seen:** 2026-02-09
+- **Description:** Skill assumes it needs to fetch data via API, but user may already have data locally
+- **Workaround:** Always ask user first; check `outputs/` for recent JSON files before fetching
+- **Root cause:** SKILL.md said "Use Apify MCP to scrape" without handling pre-existing data case
+
+---
+
+## Repeat Errors
+
+_None yet._
+
+---
+
+## Resolved Issues
+
+_None yet._

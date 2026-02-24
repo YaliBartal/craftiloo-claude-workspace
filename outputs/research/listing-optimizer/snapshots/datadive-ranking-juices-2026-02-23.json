@@ -1,0 +1,151 @@
+{
+  "data": {
+    "currentListing": {
+      "rankingJuice": 1693548,
+      "title": {
+        "rankingJuice": 533012
+      },
+      "bullets": {
+        "rankingJuice": 47256
+      },
+      "description": {
+        "rankingJuice": 0
+      }
+    },
+    "optimizedListing": {
+      "rankingJuice": 1733247,
+      "title": {
+        "rankingJuice": 524950
+      },
+      "bullets": {
+        "rankingJuice": 51801
+      },
+      "description": {
+        "rankingJuice": 54795
+      }
+    },
+    "competitors": [
+      {
+        "asin": "B08DDJCQKF",
+        "listing": {
+          "rankingJuice": 1682627,
+          "title": {
+            "rankingJuice": 535455
+          },
+          "bullets": {
+            "rankingJuice": 38131
+          },
+          "description": {
+            "rankingJuice": 0
+          }
+        }
+      },
+      {
+        "asin": "B08QCX1Z5V",
+        "listing": {
+          "rankingJuice": 1545159,
+          "title": {
+            "rankingJuice": 482822
+          },
+          "bullets": {
+            "rankingJuice": 45529
+          },
+          "description": {
+            "rankingJuice": 5635
+          }
+        }
+      },
+      {
+        "asin": "B09M8DKHH6",
+        "listing": {
+          "rankingJuice": 1450434,
+          "title": {
+            "rankingJuice": 466652
+          },
+          "bullets": {
+            "rankingJuice": 25239
+          },
+          "description": {
+            "rankingJuice": 0
+          }
+        }
+      },
+      {
+        "asin": "B0DFHN42QB",
+        "listing": {
+          "rankingJuice": 1042507,
+          "title": {
+            "rankingJuice": 347209
+          },
+          "bullets": {
+            "rankingJuice": 440
+          },
+          "description": {
+            "rankingJuice": 0
+          }
+        }
+      },
+      {
+        "asin": "B0B97Q1Q4T",
+        "listing": {
+          "rankingJuice": 996923,
+          "title": {
+            "rankingJuice": 330503
+          },
+          "bullets": {
+            "rankingJuice": 2707
+          },
+          "description": {
+            "rankingJuice": 0
+          }
+        }
+      },
+      {
+        "asin": "B08T5QC9FS",
+        "listing": {
+          "rankingJuice": 965638,
+          "title": {
+            "rankingJuice": 25964
+          },
+          "bullets": {
+            "rankingJuice": 443873
+          },
+          "description": {
+            "rankingJuice": 0
+          }
+        }
+      },
+      {
+        "asin": "B0F8QZZQQM",
+        "listing": {
+          "rankingJuice": 775247,
+          "title": {
+            "rankingJuice": 67907
+          },
+          "bullets": {
+            "rankingJuice": 285763
+          },
+          "description": {
+            "rankingJuice": 0
+          }
+        }
+      },
+      {
+        "asin": "B087DYHMZ2",
+        "listing": {
+          "rankingJuice": 263043,
+          "title": {
+            "rankingJuice": 29283
+          },
+          "bullets": {
+            "rankingJuice": 87597
+          },
+          "description": {
+            "rankingJuice": 0
+          }
+        }
+      }
+    ],
+    "latestResearchDate": "2025-12-10T09:49:47.408Z"
+  }
+}

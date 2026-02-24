@@ -7,8 +7,30 @@ Each tool fetches the CSV data and returns it for analysis.
 import os
 import csv
 import io
+from pathlib import Path
 from mcp.server.fastmcp import FastMCP
 import httpx
+
+
+def _load_dotenv():
+    """Load .env file from workspace root as fallback if env vars aren't set."""
+    for d in [Path.cwd(), Path(__file__).resolve().parent.parent.parent]:
+        env_file = d / ".env"
+        if env_file.exists():
+            with open(env_file, encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith("#") and "=" in line:
+                        key, _, value = line.partition("=")
+                        key = key.strip()
+                        value = value.strip()
+                        current = os.environ.get(key, "")
+                        if key and (not current or current.startswith("${")):
+                            os.environ[key] = value
+            return
+
+
+_load_dotenv()
 
 mcp = FastMCP("sellerboard")
 
