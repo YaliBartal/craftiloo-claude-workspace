@@ -24,6 +24,59 @@
 
 <!-- Add new entries at the TOP (newest first). Use this exact format: -->
 
+### Run: 2026-02-24 (v2)
+**Goals:**
+- [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
+- [x] Fetch SP-API Orders for yesterday's revenue/units
+- [x] Fetch DataDive Rank Radar data for 12 radars (~589 keywords)
+- [x] Fetch DataDive competitor data for 8 niches
+- [x] Run Apify light keyword scan (9 keywords — badges + new competitors)
+- [x] Fetch Seller Board 7-day dashboard aggregates
+- [x] Compile full report with mandatory format
+- [x] Save snapshot as v2
+
+**Result:** ✅ Success — All 5 data sources fetched, full report compiled
+
+**What happened:**
+- All 5 data sources fetched successfully using parallel background agents
+- SP-API: 13 catalog + 13 pricing + 1 inventory + 1 orders = 28 calls
+- DataDive: 12 rank radars (589 keywords) + 8 niche competitor sets
+- Apify: 9 keyword scans completed — 3 Overall Pick badges found on hero products
+- Seller Board: 7-day aggregates (Feb 17-23) with Feb 23 anomaly noted
+- SP-API Orders: 150 orders, 162 units, $2,287.07 shipped revenue for Feb 23
+
+**What didn't work:**
+- FBA inventory still truncated at 50 rows — 6 hero ASINs missing stock data (repeat issue)
+- B09HVSLBS6 still returns no competitive pricing (repeat issue)
+- DataDive Latch Hook niche data still stale (Dec 2025) — hero ASINs B08FYH13CL and B0F8R652FX missing
+- SP-API pricing calls hit 429 rate limits when run in parallel — agent resolved by serializing
+
+**Is this a repeat error?** Yes — FBA inventory truncation (×2) and B09HVSLBS6 pricing (×2)
+
+**Lesson learned:**
+- Apify keyword scan works well with async `run_actor` — all 9 completed in ~5 min
+- 5 parallel background agents is the right architecture — total wall-clock time ~5 min for data fetch
+- SP-API pricing calls should be serialized (not parallel) to avoid 429 rate limits
+- Latch Hook niche needs a fresh DataDive niche dive to get current competitor data
+- The Feb 23 Seller Board anomaly (-$147 profit) is worth investigating — $2,375 Amazon fees vs ~$1,400 avg
+
+**Tokens/cost:** ~120K tokens, ~$0.81 Apify cost
+
+---
+
+### Skill Update: 2026-02-24 (post-run)
+**Changes:**
+- Added **Data Freshness Rule** to architecture: if data isn't current to the day, exclude it
+- Added **SP-API Orders** as Step 6: `get_orders(date=yesterday)` for real-time revenue + units
+- Changed **Seller Board** (Step 5) to 7-day aggregates ONLY — no day-specific data (it's 2 days old)
+- Restructured mandatory report format: "Yesterday's Business" (SP-API, real-time) + "7-Day Financial Snapshot" (Seller Board, aggregates)
+- Fixed SP-API server: `get_orders` now has `date` param + pagination; `get_fba_inventory` now paginates all SKUs
+- Key rule: **SP-API Orders for day-specific revenue/units, Seller Board for 7-day profit/margin/adspend/TACoS**
+
+**Trigger:** User feedback that Seller Board's 2-day lag made day-specific data misleading in a daily report
+
+---
+
 ### Run: 2026-02-24
 **Goals:**
 - [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
@@ -122,7 +175,19 @@
 
 ## Repeat Errors
 
-_None yet._
+### FBA Inventory API Truncation (×2)
+- **First seen:** 2026-02-24 (run 1)
+- **Repeated:** 2026-02-24 (v2)
+- **Description:** `get_fba_inventory()` returns only ~50 rows. 6 hero ASINs consistently fall outside the visible results: B096MYBLS1, B08FYH13CL, B0F8R652FX, B09THLVFZK, B07D6D95NG, B09HVSLBS6.
+- **Impact:** Cannot confirm stock levels for nearly half of hero products.
+- **Fix needed:** Either paginate the inventory call (nextToken) or make targeted calls per ASIN.
+
+### B09HVSLBS6 No Competitive Pricing (×2)
+- **First seen:** 2026-02-24 (run 1)
+- **Repeated:** 2026-02-24 (v2)
+- **Description:** Needlepoint Cat Wallet returns empty CompetitivePrices array from SP-API. Listing exists (has BSR) but no active Buy Box offer.
+- **Impact:** Cannot track pricing for this product.
+- **Fix needed:** Check listing health in Seller Central. May need manual price entry.
 
 ---
 

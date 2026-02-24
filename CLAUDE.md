@@ -188,7 +188,9 @@ Claude Code Workspace/
 │   │   └── server.py
 │   ├── notion/            # Notion API server (pages, blocks, databases, 28 tools)
 │   │   └── server.py
-│   └── slack/             # Slack multi-workspace server (messages, channels, files, scheduling, 16 tools)
+│   ├── slack/             # Slack multi-workspace server (messages, channels, files, scheduling, 16 tools)
+│   │   └── server.py
+│   └── asana/             # Asana API server (projects, tasks, sections, comments, search, 26 tools)
 │       └── server.py
 │
 ├── context/               # Persistent context files
@@ -236,7 +238,7 @@ Claude Code Workspace/
 |---------|---------|--------|
 | **Apify** | Actor runner — run scrapers, check status, get results (custom Python MCP, 7 tools) | ⚙️ Configured |
 | **Notion** | Full workspace management — pages, blocks, databases, comments, search (28 tools) | ⚙️ Configured |
-| **Asana** | Task management, project tracking | ⚙️ Configured |
+| **Asana** | Project/task management — tasks, projects, sections, subtasks, comments, search, dependencies (custom Python MCP, 26 tools) | ⚙️ Configured |
 | **Slack** | Multi-workspace messaging, channels, search, scheduled messages, file upload (custom Python MCP, 16 tools) | ⚙️ Configured |
 | **GitHub** | Repository access, code search, issues, PRs | ⚙️ Configured |
 | **Seller Board** | Sales, profit, inventory, PPC, daily dashboard (5 CSV reports) | ⚙️ Configured |
@@ -446,6 +448,56 @@ Custom Python MCP server replacing the official `@modelcontextprotocol/server-sl
 **Note:** `search_messages` requires a user token (`xoxp-`) with `search:read` scope. Bot tokens (`xoxb-`) will get a `missing_scope` error.
 
 **If API stops working** → Check bot tokens in .env. Verify app is still installed in each workspace at https://api.slack.com/apps.
+
+**Asana MCP Server** (`mcp-servers/asana/server.py`):
+
+Custom Python MCP server replacing the NPM `@roychri/mcp-server-asana` package. Full project/task management with 26 tools in 8 groups. Auth: Personal Access Token (Bearer). Rate limiting: 0.2s between requests (~5/sec).
+
+**Tools (24):**
+
+| Tool | Group | Asana API | Key Capability |
+|------|-------|-----------|----------------|
+| `get_me` | User | `GET /users/me` | Current user info + workspace list |
+| `list_workspaces` | User | `GET /workspaces` | All workspaces/organizations |
+| `list_users` | User | `GET /workspaces/{gid}/users` | Users in a workspace |
+| `list_teams` | Teams | `GET /organizations/{gid}/teams` | Teams in an organization |
+| `list_projects` | Projects | `GET /workspaces/{gid}/projects` | Projects, filterable by team |
+| `get_project` | Projects | `GET /projects/{gid}` | Full project details + members + custom fields |
+| `create_project` | Projects | `POST /projects` | Create project with name, dates, team, color |
+| `list_sections` | Sections | `GET /projects/{gid}/sections` | Sections within a project |
+| `create_section` | Sections | `POST /projects/{gid}/sections` | Create section with ordering |
+| `move_task_to_section` | Sections | `POST /sections/{gid}/addTask` | Move task between sections |
+| `list_tasks` | Tasks | `GET /projects/{gid}/tasks` | Tasks by project, section, or assignee |
+| `get_task` | Tasks | `GET /tasks/{gid}` | Full task details + notes + custom fields |
+| `create_task` | Tasks | `POST /tasks` | Create task with assignee, dates, section |
+| `update_task` | Tasks | `PUT /tasks/{gid}` | Update name, notes, completed, dates, assignee |
+| `delete_task` | Tasks | `DELETE /tasks/{gid}` | Permanently delete a task |
+| `list_subtasks` | Subtasks | `GET /tasks/{gid}/subtasks` | Child tasks under a parent |
+| `create_subtask` | Subtasks | `POST /tasks/{gid}/subtasks` | Create subtask under parent |
+| `get_task_stories` | Comments | `GET /tasks/{gid}/stories` | Comments + activity history |
+| `add_comment` | Comments | `POST /tasks/{gid}/stories` | Add comment to a task |
+| `list_tags` | Tags | `GET /workspaces/{gid}/tags` | All tags in workspace |
+| `add_tag_to_task` | Tags | `POST /tasks/{gid}/addTag` | Tag a task |
+| `remove_tag_from_task` | Tags | `POST /tasks/{gid}/removeTag` | Remove tag from task |
+| `search_tasks` | Search | `GET /workspaces/{gid}/tasks/search` | Full-text search with filters |
+| `add_dependency` | Dependencies | `POST /tasks/{gid}/addDependencies` | Set task dependency |
+| `get_dependencies` | Dependencies | `GET /tasks/{gid}/dependencies` | Tasks this task depends on |
+| `get_dependents` | Dependencies | `GET /tasks/{gid}/dependents` | Tasks blocked by this task |
+
+**Env variable:** `ASANA_PERSONAL_ACCESS_TOKEN` in `.env`
+
+**Key features:**
+- Auto-pagination (up to 1000 items across 10 pages)
+- Full CRUD for tasks, projects, sections, subtasks
+- Task search with text, assignee, project, date, completion filters
+- Dependency management (blockers + dependents)
+- Comment/activity history on tasks
+- Section-based task organization
+
+**Skills using Asana:**
+- **Daily Prep** → Task lists, upcoming deadlines, assigned work
+
+**If API stops working** → Check ASANA_PERSONAL_ACCESS_TOKEN in .env. Get token from https://app.asana.com/0/my-apps → Create Personal Access Token.
 
 ---
 

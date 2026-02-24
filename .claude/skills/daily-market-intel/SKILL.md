@@ -76,29 +76,46 @@ market-intel/
 
 ## 🏗️ Architecture Overview
 
-**Four data sources, each with a clear job:**
-1. **Amazon SP-API** — First-party BSR, pricing, and inventory for our hero products (fast, free, reliable)
-2. **DataDive** — Keyword rankings (Rank Radar) + competitor intelligence (sales, revenue, rating, reviews)
-3. **Apify** — Lightweight keyword scan ONLY (badges + new competitor detection)
-4. **Seller Board** — Account financials (revenue, profit, margins)
+**Five data sources, each with a clear job:**
+1. **Amazon SP-API (Catalog/Pricing/Inventory)** — First-party BSR, pricing, and inventory for our hero products (fast, free, reliable)
+2. **Amazon SP-API (Orders)** — Real-time yesterday's revenue and units (supplements Seller Board lag)
+3. **DataDive** — Keyword rankings (Rank Radar) + competitor intelligence (sales, revenue, rating, reviews)
+4. **Apify** — Lightweight keyword scan ONLY (badges + new competitor detection)
+5. **Seller Board** — 7-day aggregate financials ONLY (profit, margins, ad spend, TACoS)
+
+### ⚠️ Data Freshness Rule
+
+**This report must reflect the state of business TODAY.** If data is not current to the day, apply these rules:
+
+| Data Age | Rule |
+|----------|------|
+| **Same day / yesterday** | Include freely — this is real-time data |
+| **2+ days old (day-specific)** | DO NOT INCLUDE — stale day-specific data is misleading |
+| **7-day aggregates** | OK even if latest day is 2 days old — rolling averages smooth out the lag |
+
+**Seller Board lags ~2 days.** This means:
+- **DO NOT** show "Latest Day" revenue/units/profit from Seller Board (it's 2 days old, not today)
+- **DO** show 7-day aggregates: profit, margin, ad spend, TACoS (useful even with lag)
+- **DO** use SP-API `get_orders` for yesterday's actual revenue and units (real-time)
 
 | Data Need | Primary Source | Fallback |
 |-----------|---------------|----------|
 | Hero BSR + subcategory rank | **Amazon SP-API** `get_catalog_item` | DataDive competitors |
 | Hero price | **Amazon SP-API** `get_competitive_pricing` | DataDive competitors |
 | Hero stock levels / OOS alerts | **Amazon SP-API** `get_fba_inventory` | Seller Board inventory |
+| **Yesterday's revenue + units** | **Amazon SP-API** `get_orders(date=yesterday)` | Seller Board (note lag) |
 | Hero rating + reviews | **DataDive Competitors** (hero appears in niche data) | Previous snapshot |
 | Competitor BSR, price, rating, reviews | **DataDive Competitors** | Previous snapshot |
 | Our keyword rankings | **DataDive Rank Radar** | — |
 | Our sponsored/PPC rank | **DataDive Rank Radar** | — |
 | Keyword search volume | **DataDive Rank Radar + MKL** | — |
 | Keyword rank movements | **DataDive Rank Radar** | — |
-| Competitor sales estimates | **DataDive Competitors** | BSR-to-sales table |
+| Competitor sales estimates | **DataDive Competitors** | — |
 | Competitor revenue | **DataDive Competitors** | Manual (price × units) |
 | Competitor P1 keywords | **DataDive Competitors** | — |
 | New competitor detection | **Apify light keyword scan** (9 keywords) | DataDive niche changes |
 | Badge tracking | **Apify light keyword scan** | — |
-| Account financials | **Seller Board dashboard** | — |
+| **7-day profit, margin, ad spend, TACoS** | **Seller Board dashboard** (7-day avg only) | — |
 
 ### Performance Targets
 
@@ -107,7 +124,7 @@ market-intel/
 | Total tokens | **~140K** |
 | Wall-clock time | **~10 min** |
 | Apify cost/day | **~$0.81** (keyword scan only) |
-| SP-API calls | **~27** (13 catalog + 13 pricing + 1 inventory) |
+| SP-API calls | **~28** (13 catalog + 13 pricing + 1 inventory + 1 orders) |
 | Keywords searched (Apify) | **9** |
 
 ---
@@ -369,33 +386,72 @@ Flag an ASIN as a new competitor if:
 
 ---
 
-## 💰 Step 5: Seller Board Dashboard — Account Financials
+## 💰 Step 5: Seller Board Dashboard — 7-Day Aggregates ONLY
 
-**PURPOSE:** Account-level revenue, profit, margins. Provides business context for the market position data.
+**PURPOSE:** 7-day aggregate financials: profit, margins, ad spend, TACoS. These rolling averages are useful even with the ~2 day lag.
+
+**⚠️ CRITICAL: Do NOT use Seller Board for day-specific data.** It lags ~2 days. Yesterday's revenue/units come from SP-API Orders (Step 6).
 
 **Tool:** `get_daily_dashboard_report` (MCP)
 **Time:** ~10 seconds
 
-### Extract from Dashboard
+### What to Extract (7-day aggregates ONLY)
 
-| Metric | Column |
-|--------|--------|
-| Revenue | SalesOrganic + SalesPPC |
-| Units | UnitsOrganic + UnitsPPC |
-| Net Profit | NetProfit |
-| Margin | Margin |
-| Ad Spend | SponsoredProducts + SponsoredDisplay + SponsoredBrands + SponsoredBrandsVideo |
-| TACoS | Ad Spend / Revenue × 100 |
+| Metric | Column | How to Calculate |
+|--------|--------|------------------|
+| 7-Day Net Profit | NetProfit | Sum last 7 available days |
+| 7-Day Avg Margin | Margin | Average last 7 available days |
+| 7-Day Ad Spend | SponsoredProducts + SponsoredDisplay + SponsoredBrands + SponsoredBrandsVideo | Sum last 7 available days |
+| 7-Day TACoS | Ad Spend / Revenue × 100 | Calculate from 7-day sums |
+| 7-Day Revenue (SB) | SalesOrganic + SalesPPC | Sum last 7 available days (for TACoS denominator) |
 
-Calculate: latest day, 7-day average, trend (first half vs second half of week).
+### What NOT to Extract
 
-**Note:** Seller Board data lags ~2 days. Always note the most recent date available.
+- ❌ "Latest day" revenue (it's 2 days old — use SP-API Orders instead)
+- ❌ "Latest day" units (same — use SP-API Orders)
+- ❌ "Latest day" profit (2 days old, misleading as "today")
+- ❌ Any single-day metric presented as current
+
+**Always note the date range of the 7-day window** (e.g., "Feb 15-21" not "last 7 days").
 
 ### Fallback
 
 If Seller Board fetch fails:
-- Note: "Seller Board unavailable"
+- Note: "Seller Board unavailable — 7-day aggregates not available"
 - Continue with market data — do NOT block the report
+
+---
+
+## 📦 Step 6: SP-API Orders — Yesterday's Revenue & Units (Real-Time)
+
+**PURPOSE:** Real-time revenue and unit count for yesterday. Supplements Seller Board's 2-day lag so the report reflects actual current business state.
+
+**Tool:** `get_orders(date=yesterday)` (MCP)
+**Time:** ~10-15 seconds (paginates automatically)
+
+### How to Fetch
+
+1. Call `get_orders(date="YYYY-MM-DD")` where the date is **yesterday**
+2. The tool auto-paginates (up to 500 orders) and returns a summary with:
+   - Total orders (shipped, pending, canceled)
+   - Total units
+   - Shipped revenue (note: includes sales tax)
+
+### What to Extract
+
+| Metric | Source |
+|--------|--------|
+| Yesterday's Orders | Total orders count |
+| Yesterday's Units | Total units (shipped + pending) |
+| Yesterday's Revenue (incl. tax) | Shipped revenue total |
+
+**⚠️ Revenue includes marketplace sales tax.** Note this in the report. For pre-tax comparison with Seller Board, discount ~8-10% as approximation, or note the caveat.
+
+### Limitations
+
+- **Revenue includes tax** — Seller Board strips tax out, SP-API doesn't. Note the difference.
+- **No profit data** — SP-API orders don't include COGS, fees, or ad spend. Profit comes from Seller Board 7-day only.
+- **Pending orders** — may not show price until shipped. Count units but note some revenue may be missing.
 
 ---
 
@@ -410,16 +466,28 @@ If Seller Board fetch fails:
 
 ---
 
-## Account Snapshot (from Seller Board)
+## Yesterday's Business ([yesterday's date]) — from SP-API Orders
 
-| Metric | Latest ([date]) | 7-Day Avg | Trend |
-|--------|----------|-----------|-------|
-| Total Revenue | $X | $X/day | +X% |
-| Total Units | X | X/day | +X% |
+| Metric | Value |
+|--------|-------|
+| Orders | X |
+| Units | X |
+| Revenue (incl. tax) | $X |
+
+*Real-time from Amazon SP-API. Revenue includes marketplace sales tax.*
+
+---
+
+## 7-Day Financial Snapshot ([date range]) — from Seller Board
+
+| Metric | 7-Day Total | Daily Avg | Trend |
+|--------|-------------|-----------|-------|
 | Net Profit | $X | $X/day | +X% |
-| Profit Margin | X% | X% | +X pp |
+| Profit Margin | — | X% | +X pp |
 | Ad Spend | $X | $X/day | +X% |
-| TACoS | X% | X% | +X pp |
+| TACoS | — | X% | +X pp |
+
+*Seller Board data lags ~2 days. Only 7-day aggregates shown (day-specific data excluded as stale).*
 
 ---
 
@@ -505,12 +573,13 @@ If Seller Board fetch fails:
 
 - **Report Date:** YYYY-MM-DD
 - **Baseline Date:** 2026-02-11 (X days)
-- **SP-API Calls:** X catalog + X pricing + 1 inventory = X total
+- **SP-API Calls:** X catalog + X pricing + 1 inventory + 1 orders = X total
+- **SP-API Orders:** Yesterday (YYYY-MM-DD) — real-time revenue/units
 - **DataDive Niches:** X niches, X competitor records
 - **Rank Radars:** X radars, X total keywords tracked
 - **Light Keyword Scan:** 9 keywords (badges + new competitors only)
-- **Seller Board Data:** [date range] (lags ~2 days)
-- **Sources:** Amazon SP-API (BSR, price, inventory), DataDive API (Rank Radar, Competitors, rating/reviews), Apify (keyword scan), Seller Board
+- **Seller Board Data:** 7-day aggregate only ([date range]) — lags ~2 days, day-specific excluded
+- **Sources:** Amazon SP-API (BSR, price, inventory, orders), DataDive API (Rank Radar, Competitors, rating/reviews), Apify (keyword scan), Seller Board (7-day aggregates)
 ```
 
 ---
@@ -540,8 +609,9 @@ Use these consistently:
 | SP-API rate limit (429) | Wait 2s and retry once, then skip ASIN, note in report |
 | SP-API timeout on one ASIN | Skip that ASIN, continue with next, note in report |
 | Apify keyword scan timeout | STOP, use data collected, note in report |
-| DataDive API fails | Fall back to BSR-to-sales estimates, note in report |
-| Seller Board fails | Skip Account Snapshot, note in report |
+| SP-API Orders fails | Skip "Yesterday's Business" section, note in report |
+| DataDive API fails | Note in report, use previous snapshot data |
+| Seller Board fails | Skip "7-Day Financial Snapshot" section, note in report |
 | No baseline | Create baseline first |
 | Missing yesterday | Compare to baseline only |
 | Hero rating/reviews not in DataDive | Carry forward from previous snapshot or baseline |
@@ -572,10 +642,11 @@ All steps should run in **parallel where possible** to minimize wall-clock time.
 - [ ] **SP-API:** `get_catalog_item` × 13 hero ASINs (BSR + subcategory rank)
 - [ ] **SP-API:** `get_competitive_pricing` × 13 hero ASINs (current price)
 - [ ] **SP-API:** `get_fba_inventory` × 1 call (stock levels for OOS alerts)
+- [ ] **SP-API:** `get_orders(date=yesterday)` × 1 call (yesterday's revenue + units, real-time)
 - [ ] **Apify:** Light keyword scan (9 keywords, top 10 only)
 - [ ] **DataDive:** Fetch Rank Radar data for hero product radars
 - [ ] **DataDive:** Fetch competitor data for 8 niches (includes rating/reviews for all products)
-- [ ] **Seller Board:** Fetch daily dashboard report
+- [ ] **Seller Board:** Fetch daily dashboard report (for 7-day aggregates ONLY)
 
 **Phase 3 — Compile Report (sequential)**
 - [ ] Merge SP-API BSR/price data with DataDive sales estimates + rating/reviews
@@ -586,7 +657,8 @@ All steps should run in **parallel where possible** to minimize wall-clock time.
 - [ ] Extract badges from light keyword scan
 - [ ] Flag new competitors (unknown ASINs in top 5)
 - [ ] Generate alerts (OOS, BSR spikes, wins, watches)
-- [ ] Include Account Snapshot from Seller Board
+- [ ] Include "Yesterday's Business" from SP-API Orders (real-time)
+- [ ] Include "7-Day Financial Snapshot" from Seller Board (aggregates only, no day-specific)
 - [ ] Generate report in MANDATORY FORMAT
 - [ ] Save snapshot for tomorrow
 - [ ] Present summary to user
@@ -595,17 +667,20 @@ All steps should run in **parallel where possible** to minimize wall-clock time.
 
 ## 💡 Key Reminders
 
-1. **SP-API is PRIMARY for hero BSR + price** — first-party, real-time data from Amazon
-2. **DataDive is PRIMARY for keyword ranks** — do NOT use Apify keyword scan positions for rank tracking
-3. **DataDive Competitors provides rating + reviews** for all products (hero + competitors)
-4. **Apify keyword scan is ONLY for badges + new competitor detection** — keep it lightweight
-5. **Focus on OUR products first** — competitors are context
-6. **BSR is relative** — always note the category
-7. **Consistency matters** — same format every day
-8. **Baseline is sacred** — the reference point for progress
-9. **Lower BSR = Better** — we want numbers to go DOWN
-10. **Run phases in parallel** — launch all data fetches simultaneously to hit ~10 min target
-11. **If SP-API fails** — fall back to DataDive competitor BSR, don't block the report
+1. **DATA MUST BE CURRENT** — If it's not updated to the day, don't include it. This report = state of business TODAY.
+2. **SP-API Orders for yesterday's revenue/units** — real-time, no lag. This replaces Seller Board for day-specific data.
+3. **Seller Board = 7-day aggregates ONLY** — profit, margin, ad spend, TACoS. Never show Seller Board as "today's" data (it's 2 days old).
+4. **SP-API is PRIMARY for hero BSR + price** — first-party, real-time data from Amazon
+5. **DataDive is PRIMARY for keyword ranks** — do NOT use Apify keyword scan positions for rank tracking
+6. **DataDive Competitors provides rating + reviews** for all products (hero + competitors)
+7. **Apify keyword scan is ONLY for badges + new competitor detection** — keep it lightweight
+8. **Focus on OUR products first** — competitors are context
+9. **BSR is relative** — always note the category
+10. **Consistency matters** — same format every day
+11. **Baseline is sacred** — the reference point for progress
+12. **Lower BSR = Better** — we want numbers to go DOWN
+13. **Run phases in parallel** — launch all data fetches simultaneously to hit ~10 min target
+14. **If SP-API fails** — fall back to DataDive competitor BSR, don't block the report
 
 ---
 
