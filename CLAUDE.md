@@ -49,6 +49,31 @@ When you learn something new about the user or business during ANY conversation,
 **Do this automatically** — don't ask permission for small additions. Just append new info.
 **Do ask first** — before removing or significantly changing existing info.
 
+### 5. Skill Lessons System (continuous improvement)
+
+**Every skill has a `LESSONS.md` file** that tracks what worked, what failed, and what to avoid.
+
+**Before every skill run:**
+1. Read the skill's `LESSONS.md`
+2. Check Known Issues and Repeat Errors
+3. If a Repeat Error is encountered, **tell the user immediately** with occurrence count
+
+**After every skill run:**
+1. Log a Run Entry with: goals, result (success/partial/fail), what worked, what didn't, lessons learned
+2. Update Known Issues / Repeat Errors / Resolved Issues as appropriate
+3. End output with a brief **Lessons Update** note to the user
+
+**Rules:**
+- Never skip reading LESSONS.md — it's the first step of every skill
+- Never skip writing to LESSONS.md — it's the last step of every skill
+- If a Known Issue happens again, move it to Repeat Errors and increment the count
+- Repeat Errors must be surfaced to the user with: _"⚠️ Repeat issue (×N): [description]"_
+- Be honest — log failures and partial results, not just successes
+
+| File | Location | Purpose |
+|------|----------|---------|
+| `LESSONS.md` | `.claude/skills/{skill-name}/LESSONS.md` | Per-skill learning log |
+
 ---
 
 ## Organization & File Management Standards
@@ -136,7 +161,7 @@ Claude Code Workspace/
 ├── .gitignore             # Protects sensitive files from Git*
 │
 ├── .claude/
-│   └── skills/            # Project-specific skills
+│   └── skills/            # Project-specific skills (each has SKILL.md + LESSONS.md)
 │       ├── skill-creator/ # Create new skills
 │       ├── mcp-builder/   # Add/build MCP connections
 │       ├── daily-prep/    # Daily task analysis
@@ -148,12 +173,18 @@ Claude Code Workspace/
 │       ├── weekly-ppc-analysis/  # Weekly PPC analysis (campaign + search term + placement + targeting)
 │       ├── negative-keyword-generator/  # Proactive negative keyword generation from product knowledge
 │       ├── customer-review-analyzer/  # Amazon review analysis for our products + competitors
-│       └── niche-category-analysis/  # New niche/category deep-dive research & viability
+│       ├── niche-category-analysis/  # New niche/category deep-dive research & viability
+│       └── listing-optimizer/        # Listing audit & optimization (Ranking Juice + keywords + rank trends)
+│       # Each skill folder contains:
+│       #   SKILL.md    — Instructions (reads LESSONS.md first, writes to it last)
+│       #   LESSONS.md  — Run log, known issues, repeat errors, resolved issues
 │
 ├── mcp-servers/           # Custom MCP server implementations
 │   ├── sellerboard/       # Seller Board CSV report server
 │   │   └── server.py
-│   └── datadive/          # DataDive API server (keywords, ranks, competitors)
+│   ├── datadive/          # DataDive API server (keywords, ranks, competitors)
+│   │   └── server.py
+│   └── amazon-sp-api/     # Amazon SP-API (orders, catalog, inventory, pricing, reports)
 │       └── server.py
 │
 ├── context/               # Persistent context files
@@ -187,6 +218,7 @@ Claude Code Workspace/
 | "Generate negatives" / "Negative keywords" / "Negative keyword list" | → `.claude/skills/negative-keyword-generator/` |
 | "Review analysis" / "Customer reviews" / "What are customers saying" | → `.claude/skills/customer-review-analyzer/` |
 | "Niche analysis" / "Category research" / "Explore a niche" / "New niche" | → `.claude/skills/niche-category-analysis/` |
+| "Listing audit" / "Audit listing" / "Listing optimizer" / "Listing score" / "Portfolio scan" / "Listing health" | → `.claude/skills/listing-optimizer/` |
 
 **New skills** → Always save to `.claude/skills/[skill-name]/SKILL.md` (project-local, not global)
 
@@ -206,6 +238,7 @@ Claude Code Workspace/
 | **GitHub** | Repository access, code search, issues, PRs | ⚙️ Configured |
 | **Seller Board** | Sales, profit, inventory, PPC, daily dashboard (5 CSV reports) | ⚙️ Configured |
 | **DataDive** | Keyword rank tracking, competitor data, search volume, niche research (12 tools) | ⚙️ Configured |
+| **Amazon SP-API** | Orders, catalog, inventory, pricing, reports — direct Amazon data (13 tools) | ⚙️ Configured |
 
 **Seller Board MCP Server** (`mcp-servers/sellerboard/server.py`):
 
@@ -261,6 +294,33 @@ Custom Python MCP server exposing 12 tools for all DataDive API endpoints. Auth 
 - **Listing Creator** → `get_niche_keywords` for search volume data; `get_niche_ranking_juices` for optimization gaps
 
 **If API stops working** → check DATADIVE_API_KEY in .env. Rate limit: 1 request/second (built into MCP server).
+
+**Amazon SP-API MCP Server** (`mcp-servers/amazon-sp-api/server.py`):
+
+Custom Python MCP server for direct Amazon Selling Partner API access. Auth: LWA OAuth2 (auto-refreshing access token). Rate limiting: 0.5s between requests.
+
+| Tool | API | Key Data |
+|------|-----|----------|
+| `get_marketplace_participations` | Sellers | Registered marketplaces (US, CA, MX) |
+| `get_orders` | Orders | Recent orders: ID, status, date, total, fulfillment |
+| `get_order_items` | Orders | Line items for an order: ASIN, SKU, qty, price |
+| `get_catalog_item` | Catalog 2022 | ASIN details: title, brand, images, dimensions, sales rank |
+| `search_catalog` | Catalog 2022 | Search by keywords: matching ASINs with titles, brands |
+| `get_competitive_pricing` | Pricing | Landed price, listing price, Buy Box data |
+| `get_item_offers` | Pricing | All active offers for an ASIN with prices, seller info |
+| `get_fba_inventory` | FBA Inventory | SKU/ASIN stock: fulfillable, inbound, reserved quantities |
+| `create_report` | Reports | Request any Amazon report (orders, traffic, inventory, Brand Analytics) |
+| `get_report_status` | Reports | Check report progress (DONE/IN_PROGRESS/FATAL) |
+| `get_report_document` | Reports | Download completed report data (CSV/TSV) |
+| `get_my_listings` | Reports | Shortcut: request all-listings report |
+
+**Env variables:** `SP_API_CLIENT_ID`, `SP_API_CLIENT_SECRET`, `SP_API_REFRESH_TOKEN`, `SP_API_MARKETPLACE_US`, `SP_API_MARKETPLACE_CA`, `SP_API_MARKETPLACE_MX`
+
+**No AWS credentials required** — auth uses LWA token exchange only. Access token auto-refreshes (1hr expiry).
+
+**Registered roles:** Product Listing, Pricing, Brand Analytics, Amazon Fulfillment
+
+**If API stops working** → Check if app is still authorized in Seller Central → Apps & Services → Manage Your Apps. Refresh token is permanent unless app is de-authorized.
 
 ---
 

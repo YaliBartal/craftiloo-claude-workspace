@@ -18,6 +18,19 @@ output_location: outputs/research/negative-keywords/
 
 ---
 
+## ⚠️ BEFORE YOU START — Read Lessons
+
+**MANDATORY FIRST STEP:** Read `LESSONS.md` in this skill's folder before doing anything else.
+
+1. Read `.claude/skills/negative-keyword-generator/LESSONS.md`
+2. Check **Known Issues** — plan around these
+3. Check **Repeat Errors** — if you encounter one during this run, tell the user immediately: _"⚠️ Repeat issue (×N): [description]"_
+4. Apply all past lessons to this run
+
+**Do NOT skip this step.**
+
+---
+
 ## What This Does
 
 Generates a comprehensive, proactive negative keyword list for a specific portfolio's broad and auto campaigns. Instead of waiting for wasted spend (reactive), this skill uses **product knowledge** to predict and prevent irrelevant traffic before it happens.
@@ -694,3 +707,52 @@ Before delivering the review list, verify:
 | Restructured campaigns | Regenerate negatives | Monitor with weekly analysis |
 | Weekly PPC flags category-level waste | (Enhancement) | Run this skill to add systematic category negatives |
 | High-spend zero-order discovered | Add via search term report option | Continue weekly monitoring |
+
+---
+
+## ⚠️ AFTER EVERY RUN — Update Lessons (MANDATORY)
+
+**Before presenting final results, update `.claude/skills/negative-keyword-generator/LESSONS.md`.**
+
+### 1. Write a Run Log Entry
+
+Add a new entry at the **TOP** of the Run Log section:
+
+```
+### Run: YYYY-MM-DD
+**Goals:**
+- [ ] Goal 1
+- [ ] Goal 2
+
+**Result:** ✅ Success / ⚠️ Partial / ❌ Failed
+
+**What happened:**
+- (What went according to plan)
+
+**What didn't work:**
+- (Any issues, with specifics)
+
+**Is this a repeat error?** Yes/No — if yes, which one?
+
+**Lesson learned:**
+- (What to do differently next time)
+
+**Tokens/cost:** ~XX K tokens
+```
+
+### 2. Update Issue Tracking
+
+| Situation | Action |
+|-----------|--------|
+| New problem | Add to **Known Issues** |
+| Known Issue happened again | Move to **Repeat Errors**, increment count, **tell the user** |
+| Fixed a Known Issue | Move to **Resolved Issues** |
+
+### 3. Tell the User
+
+End your output with a **Lessons Update** note:
+- What you logged
+- Any repeat errors encountered
+- Suggestions for skill improvement
+
+**Do NOT skip this. The system only improves if every run is logged honestly.**

@@ -17,6 +17,19 @@ output_location: outputs/data/automation-dashboard-[date].html
 
 ---
 
+## ⚠️ BEFORE YOU START — Read Lessons
+
+**MANDATORY FIRST STEP:** Read `LESSONS.md` in this skill's folder before doing anything else.
+
+1. Read `.claude/skills/automation-discovery-interview/LESSONS.md`
+2. Check **Known Issues** — plan around these
+3. Check **Repeat Errors** — if you encounter one during this run, tell the user immediately: _"⚠️ Repeat issue (×N): [description]"_
+4. Apply all past lessons to this run
+
+**Do NOT skip this step.**
+
+---
+
 ## What This Does
 
 Conducts a 30-40 minute structured interview to:
@@ -537,3 +550,52 @@ Generate a complete HTML file using this template. Replace `DASHBOARD_DATA_HERE`
 
 - **Format:** Interactive HTML dashboard
 - **Location:** `outputs/data/automation-dashboard-YYYY-MM-DD.html`
+
+---
+
+## ⚠️ AFTER EVERY RUN — Update Lessons (MANDATORY)
+
+**Before presenting final results, update `.claude/skills/automation-discovery-interview/LESSONS.md`.**
+
+### 1. Write a Run Log Entry
+
+Add a new entry at the **TOP** of the Run Log section:
+
+```
+### Run: YYYY-MM-DD
+**Goals:**
+- [ ] Goal 1
+- [ ] Goal 2
+
+**Result:** ✅ Success / ⚠️ Partial / ❌ Failed
+
+**What happened:**
+- (What went according to plan)
+
+**What didn't work:**
+- (Any issues, with specifics)
+
+**Is this a repeat error?** Yes/No — if yes, which one?
+
+**Lesson learned:**
+- (What to do differently next time)
+
+**Tokens/cost:** ~XX K tokens
+```
+
+### 2. Update Issue Tracking
+
+| Situation | Action |
+|-----------|--------|
+| New problem | Add to **Known Issues** |
+| Known Issue happened again | Move to **Repeat Errors**, increment count, **tell the user** |
+| Fixed a Known Issue | Move to **Resolved Issues** |
+
+### 3. Tell the User
+
+End your output with a **Lessons Update** note:
+- What you logged
+- Any repeat errors encountered
+- Suggestions for skill improvement
+
+**Do NOT skip this. The system only improves if every run is logged honestly.**

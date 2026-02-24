@@ -1,0 +1,436 @@
+{
+  "data": {
+    "pageSize": 50,
+    "currentPage": 1,
+    "hasNext": false,
+    "hasPrev": false,
+    "lastPage": 1,
+    "total": 15,
+    "data": [
+      {
+        "id": "07f05d65-4059-4ecc-8ab1-830bbb6dd42d",
+        "status": "normal",
+        "asin": {
+          "id": "e67a46de-5706-469d-b643-9b8b83415653",
+          "krtId": "07f05d65-4059-4ecc-8ab1-830bbb6dd42d",
+          "asin": "B0B1927HCG",
+          "parent_asin": "B0B1927HCG",
+          "title": "CRAFTILOO Cross Stitch Kits for Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits for Beginners. Embroidery Kit for Kids. Crossstitch Kit for Beginners. Girls Cross Stitch kit",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/61JNkSnyzYL.jpg",
+          "variation_attributes": null,
+          "created_at": "2025-07-21T09:35:56.074Z",
+          "updated_at": "2026-02-23T09:38:23.456Z",
+          "deleted_at": null
+        },
+        "title": "CRAFTILOO Cross Stitch Kits for Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits for Beginners. Embroidery Kit for Kids. Crossstitch Kit for Beginners. Girls Cross Stitch kit",
+        "marketplace": "com",
+        "keywordCount": 38,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61F8g30eqyL.jpg",
+        "top10KW": 36,
+        "top10SV": 26992,
+        "top50KW": 38,
+        "top50SV": 29019
+      },
+      {
+        "id": "09d3cb4c-1b3f-4cd3-9a19-36af276d0278",
+        "status": "normal",
+        "asin": {
+          "id": "d16029a1-3d9a-451e-bb8e-7409fe9f799b",
+          "krtId": "09d3cb4c-1b3f-4cd3-9a19-36af276d0278",
+          "asin": "B0FQC7YFX6",
+          "parent_asin": null,
+          "title": "Princess Lacing Card Kit for Kids Arts & Crafts, 8 Easy Lacing Projects with Gem Stickers, Paper Art Craft Cards for Toddlers, Fine Motor Preschool Skills, Mess-Free Travel Activity",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/81+IMwYjP1L.jpg",
+          "variation_attributes": null,
+          "created_at": "2025-12-13T09:13:32.715Z",
+          "updated_at": "2026-02-22T09:10:24.060Z",
+          "deleted_at": null
+        },
+        "title": "Beginner Princess Lacing Card Kit for Kids Arts & Crafts, 8 Easy Lacing Projects with Gem Stickers, Paper Art Craft Cards for Toddlers, Fine Motor Preschool Skills, Mess-Free Travel Activity",
+        "marketplace": "com",
+        "keywordCount": 52,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81C28N45rqL.jpg",
+        "top10KW": 7,
+        "top10SV": 3431,
+        "top50KW": 26,
+        "top50SV": 22056
+      },
+      {
+        "id": "33be5797-5be3-480a-93b3-07677d5a124f",
+        "status": "normal",
+        "asin": {
+          "id": "6e292656-00b3-48f4-98d0-9889b2718e3f",
+          "krtId": "33be5797-5be3-480a-93b3-07677d5a124f",
+          "asin": "B0FHMRQWRX",
+          "parent_asin": "B0FL2YN5Q8",
+          "title": "CRAFTILOO Latch Hook Kit for Kids Rug DIY Pillow Craft with Hook, Precut Yarn, Easy to Follow Pattern Cute Designs with Wise Owl Ages 6+",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/81jRC9Zj0qL.jpg",
+          "variation_attributes": [
+            {
+              "value": "Owl Pillow",
+              "dimension": "Style"
+            }
+          ],
+          "created_at": "2025-08-11T10:02:51.816Z",
+          "updated_at": "2026-02-22T10:06:30.765Z",
+          "deleted_at": null
+        },
+        "title": "CRAFTILOO Latch Hook Kit for Kids Rug DIY Pillow Craft with Hook, Precut Yarn, Easyt o Follow Pattern Cute Designs with Wise Owl Ages 8+",
+        "marketplace": "com",
+        "keywordCount": 50,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81jRC9Zj0qL.jpg",
+        "top10KW": 10,
+        "top10SV": 3022,
+        "top50KW": 33,
+        "top50SV": 49369
+      },
+      {
+        "id": "359d109b-e1e7-43ed-b8b3-4fac3c283bf0",
+        "status": "normal",
+        "asin": {
+          "id": "d7799f79-5116-4cdf-8a6f-98ea51d82fa2",
+          "krtId": "359d109b-e1e7-43ed-b8b3-4fac3c283bf0",
+          "asin": "B09THLVFZK",
+          "parent_asin": "B0CP2YWFR6",
+          "title": "24,000 Mini Fuse Beads Kit for Adults - 48 Colors Tiny 2.6mm Beads, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty, Iron Craft - Bulk Storage",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/91cHj9yuC6L.jpg",
+          "variation_attributes": [
+            {
+              "value": "Mini beads in 48 colors",
+              "dimension": "Style"
+            }
+          ],
+          "created_at": "2024-02-27T16:10:39.757Z",
+          "updated_at": "2026-02-21T16:13:41.413Z",
+          "deleted_at": null
+        },
+        "title": "24,000 Fuse Beads Kit - 48 Colors, 5 Pegboards, 2 Tweezers - Compatible With Hama, Melty, Iron Craft Beads - Bulk Storage",
+        "marketplace": "com",
+        "keywordCount": 18,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/91gsH6EZ+kL.jpg",
+        "top10KW": 12,
+        "top10SV": 163423,
+        "top50KW": 16,
+        "top50SV": 178651
+      },
+      {
+        "id": "3ef2dcb4-0d08-45a1-8ecf-be5795e30773",
+        "status": "normal",
+        "asin": {
+          "id": "528e68ae-ef35-418a-81c9-f022a6b21160",
+          "krtId": "3ef2dcb4-0d08-45a1-8ecf-be5795e30773",
+          "asin": "B09WQSBZY7",
+          "parent_asin": "B0D95GDGL4",
+          "title": "Fairy Sewing Kits for Little Girls 5 Easy Projects for Childrens Kid Crafts Make Your Own Felt Pillow Plush Craft Kit My First Sewing Kit Learn to Sew",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/81m5SKmFqrL.jpg",
+          "variation_attributes": [
+            {
+              "value": "Fairy Kit",
+              "dimension": "Color"
+            }
+          ],
+          "created_at": "2025-07-21T09:58:48.371Z",
+          "updated_at": "2026-02-21T09:58:35.349Z",
+          "deleted_at": null
+        },
+        "title": "CRAFTILOO Fairy Sewing Kits for Little Girls 5 Easy Projects for Childrens Kid Crafts Make Your Own Felt Pillow Plush Craft Kit My First Sewing Kit Learn to Sew",
+        "marketplace": "com",
+        "keywordCount": 87,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/9128a1T9s5L.jpg",
+        "top10KW": 21,
+        "top10SV": 47111,
+        "top50KW": 58,
+        "top50SV": 79745
+      },
+      {
+        "id": "42c9ccd9-07ea-4a27-a7f3-83571ddac2dd",
+        "status": "normal",
+        "asin": {
+          "id": "352854ec-5784-4cb2-b56a-ac759f397183",
+          "krtId": "42c9ccd9-07ea-4a27-a7f3-83571ddac2dd",
+          "asin": "B08FYH13CL",
+          "parent_asin": "B0B3PW6621",
+          "title": "CRAFTILOO DIY 2 Rug Pencil Cases Latch Hook Kits for Kids Sewing Set for Girls Beginners Latchkits Ages 8-12",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/A1s-A2jH7vL.jpg",
+          "variation_attributes": [
+            {
+              "value": "Latch Pencil Cases Heart",
+              "dimension": "Color"
+            }
+          ],
+          "created_at": "2025-07-21T10:39:08.714Z",
+          "updated_at": "2026-02-21T10:36:51.900Z",
+          "deleted_at": null
+        },
+        "title": "CRAFTILOO DIY 2 Rug Pencil Cases Latch Hook Kits for Kids Sewing Set for Girls Beginners Latchkits Ages 8-12",
+        "marketplace": "com",
+        "keywordCount": 53,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/A1s-A2jH7vL.jpg",
+        "top10KW": 14,
+        "top10SV": 15003,
+        "top50KW": 28,
+        "top50SV": 64196
+      },
+      {
+        "id": "5fd78118-4b35-424c-94a2-6827d56560c3",
+        "status": "normal",
+        "asin": {
+          "id": "2870da0e-8b9b-44fa-85ea-fa99624f1fa6",
+          "krtId": "5fd78118-4b35-424c-94a2-6827d56560c3",
+          "asin": "B096MYBLS1",
+          "parent_asin": "B0C6Z2F8S9",
+          "title": "12 Pre-Cut Mini Treats Dessert Fun Kids Sewing Kit for Kids Ages 8-12 Children Beginners Sewing kit Kid Crafts Make Your Own Felt Pillow Plush Craft Kit Girls and Boys Art Craft Kits Learn to Sew Kit",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/A1SAXvKHUSL.jpg",
+          "variation_attributes": [
+            {
+              "value": "Desserts",
+              "dimension": "Color"
+            }
+          ],
+          "created_at": "2025-07-21T10:46:01.572Z",
+          "updated_at": "2026-02-23T10:48:40.701Z",
+          "deleted_at": null
+        },
+        "title": "12 Pre-Cut Mini Treats Dessert Fun Kids Sewing Kit for Kids Ages 8-12 Children Beginners Sewing kit kid crafts Make Your Own Felt Pillow Plush Craft Kit Girls and Boys Art Craft Kits Learn to Sew Kit",
+        "marketplace": "com",
+        "keywordCount": 50,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/A1SAXvKHUSL.jpg",
+        "top10KW": 1,
+        "top10SV": 250,
+        "top50KW": 27,
+        "top50SV": 49856
+      },
+      {
+        "id": "6c289d3e-11c3-409b-932d-22708523b904",
+        "status": "normal",
+        "asin": {
+          "id": "9982a006-b297-4625-9d65-0c00d6a66b4f",
+          "krtId": "6c289d3e-11c3-409b-932d-22708523b904",
+          "asin": "B092SW839H",
+          "parent_asin": "B092SSYYXT",
+          "title": "CRAFTILOO 3Pcs of Embroidery Punch Needle kit for Kids Mini Pillows Googly Heart Owl Rainbow Needlepoint Craft Embroidery Pen Needle Punch Kit Art Punch Needle Yarn",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/A1SmtKdOqqS.jpg",
+          "variation_attributes": [
+            {
+              "value": "Pink",
+              "dimension": "Color"
+            },
+            {
+              "value": "10cm",
+              "dimension": "Size"
+            }
+          ],
+          "created_at": "2025-07-21T10:44:32.672Z",
+          "updated_at": "2026-02-23T10:46:43.211Z",
+          "deleted_at": null
+        },
+        "title": "CRAFTILOO 3Pcs of Embroidery Punch Needle kit for Kids Mini Pillows Googly Heart Owl Rainbow Needlepoint Craft Embroidery Pen Needle Punch Kit Art Punch Needle Yarn",
+        "marketplace": "com",
+        "keywordCount": 25,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/A1SmtKdOqqS.jpg",
+        "top10KW": 0,
+        "top10SV": 0,
+        "top50KW": 2,
+        "top50SV": 2401
+      },
+      {
+        "id": "7fa90b06-ffea-4329-9c1b-78467a45de33",
+        "status": "normal",
+        "asin": {
+          "id": "56cbbaa1-bad0-498a-a1d6-0477147fe802",
+          "krtId": "7fa90b06-ffea-4329-9c1b-78467a45de33",
+          "asin": "B0F8DG32H5",
+          "parent_asin": "B0GGJ4MFZJ",
+          "title": "CRAFTILOO Knitting Kit for Kids – Beginner Knitting Kit to Make a Hat & Cat – Quick Knit Loom Kit with Yarn, Tools & Instructions",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/81J8ctF0iiL.jpg",
+          "variation_attributes": [
+            {
+              "value": "Cat & Hat",
+              "dimension": "Style"
+            }
+          ],
+          "created_at": "2025-10-20T05:45:20.334Z",
+          "updated_at": "2026-02-21T05:43:59.950Z",
+          "deleted_at": null
+        },
+        "title": "CRAFTILOO Knitting Kit for Kids – Beginner Knitting Kit to Make a Hat & Cat – Quick Knit Loom Kit with Yarn, Tools & Instructions – Knitting for Beginners Kit for Girls & Boys Ages 8+",
+        "marketplace": "com",
+        "keywordCount": 81,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81J8ctF0iiL.jpg",
+        "top10KW": 14,
+        "top10SV": 12257,
+        "top50KW": 55,
+        "top50SV": 45429
+      },
+      {
+        "id": "8858d8d2-b80b-4e56-a9f0-0e95a9d668a6",
+        "status": "normal",
+        "asin": {
+          "id": "41c6d8c4-2587-4f73-882b-d11f18c9587e",
+          "krtId": "8858d8d2-b80b-4e56-a9f0-0e95a9d668a6",
+          "asin": "B0DC69M3YD",
+          "parent_asin": "B0D8PNSGGM",
+          "title": "CRAFTILOO 4 Pack Embroidery Kit for Beginners Stamped Cross Stitch Kits for Beginners Needlepoint Kits for Adults Sunflower Cross Stitch Embroidery Kits Needlework Kit DIY Crafts for Woman",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/91iZUJgX6mL.jpg",
+          "variation_attributes": [
+            {
+              "value": "4 Watercolor Flowers",
+              "dimension": "Color"
+            }
+          ],
+          "created_at": "2025-07-21T08:55:51.935Z",
+          "updated_at": "2026-02-23T08:58:29.802Z",
+          "deleted_at": null
+        },
+        "title": "CRAFTILOO 4 Pack Embroidery Kit for Beginners Stamped Cross Stitch Kits for Beginners Needlepoint Kits for Adults Sunflower Cross Stitch Embroidery Kits Needlework Kit DIY Crafts for Woman",
+        "marketplace": "com",
+        "keywordCount": 67,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/91JWxlFbRRL.jpg",
+        "top10KW": 0,
+        "top10SV": 0,
+        "top50KW": 38,
+        "top50SV": 234577
+      },
+      {
+        "id": "96187134-02f9-4648-9d46-af8d35655414",
+        "status": "normal",
+        "asin": {
+          "id": "6768faa7-0f19-47bf-afff-49dca44932f9",
+          "krtId": "96187134-02f9-4648-9d46-af8d35655414",
+          "asin": "B0F8QZZQQM",
+          "parent_asin": "B0FWKYDVCY",
+          "title": "CRAFTILOO 2 in1 Cross Stitch & Embroidery Kit for Kids Ages 6+ Make 8 Projects Backpack Charms, Keyring, Doll, Wall Art, Unicorn Pillow & Card Holder Beginner Needlepoint & Creative Gift Set",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/81ex7auk1wL.jpg",
+          "variation_attributes": [
+            {
+              "value": "8 Designs",
+              "dimension": "Style"
+            }
+          ],
+          "created_at": "2025-08-12T08:57:54.204Z",
+          "updated_at": "2026-02-21T08:54:59.895Z",
+          "deleted_at": null
+        },
+        "title": "CRAFTILOO 2 in1 Cross Stitch & Embroidery Kit for Kids Ages 6+ Make 8 Projects Backpack Charms, Keyring, Doll, Wall Art, Unicorn Pillow & Card Holder Beginner Needlepoint & Creative Gift Set",
+        "marketplace": "com",
+        "keywordCount": 51,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81ex7auk1wL.jpg",
+        "top10KW": 7,
+        "top10SV": 6894,
+        "top50KW": 20,
+        "top50SV": 50829
+      },
+      {
+        "id": "a3e561c4-5ff0-4c3f-91e7-3cadc03507f0",
+        "status": "normal",
+        "asin": {
+          "id": "e5a11412-a65f-45d3-8d5a-243f7ddcbeca",
+          "krtId": "a3e561c4-5ff0-4c3f-91e7-3cadc03507f0",
+          "asin": "B09X55KL2C",
+          "parent_asin": "B09QPR22LP",
+          "title": "10 Pre-Stamped Embroidery Patterns for Beginners Embroidery Kit for Kids Girls Needlepoint Kits for Beginners Cross Stitch Craft Sewing Perfect for Ages 7-13",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/912A7sOd5BL.jpg",
+          "variation_attributes": [
+            {
+              "value": "10 Embroidery kit",
+              "dimension": "Color"
+            }
+          ],
+          "created_at": "2025-07-21T10:06:42.670Z",
+          "updated_at": "2026-02-23T10:04:18.677Z",
+          "deleted_at": null
+        },
+        "title": "CRAFTILOO 10 Pre-Stamped Embroidery Patterns for Beginners Embroidery Kit for Kids Girls Needlepoint Kits for Beginners Cross Stitch Craft Sewing Perfect for Ages 7-13",
+        "marketplace": "com",
+        "keywordCount": 55,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/912A7sOd5BL.jpg",
+        "top10KW": 20,
+        "top10SV": 11702,
+        "top50KW": 51,
+        "top50SV": 69256
+      },
+      {
+        "id": "c5fbff8c-1fac-4b1e-914a-4d5eb8890022",
+        "status": "normal",
+        "asin": {
+          "id": "8427bb65-5783-4eac-98b3-0bfe33efba4e",
+          "krtId": "c5fbff8c-1fac-4b1e-914a-4d5eb8890022",
+          "asin": "B0DKD2S3JT",
+          "parent_asin": "B0GGJ4MFZJ",
+          "title": "CRAFTILOO Loom Knitting and Crochet kit for Kids Crochet kit for Beginners Knitting kit for Beginners Knitting Loom Learn to Crochet Kits for Adults Beginner",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/81A1vyEk7IL.jpg",
+          "variation_attributes": [
+            {
+              "value": "Bunny",
+              "dimension": "Style"
+            }
+          ],
+          "created_at": "2025-07-21T10:16:00.677Z",
+          "updated_at": "2026-02-22T10:14:33.574Z",
+          "deleted_at": null
+        },
+        "title": "CRAFTILOO Loom Knitting and Crochet kit for Kids Crochet kit for Beginners Knitting kit for Beginners Knitting Loom Learn to Crochet Kits for Adults Beginner",
+        "marketplace": "com",
+        "keywordCount": 50,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81A1vyEk7IL.jpg",
+        "top10KW": 19,
+        "top10SV": 12636,
+        "top50KW": 34,
+        "top50SV": 29211
+      },
+      {
+        "id": "ee50bcb3-fb8c-4561-a2c1-09c2acd0c7fd",
+        "status": "normal",
+        "asin": {
+          "id": "8ac68896-db43-4c1e-b975-b4b708e0d5da",
+          "krtId": "ee50bcb3-fb8c-4561-a2c1-09c2acd0c7fd",
+          "asin": "B07D6D95NG",
+          "parent_asin": null,
+          "title": "Fuse Beads kit of 1500 Large 10MM Melty Beads Perfect for Ages 4-7 with 48 Patterns and pegboard Arts and Crafts for Girls and Boys",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/A1-F5tXGBCL.jpg",
+          "variation_attributes": null,
+          "created_at": "2025-07-21T10:24:03.911Z",
+          "updated_at": "2026-02-20T10:29:55.063Z",
+          "deleted_at": null
+        },
+        "title": "Fuse Beads kit of 1500 Large 10MM Melty Beads Perfect for Ages 4-7 with 48 Patterns and pegboard Arts and Crafts for Girls and Boys",
+        "marketplace": "com",
+        "keywordCount": 38,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/A1-F5tXGBCL.jpg",
+        "top10KW": 13,
+        "top10SV": 3250,
+        "top50KW": 21,
+        "top50SV": 20558
+      },
+      {
+        "id": "f5c3f74b-6b8f-4cea-b6c3-c6606a46383c",
+        "status": "normal",
+        "asin": {
+          "id": "02cbc6ff-8d67-4923-a533-6f84758e4109",
+          "krtId": "f5c3f74b-6b8f-4cea-b6c3-c6606a46383c",
+          "asin": "B09HVDNFMR",
+          "parent_asin": "B0B3BLPRCY",
+          "title": "Pre Printed Needlepoint Wallet Kit for Kids Embroidery Arts and Crafts Set Cross Stitch Sewing Kit (Cat)",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/91HLdjwrB5L.jpg",
+          "variation_attributes": [
+            {
+              "value": "Cat",
+              "dimension": "Color"
+            }
+          ],
+          "created_at": "2025-07-21T10:43:08.567Z",
+          "updated_at": "2026-02-23T10:47:48.358Z",
+          "deleted_at": null
+        },
+        "title": "Pre Printed Needlepoint Wallet Kit for Kids Embroidery Arts and Crafts Set Cross Stitch Sewing Kit (Cat)",
+        "marketplace": "com",
+        "keywordCount": 50,
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/91HLdjwrB5L.jpg",
+        "top10KW": 1,
+        "top10SV": 524,
+        "top50KW": 9,
+        "top50SV": 44675
+      }
+    ]
+  }
+}

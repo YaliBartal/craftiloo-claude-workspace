@@ -7,10 +7,16 @@
       "Read",
       "Glob",
       "Grep",
-      "WebSearch", 
+      "WebSearch",
       "WebFetch",
-      "mcp__claude_ai_Apify__get-actor-run",
-      "mcp__claude_ai_Apify__get-actor-output"
+      "mcp__sellerboard__*",
+      "mcp__datadive__*",
+      "mcp__amazon-sp-api__*",
+      "mcp__github__*",
+      "mcp__slack-workspace-1__*",
+      "mcp__slack-workspace-2__*",
+      "mcp__claude_ai_Apify__*",
+      "mcp__claude_ai_Notion__*"
     ]
   }
 }

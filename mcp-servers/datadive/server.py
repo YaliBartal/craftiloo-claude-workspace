@@ -11,8 +11,30 @@ import os
 import time
 import asyncio
 import json
+from pathlib import Path
 from mcp.server.fastmcp import FastMCP
 import httpx
+
+
+def _load_dotenv():
+    """Load .env file from workspace root as fallback if env vars aren't set."""
+    for d in [Path.cwd(), Path(__file__).resolve().parent.parent.parent]:
+        env_file = d / ".env"
+        if env_file.exists():
+            with open(env_file, encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith("#") and "=" in line:
+                        key, _, value = line.partition("=")
+                        key = key.strip()
+                        value = value.strip()
+                        current = os.environ.get(key, "")
+                        if key and (not current or current.startswith("${")):
+                            os.environ[key] = value
+            return
+
+
+_load_dotenv()
 
 mcp = FastMCP("datadive")
 
@@ -116,26 +138,24 @@ async def api_post(path: str, body: dict = None) -> dict | list | str:
         return response.text
 
 
-def _truncate_value(val, max_len: int = 80) -> str:
-    """Truncate nested structures for table display."""
+def _serialize_value(val, max_len: int = 2000) -> str:
+    """Serialize values for display. Returns compact JSON for nested structures."""
     if val is None:
         return ""
-    if isinstance(val, list):
-        if len(val) == 0:
-            return "[]"
-        if len(val) <= 3 and all(isinstance(v, (str, int, float)) for v in val):
-            return str(val)
-        return f"[{len(val)} items]"
-    if isinstance(val, dict):
-        return f"{{{len(val)} fields}}"
-    s = str(val)
-    if len(s) > max_len:
-        return s[:max_len] + "..."
-    return s
+    if isinstance(val, (str, int, float, bool)):
+        s = str(val)
+        return s[:max_len] + "..." if len(s) > max_len else s
+    # For lists and dicts, serialize as compact JSON to preserve full data
+    try:
+        s = json.dumps(val, separators=(",", ":"))
+        return s[:max_len] + "..." if len(s) > max_len else s
+    except (TypeError, ValueError):
+        s = str(val)
+        return s[:max_len] + "..." if len(s) > max_len else s
 
 
 def format_json(data, title: str = "", max_items: int = 50) -> str:
-    """Format JSON response as readable markdown."""
+    """Format JSON response as readable markdown with full nested data preserved."""
     if isinstance(data, str):
         return data
 
@@ -152,16 +172,28 @@ def format_json(data, title: str = "", max_items: int = 50) -> str:
 
         if isinstance(data[0], dict):
             keys = list(data[0].keys())
-            header = "| " + " | ".join(keys) + " |"
-            separator = "| " + " | ".join(["---"] * len(keys)) + " |"
-            output += header + "\n" + separator + "\n"
+            has_nested = any(
+                isinstance(data[0].get(k), (dict, list)) for k in keys
+            )
 
-            for item in data[:max_items]:
-                row_vals = []
-                for k in keys:
-                    val = item.get(k, "")
-                    row_vals.append(_truncate_value(val))
-                output += "| " + " | ".join(row_vals) + " |\n"
+            if has_nested:
+                # Data has nested structures — use JSON blocks to preserve full data
+                for i, item in enumerate(data[:max_items]):
+                    output += f"### Item {i + 1}\n```json\n"
+                    output += json.dumps(item, indent=2)
+                    output += "\n```\n\n"
+            else:
+                # Flat data — use markdown table for readability
+                header = "| " + " | ".join(keys) + " |"
+                separator = "| " + " | ".join(["---"] * len(keys)) + " |"
+                output += header + "\n" + separator + "\n"
+
+                for item in data[:max_items]:
+                    row_vals = []
+                    for k in keys:
+                        val = item.get(k, "")
+                        row_vals.append(_serialize_value(val, max_len=200))
+                    output += "| " + " | ".join(row_vals) + " |\n"
 
             if total > max_items:
                 output += f"\n*... {total - max_items} more items truncated*\n"
@@ -173,9 +205,21 @@ def format_json(data, title: str = "", max_items: int = 50) -> str:
 
     elif isinstance(data, dict):
         for key, value in data.items():
-            if isinstance(value, (list, dict)):
-                value = _truncate_value(value)
-            output += f"- **{key}:** {value}\n"
+            if isinstance(value, list) and len(value) > 0 and isinstance(value[0], dict):
+                # Nested list of objects — render as sub-section
+                output += f"\n### {key}\n"
+                output += format_json(value, max_items=max_items)
+            elif isinstance(value, (dict, list)):
+                # Nested dict or simple list — render as JSON block
+                try:
+                    s = json.dumps(value, indent=2)
+                    if len(s) > 5000:
+                        s = s[:5000] + "\n... truncated"
+                    output += f"- **{key}:**\n```json\n{s}\n```\n"
+                except (TypeError, ValueError):
+                    output += f"- **{key}:** {value}\n"
+            else:
+                output += f"- **{key}:** {value}\n"
 
     return output
 

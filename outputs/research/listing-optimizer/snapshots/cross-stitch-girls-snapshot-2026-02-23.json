@@ -1,0 +1,178 @@
+{
+  "date": "2026-02-23",
+  "mode": "single_audit",
+  "product": {
+    "name": "Cross Stitch Kit - Girls",
+    "asin": "B08DDJCQKF",
+    "category": "Cross Stitch Kits for Kids",
+    "niche_id": "b4Nisjv3xy"
+  },
+  "ranking_juice": {
+    "our_title_score": 535455,
+    "our_bullets_score": 38131,
+    "our_description_score": 0,
+    "our_overall_score": 1682627,
+    "niche_avg_title": 285724,
+    "niche_avg_bullets": 116160,
+    "niche_avg_description": 704,
+    "niche_avg_overall": 1090197,
+    "niche_max_title": 535455,
+    "niche_max_bullets": 443873,
+    "niche_max_description": 5635,
+    "niche_max_overall": 1682627,
+    "top_5_competitors": [
+      {
+        "asin": "B08QCX1Z5V",
+        "title_score": 482822,
+        "bullets_score": 45529,
+        "description_score": 5635,
+        "overall_score": 1545159
+      },
+      {
+        "asin": "B09M8DKHH6",
+        "title_score": 466652,
+        "bullets_score": 25239,
+        "description_score": 0,
+        "overall_score": 1450434
+      },
+      {
+        "asin": "B0DFHN42QB",
+        "title_score": 347209,
+        "bullets_score": 440,
+        "description_score": 0,
+        "overall_score": 1042507
+      },
+      {
+        "asin": "B08T5QC9FS",
+        "title_score": 25964,
+        "bullets_score": 443873,
+        "description_score": 0,
+        "overall_score": 965638
+      },
+      {
+        "asin": "B0B97Q1Q4T",
+        "title_score": 330503,
+        "bullets_score": 2707,
+        "description_score": 0,
+        "overall_score": 996923
+      }
+    ]
+  },
+  "keyword_analysis": {
+    "total_keywords_in_niche": 126,
+    "total_core_keywords": 15,
+    "total_high_related": 15,
+    "keywords_ranked_1": 33,
+    "keywords_ranked_top10": 87,
+    "keywords_ranked_11_to_20": 11,
+    "keywords_ranked_21_plus": 18,
+    "keywords_not_ranked": 10,
+    "rank_1_total_sv": 461674,
+    "quick_win_total_sv": 26680,
+    "top_gaps": [
+      {
+        "keyword": "mini cross stitch kits",
+        "search_volume": 7271,
+        "our_rank": 12,
+        "best_competitor_rank": 35,
+        "in_our_listing": false
+      },
+      {
+        "keyword": "needlepoint kit for beginners",
+        "search_volume": 5857,
+        "our_rank": 14,
+        "best_competitor_rank": 35,
+        "in_our_listing": true
+      },
+      {
+        "keyword": "printed cross stitch kits",
+        "search_volume": 6560,
+        "our_rank": 22,
+        "best_competitor_rank": 12,
+        "in_our_listing": false
+      },
+      {
+        "keyword": "sewing crafts for kids ages 4-8",
+        "search_volume": 3508,
+        "our_rank": null,
+        "best_competitor_rank": 8,
+        "in_our_listing": false
+      },
+      {
+        "keyword": "sewing projects for kids",
+        "search_volume": 3503,
+        "our_rank": 41,
+        "best_competitor_rank": 31,
+        "in_our_listing": false
+      },
+      {
+        "keyword": "needlepoint for beginners",
+        "search_volume": 3384,
+        "our_rank": 24,
+        "best_competitor_rank": 36,
+        "in_our_listing": true
+      },
+      {
+        "keyword": "cross stitch beginner kit",
+        "search_volume": 3045,
+        "our_rank": 19,
+        "best_competitor_rank": 30,
+        "in_our_listing": true
+      }
+    ]
+  },
+  "root_analysis": {
+    "total_roots_analyzed": 117,
+    "top_roots_by_sv": [
+      {"root": "cross", "broad_search_volume": 576000},
+      {"root": "stitch", "broad_search_volume": 573000},
+      {"root": "kits", "broad_search_volume": 523000},
+      {"root": "beginners", "broad_search_volume": 143000},
+      {"root": "kids", "broad_search_volume": 114000},
+      {"root": "needlepoint", "broad_search_volume": 60000},
+      {"root": "embroidery", "broad_search_volume": 51000},
+      {"root": "printed", "broad_search_volume": 8000},
+      {"root": "mini", "broad_search_volume": 8500},
+      {"root": "stamped", "broad_search_volume": 5000}
+    ],
+    "roots_in_title": ["cross", "stitch", "kits", "beginners", "kids", "needlepoint", "embroidery", "stamped", "girls"],
+    "roots_missing_from_title": ["mini", "printed", "easy", "counted", "sewing"]
+  },
+  "performance": {
+    "cvr": 14.70,
+    "portfolio_avg_cvr": 8.79,
+    "sessions_note": "SP-API Sales & Traffic report returned compressed data - fell back to Seller Board",
+    "organic_sales_pct": 77.1,
+    "ppc_sales_pct": 22.9,
+    "revenue_daily_estimate": 919,
+    "profit_daily_estimate": 295,
+    "margin_pct": 32
+  },
+  "rank_radar": {
+    "rank_radar_id": "07f05d65-4059-4ecc-8ab1-830bbb6dd42d",
+    "parent_asin": "B0B1927HCG",
+    "total_keywords_tracked": 38,
+    "top_10_count": 36,
+    "top_50_count": 38,
+    "stable_7d": 32,
+    "improving_7d": 5,
+    "declining_7d": 1,
+    "notable_improvements": [
+      "needlepoint for beginners - climbing from ~34 to ~17 over 30 days"
+    ],
+    "notable_declines": []
+  },
+  "ai_copywriter": {
+    "status": "failed",
+    "error": "HTTP 400 for both cosmo and cosmo-rufus modes",
+    "modes_attempted": ["cosmo", "cosmo-rufus"],
+    "modes_succeeded": []
+  },
+  "competitors_scraped": {
+    "count": 4,
+    "asins": ["B0DFHN42QB", "B08T5QC9FS", "B0CM9JKNCC", "B0B7JHN4F1"],
+    "brands": ["EZCRA", "Pllieay", "Caydo", "KRAFUN"]
+  },
+  "priority_score": 0.12,
+  "listing_health": "GOOD"
+}

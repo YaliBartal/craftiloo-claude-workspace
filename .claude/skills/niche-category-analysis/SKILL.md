@@ -15,6 +15,19 @@ output_location: outputs/research/niche-analysis/
 
 # Niche Category Analysis
 
+## ⚠️ BEFORE YOU START — Read Lessons
+
+**MANDATORY FIRST STEP:** Read `LESSONS.md` in this skill's folder before doing anything else.
+
+1. Read `.claude/skills/niche-category-analysis/LESSONS.md`
+2. Check **Known Issues** — plan around these
+3. Check **Repeat Errors** — if you encounter one during this run, tell the user immediately: _"⚠️ Repeat issue (×N): [description]"_
+4. Apply all past lessons to this run
+
+**Do NOT skip this step.**
+
+---
+
 ## Purpose
 
 Provide a comprehensive "feel" for an Amazon niche before committing to product development. Answer the core question: **Is this niche worth entering, and if so, how?**
@@ -22,10 +35,26 @@ Provide a comprehensive "feel" for an Amazon niche before committing to product 
 This skill delivers:
 - Who dominates and their estimated market share
 - Average selling price and price distribution
-- Main search keywords driving the niche
+- Main search keywords with **real search volumes** driving the niche
 - Competitor strengths and weaknesses (from real reviews)
+- **Listing optimization scores** showing who has weak listings (opportunity)
 - Gaps and opportunities for new products
 - Overall viability assessment with a go/no-go recommendation
+
+---
+
+## Data Source Hierarchy
+
+This skill uses **3 MCP services** as primary data sources. Apify scraping is the **fallback only**.
+
+| Priority | Source | What It Provides |
+|----------|--------|-----------------|
+| **1st** | **DataDive** | Competitor sales/revenue (Jungle Scout), keywords with search volumes, ranking juice scores, keyword roots |
+| **2nd** | **Amazon SP-API** | Real-time pricing, first-party BSR/category data, catalog search |
+| **3rd** | **Seller Board** | Our own profit data if we're already in this niche |
+| **Fallback** | **Apify** | Review scraping (still needed), product data if MCP sources fail |
+
+**Key upgrade:** Sales estimates come from **Jungle Scout actuals** (via DataDive), NOT BSR lookup tables. Keyword data includes **real search volumes**, not title-frequency guessing.
 
 ---
 
@@ -48,10 +77,16 @@ This skill delivers:
    - Example: "diamond painting kits", "crochet kits for beginners", "paint by numbers for adults"
    - Accept 1-3 keywords. The first is the PRIMARY keyword.
 
-2. **Category context** (optional) — Any specific angle they're interested in
+2. **Seed ASIN** (recommended) — A known top product in the niche
+   - This enables DataDive's `create_niche_dive` for automatic competitor discovery
+   - If the user doesn't have one, we'll find one via SP-API catalog search
+
+3. **Category context** (optional) — Any specific angle they're interested in
    - Example: "kids version", "premium end", "beginner-friendly"
 
-3. **Known competitors** (optional) — Any specific ASINs or brands they already know about
+4. **Known competitors** (optional) — Any specific ASINs or brands they already know about
+
+5. **Are we already in this niche?** (ask) — If yes, we pull Seller Board profit data for context
 
 **Do NOT proceed without at least one niche keyword.**
 
@@ -62,115 +97,151 @@ This skill delivers:
 ### Phase 1: Market Landscape Discovery
 **Goal:** Identify who's in the niche and how big it is.
 
-#### Step 1.1: Search Amazon for Top Products
+#### Step 1.1: Check for Existing DataDive Niche
 
-Use the Amazon search scraper to find the top products for each niche keyword.
+First, check if this niche already exists in DataDive:
 
-**MCP Tool:** `igview-owner/amazon-search-scraper`
+**MCP Tool:** `list_niches` (DataDive)
 
+- Scan the niche list for a matching or similar niche
+- If found → use the existing `nicheId` and skip to Step 1.3
+- If not found → proceed to Step 1.2
+
+#### Step 1.2: Discover Competitors (Two Paths)
+
+**Path A: Seed ASIN provided → DataDive Niche Dive**
+
+**MCP Tool:** `get_profile` (DataDive) — check token balance first
+
+⚠️ `create_niche_dive` **consumes DataDive tokens**. Before running:
+1. Check balance with `get_profile`
+2. **Ask user for approval:** _"Creating a niche dive costs DataDive tokens. Current balance: {X}. Proceed?"_
+3. Only proceed with explicit approval
+
+**MCP Tool:** `create_niche_dive` (DataDive)
 ```json
 {
-  "keyword": "{primary-niche-keyword}",
-  "pages": 2,
-  "amazon_domain": "www.amazon.com"
+  "seed_asin": "{ASIN}"
 }
 ```
 
-- Run for the primary keyword (2 pages = ~48 results)
-- Run for each additional keyword (1 page each)
-- Deduplicate results by ASIN
+- Returns a `dive_id`
+- Poll `get_niche_dive_status` every 30 seconds until complete (max 5 minutes)
+- On success → get the new `nicheId` from results
 
-#### Step 1.2: Identify Top 15 Competitors
+**Path B: No seed ASIN → SP-API Catalog Search + Manual Discovery**
 
-From search results, select the **top 15 products** based on:
-1. Organic rank position (top of search = more relevant)
-2. Review count (social proof / market presence)
-3. BSR (actual sales velocity)
+**MCP Tool:** `search_catalog` (SP-API)
+```json
+{
+  "keywords": "{primary-niche-keyword}",
+  "marketplace": "US",
+  "max_results": 20
+}
+```
+
+- Search for primary keyword
+- Identify the top-selling ASIN from results (highest review count + lowest BSR)
+- Use that ASIN as seed for Path A, OR proceed with SP-API data only
+
+#### Step 1.3: Pull Competitor Data from DataDive
+
+**MCP Tool:** `get_niche_competitors` (DataDive)
+```json
+{
+  "niche_id": "{nicheId}",
+  "page_size": 50
+}
+```
+
+**This replaces BSR guessing tables.** DataDive returns Jungle Scout-powered:
+- ASIN, BSR, **actual sales estimates**, **actual revenue estimates**
+- Price, rating, review count
+- P1 keywords count, advertised keywords count
+
+Select **top 15 competitors** based on:
+1. Revenue estimate (highest = most relevant)
+2. Review count (social proof)
+3. Organic relevance to the niche keyword
 
 Exclude:
-- Sponsored-only products with no organic presence
 - Products clearly outside the niche (wrong category)
-- Variation duplicates (keep the parent/best-selling variation)
+- Variation duplicates (keep parent/best-selling variation)
 
-#### Step 1.3: Scrape Product Details
+#### Step 1.4: Enrich with SP-API First-Party Data
 
-**MCP Tool:** `junglee/amazon-product-scraper`
-**Fallback:** `saswave/amazon-product-scraper`
+For the top 15 competitors, pull first-party Amazon data:
 
+**MCP Tool:** `get_catalog_item` (SP-API) — for each ASIN
 ```json
 {
-  "asins": ["{top-15-asins}"],
-  "amazon_domain": "www.amazon.com"
+  "asin": "{ASIN}",
+  "marketplace": "US"
 }
 ```
 
-**Batching rules:**
-- Max 5 ASINs per call
-- Use async mode
-- Timeout after 3 minutes — use whatever data you have
+**Extract:**
+- Official title, brand, category breadcrumb
+- First-party BSR + category
+- Images, dimensions
+- Date first available (if available)
 
-**Extract for each product:**
-- ASIN
-- Title
-- Brand
-- Price (current, was-price if available)
-- BSR (main category + subcategory)
-- Rating (stars)
-- Review count
-- Main image URL
-- Bullet points (first 3)
-- Date first available (if shown)
-- Category breadcrumb
-- Coupon/deal (if active)
-- Number of variations
+**Batching:** Run 3-5 `get_catalog_item` calls in parallel. Don't exceed 15 total.
 
-#### Step 1.4: Estimate Market Share
+#### Step 1.5: Calculate Market Metrics
 
-**BSR-to-Sales Estimation Table (monthly units):**
+Using **DataDive's actual sales/revenue data** (not BSR estimates):
 
-| BSR Range (Toys & Games) | Est. Monthly Units |
-|---|---|
-| 1-100 | 10,000+ |
-| 100-500 | 3,000-10,000 |
-| 500-2,000 | 1,000-3,000 |
-| 2,000-5,000 | 500-1,000 |
-| 5,000-15,000 | 150-500 |
-| 15,000-50,000 | 50-150 |
-| 50,000-100,000 | 15-50 |
-| 100,000+ | <15 |
-
-| BSR Range (Arts, Crafts & Sewing) | Est. Monthly Units |
-|---|---|
-| 1-100 | 6,000+ |
-| 100-500 | 2,000-6,000 |
-| 500-2,000 | 700-2,000 |
-| 2,000-5,000 | 300-700 |
-| 5,000-15,000 | 100-300 |
-| 15,000-50,000 | 30-100 |
-| 50,000-100,000 | 10-30 |
-| 100,000+ | <10 |
-
-**Calculate for each product:**
-- Estimated monthly units (from BSR)
-- Estimated monthly revenue (units x price)
+**Per product:**
+- Monthly units sold (from DataDive)
+- Monthly revenue (from DataDive)
 - Market share % (product revenue / total niche revenue)
 
-**Calculate niche-level metrics:**
+**Niche-level metrics:**
 - Total estimated monthly revenue
 - Total estimated monthly units
 - Top 3 market share concentration (% held by top 3)
 - Average review count
 - Average rating
+- Revenue per review (maturity indicator)
+
+#### Step 1.6: Internal Context (If Already in Niche)
+
+If user confirmed they're already in this niche:
+
+**MCP Tool:** `get_sales_detailed_report` (Seller Board)
+
+- Pull our actual profit data for products in this category
+- Note our current position: revenue, units, profit margin, ACOS
+- Use as baseline for "what we know" vs competitor estimates
 
 ---
 
 ### Phase 2: Pricing Analysis
 **Goal:** Understand the price landscape and find gaps.
 
-#### Step 2.1: Price Distribution
+#### Step 2.1: Real-Time Pricing from SP-API
 
-Calculate:
-- **Average Selling Price (ASP)** — weighted by estimated units
+**MCP Tool:** `get_competitive_pricing` (SP-API) — for top 15
+```json
+{
+  "asin": "{ASIN}",
+  "marketplace": "US"
+}
+```
+
+**Extract for each:**
+- Current landed price (price + shipping)
+- Listing price vs sale price
+- Buy Box price and who holds it
+- Number of competing offers
+
+**Batching:** Run 3-5 calls in parallel.
+
+#### Step 2.2: Price Distribution
+
+Calculate from real-time pricing data:
+- **Average Selling Price (ASP)** — weighted by estimated units (from DataDive)
 - **Median price**
 - **Price range** (min to max)
 - **Price clusters** — group products into natural price tiers
@@ -178,44 +249,84 @@ Calculate:
   - Mid tier: middle 50%
   - Premium tier: top 25%
 
-#### Step 2.2: Price-to-Value Mapping
+#### Step 2.3: Price-to-Value Mapping
 
 For each price tier, note:
 - What do you GET at this price? (contents, quality signals)
 - How many reviews/ratings at this tier?
+- Revenue concentration by tier
 - Any price points with NO products? (potential gap)
+- Buy Box ownership patterns (3P sellers undercutting?)
 
 ---
 
 ### Phase 3: Keyword Research
-**Goal:** Map the search landscape for this niche.
+**Goal:** Map the search landscape with real search volume data.
 
-#### Step 3.1: Extract Keywords from Competitor Titles
+#### Step 3.1: Master Keyword List from DataDive
 
-Parse all 15 competitor titles and extract:
-- Recurring keyword phrases (2-4 word combinations)
-- Frequency of each phrase across titles
-- Position in title (front-loaded = higher priority)
+**MCP Tool:** `get_niche_keywords` (DataDive)
+```json
+{
+  "niche_id": "{nicheId}",
+  "page_size": 200
+}
+```
 
-#### Step 3.2: Amazon Autocomplete / Related Searches
+**This replaces title-keyword extraction.** Returns:
+- Keyword phrases with **actual search volumes**
+- Relevancy classification: **Core / Related / Outlier**
+- Organic rank data for each competitor
+- Sponsored rank data
 
-Use web search to find Amazon autocomplete suggestions for:
-- Primary niche keyword
-- Primary keyword + "for" (age/audience variations)
-- Primary keyword + "kit" / "set" / "bundle"
+**Process:**
+- Sort by search volume (highest first)
+- Group by relevancy (Core → Related → Outlier)
+- Identify keywords where NO competitor ranks in top 10 (ranking gaps)
+- Identify keywords where only 1-2 competitors rank (low-competition)
 
-#### Step 3.3: Keyword Mapping
+#### Step 3.2: Keyword Roots Analysis
 
-Create a keyword map:
+**MCP Tool:** `get_niche_roots` (DataDive)
+```json
+{
+  "niche_id": "{nicheId}",
+  "page_size": 100
+}
+```
 
-| Keyword | Frequency in Titles | Est. Competition | Notes |
-|---|---|---|---|
-| {keyword} | X/15 titles | High/Med/Low | {observation} |
+**Returns:** Root words with frequency + broad search volume
 
-**Competition assessment:**
-- **High:** 10+ of top 15 use this keyword, dominant brands present
-- **Medium:** 5-9 of top 15 use it
-- **Low:** <5 use it, potential opportunity
+**Use for:**
+- Understanding the keyword landscape structure
+- Identifying root themes (material types, use cases, audience segments)
+- Finding underrepresented roots (potential positioning angles)
+
+#### Step 3.3: Keyword Map (Enhanced)
+
+Create a keyword map with real data:
+
+| Keyword | Search Volume | Relevancy | Top Organic Rank | # Ranking | Opportunity |
+|---|---|---|---|---|---|
+| {keyword} | {volume}/mo | Core/Related | #{rank} | X/15 | {assessment} |
+
+**Opportunity assessment (data-driven):**
+- **High opportunity:** SV > 1,000 + fewer than 3 competitors in top 10
+- **Medium opportunity:** SV > 500 + fewer than 5 competitors in top 10
+- **Low opportunity:** SV < 500 OR 10+ competitors ranking
+- **Long-tail gold:** SV 200-1,000 + 0-1 competitors ranking
+
+#### Step 3.4: Search Volume Summary
+
+| Metric | Value |
+|---|---|
+| Total niche search volume (Core keywords) | {X}/mo |
+| Total niche search volume (Core + Related) | {X}/mo |
+| # Core keywords | {X} |
+| # Related keywords | {X} |
+| # Outlier keywords (exclude from strategy) | {X} |
+| Avg search volume per Core keyword | {X}/mo |
+| Top keyword by volume | {keyword} ({volume}/mo) |
 
 ---
 
@@ -225,14 +336,14 @@ Create a keyword map:
 #### Step 4.1: Select Review Targets
 
 Pick the **top 5 competitors** for review scraping based on:
-1. Highest market share (top 2-3)
+1. Highest revenue (top 2-3 from DataDive data)
 2. Highest rated (1-2 that customers love)
 3. Most reviewed (social proof leaders)
 
 #### Step 4.2: Scrape Reviews
 
-**MCP Tool:** `junglee/amazon-reviews-scraper`
-**Fallback:** `epctex/amazon-reviews-scraper`
+**MCP Tool:** `junglee/amazon-reviews-scraper` (Apify)
+**Fallback:** `epctex/amazon-reviews-scraper` (Apify)
 
 ```json
 {
@@ -288,10 +399,31 @@ Aggregate across ALL scraped competitors:
 
 ---
 
-### Phase 5: Gap Analysis & Opportunities
-**Goal:** Identify concrete opportunities for a new product.
+### Phase 5: Listing & Ranking Gap Analysis
+**Goal:** Find weak listings and ranking opportunities.
 
-#### Step 5.1: Product Gaps
+#### Step 5.1: Ranking Juice Scores
+
+**MCP Tool:** `get_niche_ranking_juices` (DataDive)
+```json
+{
+  "niche_id": "{nicheId}",
+  "page_size": 50
+}
+```
+
+**Returns per competitor:**
+- Title optimization score
+- Bullet points optimization score
+- Description optimization score
+- Overall listing quality score
+
+**Analyze:**
+- Which top-revenue competitors have **low listing scores**? → They're winning despite weak listings (vulnerable to a well-optimized entrant)
+- Which competitors have **high listing scores but low sales**? → Good listing ≠ product-market fit
+- Average listing score across niche → Higher = harder to differentiate on copy alone
+
+#### Step 5.2: Product Gaps
 
 Based on all data collected, identify:
 
@@ -299,24 +431,26 @@ Based on all data collected, identify:
 2. **Feature gaps** — Things customers want that no one offers
 3. **Quality gaps** — Common quality complaints that could be solved
 4. **Audience gaps** — Underserved customer segments (age, skill level, use case)
-5. **Listing gaps** — Poor images, weak bullets, missing A+ content among leaders
-6. **Bundling gaps** — Missing accessories or complementary items
+5. **Listing gaps** — Low Ranking Juice scores among top sellers = copy opportunity
+6. **Keyword gaps** — High-SV keywords where no one ranks well
+7. **Bundling gaps** — Missing accessories or complementary items
 
-#### Step 5.2: Barrier Assessment
+#### Step 5.3: Barrier Assessment
 
 For each gap, assess:
 - **Difficulty to exploit:** Easy / Medium / Hard
 - **Investment required:** Low / Medium / High
 - **Competitive moat:** Can competitors copy quickly? Yes/No
 - **Demand signal strength:** Strong / Moderate / Weak
+- **Data confidence:** High (Jungle Scout actual) / Medium (SP-API first-party) / Low (estimated)
 
-#### Step 5.3: Opportunity Ranking
+#### Step 5.4: Opportunity Ranking
 
 Rank opportunities by:
-1. Demand signal strength (from reviews + search volume)
+1. Demand signal strength (from search volumes + review frequency)
 2. Ease of execution
 3. Defensibility (can you maintain an advantage?)
-4. Revenue potential
+4. Revenue potential (from actual competitor revenue data)
 
 ---
 
@@ -329,20 +463,36 @@ Rate each factor 1-5:
 
 | Factor | Score | Notes |
 |---|---|---|
-| **Market Size** | /5 | Est. monthly revenue of niche |
+| **Market Size** | /5 | Based on DataDive actual revenue data |
 | **Competition Intensity** | /5 | 5 = low competition = good |
-| **Price Opportunity** | /5 | Room for profitable pricing |
-| **Differentiation Potential** | /5 | Can you stand out? |
+| **Price Opportunity** | /5 | Room for profitable pricing (SP-API real pricing) |
+| **Differentiation Potential** | /5 | Review gaps + listing gaps + keyword gaps |
 | **Customer Pain Points** | /5 | Unresolved complaints = opportunity |
-| **Keyword Accessibility** | /5 | Can you rank for key terms? |
+| **Keyword Accessibility** | /5 | Real search volumes + ranking gaps from DataDive |
+| **Listing Quality Gap** | /5 | Low Ranking Juice scores = weak competitors |
 | **Alignment with Brand** | /5 | Fits Craftiloo's strengths? |
-| **TOTAL** | /35 | |
+| **TOTAL** | /40 | |
 
 **Scoring Guide:**
-- **28-35:** Strong opportunity — move forward
-- **20-27:** Moderate opportunity — proceed with caution, address weak areas
-- **14-19:** Weak opportunity — significant challenges, consider alternatives
-- **<14:** Pass — too many barriers
+- **32-40:** Strong opportunity — move forward
+- **24-31:** Moderate opportunity — proceed with caution, address weak areas
+- **16-23:** Weak opportunity — significant challenges, consider alternatives
+- **<16:** Pass — too many barriers
+
+#### Data Confidence Rating
+
+Rate overall data quality:
+
+| Source | Available? | Confidence |
+|---|---|---|
+| DataDive competitor data | Yes/No | High (Jungle Scout) / N/A |
+| DataDive keyword data | Yes/No | High (real SV) / N/A |
+| SP-API pricing | Yes/No | High (first-party) / N/A |
+| SP-API catalog | Yes/No | High (first-party) / N/A |
+| Seller Board (own data) | Yes/No | High (actual) / N/A |
+| Review data | Yes/No | Medium (sample) / N/A |
+
+**Overall confidence:** High / Medium / Low — state what data is missing and how it affects the recommendation.
 
 #### Final Recommendation
 
@@ -352,6 +502,7 @@ Provide a clear **GO / CONDITIONAL GO / NO-GO** with:
 - Suggested product positioning (if GO)
 - Suggested price point (if GO)
 - Suggested differentiation angle (if GO)
+- Top 5 keywords to target (with search volumes)
 - Estimated time to first sale (if GO)
 
 ---
@@ -365,9 +516,13 @@ outputs/research/niche-analysis/
 ├── briefs/                           # Main analysis reports
 │   └── {niche-slug}-niche-analysis-YYYY-MM-DD.md
 ├── data/
-│   └── YYYY-MM-DD/                   # Raw scraped data
-│       ├── search-results-{keyword}-YYYY-MM-DD.json
-│       ├── products-{niche-slug}-YYYY-MM-DD.json
+│   └── YYYY-MM-DD/                   # Raw data
+│       ├── datadive-competitors-{niche-slug}-YYYY-MM-DD.json
+│       ├── datadive-keywords-{niche-slug}-YYYY-MM-DD.json
+│       ├── datadive-roots-{niche-slug}-YYYY-MM-DD.json
+│       ├── datadive-ranking-juice-{niche-slug}-YYYY-MM-DD.json
+│       ├── sp-api-pricing-{niche-slug}-YYYY-MM-DD.json
+│       ├── sp-api-catalog-{niche-slug}-YYYY-MM-DD.json
 │       └── reviews-{ASIN}-YYYY-MM-DD.json
 ├── snapshots/                        # For future comparison
 │   └── {niche-slug}-snapshot-YYYY-MM-DD.json
@@ -381,35 +536,41 @@ outputs/research/niche-analysis/
 **Date:** YYYY-MM-DD
 **Primary Keyword:** {keyword}
 **Verdict:** GO / CONDITIONAL GO / NO-GO
+**Data Confidence:** High / Medium / Low
 
 ---
 
 ## Executive Summary
 {2-3 sentence overview: market size, competition level, key opportunity}
 
+**Data sources used:** DataDive (Jungle Scout) ✅/❌ | SP-API ✅/❌ | Seller Board ✅/❌ | Apify (reviews) ✅/❌
+
 ---
 
 ## Market Landscape
 
 ### Niche Overview
-| Metric | Value |
-|---|---|
-| Est. Monthly Revenue | ${X} |
-| Est. Monthly Units | {X} |
-| Number of Competitors (top 2 pages) | {X} |
-| Average Selling Price (ASP) | ${X} |
-| Median Price | ${X} |
-| Price Range | ${min} - ${max} |
-| Avg Rating (top 15) | {X} stars |
-| Avg Review Count (top 15) | {X} |
-| Top 3 Market Share | {X}% |
+| Metric | Value | Source |
+|---|---|---|
+| Est. Monthly Revenue | ${X} | DataDive (Jungle Scout) |
+| Est. Monthly Units | {X} | DataDive (Jungle Scout) |
+| Number of Competitors Analyzed | {X} | DataDive |
+| Average Selling Price (ASP) | ${X} | SP-API |
+| Median Price | ${X} | SP-API |
+| Price Range | ${min} - ${max} | SP-API |
+| Avg Rating (top 15) | {X} stars | DataDive |
+| Avg Review Count (top 15) | {X} | DataDive |
+| Top 3 Market Share | {X}% | DataDive |
+| Total Niche Search Volume (Core) | {X}/mo | DataDive |
 
 ### Top 15 Competitors
 
-| # | Brand | ASIN | Price | BSR | Rating | Reviews | Est. Monthly Units | Est. Revenue | Market Share |
-|---|---|---|---|---|---|---|---|---|---|
-| 1 | {brand} | {asin} | ${price} | {bsr} | {rating} | {reviews} | {units} | ${rev} | {share}% |
-| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+| # | Brand | ASIN | Price | BSR | Rating | Reviews | Monthly Units | Monthly Revenue | Market Share | Listing Score |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | {brand} | {asin} | ${price} | {bsr} | {rating} | {reviews} | {units} | ${rev} | {share}% | {score}/100 |
+| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+
+*Sales data: Jungle Scout estimates via DataDive. Pricing: Amazon SP-API. Listing Score: DataDive Ranking Juice.*
 
 ### Market Concentration
 - **Top 3 hold {X}%** of estimated revenue
@@ -420,11 +581,13 @@ outputs/research/niche-analysis/
 ## Pricing Analysis
 
 ### Price Tiers
-| Tier | Price Range | # Products | Avg Rating | Avg Reviews | Notes |
-|---|---|---|---|---|---|
-| Budget | ${X}-${X} | {n} | {rating} | {reviews} | {what you get} |
-| Mid | ${X}-${X} | {n} | {rating} | {reviews} | {what you get} |
-| Premium | ${X}-${X} | {n} | {rating} | {reviews} | {what you get} |
+| Tier | Price Range | # Products | Avg Rating | Avg Reviews | Revenue Share | Notes |
+|---|---|---|---|---|---|---|
+| Budget | ${X}-${X} | {n} | {rating} | {reviews} | {X}% | {what you get} |
+| Mid | ${X}-${X} | {n} | {rating} | {reviews} | {X}% | {what you get} |
+| Premium | ${X}-${X} | {n} | {rating} | {reviews} | {X}% | {what you get} |
+
+*Pricing from SP-API `get_competitive_pricing` — reflects current Buy Box prices.*
 
 ### Price Gaps
 {Identify underserved price points or value propositions}
@@ -433,13 +596,32 @@ outputs/research/niche-analysis/
 
 ## Keyword Landscape
 
-### Primary Keywords
-| Keyword | In X/15 Titles | Competition | Opportunity |
+### Search Volume Summary
+| Metric | Value |
+|---|---|
+| Total Core keyword search volume | {X}/mo |
+| Total Core + Related search volume | {X}/mo |
+| # Core keywords | {X} |
+| # Related keywords | {X} |
+| Top keyword | {keyword} ({volume}/mo) |
+
+### Top 20 Keywords by Search Volume
+| Keyword | Search Volume | Relevancy | Best Rank in Niche | # Competitors Ranking | Opportunity |
+|---|---|---|---|---|---|
+| {keyword} | {volume}/mo | Core | #{rank} | {X}/15 | High/Med/Low |
+
+*Data: DataDive Master Keyword List with real search volumes.*
+
+### Keyword Root Themes
+| Root | Frequency | Broad Search Volume | Theme |
 |---|---|---|---|
-| {keyword} | {X}/15 | High/Med/Low | {note} |
+| {root} | {X} | {volume} | {what it represents} |
+
+### Ranking Gaps (High-Value)
+{Keywords with SV > 500 where fewer than 3 competitors rank in top 10}
 
 ### Long-tail Opportunities
-{Keywords with lower competition that could drive traffic}
+{Keywords SV 200-1,000 with 0-1 competitors ranking}
 
 ---
 
@@ -466,9 +648,23 @@ outputs/research/niche-analysis/
 
 ### Competitor Strengths & Weaknesses Matrix
 
-| Competitor | Key Strengths | Key Weaknesses | Rating | Reviews |
-|---|---|---|---|---|
-| {brand} (ASIN) | {strengths} | {weaknesses} | {rating} | {count} |
+| Competitor | Key Strengths | Key Weaknesses | Rating | Reviews | Listing Score |
+|---|---|---|---|---|---|
+| {brand} (ASIN) | {strengths} | {weaknesses} | {rating} | {count} | {score}/100 |
+
+---
+
+## Listing & Ranking Opportunities
+
+### Ranking Juice Analysis
+| Competitor | Title Score | Bullets Score | Description Score | Overall | Revenue | Vulnerability |
+|---|---|---|---|---|---|---|
+| {brand} | {X} | {X} | {X} | {X}/100 | ${rev}/mo | High/Med/Low |
+
+*High vulnerability = high revenue + low listing score — winning despite poor optimization.*
+
+### Most Vulnerable Competitors
+{Top sellers with weak listings — entering with optimized copy could capture share}
 
 ---
 
@@ -477,8 +673,9 @@ outputs/research/niche-analysis/
 ### Identified Opportunities (Ranked)
 
 #### 1. {Opportunity Name}
-- **Type:** Price / Feature / Quality / Audience / Listing / Bundle
+- **Type:** Price / Feature / Quality / Audience / Listing / Keyword / Bundle
 - **Demand Signal:** Strong / Moderate / Weak
+- **Data Source:** {what data supports this — SV, review count, ranking gap, etc.}
 - **Difficulty:** Easy / Medium / Hard
 - **Investment:** Low / Medium / High
 - **Defensible:** Yes / No
@@ -493,14 +690,26 @@ outputs/research/niche-analysis/
 
 | Factor | Score | Reasoning |
 |---|---|---|
-| Market Size | {X}/5 | {why} |
+| Market Size | {X}/5 | {why — cite actual revenue from DataDive} |
 | Competition Intensity | {X}/5 | {why} |
-| Price Opportunity | {X}/5 | {why} |
-| Differentiation Potential | {X}/5 | {why} |
-| Customer Pain Points | {X}/5 | {why} |
-| Keyword Accessibility | {X}/5 | {why} |
+| Price Opportunity | {X}/5 | {why — cite SP-API pricing data} |
+| Differentiation Potential | {X}/5 | {why — cite review gaps + listing gaps} |
+| Customer Pain Points | {X}/5 | {why — cite review analysis} |
+| Keyword Accessibility | {X}/5 | {why — cite search volumes + ranking gaps} |
+| Listing Quality Gap | {X}/5 | {why — cite Ranking Juice scores} |
 | Brand Alignment | {X}/5 | {why} |
-| **TOTAL** | **{X}/35** | |
+| **TOTAL** | **{X}/40** | |
+
+### Data Confidence
+| Source | Used? | Notes |
+|---|---|---|
+| DataDive competitors | ✅/❌ | {notes} |
+| DataDive keywords | ✅/❌ | {notes} |
+| DataDive ranking juice | ✅/❌ | {notes} |
+| SP-API pricing | ✅/❌ | {notes} |
+| SP-API catalog | ✅/❌ | {notes} |
+| Seller Board | ✅/❌ | {notes} |
+| Apify reviews | ✅/❌ | {notes} |
 
 ---
 
@@ -509,9 +718,9 @@ outputs/research/niche-analysis/
 **Verdict: {GO / CONDITIONAL GO / NO-GO}**
 
 ### Why
-1. {Reason 1}
-2. {Reason 2}
-3. {Reason 3}
+1. {Reason 1 — cite data}
+2. {Reason 2 — cite data}
+3. {Reason 3 — cite data}
 
 ### Risks
 1. {Risk 1}
@@ -520,14 +729,17 @@ outputs/research/niche-analysis/
 
 ### If Proceeding
 - **Suggested positioning:** {how to position the product}
-- **Target price point:** ${X}
+- **Target price point:** ${X} (based on SP-API gap analysis)
 - **Differentiation angle:** {what makes you different}
 - **Must-have features:** {non-negotiables based on reviews}
+- **Top 5 target keywords:** {keyword (SV)} — from DataDive
+- **Weakest competitor to displace:** {brand/ASIN — low listing score, moderate revenue}
 - **Next steps:** {what to do next — product development, listing, etc.}
 
 ---
 
 *Generated by Niche Category Analysis skill — {date}*
+*Data sources: DataDive (Jungle Scout) | Amazon SP-API | Seller Board | Apify*
 ```
 
 ### Snapshot Format (JSON)
@@ -539,6 +751,12 @@ Save for future comparison:
   "niche": "{niche-name}",
   "date": "YYYY-MM-DD",
   "primary_keyword": "{keyword}",
+  "data_sources": {
+    "datadive": true,
+    "sp_api": true,
+    "seller_board": false,
+    "apify_reviews": true
+  },
   "metrics": {
     "est_monthly_revenue": 0,
     "est_monthly_units": 0,
@@ -547,7 +765,11 @@ Save for future comparison:
     "avg_rating": 0,
     "avg_reviews": 0,
     "top_3_concentration": 0,
-    "competitor_count": 0
+    "competitor_count": 0,
+    "total_core_search_volume": 0,
+    "core_keyword_count": 0,
+    "related_keyword_count": 0,
+    "avg_listing_score": 0
   },
   "top_competitors": [
     {
@@ -558,20 +780,34 @@ Save for future comparison:
       "bsr": 0,
       "rating": 0,
       "reviews": 0,
-      "est_monthly_units": 0,
-      "est_monthly_revenue": 0,
-      "market_share": 0
+      "monthly_units": 0,
+      "monthly_revenue": 0,
+      "market_share": 0,
+      "listing_score": 0,
+      "data_source": "datadive"
     }
   ],
   "keywords": [
     {
       "keyword": "",
-      "frequency_in_titles": 0,
-      "competition": "High/Med/Low"
+      "search_volume": 0,
+      "relevancy": "Core/Related/Outlier",
+      "best_organic_rank": 0,
+      "competitors_ranking": 0,
+      "opportunity": "High/Med/Low"
+    }
+  ],
+  "keyword_roots": [
+    {
+      "root": "",
+      "frequency": 0,
+      "broad_search_volume": 0
     }
   ],
   "viability_score": 0,
-  "verdict": "GO/CONDITIONAL GO/NO-GO"
+  "viability_max": 40,
+  "verdict": "GO/CONDITIONAL GO/NO-GO",
+  "data_confidence": "High/Medium/Low"
 }
 ```
 
@@ -581,18 +817,62 @@ Save for future comparison:
 
 | Constraint | Limit |
 |---|---|
-| Max ASINs scraped (products) | 15 |
-| Max ASINs scraped (reviews) | 5 |
+| DataDive API calls | Minimal — reuse existing niches when possible |
+| SP-API catalog calls | Max 15 (one per competitor) |
+| SP-API pricing calls | Max 15 (one per competitor) |
+| Niche Dive creation | **Requires user approval** (costs tokens) |
+| Max ASINs scraped (reviews) | 5 via Apify |
 | Max reviews per ASIN | 50 |
-| Max keyword searches | 5 |
 | Apify batch size | 5 ASINs per call |
 | Timeout per scrape call | 3 minutes |
 | Total token budget | <80K |
-| Total API cost target | <$0.25 |
+| Total API cost target | <$0.25 (Apify only; MCP calls are free) |
 
-**If a scrape times out:** Use whatever data was collected. Note gaps in the report. Do NOT retry automatically — ask user first.
+**If a DataDive call fails:** Fall back to SP-API data. If SP-API also fails, fall back to Apify scraping + BSR estimation (legacy mode). Note degraded data confidence in report.
 
-**If a scrape fails entirely:** Skip that ASIN, note it in the report, continue with remaining data.
+**If SP-API rate-limited:** Wait 2 seconds and retry once. If still failing, skip and note in report.
+
+**If a review scrape times out:** Use whatever data was collected. Note gaps in the report. Do NOT retry automatically — ask user first.
+
+---
+
+## Fallback: Legacy Mode (No DataDive Data)
+
+If DataDive niche doesn't exist AND user declines to create a niche dive:
+
+1. Use SP-API `search_catalog` to find competitors
+2. Use SP-API `get_catalog_item` for BSR + category data
+3. Use SP-API `get_competitive_pricing` for pricing
+4. **Fall back to BSR estimation tables** for sales (see below)
+5. Extract keywords from titles instead of DataDive keyword data
+6. Skip Ranking Juice analysis (not available without DataDive)
+7. **Mark report as "Limited Data Mode"** and note which sections are estimates
+
+### BSR-to-Sales Estimation Table (LEGACY FALLBACK ONLY)
+
+⚠️ **Use ONLY when DataDive data is unavailable.** Jungle Scout actuals are far more accurate.
+
+| BSR Range (Arts, Crafts & Sewing) | Est. Monthly Units |
+|---|---|
+| 1-100 | 6,000+ |
+| 100-500 | 2,000-6,000 |
+| 500-2,000 | 700-2,000 |
+| 2,000-5,000 | 300-700 |
+| 5,000-15,000 | 100-300 |
+| 15,000-50,000 | 30-100 |
+| 50,000-100,000 | 10-30 |
+| 100,000+ | <10 |
+
+| BSR Range (Toys & Games) | Est. Monthly Units |
+|---|---|
+| 1-100 | 10,000+ |
+| 100-500 | 3,000-10,000 |
+| 500-2,000 | 1,000-3,000 |
+| 2,000-5,000 | 500-1,000 |
+| 5,000-15,000 | 150-500 |
+| 15,000-50,000 | 50-150 |
+| 50,000-100,000 | 15-50 |
+| 100,000+ | <15 |
 
 ---
 
@@ -600,13 +880,17 @@ Save for future comparison:
 
 | Error | Action |
 |---|---|
+| DataDive niche not found | Offer to create niche dive (with token cost warning) OR fall back to SP-API + Apify |
+| DataDive niche dive fails | Fall back to SP-API + Apify legacy mode |
+| DataDive API key invalid | STOP. Ask user to check DATADIVE_API_KEY in .env |
+| SP-API rate limited | Wait 2s, retry once. If still fails, skip and note |
+| SP-API auth expired | STOP. Ask user to re-authorize app in Seller Central |
 | No search results for keyword | Ask user to refine keyword, suggest alternatives |
 | Fewer than 5 products found | Warn: niche may be too narrow. Proceed with available data |
-| Scraper returns no data for ASIN | Skip, note in report, use remaining products |
-| All scrapers fail | STOP. Report error. Ask user to try later |
 | Reviews scraper returns <10 reviews | Note low review count, analysis may be thin |
+| All data sources fail | STOP. Report error. Ask user to try later |
 | Timeout on batch | Use partial data, note which ASINs are missing |
-| API cost exceeds $0.25 | STOP further scraping. Work with data collected |
+| DataDive token balance low | Warn user, suggest using existing niche or SP-API fallback |
 
 ---
 
@@ -614,17 +898,20 @@ Save for future comparison:
 
 | This skill provides... | To... |
 |---|---|
-| Competitor ASINs + keywords | **Daily Market Intel** (add to tracking) |
+| Competitor ASINs + actual revenue | **Daily Market Intel** (add to tracking with real baselines) |
+| Keywords with search volumes | **Listing Creator** (prioritize by SV, not guessing) |
 | Customer language from reviews | **Listing Creator** (bullet copy) |
-| Competitor weaknesses | **Image Planner** (visual differentiation) |
-| Keyword map | **Negative Keyword Generator** (irrelevant terms) |
+| Competitor weaknesses + listing scores | **Image Planner** (visual differentiation) |
+| Keyword map with SV + relevancy | **Negative Keyword Generator** (data-driven irrelevant terms) |
 | Review themes | **Customer Review Analyzer** (ongoing monitoring) |
+| Ranking Juice gaps | **Listing Optimizer** (baseline for new listings) |
 
 **After a GO verdict, suggest:**
 1. Add top competitors to `context/competitors.md`
-2. Add niche keywords to `context/search-terms.md`
-3. Run **Listing Creator** for the new product concept
+2. Add niche keywords (with search volumes) to `context/search-terms.md`
+3. Run **Listing Creator** for the new product concept (pass DataDive nicheId for keyword data)
 4. Run **Image Planner** based on competitor image analysis
+5. Set up a **Rank Radar** in DataDive for the seed ASIN to track rankings over time
 
 ---
 
@@ -633,25 +920,81 @@ Save for future comparison:
 Before starting, confirm:
 - [ ] User provided at least 1 niche keyword
 - [ ] Keyword makes sense as an Amazon search term
-- [ ] User understands this will use Apify credits (~$0.15-0.25)
+- [ ] Check if DataDive niche already exists (free) before creating new one (costs tokens)
+- [ ] If niche dive needed — user approved token spend
 - [ ] Output folder exists or will be created
 
 ---
 
 ## Execution Order Summary
 
-1. **Gather input** — Keyword(s), context, known competitors
-2. **Search Amazon** — Find top products for the niche keyword(s)
-3. **Identify top 15** — Select most relevant competitors
-4. **Scrape product data** — Price, BSR, ratings, reviews count, bullets
-5. **Estimate market share** — BSR-to-sales conversion
-6. **Analyze pricing** — Tiers, gaps, ASP
-7. **Extract keywords** — From titles, autocomplete, related searches
-8. **Scrape reviews** — Top 5 competitors, 50 reviews each
-9. **Analyze reviews** — Praise, complaints, wishes, patterns
-10. **Identify gaps** — Price, feature, quality, audience, listing, bundle
-11. **Score viability** — 7-factor scorecard
-12. **Generate report** — Full brief with recommendation
-13. **Save snapshot** — JSON for future comparison
-14. **Present summary** — Key findings to user
-15. **Suggest next steps** — If GO, recommend follow-up actions
+1. **Gather input** — Keyword(s), seed ASIN, context, known competitors, already-in-niche?
+2. **Check DataDive** — Does niche exist? If yes, use it. If no, offer niche dive or SP-API fallback
+3. **Pull competitor data** — `get_niche_competitors` (DataDive) → actual sales/revenue
+4. **Enrich with SP-API** — `get_catalog_item` for first-party details on top 15
+5. **Calculate market metrics** — Using Jungle Scout actuals, not BSR tables
+6. **Pull Seller Board data** — If already in niche, add internal context
+7. **Analyze pricing** — `get_competitive_pricing` (SP-API) for real-time Buy Box data
+8. **Pull keyword data** — `get_niche_keywords` + `get_niche_roots` (DataDive) with real search volumes
+9. **Map keyword landscape** — Ranking gaps, long-tail opportunities, root themes
+10. **Pull listing scores** — `get_niche_ranking_juices` (DataDive) for optimization gaps
+11. **Scrape reviews** — Top 5 competitors via Apify, 50 reviews each
+12. **Analyze reviews** — Praise, complaints, wishes, patterns
+13. **Identify gaps** — Price, feature, quality, audience, listing, keyword, bundle
+14. **Score viability** — 8-factor scorecard (now includes Listing Quality Gap)
+15. **Rate data confidence** — Which sources were available and used
+16. **Generate report** — Full brief with data-sourced recommendation
+17. **Save snapshot** — Enhanced JSON for future comparison
+18. **Present summary** — Key findings to user
+19. **Suggest next steps** — If GO, recommend follow-up actions with specific DataDive nicheId
+
+---
+
+## ⚠️ AFTER EVERY RUN — Update Lessons (MANDATORY)
+
+**Before presenting final results, update `.claude/skills/niche-category-analysis/LESSONS.md`.**
+
+### 1. Write a Run Log Entry
+
+Add a new entry at the **TOP** of the Run Log section:
+
+```
+### Run: YYYY-MM-DD
+**Goals:**
+- [ ] Goal 1
+- [ ] Goal 2
+
+**Result:** ✅ Success / ⚠️ Partial / ❌ Failed
+
+**Data sources used:** DataDive ✅/❌ | SP-API ✅/❌ | Seller Board ✅/❌ | Apify ✅/❌
+
+**What happened:**
+- (What went according to plan)
+
+**What didn't work:**
+- (Any issues, with specifics)
+
+**Is this a repeat error?** Yes/No — if yes, which one?
+
+**Lesson learned:**
+- (What to do differently next time)
+
+**Tokens/cost:** ~XX K tokens
+```
+
+### 2. Update Issue Tracking
+
+| Situation | Action |
+|-----------|--------|
+| New problem | Add to **Known Issues** |
+| Known Issue happened again | Move to **Repeat Errors**, increment count, **tell the user** |
+| Fixed a Known Issue | Move to **Resolved Issues** |
+
+### 3. Tell the User
+
+End your output with a **Lessons Update** note:
+- What you logged
+- Any repeat errors encountered
+- Suggestions for skill improvement
+
+**Do NOT skip this. The system only improves if every run is logged honestly.**
