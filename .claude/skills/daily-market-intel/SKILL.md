@@ -105,13 +105,15 @@ market-intel/
 | Hero stock levels / OOS alerts | **Amazon SP-API** `get_fba_inventory` | Seller Board inventory |
 | **Yesterday's revenue + units** | **Amazon SP-API** `get_orders(date=yesterday)` | Seller Board (note lag) |
 | Hero rating + reviews | **DataDive Competitors** (hero appears in niche data) | Previous snapshot |
+| **Our actual units sold (7-day)** | **Seller Board** `get_sales_detailed_report` | SP-API Orders total |
+| **Our actual revenue per ASIN (7-day)** | **Seller Board** `get_sales_detailed_report` | SP-API Orders total |
 | Competitor BSR, price, rating, reviews | **DataDive Competitors** | Previous snapshot |
 | Our keyword rankings | **DataDive Rank Radar** | — |
 | Our sponsored/PPC rank | **DataDive Rank Radar** | — |
 | Keyword search volume | **DataDive Rank Radar + MKL** | — |
 | Keyword rank movements | **DataDive Rank Radar** | — |
-| Competitor sales estimates | **DataDive Competitors** | — |
-| Competitor revenue | **DataDive Competitors** | Manual (price × units) |
+| Competitor sales estimates | **DataDive Competitors** (estimates only — not real) | — |
+| Competitor revenue | **DataDive Competitors** (estimates only) | Manual (price × units) |
 | Competitor P1 keywords | **DataDive Competitors** | — |
 | New competitor detection | **Apify light keyword scan** (9 keywords) | DataDive niche changes |
 | Badge tracking | **Apify light keyword scan** | — |
