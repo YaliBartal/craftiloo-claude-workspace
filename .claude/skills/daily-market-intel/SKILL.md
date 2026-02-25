@@ -182,9 +182,9 @@ market-intel/
 1. For each of the 13 hero ASINs, call `get_catalog_item(asin="{ASIN}")` → extracts BSR, subcategory rank, category
 2. For each of the 13 hero ASINs, call `get_competitive_pricing(asin="{ASIN}")` → extracts current New price
 
-**Phase B — Inventory (single call):**
-3. Call `get_fba_inventory()` once → returns stock levels for ALL our FBA products
-4. Match by ASIN to hero product list → flag any with `totalQuantity = 0` as OOS
+**Phase B — Inventory (single call with ASIN filter):**
+3. Call `get_fba_inventory(asin_filter="B08DDJCQKF,B0F6YTG1CH,B09X55KL2C,B0DC69M3YD,B09WQSBZY7,B096MYBLS1,B08FYH13CL,B0F8R652FX,B0F8DG32H5,B09THLVFZK,B07D6D95NG,B0FQC7YFX6,B09HVSLBS6")` → returns stock levels for hero ASINs only (aggregated across SKUs, missing ASINs flagged)
+4. Flag any with `Fulfillable = 0` as OOS. Any "NOT FOUND IN FBA INVENTORY" = investigate.
 
 **Total calls:** 13 + 13 + 1 = **27 calls** (~15 seconds with rate limiting)
 

@@ -496,9 +496,17 @@ async def get_item_offers(
 @mcp.tool()
 async def get_fba_inventory(
     marketplace: str = "US",
+    asin_filter: str = "",
 ) -> str:
     """Get FBA inventory summaries with full pagination.
-    Returns ALL SKUs with ASIN, fulfillable quantity, inbound, reserved stock levels."""
+    Returns SKUs with ASIN, fulfillable quantity, inbound, reserved stock levels.
+
+    Args:
+        marketplace: US, CA, or MX.
+        asin_filter: Optional comma-separated ASINs to filter results (e.g. 'B08DDJCQKF,B09X55KL2C').
+                     If provided, only returns inventory for those ASINs (aggregated across SKUs).
+                     If empty, returns all SKUs (truncated at 50 in output).
+    """
     mp_id = _marketplace_id(marketplace)
     params = {
         "details": "true",
@@ -506,6 +514,11 @@ async def get_fba_inventory(
         "granularityId": mp_id,
         "marketplaceIds": mp_id,
     }
+
+    # Parse ASIN filter
+    filter_asins = set()
+    if asin_filter:
+        filter_asins = {a.strip() for a in asin_filter.split(",") if a.strip()}
 
     all_summaries = []
     pages = 0
@@ -534,11 +547,15 @@ async def get_fba_inventory(
             "nextToken": next_token,
         }
 
+    # Build per-SKU results
     results = []
     for s in all_summaries:
+        asin = s.get("asin", "")
+        if filter_asins and asin not in filter_asins:
+            continue
         inv = s.get("inventoryDetails", {})
         results.append({
-            "ASIN": s.get("asin", ""),
+            "ASIN": asin,
             "SKU": s.get("sellerSku", ""),
             "FNSKU": s.get("fnSku", ""),
             "Name": s.get("productName", "")[:60],
@@ -546,6 +563,42 @@ async def get_fba_inventory(
             "Inbound": inv.get("inboundWorkingQuantity", 0) + inv.get("inboundShippedQuantity", 0) + inv.get("inboundReceivingQuantity", 0),
             "Reserved": inv.get("reservedQuantity", {}).get("totalReservedQuantity", 0),
         })
+
+    if filter_asins:
+        # Aggregate multiple SKUs per ASIN into a single row
+        asin_totals = {}
+        for r in results:
+            asin = r["ASIN"]
+            if asin not in asin_totals:
+                asin_totals[asin] = {
+                    "ASIN": asin,
+                    "Name": r["Name"],
+                    "SKU_Count": 0,
+                    "Fulfillable": 0,
+                    "Inbound": 0,
+                    "Reserved": 0,
+                }
+            asin_totals[asin]["SKU_Count"] += 1
+            asin_totals[asin]["Fulfillable"] += r["Fulfillable"]
+            asin_totals[asin]["Inbound"] += r["Inbound"]
+            asin_totals[asin]["Reserved"] += r["Reserved"]
+
+        # Flag missing ASINs
+        aggregated = list(asin_totals.values())
+        found_asins = set(asin_totals.keys())
+        missing = filter_asins - found_asins
+        for m in sorted(missing):
+            aggregated.append({
+                "ASIN": m,
+                "Name": "NOT FOUND IN FBA INVENTORY",
+                "SKU_Count": 0,
+                "Fulfillable": 0,
+                "Inbound": 0,
+                "Reserved": 0,
+            })
+
+        title = f"FBA Inventory — {len(found_asins)}/{len(filter_asins)} ASINs found ({len(results)} SKUs, {pages} pages fetched)"
+        return format_json(aggregated, title=title, max_items=len(aggregated))
 
     return format_json(results, title=f"FBA Inventory ({len(results)} SKUs, {pages} pages)")
 

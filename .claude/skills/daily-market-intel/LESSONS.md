@@ -214,12 +214,12 @@
 
 ## Repeat Errors
 
-### FBA Inventory API Truncation (×2)
+### FBA Inventory API Truncation (×2) — RESOLVED
 - **First seen:** 2026-02-24 (run 1)
 - **Repeated:** 2026-02-24 (v2)
-- **Description:** `get_fba_inventory()` returns only ~50 rows. 6 hero ASINs consistently fall outside the visible results: B096MYBLS1, B08FYH13CL, B0F8R652FX, B09THLVFZK, B07D6D95NG, B09HVSLBS6.
-- **Impact:** Cannot confirm stock levels for nearly half of hero products.
-- **Fix needed:** Either paginate the inventory call (nextToken) or make targeted calls per ASIN.
+- **Resolved:** 2026-02-24 — Added `asin_filter` parameter to `get_fba_inventory()`.
+- **Root cause:** API was fetching all 294 SKUs correctly, but `format_json()` had `max_items=50` default that truncated the output.
+- **Fix:** Pass `asin_filter="B08DDJCQKF,B09X55KL2C,..."` (comma-separated hero ASINs). Server now filters to only those ASINs, aggregates multiple SKUs per ASIN, and reports missing ASINs explicitly. No more truncation.
 
 ### B09HVSLBS6 No Competitive Pricing (×3)
 - **First seen:** 2026-02-24 (run 1)
