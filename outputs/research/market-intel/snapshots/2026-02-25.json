@@ -1,0 +1,67 @@
+{
+  "date": "2026-02-25",
+  "source": "SP-API + DataDive + Apify + Seller Board",
+  "notes": "Full 5-source run. FBA inventory pagination fix confirmed working (all 13 heroes). B09HVSLBS6 pricing still null (known issue x3).",
+  "hero_products": {
+    "B08DDJCQKF": {"name": "Cross Stitch Backpack Charms", "bsr": 4413, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 3, "subcategory": "Cross-Stitch Stamped Kits", "reviews": 1278, "rating": 4.5, "price": 19.98, "dd_sales_mo": 5934, "dd_revenue_mo": 130429, "stock": 1785},
+    "B0F6YTG1CH": {"name": "My First Cross Stitch", "bsr": 111509, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 148, "subcategory": "Cross-Stitch Counted Kits", "reviews": 44, "rating": 4.7, "price": 16.98, "dd_sales_mo": null, "dd_revenue_mo": null, "stock": 240},
+    "B09X55KL2C": {"name": "10 Embroidery Patterns", "bsr": 17267, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 65, "subcategory": "Embroidery Kits", "reviews": 694, "rating": 4.5, "price": 23.98, "dd_sales_mo": 441, "dd_revenue_mo": 11898, "stock": 1866, "badges": ["Overall Pick (embroidery kit for kids)", "Overall Pick (kids embroidery kit)"]},
+    "B0DC69M3YD": {"name": "4 Embroidery Flowers (Adults)", "bsr": 18796, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 78, "subcategory": "Embroidery Kits", "reviews": 633, "rating": 4.5, "price": 24.98, "dd_sales_mo": 525, "dd_revenue_mo": 13115, "stock": 685},
+    "B09WQSBZY7": {"name": "Fairy Sewing Kit", "bsr": 9087, "bsr_category": "Toys & Games", "subcategory_rank": 12, "subcategory": "Kids' Sewing Kits", "reviews": 617, "rating": 4.6, "price": 21.98, "dd_sales_mo": 1333, "dd_revenue_mo": 29299, "stock": 1525},
+    "B096MYBLS1": {"name": "Dessert Sewing Kit", "bsr": 60346, "bsr_category": "Toys & Games", "subcategory_rank": 47, "subcategory": "Kids' Felt Craft Kits", "reviews": 266, "rating": 4.6, "price": 22.98, "dd_sales_mo": 188, "dd_revenue_mo": 4320, "stock": 27, "alert": "LOW STOCK"},
+    "B08FYH13CL": {"name": "Latch Hook Pencil Cases", "bsr": 27034, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 20, "subcategory": "Latch Hook Kits", "reviews": 498, "rating": 4.4, "price": 19.98, "dd_sales_mo": null, "dd_revenue_mo": null, "stock": 836, "note": "Rank crash today: latch kits #7->90, latch hook for kids #6->41"},
+    "B0F8R652FX": {"name": "Latch Hook Rainbow Heart", "bsr": 17987, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 9, "subcategory": "Latch Hook Kits", "reviews": 48, "rating": 4.5, "price": 24.98, "dd_sales_mo": null, "dd_revenue_mo": null, "stock": 457},
+    "B0F8DG32H5": {"name": "Knitting Cat & Hat", "bsr": 18657, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 24, "subcategory": "Knitting Kits", "reviews": 31, "rating": 4.9, "price": 26.98, "dd_sales_mo": 258, "dd_revenue_mo": 7477, "stock": 527},
+    "B09THLVFZK": {"name": "Mini Fuse Beads 48 Colors", "bsr": 6378, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 11, "subcategory": "Fuse & Perler Beads", "reviews": 2922, "rating": 4.6, "price": 32.98, "dd_sales_mo": 2044, "dd_revenue_mo": 59235, "stock": 845, "badges": ["Overall Pick (mini perler beads)"]},
+    "B07D6D95NG": {"name": "10mm Big Fuse Beads", "bsr": 22722, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 45, "subcategory": "Fuse & Perler Beads", "reviews": 103, "rating": 4.1, "price": 24.98, "dd_sales_mo": null, "dd_revenue_mo": null, "stock": 277},
+    "B0FQC7YFX6": {"name": "Princess Lacing Card", "bsr": 42478, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 20, "subcategory": "Card Making Kits", "reviews": 30, "rating": 4.8, "price": 19.98, "dd_sales_mo": 109, "dd_revenue_mo": 2178, "stock": 393},
+    "B09HVSLBS6": {"name": "Needlepoint Cat Wallet", "bsr": 21687, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 71, "subcategory": "Sewing Project Kits", "reviews": 174, "rating": 4.2, "price": null, "dd_sales_mo": null, "dd_revenue_mo": null, "stock": 1, "alert": "NEAR OOS - 1 UNIT", "note": "No competitive pricing returned (known issue x3)"}
+  },
+  "orders_yesterday": {
+    "date": "2026-02-24",
+    "total_orders": 163,
+    "total_units": 169,
+    "shipped_orders": 81,
+    "pending_orders": 79,
+    "canceled_orders": 3,
+    "shipped_revenue_incl_tax": 2134.86
+  },
+  "seller_board_7day": {
+    "date_range": "2026-02-17 to 2026-02-23",
+    "revenue": 29158.18,
+    "net_profit": 5856.30,
+    "ad_spend": 5473.28,
+    "tacos_pct": 18.77,
+    "avg_margin_pct": 19.75,
+    "note": "Feb 23 anomaly: -$147 profit. Excl. Feb 23, avg $1,001/day at 23.7% margin."
+  },
+  "rank_radar_summary": {
+    "radars_fetched": 12,
+    "products": {
+      "B0B1927HCG": {"top10": 37, "top50": 38, "total": 38, "trend": "dominant"},
+      "B09WQSBZY7": {"top10": 22, "top50": 58, "total": 87, "trend": "dominant"},
+      "B09X55KL2C": {"top10": 22, "top50": 52, "total": 55, "trend": "dominant"},
+      "B0DKD2S3JT": {"top10": 21, "top50": 35, "total": 50, "trend": "dominant"},
+      "B0F8DG32H5": {"top10": 13, "top50": 52, "total": 81, "trend": "strong"},
+      "B07D6D95NG": {"top10": 13, "top50": 23, "total": 38, "trend": "strong"},
+      "B09THLVFZK": {"top10": 10, "top50": 16, "total": 18, "trend": "strong"},
+      "B08FYH13CL": {"top10": 9, "top50": 24, "total": 53, "trend": "strong"},
+      "B0FHMRQWRX": {"top10": 9, "top50": 31, "total": 50, "trend": "strong"},
+      "B0FQC7YFX6": {"top10": 8, "top50": 27, "total": 52, "trend": "strong"},
+      "B096MYBLS1": {"top10": 2, "top50": 27, "total": 50, "trend": "low"},
+      "B0DC69M3YD": {"top10": 0, "top50": 37, "total": 67, "trend": "low"}
+    }
+  },
+  "badges": [
+    {"asin": "B09X55KL2C", "keyword": "embroidery kit for kids", "badge": "Overall Pick"},
+    {"asin": "B09X55KL2C", "keyword": "kids embroidery kit", "badge": "Overall Pick"},
+    {"asin": "B09THLVFZK", "keyword": "mini perler beads", "badge": "Overall Pick"}
+  ],
+  "new_competitors_detected": [
+    {"asin": "B0FR7Y8VHB", "brand": "Louise Maelys", "keywords": ["embroidery kit for kids"], "position": 3, "days_seen": 2},
+    {"asin": "B0CJZ3JV3K", "brand": "kullaloo", "keywords": ["sewing kit for kids"], "position": 3, "days_seen": 2},
+    {"asin": "B0DS23C1YX", "brand": "READAEER", "keywords": ["loom knitting kit"], "position": 1, "days_seen": 2},
+    {"asin": "B0BSL1MN94", "brand": "Yinder", "keywords": ["embroidery kit for kids"], "position": 5, "days_seen": 1},
+    {"asin": "B0DDY5XX72", "brand": "Craftwiz", "keywords": ["embroidery kit for beginners"], "position": 5, "days_seen": 1}
+  ]
+}

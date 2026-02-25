@@ -24,6 +24,45 @@
 
 <!-- Add new entries at the TOP (newest first). Use this exact format: -->
 
+### Run: 2026-02-25
+**Goals:**
+- [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
+- [x] Fetch SP-API Orders for yesterday's revenue/units
+- [x] Fetch DataDive Rank Radar data for 12 radars
+- [x] Fetch DataDive competitor data for 8 niches
+- [x] Run Apify light keyword scan (9 keywords)
+- [x] Fetch Seller Board 7-day dashboard aggregates
+- [x] Compile full report with mandatory format
+- [x] Save snapshot
+
+**Result:** ✅ Success — All 5 data sources fetched, full report compiled
+
+**What happened:**
+- All 5 data sources fetched successfully using 4 parallel background agents
+- SP-API inventory pagination fix confirmed working — all 13 hero ASINs retrieved (6 pages, 294 SKUs)
+- Critical alerts: B09HVSLBS6 = 1 unit (near OOS), B096MYBLS1 = 27 units (low stock)
+- B08FYH13CL rank crash on "latch kits" (#7 → #90) and "latch hook for kids" (#6 → #41)
+- Big win: B0DC69M3YD jumped +40 positions on "embroidery kit" (225K vol keyword)
+- DataDive agent took ~21 min — longest step as expected (12 radars + 8 niches, 1.1s rate limit)
+- 3 new competitors confirmed for 2nd consecutive day: Louise Maelys, kullaloo, READAEER
+
+**What didn't work:**
+- B09HVSLBS6 still returns no competitive pricing (repeat issue ×3)
+- DataDive Latch Hook niche still stale — hero ASINs B08FYH13CL and B0F8R652FX missing from competitor set
+- SP-API catalog/pricing hit 429s on first attempt — retried with 2-3s delay (self-resolved)
+
+**Is this a repeat error?** Yes — B09HVSLBS6 pricing (×3), Latch Hook niche stale (×2)
+
+**Lesson learned:**
+- FBA inventory pagination fix works perfectly — do NOT set max_results=50 anymore, let it paginate all pages
+- Serializing SP-API pricing calls is correct — parallel calls still hit 429s on catalog
+- DataDive is the slowest agent (~21 min) — launch it first or accept it as the bottleneck
+- New competitors appearing 2 days in a row should be flagged as confirmed and added to context/competitors.md
+
+**Tokens/cost:** ~120K tokens, ~$0.81 Apify cost
+
+---
+
 ### Run: 2026-02-24 (v2)
 **Goals:**
 - [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
@@ -182,7 +221,7 @@
 - **Impact:** Cannot confirm stock levels for nearly half of hero products.
 - **Fix needed:** Either paginate the inventory call (nextToken) or make targeted calls per ASIN.
 
-### B09HVSLBS6 No Competitive Pricing (×2)
+### B09HVSLBS6 No Competitive Pricing (×3)
 - **First seen:** 2026-02-24 (run 1)
 - **Repeated:** 2026-02-24 (v2)
 - **Description:** Needlepoint Cat Wallet returns empty CompetitivePrices array from SP-API. Listing exists (has BSR) but no active Buy Box offer.

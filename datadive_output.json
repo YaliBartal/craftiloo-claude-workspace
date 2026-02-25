@@ -1,0 +1,1691 @@
+{
+   "competitors" : {
+      "AY4AlnSj9g" : {
+         "competitors" : [
+            {
+               "asin" : "B09THLVFZK",
+               "bsr" : null,
+               "dd_revenue_mo" : 59235.12,
+               "dd_sales_mo" : 2044,
+               "price" : 28.98,
+               "rating" : 4.6,
+               "reviews" : 2922
+            },
+            {
+               "asin" : "B0C5WQD914",
+               "bsr" : null,
+               "dd_revenue_mo" : 27465.64,
+               "dd_sales_mo" : 1018,
+               "price" : 26.98,
+               "rating" : 4.5,
+               "reviews" : 321
+            },
+            {
+               "asin" : "B08QV9CMFQ",
+               "bsr" : null,
+               "dd_revenue_mo" : 15286.95,
+               "dd_sales_mo" : 805,
+               "price" : 18.99,
+               "rating" : 4.2,
+               "reviews" : 1064
+            },
+            {
+               "asin" : "B0D5LF666P",
+               "bsr" : null,
+               "dd_revenue_mo" : 20612.72,
+               "dd_sales_mo" : 764,
+               "price" : 26.98,
+               "rating" : 4.5,
+               "reviews" : 125
+            },
+            {
+               "asin" : "B0CBTKKTF9",
+               "bsr" : null,
+               "dd_revenue_mo" : 1442.61,
+               "dd_sales_mo" : 39,
+               "price" : 36.99,
+               "rating" : 3.6,
+               "reviews" : 28
+            },
+            {
+               "asin" : "B01M0EP7S2",
+               "bsr" : null,
+               "dd_revenue_mo" : 436.81,
+               "dd_sales_mo" : 19,
+               "price" : 22.99,
+               "rating" : 4.6,
+               "reviews" : 621
+            },
+            {
+               "asin" : "B0BZRWVPN5",
+               "bsr" : null,
+               "dd_revenue_mo" : null,
+               "dd_sales_mo" : 5,
+               "price" : 26.99,
+               "rating" : 4.4,
+               "reviews" : 173
+            },
+            {
+               "asin" : "B07M8KVTSR",
+               "bsr" : null,
+               "dd_revenue_mo" : 0,
+               "dd_sales_mo" : 0,
+               "price" : 23.99,
+               "rating" : 4.2,
+               "reviews" : 1313
+            }
+         ],
+         "niche" : "Mini Perler Beads"
+      },
+      "Aw4EQhG6bP" : {
+         "competitors" : [
+            {
+               "asin" : "B0B58BZ5KV",
+               "bsr" : null,
+               "dd_revenue_mo" : 34051.66,
+               "dd_sales_mo" : 2434,
+               "price" : 13.99,
+               "rating" : 4.7,
+               "reviews" : 919
+            },
+            {
+               "asin" : "B0CP8VJ56S",
+               "bsr" : null,
+               "dd_revenue_mo" : 15025,
+               "dd_sales_mo" : 1504,
+               "price" : 9.99,
+               "rating" : 4.7,
+               "reviews" : 1049
+            },
+            {
+               "asin" : "B00JM5G05I",
+               "bsr" : null,
+               "dd_revenue_mo" : 14483,
+               "dd_sales_mo" : 639,
+               "price" : 25.49,
+               "rating" : 4.8,
+               "reviews" : 1030
+            },
+            {
+               "asin" : "B000O7ISY4",
+               "bsr" : null,
+               "dd_revenue_mo" : 7049.7,
+               "dd_sales_mo" : 630,
+               "price" : 5,
+               "rating" : 4.7,
+               "reviews" : 7296
+            },
+            {
+               "asin" : "B0D3LVN8JW",
+               "bsr" : null,
+               "dd_revenue_mo" : 2889.59,
+               "dd_sales_mo" : 241,
+               "price" : 11.99,
+               "rating" : 4.8,
+               "reviews" : 52
+            },
+            {
+               "asin" : "B0D3LTRKMJ",
+               "bsr" : null,
+               "dd_revenue_mo" : 1450.79,
+               "dd_sales_mo" : 121,
+               "price" : 11.99,
+               "rating" : 4.6,
+               "reviews" : 48
+            },
+            {
+               "asin" : "B0FQC7YFX6",
+               "bsr" : null,
+               "dd_revenue_mo" : 2177.82,
+               "dd_sales_mo" : 109,
+               "price" : 19.98,
+               "rating" : 4.8,
+               "reviews" : 30
+            }
+         ],
+         "niche" : "Lacing Cards for Kids"
+      },
+      "Er21lin0KC" : {
+         "competitors" : [
+            {
+               "asin" : "B0C3ZVKB46",
+               "bsr" : null,
+               "dd_revenue_mo" : 209176.62,
+               "dd_sales_mo" : 12319,
+               "price" : 19.98,
+               "rating" : 4.4,
+               "reviews" : 1938
+            },
+            {
+               "asin" : "B0CZHKSSL4",
+               "bsr" : null,
+               "dd_revenue_mo" : 104717.1,
+               "dd_sales_mo" : 6178,
+               "price" : 16.95,
+               "rating" : 4.5,
+               "reviews" : 1187
+            },
+            {
+               "asin" : "B0B762JW55",
+               "bsr" : null,
+               "dd_revenue_mo" : 83508.14,
+               "dd_sales_mo" : 3343,
+               "price" : 24.98,
+               "rating" : 4.6,
+               "reviews" : 1924
+            },
+            {
+               "asin" : "B0CH8VJ97G",
+               "bsr" : null,
+               "dd_revenue_mo" : 48715.56,
+               "dd_sales_mo" : 2322,
+               "price" : 20.98,
+               "rating" : 4.5,
+               "reviews" : 755
+            },
+            {
+               "asin" : "B0BB9N74SG",
+               "bsr" : null,
+               "dd_revenue_mo" : 45788.34,
+               "dd_sales_mo" : 1833,
+               "price" : 24.98,
+               "rating" : 4.6,
+               "reviews" : 2801
+            },
+            {
+               "asin" : "B0C8F87C6Y",
+               "bsr" : null,
+               "dd_revenue_mo" : 31999.33,
+               "dd_sales_mo" : 1067,
+               "price" : 29.99,
+               "rating" : 4.7,
+               "reviews" : 738
+            },
+            {
+               "asin" : "B0DC69M3YD",
+               "bsr" : null,
+               "dd_revenue_mo" : 13114.5,
+               "dd_sales_mo" : 525,
+               "price" : 24.98,
+               "rating" : 4.5,
+               "reviews" : 633
+            }
+         ],
+         "niche" : "Beginners Embroidery Kit for Kids"
+      },
+      "O6b4XATpTj" : {
+         "competitors" : [
+            {
+               "asin" : "B0B8W4FK4Q",
+               "bsr" : null,
+               "dd_revenue_mo" : 16271.86,
+               "dd_sales_mo" : 814,
+               "price" : 19.99,
+               "rating" : 4.5,
+               "reviews" : 391
+            },
+            {
+               "asin" : "B0F8DG32H5",
+               "bsr" : null,
+               "dd_revenue_mo" : 7476.84,
+               "dd_sales_mo" : 258,
+               "price" : 28.98,
+               "rating" : 4.9,
+               "reviews" : 31
+            },
+            {
+               "asin" : "B0DKD2S3JT",
+               "bsr" : null,
+               "dd_revenue_mo" : 3854.34,
+               "dd_sales_mo" : 133,
+               "price" : 28.98,
+               "rating" : 4.5,
+               "reviews" : 55
+            },
+            {
+               "asin" : "B004JIFCXO",
+               "bsr" : null,
+               "dd_revenue_mo" : null,
+               "dd_sales_mo" : null,
+               "price" : 15,
+               "rating" : 4.5,
+               "reviews" : 3280
+            }
+         ],
+         "niche" : "Loom Knitting"
+      },
+      "RmbSD3OH6t" : {
+         "competitors" : [
+            {
+               "asin" : "B091GXM2Y6",
+               "bsr" : null,
+               "dd_revenue_mo" : 125277.03,
+               "dd_sales_mo" : 5697,
+               "price" : 21.99,
+               "rating" : 4.8,
+               "reviews" : 3488
+            },
+            {
+               "asin" : "B0C2XYP6L3",
+               "bsr" : null,
+               "dd_revenue_mo" : 42066.87,
+               "dd_sales_mo" : 1913,
+               "price" : 21.99,
+               "rating" : 4.6,
+               "reviews" : 1865
+            },
+            {
+               "asin" : "B09WQSBZY7",
+               "bsr" : null,
+               "dd_revenue_mo" : 29299.34,
+               "dd_sales_mo" : 1333,
+               "price" : 17.98,
+               "rating" : 4.6,
+               "reviews" : 617
+            },
+            {
+               "asin" : "B08JYF1Z9F",
+               "bsr" : null,
+               "dd_revenue_mo" : 23888.05,
+               "dd_sales_mo" : 1195,
+               "price" : 20.99,
+               "rating" : 4.7,
+               "reviews" : 3968
+            },
+            {
+               "asin" : "B0CXY8JMTK",
+               "bsr" : null,
+               "dd_revenue_mo" : 26278.05,
+               "dd_sales_mo" : 1195,
+               "price" : 21.99,
+               "rating" : 4.8,
+               "reviews" : 252
+            },
+            {
+               "asin" : "B091KVKZ8B",
+               "bsr" : null,
+               "dd_revenue_mo" : 18258.69,
+               "dd_sales_mo" : 677,
+               "price" : 26.97,
+               "rating" : 4.7,
+               "reviews" : 835
+            },
+            {
+               "asin" : "0545906520",
+               "bsr" : null,
+               "dd_revenue_mo" : 4742.4,
+               "dd_sales_mo" : 312,
+               "price" : 15.2,
+               "rating" : 4.6,
+               "reviews" : 6005
+            },
+            {
+               "asin" : "B089MCPDRS",
+               "bsr" : null,
+               "dd_revenue_mo" : 6319.5,
+               "dd_sales_mo" : 275,
+               "price" : 22.98,
+               "rating" : 4.6,
+               "reviews" : 890
+            },
+            {
+               "asin" : "B096MYBLS1",
+               "bsr" : null,
+               "dd_revenue_mo" : 4320.24,
+               "dd_sales_mo" : 188,
+               "price" : 22.98,
+               "rating" : 4.6,
+               "reviews" : 266
+            },
+            {
+               "asin" : "B08HH8XV33",
+               "bsr" : null,
+               "dd_revenue_mo" : 4207.32,
+               "dd_sales_mo" : 156,
+               "price" : 26.97,
+               "rating" : 4.7,
+               "reviews" : 404
+            }
+         ],
+         "niche" : "Sewing Kit for Kids"
+      },
+      "VqBgB5QQ07" : {
+         "competitors" : [
+            {
+               "asin" : "B08CDS6QJH",
+               "bsr" : null,
+               "dd_revenue_mo" : null,
+               "dd_sales_mo" : 2415,
+               "price" : 17.99,
+               "rating" : 3.9,
+               "reviews" : 881
+            },
+            {
+               "asin" : "B092SW839H",
+               "bsr" : null,
+               "dd_revenue_mo" : 2206.6,
+               "dd_sales_mo" : 170,
+               "price" : 12.98,
+               "rating" : 3.9,
+               "reviews" : 68
+            },
+            {
+               "asin" : "B09HH315NQ",
+               "bsr" : null,
+               "dd_revenue_mo" : 2308.95,
+               "dd_sales_mo" : 105,
+               "price" : 0,
+               "rating" : 3.3,
+               "reviews" : 4
+            },
+            {
+               "asin" : "B09X1M6Z7T",
+               "bsr" : null,
+               "dd_revenue_mo" : 341.81,
+               "dd_sales_mo" : 19,
+               "price" : 17.99,
+               "rating" : 4.1,
+               "reviews" : 97
+            },
+            {
+               "asin" : "B098XDJKQL",
+               "bsr" : null,
+               "dd_revenue_mo" : 170.91,
+               "dd_sales_mo" : 9,
+               "price" : 18.99,
+               "rating" : 4.1,
+               "reviews" : 22
+            },
+            {
+               "asin" : "B09QWG72PK",
+               "bsr" : null,
+               "dd_revenue_mo" : null,
+               "dd_sales_mo" : 3,
+               "price" : 0,
+               "rating" : 4.1,
+               "reviews" : 212
+            },
+            {
+               "asin" : "B087THPK7C",
+               "bsr" : null,
+               "dd_revenue_mo" : 0,
+               "dd_sales_mo" : 0,
+               "price" : 24.99,
+               "rating" : 4,
+               "reviews" : 380
+            },
+            {
+               "asin" : "B09F984N1T",
+               "bsr" : null,
+               "dd_revenue_mo" : null,
+               "dd_sales_mo" : 0,
+               "price" : 29.99,
+               "rating" : 4.4,
+               "reviews" : 11
+            },
+            {
+               "asin" : "B09K63BGYK",
+               "bsr" : null,
+               "dd_revenue_mo" : 0,
+               "dd_sales_mo" : 0,
+               "price" : 8.49,
+               "rating" : 3,
+               "reviews" : 1
+            },
+            {
+               "asin" : "B09MJ2KBT5",
+               "bsr" : null,
+               "dd_revenue_mo" : 0,
+               "dd_sales_mo" : 0,
+               "price" : 20.99,
+               "rating" : 4.1,
+               "reviews" : 58
+            }
+         ],
+         "niche" : "Latch Hook Kit for Kids"
+      },
+      "b4Nisjv3xy" : {
+         "competitors" : [
+            {
+               "asin" : "B08DDJCQKF",
+               "bsr" : null,
+               "dd_revenue_mo" : 130429.32,
+               "dd_sales_mo" : 5934,
+               "price" : 24.98,
+               "rating" : 4.5,
+               "reviews" : 1237
+            },
+            {
+               "asin" : "B0B97Q1Q4T",
+               "bsr" : null,
+               "dd_revenue_mo" : 88047.96,
+               "dd_sales_mo" : 4004,
+               "price" : 21.99,
+               "rating" : 4.5,
+               "reviews" : 229
+            },
+            {
+               "asin" : "B0DFHN42QB",
+               "bsr" : null,
+               "dd_revenue_mo" : 53880.05,
+               "dd_sales_mo" : 2995,
+               "price" : 17.99,
+               "rating" : 4.6,
+               "reviews" : 113
+            },
+            {
+               "asin" : "B08T5QC9FS",
+               "bsr" : null,
+               "dd_revenue_mo" : 13704.57,
+               "dd_sales_mo" : 1143,
+               "price" : 11.99,
+               "rating" : 4.3,
+               "reviews" : 1651
+            },
+            {
+               "asin" : "B087DYHMZ2",
+               "bsr" : null,
+               "dd_revenue_mo" : 32847.12,
+               "dd_sales_mo" : 1096,
+               "price" : 29.97,
+               "rating" : 4.5,
+               "reviews" : 605
+            },
+            {
+               "asin" : "B09M8DKHH6",
+               "bsr" : null,
+               "dd_revenue_mo" : 8355.6,
+               "dd_sales_mo" : 440,
+               "price" : 20.59,
+               "rating" : 4.5,
+               "reviews" : 214
+            },
+            {
+               "asin" : "B0F8QZZQQM",
+               "bsr" : null,
+               "dd_revenue_mo" : 10036.56,
+               "dd_sales_mo" : 372,
+               "price" : 26.98,
+               "rating" : 4.8,
+               "reviews" : 30
+            },
+            {
+               "asin" : "B08QCX1Z5V",
+               "bsr" : null,
+               "dd_revenue_mo" : 5657.67,
+               "dd_sales_mo" : 333,
+               "price" : 16.99,
+               "rating" : 4.3,
+               "reviews" : 622
+            }
+         ],
+         "niche" : "Cross Stitch Kits for Kids"
+      },
+      "gfot2FZUBU" : {
+         "competitors" : [
+            {
+               "asin" : "B08DDJCQKF",
+               "bsr" : null,
+               "dd_revenue_mo" : 25134.84,
+               "dd_sales_mo" : 1258,
+               "price" : 19.98,
+               "rating" : 4.5,
+               "reviews" : 1278
+            },
+            {
+               "asin" : "B0DFHN42QB",
+               "bsr" : null,
+               "dd_revenue_mo" : 12053.3,
+               "dd_sales_mo" : 670,
+               "price" : 17.99,
+               "rating" : 4.6,
+               "reviews" : 164
+            },
+            {
+               "asin" : "B09X55KL2C",
+               "bsr" : null,
+               "dd_revenue_mo" : 11898.18,
+               "dd_sales_mo" : 441,
+               "price" : 26.98,
+               "rating" : 4.5,
+               "reviews" : 694
+            },
+            {
+               "asin" : "B0B7JHN4F1",
+               "bsr" : null,
+               "dd_revenue_mo" : 5951.03,
+               "dd_sales_mo" : 397,
+               "price" : 14.99,
+               "rating" : 4.6,
+               "reviews" : 274
+            },
+            {
+               "asin" : "B0DP654CSV",
+               "bsr" : null,
+               "dd_revenue_mo" : 8730.03,
+               "dd_sales_mo" : 397,
+               "price" : 21.99,
+               "rating" : 4.5,
+               "reviews" : 38
+            },
+            {
+               "asin" : "B0D944GMKK",
+               "bsr" : null,
+               "dd_revenue_mo" : 6399.09,
+               "dd_sales_mo" : 291,
+               "price" : 21.99,
+               "rating" : 4.4,
+               "reviews" : 19
+            },
+            {
+               "asin" : "B0FP5FGNLK",
+               "bsr" : null,
+               "dd_revenue_mo" : 4196.79,
+               "dd_sales_mo" : 221,
+               "price" : 17.99,
+               "rating" : 3.9,
+               "reviews" : 167
+            },
+            {
+               "asin" : "B09HVDNFMR",
+               "bsr" : null,
+               "dd_revenue_mo" : 3452.16,
+               "dd_sales_mo" : 192,
+               "price" : 17.98,
+               "rating" : 4.2,
+               "reviews" : 173
+            },
+            {
+               "asin" : "B0D75S8P78",
+               "bsr" : null,
+               "dd_revenue_mo" : 2074.8,
+               "dd_sales_mo" : 104,
+               "price" : 19.95,
+               "rating" : 4.3,
+               "reviews" : 52
+            },
+            {
+               "asin" : "B0FK57P8PV",
+               "bsr" : null,
+               "dd_revenue_mo" : 1565.13,
+               "dd_sales_mo" : 87,
+               "price" : 18.99,
+               "rating" : 4.1,
+               "reviews" : 47
+            }
+         ],
+         "niche" : "Embroidery Stitch Practice Kit"
+      }
+   },
+   "hero_ratings" : {
+      "B096MYBLS1" : {
+         "niche_source" : "RmbSD3OH6t",
+         "rating" : 4.6,
+         "reviews" : 266
+      },
+      "B09THLVFZK" : {
+         "niche_source" : "AY4AlnSj9g",
+         "rating" : 4.6,
+         "reviews" : 2922
+      },
+      "B09WQSBZY7" : {
+         "niche_source" : "RmbSD3OH6t",
+         "rating" : 4.6,
+         "reviews" : 617
+      },
+      "B09X55KL2C" : {
+         "niche_source" : "gfot2FZUBU",
+         "rating" : 4.5,
+         "reviews" : 694
+      },
+      "B0DC69M3YD" : {
+         "niche_source" : "Er21lin0KC",
+         "rating" : 4.5,
+         "reviews" : 633
+      },
+      "B0DKD2S3JT" : {
+         "niche_source" : "O6b4XATpTj",
+         "rating" : 4.5,
+         "reviews" : 55
+      },
+      "B0F8DG32H5" : {
+         "niche_source" : "O6b4XATpTj",
+         "rating" : 4.9,
+         "reviews" : 31
+      },
+      "B0FQC7YFX6" : {
+         "niche_source" : "Aw4EQhG6bP",
+         "rating" : 4.8,
+         "reviews" : 30
+      }
+   },
+   "radars_fetched" : 12,
+   "rank_radars" : {
+      "B07D6D95NG" : {
+         "big_movers" : [
+            {
+               "change" : 27,
+               "keyword" : "melt beads",
+               "rank_today" : 27,
+               "rank_yesterday" : 54
+            },
+            {
+               "change" : 25,
+               "keyword" : "hama beads",
+               "rank_today" : 29,
+               "rank_yesterday" : 54
+            },
+            {
+               "change" : -23,
+               "keyword" : "iron beads",
+               "rank_today" : 71,
+               "rank_yesterday" : 48
+            },
+            {
+               "change" : 17,
+               "keyword" : "melty beads",
+               "rank_today" : 30,
+               "rank_yesterday" : 47
+            },
+            {
+               "change" : 16,
+               "keyword" : "melting beads for kids crafts",
+               "rank_today" : 21,
+               "rank_yesterday" : 37
+            },
+            {
+               "change" : 14,
+               "keyword" : "melting beads kit",
+               "rank_today" : 26,
+               "rank_yesterday" : 40
+            },
+            {
+               "change" : 11,
+               "keyword" : "melt beads for kids crafts",
+               "rank_today" : 19,
+               "rank_yesterday" : 30
+            },
+            {
+               "change" : 11,
+               "keyword" : "iron on beads",
+               "rank_today" : 41,
+               "rank_yesterday" : 52
+            },
+            {
+               "change" : 6,
+               "keyword" : "iron beads for kids kit",
+               "rank_today" : 39,
+               "rank_yesterday" : 45
+            }
+         ],
+         "top10" : 13,
+         "top50" : 23,
+         "top_keywords" : [
+            {
+               "keyword" : "fuse beads",
+               "rank_today" : 76,
+               "rank_yesterday" : 78,
+               "searchVolume" : 28964
+            },
+            {
+               "keyword" : "fuse beads kit",
+               "rank_today" : 55,
+               "rank_yesterday" : null,
+               "searchVolume" : 6601
+            },
+            {
+               "keyword" : "melty beads",
+               "rank_today" : 30,
+               "rank_yesterday" : 47,
+               "searchVolume" : 3505
+            },
+            {
+               "keyword" : "melting beads",
+               "rank_today" : 44,
+               "rank_yesterday" : 48,
+               "searchVolume" : 3119
+            },
+            {
+               "keyword" : "iron beads",
+               "rank_today" : 71,
+               "rank_yesterday" : 48,
+               "searchVolume" : 2926
+            }
+         ],
+         "total" : 38,
+         "trend" : "strong"
+      },
+      "B08FYH13CL" : {
+         "big_movers" : [
+            {
+               "change" : -83,
+               "keyword" : "latch kits",
+               "rank_today" : 90,
+               "rank_yesterday" : 7
+            },
+            {
+               "change" : -35,
+               "keyword" : "latch hook for kids",
+               "rank_today" : 41,
+               "rank_yesterday" : 6
+            },
+            {
+               "change" : -20,
+               "keyword" : "latch hook rug kits for kids",
+               "rank_today" : 27,
+               "rank_yesterday" : 7
+            },
+            {
+               "change" : -20,
+               "keyword" : "hook rug latch",
+               "rank_today" : 94,
+               "rank_yesterday" : 74
+            },
+            {
+               "change" : -10,
+               "keyword" : "stitch latch hook kit",
+               "rank_today" : 12,
+               "rank_yesterday" : 2
+            },
+            {
+               "change" : 8,
+               "keyword" : "rug hooking kits",
+               "rank_today" : 70,
+               "rank_yesterday" : 78
+            },
+            {
+               "change" : -8,
+               "keyword" : "hook rug",
+               "rank_today" : 54,
+               "rank_yesterday" : 46
+            },
+            {
+               "change" : 7,
+               "keyword" : "latch hook",
+               "rank_today" : 31,
+               "rank_yesterday" : 38
+            },
+            {
+               "change" : 7,
+               "keyword" : "latch kits for kids",
+               "rank_today" : 26,
+               "rank_yesterday" : 33
+            },
+            {
+               "change" : 6,
+               "keyword" : "hook latch kit",
+               "rank_today" : 39,
+               "rank_yesterday" : 45
+            }
+         ],
+         "top10" : 9,
+         "top50" : 24,
+         "top_keywords" : [
+            {
+               "keyword" : "latch hook kits",
+               "rank_today" : 41,
+               "rank_yesterday" : 41,
+               "searchVolume" : 11674
+            },
+            {
+               "keyword" : "latch hook",
+               "rank_today" : 31,
+               "rank_yesterday" : 38,
+               "searchVolume" : 11097
+            },
+            {
+               "keyword" : "latch hook kits for kids",
+               "rank_today" : 8,
+               "rank_yesterday" : 8,
+               "searchVolume" : 10849
+            },
+            {
+               "keyword" : "latch hook rug",
+               "rank_today" : 71,
+               "rank_yesterday" : 71,
+               "searchVolume" : 2817
+            },
+            {
+               "keyword" : "latch hook rug kit",
+               "rank_today" : 47,
+               "rank_yesterday" : 44,
+               "searchVolume" : 2557
+            }
+         ],
+         "total" : 53,
+         "trend" : "strong"
+      },
+      "B096MYBLS1" : {
+         "big_movers" : [
+            {
+               "change" : -28,
+               "keyword" : "diy sewing kit for kids",
+               "rank_today" : 89,
+               "rank_yesterday" : 61
+            },
+            {
+               "change" : -18,
+               "keyword" : "kids sewing kits",
+               "rank_today" : 39,
+               "rank_yesterday" : 21
+            },
+            {
+               "change" : -18,
+               "keyword" : "craftorama sewing kit for kids",
+               "rank_today" : 71,
+               "rank_yesterday" : 53
+            },
+            {
+               "change" : -16,
+               "keyword" : "kids sewing craft kit",
+               "rank_today" : 46,
+               "rank_yesterday" : 30
+            },
+            {
+               "change" : -12,
+               "keyword" : "felt sewing kit for kids",
+               "rank_today" : 57,
+               "rank_yesterday" : 45
+            },
+            {
+               "change" : -11,
+               "keyword" : "kids sewing kit",
+               "rank_today" : 30,
+               "rank_yesterday" : 19
+            },
+            {
+               "change" : 10,
+               "keyword" : "beginner sewing kit for kids",
+               "rank_today" : 17,
+               "rank_yesterday" : 27
+            },
+            {
+               "change" : -10,
+               "keyword" : "sew fun kits for kids 4-6",
+               "rank_today" : 86,
+               "rank_yesterday" : 76
+            },
+            {
+               "change" : 9,
+               "keyword" : "sewing kits for kids 5-8",
+               "rank_today" : 75,
+               "rank_yesterday" : 84
+            },
+            {
+               "change" : 9,
+               "keyword" : "kids' sewing kits",
+               "rank_today" : 45,
+               "rank_yesterday" : 54
+            }
+         ],
+         "top10" : 2,
+         "top50" : 27,
+         "top_keywords" : [
+            {
+               "keyword" : "sewing kit for kids",
+               "rank_today" : 51,
+               "rank_yesterday" : 45,
+               "searchVolume" : 15297
+            },
+            {
+               "keyword" : "kids sewing kit",
+               "rank_today" : 30,
+               "rank_yesterday" : 19,
+               "searchVolume" : 8959
+            },
+            {
+               "keyword" : "sewing kits for kids 8-12",
+               "rank_today" : 23,
+               "rank_yesterday" : 16,
+               "searchVolume" : 3562
+            },
+            {
+               "keyword" : "sewing for kids",
+               "rank_today" : 29,
+               "rank_yesterday" : 27,
+               "searchVolume" : 2667
+            },
+            {
+               "keyword" : "sewing kit kids",
+               "rank_today" : 32,
+               "rank_yesterday" : 32,
+               "searchVolume" : 1812
+            }
+         ],
+         "total" : 50,
+         "trend" : "low"
+      },
+      "B09THLVFZK" : {
+         "big_movers" : [
+            {
+               "change" : -8,
+               "keyword" : "perler beads bulk",
+               "rank_today" : 30,
+               "rank_yesterday" : 22
+            }
+         ],
+         "top10" : 10,
+         "top50" : 16,
+         "top_keywords" : [
+            {
+               "keyword" : "perler beads",
+               "rank_today" : 10,
+               "rank_yesterday" : 7,
+               "searchVolume" : 75347
+            },
+            {
+               "keyword" : "fuse beads",
+               "rank_today" : 10,
+               "rank_yesterday" : 10,
+               "searchVolume" : 28964
+            },
+            {
+               "keyword" : "perler bead kit",
+               "rank_today" : 5,
+               "rank_yesterday" : 5,
+               "searchVolume" : 13401
+            },
+            {
+               "keyword" : "fuse beads kit",
+               "rank_today" : 11,
+               "rank_yesterday" : 11,
+               "searchVolume" : 6601
+            },
+            {
+               "keyword" : "perler",
+               "rank_today" : 6,
+               "rank_yesterday" : 6,
+               "searchVolume" : 5765
+            }
+         ],
+         "total" : 18,
+         "trend" : "strong"
+      },
+      "B09WQSBZY7" : {
+         "big_movers" : [
+            {
+               "change" : 27,
+               "keyword" : "kids knitting kits age 5-8",
+               "rank_today" : 57,
+               "rank_yesterday" : 84
+            },
+            {
+               "change" : -18,
+               "keyword" : "stuffed animal sewing kit",
+               "rank_today" : 78,
+               "rank_yesterday" : 60
+            },
+            {
+               "change" : 11,
+               "keyword" : "sewing projects",
+               "rank_today" : 21,
+               "rank_yesterday" : 32
+            },
+            {
+               "change" : 10,
+               "keyword" : "beginners sewing kit",
+               "rank_today" : 44,
+               "rank_yesterday" : 54
+            },
+            {
+               "change" : 7,
+               "keyword" : "beginner sewing kit",
+               "rank_today" : 54,
+               "rank_yesterday" : 61
+            },
+            {
+               "change" : 7,
+               "keyword" : "puppet making kit for kids",
+               "rank_today" : 83,
+               "rank_yesterday" : 90
+            }
+         ],
+         "top10" : 22,
+         "top50" : 58,
+         "top_keywords" : [
+            {
+               "keyword" : "sewing kit for kids",
+               "rank_today" : 9,
+               "rank_yesterday" : 7,
+               "searchVolume" : 15297
+            },
+            {
+               "keyword" : "kids sewing kit",
+               "rank_today" : 7,
+               "rank_yesterday" : 8,
+               "searchVolume" : 8959
+            },
+            {
+               "keyword" : "kids sewing kits age 5-8",
+               "rank_today" : 8,
+               "rank_yesterday" : 11,
+               "searchVolume" : 3815
+            },
+            {
+               "keyword" : "sewing kits for kids 8-12",
+               "rank_today" : 11,
+               "rank_yesterday" : 9,
+               "searchVolume" : 3562
+            },
+            {
+               "keyword" : "beginner sewing kit",
+               "rank_today" : 54,
+               "rank_yesterday" : 61,
+               "searchVolume" : 3379
+            }
+         ],
+         "total" : 87,
+         "trend" : "dominant"
+      },
+      "B09X55KL2C" : {
+         "big_movers" : [
+            {
+               "change" : -8,
+               "keyword" : "cross stitch patterns for beginners",
+               "rank_today" : 35,
+               "rank_yesterday" : 27
+            },
+            {
+               "change" : -7,
+               "keyword" : "embroidery kit for beginners",
+               "rank_today" : 42,
+               "rank_yesterday" : 35
+            },
+            {
+               "change" : -7,
+               "keyword" : "beginners embroidery kit",
+               "rank_today" : 31,
+               "rank_yesterday" : 24
+            },
+            {
+               "change" : -7,
+               "keyword" : "sewing kit for kids ages 10-12",
+               "rank_today" : 28,
+               "rank_yesterday" : 21
+            },
+            {
+               "change" : 7,
+               "keyword" : "punch needle kit for kids ages 8-12",
+               "rank_today" : 25,
+               "rank_yesterday" : 32
+            },
+            {
+               "change" : 6,
+               "keyword" : "kids needlepoint kits age 5-8",
+               "rank_today" : 9,
+               "rank_yesterday" : 15
+            },
+            {
+               "change" : 6,
+               "keyword" : "sewing kit for teens",
+               "rank_today" : 13,
+               "rank_yesterday" : 19
+            }
+         ],
+         "top10" : 22,
+         "top50" : 52,
+         "top_keywords" : [
+            {
+               "keyword" : "embroidery kit for beginners",
+               "rank_today" : 42,
+               "rank_yesterday" : 35,
+               "searchVolume" : 34866
+            },
+            {
+               "keyword" : "sewing kits for kids 8-12",
+               "rank_today" : 21,
+               "rank_yesterday" : 22,
+               "searchVolume" : 3581
+            },
+            {
+               "keyword" : "embroidery kit for kids",
+               "rank_today" : 1,
+               "rank_yesterday" : 3,
+               "searchVolume" : 2524
+            },
+            {
+               "keyword" : "embroidery kit beginner",
+               "rank_today" : 36,
+               "rank_yesterday" : 41,
+               "searchVolume" : 2140
+            },
+            {
+               "keyword" : "kids cross stitch kit",
+               "rank_today" : 13,
+               "rank_yesterday" : 13,
+               "searchVolume" : 1845
+            }
+         ],
+         "total" : 55,
+         "trend" : "dominant"
+      },
+      "B0B1927HCG" : {
+         "big_movers" : [
+            {
+               "change" : 6,
+               "keyword" : "cross-stitch kits",
+               "rank_today" : 7,
+               "rank_yesterday" : 13
+            }
+         ],
+         "top10" : 37,
+         "top50" : 38,
+         "top_keywords" : [
+            {
+               "keyword" : "embroidery kit for kids",
+               "rank_today" : 2,
+               "rank_yesterday" : 1,
+               "searchVolume" : 2524
+            },
+            {
+               "keyword" : "cross stitch for beginners",
+               "rank_today" : 3,
+               "rank_yesterday" : 4,
+               "searchVolume" : 2222
+            },
+            {
+               "keyword" : "needlepoint for beginners",
+               "rank_today" : 14,
+               "rank_yesterday" : 14,
+               "searchVolume" : 2047
+            },
+            {
+               "keyword" : "easy cross stitch kits for beginners",
+               "rank_today" : 3,
+               "rank_yesterday" : 4,
+               "searchVolume" : 1931
+            },
+            {
+               "keyword" : "kids cross stitch kit",
+               "rank_today" : 1,
+               "rank_yesterday" : 1,
+               "searchVolume" : 1845
+            }
+         ],
+         "total" : 38,
+         "trend" : "dominant"
+      },
+      "B0DC69M3YD" : {
+         "big_movers" : [
+            {
+               "change" : 40,
+               "keyword" : "embroidery kit",
+               "rank_today" : 42,
+               "rank_yesterday" : 82
+            },
+            {
+               "change" : -23,
+               "keyword" : "cross stitch beginner kit",
+               "rank_today" : 62,
+               "rank_yesterday" : 39
+            },
+            {
+               "change" : 17,
+               "keyword" : "printed cross stitch kits for adults",
+               "rank_today" : 55,
+               "rank_yesterday" : 72
+            },
+            {
+               "change" : 14,
+               "keyword" : "easy embroidery kits for beginners",
+               "rank_today" : 36,
+               "rank_yesterday" : 50
+            },
+            {
+               "change" : 12,
+               "keyword" : "crossstitch kits adult beginner",
+               "rank_today" : 32,
+               "rank_yesterday" : 44
+            },
+            {
+               "change" : -11,
+               "keyword" : "cross stich kit",
+               "rank_today" : 90,
+               "rank_yesterday" : 79
+            },
+            {
+               "change" : -10,
+               "keyword" : "beginners embroidery kit",
+               "rank_today" : 39,
+               "rank_yesterday" : 29
+            },
+            {
+               "change" : 8,
+               "keyword" : "embroidery kits",
+               "rank_today" : 39,
+               "rank_yesterday" : 47
+            },
+            {
+               "change" : -8,
+               "keyword" : "needlepoint kits",
+               "rank_today" : 70,
+               "rank_yesterday" : 62
+            },
+            {
+               "change" : 8,
+               "keyword" : "embroidery starter kit for beginners",
+               "rank_today" : 25,
+               "rank_yesterday" : 33
+            }
+         ],
+         "top10" : 0,
+         "top50" : 37,
+         "top_keywords" : [
+            {
+               "keyword" : "embroidery kit",
+               "rank_today" : 42,
+               "rank_yesterday" : 82,
+               "searchVolume" : 225457
+            },
+            {
+               "keyword" : "embroidery kit for beginners",
+               "rank_today" : 39,
+               "rank_yesterday" : 32,
+               "searchVolume" : 34866
+            },
+            {
+               "keyword" : "needlepoint kit",
+               "rank_today" : 63,
+               "rank_yesterday" : null,
+               "searchVolume" : 26010
+            },
+            {
+               "keyword" : "embroidery kits",
+               "rank_today" : 39,
+               "rank_yesterday" : 47,
+               "searchVolume" : 19423
+            },
+            {
+               "keyword" : "needle point kits adults beginner",
+               "rank_today" : 26,
+               "rank_yesterday" : 29,
+               "searchVolume" : 15723
+            }
+         ],
+         "total" : 67,
+         "trend" : "low"
+      },
+      "B0DKD2S3JT" : {
+         "big_movers" : [
+            {
+               "change" : 22,
+               "keyword" : "scarf knitting kit for beginners",
+               "rank_today" : 46,
+               "rank_yesterday" : 68
+            },
+            {
+               "change" : -16,
+               "keyword" : "crochet kit kids beginner",
+               "rank_today" : 80,
+               "rank_yesterday" : 64
+            },
+            {
+               "change" : 11,
+               "keyword" : "beginners crochet kit for kids",
+               "rank_today" : 53,
+               "rank_yesterday" : 64
+            },
+            {
+               "change" : 9,
+               "keyword" : "crochet loom",
+               "rank_today" : 17,
+               "rank_yesterday" : 26
+            },
+            {
+               "change" : 9,
+               "keyword" : "beginner knitting kit",
+               "rank_today" : 35,
+               "rank_yesterday" : 44
+            },
+            {
+               "change" : 8,
+               "keyword" : "knitting kit for kids",
+               "rank_today" : 7,
+               "rank_yesterday" : 15
+            },
+            {
+               "change" : -7,
+               "keyword" : "crochet kits kids",
+               "rank_today" : 78,
+               "rank_yesterday" : 71
+            },
+            {
+               "change" : -6,
+               "keyword" : "learn how to knit for beginners kit kids",
+               "rank_today" : 15,
+               "rank_yesterday" : 9
+            }
+         ],
+         "top10" : 21,
+         "top50" : 35,
+         "top_keywords" : [
+            {
+               "keyword" : "knitting kit for beginners",
+               "rank_today" : 69,
+               "rank_yesterday" : 64,
+               "searchVolume" : 9534
+            },
+            {
+               "keyword" : "crochet kit for kids",
+               "rank_today" : 100,
+               "rank_yesterday" : null,
+               "searchVolume" : 5839
+            },
+            {
+               "keyword" : "kids crochet kit",
+               "rank_today" : 80,
+               "rank_yesterday" : 83,
+               "searchVolume" : 4424
+            },
+            {
+               "keyword" : "loom knitting kit",
+               "rank_today" : 7,
+               "rank_yesterday" : 10,
+               "searchVolume" : 4017
+            },
+            {
+               "keyword" : "knitting for beginners kit",
+               "rank_today" : 57,
+               "rank_yesterday" : null,
+               "searchVolume" : 3491
+            }
+         ],
+         "total" : 50,
+         "trend" : "dominant"
+      },
+      "B0F8DG32H5" : {
+         "big_movers" : [
+            {
+               "change" : -69,
+               "keyword" : "knitted wire art kit",
+               "rank_today" : 96,
+               "rank_yesterday" : 27
+            },
+            {
+               "change" : -32,
+               "keyword" : "my first crochet kit for kids",
+               "rank_today" : 59,
+               "rank_yesterday" : 27
+            },
+            {
+               "change" : -15,
+               "keyword" : "hat loom",
+               "rank_today" : 69,
+               "rank_yesterday" : 54
+            },
+            {
+               "change" : -15,
+               "keyword" : "loom kit for kids ages 8-12",
+               "rank_today" : 56,
+               "rank_yesterday" : 41
+            },
+            {
+               "change" : 14,
+               "keyword" : "knitting kit for beginners",
+               "rank_today" : 55,
+               "rank_yesterday" : 69
+            },
+            {
+               "change" : 13,
+               "keyword" : "knitting machine for kids",
+               "rank_today" : 28,
+               "rank_yesterday" : 41
+            },
+            {
+               "change" : 13,
+               "keyword" : "girls crochet kit",
+               "rank_today" : 71,
+               "rank_yesterday" : 84
+            },
+            {
+               "change" : 9,
+               "keyword" : "knitting beginner kit",
+               "rank_today" : 45,
+               "rank_yesterday" : 54
+            },
+            {
+               "change" : 8,
+               "keyword" : "crochet kit for kids",
+               "rank_today" : 92,
+               "rank_yesterday" : 100
+            },
+            {
+               "change" : -8,
+               "keyword" : "kids crochet kits ages 8-12",
+               "rank_today" : 28,
+               "rank_yesterday" : 20
+            }
+         ],
+         "top10" : 13,
+         "top50" : 52,
+         "top_keywords" : [
+            {
+               "keyword" : "loom knitting",
+               "rank_today" : 57,
+               "rank_yesterday" : null,
+               "searchVolume" : 10355
+            },
+            {
+               "keyword" : "knitting kit for beginners",
+               "rank_today" : 55,
+               "rank_yesterday" : 69,
+               "searchVolume" : 9534
+            },
+            {
+               "keyword" : "crochet kit for kids",
+               "rank_today" : 92,
+               "rank_yesterday" : 100,
+               "searchVolume" : 5839
+            },
+            {
+               "keyword" : "kids crochet kit",
+               "rank_today" : 87,
+               "rank_yesterday" : 80,
+               "searchVolume" : 4424
+            },
+            {
+               "keyword" : "loom knitting kit",
+               "rank_today" : 7,
+               "rank_yesterday" : 7,
+               "searchVolume" : 4017
+            }
+         ],
+         "total" : 81,
+         "trend" : "strong"
+      },
+      "B0FHMRQWRX" : {
+         "big_movers" : [
+            {
+               "change" : -27,
+               "keyword" : "hook latch kit",
+               "rank_today" : 76,
+               "rank_yesterday" : 49
+            },
+            {
+               "change" : -22,
+               "keyword" : "latch hook rug kit",
+               "rank_today" : 84,
+               "rank_yesterday" : 62
+            },
+            {
+               "change" : 20,
+               "keyword" : "latch hook kits",
+               "rank_today" : 35,
+               "rank_yesterday" : 55
+            },
+            {
+               "change" : -18,
+               "keyword" : "hook and latch kit",
+               "rank_today" : 62,
+               "rank_yesterday" : 44
+            },
+            {
+               "change" : 17,
+               "keyword" : "hook a rug kits",
+               "rank_today" : 31,
+               "rank_yesterday" : 48
+            },
+            {
+               "change" : -13,
+               "keyword" : "latch hook",
+               "rank_today" : 90,
+               "rank_yesterday" : 77
+            },
+            {
+               "change" : -13,
+               "keyword" : "stitch latch hook kit",
+               "rank_today" : 48,
+               "rank_yesterday" : 35
+            },
+            {
+               "change" : 12,
+               "keyword" : "hook rug kits",
+               "rank_today" : 34,
+               "rank_yesterday" : 46
+            },
+            {
+               "change" : -11,
+               "keyword" : "hook latch rug kits",
+               "rank_today" : 70,
+               "rank_yesterday" : 59
+            },
+            {
+               "change" : 9,
+               "keyword" : "latch hook kits for kids",
+               "rank_today" : 5,
+               "rank_yesterday" : 14
+            }
+         ],
+         "top10" : 9,
+         "top50" : 31,
+         "top_keywords" : [
+            {
+               "keyword" : "latch hook kit",
+               "rank_today" : 36,
+               "rank_yesterday" : 39,
+               "searchVolume" : 20435
+            },
+            {
+               "keyword" : "latch hook kits",
+               "rank_today" : 35,
+               "rank_yesterday" : 55,
+               "searchVolume" : 11674
+            },
+            {
+               "keyword" : "latch hook",
+               "rank_today" : 90,
+               "rank_yesterday" : 77,
+               "searchVolume" : 11097
+            },
+            {
+               "keyword" : "latch hook kits for kids",
+               "rank_today" : 5,
+               "rank_yesterday" : 14,
+               "searchVolume" : 10849
+            },
+            {
+               "keyword" : "rug making kit",
+               "rank_today" : 25,
+               "rank_yesterday" : 25,
+               "searchVolume" : 4102
+            }
+         ],
+         "total" : 50,
+         "trend" : "strong"
+      },
+      "B0FQC7YFX6" : {
+         "big_movers" : [
+            {
+               "change" : -22,
+               "keyword" : "threading board for kids",
+               "rank_today" : 57,
+               "rank_yesterday" : 35
+            },
+            {
+               "change" : 15,
+               "keyword" : "toddler sewing kits ages 4-5",
+               "rank_today" : 39,
+               "rank_yesterday" : 54
+            },
+            {
+               "change" : 13,
+               "keyword" : "toddler sewing kit",
+               "rank_today" : 33,
+               "rank_yesterday" : 46
+            },
+            {
+               "change" : -11,
+               "keyword" : "lace and trace melissa and doug",
+               "rank_today" : 69,
+               "rank_yesterday" : 58
+            },
+            {
+               "change" : 10,
+               "keyword" : "toddler sewing",
+               "rank_today" : 5,
+               "rank_yesterday" : 15
+            },
+            {
+               "change" : 8,
+               "keyword" : "toddler sewing kits ages 2-4",
+               "rank_today" : 10,
+               "rank_yesterday" : 18
+            },
+            {
+               "change" : -8,
+               "keyword" : "lacing toys for toddlers 3-5",
+               "rank_today" : 49,
+               "rank_yesterday" : 41
+            },
+            {
+               "change" : -6,
+               "keyword" : "lacing cards for kids ages 3-5",
+               "rank_today" : 18,
+               "rank_yesterday" : 12
+            },
+            {
+               "change" : -6,
+               "keyword" : "sewing cards for kids",
+               "rank_today" : 14,
+               "rank_yesterday" : 8
+            }
+         ],
+         "top10" : 8,
+         "top50" : 27,
+         "top_keywords" : [
+            {
+               "keyword" : "lacing cards",
+               "rank_today" : 28,
+               "rank_yesterday" : 30,
+               "searchVolume" : 5023
+            },
+            {
+               "keyword" : "lacing cards for kids ages 3-5",
+               "rank_today" : 18,
+               "rank_yesterday" : 12,
+               "searchVolume" : 4417
+            },
+            {
+               "keyword" : "lacing cards for kids ages 4-8",
+               "rank_today" : 14,
+               "rank_yesterday" : 13,
+               "searchVolume" : 1369
+            },
+            {
+               "keyword" : "lacing cards for toddlers 2-4",
+               "rank_today" : 34,
+               "rank_yesterday" : 29,
+               "searchVolume" : 1013
+            },
+            {
+               "keyword" : "toddler sewing kit",
+               "rank_today" : 33,
+               "rank_yesterday" : 46,
+               "searchVolume" : 948
+            }
+         ],
+         "total" : 52,
+         "trend" : "strong"
+      }
+   }
+}

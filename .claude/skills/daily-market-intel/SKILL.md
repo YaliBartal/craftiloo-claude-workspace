@@ -117,11 +117,24 @@ market-intel/
 | Badge tracking | **Apify light keyword scan** | — |
 | **7-day profit, margin, ad spend, TACoS** | **Seller Board dashboard** (7-day avg only) | — |
 
+### ⚠️ Agent Output Compression Rules
+
+**Every background agent MUST follow these rules to minimize tokens returned to main context:**
+
+1. **Omit null/empty fields** — never include `"field": null` or `"field": ""` in JSON output
+2. **No raw API dumps** — process data inside the agent; return only the extracted values needed
+3. **Apify agents** — return only `badges_found` and `new_competitors` arrays (never raw product lists)
+4. **DataDive rank radar agents** — return only top 20 keyword movements + per-product summary (not all 500+ raw rows)
+5. **DataDive competitor agents** — return only the 4 top competitors per niche + hero product ratings/reviews
+6. **SP-API agents** — return only the fields listed in "What This Step Provides" tables; omit all other API response fields
+
+**Target: each background agent returns <5K tokens of data to main context.**
+
 ### Performance Targets
 
 | Metric | Target |
 |--------|--------|
-| Total tokens | **~140K** |
+| Total tokens | **~30–40K** |
 | Wall-clock time | **~10 min** |
 | Apify cost/day | **~$0.81** (keyword scan only) |
 | SP-API calls | **~28** (13 catalog + 13 pricing + 1 inventory + 1 orders) |
@@ -222,7 +235,7 @@ Competitors tracked in `context/competitors.md`:
 
 ### Active Rank Radars (hero products only)
 
-Fetch radars for these hero product ASINs:
+Fetch radars for these hero product ASINs **only**:
 - B09X55KL2C (Embroidery Kids) — 55 keywords
 - B0DC69M3YD (Embroidery Adults) — 67 keywords
 - B09WQSBZY7 (Fairy Sewing Kit) — 87 keywords
@@ -233,15 +246,13 @@ Fetch radars for these hero product ASINs:
 - B07D6D95NG (10mm Big Fuse Beads) — 38 keywords
 - B0FQC7YFX6 (Princess Lacing Card) — 52 keywords
 
-**Also fetch if available** (non-hero but useful):
-- B0B1927HCG (Cross Stitch Kits) — 38 keywords
-- B0FHMRQWRX (Latch Hook Kit) — 50 keywords
-- B0DKD2S3JT (Crochet/Knitting) — 50 keywords
-
-**Skip these** (low value, save tokens):
+**Skip these** (low value or not primary hero — saves ~15K tokens):
 - B092SW839H (Punch Needle) — 0 keywords in top 10
 - B0F8QZZQQM (Cross Stitch Beginner) — volatile, not primary hero
 - B09HVDNFMR (Needlepoint) — 0 keywords in top 10
+- B0B1927HCG (Cross Stitch Kits) — non-hero, not critical daily
+- B0FHMRQWRX (Latch Hook Kit) — non-hero, not critical daily
+- B0DKD2S3JT (Crochet/Knitting) — non-hero, not critical daily
 
 ### How to Fetch
 
@@ -283,7 +294,9 @@ Show only the top 20 most impactful movements (by search volume × rank change).
 
 **Cost:** Included in DataDive subscription
 **Time:** ~3 min for all niches
-**API:** `GET /v1/niches/{nicheId}/competitors?pageSize=50`
+**API:** `GET /v1/niches/{nicheId}/competitors?pageSize=4`
+
+**⚠️ TOKEN LIMIT: Fetch only the top 4 competitors per niche** (sorted by sales descending). This is enough to understand competitive position without wasting tokens on long tails.
 
 ### Niche IDs to Fetch
 
@@ -293,10 +306,11 @@ Show only the top 20 most impactful movements (by search volume × rank change).
 | Er21lin0KC | Beginners Embroidery Kit for Kids | B09X55KL2C |
 | gfot2FZUBU | Embroidery Stitch Practice Kit | B0DC69M3YD |
 | RmbSD3OH6t | Sewing Kit for Kids | B09WQSBZY7, B096MYBLS1 |
-| VqBgB5QQ07 | Latch Hook Kit for Kids | B08FYH13CL, B0F8R652FX |
 | AY4AlnSj9g | Mini Perler Beads | B09THLVFZK |
 | O6b4XATpTj | Loom Knitting | B0F8DG32H5 |
 | Aw4EQhG6bP | Lacing Cards for Kids | B0FQC7YFX6 |
+
+**⚠️ SKIP: VqBgB5QQ07 (Latch Hook Kit for Kids)** — niche data is stale (last refreshed Dec 2025). Hero ASINs B08FYH13CL and B0F8R652FX are missing from competitor set. Skip until a fresh niche dive is run. Use previous snapshot data for Latch Hook competitor context.
 
 ### Extract Per Competitor
 
@@ -310,7 +324,8 @@ Show only the top 20 most impactful movements (by search volume × rank change).
 | `rating` | Star rating |
 | `reviewCount` | Review count |
 | `kwRankedOnP1` | Keywords ranked on page 1 |
-| `advertisedKws` | Keywords being advertised |
+
+**Omit null fields** — do not include fields with null/missing values in output. This significantly reduces response size.
 
 **Use DataDive sales estimates as PRIMARY** (more accurate than BSR-to-sales table).
 
@@ -357,19 +372,30 @@ DataDive competitor data includes our hero products (they appear in their niche 
 }
 ```
 
-### What to Extract (minimal)
+### What to Extract (minimal — badges and new competitors ONLY)
 
-For each keyword result, only extract **top 10 results**:
-- `asin` — to match against hero/competitor lists
-- `position` — rank on page
-- `badge` — Overall Pick, Amazon's Choice, etc.
-- `title` — for identifying unknown products
+**⚠️ TOKEN RULE: Do NOT return full keyword_results to the main context.** Agents must process results internally and return only:
 
-### Processing
+```json
+{
+  "badges_found": [
+    {"asin": "B09X55KL2C", "keyword": "embroidery kit for kids", "badge": "Overall Pick"}
+  ],
+  "new_competitors": [
+    {"asin": "B0FR7Y8VHB", "brand": "Louise Maelys", "keyword": "embroidery kit for kids", "position": 3}
+  ]
+}
+```
+
+If nothing found: `{"badges_found": [], "new_competitors": []}`
+
+**Never return the raw product list array** — it's large and unnecessary once processed.
+
+### Processing (done inside the agent, not in main context)
 
 1. Compare each ASIN against hero product list and competitor list
-2. **Unknown ASINs in top 10** → flag as potential new competitors
-3. **Our products with badges** → note in report
+2. **Unknown ASINs in top 5** → add to `new_competitors` output
+3. **Our products with badges** → add to `badges_found` output
 4. **Do NOT track our keyword positions from this** — use DataDive Rank Radar instead
 
 ### New Competitor Detection Rules
@@ -643,9 +669,9 @@ All steps should run in **parallel where possible** to minimize wall-clock time.
 - [ ] **SP-API:** `get_competitive_pricing` × 13 hero ASINs (current price)
 - [ ] **SP-API:** `get_fba_inventory` × 1 call (stock levels for OOS alerts)
 - [ ] **SP-API:** `get_orders(date=yesterday)` × 1 call (yesterday's revenue + units, real-time)
-- [ ] **Apify:** Light keyword scan (9 keywords, top 10 only)
-- [ ] **DataDive:** Fetch Rank Radar data for hero product radars
-- [ ] **DataDive:** Fetch competitor data for 8 niches (includes rating/reviews for all products)
+- [ ] **Apify:** Light keyword scan (9 keywords) — agent returns only `badges_found` + `new_competitors` (NO raw keyword_results)
+- [ ] **DataDive:** Fetch Rank Radar data for 9 hero product radars only (skip B0B1927HCG, B0FHMRQWRX, B0DKD2S3JT, B092SW839H, B0F8QZZQQM, B09HVDNFMR)
+- [ ] **DataDive:** Fetch competitor data for 7 niches, top 4 per niche (skip VqBgB5QQ07 Latch Hook — stale)
 - [ ] **Seller Board:** Fetch daily dashboard report (for 7-day aggregates ONLY)
 
 **Phase 3 — Compile Report (sequential)**
