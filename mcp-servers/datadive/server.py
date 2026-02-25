@@ -90,14 +90,12 @@ async def api_get(path: str, params: dict = None) -> dict | list | str:
     except httpx.RequestError as e:
         return f"Error: Request failed — {e}"
 
-    if response.status_code == 429:
-        return "Error: Rate limit exceeded (429). Wait a moment and try again."
-    if response.status_code == 401:
-        return "Error: Invalid API key (401). Check DATADIVE_API_KEY in .env."
-    if response.status_code == 404:
-        return f"Error: Not found (404). Check that the ID exists. Path: {path}"
     if response.status_code != 200:
-        return f"Error: HTTP {response.status_code} from DataDive API. Path: {path}"
+        try:
+            err_body = response.text[:500]
+        except Exception:
+            err_body = ""
+        return f"Error: HTTP {response.status_code} from DataDive API. Path: {path}. Response: {err_body}"
 
     try:
         return response.json()
@@ -123,14 +121,12 @@ async def api_post(path: str, body: dict = None) -> dict | list | str:
     except httpx.RequestError as e:
         return f"Error: Request failed — {e}"
 
-    if response.status_code == 429:
-        return "Error: Rate limit exceeded (429). Wait a moment and try again."
-    if response.status_code == 401:
-        return "Error: Invalid API key (401). Check DATADIVE_API_KEY in .env."
-    if response.status_code == 404:
-        return f"Error: Not found (404). Path: {path}"
     if response.status_code not in (200, 201):
-        return f"Error: HTTP {response.status_code} from DataDive API. Path: {path}"
+        try:
+            err_body = response.text[:500]
+        except Exception:
+            err_body = ""
+        return f"Error: HTTP {response.status_code} from DataDive API. Path: {path}. Response: {err_body}"
 
     try:
         return response.json()
@@ -239,16 +235,6 @@ def _extract_items(data, *keys):
 
 
 # --- Tools ---
-
-
-@mcp.tool()
-async def get_profile() -> str:
-    """Fetch DataDive account profile.
-    Returns account info and token balance. Useful for checking remaining tokens."""
-    data = await api_get("/v1/profile")
-    if isinstance(data, str):
-        return data
-    return format_json(data, title="DataDive Profile")
 
 
 @mcp.tool()
@@ -377,24 +363,38 @@ async def get_rank_radar_data(
 
 
 @mcp.tool()
-async def create_niche_dive(seed_asin: str) -> str:
+async def create_niche_dive(seed_asin: str, marketplace: str = "com", number_of_competitors: int = 10) -> str:
     """Create a new Niche Dive from a seed ASIN.
-    WARNING: This consumes DataDive tokens. Check balance with get_profile first.
-    Discovers competitors and keywords automatically. Returns a dive ID to track with get_niche_dive_status."""
-    body = {"seedAsin": seed_asin}
+    WARNING: This consumes DataDive tokens.
+    Discovers competitors and keywords automatically. Returns a dive ID to track with get_niche_dive_status.
+    marketplace: Amazon marketplace (com, ca, co.uk, com.mx, in, fr, de, es, it, co.jp). Default: com.
+    number_of_competitors: Number of competitors to discover (min 2). Default: 10."""
+    body = {
+        "asin": seed_asin,
+        "marketplace": marketplace,
+        "numberOfCompetitors": number_of_competitors,
+    }
 
     data = await api_post("/v1/niches/dives", body=body)
     if isinstance(data, str):
         return data
 
     dive_id = ""
+    estimated = ""
     if isinstance(data, dict):
-        dive_id = data.get("diveId", data.get("id", ""))
+        inner = data.get("data", data)
+        dive_id = inner.get("diveId", inner.get("id", ""))
+        estimated = inner.get("estimatedCompletionDate", "")
 
     output = f"## Niche Dive Created\n\n"
     output += f"- **Seed ASIN:** {seed_asin}\n"
+    output += f"- **Marketplace:** {marketplace}\n"
+    output += f"- **Competitors requested:** {number_of_competitors}\n"
     if dive_id:
         output += f"- **Dive ID:** {dive_id}\n"
+    if estimated:
+        output += f"- **Estimated completion:** {estimated}\n"
+    if dive_id:
         output += f"\nUse `get_niche_dive_status(dive_id='{dive_id}')` to check progress.\n"
     else:
         output += "\n" + format_json(data)
