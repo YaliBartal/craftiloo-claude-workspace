@@ -24,6 +24,49 @@
 
 <!-- Add new entries at the TOP (newest first). Use this exact format: -->
 
+### Run: 2026-02-26
+**Goals:**
+- [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
+- [x] Fetch SP-API Orders for yesterday's revenue/units (2026-02-25)
+- [x] Fetch DataDive Rank Radar data for 9 hero radars
+- [x] Fetch DataDive competitor data for 11 niches
+- [x] Run Apify light keyword scan (9 keywords)
+- [x] Fetch Seller Board 7-day dashboard aggregates + per-ASIN detailed
+- [x] Compile full report with mandatory format
+- [x] Save snapshot
+
+**Result:** ✅ Success — All 5 data sources fetched, full report compiled
+
+**What happened:**
+- All 5 parallel background agents completed successfully
+- SP-API: 4 ASINs hit QuotaExceeded on pricing — auto-retried with 2s delay, all succeeded
+- B09HVSLBS6 RESTOCKED: 0 → 124 units. BSR spiked to 32,381 as expected post-OOS
+- B0DC69M3YD (Embroidery Adults): Severe rank crisis — 0 top-10 keywords, fell off page for "embroidery kit for beginners" (34K SV) and "embroidery kit for adults". Gaining on needlepoint/cross-stitch terms instead — possible listing indexing issue
+- B08FYH13CL rank instability continues — 4th consecutive day. "latch hook kits for kids" crashed #8→#65
+- B0F8DG32H5 (Knitting): Strong day — +4 top-10 keywords, +24 top-50 keywords
+- B09X55KL2C Overall Pick badges now CONFIRMED (were carried forward for 2 days)
+- Apify: 4/9 keywords returned empty (same 3 + loom knitting kit now empty)
+- Seller Board: 6-day window (Feb 18-23). $25,736 revenue, $5,160 profit, 18.4% TACoS
+- 4 ASINs with negative 6-day profit: B0F6YTG1CH (-$397), B0F8R652FX (-$342), B0DC69M3YD (-$56), B0FQC7YFX6 (-$51)
+- New competitor Made By Me (B07PPD8Q8V) appeared at #2 for "latch hook kits for kids" — first sighting, high priority
+- B096MYBLS1 critically low: 18 units (~5 days stock)
+
+**What didn't work:**
+- Apify returned 0 results for 4 keywords (up from 3 yesterday) — pattern is worsening
+- B0DC69M3YD rank crisis cause unknown — needs investigation outside this skill
+
+**Is this a repeat error?** B08FYH13CL rank instability (×4 days). Apify empty results (×2 consecutive runs).
+
+**Lesson learned:**
+- B09X55KL2C badges confirmed after 2 days of "carried forward" — Apify actor eventually returns results for these keywords. The carry-forward approach is correct.
+- B0DC69M3YD gaining on needlepoint terms while losing embroidery terms = possible listing category drift/re-indexing. A listing review (keywords in backend, category) should be triggered.
+- Made By Me is a large toy company (Horizon Group) — their entry at #2 in latch hook is a serious threat if they scale.
+- SP-API pricing QuotaExceeded self-resolves with 2s retry — normal operating behavior, not a bug.
+
+**Tokens/cost:** ~95K tokens, ~$0.81 Apify cost
+
+---
+
 ### Run: 2026-02-25 (v2)
 **Goals:**
 - [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
@@ -266,12 +309,19 @@
 - **Root cause:** API was fetching all 294 SKUs correctly, but `format_json()` had `max_items=50` default that truncated the output.
 - **Fix:** Pass `asin_filter="B08DDJCQKF,B09X55KL2C,..."` (comma-separated hero ASINs). Server now filters to only those ASINs, aggregates multiple SKUs per ASIN, and reports missing ASINs explicitly. No more truncation.
 
-### B08FYH13CL Latch Hook Rank Instability (×3 days)
+### B08FYH13CL Latch Hook Rank Instability (×4 days)
 - **First seen:** 2026-02-25 (run 1)
-- **Repeated:** 2026-02-25 (v2) — 3rd consecutive day of latch hook keyword drops
-- **Description:** Latch Hook Pencil Cases losing key latch hook keywords off page: "latch hook kit" (#27→gone), "hook rug kits" (#43→gone), "latch kits" (#7→#90), "latch hook for kids" (#6→#41 yesterday).
-- **Impact:** Key category keywords falling off page despite stable BSR. Could indicate increased competition or algorithm changes.
-- **Fix needed:** Investigate listing health, check if competitors are running aggressive PPC on these terms.
+- **Repeated:** 2026-02-25 (v2), 2026-02-26 — 4th consecutive day of latch hook keyword drops
+- **Description:** Latch Hook Pencil Cases losing key latch hook keywords off page: "latch hook kits for kids" crashed #8→#65 (2026-02-26). "latch hook kit" partially recovering (#101→#33) but core kids term worsening.
+- **Impact:** Core category keyword falling off page. BSR worsened to 31,825. New competitor Made By Me appeared at #2 same day.
+- **Fix needed:** Investigate listing health, check backend keywords, review PPC. This is now 4 days — escalate to user as action required.
+
+### Apify Empty Keyword Results (×2+ consecutive runs)
+- **First seen:** 2026-02-25 (v2)
+- **Repeated:** 2026-02-26 — 4/9 keywords returned empty (up from 3/9)
+- **Description:** `igview-owner~amazon-search-scraper` returning 0 results for valid keywords. Affected: embroidery kit for kids, kids embroidery kit, mini perler beads, loom knitting kit, lacing cards (varying between runs).
+- **Workaround:** Carry forward badge data with caveat. Confirmed approach for now.
+- **Fix to explore:** Try alternative Apify actor for Amazon search scraping.
 
 ---
 
