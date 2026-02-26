@@ -108,6 +108,87 @@ Terms that convert in each tier get graduated to manual campaigns with targeted 
 
 ---
 
+---
+
+## Step 5 — Scenario D: 4 Flowers / The Broken Portfolio
+
+This is your most diagnostic scenario. There are **3 structural problems** deliberately embedded in the data. How many he finds — and whether he gets the root cause right — tells you a lot.
+
+### The 3 problems (in order of severity)
+
+**Problem 1 — Wrong keyword category (highest impact)**
+
+The campaign `4 flowers - SPM SK beginner needlepoint kits for adults TOS` is targeting *needlepoint* keywords for an *embroidery* product. These are overlapping crafts but different buyers. Needlepoint shoppers won't buy an embroidery kit.
+
+- Spend: $35.62 | Sales: $14.99 | ACOS: 237%
+- Search terms confirm it: "needlepoint kits for beginners adults" — zero relevant conversions
+- Fix: Pause campaign entirely, add "needlepoint" as account-level negative
+
+**What the candidate should say:** "This campaign is targeting the wrong buyer. Needlepoint and embroidery are different products. Pausing this alone saves $35/week and immediately improves portfolio ACOS."
+
+**What a weak candidate says:** "The ACOS is too high, lower the bids." (Doesn't diagnose the root cause — the keywords themselves are wrong.)
+
+---
+
+**Problem 2 — "Dynamic bids - up and down" on struggling campaigns**
+
+Two campaigns are running "up and down" bid strategy while already losing money:
+- `4 flowers - SPM SK easy embroidery kits for beginners TOS` — 126% ACOS, up/down
+- `4 flowers - SPM SK embroidery for beginners TOS` — $53.60 spend, **0 orders**, up/down
+
+"Up and down" means Amazon can increase your bid up to 100% when it thinks a click will convert. On campaigns that aren't converting, this setting is actively making things worse — Amazon keeps raising bids on clicks that don't convert.
+
+- Combined waste: $85.22 spend, 1 order, $24.98 sales
+- Fix: Switch both to "down only" immediately. Re-evaluate after 2 weeks.
+
+**What the candidate should say:** "Both of these are on 'up and down' which means Amazon is bidding higher on non-converting clicks. That's backwards. Switch to 'down only', let the algorithm reduce bids on bad traffic instead of increasing them."
+
+**What a weak candidate says:** "Lower the bids on these campaigns." (Misses the strategy setting entirely — the issue isn't bid level, it's that bids are being auto-increased.)
+
+---
+
+**Problem 3 — Brand defense fragmentation (moderate impact)**
+
+There are 4 brand-adjacent campaigns scattered through the portfolio:
+- `SO | Emb. Kit | ASIN-001 | SPM | CAT | Embroidery Kits` — $1.80 spend, 0 conversions
+- `SO | Emb. Kit | ASIN-001 | SPM | PT | Brand's ASINs` — $2.76 spend, 0 conversions
+- `SO | Emb. Kit | SPM | Defence | Brand KW` — $0.76 spend, 0 conversions
+- `4 flowers - shield brand asins` — $14.04 spend, 0 conversions
+
+Four separate low-budget campaigns for what should be 1-2 consolidated brand defense campaigns. Each one is underfunded and underperforming individually.
+
+**What the candidate should say:** "These 4 brand campaigns are fragmented and underfunded — none of them have enough budget or data to work properly. I'd consolidate into 1 brand keyword campaign and 1 product targeting campaign, with proper budgets."
+
+**What a weak candidate says:** "Pause all the zero-sales campaigns." (Would correctly pause some but misses the consolidation opportunity and the reason for low performance.)
+
+---
+
+### What a strong overall answer looks like
+
+| Level | What they catch |
+|-------|----------------|
+| **Strong hire** | Finds all 3 problems. Prioritizes them correctly (needlepoint > up/down > fragmentation). 2-week plan is phased and realistic. Sets a target ACOS with reasoning. |
+| **Good candidate** | Finds 2 of 3. Probably misses the bid strategy issue. Good on search term analysis. |
+| **Needs development** | Finds the high-ACOS campaigns but recommends bid reductions across the board. Doesn't diagnose root causes. |
+| **Not ready** | "Lower bids and pause high-ACOS campaigns." No structural diagnosis at all. |
+
+### What a realistic 2-week recovery plan looks like
+
+**Week 1 (immediate fixes):**
+1. Pause `beginner needlepoint kits for adults` campaign — save $35/week, wrong category
+2. Switch both "up and down" campaigns to "down only"
+3. Add "needlepoint" as account-level negative keyword
+4. Pause `embroidery for beginners TOS` (0 orders on $53.60 — the up/down setting wrecked it, needs to restart clean)
+
+**Week 2 (optimize what's working):**
+1. Graduate `embroidery kit for adults beginners` from broad to exact match — it's converting at 32% ACOS
+2. Consolidate the 4 brand campaigns into 2
+3. Increase budget on `beginners embroidery kit for adults` (57% ACOS but showing real conversions — worth scaling)
+
+**Realistic target:** ACOS drops from ~85% to ~55-60% after week 1 alone, just by stopping the bleeding. Target 40-45% by end of week 2 as the better campaigns get more budget.
+
+---
+
 ## Live Follow-Up Questions (for the call)
 
 Use these to dig into weak spots or verify that written answers are genuine:
