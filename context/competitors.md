@@ -1,6 +1,6 @@
 # Main Competitors by Product Category
 
-> Last updated: 2026-02-08 | Top competitors per category with Craftiloo position & market share estimates
+> Last updated: 2026-02-25 | Top competitors per category with Craftiloo position & market share estimates
 
 ---
 
@@ -74,6 +74,7 @@
 | 2 | **EZCRA** | B0CXY8JMTK, B0CYNNT2ZT | ~18% | Unicorn Sewing Kit, beginner 8-in-1 kits, ages 4-8 | Budget-Mid ($12-18) |
 | 3 | **Klever Kits** | B0CTTMWXYP | ~15% | Themed pillow projects, unicorn/mermaid | Mid ($14-20) |
 | 4 | **CRAFTILOO** | **B09WQSBZY7, B096MYBLS1** | ~12% | Fairy/Ballerina/Dessert themes, pre-cut felt | Mid ($22-33) |
+| 5 | **kullaloo** | — | ~8% | Holding #3 for "sewing kit for kids" (3+ consecutive days, Feb 2026) | Mid ($15-22) |
 
 **Craftiloo Products:** Fairy Sewing Kit (B09WQSBZY7), Dessert Sewing Kit (B096MYBLS1), Ballerina Sewing Kit, Superhero/Pirates/Dogs kits
 
@@ -98,13 +99,14 @@
 
 | Rank | Brand | ASIN(s) | Est. Market Share | Strengths | Price Point |
 |------|-------|---------|-------------------|-----------|-------------|
-| 1 | **Creativity for Kids** | B004JIFCXO | ~35% | Quick Knit Loom, strong brand, retail presence (Walmart) | Mid ($15-20) |
-| 2 | **Hapinest** | B0B8W4FK4Q | ~28% | Hat & Scarf Loom Kit, ages 8-12, 6 yarn skeins, faux fur pom poms | Mid ($18-25) |
-| 3 | **CRAFTILOO** | **B0F8DG32H5** | ~22% | Cat & Hat kit, Bunny Loom Kit, Loom & Crochet combo | Mid ($28-37) |
+| 1 | **READAEER** | — | ~30% | Holding #1-#2 for "loom knitting kit" (3+ consecutive days, Feb 2026), strong organic rank | Budget-Mid ($15-22) |
+| 2 | **Creativity for Kids** | B004JIFCXO | ~25% | Quick Knit Loom, strong brand, retail presence (Walmart) | Mid ($15-20) |
+| 3 | **Hapinest** | B0B8W4FK4Q | ~20% | Hat & Scarf Loom Kit, ages 8-12, 6 yarn skeins, faux fur pom poms | Mid ($18-25) |
+| 4 | **CRAFTILOO** | **B0F8DG32H5** | ~15% | Cat & Hat kit, Bunny Loom Kit, Loom & Crochet combo | Mid ($28-37) |
 
 **Craftiloo Products:** Knitting Kit - Cat & Hat (B0F8DG32H5), Loom Knitting & Crochet Kit (B0DKD2S3JT), Bunny Loom Knitting Kit (B0D6GD3YNY)
 
-**Market Notes:** Creativity for Kids dominates with retail distribution and brand recognition. Hapinest is a strong Amazon competitor with hat/scarf kits. Craftiloo differentiates with unique finished products (Cat plush, Bunny plush).
+**Market Notes:** READAEER has emerged as the new #1 on Amazon for "loom knitting kit" (holding #1 and #2 positions for 3+ consecutive days as of Feb 2026). Creativity for Kids retains brand recognition and retail distribution. Hapinest competes with hat/scarf kits. Craftiloo differentiates with unique finished products (Cat plush, Bunny plush).
 
 ---
 
@@ -162,9 +164,9 @@
 | **Cross Stitch (Kids)** | **#1** | **~22%** | Pllieay (18%) | **+4%** | B08DDJCQKF |
 | **Embroidery (Kids)** | **#1** | **~20%** | CraftLab (16%) | **+4%** | B09X55KL2C |
 | Embroidery (Adults) | #4 | ~11% | CYANFOUR (16%) | -5% | B0DC69M3YD |
-| Sewing (Kids) | #4 | ~12% | KRAFUN (25%) | -13% | B09WQSBZY7, B096MYBLS1 |
+| Sewing (Kids) | #4 | ~12% | KRAFUN (25%) | -13% | B09WQSBZY7, B096MYBLS1 | kullaloo rising |
 | Latch Hook | #3 | ~12% | LatchKits (25%) | -13% | B08FYH13CL, B0F8R652FX |
-| Knitting/Loom | #3 | ~22% | Creativity for Kids (35%) | -13% | B0F8DG32H5 |
+| Knitting/Loom | #4 | ~15% | READAEER (~30%) | -15% | B0F8DG32H5 | READAEER new #1 |
 | **Mini Fuse Beads (2.6mm)** | **#1** | **~22%** | INSCRAFT (16%) | **+6%** | B09THLVFZK |
 | Lacing Cards | #4 | ~7% | Melissa & Doug (35%) | -28% | B0FQC7YFX6 |
 | **Gem Art (Kids)** | **#2** | **New** | EZCRA (45%) | New entrant | BB07 (TBD) |

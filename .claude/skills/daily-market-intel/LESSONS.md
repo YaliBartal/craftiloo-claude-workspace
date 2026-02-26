@@ -24,6 +24,51 @@
 
 <!-- Add new entries at the TOP (newest first). Use this exact format: -->
 
+### Run: 2026-02-25 (v2)
+**Goals:**
+- [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
+- [x] Fetch SP-API Orders for yesterday's revenue/units
+- [x] Fetch DataDive Rank Radar data for 9 hero radars
+- [x] Fetch DataDive competitor data for 7 niches
+- [x] Run Apify light keyword scan (9 keywords)
+- [x] Fetch Seller Board 7-day dashboard aggregates
+- [x] Compile full report with mandatory format
+- [x] Save snapshot as v2
+
+**Result:** ✅ Success — All 5 data sources fetched, full report compiled
+
+**What happened:**
+- All 5 data sources fetched successfully using 5 parallel background agents
+- SP-API: All 13 catalog + 13 pricing + 1 inventory + 1 orders = 28 calls successful
+- **B09HVSLBS6 pricing RESOLVED** — returned $17.98 (was null for previous 3 runs)
+- **B09HVSLBS6 now OOS** — 0 units (was 1 yesterday). BSR spiking +16%.
+- B096MYBLS1 critically low at 24 units (~4 days stock)
+- DataDive: 9 radars + 7 niches fetched cleanly
+- B0DC69M3YD massive gain on "embroidery kit" (225K vol, +40 positions)
+- B09X55KL2C reached #1 on "embroidery kit for kids"
+- B08FYH13CL latch hook rank instability continues (3rd day) — lost "latch hook kit" off page
+- Apify: 6/9 keywords returned data, 3 returned empty datasets
+- Seller Board: 7-day aggregates (Feb 18-24) — $29,846 revenue, $5,751 profit, 18.9% margin
+- READAEER at #1 and #2 for "loom knitting kit" — 3rd consecutive day
+- kullaloo at #3 for "sewing kit for kids" — 3rd consecutive day
+
+**What didn't work:**
+- Apify returned 0 results for 3 keywords: "embroidery kit for kids", "kids embroidery kit", "lacing cards" — could not confirm B09X55KL2C badges (carried forward)
+- B08FYH13CL latch hook rank instability persists — needs investigation
+
+**Is this a repeat error?** Apify empty results is new. B08FYH13CL rank instability is a repeat pattern (×3 days).
+
+**Lesson learned:**
+- B09HVSLBS6 pricing was not a permanent issue — resolved itself after 3 runs. May be intermittent Buy Box suppression.
+- Apify actor `igview-owner~amazon-search-scraper` can return empty datasets for valid keywords — need a fallback or retry strategy
+- READAEER and kullaloo seen 3 consecutive days → should be added to competitors.md
+- 5 parallel background agents architecture works well — Seller Board fastest (~18s), DataDive competitors ~84s, SP-API ~125s, DataDive Rank Radar ~105s, Apify ~122s
+- Carrying forward badge data when Apify fails is the right approach — note the caveat in the report
+
+**Tokens/cost:** ~95K tokens, ~$0.81 Apify cost
+
+---
+
 ### Run: 2026-02-25
 **Goals:**
 - [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
@@ -198,11 +243,11 @@
 - **Workaround:** Make 2 calls or increase max_results. Or use Seller Board inventory report as fallback.
 - **Root cause:** FBA inventory API caps at 50 results per call
 
-### Issue: B09HVSLBS6 No Competitive Pricing
-- **First seen:** 2026-02-24
-- **Description:** Needlepoint Cat Wallet returns no competitive pricing from SP-API. May have suppressed Buy Box.
-- **Workaround:** Carry forward previous price or check listing health in Seller Central.
-- **Root cause:** Unknown — possible listing suppression or no active Buy Box offer
+### Issue: Apify Empty Results for Valid Keywords
+- **First seen:** 2026-02-25 (v2)
+- **Description:** Apify actor `igview-owner~amazon-search-scraper` returned 0 results for 3/9 keywords: "embroidery kit for kids", "kids embroidery kit", "lacing cards". These are valid high-volume keywords.
+- **Workaround:** Carry forward badge data from previous run with a caveat note. Consider retry or alternative actor.
+- **Root cause:** Unknown — possibly actor rate limiting, Amazon blocking, or temporary scraper issue
 
 ### Issue: DataDive Competitor Research Date Staleness
 - **First seen:** 2026-02-24
@@ -221,16 +266,23 @@
 - **Root cause:** API was fetching all 294 SKUs correctly, but `format_json()` had `max_items=50` default that truncated the output.
 - **Fix:** Pass `asin_filter="B08DDJCQKF,B09X55KL2C,..."` (comma-separated hero ASINs). Server now filters to only those ASINs, aggregates multiple SKUs per ASIN, and reports missing ASINs explicitly. No more truncation.
 
-### B09HVSLBS6 No Competitive Pricing (×3)
-- **First seen:** 2026-02-24 (run 1)
-- **Repeated:** 2026-02-24 (v2)
-- **Description:** Needlepoint Cat Wallet returns empty CompetitivePrices array from SP-API. Listing exists (has BSR) but no active Buy Box offer.
-- **Impact:** Cannot track pricing for this product.
-- **Fix needed:** Check listing health in Seller Central. May need manual price entry.
+### B08FYH13CL Latch Hook Rank Instability (×3 days)
+- **First seen:** 2026-02-25 (run 1)
+- **Repeated:** 2026-02-25 (v2) — 3rd consecutive day of latch hook keyword drops
+- **Description:** Latch Hook Pencil Cases losing key latch hook keywords off page: "latch hook kit" (#27→gone), "hook rug kits" (#43→gone), "latch kits" (#7→#90), "latch hook for kids" (#6→#41 yesterday).
+- **Impact:** Key category keywords falling off page despite stable BSR. Could indicate increased competition or algorithm changes.
+- **Fix needed:** Investigate listing health, check if competitors are running aggressive PPC on these terms.
 
 ---
 
 ## Resolved Issues
+
+### Issue: B09HVSLBS6 No Competitive Pricing (×3 → Resolved)
+- **First seen:** 2026-02-24 (run 1)
+- **Repeated:** 2026-02-24 (v2), 2026-02-25 (run 1)
+- **Resolved:** 2026-02-25 (v2) — returned $17.98
+- **Root cause:** Likely intermittent Buy Box suppression. Self-resolved after 3 runs.
+- **Note:** Product is now OOS (0 units) which may have triggered price return (clearance?). Monitor if pricing disappears again after restock.
 
 ### Issue: Data Source Assumptions (from 2026-02-09)
 - **Resolved:** 2026-02-24

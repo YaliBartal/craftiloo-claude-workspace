@@ -45,16 +45,29 @@ Every daily report answers:
 
 ---
 
-## 📊 Sales Data — Use DataDive Only
+## 📊 Sales Data — Actual vs Estimates
 
 **DO NOT estimate sales from BSR.** BSR-to-sales tables are wildly inaccurate for our category/volume.
 
-**Primary sales source:** DataDive Competitor data (`sales` field = Jungle Scout monthly estimate)
-- Use `dd_sales_mo` as the sales metric
-- Convert to daily: `dd_sales_mo / 30`
-- For hero products not found in DataDive niches, show "—" (no estimate)
+### Our Products — Use Seller Board Actuals (PRIMARY)
 
-**Sort the unified product table by DataDive monthly sales** (highest to lowest). Products without DataDive data go at the bottom.
+**Primary sales source for OUR products:** Seller Board `get_sales_detailed_report`
+- `SB_Rev_7d` = actual 7-day revenue (SalesOrganic + SalesPPC), Amazon.com only
+- `SB_Units_7d` = actual 7-day units (UnitsOrganic + UnitsPPC)
+- `SB_Profit_7d` = actual 7-day net profit
+- Daily avg = divide by 7
+
+**⚠️ DataDive Jungle Scout estimates are NOT accurate for our products.** They can be 2-10x inflated. Never use DD estimates when SB actuals are available.
+
+### Competitor Products — Use DataDive Estimates (only option)
+
+**For competitors:** DataDive Competitor data (`sales` field = Jungle Scout monthly estimate)
+- Label clearly as "JS Est." in all tables
+- These are directional only — useful for relative positioning, not absolute numbers
+
+### Sorting
+
+**Sort the unified product table by Seller Board actual 7-day revenue** (highest to lowest). Products without SB data go at the bottom.
 
 **BSR is still tracked** for trend direction (improving/declining) but NOT used for sales volume estimation.
 
@@ -129,18 +142,33 @@ market-intel/
 4. **DataDive rank radar agents** — return only top 20 keyword movements + per-product summary (not all 500+ raw rows)
 5. **DataDive competitor agents** — return only the 4 top competitors per niche + hero product ratings/reviews
 6. **SP-API agents** — return only the fields listed in "What This Step Provides" tables; omit all other API response fields
+7. **Seller Board agents** — for sales detailed report, return only per-ASIN 7-day totals (rev, units, profit) for hero ASINs; discard all other rows/columns
 
 **Target: each background agent returns <5K tokens of data to main context.**
 
+### Observed Agent Timing (from 2026-02-25 runs)
+
+| Agent | Typical Duration | Notes |
+|-------|-----------------|-------|
+| Seller Board | ~18s | Fastest — single API call |
+| DataDive Competitors | ~84s | 10 niches × 1.1s rate limit |
+| DataDive Rank Radar | ~105s | 9 radars × 1.1s rate limit |
+| Apify Keyword Scan | ~122s | 9 keywords, async actor runs |
+| SP-API (Catalog + Pricing + Inventory + Orders) | ~125s | 28 calls × 0.5s rate limit, serial pricing |
+
+**Launch all 5 agents in parallel.** Wall-clock bottleneck is SP-API or Apify (~2 min).
+
 ### Performance Targets
 
-| Metric | Target |
-|--------|--------|
-| Total tokens | **~30–40K** |
-| Wall-clock time | **~10 min** |
-| Apify cost/day | **~$0.81** (keyword scan only) |
-| SP-API calls | **~28** (13 catalog + 13 pricing + 1 inventory + 1 orders) |
-| Keywords searched (Apify) | **9** |
+| Metric | Target | Actual (recent) |
+|--------|--------|-----------------|
+| Total tokens | **<100K** | ~95K (v2), ~120K (v1) |
+| Wall-clock time | **<5 min** | ~2-3 min data fetch |
+| Apify cost/day | **~$0.81** | ~$0.81 |
+| SP-API calls | **~28** | 13 catalog + 13 pricing + 1 inventory + 1 orders |
+| DataDive niches | **11** | 11 (updated Feb 25) |
+| DataDive radars | **9** | 9 hero product radars |
+| Keywords searched (Apify) | **9** | 6-9 return data (some may be empty) |
 
 ---
 
@@ -213,8 +241,10 @@ Competitors tracked in `context/competitors.md`:
 | **Sewing** | KRAFUN | B091GXM2Y6, B0C2XYP6L3, B0CV1F5CFS |
 | | EZCRA | B0CXY8JMTK, B0CYNNT2ZT |
 | | Klever Kits | B0CTTMWXYP |
+| | kullaloo | — (confirmed Feb 25, #3 for "sewing kit for kids") |
 | **Latch Hook** | LatchKits | B06XRRN4VL, B0CX9H8YGR |
-| **Knitting** | Creativity for Kids | B004JIFCXO |
+| **Knitting** | READAEER | — (confirmed Feb 25, #1-#2 for "loom knitting kit") |
+| | Creativity for Kids | B004JIFCXO |
 | | Hapinest | B0B8W4FK4Q |
 | **Fuse Beads** | INSCRAFT | B0C5WQD914 |
 | | ARTKAL | B0FN4CT867 |
@@ -300,19 +330,27 @@ Show only the top 20 most impactful movements (by search volume × rank change).
 
 **⚠️ TOKEN LIMIT: Fetch only the top 4 competitors per niche** (sorted by sales descending). This is enough to understand competitive position without wasting tokens on long tails.
 
-### Niche IDs to Fetch
+### Niche IDs to Fetch (11 niches)
 
-| Niche ID | Label | Hero Products |
-|----------|-------|---------------|
-| b4Nisjv3xy | Cross Stitch Kits for Kids | B08DDJCQKF |
-| Er21lin0KC | Beginners Embroidery Kit for Kids | B09X55KL2C |
-| gfot2FZUBU | Embroidery Stitch Practice Kit | B0DC69M3YD |
-| RmbSD3OH6t | Sewing Kit for Kids | B09WQSBZY7, B096MYBLS1 |
-| AY4AlnSj9g | Mini Perler Beads | B09THLVFZK |
-| O6b4XATpTj | Loom Knitting | B0F8DG32H5 |
-| Aw4EQhG6bP | Lacing Cards for Kids | B0FQC7YFX6 |
+| Niche ID | Label | Research Date | Hero Products |
+|----------|-------|---------------|---------------|
+| u1y83aQfmK | Kids Cross Stitch Kit | 2026-02-25 | B08DDJCQKF, B0F6YTG1CH |
+| gfot2FZUBU | Embroidery Stitch Practice Kit | 2026-02-08 | B0DC69M3YD, B09X55KL2C |
+| Er21lin0KC | Beginners Embroidery Kit for Kids | 2026-01-11 | B09X55KL2C |
+| RmbSD3OH6t | Sewing Kit for Kids | 2026-02-08 | B09WQSBZY7, B096MYBLS1 |
+| 3qbggwOhO2 | Latch Hook Kits for Kids | 2026-02-25 | B08FYH13CL, B0F8R652FX |
+| AY4AlnSj9g | Mini Perler Beads | 2025-12-08 | B09THLVFZK |
+| O6b4XATpTj | Loom Knitting | 2026-01-07 | B0F8DG32H5 |
+| Aw4EQhG6bP | Lacing Cards for Kids | 2026-02-01 | B0FQC7YFX6 |
+| 5IGkCmOM0h | Needlepoint Pouch Kit | 2026-02-25 | B09HVSLBS6 |
+| kZRreyE7kJ | Cross Stitch Kits (broad) | 2026-02-25 | B08DDJCQKF, B09X55KL2C |
+| WFV3TE3beK | Fuse Beads | 2026-02-08 | B07D6D95NG |
 
-**⚠️ SKIP: VqBgB5QQ07 (Latch Hook Kit for Kids)** — niche data is stale (last refreshed Dec 2025). Hero ASINs B08FYH13CL and B0F8R652FX are missing from competitor set. Skip until a fresh niche dive is run. Use previous snapshot data for Latch Hook competitor context.
+**Retired niches (do NOT fetch):**
+- `b4Nisjv3xy` (Cross Stitch Kits for Kids, Dec 2025) — superseded by `u1y83aQfmK` (Feb 2026)
+- `VqBgB5QQ07` (Latch Hook Kit for Kids, Dec 2025) — superseded by `3qbggwOhO2` (Feb 2026)
+
+**All 13 hero products now covered by DD niche data.** B07D6D95NG (10mm Big Fuse Beads) covered by `WFV3TE3beK`.
 
 ### Extract Per Competitor
 
@@ -333,7 +371,7 @@ Show only the top 20 most impactful movements (by search volume × rank change).
 
 ### Hero Product Rating & Reviews
 
-DataDive competitor data includes our hero products (they appear in their niche competitor lists). Extract `rating` and `reviewCount` for hero ASINs here. If a hero product is not found in any niche (e.g., B07D6D95NG 10mm Fuse Beads, B09HVSLBS6 Needlepoint), carry forward from the previous day's snapshot or baseline.
+DataDive competitor data includes our hero products (they appear in their niche competitor lists). Extract `rating` and `reviewCount` for hero ASINs here. If a hero product is not found in any niche (e.g., B07D6D95NG 10mm Fuse Beads), carry forward from the previous day's snapshot or baseline.
 
 ---
 
@@ -414,16 +452,18 @@ Flag an ASIN as a new competitor if:
 
 ---
 
-## 💰 Step 5: Seller Board Dashboard — 7-Day Aggregates ONLY
+## 💰 Step 5: Seller Board — 7-Day Aggregates + Per-ASIN Actuals
 
-**PURPOSE:** 7-day aggregate financials: profit, margins, ad spend, TACoS. These rolling averages are useful even with the ~2 day lag.
+**PURPOSE:** Two reports from Seller Board:
+1. **Dashboard** — 7-day aggregate financials (profit, margins, ad spend, TACoS)
+2. **Sales Detailed** — Actual per-ASIN revenue, units, profit (replaces inaccurate DataDive Jungle Scout estimates for our products)
 
 **⚠️ CRITICAL: Do NOT use Seller Board for day-specific data.** It lags ~2 days. Yesterday's revenue/units come from SP-API Orders (Step 6).
 
-**Tool:** `get_daily_dashboard_report` (MCP)
-**Time:** ~10 seconds
+**Tools:** `get_daily_dashboard_report` + `get_sales_detailed_report` (MCP)
+**Time:** ~20 seconds (2 API calls)
 
-### What to Extract (7-day aggregates ONLY)
+### 5A: Dashboard Report (7-day aggregates)
 
 | Metric | Column | How to Calculate |
 |--------|--------|------------------|
@@ -433,19 +473,56 @@ Flag an ASIN as a new competitor if:
 | 7-Day TACoS | Ad Spend / Revenue × 100 | Calculate from 7-day sums |
 | 7-Day Revenue (SB) | SalesOrganic + SalesPPC | Sum last 7 available days (for TACoS denominator) |
 
+### 5B: Sales Detailed Report (per-ASIN actuals)
+
+**This replaces DataDive Jungle Scout estimates for OUR products.** DD estimates are wildly inaccurate (often 2-10x inflated).
+
+**Report structure:** Each row = one date × one ASIN × one SKU × one marketplace. Same ASIN can appear multiple rows per day (different SKUs).
+
+**Key columns:**
+
+| Column | What It Contains |
+|--------|------------------|
+| `Date` | DD/MM/YYYY format |
+| `Marketplace` | Amazon.com, Amazon.ca, Amazon.com.mx |
+| `ASIN` | Product ASIN |
+| `SalesOrganic` | Organic revenue ($) |
+| `SalesPPC` | PPC revenue ($) |
+| `UnitsOrganic` | Organic units sold |
+| `UnitsPPC` | PPC units sold |
+| `NetProfit` | Profit after all fees/costs ($) |
+| `Margin` | Profit margin (%) |
+
+**How to extract per-ASIN 7-day actuals:**
+
+1. Filter rows to `Marketplace = Amazon.com` only
+2. Filter to last 7 available dates
+3. For each hero ASIN, **sum across all SKUs and all 7 days**:
+   - `SB_Rev_7d` = SUM(SalesOrganic + SalesPPC)
+   - `SB_Units_7d` = SUM(UnitsOrganic + UnitsPPC)
+   - `SB_Profit_7d` = SUM(NetProfit)
+4. Calculate daily averages: `SB_Rev_Daily` = SB_Rev_7d / 7
+5. Note the date range (e.g., "Feb 16-22")
+
+**Hero ASINs to extract:** B08DDJCQKF, B0F6YTG1CH, B09X55KL2C, B0DC69M3YD, B09WQSBZY7, B096MYBLS1, B08FYH13CL, B0F8R652FX, B0F8DG32H5, B09THLVFZK, B07D6D95NG, B0FQC7YFX6, B09HVSLBS6
+
+**⚠️ Important:** SB data lags ~2 days, so the "7-day" window may be e.g., Feb 16-22, not Feb 19-25. Always note the date range.
+
 ### What NOT to Extract
 
 - ❌ "Latest day" revenue (it's 2 days old — use SP-API Orders instead)
 - ❌ "Latest day" units (same — use SP-API Orders)
 - ❌ "Latest day" profit (2 days old, misleading as "today")
 - ❌ Any single-day metric presented as current
+- ❌ Amazon.ca / Amazon.com.mx data (too small to matter in daily report)
 
 **Always note the date range of the 7-day window** (e.g., "Feb 15-21" not "last 7 days").
 
 ### Fallback
 
 If Seller Board fetch fails:
-- Note: "Seller Board unavailable — 7-day aggregates not available"
+- Note: "Seller Board unavailable — 7-day aggregates and per-ASIN actuals not available"
+- Fall back to DataDive estimates for the unified table (label as "JS Est.")
 - Continue with market data — do NOT block the report
 
 ---
@@ -529,12 +606,12 @@ If Seller Board fetch fails:
 
 ---
 
-## Our Products (Unified by DataDive Sales)
+## Our Products (by Actual Revenue)
 
-| # | Product | ASIN | Category | BSR | DD Sales/mo | DD Revenue/mo | Subcat Rank | Reviews | Rating | Price | vs Yesterday | vs Baseline |
-|---|---------|------|----------|-----|------------|--------------|-------------|---------|--------|-------|-------------|-------------|
+| # | Product | ASIN | Category | BSR | SB Rev/7d | SB Units/7d | SB Profit/7d | Subcat Rank | Reviews | Rating | Price | vs Yesterday | vs Baseline |
+|---|---------|------|----------|-----|-----------|-------------|-------------|-------------|---------|--------|-------|-------------|-------------|
 
-*Sorted by DataDive monthly sales (highest → lowest). Products without DD data at bottom. Do NOT estimate sales from BSR.*
+*Sorted by Seller Board actual 7-day revenue (highest → lowest). SB = Seller Board actuals (Amazon.com, [date range]). Do NOT use DataDive estimates for our products.*
 
 ---
 
@@ -558,12 +635,13 @@ If Seller Board fetch fails:
 
 ### [Category Name]
 
-| Rank | Brand/ASIN | BSR | Subcat Rank | Reviews | DD Sales/mo | vs Us |
-|------|-----------|-------------|-------------|---------|-------------|-------|
+| Rank | Brand/ASIN | BSR | Reviews | Rating | Sales Source | Revenue | vs Us |
+|------|-----------|-----|---------|--------|-------------|---------|-------|
 
 **Our Position:** #X of Y
 
-*One table per category: Cross Stitch, Embroidery Kids, Embroidery Adults, Sewing, Latch Hook, Fuse Beads, Knitting, Lacing Cards*
+*One table per category. Our products show SB actual 7-day revenue. Competitors show DD JS Est. (monthly). Label source clearly.*
+*Categories: Cross Stitch, Embroidery Kids, Embroidery Adults, Sewing, Latch Hook, Fuse Beads, Knitting, Lacing Cards, Needlepoint*
 
 ---
 
@@ -606,8 +684,9 @@ If Seller Board fetch fails:
 - **DataDive Niches:** X niches, X competitor records
 - **Rank Radars:** X radars, X total keywords tracked
 - **Light Keyword Scan:** 9 keywords (badges + new competitors only)
-- **Seller Board Data:** 7-day aggregate only ([date range]) — lags ~2 days, day-specific excluded
-- **Sources:** Amazon SP-API (BSR, price, inventory, orders), DataDive API (Rank Radar, Competitors, rating/reviews), Apify (keyword scan), Seller Board (7-day aggregates)
+- **Seller Board Dashboard:** 7-day aggregate only ([date range]) — lags ~2 days, day-specific excluded
+- **Seller Board Detailed:** Per-ASIN actual revenue/units/profit ([date range]) — our products only
+- **Sources:** Amazon SP-API (BSR, price, inventory, orders), DataDive API (Rank Radar, Competitors, rating/reviews), Apify (keyword scan), Seller Board (7-day aggregates + per-ASIN actuals)
 ```
 
 ---
@@ -637,6 +716,7 @@ Use these consistently:
 | SP-API rate limit (429) | Wait 2s and retry once, then skip ASIN, note in report |
 | SP-API timeout on one ASIN | Skip that ASIN, continue with next, note in report |
 | Apify keyword scan timeout | STOP, use data collected, note in report |
+| Apify returns empty dataset for valid keyword | Carry forward badge data from previous run; note caveat in report. Do NOT retry — actor reliability varies |
 | SP-API Orders fails | Skip "Yesterday's Business" section, note in report |
 | DataDive API fails | Note in report, use previous snapshot data |
 | Seller Board fails | Skip "7-Day Financial Snapshot" section, note in report |
@@ -673,13 +753,13 @@ All steps should run in **parallel where possible** to minimize wall-clock time.
 - [ ] **SP-API:** `get_orders(date=yesterday)` × 1 call (yesterday's revenue + units, real-time)
 - [ ] **Apify:** Light keyword scan (9 keywords) — agent returns only `badges_found` + `new_competitors` (NO raw keyword_results)
 - [ ] **DataDive:** Fetch Rank Radar data for 9 hero product radars only (skip B0B1927HCG, B0FHMRQWRX, B0DKD2S3JT, B092SW839H, B0F8QZZQQM, B09HVDNFMR)
-- [ ] **DataDive:** Fetch competitor data for 7 niches, top 4 per niche (skip VqBgB5QQ07 Latch Hook — stale)
-- [ ] **Seller Board:** Fetch daily dashboard report (for 7-day aggregates ONLY)
+- [ ] **DataDive:** Fetch competitor data for 11 niches, top 4 per niche (skip retired niches — see Step 3)
+- [ ] **Seller Board:** Fetch daily dashboard report (for 7-day aggregates) AND sales detailed report (for per-ASIN actuals)
 
 **Phase 3 — Compile Report (sequential)**
-- [ ] Merge SP-API BSR/price data with DataDive sales estimates + rating/reviews
+- [ ] Merge SP-API BSR/price data with SB per-ASIN actuals + DataDive rating/reviews
 - [ ] Calculate changes vs yesterday AND vs baseline
-- [ ] Build unified product table sorted by estimated daily sales
+- [ ] Build unified product table sorted by SB actual 7-day revenue
 - [ ] Build keyword rank snapshot from Rank Radar data (top 20 movements)
 - [ ] Build competitor comparison tables per category
 - [ ] Extract badges from light keyword scan
