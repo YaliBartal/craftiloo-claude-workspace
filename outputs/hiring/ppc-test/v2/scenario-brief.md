@@ -20,6 +20,7 @@ You've just been onboarded. It's Monday morning. We've pulled the most recent we
 | `scenario-1-fuse-beads.xlsx` | Fuse Beads portfolio — Campaigns, Search Terms, Placements, Rank Tracker tabs |
 | `scenario-2-knitting.xlsx` | Kids Knitting portfolio — Campaigns, Search Terms, Placements tabs |
 | `scenario-3-catch-all.xlsx` | Catch All Auto portfolio — Campaigns, Search Terms, Placements tabs |
+| `scenario-4-four-flowers.xlsx` | 4 Flowers Adult Embroidery portfolio — Campaigns, Search Terms, Placements, Context tabs |
 
 ---
 
@@ -81,6 +82,21 @@ Your task:
 1. What do you think this structure is designed to do? Does it make sense to you?
 2. Would you keep it as-is, modify it, or replace it with something different?
 3. What would you change about how we're managing it right now, if anything?
+
+---
+
+---
+
+### Step 5 — Scenario D: The Broken Portfolio
+
+Open `scenario-4-four-flowers.xlsx`. Start with the **Context tab** to understand the product, then work through Campaigns, Search Terms, and Placements.
+
+This is our 4 Flowers Adult Embroidery portfolio. It's been live for about 4 months. The manager's note on the Context tab says it all — we're spending almost as much as we're making and we can't figure out why.
+
+Your task:
+1. Diagnose what's wrong. Why is this portfolio stuck at ~85% ACOS despite 4 months of running?
+2. Identify the specific campaigns, search terms, or settings that are causing the most damage. Be precise.
+3. Build a 2-week recovery plan. What do you fix first, what do you fix second, and what's your target ACOS at the end of 2 weeks?
 
 ---
 
