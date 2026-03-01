@@ -1,6 +1,6 @@
 ---
 name: weekly-ppc-analysis
-description: Comprehensive weekly PPC analysis from 4 Seller Central reports with week-over-week comparison
+description: Comprehensive weekly PPC analysis via Amazon Ads API with week-over-week comparison
 triggers:
   - weekly ppc
   - ppc analysis
@@ -34,7 +34,7 @@ output_location: outputs/research/ppc-weekly/
 
 ## What This Does
 
-Takes 4 Seller Central CSV exports (Campaign, Search Term, Placement, Targeting) and produces a comprehensive weekly PPC analysis covering:
+Pulls 4 reports via the **Amazon Ads API** (Campaign, Search Term, Placement, Targeting) and produces a comprehensive weekly PPC analysis covering:
 
 1. **Account & portfolio health** — ACoS, ROAS, CVR, spend, sales, orders
 2. **Campaign-level diagnosis** — what's working, what's bleeding, what to adjust
@@ -43,7 +43,7 @@ Takes 4 Seller Central CSV exports (Campaign, Search Term, Placement, Targeting)
 5. **Search term actions** — Negate, Promote, Discover classifications
 6. **Week-over-week comparison** — deltas against previous week's snapshot
 
-Replaces the separate PPC Portfolio Review and Search Term Analysis skills.
+Replaces the separate PPC Portfolio Review and Search Term Analysis skills. **No manual CSV exports needed** — all data is pulled programmatically via the Amazon Ads API MCP server.
 
 ---
 
@@ -53,14 +53,13 @@ Replaces the separate PPC Portfolio Review and Search Term Analysis skills.
 
 ```
 outputs/research/ppc-weekly/
-├── input/         # DROP 4 CSV EXPORTS HERE — skill auto-detects report types
 ├── briefs/        # Weekly analysis reports (what user reads)
 ├── snapshots/     # Archived weekly data for WoW comparison
 │   └── YYYY-MM-DD/
-│       ├── campaign-report.csv
-│       ├── search-term-report.csv
-│       ├── placement-report.csv
-│       ├── targeting-report.csv
+│       ├── campaign-report.json
+│       ├── search-term-report.json
+│       ├── placement-report.json
+│       ├── targeting-report.json
 │       └── summary.json
 ├── data/          # Any processed/intermediate data
 └── README.md      # Folder guide
@@ -72,14 +71,14 @@ outputs/research/ppc-weekly/
 |-----------|--------|---------|
 | Weekly report | `weekly-ppc-analysis-YYYY-MM-DD.md` | `weekly-ppc-analysis-2026-02-24.md` |
 | Snapshot folder | `YYYY-MM-DD/` | `2026-02-24/` |
-| Snapshot CSVs | `{report-type}-report.csv` | `campaign-report.csv` |
+| Snapshot data | `{report-type}-report.json` | `campaign-report.json` |
 | Summary data | `summary.json` | `summary.json` |
 
 ### Efficiency Targets
 
 - **< 80K tokens** per analysis
 - **< 5 minutes** execution time
-- **No paid API calls** — works from user-provided data + Seller Board auto-reports + DataDive API (included in subscription)
+- **No additional cost** — uses Amazon Ads API (free with approval) + Seller Board auto-reports + DataDive API
 
 ### Forbidden Practices
 
@@ -89,92 +88,173 @@ outputs/research/ppc-weekly/
 - Do NOT negate terms with fewer than 3 impressions — not enough data
 - Do NOT skip low-activity campaigns or low-impression terms — flag them
 - Do NOT combine PAUSED/ARCHIVED campaigns into analysis — filter them out
-- Do NOT use data from the last 2 days — remind user their export should exclude last 2 days per SOP
+- Do NOT use data from the last 2 days — the API date range automatically excludes last 2 days per SOP
 - Do NOT combine data from different date ranges in one analysis
 
 ---
 
-## Input
+## Input — Amazon Ads API (Automated)
 
-### Auto-Detection (Preferred)
+**All data is pulled programmatically via the Amazon Ads API MCP server.** No manual CSV exports needed.
 
-**The skill automatically checks `outputs/research/ppc-weekly/input/` for CSV or Excel files.**
+### Report Types & API Presets
 
-When the skill starts:
-1. Glob for `outputs/research/ppc-weekly/input/*.*` (supports .csv, .xlsx, .xls)
-2. Read the **first row (headers)** of each file to identify report type
-3. Match each file to a report type using these rules:
+| Report Type | API Preset | Key Fields |
+|-------------|-----------|------------|
+| **Campaign** | `sp_campaigns` | campaignName, campaignId, campaignStatus, campaignBudgetAmount, **portfolioId**, impressions, clicks, cost, purchases7d, sales7d, costPerClick, clickThroughRate |
+| **Search Term** | `sp_search_terms` | searchTerm, campaignName, adGroupName, targeting, impressions, clicks, cost, purchases7d, sales7d, costPerClick, clickThroughRate |
+| **Placement** | `sp_placements` | campaignName, campaignId, placementClassification, impressions, clicks, cost, purchases7d, sales7d |
+| **Targeting** | `sp_keywords` | campaignName, adGroupName, targeting, matchType, impressions, clicks, cost, purchases7d, sales7d, topOfSearchImpressionShare |
 
-| Report Type | Identifying Columns |
-|-------------|-------------------|
-| **Campaign** | Has "Budget" column. Does NOT have "Customer Search Term" or "Placement" columns. |
-| **Search Term** | Has "Customer Search Term" column. |
-| **Placement** | Has "Placement" column (values: Top of Search, Rest of Search, Product Pages). |
-| **Targeting** | Has "Targeting" + "Match Type" columns. Does NOT have "Customer Search Term" or "Placement" columns. Does NOT have "Budget" column. |
+### API Field → Metric Mapping
 
-4. Report what was found:
-   - If **all 4 types detected** → proceed automatically
-   - If **some missing** → tell user exactly which report type(s) are missing and ask them to add
-   - If **duplicates of same type** → ask user which to use (prefer .csv over .xlsx for speed)
-   - If **no files found** → tell user: "Drop your 4 Seller Central exports (Campaign, Search Term, Placement, Targeting) into `outputs/research/ppc-weekly/input/` and run again."
+The API uses different field names than Seller Central CSV exports. Use this mapping when processing data:
 
-### How to Export from Seller Central
+| API Field | Metric Name (used in analysis) |
+|-----------|-------------------------------|
+| `cost` | Spend |
+| `purchases7d` | Orders |
+| `sales7d` | Sales |
+| `costPerClick` | CPC |
+| `clickThroughRate` | CTR |
+| `campaignBudgetAmount` | Budget |
+| `campaignStatus` | Status |
+| `searchTerm` | Customer Search Term |
+| `placementClassification` | Placement |
+| `matchType` | Match Type |
+| `topOfSearchImpressionShare` | Top-of-search IS |
 
-Tell user if they ask:
-1. Go to **Advertising → Campaign Manager**
-2. Set date range: **Last 7 days, exclude last 2 days**
-3. Export 4 reports:
-   - **Campaigns** tab → Download CSV
-   - **Search Terms** tab → Download CSV
-   - **Placements** tab → Download CSV
-   - **Targets** tab → Download CSV
-4. Drop all 4 CSVs into `outputs/research/ppc-weekly/input/`
+**Calculated metrics** (not in raw API data — compute during analysis):
+- **ACoS** = cost / sales7d × 100
+- **ROAS** = sales7d / cost
+- **CVR** = purchases7d / clicks × 100
 
-### Data Requirements
+### Date Range
 
-All exports should cover **the same 7-day window, excluding the last 2 days** (per PPC SOP).
+All 4 reports use the same date range: **last 9 days through 2 days ago** (7 full days, excluding last 2 per PPC SOP).
 
-**Campaign report columns:**
-- Campaign name, Status, Type, Targeting (manual/auto), Start date
-- Portfolio name, Budget
-- Impressions, Clicks, CTR, Spend, CPC
-- Orders, Sales, ACoS, ROAS
-- Top-of-search IS (if available)
+The `create_ads_report` tool accepts `LAST_7_DAYS` which covers yesterday through 7 days back. To properly exclude the last 2 days per SOP, use a **custom date range**: calculate `today - 9 days` to `today - 3 days` and pass as `YYYYMMDD-YYYYMMDD`.
 
-**Search term report columns:**
-- Campaign Name, Ad Group Name
-- Targeting (the keyword/ASIN being targeted)
-- Match Type (broad, phrase, exact, targeting expression)
-- Customer Search Term
-- Impressions, Clicks, CTR, Spend, CPC
-- Orders (7-day), Sales (7-day), ACoS, ROAS
+### Marketplace
 
-**Placement report columns:**
-- Campaign Name, Portfolio name
-- Placement (Top of Search, Rest of Search, Product Pages)
-- Impressions, Clicks, CTR, Spend, CPC
-- Orders, Sales, ACoS, ROAS
-
-**Targeting report columns:**
-- Campaign Name, Ad Group Name
-- Targeting, Match Type
-- Impressions, Clicks, CTR, Spend, CPC
-- Orders, Sales, ACoS, ROAS
+Default marketplace: **US** (profile 4231260294381475). If user requests CA analysis, pass `marketplace="CA"`.
 
 ---
 
 ## Process
 
-### Step 1: Find & Load Data
+### Step 1: Pull Data via Amazon Ads API
 
-1. **Auto-detect:** Glob for `outputs/research/ppc-weekly/input/*.*` (supports .csv, .xlsx, .xls)
-2. Read first row of each file to identify report type (see auto-detection rules above)
-3. If all 4 found → tell user: "Found all 4 reports — analyzing now."
-4. If any missing → tell user which are missing and stop
-5. If duplicates of same type → prefer .csv over .xlsx for speed, or ask user which to use
-6. Read all 4 files
+**All 4 reports are created and downloaded programmatically. No user action needed.**
 
-### Step 1b: Fetch DataDive Rank Radar Data (for Rank-Aware PPC Decisions)
+#### 1a. Calculate Date Range
+
+```
+end_date = today - 3 days   (exclude last 2 days per SOP)
+start_date = today - 9 days  (7-day window)
+date_range = "YYYYMMDD-YYYYMMDD"  (e.g., "20260220-20260226")
+```
+
+Tell user: "Pulling PPC data for {start_date} to {end_date} via Amazon Ads API..."
+
+#### 1a.5. Fetch Portfolio Mapping (MANDATORY)
+
+**Call `list_portfolios(marketplace="US")` to get portfolio ID-to-name mapping.**
+
+This returns all portfolios with `portfolioId`, `name`, `state`, `inBudget`, and `budgetPolicy`. Build a lookup dict: `{portfolioId: portfolioName}`.
+
+**Why this matters:** The `sp_campaigns` report now includes `portfolioId` for each campaign. Instead of guessing portfolio membership from campaign names (error-prone), join campaign data with portfolio mapping for accurate portfolio-level grouping.
+
+Store this mapping for use in Step 3 (Parse Campaign Report) and Step 4 (Calculate Portfolio-Level Metrics).
+
+#### 1a.6. Fetch Budget Utilization (MANDATORY)
+
+**Call `get_sp_campaign_budget_usage(campaign_ids="{all enabled campaign IDs}", marketplace="US")` to check budget constraints.**
+
+If you don't have campaign IDs yet (they come from the campaign report), defer this to after Step 1d when campaign data is available. Alternatively, call `list_sp_campaigns(state="ENABLED")` to quickly get all campaign IDs and run budget check in parallel with report generation.
+
+**Parse budget utilization data for each campaign:**
+- `budgetUtilization` percentage — how much of daily budget was consumed
+- `isConstrained` — whether the campaign hit its budget limit
+
+**Flag any campaign where:**
+- `isConstrained = true` AND ACoS < 35% → **Budget Starved** — this campaign is profitable but can't spend its full potential. Money left on the table.
+- `isConstrained = true` AND ACoS > 50% → **Budget Wasted** — campaign is hitting budget AND unprofitable.
+
+Store budget utilization data for use in Step 6 (Campaign-by-Campaign Analysis).
+
+#### 1b. Create All 4 Reports (in parallel if possible)
+
+Call `create_ads_report` for each report type:
+
+| # | Call | Params |
+|---|------|--------|
+| 1 | `create_ads_report` | `report_type="sp_campaigns"`, `date_range="{calculated}"`, `marketplace="US"` |
+| 2 | `create_ads_report` | `report_type="sp_search_terms"`, `date_range="{calculated}"`, `marketplace="US"` |
+| 3 | `create_ads_report` | `report_type="sp_placements"`, `date_range="{calculated}"`, `marketplace="US"` |
+| 4 | `create_ads_report` | `report_type="sp_keywords"`, `date_range="{calculated}"`, `marketplace="US"` |
+
+Each call returns a **report ID**. Save all 4 report IDs.
+
+#### 1c. Poll Report Status
+
+Reports take 1-5+ minutes to generate (search term reports can take longer due to volume).
+
+**Polling strategy:**
+1. Wait ~30 seconds, then call `get_ads_report_status(report_id="{id}", marketplace="US")` for each report
+2. Check status: `COMPLETED`, `IN_PROGRESS`, or `FAILED`
+3. If any still `IN_PROGRESS` → wait another 30 seconds and poll again
+4. Repeat up to 10 times (max ~5 minutes total wait)
+5. If a report hits `FAILED` → note the failure and continue with the other 3 reports
+
+**Tell user progress:** "Reports generating... Campaign: COMPLETED, Search Terms: IN_PROGRESS, Placement: COMPLETED, Targeting: COMPLETED"
+
+#### 1d. Download Completed Reports
+
+For each `COMPLETED` report, download using the appropriate strategy:
+
+**Campaign, Placement, Targeting reports** (typically < 500 rows):
+```
+download_ads_report(report_id="{id}", marketplace="US", max_rows=1000)
+```
+These return data inline — parse directly for analysis.
+
+**Search Term report** (typically 3,000-5,000+ rows — use `save_to_file`):
+```
+download_ads_report(
+    report_id="{id}",
+    marketplace="US",
+    save_to_file="outputs/research/ppc-weekly/snapshots/{YYYY-MM-DD}/search-term-report.json"
+)
+```
+This writes the full report to disk and returns only a summary (row count, columns, aggregate metrics, 5-row preview). Then **read the saved JSON file** for detailed search term analysis in Step 10.
+
+**Why `save_to_file`:** Without this, 4,000+ search term rows flood the context window. The file-based approach lets you process terms in batches and stay within token budget.
+
+**For all reports:** After downloading, also save campaign/placement/targeting data to the snapshot folder for WoW comparison:
+- `outputs/research/ppc-weekly/snapshots/{YYYY-MM-DD}/campaign-report.json`
+- `outputs/research/ppc-weekly/snapshots/{YYYY-MM-DD}/placement-report.json`
+- `outputs/research/ppc-weekly/snapshots/{YYYY-MM-DD}/targeting-report.json`
+
+#### 1e. Validate Data
+
+After downloading:
+- Confirm all 4 reports have data (rows > 0)
+- If a report has 0 rows → note: "No data for {report_type} in this period"
+- Tell user: "All 4 reports downloaded — {X} campaigns, {Y} search terms, {Z} placement rows, {W} targeting rows. Analyzing now."
+
+#### 1f. CSV Fallback (Manual)
+
+If the API fails for any reason (auth expired, rate limit, service down), fall back to manual:
+1. Tell user: "API unavailable — falling back to manual export."
+2. Ask user to drop CSV exports into `outputs/research/ppc-weekly/input/`
+3. Glob for `outputs/research/ppc-weekly/input/*.*` and auto-detect report types by headers:
+   - **Campaign**: Has "Budget" column, no "Customer Search Term" or "Placement"
+   - **Search Term**: Has "Customer Search Term" column
+   - **Placement**: Has "Placement" column
+   - **Targeting**: Has "Targeting" + "Match Type", no "Customer Search Term" or "Budget"
+
+### Step 1g: Fetch DataDive Rank Radar Data (for Rank-Aware PPC Decisions)
 
 **MANDATORY:** Always fetch DataDive Rank Radar data. This replaces ALL "check Data Dive" manual callouts with actual automated rank data.
 
@@ -222,7 +302,7 @@ All exports should cover **the same 7-day window, excluding the last 2 days** (p
    - Continue with PPC-only analysis as before
    - Do NOT block the entire analysis
 
-### Step 1c: Fetch Seller Board Data (for TACoS + Profitability Context)
+### Step 1h: Fetch Seller Board Data (for TACoS + Profitability Context)
 
 **MANDATORY:** Always fetch Seller Board data to unlock TACoS and profit-level analysis.
 
@@ -277,12 +357,13 @@ All exports should cover **the same 7-day window, excluding the last 2 days** (p
 
 ### Step 3: Parse Campaign Report
 
-1. Parse the campaign data from the CSV
-2. **Filter OUT** all campaigns with status PAUSED or ARCHIVED
-3. Separate campaigns into:
+1. Parse the campaign data from the API response (or CSV fallback)
+2. **Join with portfolio mapping:** For each campaign, look up `portfolioId` in the portfolio mapping from Step 1a.5 to get the portfolio name. Campaigns with no `portfolioId` go into an "Unassigned" group.
+3. **Filter OUT** all campaigns with status PAUSED or ARCHIVED
+4. Separate campaigns into:
    - **Active with data**: ENABLED campaigns with Spend > $0 or Impressions > 0
    - **Active but dormant**: ENABLED campaigns with $0 spend and 0 impressions
-4. Group campaigns by **portfolio name**
+5. Group campaigns by **portfolio name** (using the portfolioId→name mapping, NOT campaign name guessing)
 5. For each campaign, classify its type:
 
 #### Campaign Classification
@@ -467,7 +548,7 @@ Check campaign start dates from the campaign report:
 
 **Critical SOP principle:** PPC decisions must consider rank movement, not just ACoS/CVR in isolation.
 
-**DataDive Rank Radar data is now fetched automatically in Step 1b.** Use it to make rank-informed decisions instead of flagging for manual checks.
+**DataDive Rank Radar data is now fetched automatically in Step 1g.** Use it to make rank-informed decisions instead of flagging for manual checks.
 
 **How to apply rank data to campaign decisions:**
 
@@ -518,7 +599,7 @@ Note any gaps — missing campaign types the portfolio should have based on its 
 
 ### Step 8: Parse Placement Report
 
-1. Parse placement data from the CSV
+1. Parse placement data from the API response (field: `placementClassification`)
 2. Group by portfolio, then by campaign
 3. For each campaign, calculate metrics per placement:
 
@@ -540,7 +621,7 @@ Note any gaps — missing campaign types the portfolio should have based on its 
 
 ### Step 9: Parse Targeting Report
 
-1. Parse targeting data from the CSV
+1. Parse targeting data from the API response (uses `sp_keywords` preset with `matchType` field)
 2. Group by portfolio, then by campaign
 3. Separate targets into types:
    - **Keyword targets** (broad, phrase, exact)
@@ -555,7 +636,7 @@ Note any gaps — missing campaign types the portfolio should have based on its 
 
 ### Step 10: Parse Search Term Report
 
-1. Parse search term data from the CSV
+1. Parse search term data from the API response (field: `searchTerm`)
 2. Cross-reference campaign names against campaign classifications from Step 3
 3. Note the match type for each row:
    - Broad match terms → candidates for phrase/exact promotion
@@ -643,6 +724,66 @@ Per SOP: Promote when **3+ orders with ACoS <40%** and clear buying intent, and 
    - Check `context/search-terms.md` for tracked keywords — don't negate known high-value terms
    - Flag competitor brand names (Kraftlab, Fanzbo, Krafun, etc.) separately — these need human decision
 
+### Step 10b: Get Bid Recommendations for Promote-Tier Keywords
+
+**After identifying P1 Promote keywords in Step 10**, use the Amazon Ads API to get data-driven bid suggestions instead of generic "+10%/-15%" advice.
+
+**For each P1 Promote keyword** (3+ orders, ACoS <40%):
+1. Identify the **target campaign and ad group** where the keyword should be promoted to
+2. Call `get_sp_bid_recommendations`:
+   ```
+   get_sp_bid_recommendations(
+       campaign_id="{target_campaign_id}",
+       ad_group_id="{target_ad_group_id}",
+       keywords='[{"keyword": "{search_term}", "matchType": "EXACT"}]',
+       marketplace="US"
+   )
+   ```
+3. The API returns `lowBid`, `medBid`, `highBid` — three competitiveness tiers
+
+**Apply these to the Promote recommendations:**
+
+| Bid Level | When to Use | Description |
+|-----------|-------------|-------------|
+| `lowBid` | Conservative start | Safe starting bid; lower impression share |
+| `medBid` | **Recommended default** | Balanced — good impression share without overspending |
+| `highBid` | Aggressive push / rank velocity | Maximum competitiveness; use for Launch-phase portfolios or hero keywords losing rank |
+
+**In the Promote table**, replace the generic "Set initial bid at current CPC" with the actual recommended bid:
+
+| Search Term | Recommended Bid | Low / Med / High | Current CPC | Action |
+|-------------|----------------|-------------------|-------------|--------|
+| {term} | ${medBid} | $X / $X / $X | ${currentCPC} | Add as EXACT at ${medBid} in {campaign} |
+
+**If bid recommendations fail** (campaign/ad group doesn't exist yet, or API error): Fall back to "Set initial bid at current CPC or slightly below" and note the failure.
+
+**Limit:** Only fetch bid recs for the top 10-15 Promote keywords to stay within token budget and rate limits.
+
+### Step 10c: Budget Utilization Analysis
+
+**Using budget utilization data from Step 1a.6**, create a dedicated budget analysis section:
+
+1. **For each campaign in the campaign report**, join budget utilization data:
+   - Budget amount (from campaign report `campaignBudgetAmount`)
+   - Budget utilization % (from `get_sp_campaign_budget_usage`)
+   - ACoS (from campaign report)
+
+2. **Classify each campaign's budget status:**
+
+| Budget Status | Condition | Implication |
+|---------------|-----------|-------------|
+| **Starved** | Utilization >90% AND ACoS <35% | Profitable campaign being throttled. Increase budget. |
+| **Wasteful** | Utilization >80% AND ACoS >50% | Hitting budget limit while being unprofitable. Decrease budget. |
+| **Underperforming** | Utilization <30% AND ACoS >40% | Not spending but also not efficient. Needs keyword/creative work. |
+| **Healthy** | Utilization 30-90% AND ACoS in target | Properly allocated. Maintain. |
+| **Idle** | Utilization <10% | Campaign barely spending. Review bids or keywords. |
+
+3. **Calculate total budget headroom:**
+   - Sum of (daily budget - daily spend) across all campaigns = wasted daily capacity
+   - Identify top 3 campaigns where budget increase would have highest impact (starved + low ACoS)
+
+4. **Output a Budget Health section** in the report (see output format update below).
+
 ### Step 11: Week-over-Week Comparison
 
 If a previous snapshot `summary.json` was loaded in Step 2:
@@ -693,13 +834,12 @@ Output the full analysis as a structured markdown report following the exact out
 After generating the report:
 
 1. Create snapshot folder: `outputs/research/ppc-weekly/snapshots/YYYY-MM-DD/`
-2. Copy all 4 input CSVs into the snapshot folder with standardized names:
-   - `campaign-report.csv`
-   - `search-term-report.csv`
-   - `placement-report.csv`
-   - `targeting-report.csv`
+2. Save all 4 API report datasets as JSON files with standardized names:
+   - `campaign-report.json`
+   - `search-term-report.json`
+   - `placement-report.json`
+   - `targeting-report.json`
 3. Generate `summary.json` with key metrics (see format below)
-4. Delete original CSVs from `input/` to keep clean for next run
 
 **summary.json format:**
 
@@ -984,6 +1124,34 @@ For each portfolio, show whether PPC spend is translating to rank improvements:
 
 ---
 
+## Budget Health (from Budget Utilization API)
+
+> Only include if budget utilization data was successfully fetched in Step 1a.6. If unavailable, note: "Budget utilization data unavailable — budget section skipped."
+
+### Budget-Constrained Campaigns (Money Left on Table)
+
+Campaigns that are **profitable but throttled** — increasing budget here has the highest ROI.
+
+| Campaign | Portfolio | Budget | Utilization | ACoS | Orders | Budget Status | Recommended Budget |
+|----------|-----------|--------|-------------|------|--------|---------------|-------------------|
+| {name} | {portfolio} | ${X}/day | X% | X% | X | **Starved** | ${X}/day (+X%) |
+
+**Total daily budget headroom wasted: ~${X}/day across {N} starved campaigns.**
+
+### Over-Budget Unprofitable Campaigns
+
+Campaigns hitting budget limits while being unprofitable — reduce or pause.
+
+| Campaign | Portfolio | Budget | Utilization | ACoS | Orders | Action |
+|----------|-----------|--------|-------------|------|--------|--------|
+| {name} | {portfolio} | ${X}/day | X% | X% | X | Reduce to ${X}/day or pause |
+
+### Budget Reallocation Recommendation
+
+> If we shift ${X}/day from wasteful campaigns to starved campaigns, estimated additional sales: ${X}/week at current conversion rates.
+
+---
+
 ## Targeting Insights (Account-Wide)
 
 ### Target Type Performance
@@ -1042,15 +1210,16 @@ Terms converting but at terrible efficiency. Lower bids significantly or negate.
 
 High-performing terms to graduate to tighter match types.
 
-| # | Search Term | Source Campaign | Current Match | Orders | Sales | ACoS | CVR | Recommended Action |
-|---|-------------|----------------|---------------|--------|-------|------|-----|--------------------|
-| 1 | {term} | {campaign} | {auto/broad} | X | ${X} | X% | X% | {Add to [campaign type] as [match type]} |
+| # | Search Term | Source Campaign | Current Match | Orders | Sales | ACoS | CVR | Recommended Bid (Low/Med/High) | Recommended Action |
+|---|-------------|----------------|---------------|--------|-------|------|-----|-------------------------------|-------------------|
+| 1 | {term} | {campaign} | {auto/broad} | X | ${X} | X% | X% | ${low} / **${med}** / ${high} | Add as EXACT at **${med}** in {target campaign} |
+
+**Bid recommendation source:** Amazon Ads API `get_sp_bid_recommendations` (fetched in Step 10b). Use `medBid` as default. Use `highBid` for Launch-phase portfolios or hero keywords losing rank. Use `lowBid` for conservative testing.
 
 **Promotion checklist:**
-- [ ] Add term as exact/phrase in target campaign
+- [ ] Add term as exact/phrase in target campaign at recommended bid
 - [ ] Add as negative exact in source campaign (prevent cannibalization)
-- [ ] Set initial bid at current CPC or slightly below
-- [ ] Monitor for 1 week after promotion
+- [ ] Monitor for 1 week after promotion before scaling
 
 ### P2 — WATCH & PROMOTE LATER
 
@@ -1160,20 +1329,20 @@ High-performing terms to graduate to tighter match types.
 
 1. Save the report to: `outputs/research/ppc-weekly/briefs/weekly-ppc-analysis-YYYY-MM-DD.md`
 2. Create snapshot at: `outputs/research/ppc-weekly/snapshots/YYYY-MM-DD/`
-   - Copy all 4 CSVs with standardized names
+   - Save all 4 API report datasets as JSON files
    - Generate `summary.json`
-3. **Delete** original CSVs from `input/` to keep clean for next run
 
 ---
 
 ## Token Budget Strategy
 
-With 4 account-wide reports, data can be large. To stay within 80K tokens:
+With 4 API reports, data can be large. To stay within 80K tokens:
 
-1. **Campaign + Placement + Targeting reports**: Typically < 200 rows each — read fully
-2. **Search term report**: Can be 3000+ terms. Focus detailed analysis on terms with **$3+ spend**. Terms below $3 spend get listed in appendix only, not individually analyzed
-3. **Previous snapshot**: Load only `summary.json` (not full CSVs) for WoW comparison
+1. **Campaign + Placement + Targeting reports**: Typically < 200 rows each — process fully
+2. **Search term report**: Can be 3,000-5,000+ rows. Focus detailed analysis on terms with **$3+ spend**. Terms below $3 spend get listed in appendix only, not individually analyzed
+3. **Previous snapshot**: Load only `summary.json` (not full JSON datasets) for WoW comparison
 4. **If token budget is tight**: Prioritize campaign analysis + search term P1 actions. Summarize placement + targeting at account level rather than per-portfolio
+5. **API report downloads**: Use `max_rows` parameter to control data volume. Default 500 for campaign/placement/targeting, increase to 5000 for search terms
 
 ---
 
@@ -1182,12 +1351,20 @@ With 4 account-wide reports, data can be large. To stay within 80K tokens:
 Before delivering the report, verify:
 
 ### Data Loading & Processing
-- [ ] All 4 report types correctly identified and loaded
+- [ ] Portfolio mapping fetched via `list_portfolios()` (Step 1a.5)
+- [ ] Budget utilization fetched via `get_sp_campaign_budget_usage()` (Step 1a.6)
+- [ ] All 4 API reports created via `create_ads_report` (sp_campaigns, sp_search_terms, sp_placements, sp_keywords)
+- [ ] All 4 reports polled to COMPLETED status via `get_ads_report_status`
+- [ ] Campaign/placement/targeting reports downloaded via `download_ads_report` with `max_rows=1000`
+- [ ] Search term report downloaded via `download_ads_report` with `save_to_file` (full data to disk)
+- [ ] Campaign data joined with portfolio mapping via `portfolioId` (not name-guessing)
+- [ ] API field names mapped to metric names (cost→Spend, purchases7d→Orders, sales7d→Sales, etc.)
+- [ ] ACoS, ROAS, CVR calculated from raw API fields
 - [ ] DataDive Rank Radar data fetched (all active Rank Radars + keyword rankings for PPC date window) — or failure noted
 - [ ] Rank Radar ASINs matched to PPC portfolios
 - [ ] Rank movement calculated per keyword (7-day direction: improving/stable/declining)
 - [ ] Seller Board data fetched (Daily Dashboard + Sales Detailed) — or failure noted
-- [ ] Seller Board data filtered to match PPC export date window
+- [ ] Seller Board data filtered to match PPC date window
 - [ ] TACoS calculated (account-wide + per-portfolio)
 - [ ] Only ENABLED campaigns with activity are analyzed (PAUSED/ARCHIVED filtered out)
 - [ ] Campaigns sorted by spend (highest first) within each portfolio
@@ -1203,6 +1380,10 @@ Before delivering the report, verify:
 
 ### SOP-Aligned Bid & Budget Checks
 - [ ] Bid adjustments use SOP percentage ranges (+20-30%, -30-50%, etc.) — not vague "increase/decrease"
+- [ ] Bid recommendations fetched via `get_sp_bid_recommendations()` for top 10-15 Promote keywords (Step 10b)
+- [ ] Promote table includes actual low/med/high bid values (not generic "set at CPC")
+- [ ] Budget utilization analyzed: Starved, Wasteful, Underperforming, Healthy, Idle classifications (Step 10c)
+- [ ] Budget Health section included in report with reallocation recommendations
 - [ ] Budget adequacy checked: SK/Exact need 2-3x avg daily CPC, Auto/Broad need 1.5x, Shield never capped
 - [ ] ASIN consolidation checked: Flagged if hero ASINs spread thin across 5+ campaigns
 - [ ] Experimental campaign cadence: Noted if portfolios are creating new campaigns weekly without learning
@@ -1236,8 +1417,7 @@ Before delivering the report, verify:
 
 ### Output & Housekeeping
 - [ ] WoW comparison included (or first-run note if no previous snapshot)
-- [ ] Snapshot saved with all 4 CSVs + summary.json
-- [ ] Input folder cleaned (CSVs deleted after archival)
+- [ ] Snapshot saved with all 4 JSON datasets + summary.json
 - [ ] Report saved to correct output location
 
 ---
@@ -1246,15 +1426,17 @@ Before delivering the report, verify:
 
 | Issue | Response |
 |-------|----------|
-| Missing 1-3 report types in input | Tell user exactly which reports are missing. Offer to run partial analysis with available data. |
-| CSV has unexpected columns | Map available columns to expected ones. Flag missing data in report. |
+| **API auth failure** (token expired) | Tell user: "Ads API token may need refresh — check ADS_API credentials in .env." Fall back to CSV if user provides exports. |
+| **Report creation fails** (400/403/500) | Retry once. If still failing, tell user the specific error and fall back to CSV for that report type. |
+| **Report stuck IN_PROGRESS** (>5 min) | Tell user the report is still generating. Offer to continue with available reports or wait longer. Search term reports can take 5+ min for large accounts. |
+| **Report FAILED status** | Note the failure, continue with the other 3 reports. Offer to retry or fall back to CSV for the failed report. |
+| **Download returns 0 rows** | Note: "No data for {report_type} in this period." Continue with available data. |
+| **Rate limiting** (429 error) | Built into MCP server (0.5s between requests). If still rate-limited, wait 60s and retry. |
 | No active campaigns with data | Report that the account has no recent activity. Ask if date range is correct. |
 | User doesn't know portfolio stages | Estimate from campaign ages and volume, but ask for confirmation. |
-| Data includes last 2 days | Warn user that last 2 days may have unreliable attribution data per SOP. |
 | Previous snapshot summary.json is corrupted | Skip WoW comparison, note "Previous snapshot unreadable — treating as first run." |
 | Very large search term report (5000+ terms) | Focus on terms with $5+ spend for detailed analysis. Summarize remainder. |
 | Duplicate campaign names across portfolios | Always show portfolio name alongside campaign name to disambiguate. |
-| Mixed date ranges across reports | Warn user. Note which reports have different date ranges. Proceed but flag in report header. |
 | Zero-spend report (all campaigns paused) | Report that all campaigns are paused. No analysis needed. |
 
 ---

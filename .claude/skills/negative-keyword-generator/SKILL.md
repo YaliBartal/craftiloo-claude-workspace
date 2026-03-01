@@ -62,8 +62,8 @@ outputs/research/negative-keywords/
 ### Efficiency Targets
 
 - **< 80K tokens** per analysis
-- **< 5 minutes** execution time
-- **No paid API calls** — works entirely from context files + optional user data
+- **< 8 minutes** execution time (includes API report generation wait time)
+- **No additional cost** — Amazon Ads API is free with approval; DataDive API has rate limits but no per-call cost
 
 ### Forbidden Practices
 
@@ -85,23 +85,117 @@ outputs/research/negative-keywords/
    - `context/business.md` — Brand info, categories, competitors, target audience
    - `context/search-terms.md` — PROTECTED keyword list (MUST NOT negate these)
 
-### Optional (Enhances Output)
-3. **Search term report** — If user has one, load and analyze for high-spend zero-order terms
-   - Can be in `outputs/research/negative-keywords/data/` or provided as a file path
-   - Same format as Seller Central search term export
+### Automated (No User Action Needed)
+3. **Search term data** — Pulled automatically from the **Amazon Ads API** in Step 0a (no manual CSV export needed)
+4. **Campaign mapping** — Pulled automatically from the **Amazon Ads API** in Step 0b.5 (enables programmatic application)
 
 ### How to Start
 
 When skill triggers:
 1. Ask: **"Which portfolio or product should I generate negatives for?"**
    - If user doesn't know portfolio names, list the 17 active portfolios
-2. Ask: **"Do you have a search term report to include? (Optional — enhances the list with spend-based data)"**
-3. Load context files
-4. If search term report provided, load and parse it
+2. Load context files
+3. Run Step 0a (pull search term data from Ads API — automated)
+4. Run Step 0b.5 (identify campaigns in portfolio — automated)
+5. Run Step 0b (DataDive keyword data — optional enhancement)
 
 ---
 
 ## Process
+
+### Step 0a: Pull Search Term Data from Amazon Ads API (Automated)
+
+**PURPOSE:** Replace the manual CSV export with an automated pull from the Amazon Ads API. This gives you the same high-spend zero-order terms and high-ACoS terms that previously required a Seller Central export.
+
+**How to fetch:**
+
+1. **Create the search term report:**
+   ```
+   create_ads_report(
+       report_type="sp_search_terms",
+       date_range="LAST_30_DAYS",
+       marketplace="US"
+   )
+   ```
+   Save the returned `reportId`.
+
+2. **Poll for completion:**
+   ```
+   get_ads_report_status(report_id="{reportId}", marketplace="US")
+   ```
+   Wait for `COMPLETED` status (typically 1-3 minutes). Poll every 30 seconds, max 10 times.
+
+3. **Download to file** (search term reports are large — 3,000-5,000+ rows):
+   ```
+   download_ads_report(
+       report_id="{reportId}",
+       marketplace="US",
+       save_to_file="outputs/research/negative-keywords/data/{portfolio-slug}-search-terms-{YYYY-MM-DD}.json"
+   )
+   ```
+   This saves the full report to disk and returns a summary with row count + aggregate metrics.
+
+4. **Read the saved file** and extract negative candidates:
+
+   | Condition | Action | Priority |
+   |-----------|--------|----------|
+   | `cost >= 10` AND `purchases7d == 0` | Negative EXACT candidate | P1 |
+   | `cost >= 5` AND `purchases7d == 0` AND `clickThroughRate < 0.003` | Negative EXACT candidate | P1 |
+   | `cost >= 5` AND `purchases7d == 0` AND `clickThroughRate >= 0.003` | Negative EXACT candidate | P2 (review) |
+   | ACoS > 100% AND `clicks >= 3` | Negative EXACT candidate | P1 |
+   | ACoS > 3x portfolio target AND `clicks >= 5` | Negative EXACT candidate | P2 |
+
+5. **Filter to the selected portfolio only:**
+   - Match `campaignName` against the user's selected portfolio
+   - If portfolio mapping is available (from `list_portfolios()`), filter by `portfolioId` in campaign data
+
+6. **If API fails:** Fall back to the manual approach — ask user to provide a search term CSV/Excel file. Note: "Amazon Ads API unavailable — using manual search term data."
+
+**This replaces the "Optional" search term report input.** The API pull happens automatically unless the API is unavailable.
+
+### Step 0b.5: Identify Active Campaigns for This Portfolio
+
+**PURPOSE:** Map exactly which campaigns belong to the selected portfolio so negatives can be applied to the right campaigns programmatically in Step 8.
+
+1. **Fetch portfolio mapping:**
+   ```
+   list_portfolios(marketplace="US")
+   ```
+   Find the portfolioId matching the user's selected portfolio name.
+
+2. **Fetch campaigns in this portfolio:**
+   ```
+   list_sp_campaigns(state="ENABLED", portfolio_id="{portfolioId}", marketplace="US")
+   ```
+   This returns all active campaigns in the portfolio with `campaignId`, `name`, `state`, and `budget`.
+
+3. **For each campaign, fetch its ad groups:**
+   ```
+   list_sp_ad_groups(campaign_id="{campaignId}", state="ENABLED", marketplace="US")
+   ```
+   Save the `adGroupId` for each ad group — needed for ad-group-level negative application.
+
+4. **Build a campaign map** for use in Step 8:
+   ```
+   Portfolio: {name} (portfolioId: {id})
+   ├── Campaign: {name} (campaignId: {id})
+   │   ├── Ad Group: {name} (adGroupId: {id})
+   │   └── Ad Group: {name} (adGroupId: {id})
+   ├── Campaign: {name} (campaignId: {id})
+   │   └── Ad Group: {name} (adGroupId: {id})
+   └── ...
+   ```
+
+5. **Fetch existing negatives** (for dedup in Step 8):
+   ```
+   list_sp_negative_keywords(campaign_id="{campaignId}", state="ENABLED", marketplace="US")
+   list_sp_campaign_negative_keywords(campaign_id="{campaignId}", marketplace="US")
+   ```
+   Build a set of existing negative terms per campaign for dedup checking later.
+
+6. **If API fails:** Note which campaigns/ad groups could not be fetched. Programmatic application (Step 8) will be unavailable — fall back to copy-paste output only.
+
+**Show the user the campaign map** so they know exactly which campaigns will receive negatives.
 
 ### Step 0b: Fetch DataDive Keyword Data (Optional Enhancement)
 
@@ -163,9 +257,10 @@ When skill triggers:
    - Target audience (grandparents/parents buying for kids 6-12)
    - Shinshin Creations targets adults
    - Competitor list
-6. **If search term report provided**, parse for:
+6. **From search term data (Step 0a)**, extract:
    - Terms with $5+ spend and 0 orders → candidate negative exacts
    - Terms with ACoS > 100% → candidate negative exacts
+   - These were already identified in Step 0a — carry them forward into Category 6
 
 ### Step 2: Build Product Profile
 
@@ -328,9 +423,9 @@ Generate based on specific product analysis. Examples by category:
 
 **Always generate these based on the specific product — not generic lists.**
 
-### Category 6: High-Spend Zero-Order Terms (Negative EXACT) — SEARCH TERM REPORT ONLY
+### Category 6: High-Spend Zero-Order Terms (Negative EXACT) — FROM ADS API
 
-**Only if search term report is provided:**
+**From the search term data pulled in Step 0a** (or manual CSV fallback if API unavailable):
 
 | Condition | Action |
 |-----------|--------|
@@ -656,10 +751,126 @@ If a search term file was provided, archive it to:
 
 ---
 
+## Step 8: Programmatic Application via Amazon Ads API
+
+**CRITICAL: This entire step requires explicit user confirmation at every stage. NEVER auto-apply.**
+
+After the user has reviewed and approved the negative keyword list (Steps 6-7), offer programmatic application.
+
+### 8a. Present Application Plan
+
+Present a clear summary of what will be applied:
+
+```
+## Application Plan
+
+**Portfolio:** {portfolio name}
+**Campaigns:** {N campaigns}
+**Total negatives to apply:** {count}
+
+### Campaign-Level Negatives (apply to ALL ad groups in campaign)
+| Campaign | Negative Term | Match Type |
+|----------|--------------|------------|
+| ... | ... | NEGATIVE_EXACT / NEGATIVE_PHRASE |
+
+### Ad-Group-Level Negatives (apply to SPECIFIC ad groups only)
+| Campaign | Ad Group | Negative Term | Match Type |
+|----------|----------|--------------|------------|
+| ... | ... | ... | NEGATIVE_EXACT / NEGATIVE_PHRASE |
+
+⚠️ Please confirm: Apply these {N} negatives? (yes/no)
+```
+
+**Default behavior:** Apply all negatives at **campaign level** (broader protection). Only use ad-group level if the user specifically requests it or if a negative is only relevant to certain ad groups.
+
+### 8b. Dedup Check
+
+Before applying, check for existing negatives to avoid duplicates:
+
+1. **Campaign-level negatives:** Already fetched in Step 0b.5 via `list_sp_campaign_negative_keywords()`
+2. **Ad-group-level negatives:** Already fetched in Step 0b.5 via `list_sp_negative_keywords()`
+3. **Compare:** For each proposed negative, check if it already exists (same keyword text + same match type + same campaign/ad group)
+4. **Report duplicates:** "Skipping {N} negatives that already exist: {list}"
+5. **Only apply net-new negatives**
+
+### 8c. Execute Application
+
+After user confirms:
+
+**For campaign-level negatives:**
+```
+create_sp_campaign_negative_keywords(
+    campaign_id="{campaign_id}",
+    keywords=[
+        {"keywordText": "{term}", "matchType": "NEGATIVE_EXACT", "state": "ENABLED"},
+        {"keywordText": "{term}", "matchType": "NEGATIVE_PHRASE", "state": "ENABLED"},
+        ...
+    ],
+    marketplace="US"
+)
+```
+
+**For ad-group-level negatives:**
+```
+manage_sp_negative_keywords(
+    action="create",
+    keywords=[
+        {"campaignId": "{id}", "adGroupId": "{id}", "keywordText": "{term}", "matchType": "NEGATIVE_EXACT", "state": "ENABLED"},
+        ...
+    ],
+    marketplace="US"
+)
+```
+
+**Batch size:** Send up to 100 keywords per API call. If more than 100, batch into multiple calls.
+
+### 8d. Report Results
+
+After application, present a results summary:
+
+```
+## Application Results
+
+✅ Successfully applied: {N} negatives
+❌ Failed: {N} negatives
+⏭️ Skipped (duplicates): {N} negatives
+
+### Failures (if any)
+| Term | Campaign | Error |
+|------|----------|-------|
+| ... | ... | ... |
+
+### Applied Summary
+| Campaign | Campaign-Level Added | Ad-Group-Level Added |
+|----------|---------------------|---------------------|
+| ... | ... | ... |
+```
+
+Save the application audit log to:
+`outputs/research/negative-keywords/data/{portfolio-slug}-applied-YYYY-MM-DD.json`
+
+### 8e. Error Handling
+
+| Error | Response |
+|-------|----------|
+| API returns 400 (bad request) | Check keyword format — remove special chars, validate matchType |
+| API returns 429 (throttled) | Wait 5 seconds and retry once. If still failing, save remaining to file for manual application |
+| Partial failure (some succeed, some fail) | Report successes, retry failed once, then save remaining to file |
+| User declines application | Save the approved list to file for later manual application. Provide copy-paste format as fallback |
+| Campaign not found (ID mismatch) | Re-fetch campaign list, try matching by name. If still failing, flag to user |
+
+---
+
 ## Execution Checklist
 
 Before delivering the review list, verify:
 
+**Data Gathering (Steps 0a-0b.5):**
+- [ ] Search term report pulled from Ads API (30-day, saved to file)
+- [ ] Active campaigns identified for this portfolio (campaigns + ad groups + existing negatives)
+- [ ] Dedup baseline loaded (existing campaign-level + ad-group-level negatives)
+
+**Negative Generation (Steps 1-5):**
 - [ ] Product profile is accurate (correct SKU, category, age range, contents)
 - [ ] All negative categories generated (craft types, product types, age, intent, specifics, color modifiers, competitor brands)
 - [ ] Every term cross-referenced against `context/search-terms.md` — no protected terms negated
@@ -672,9 +883,19 @@ Before delivering the review list, verify:
 - [ ] Borderline terms clearly marked with [REVIEW]
 - [ ] Match types correct (phrase for categories, exact for specific terms)
 - [ ] Safety check results included
+
+**Review & Delivery (Steps 6-7):**
 - [ ] Review step presented — NOT skipping to copy-paste
 - [ ] After approval, copy-paste lists are clean (one term per line, no formatting)
 - [ ] Brief saved to correct output location
+
+**Programmatic Application (Step 8 — only if user opts in):**
+- [ ] Application plan presented with full term list, campaigns, and match types
+- [ ] User explicitly confirmed application (never auto-apply)
+- [ ] Dedup check completed — existing negatives skipped
+- [ ] API calls batched (max 100 per call)
+- [ ] Results summary presented (success/fail/skip counts)
+- [ ] Audit log saved to outputs/research/negative-keywords/data/
 
 ---
 
@@ -689,6 +910,10 @@ Before delivering the review list, verify:
 | Product spans multiple categories (Barbie) | Identify the PRIMARY craft type of the Barbie product and generate based on that |
 | User wants negatives for ALL portfolios | Run one at a time. Suggest starting with highest-spend portfolio. |
 | User approves without reviewing | Remind: "The review step catches mistakes. Are you sure you want to skip?" |
+| Ads API report creation fails | Fall back to manual: ask user for search term CSV export from Seller Central |
+| Ads API report still pending after 5 polls | Save report ID, continue without search term data. User can retry later |
+| list_sp_campaigns returns 0 for portfolio | Verify portfolioId is correct. List all portfolios and re-map |
+| Programmatic application partially fails | Report successes, provide copy-paste format for failed terms |
 
 ---
 
@@ -703,10 +928,10 @@ Before delivering the review list, verify:
 
 | Scenario | Use This Skill | Next Step |
 |----------|---------------|-----------|
-| New portfolio launch | Generate baseline negatives | Apply to campaigns, then Weekly PPC after 2 weeks |
-| Restructured campaigns | Regenerate negatives | Monitor with weekly analysis |
-| Weekly PPC flags category-level waste | (Enhancement) | Run this skill to add systematic category negatives |
-| High-spend zero-order discovered | Add via search term report option | Continue weekly monitoring |
+| New portfolio launch | Generate baseline negatives | Apply via Step 8, then Weekly PPC after 2 weeks |
+| Restructured campaigns | Regenerate negatives | Apply via Step 8, monitor with weekly analysis |
+| Weekly PPC flags category-level waste | Run this skill for systematic category negatives | Apply via Step 8 |
+| High-spend zero-order discovered | Auto-detected via Ads API search term data | Apply via Step 8 |
 
 ---
 

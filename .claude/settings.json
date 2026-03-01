@@ -17,6 +17,7 @@
       "mcp__notion__*",
       "mcp__slack__*",
       "mcp__asana__*",
+      "mcp__amazon-ads-api__*",
       "mcp__slack-workspace-1__*",
       "mcp__slack-workspace-2__*",
       "mcp__claude_ai_Apify__*",

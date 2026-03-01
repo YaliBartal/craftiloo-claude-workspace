@@ -1,0 +1,317 @@
+---
+name: ppc-daily-health
+description: Quick daily PPC health check — traffic-light status per portfolio with anomaly detection
+triggers:
+  - ppc morning
+  - daily ppc
+  - ppc health
+  - morning ppc check
+output_location: outputs/research/ppc-agent/daily/
+---
+
+# Daily PPC Health Check
+
+**USE WHEN** routed from the PPC Agent via: "ppc morning", "daily ppc", "ppc health"
+
+**This skill is invoked through the PPC Agent orchestrator, not directly.**
+
+---
+
+## BEFORE YOU START — Read Lessons
+
+**MANDATORY FIRST STEP:** Read `LESSONS.md` in this skill's folder before doing anything else.
+
+1. Read `.claude/skills/ppc-daily-health/LESSONS.md`
+2. Check **Known Issues** — plan around these
+3. Check **Repeat Errors** — if you encounter one during this run, tell the user immediately: _"Repeat issue (xN): [description]"_
+4. Apply all past lessons to this run
+
+**Do NOT skip this step.**
+
+---
+
+## What This Does
+
+A **5-minute scan** that tells the PPC worker "everything is normal" or "these 2-3 things need your attention today." This is NOT a deep analysis — it replaces the 20-minute manual Seller Board + Seller Central morning check.
+
+**Time saved:** ~1.5 hrs/week (20 min/day x 5 days, reduced to ~5 min review)
+
+**Token budget:** <30K tokens, <3 minutes execution
+
+---
+
+## Efficiency Standards
+
+- **<30K tokens** per run
+- **<3 minutes** execution time
+- **0 Apify calls** (no scraping needed)
+- **Minimal API calls** — read from Market Intel snapshot where possible
+- **1 output file** — brief + snapshot in one clean delivery
+
+---
+
+## Process
+
+### Step 1: Load Context
+
+Load these files (read in parallel where possible):
+
+| File | Purpose |
+|------|---------|
+| `context/business.md` | Portfolio stages (Launch/Scaling/General) |
+| `outputs/research/ppc-agent/agent-state.json` | Last run dates, pending actions |
+| Most recent `outputs/research/market-intel/snapshots/*.json` | Seller Board data (TACoS, ad spend, margin, organic ratio) |
+| Most recent `outputs/research/ppc-agent/daily/*-health-snapshot.json` | Yesterday's health check (for day-over-day comparison) |
+
+**If today's Market Intel snapshot exists:** Use it. Do NOT re-fetch Seller Board data.
+**If no Market Intel snapshot exists for today:** Note: "No market intel snapshot for today. Running with campaign data only. Consider running /daily-market-intel first for the full picture."
+
+### Step 2: Pull Lightweight Campaign Data
+
+Fetch current campaign status — no full report needed, just the live state:
+
+```
+list_sp_campaigns(state="ENABLED", marketplace="US", max_results=200)
+```
+
+**Extract per campaign:**
+- `campaignName` — for portfolio grouping
+- `campaignId` — for reference
+- `budget` → `budget.budget` — daily budget
+- `state` — should all be ENABLED (we filtered)
+
+**Then group campaigns by portfolio:**
+```
+list_portfolios(marketplace="US")
+```
+
+Map each campaign to its portfolio using `portfolioId`. Group campaigns without a portfolio under "Unassigned."
+
+### Step 3: Check DataDive Rank Radar Summary
+
+Fetch summary-level rank radar data (headline counts only — NOT full keyword lists):
+
+```
+list_rank_radars()
+```
+
+**Extract per radar:**
+- `radarLabel` — portfolio/product name
+- `totalKeywords` — how many keywords tracked
+- `top10Count` — keywords in top 10 organically
+- `top50Count` — keywords in top 50
+
+**This is a fast call** — no per-keyword data needed for the daily check.
+
+### Step 4: Build Portfolio Health Summary
+
+For each portfolio, compute a traffic-light status:
+
+#### Data Sources Per Portfolio
+
+**Important:** Seller Board data is per-ASIN, not per-portfolio. Portfolio-level PPC metrics come from campaign data grouped by portfolio.
+
+| Data Point | Source | Calculation |
+|-----------|--------|-------------|
+| Yesterday's PPC spend | `list_sp_campaigns` grouped by portfolio via `list_portfolios` | Sum of campaign budgets (approximate; actual spend requires reports) |
+| 7-day avg portfolio ACoS | Most recent weekly snapshot (`summary.json`) | Spend / Sales per portfolio from campaign report |
+| Account-level TACoS | Market Intel snapshot (Seller Board) | Total Ad Spend / Total Revenue (account-level, not portfolio) |
+| Account-level organic ratio | Market Intel snapshot (Seller Board) | Organic Revenue / Total Revenue (account-level) |
+| Per-ASIN sales/profit | Market Intel snapshot (Seller Board 7d detailed) | Match ASINs to portfolios via `context/business.md` ASIN list |
+| Rank radar summary | DataDive `list_rank_radars` | top10/top50 counts per radar |
+| Campaign count | `list_sp_campaigns` | Count of ENABLED campaigns in portfolio |
+| Portfolio stage | `context/business.md` | Launch / Scaling / General |
+
+**Portfolio-level ACoS** is derived from campaign data (Step 2), not Seller Board.
+**Account-level TACoS and organic ratio** come from Seller Board (Market Intel snapshot).
+**Per-ASIN profit/margin** from Seller Board is mapped to portfolios using the ASIN list in `context/business.md`.
+
+#### Traffic Light Rules
+
+**GREEN — All good, no action needed:**
+- Scaling portfolio: ACoS <35%
+- Launch portfolio: ACoS <60% (higher tolerance)
+- Spend within 30% of 7-day average
+- No hero keyword rank drops (if radar data available)
+
+**YELLOW — Worth noting, monitor:**
+- Scaling portfolio: ACoS 35-50%
+- Launch portfolio: ACoS 60-80%
+- Spend 30-50% above 7-day average
+- 1-2 hero keywords dropped out of top 10
+
+**RED — Needs attention today:**
+- Scaling portfolio: ACoS >50%
+- Launch portfolio: ACoS >80%
+- Spend >50% above 7-day average (budget blowout)
+- 3+ hero keywords dropped out of top 10
+- ACoS more than doubled from yesterday
+
+#### Stage-Specific Context
+
+Always note the portfolio stage next to its status:
+- **Launch** portfolios in YELLOW are often fine — high ACoS is expected
+- **Scaling** portfolios in YELLOW need monitoring
+- **General** portfolios (Catch All, Shield) have different benchmarks
+
+### Step 5: Check Pending Actions
+
+Read `agent-state.json` for any pending P1 actions from previous skill runs:
+
+- Unapplied bid changes from Bid Recommender
+- Unflagged negatives from Search Term Harvester
+- P1 action items from Weekly PPC Analysis
+
+List any pending P1 actions in the brief.
+
+### Step 6: Generate Morning Brief
+
+**Format:**
+
+```markdown
+# PPC Morning Brief — {YYYY-MM-DD}
+
+## Account Pulse
+
+| Metric | Yesterday | 7-Day Avg | Trend |
+|--------|-----------|-----------|-------|
+| Total PPC Spend | ${X} | ${X} | {arrow up/down/flat} |
+| Total PPC Sales | ${X} | ${X} | {arrow} |
+| Overall ACoS | X% | X% | {arrow} |
+| TACoS | X% | X% | {arrow} |
+| Organic Ratio | X% | X% | {arrow} |
+
+## Portfolio Status
+
+| Portfolio | Stage | ACoS | Spend | Status | Note |
+|-----------|-------|------|-------|--------|------|
+| {name} | Scaling | X% | ${X} | GREEN | — |
+| {name} | Launch | X% | ${X} | YELLOW | ACoS elevated but expected for launch |
+| {name} | Scaling | X% | ${X} | RED | ACoS doubled overnight — check campaigns |
+
+**RED flags ({count}):**
+- {Portfolio}: {specific issue and suggested action}
+
+**YELLOW flags ({count}):**
+- {Portfolio}: {what to monitor}
+
+## Rank Radar Summary
+
+| Radar | Keywords | Top 10 | Top 50 | Note |
+|-------|----------|--------|--------|------|
+| {name} | {N} | {N} | {N} | {stable / gained / lost} |
+
+## Pending Actions ({count})
+
+| Priority | Action | Source | Date |
+|----------|--------|--------|------|
+| P1 | {description} | {skill name} | {date} |
+
+## Today's Recommendation
+
+{One sentence: what the PPC worker should focus on today based on the status above.}
+{If everything is GREEN: "All portfolios healthy. Good day for proactive work — consider running a search term harvest or reviewing bid recommendations."}
+{If RED flags exist: "Priority: Address {portfolio} — {specific action}. Then {secondary recommendation}."}
+```
+
+### Step 7: Save Outputs
+
+**Brief:**
+`outputs/research/ppc-agent/daily/{YYYY-MM-DD}-health-check.md`
+
+**Snapshot (machine-readable for other skills):**
+`outputs/research/ppc-agent/daily/{YYYY-MM-DD}-health-snapshot.json`
+
+```json
+{
+  "date": "YYYY-MM-DD",
+  "account": {
+    "total_spend": 0,
+    "total_sales": 0,
+    "acos": 0,
+    "tacos": 0,
+    "organic_ratio": 0
+  },
+  "portfolios": [
+    {
+      "name": "Portfolio Name",
+      "stage": "Scaling",
+      "acos": 0,
+      "spend": 0,
+      "status": "GREEN",
+      "campaign_count": 0,
+      "note": ""
+    }
+  ],
+  "rank_radar_summary": [
+    {
+      "radar": "Radar Name",
+      "total_keywords": 0,
+      "top10": 0,
+      "top50": 0
+    }
+  ],
+  "red_flags": [],
+  "yellow_flags": [],
+  "pending_actions_count": 0
+}
+```
+
+---
+
+## What This Does NOT Do
+
+- **Does NOT pull full Ads API reports** — that's the Weekly PPC Analysis
+- **Does NOT make bid adjustments** — that's the Bid Recommender
+- **Does NOT analyze search terms** — that's the Search Term Harvester
+- **Does NOT re-fetch Seller Board data** — reads from Market Intel snapshot
+- **Does NOT do deep keyword rank analysis** — uses radar summary counts only
+
+If the daily check surfaces a RED flag, tell the user which sub-skill to run next (e.g., "Run bid review for Dessert Family" or "Run search term harvest — 4 days overdue").
+
+---
+
+## Error Handling
+
+| Issue | Response |
+|-------|----------|
+| No Market Intel snapshot for today | Note it in the brief, run with campaign data only |
+| `list_sp_campaigns` returns <50 campaigns | Known truncation issue — note in brief that campaign count may be incomplete |
+| `list_rank_radars` fails | Skip rank radar section, note "DataDive unavailable" |
+| No previous health snapshot | Skip day-over-day comparison, show absolute values only |
+| Portfolio not in `context/business.md` | Default to "Unknown" stage, flag for user to update |
+| agent-state.json missing | Create it (first-time setup) |
+
+---
+
+## AFTER EVERY RUN — Update Lessons (MANDATORY)
+
+**Before presenting final results, update `.claude/skills/ppc-daily-health/LESSONS.md`.**
+
+### 1. Write a Run Log Entry
+
+Add a new entry at the **TOP** of the Run Log section:
+
+```
+### Run: YYYY-MM-DD
+**Result:** Success / Partial / Failed
+
+**What happened:**
+- (What went according to plan)
+
+**What didn't work:**
+- (Any issues)
+
+**Lesson learned:**
+- (What to do differently)
+
+**Tokens/cost:** ~XX K tokens
+```
+
+### 2. Update Issue Tracking
+
+| Situation | Action |
+|-----------|--------|
+| New problem | Add to **Known Issues** |
+| Known Issue happened again | Move to **Repeat Errors**, increment count, **tell the user** |
+| Fixed a Known Issue | Move to **Resolved Issues** |

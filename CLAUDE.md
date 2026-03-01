@@ -171,6 +171,12 @@ Claude Code Workspace/
 │       ├── product-listing-development/  # Parent orchestrator (listing + images)
 │       ├── automation-discovery-interview/  # 30-40 min workflow audit
 │       ├── weekly-ppc-analysis/  # Weekly PPC analysis (campaign + search term + placement + targeting)
+│       ├── ppc-agent/                # PPC Agent orchestrator (routes to all PPC sub-skills)
+│       ├── ppc-daily-health/         # Daily PPC health check (traffic-light status)
+│       ├── ppc-bid-recommender/      # SOP-based bid adjustment recommendations
+│       ├── ppc-search-term-harvester/ # Reactive search term harvesting (NEGATE/PROMOTE/DISCOVER)
+│       ├── ppc-portfolio-summary/    # Portfolio-level performance summary + structure audit
+│       ├── ppc-monthly-review/       # Monthly strategic PPC review
 │       ├── negative-keyword-generator/  # Proactive negative keyword generation from product knowledge
 │       ├── customer-review-analyzer/  # Amazon review analysis for our products + competitors
 │       ├── niche-category-analysis/  # New niche/category deep-dive research & viability
@@ -221,9 +227,15 @@ Claude Code Workspace/
 | "Create a listing" / "Amazon listing" | → `.claude/skills/listing-creator/` |
 | "Image plan" / "Plan my images" | → `.claude/skills/image-planner/` |
 | "Full listing" / "Launch product" / "Listing + images" | → `.claude/skills/product-listing-development/` |
-| "Weekly PPC" / "PPC analysis" / "PPC review" / "Campaign analysis" | → `.claude/skills/weekly-ppc-analysis/` |
-| "Search term analysis" / "Negate terms" / "Keyword mining" | → `.claude/skills/weekly-ppc-analysis/` |
-| "Generate negatives" / "Negative keywords" / "Negative keyword list" | → `.claude/skills/negative-keyword-generator/` |
+| "PPC" / "PPC check" / "PPC agent" / "PPC catch-up" / "PPC status" | → `.claude/skills/ppc-agent/` (orchestrator) |
+| "PPC morning" / "Daily PPC" / "PPC health" | → `.claude/skills/ppc-agent/` (routes to ppc-daily-health) |
+| "Adjust bids" / "Bid recommendations" / "Bid review" | → `.claude/skills/ppc-agent/` (routes to ppc-bid-recommender) |
+| "Portfolio check" / "Portfolio health" / "Portfolio flags" | → `.claude/skills/ppc-agent/` (routes to ppc-portfolio-summary) |
+| "Harvest search terms" / "Negate and promote" / "Search term review" | → `.claude/skills/ppc-agent/` (routes to ppc-search-term-harvester) |
+| "Monthly PPC" / "Monthly review" / "PPC month" | → `.claude/skills/ppc-agent/` (routes to ppc-monthly-review) |
+| "Weekly PPC" / "PPC analysis" / "Campaign analysis" | → `.claude/skills/weekly-ppc-analysis/` (standalone) |
+| "Search term analysis" / "Keyword mining" | → `.claude/skills/weekly-ppc-analysis/` |
+| "Generate negatives" / "Negative keywords" / "Negative keyword list" | → `.claude/skills/negative-keyword-generator/` (standalone) |
 | "Review analysis" / "Customer reviews" / "What are customers saying" | → `.claude/skills/customer-review-analyzer/` |
 | "Niche analysis" / "Category research" / "Explore a niche" / "New niche" | → `.claude/skills/niche-category-analysis/` |
 | "Listing audit" / "Audit listing" / "Listing optimizer" / "Listing score" / "Portfolio scan" / "Listing health" | → `.claude/skills/listing-optimizer/` |
@@ -243,7 +255,7 @@ Claude Code Workspace/
 | **Asana** | Project/task management — tasks, projects, sections, subtasks, comments, search, dependencies (custom Python MCP, 26 tools) | ⚙️ Configured |
 | **Slack** | Multi-workspace messaging, channels, search, scheduled messages, file upload (custom Python MCP, 16 tools) | ⚙️ Configured |
 | **GitHub** | Repository access, code search, issues, PRs | ⚙️ Configured |
-| **Seller Board** | Sales, profit, inventory, PPC, daily dashboard (5 CSV reports) | ⚙️ Configured |
+| **Seller Board** | Sales, profit, inventory, PPC, daily dashboard (6 CSV reports) | ⚙️ Configured |
 | **DataDive** | Keyword rank tracking, competitor data, search volume, niche research (12 tools) | ⚙️ Configured |
 | **Amazon SP-API** | Orders, catalog, inventory, pricing, reports — direct Amazon data (13 tools) | ⚙️ Configured |
 | **Amazon Ads API** | Campaign management, keywords, targeting, negative keywords, bid recs, async reports (27 tools) | ⚙️ Configured |
@@ -277,19 +289,20 @@ Custom Python MCP server for Apify Platform API. Auth: Bearer token. Rate limiti
 
 **Seller Board MCP Server** (`mcp-servers/sellerboard/server.py`):
 
-Custom Python MCP server exposing 6 tools for all Seller Board CSV reports.
+Custom Python MCP server exposing 7 tools for all Seller Board CSV reports.
 
 | Tool | Report | Key Data |
 |------|--------|----------|
 | `get_inventory_report` | FBA Inventory | Stock levels, ROI, margin, reorder recs, velocity |
-| `get_sales_detailed_report` | Sales Detailed (59 cols) | Per-ASIN: organic/PPC sales, fees, COGS, profit, ACOS, sessions |
+| `get_sales_detailed_report` | Sales Detailed 30d (59 cols) | Per-ASIN: organic/PPC sales, fees, COGS, profit, ACOS, sessions |
+| `get_sales_detailed_7d_report` | Sales Detailed 7d (41 cols) | Same as above but 7-day window (~460 rows). **Preferred for daily market intel.** |
 | `get_sales_summary_report` | Sales Summary (41 cols) | Daily financials, ad spend by channel, profit by ASIN |
 | `get_daily_dashboard_report` | Daily Dashboard (31 cols) | Daily aggregate: revenue, units, ad spend, profit, margin |
 | `get_ppc_marketing_report` | PPC Marketing (15 cols) | PPC sales, organic turnover, TACOS, ROAS, ACOS, CPC, conversion |
-| `get_all_reports_summary` | All 5 combined | Complete business snapshot |
+| `get_all_reports_summary` | All 6 combined | Complete business snapshot |
 
-**Env variables** (5 report URLs in `.env`, auth token embedded):
-`SELLERBOARD_INVENTORY_REPORT`, `SELLERBOARD_SALES_DETAILED`, `SELLERBOARD_SALES_SUMMARY`, `SELLERBOARD_DAILY_DASHBOARD`, `SELLERBOARD_PPC_MARKETING`
+**Env variables** (6 report URLs in `.env`, auth token embedded):
+`SELLERBOARD_INVENTORY_REPORT`, `SELLERBOARD_SALES_DETAILED`, `SELLERBOARD_SALES_DETAILED_7D`, `SELLERBOARD_SALES_SUMMARY`, `SELLERBOARD_DAILY_DASHBOARD`, `SELLERBOARD_PPC_MARKETING`
 
 **Skills using Seller Board data:**
 - **Weekly PPC Analysis** → TACoS, profitability, organic vs PPC split

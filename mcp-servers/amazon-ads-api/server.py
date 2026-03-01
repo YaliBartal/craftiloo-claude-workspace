@@ -76,6 +76,7 @@ REPORT_PRESETS = {
         "columns": [
             "campaignName", "campaignId", "campaignStatus",
             "campaignBudgetAmount", "campaignBudgetType",
+            "portfolioId",
             "impressions", "clicks", "cost",
             "purchases7d", "sales7d", "unitsSoldClicks7d",
             "costPerClick", "clickThroughRate",
@@ -116,9 +117,9 @@ REPORT_PRESETS = {
     },
     "sp_placements": {
         "reportTypeId": "spCampaigns",
-        "groupBy": ["campaign"],
+        "groupBy": ["campaign", "campaignPlacement"],
         "columns": [
-            "campaignName", "campaignId", "placementClassification",
+            "campaignName", "campaignId",
             "impressions", "clicks", "cost",
             "purchases7d", "sales7d",
         ],
@@ -547,7 +548,7 @@ async def list_sp_campaigns(
             "portfolioId": c.get("portfolioId", ""),
             "startDate": c.get("startDate", ""),
         })
-    return format_json(results, title=f"SP Campaigns ({marketplace})")
+    return format_json(results, title=f"SP Campaigns ({marketplace})", max_items=max_results)
 
 
 @mcp.tool()
@@ -636,7 +637,7 @@ async def list_sp_ad_groups(
             "state": ag.get("state"),
             "defaultBid": ag.get("defaultBid"),
         })
-    return format_json(results, title=f"SP Ad Groups ({marketplace})")
+    return format_json(results, title=f"SP Ad Groups ({marketplace})", max_items=max_results)
 
 
 @mcp.tool()
@@ -728,7 +729,7 @@ async def list_sp_keywords(
             "adGroupId": kw.get("adGroupId"),
             "campaignId": kw.get("campaignId"),
         })
-    return format_json(results, title=f"SP Keywords ({marketplace})")
+    return format_json(results, title=f"SP Keywords ({marketplace})", max_items=max_results)
 
 
 @mcp.tool()
@@ -806,7 +807,7 @@ async def list_sp_negative_keywords(
             "adGroupId": kw.get("adGroupId"),
             "campaignId": kw.get("campaignId"),
         })
-    return format_json(results, title=f"SP Negative Keywords ({marketplace})")
+    return format_json(results, title=f"SP Negative Keywords ({marketplace})", max_items=max_results)
 
 
 @mcp.tool()
@@ -871,7 +872,7 @@ async def list_sp_campaign_negative_keywords(
             "state": kw.get("state"),
             "campaignId": kw.get("campaignId"),
         })
-    return format_json(results, title=f"Campaign Negative Keywords ({marketplace})")
+    return format_json(results, title=f"Campaign Negative Keywords ({marketplace})", max_items=max_results)
 
 
 @mcp.tool()
@@ -947,7 +948,7 @@ async def list_sp_targets(
             "adGroupId": t.get("adGroupId"),
             "campaignId": t.get("campaignId"),
         })
-    return format_json(results, title=f"SP Targets ({marketplace})")
+    return format_json(results, title=f"SP Targets ({marketplace})", max_items=max_results)
 
 
 @mcp.tool()
@@ -1013,7 +1014,7 @@ async def manage_sp_negative_targets(action: str, targets: str, marketplace: str
         )
         if isinstance(items, str):
             return items
-        return format_json(items, title=f"SP Negative Targets ({marketplace})")
+        return format_json(items, title=f"SP Negative Targets ({marketplace})", max_items=500)
     else:
         return f"Error: Invalid action '{action}'. Use 'create' or 'list'."
 
@@ -1023,27 +1024,96 @@ async def manage_sp_negative_targets(action: str, targets: str, marketplace: str
 # ============================================================
 
 @mcp.tool()
-async def get_sp_bid_recommendations(targets: str, marketplace: str = "US") -> str:
-    """Get bid recommendations for SP keyword or product targets.
+async def get_sp_bid_recommendations(
+    campaign_id: str,
+    ad_group_id: str,
+    keywords: str,
+    marketplace: str = "US",
+) -> str:
+    """Get bid recommendations for SP keywords in an existing ad group.
 
     Args:
-        targets: JSON array of targeting objects.
-            Keywords: [{"keywordText": "cross stitch kit", "matchType": "BROAD"}]
-            Products: [{"expression": [{"type": "asinSameAs", "value": "B08DDJCQKF"}]}]
+        campaign_id: Campaign ID (required).
+        ad_group_id: Ad group ID (required).
+        keywords: JSON array of keyword objects.
+            Example: [{"keyword": "cross stitch kit", "matchType": "BROAD"}]
+            matchType: BROAD, PHRASE, or EXACT (use KEYWORD_BROAD_MATCH format internally).
         marketplace: US or CA.
     """
-    parsed = _parse_json_param(targets, "targets")
+    parsed = _parse_json_param(keywords, "keywords")
     if isinstance(parsed, str):
         return parsed
 
-    body = {"targetingExpressions": parsed if isinstance(parsed, list) else [parsed]}
-    data = await ads_api_post(
-        "/sp/targets/bid/recommendations", body, marketplace, "bidRecommendations"
-    )
-    if isinstance(data, str):
-        return data
+    kw_list = parsed if isinstance(parsed, list) else [parsed]
 
-    return format_json(data, title=f"Bid Recommendations ({marketplace})")
+    # Convert to targeting expression format
+    match_type_map = {
+        "BROAD": "KEYWORD_BROAD_MATCH",
+        "PHRASE": "KEYWORD_PHRASE_MATCH",
+        "EXACT": "KEYWORD_EXACT_MATCH",
+    }
+    expressions = []
+    for kw in kw_list:
+        keyword_text = kw.get("keyword") or kw.get("keywordText", "")
+        match = kw.get("matchType", "BROAD").upper()
+        expr_type = match_type_map.get(match, f"KEYWORD_{match}_MATCH")
+        expressions.append({"type": expr_type, "value": keyword_text})
+
+    body = {
+        "recommendationType": "BIDS_FOR_EXISTING_AD_GROUP",
+        "campaignId": campaign_id,
+        "adGroupId": ad_group_id,
+        "targetingExpressions": expressions,
+    }
+
+    token = await _get_access_token()
+    if not token:
+        return "Error: Ads API credentials not set."
+    profile = _profile_id(marketplace)
+    if not profile:
+        return f"Error: No profile for {marketplace}."
+
+    await _rate_limit()
+
+    headers = _build_headers(token, marketplace)
+    headers["Content-Type"] = "application/vnd.spThemeBasedBidRecommendation.v3+json"
+    headers["Accept"] = "application/vnd.spThemeBasedBidRecommendation.v3+json"
+
+    try:
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.post(
+                f"{BASE_URL}/sp/targets/bid/recommendations",
+                headers=headers, json=body,
+            )
+    except httpx.TimeoutException:
+        return "Error: Request timed out."
+    except httpx.RequestError as e:
+        return f"Error: Request failed — {e}"
+
+    if response.status_code != 200:
+        return f"Error: HTTP {response.status_code}. Response: {response.text[:500]}"
+
+    data = response.json()
+
+    # Flatten bid recommendations for display
+    recs = data.get("bidRecommendations", [])
+    results = []
+    for theme_block in recs:
+        theme = theme_block.get("theme", "")
+        for expr_rec in theme_block.get("bidRecommendationsForTargetingExpressions", []):
+            target = expr_rec.get("targetingExpression", {})
+            bids = expr_rec.get("bidValues", [])
+            bid_values = [b.get("suggestedBid", 0) for b in bids]
+            results.append({
+                "keyword": target.get("value", ""),
+                "matchType": target.get("type", ""),
+                "theme": theme,
+                "lowBid": bid_values[0] if len(bid_values) > 0 else "",
+                "medBid": bid_values[1] if len(bid_values) > 1 else "",
+                "highBid": bid_values[2] if len(bid_values) > 2 else "",
+            })
+
+    return format_json(results, title=f"Bid Recommendations ({marketplace})")
 
 
 @mcp.tool()
@@ -1211,13 +1281,18 @@ async def download_ads_report(
     report_id: str,
     marketplace: str = "US",
     max_rows: int = 500,
+    save_to_file: str = "",
 ) -> str:
     """Download a completed Ads report. Handles gzip decompression.
 
     Args:
         report_id: Report ID from create_ads_report.
         marketplace: US or CA.
-        max_rows: Max rows to return (default 500).
+        max_rows: Max rows to return in response (default 500). Ignored when save_to_file is set.
+        save_to_file: Optional file path to save FULL report as JSON. When set, the complete
+            report is written to disk and only a summary (row count, columns, top metrics) is
+            returned. Use this for large reports (1000+ rows) to avoid flooding context.
+            Example: "outputs/research/ppc-weekly/data/search-terms-2026-03-01.json"
     """
     # Get report status to find download URL
     data = await ads_api_get(f"/reporting/reports/{report_id}", marketplace=marketplace)
@@ -1260,9 +1335,45 @@ async def download_ads_report(
         return format_json(report_data, title=f"Report {report_id}")
 
     total = len(report_data)
+
+    # --- Save to file mode ---
+    if save_to_file:
+        try:
+            file_path = Path(save_to_file)
+            file_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(file_path, "w", encoding="utf-8") as f:
+                json.dump(report_data, f, indent=2)
+        except Exception as e:
+            return f"Error: Could not save report to '{save_to_file}' — {e}"
+
+        # Build summary instead of returning all data
+        columns = list(report_data[0].keys()) if report_data else []
+        summary = f"## Report Saved to File\n\n"
+        summary += f"- **File:** `{save_to_file}`\n"
+        summary += f"- **Total rows:** {total}\n"
+        summary += f"- **Columns:** {', '.join(columns)}\n\n"
+
+        # Add top-level aggregates for numeric columns
+        numeric_cols = ["impressions", "clicks", "cost", "purchases7d", "sales7d", "unitsSoldClicks7d"]
+        agg_rows = []
+        for col in numeric_cols:
+            if col in columns:
+                vals = [float(row.get(col, 0) or 0) for row in report_data]
+                agg_rows.append(f"| {col} | {sum(vals):,.2f} |")
+        if agg_rows:
+            summary += "| Metric | Total |\n| --- | --- |\n"
+            summary += "\n".join(agg_rows) + "\n\n"
+
+        # Show first 5 rows as preview
+        preview = report_data[:5]
+        summary += format_json(preview, title=f"Preview (first 5 of {total} rows)", max_items=5)
+        summary += f"\n*Full data saved to `{save_to_file}`. Read the file for complete analysis.*\n"
+        return summary
+
+    # --- Standard mode (return in response) ---
     truncated = report_data[:max_rows]
 
-    output = format_json(truncated, title=f"Report Results ({total} total rows)")
+    output = format_json(truncated, title=f"Report Results ({total} total rows)", max_items=max_rows)
     if total > max_rows:
         output += f"\n*Showing {max_rows} of {total} rows. Increase max_rows for more.*\n"
     return output
@@ -1306,7 +1417,7 @@ async def list_sb_campaigns(
             "budgetType": budget.get("budgetType") if isinstance(budget, dict) else "",
             "portfolioId": c.get("portfolioId", ""),
         })
-    return format_json(results, title=f"SB Campaigns ({marketplace})")
+    return format_json(results, title=f"SB Campaigns ({marketplace})", max_items=max_results)
 
 
 @mcp.tool()
@@ -1370,7 +1481,7 @@ async def list_sd_campaigns(
             "tactic": c.get("tactic", ""),
             "costType": c.get("costType", ""),
         })
-    return format_json(results, title=f"SD Campaigns ({marketplace})")
+    return format_json(results, title=f"SD Campaigns ({marketplace})", max_items=max_results)
 
 
 @mcp.tool()
@@ -1406,24 +1517,24 @@ async def list_portfolios(marketplace: str = "US") -> str:
     Args:
         marketplace: US or CA.
     """
-    data = await ads_api_get("/v2/portfolios", marketplace=marketplace)
+    body = {"maxResults": 100}
+    data = await ads_api_post("/portfolios/list", body, marketplace)
     if isinstance(data, str):
         return data
 
-    if not isinstance(data, list):
-        return format_json(data, title="Portfolios")
+    items = data.get("portfolios", []) if isinstance(data, dict) else data
 
     results = []
-    for p in data:
+    for p in items:
         budget = p.get("budget", {})
         results.append({
             "portfolioId": p.get("portfolioId"),
             "name": p.get("name"),
             "state": p.get("state"),
-            "budget": budget.get("amount") if isinstance(budget, dict) else "",
+            "inBudget": p.get("inBudget", ""),
             "budgetPolicy": budget.get("policy") if isinstance(budget, dict) else "",
         })
-    return format_json(results, title=f"Portfolios ({marketplace})")
+    return format_json(results, title=f"Portfolios ({marketplace})", max_items=100)
 
 
 @mcp.tool()
@@ -1443,9 +1554,9 @@ async def manage_portfolios(action: str, portfolios: str, marketplace: str = "US
 
     items = parsed if isinstance(parsed, list) else [parsed]
     if action.lower() == "create":
-        data = await ads_api_post("/v2/portfolios", items, marketplace)
+        data = await ads_api_post("/portfolios", items, marketplace)
     elif action.lower() == "update":
-        data = await ads_api_put("/v2/portfolios", items, marketplace)
+        data = await ads_api_put("/portfolios", items, marketplace)
     else:
         return f"Error: Invalid action '{action}'. Use 'create' or 'update'."
 
