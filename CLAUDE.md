@@ -186,6 +186,8 @@ Claude Code Workspace/
 │   │   └── server.py
 │   ├── amazon-sp-api/     # Amazon SP-API (orders, catalog, inventory, pricing, reports)
 │   │   └── server.py
+│   ├── amazon-ads-api/    # Amazon Ads API (campaigns, keywords, targeting, reports, 27 tools)
+│   │   └── server.py
 │   ├── notion/            # Notion API server (pages, blocks, databases, 28 tools)
 │   │   └── server.py
 │   ├── slack/             # Slack multi-workspace server (messages, channels, files, scheduling, 16 tools)
@@ -244,6 +246,7 @@ Claude Code Workspace/
 | **Seller Board** | Sales, profit, inventory, PPC, daily dashboard (5 CSV reports) | ⚙️ Configured |
 | **DataDive** | Keyword rank tracking, competitor data, search volume, niche research (12 tools) | ⚙️ Configured |
 | **Amazon SP-API** | Orders, catalog, inventory, pricing, reports — direct Amazon data (13 tools) | ⚙️ Configured |
+| **Amazon Ads API** | Campaign management, keywords, targeting, negative keywords, bid recs, async reports (27 tools) | ⚙️ Configured |
 
 **Apify MCP Server** (`mcp-servers/apify/server.py`):
 
@@ -353,6 +356,50 @@ Custom Python MCP server for direct Amazon Selling Partner API access. Auth: LWA
 **Registered roles:** Product Listing, Pricing, Brand Analytics, Amazon Fulfillment
 
 **If API stops working** → Check if app is still authorized in Seller Central → Apps & Services → Manage Your Apps. Refresh token is permanent unless app is de-authorized.
+
+**Amazon Ads API MCP Server** (`mcp-servers/amazon-ads-api/server.py`):
+
+Custom Python MCP server for Amazon Advertising API (SP/SB/SD campaigns). Auth: LWA OAuth2 (auto-refreshing). Rate limiting: 0.5s between requests. v3 endpoints use versioned Content-Type headers.
+
+| Tool | Group | Key Capability |
+|------|-------|----------------|
+| `list_profiles` | Profiles | List advertising profiles (account IDs) |
+| `list_sp_campaigns` | SP Campaigns | Filter by state/name/portfolio, paginated |
+| `create_sp_campaigns` | SP Campaigns | Batch create campaigns |
+| `update_sp_campaigns` | SP Campaigns | Batch update state/budget/bidding |
+| `list_sp_ad_groups` | SP Ad Groups | Filter by campaign/state |
+| `create_sp_ad_groups` | SP Ad Groups | Batch create ad groups |
+| `update_sp_ad_groups` | SP Ad Groups | Batch update bid/state |
+| `list_sp_keywords` | SP Keywords | Filter by campaign/ad group/state |
+| `manage_sp_keywords` | SP Keywords | Create or update keywords (action param) |
+| `list_sp_negative_keywords` | SP Negatives | Ad group level negatives |
+| `manage_sp_negative_keywords` | SP Negatives | Create or update ad group negatives |
+| `list_sp_campaign_negative_keywords` | SP Negatives | Campaign level negatives |
+| `create_sp_campaign_negative_keywords` | SP Negatives | Create campaign level negatives |
+| `list_sp_targets` | SP Targeting | ASIN/category targets |
+| `manage_sp_targets` | SP Targeting | Create or update product targets |
+| `manage_sp_negative_targets` | SP Targeting | Create or list negative targets |
+| `get_sp_bid_recommendations` | SP Bids | Suggested bids by competitiveness |
+| `get_sp_campaign_budget_usage` | SP Budget | Budget utilization + constraint check |
+| `create_ads_report` | Reporting | Async report creation (6 presets) |
+| `get_ads_report_status` | Reporting | Poll report status |
+| `download_ads_report` | Reporting | Download + decompress + format |
+| `list_sb_campaigns` | SB Campaigns | Sponsored Brands campaigns |
+| `update_sb_campaigns` | SB Campaigns | Update SB state/budget |
+| `list_sd_campaigns` | SD Campaigns | Sponsored Display campaigns |
+| `update_sd_campaigns` | SD Campaigns | Update SD state/budget |
+| `list_portfolios` | Portfolios | List all portfolios with IDs |
+| `manage_portfolios` | Portfolios | Create or update portfolios |
+
+**Env variables:** `ADS_API_CLIENT_ID`, `ADS_API_CLIENT_SECRET`, `ADS_API_REFRESH_TOKEN`, `ADS_API_PROFILE_US`, `ADS_API_PROFILE_CA`
+
+**Report presets:** `sp_campaigns`, `sp_search_terms`, `sp_keywords`, `sp_targets`, `sp_placements`, `sp_purchased_products`
+
+**Skills using Amazon Ads API:**
+- **Weekly PPC Analysis** → Direct campaign/keyword/search term data (replaces manual CSV exports)
+- **Negative Keyword Generator** → Programmatic negative keyword application via `manage_sp_negative_keywords`
+
+**If API stops working** → Check ADS_API credentials in .env. Verify app is still authorized in Amazon Advertising console. Access token auto-refreshes (1hr expiry).
 
 **Notion MCP Server** (`mcp-servers/notion/server.py`):
 

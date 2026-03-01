@@ -24,6 +24,51 @@
 
 <!-- Add new entries at the TOP (newest first). Use this exact format: -->
 
+### Run: 2026-03-01
+**Goals:**
+- [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
+- [x] Fetch SP-API Orders for yesterday's revenue/units (2026-02-28)
+- [x] Fetch DataDive Rank Radar data for 9 hero radars
+- [x] Fetch DataDive competitor data for 11 niches
+- [x] Run Apify keyword scan (9 keywords) with axesso_data actor
+- [x] Fetch Seller Board 7-day dashboard aggregates + per-ASIN detailed
+- [x] Compile full report with mandatory format
+- [x] Save snapshot
+
+**Result:** ✅ Success — All 5 data sources fetched, full report compiled
+
+**What happened:**
+- All 5 parallel background agents completed successfully
+- **Apify: 9/9 keywords returned data** — first perfect scan since switching to axesso (was 5/9, 6/9 before)
+- B096MYBLS1 CRITICAL: 5 units remaining (was 18 on Feb 26), BSR spiked +69.5% to 92,044, 0 keywords in top 10 AND top 50 — complete rank collapse, no pricing data (Buy Box suppressed)
+- B0DC69M3YD still 0 top-10 keywords but showing mixed signals: "embroidery kit" +7, "embroidery kit for beginners" +12, but lost "embroidery kits" and "embroidery for beginners" off page entirely
+- B0F8R652FX reached #4 on "latch hook kits for kids" — first top-5 appearance
+- B08FYH13CL latch hook recovering: "latch hook kit" +11, "latch hook" +10 (was instability day 4+ on Feb 26)
+- B09THLVFZK strongest performer: BSR -18.7% to 5,787, #1 mini perler beads, $5,260/7d revenue
+- B0DJQPGDMQ: NEW unknown competitor at #1 in DD Latch Hook niche (1,271 sales/mo, 4.7★, 419 reviews)
+- SP-API: B096MYBLS1 returned no competitive pricing (Buy Box suppressed at low stock)
+- B09HVSLBS6: 124 fulfillable but 124 reserved — effectively near zero available
+- 3 ASINs profit-negative: B0F6YTG1CH (-$397), B0F8R652FX (-$373), B0FQC7YFX6 (-$92)
+- Ad spend up 15.7% to $5,484, TACoS 19.1%, margin compressed to 17.8%
+
+**What didn't work:**
+- 3-day gap between snapshots (Feb 26 → Mar 1) — missed Feb 27-28 data points
+- Axesso still doesn't detect badges — badge data carried forward from Feb 26 confirmations
+- B07D6D95NG not found in any DD niche (same as previous runs)
+
+**Is this a repeat error?** B0DC69M3YD rank crisis continues (0 top-10 kws). B07D6D95NG missing from DD niches (ongoing).
+
+**Lesson learned:**
+- Axesso actor now at 9/9 reliability — the switch from igview is fully validated
+- B096MYBLS1 demonstrates the OOS → rank collapse → Buy Box suppression death spiral. When stock drops below ~5 units, Amazon de-ranks aggressively. Future runs should flag products below 20 units as "OOS risk"
+- B08FYH13CL latch hook rank is recovering (+11 on key terms) after 4 days of instability — may stabilize if PPC maintains impressions
+- Louise Maelys (B0FR7Y8VHB) at 2nd consecutive sighting (#2-#3 on embroidery keywords) — should be added to competitors.md
+- B0DJQPGDMQ is the biggest competitive surprise — unknown brand overtaking LatchKits at DD niche #1. Needs investigation.
+
+**Tokens/cost:** ~95K tokens, ~$0.81 Apify cost
+
+---
+
 ### Skill Update: 2026-02-26 — Switched Apify actor to axesso_data
 **Changes:**
 - Replaced `igview-owner~amazon-search-scraper` with `axesso_data~amazon-search-scraper`
