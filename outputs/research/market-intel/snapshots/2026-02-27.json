@@ -1,0 +1,85 @@
+{
+  "date": "2026-02-27",
+  "source": "SP-API + DataDive + Apify + Seller Board",
+  "notes": "B08FYH13CL MAJOR RECOVERY: latch hook kits for kids #65->9, BSR -6501. B0DC69M3YD rank crisis day 2+: embroidery kit (225K SV) crashed 58->101. B096MYBLS1 CRITICAL: 9 units (~2 days stock). Apify: 9/9 keywords returned data (best run in 4 days). B09THLVFZK Overall Pick confirmed (was carried forward 2 days). Made By Me day 2 in latch hook + loom knitting.",
+  "hero_products": {
+    "B08DDJCQKF": {"name": "Cross Stitch Backpack Charms", "bsr": 4296, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 2, "subcategory": "Cross-Stitch Stamped Kits", "reviews": 1297, "rating": 4.5, "price": 19.98, "stock": 1705},
+    "B0F6YTG1CH": {"name": "My First Cross Stitch", "bsr": 53079, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 31, "subcategory": "Cross-Stitch Counted Kits", "reviews": 44, "rating": 4.7, "price": 16.98, "stock": 233},
+    "B09X55KL2C": {"name": "10 Embroidery Patterns", "bsr": 20793, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 81, "subcategory": "Embroidery Kits", "reviews": 694, "rating": 4.5, "price": 23.98, "stock": 1852, "badges": ["Overall Pick (embroidery kit for kids)", "Overall Pick (kids embroidery kit)"]},
+    "B0DC69M3YD": {"name": "4 Embroidery Flowers (Adults)", "bsr": 24607, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 97, "subcategory": "Embroidery Kits", "reviews": 633, "rating": 4.5, "price": 24.98, "stock": 677, "alert": "RANK CRISIS DAY 2+ - 0 top-10 keywords. embroidery kit (225K SV) crashed 58->101. embroidery kits (19K SV) crashed 51->101. Not in top 4 of adult embroidery niche."},
+    "B09WQSBZY7": {"name": "Fairy Sewing Kit", "bsr": 12081, "bsr_category": "Toys & Games", "subcategory_rank": 13, "subcategory": "Kids' Sewing Kits", "reviews": 617, "rating": 4.6, "price": 21.98, "stock": 1479},
+    "B096MYBLS1": {"name": "Dessert Sewing Kit", "bsr": 49405, "bsr_category": "Toys & Games", "subcategory_rank": 37, "subcategory": "Kids' Felt Craft Kits", "reviews": 266, "rating": 4.6, "price": 22.98, "stock": 9, "alert": "OOS IMMINENT - 9 units, ~1-2 days stock at current velocity. SP-API pricing returned no active Buy Box."},
+    "B08FYH13CL": {"name": "Latch Hook Pencil Cases", "bsr": 25324, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 16, "subcategory": "Latch Hook Kits", "reviews": 498, "rating": 4.4, "price": 19.98, "stock": 826, "note": "RECOVERY - latch hook kits for kids keyword recovered #65->9. BSR improved -6501. 5-day instability may be resolving."},
+    "B0F8R652FX": {"name": "Latch Hook Rainbow Heart", "bsr": 14631, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 7, "subcategory": "Latch Hook Kits", "reviews": 48, "rating": 4.5, "price": 24.98, "stock": 473},
+    "B0F8DG32H5": {"name": "Knitting Cat & Hat", "bsr": 17526, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 20, "subcategory": "Knitting Kits", "reviews": 31, "rating": 4.9, "price": 26.98, "stock": 514},
+    "B09THLVFZK": {"name": "Mini Fuse Beads 48 Colors", "bsr": 7392, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 14, "subcategory": "Fuse & Perler Beads", "reviews": 2922, "rating": 4.6, "price": 32.98, "stock": 802, "badges": ["Overall Pick (mini perler beads) — CONFIRMED"]},
+    "B07D6D95NG": {"name": "10mm Big Fuse Beads", "bsr": 25338, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 46, "subcategory": "Fuse & Perler Beads", "reviews": 103, "rating": 4.1, "price": 24.98, "stock": 313},
+    "B0FQC7YFX6": {"name": "Princess Lacing Card", "bsr": 43364, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 22, "subcategory": "Card Making Kits", "reviews": 30, "rating": 4.8, "price": 19.98, "stock": 387},
+    "B09HVSLBS6": {"name": "Needlepoint Cat Wallet", "bsr": 33296, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 99, "subcategory": "Sewing Project Kits", "reviews": 171, "rating": 4.2, "price": 17.98, "stock": 124}
+  },
+  "orders_yesterday": {
+    "date": "2026-02-26",
+    "total_orders": 175,
+    "total_units": 177,
+    "shipped_orders": 93,
+    "pending_orders": 73,
+    "canceled_orders": 9,
+    "shipped_revenue_incl_tax": 2528.36
+  },
+  "seller_board_7day": {
+    "date_range": "2026-02-19 to 2026-02-25",
+    "days": 7,
+    "revenue": 29455.26,
+    "net_profit": 5433.78,
+    "ad_spend": 5526.02,
+    "tacos_pct": 18.8,
+    "avg_margin_pct": 18.04,
+    "note": "Feb 25 sessions=0 in dashboard but data included. Revenue up vs prior 6-day window ($25,736)."
+  },
+  "seller_board_per_asin": {
+    "date_range": "Feb 19-25",
+    "B08DDJCQKF": {"sb_rev_7d": 4048.74, "sb_units_7d": 203, "sb_profit_7d": 1175.07},
+    "B0F6YTG1CH": {"sb_rev_7d": 272.70, "sb_units_7d": 15, "sb_profit_7d": -400.08},
+    "B09X55KL2C": {"sb_rev_7d": 1533.00, "sb_units_7d": 60, "sb_profit_7d": 173.04},
+    "B0DC69M3YD": {"sb_rev_7d": 714.43, "sb_units_7d": 29, "sb_profit_7d": -20.12},
+    "B09WQSBZY7": {"sb_rev_7d": 2857.40, "sb_units_7d": 131, "sb_profit_7d": 844.93},
+    "B096MYBLS1": {"sb_rev_7d": 793.70, "sb_units_7d": 35, "sb_profit_7d": 231.43},
+    "B08FYH13CL": {"sb_rev_7d": 1238.76, "sb_units_7d": 62, "sb_profit_7d": 338.42},
+    "B0F8R652FX": {"sb_rev_7d": 1598.72, "sb_units_7d": 64, "sb_profit_7d": -271.83},
+    "B0F8DG32H5": {"sb_rev_7d": 782.42, "sb_units_7d": 29, "sb_profit_7d": 4.92},
+    "B09THLVFZK": {"sb_rev_7d": 5048.23, "sb_units_7d": 154, "sb_profit_7d": 1212.41},
+    "B07D6D95NG": {"sb_rev_7d": 1423.86, "sb_units_7d": 58, "sb_profit_7d": 166.11},
+    "B0FQC7YFX6": {"sb_rev_7d": 655.32, "sb_units_7d": 33, "sb_profit_7d": -76.21},
+    "B09HVSLBS6": {"sb_rev_7d": 17.98, "sb_units_7d": 1, "sb_profit_7d": 3.81}
+  },
+  "rank_radar_summary": {
+    "radars_fetched": 9,
+    "date_range": "2026-02-26 to 2026-02-27",
+    "products": {
+      "B09X55KL2C": {"top10": 24, "top50": 52, "total": 55, "trend": "dominant"},
+      "B09WQSBZY7": {"top10": 20, "top50": 52, "total": 87, "trend": "dominant"},
+      "B0F8DG32H5": {"top10": 17, "top50": 60, "total": 81, "trend": "dominant"},
+      "B07D6D95NG": {"top10": 13, "top50": 24, "total": 38, "trend": "strong"},
+      "B08FYH13CL": {"top10": 11, "top50": 26, "total": 53, "trend": "recovery"},
+      "B09THLVFZK": {"top10": 10, "top50": 16, "total": 18, "trend": "strong"},
+      "B0FQC7YFX6": {"top10": 8, "top50": 30, "total": 52, "trend": "stable"},
+      "B096MYBLS1": {"top10": 5, "top50": 24, "total": 50, "trend": "stable"},
+      "B0DC69M3YD": {"top10": 0, "top50": 36, "total": 67, "trend": "critical_instability"}
+    }
+  },
+  "badges": [
+    {"asin": "B09X55KL2C", "keyword": "embroidery kit for kids", "badge": "Overall Pick", "status": "confirmed", "position": 1},
+    {"asin": "B09X55KL2C", "keyword": "kids embroidery kit", "badge": "Overall Pick", "status": "confirmed", "position": 1},
+    {"asin": "B09THLVFZK", "keyword": "mini perler beads", "badge": "Overall Pick", "status": "confirmed", "position": 2}
+  ],
+  "new_competitors_detected": [
+    {"asin": "B07PPD8Q8V", "brand": "Made By Me (Horizon Group)", "keywords": ["latch hook kits for kids", "loom knitting kit"], "positions": [3, 4], "days_seen": 2, "priority": "HIGH"},
+    {"asin": "B0FR7Y8VHB", "brand": "Louise Maelys", "keywords": ["embroidery kit for kids", "kids embroidery kit"], "positions": [3, 3], "days_seen": 2, "priority": "WATCH"},
+    {"asin": "B08X2WMNJW", "brand": "American Crafts/Colorbok", "keywords": ["needlepoint kits for kids"], "positions": [4], "days_seen": 2},
+    {"asin": "B0CJZ3JV3K", "brand": "kullaloo", "keywords": ["sewing kit for kids"], "positions": [3], "days_seen": 1, "note": "kullaloo ASIN now confirmed"},
+    {"asin": "B0DR3NGBX6", "brand": "Fisher-Price", "keywords": ["lacing cards"], "positions": [2], "days_seen": 1, "priority": "WATCH"},
+    {"asin": "B00JYGPLUK", "brand": "ALEX Toys", "keywords": ["needlepoint kits for kids"], "positions": [1], "days_seen": 1},
+    {"asin": "B0CG9FN2CH", "brand": "Pllieay", "keywords": ["needlepoint kits for kids"], "positions": [2], "days_seen": 1}
+  ],
+  "apify_note": "9/9 keywords returned data — best Apify run in 4 days. No empty keywords. All badges confirmed live (none carried forward)."
+}
