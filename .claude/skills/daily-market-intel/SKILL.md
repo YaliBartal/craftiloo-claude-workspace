@@ -412,7 +412,7 @@ DataDive competitor data includes our hero products (they appear in their niche 
 }
 ```
 
-### What to Extract (minimal — badges and new competitors ONLY)
+### What to Extract (badges, new competitors, AND keyword rank comparison)
 
 **⚠️ TOKEN RULE: Do NOT return full keyword_results to the main context.** Agents must process results internally and return only:
 
@@ -423,11 +423,28 @@ DataDive competitor data includes our hero products (they appear in their niche 
   ],
   "new_competitors": [
     {"asin": "B0FR7Y8VHB", "brand": "Louise Maelys", "keyword": "embroidery kit for kids", "position": 3}
+  ],
+  "keyword_rankings": [
+    {
+      "keyword": "latch hook kits for kids",
+      "our_asin": "B08FYH13CL",
+      "our_position": 9,
+      "top_3": [
+        {"position": 1, "asin": "B06XRRN4VL", "brand": "LatchKits", "badge": "Overall Pick"},
+        {"position": 2, "asin": "B0DJQPGDMQ", "brand": "veirousa"},
+        {"position": 3, "asin": "B07PPD8Q8V", "brand": "Made By Me"}
+      ]
+    }
   ]
 }
 ```
 
-If nothing found: `{"badges_found": [], "new_competitors": []}`
+For `keyword_rankings`:
+- `our_asin`: the hero product ASIN expected for this keyword (see keyword table above)
+- `our_position`: actual position of our hero product in results (null if not in top 20)
+- `top_3`: the top 3 products that are NOT our product, with brand name resolved if known
+
+If nothing found: `{"badges_found": [], "new_competitors": [], "keyword_rankings": []}`
 
 **Never return the raw product list array** — it's large and unnecessary once processed.
 
@@ -436,7 +453,8 @@ If nothing found: `{"badges_found": [], "new_competitors": []}`
 1. Compare each ASIN against hero product list and competitor list
 2. **Unknown ASINs in top 5** → add to `new_competitors` output
 3. **Our products with badges** → add to `badges_found` output
-4. **Do NOT track our keyword positions from this** — use DataDive Rank Radar instead
+4. **All 9 keywords** → record our position + top 3 non-us positions in `keyword_rankings`
+5. **Do NOT use this for organic rank tracking** — use DataDive Rank Radar instead. This is for competitor comparison only.
 
 ### New Competitor Detection Rules
 
@@ -631,16 +649,33 @@ If Seller Board fetch fails:
 
 ---
 
+## Keyword Rank Comparison — Us vs Competitors
+
+*From Apify keyword scan — our position vs top 3 for each of the 9 monitored keywords.*
+
+| Keyword | Search Vol | Our Product | Our Rank | #1 | #2 | #3 |
+|---------|-----------|-------------|----------|-----|-----|-----|
+
+*✅ = we're ahead of them | ❌ = they're ahead of us | — = our product not in top 20*
+*Keyword scan covers 1 keyword per category; DataDive Rank Radar shows full picture across all keywords.*
+
+---
+
 ## Competitor Comparison
 
 ### [Category Name]
+*DataDive niche: [niche name] ([niche ID])*
 
-| Rank | Brand/ASIN | BSR | Reviews | Rating | Sales Source | Revenue | vs Us |
-|------|-----------|-----|---------|--------|-------------|---------|-------|
+*Our BSR: X,XXX | Leader BSR: X,XXX | BSR Gap: X,XXX (we are X positions behind/ahead)*
+
+| Rank | Brand | ASIN | BSR | BSR vs Our BSR | Reviews | Rating | Sales (source) | Revenue |
+|------|-------|------|-----|----------------|---------|--------|---------------|---------|
+| **#1** | **CRAFTILOO** | **BXXXXXX** | **X,XXX** | — | X | X.X | $X SB/7d | — |
+| #2 | Competitor | ASIN | X,XXX | +X,XXX worse | X | X.X | X JS Est./mo | $X |
 
 **Our Position:** #X of Y
 
-*One table per category. Our products show SB actual 7-day revenue. Competitors show DD JS Est. (monthly). Label source clearly.*
+*One table per category. Our products show SB actual 7-day revenue. Competitors show DD JS Est. (monthly). "BSR vs Our BSR" = competitor BSR minus our BSR (positive = they are worse/higher BSR; negative = they are better/lower BSR).*
 *Categories: Cross Stitch, Embroidery Kids, Embroidery Adults, Sewing, Latch Hook, Fuse Beads, Knitting, Lacing Cards, Needlepoint*
 
 ---

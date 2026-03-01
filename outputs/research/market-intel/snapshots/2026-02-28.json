@@ -1,0 +1,87 @@
+{
+  "date": "2026-02-28",
+  "source": "SP-API + DataDive + Apify + Seller Board",
+  "notes": "B09X55KL2C BIG WIN: BSR -5,775 (20,793->15,018). B09WQSBZY7 now better than baseline BSR (-1,783). B096MYBLS1 OOS IMMINENT: 5 units, BSR spiked +19,286. B0DC69M3YD Day 3 crisis: 0 top-10 KWs but entering 'embroidery kit' (225K SV) at rank 59. B0F8DG32H5 BSR decline +4,840. Keyword Rank Comparison added: 3/9 keywords we hold top-5 position.",
+  "hero_products": {
+    "B08DDJCQKF": {"name": "Cross Stitch Backpack Charms", "bsr": 4257, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 2, "subcategory": "Cross-Stitch Stamped Kits", "reviews": 1297, "rating": 4.5, "price": 19.98, "stock": 1668},
+    "B0F6YTG1CH": {"name": "My First Cross Stitch", "bsr": 53041, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 31, "subcategory": "Cross-Stitch Counted Kits", "reviews": 44, "rating": 4.7, "price": 16.98, "stock": 227},
+    "B09X55KL2C": {"name": "10 Embroidery Patterns", "bsr": 15018, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 53, "subcategory": "Embroidery Kits", "reviews": 701, "rating": 4.5, "price": 23.98, "stock": 1834, "badges": ["Overall Pick (embroidery kit for kids)", "Overall Pick (kids embroidery kit)"]},
+    "B0DC69M3YD": {"name": "4 Embroidery Flowers (Adults)", "bsr": 23995, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 92, "subcategory": "Embroidery Kits", "reviews": 633, "rating": 4.5, "price": 24.98, "stock": 670, "alert": "RANK CRISIS DAY 3 - 0 top-10 keywords. Entering 'embroidery kit' (225K SV) at rank 59. Not in top 5 for 'embroidery kit for beginners'."},
+    "B09WQSBZY7": {"name": "Fairy Sewing Kit", "bsr": 10298, "bsr_category": "Toys & Games", "subcategory_rank": 12, "subcategory": "Kids' Sewing Kits", "reviews": 617, "rating": 4.6, "price": 21.98, "stock": 1464, "note": "NOW BETTER THAN BASELINE. +4 top-10 keywords today."},
+    "B096MYBLS1": {"name": "Dessert Sewing Kit", "bsr": 68691, "bsr_category": "Toys & Games", "subcategory_rank": 59, "subcategory": "Kids' Felt Craft Kits", "reviews": 266, "rating": 4.6, "price": null, "stock": 5, "alert": "OOS IMMINENT - 5 units, BSR spiked +19,286. No active Buy Box."},
+    "B08FYH13CL": {"name": "Latch Hook Pencil Cases", "bsr": 26023, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 18, "subcategory": "Latch Hook Kits", "reviews": 498, "rating": 4.4, "price": 19.98, "stock": 820, "note": "Recovery partially stalling. 'latch hook kit' (20K SV) slid 33->46. Top-10 +2 today. Monitor."},
+    "B0F8R652FX": {"name": "Latch Hook Rainbow Heart", "bsr": 16312, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 8, "subcategory": "Latch Hook Kits", "reviews": 48, "rating": 4.5, "price": 24.98, "stock": 468},
+    "B0F8DG32H5": {"name": "Knitting Cat & Hat", "bsr": 22366, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 23, "subcategory": "Knitting Kits", "reviews": 31, "rating": 4.9, "price": 26.98, "stock": 509, "note": "BSR declined +4,840. READAEER holds #1+#2 (OP) for loom knitting kit - we absent."},
+    "B09THLVFZK": {"name": "Mini Fuse Beads 48 Colors", "bsr": 6912, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 11, "subcategory": "Fuse & Perler Beads", "reviews": 2922, "rating": 4.6, "price": 32.98, "stock": 779, "badges": ["Overall Pick (mini perler beads)"]},
+    "B07D6D95NG": {"name": "10mm Big Fuse Beads", "bsr": 26116, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 49, "subcategory": "Fuse & Perler Beads", "reviews": 103, "rating": 4.1, "price": 24.98, "stock": 319},
+    "B0FQC7YFX6": {"name": "Princess Lacing Card", "bsr": 39097, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 15, "subcategory": "Card Making Kits", "reviews": 30, "rating": 4.8, "price": 19.98, "stock": 379},
+    "B09HVSLBS6": {"name": "Needlepoint Cat Wallet", "bsr": 33067, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 101, "subcategory": "Sewing Project Kits", "reviews": 171, "rating": 4.2, "price": 17.98, "stock": 124}
+  },
+  "orders_yesterday": {
+    "date": "2026-02-27",
+    "total_orders": 155,
+    "total_units": 157,
+    "shipped_orders": 90,
+    "pending_orders": 57,
+    "canceled_orders": 8,
+    "shipped_revenue_incl_tax": 2410.40
+  },
+  "seller_board_7day": {
+    "date_range": "2026-02-20 to 2026-02-26",
+    "days": 7,
+    "revenue": 28900.40,
+    "net_profit": 5128.41,
+    "ad_spend": 5519.83,
+    "tacos_pct": 19.10,
+    "avg_margin_pct": 17.48,
+    "note": "Feb 23 negative-margin day (-2.78%) — possible LTSF or COGS allocation. Revenue slightly down vs prior period ($29,455)."
+  },
+  "seller_board_per_asin": {
+    "date_range": "Feb 20-26",
+    "B08DDJCQKF": {"sb_rev_7d": 4209.78, "sb_units_7d": 211, "sb_profit_7d": 1229.11},
+    "B0F6YTG1CH": {"sb_rev_7d": 263.70, "sb_units_7d": 15, "sb_profit_7d": -419.14},
+    "B09X55KL2C": {"sb_rev_7d": 1373.50, "sb_units_7d": 55, "sb_profit_7d": 70.99},
+    "B0DC69M3YD": {"sb_rev_7d": 714.43, "sb_units_7d": 29, "sb_profit_7d": 27.67},
+    "B09WQSBZY7": {"sb_rev_7d": 2813.44, "sb_units_7d": 129, "sb_profit_7d": 802.67},
+    "B096MYBLS1": {"sb_rev_7d": 789.50, "sb_units_7d": 35, "sb_profit_7d": 257.84},
+    "B08FYH13CL": {"sb_rev_7d": 1178.82, "sb_units_7d": 59, "sb_profit_7d": 336.18},
+    "B0F8R652FX": {"sb_rev_7d": 1573.74, "sb_units_7d": 63, "sb_profit_7d": -327.90},
+    "B0F8DG32H5": {"sb_rev_7d": 701.48, "sb_units_7d": 26, "sb_profit_7d": -19.12},
+    "B09THLVFZK": {"sb_rev_7d": 4883.43, "sb_units_7d": 149, "sb_profit_7d": 1097.96},
+    "B07D6D95NG": {"sb_rev_7d": 1423.86, "sb_units_7d": 58, "sb_profit_7d": 147.33},
+    "B0FQC7YFX6": {"sb_rev_7d": 675.30, "sb_units_7d": 34, "sb_profit_7d": -61.22},
+    "B09HVSLBS6": {"sb_rev_7d": 35.96, "sb_units_7d": 2, "sb_profit_7d": 7.13}
+  },
+  "rank_radar_summary": {
+    "radars_fetched": 9,
+    "date_range": "2026-02-27 to 2026-02-28",
+    "products": {
+      "B09X55KL2C": {"top10": 25, "top50": 51, "total": 55, "vs_yesterday_top10": 1, "trend": "dominant"},
+      "B09WQSBZY7": {"top10": 24, "top50": 56, "total": 87, "vs_yesterday_top10": 4, "trend": "dominant"},
+      "B0F8DG32H5": {"top10": 15, "top50": 59, "total": 81, "vs_yesterday_top10": -2, "trend": "stable"},
+      "B07D6D95NG": {"top10": 13, "top50": 25, "total": 38, "vs_yesterday_top10": 0, "trend": "stable"},
+      "B08FYH13CL": {"top10": 13, "top50": 26, "total": 51, "vs_yesterday_top10": 2, "trend": "recovering"},
+      "B09THLVFZK": {"top10": 10, "top50": 16, "total": 18, "vs_yesterday_top10": 0, "trend": "dominant"},
+      "B0FQC7YFX6": {"top10": 4, "top50": 27, "total": 50, "vs_yesterday_top10": -4, "trend": "declining"},
+      "B096MYBLS1": {"top10": 1, "top50": 10, "total": 28, "vs_yesterday_top10": -2, "trend": "declining"},
+      "B0DC69M3YD": {"top10": 0, "top50": 38, "total": 65, "vs_yesterday_top10": 0, "trend": "crisis"}
+    }
+  },
+  "keyword_rank_comparison": [
+    {"keyword": "embroidery kit for kids", "search_vol": 13067, "our_asin": "B09X55KL2C", "our_position": 1, "top_3": [{"position": 3, "asin": "B0FR7Y8VHB", "brand": "Louise Maelys"}, {"position": 4, "asin": "B08TC7423N", "brand": "Pllieay"}, {"position": 5, "asin": "B0BSL1MN94", "brand": "Yinder"}]},
+    {"keyword": "kids embroidery kit", "search_vol": 5802, "our_asin": "B09X55KL2C", "our_position": 1, "top_3": [{"position": 3, "asin": "B0FR7Y8VHB", "brand": "Louise Maelys"}, {"position": 4, "asin": "B08TC7423N", "brand": "Pllieay"}, {"position": 5, "asin": "B0DFHN42QB", "brand": "EZCRA"}]},
+    {"keyword": "embroidery kit for beginners", "search_vol": 103524, "our_asin": "B0DC69M3YD", "our_position": null, "top_3": [{"position": 1, "asin": "B0C3ZVKB46", "brand": "ETSPIL", "badge": "Overall Pick"}, {"position": 2, "asin": "B0CZHKSSL4", "brand": "CYANFOUR"}, {"position": 3, "asin": "B0B762JW55", "brand": "Bradove"}]},
+    {"keyword": "sewing kit for kids", "search_vol": 20874, "our_asin": "B09WQSBZY7", "our_position": null, "top_3": [{"position": 1, "asin": "B091GXM2Y6", "brand": "KRAFUN", "badge": "Overall Pick"}, {"position": 2, "asin": "B0CTTMWXYP", "brand": "Klever Kits"}, {"position": 3, "asin": "B0C2XYP6L3", "brand": "KRAFUN"}]},
+    {"keyword": "latch hook kits for kids", "search_vol": 16625, "our_asin": "B08FYH13CL", "our_position": null, "top_3": [{"position": 1, "asin": "B06XRRN4VL", "brand": "LatchKits", "badge": "Overall Pick"}, {"position": 2, "asin": "B0CX9H8YGR", "brand": "LatchKits"}, {"position": 3, "asin": "B07PPD8Q8V", "brand": "Made By Me"}]},
+    {"keyword": "mini perler beads", "search_vol": 3242, "our_asin": "B09THLVFZK", "our_position": 1, "top_3": [{"position": 2, "asin": "B08QV9CMFQ", "brand": "LIHAO"}, {"position": 3, "asin": "B0D5LF666P", "brand": "FUNZBO"}, {"position": 4, "asin": "B01AMXHEKI", "brand": "Perler"}]},
+    {"keyword": "loom knitting kit", "search_vol": 8102, "our_asin": "B0F8DG32H5", "our_position": null, "top_3": [{"position": 1, "asin": "B0DS23C1YX", "brand": "READAEER"}, {"position": 2, "asin": "B0182IQHYE", "brand": "READAEER", "badge": "Overall Pick"}, {"position": 3, "asin": "B07G8GH263", "brand": "ALIMELT"}]},
+    {"keyword": "lacing cards", "search_vol": 4524, "our_asin": "B0FQC7YFX6", "our_position": null, "top_3": [{"position": 1, "asin": "B00JM5G05I", "brand": "Melissa & Doug", "badge": "Overall Pick"}, {"position": 2, "asin": "B000O7ITZM", "brand": "Melissa & Doug"}, {"position": 3, "asin": "B0CYBXGHBN", "brand": "Unknown"}]},
+    {"keyword": "needlepoint kits for kids", "search_vol": 1416, "our_asin": "B09HVSLBS6", "our_position": null, "top_3": [{"position": 1, "asin": "B0CG9FN2CH", "brand": "Pllieay", "badge": "Overall Pick"}, {"position": 2, "asin": "B00JYGPLUK", "brand": "ALEX Toys"}, {"position": 4, "asin": "B000ZKOTDE", "brand": "Colorbok"}]}
+  ],
+  "badges": [
+    {"asin": "B09X55KL2C", "keyword": "embroidery kit for kids", "badge": "Overall Pick", "position": 1},
+    {"asin": "B09X55KL2C", "keyword": "kids embroidery kit", "badge": "Overall Pick", "position": 1},
+    {"asin": "B09THLVFZK", "keyword": "mini perler beads", "badge": "Overall Pick", "position": 1}
+  ],
+  "apify_note": "9/9 keywords returned data. 3 badges confirmed. New Keyword Rank Comparison data extracted."
+}

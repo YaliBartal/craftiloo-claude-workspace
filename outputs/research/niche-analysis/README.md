@@ -59,6 +59,7 @@ niche-analysis/
 |------|-------|--------|---------|-------|
 | 2026-02-22 | quilt-kit-kids | Apify + BSR tables | CONDITIONAL GO (26/35) | `briefs/quilt-kit-kids-niche-analysis-2026-02-22.md` |
 | 2026-02-23 | quilt-kit-kids | DataDive + SP-API (reused Feb 22 reviews) | CONDITIONAL GO (30/40) | `briefs/quilt-kit-kids-niche-analysis-2026-02-23.md` |
+| 2026-02-26 | loom-knitting-kit-kids | DataDive + SP-API + Seller Board + Apify (partial reviews) | CONDITIONAL GO (32/40) | `briefs/loom-knitting-kit-kids-niche-analysis-2026-02-26.md` |
 
 ## Skill Location
 

@@ -22,6 +22,46 @@
 
 ## Run Log
 
+### Run: 2026-02-26
+**Goals:**
+- [x] Niche analysis for new Barbie/fashion-doll loom knitting kit for kids
+- [x] Assess DataDive loom knitting niche (O6b4XATpTj)
+- [x] Pull internal Seller Board data for our 3 existing knitting kits
+- [x] Competitor pricing via SP-API
+- [x] Keyword + roots + ranking juice from DataDive
+- [x] Review scraping for top 2 competitors (Hapinest, CFK)
+
+**Result:** ✅ Success — full brief generated with CONDITIONAL GO verdict (32/40)
+
+**Data sources used:** DataDive ✅ | SP-API ✅ | Seller Board ✅ | Apify ✅ (partial — 8 reviews/ASIN)
+
+**What happened:**
+- Found existing "loom knitting" niche in DataDive (O6b4XATpTj) — no token spend needed
+- Niche has only 4 competitors tracked: Hapinest, CFK, and 2x CRAFTILOO
+- CRAFTILOO holds 41% of measurable niche revenue — already #2 and #3 by revenue
+- SP-API revealed significant price gap: Hapinest $16.49 vs our $22.98-$26.98 — major driver of their volume lead
+- All 4 competitors score 0 on description (listing gap opportunity)
+- Barbie IP warning is critical — cannot use "Barbie" trademark without Mattel license
+- Ran all DataDive pulls in parallel (competitors, keywords, ranking juice) — worked well
+- Review scraper returned only 8 reviews/ASIN (page-1 cap confirmed again)
+
+**What didn't work:**
+- Review scraper page-1 cap hit again — only 8 reviews per ASIN instead of 50
+- User never sent competitor list (they referenced it but didn't paste it) — proceeded with DataDive 4-competitor set
+- DataDive niche was last researched Jan 7, 2026 — data is 7 weeks old, not current
+
+**Is this a repeat error?** Yes — review scraper 8-review cap is a Known Issue (KI from Feb 23 run... actually this was tracked in customer-review-analyzer LESSONS.md). First time for niche-category-analysis LESSONS.
+
+**Lesson learned:**
+- For small niches (4 competitors), DataDive provides a complete picture — no need for SP-API catalog search to find competitors
+- When user references a list they didn't send, proceed with what DataDive shows and note the gap in the report
+- Run DataDive competitors + keywords + ranking juice all in parallel at the start — saves significant time
+- Seller Board data is valuable for internal baseline even when not "already in the niche" technically
+- Always flag IP/trademark issues prominently when a product concept uses a brand name (Barbie, Disney, etc.)
+- For doll-themed products: the "sizing complaint" (hat too small) becomes a feature for doll accessories — use this insight in positioning
+
+**Tokens/cost:** ~80K tokens, $0 MCP costs, ~$0.02 Apify (3 runs, free tier)
+
 ### Run: 2026-02-23
 **Goals:**
 - [x] Run MCP-powered analysis on "quilt kit for kids" niche
@@ -98,6 +138,13 @@
 - **Workaround:** Use existing overlapping niches from `list_niches`
 - **Impact:** Can't create new DataDive niches — limited to existing 23 niches
 - **Action needed:** Check DataDive account status/plan. May need to contact DataDive support or verify API key permissions.
+
+### 4. Review scraper returns only 8 reviews per ASIN (page-1 cap)
+- **First seen:** 2026-02-26 (in niche skill context; also seen in customer-review-analyzer)
+- **Details:** `junglee/amazon-reviews-scraper` returns page 1 only (~8 reviews) regardless of `maxReviews` setting. `epctex` requires paid rental. `web_wanderer` returns 0.
+- **Workaround:** Run junglee multiple times with explicit page numbers (pageNumber=2 through 6 in URL). Cost: ~$0.05 per ASIN for full 50.
+- **Impact:** Review analysis is directional only. Patterns from 8 reviews are suggestive, not statistically reliable.
+- **Action needed:** Budget $0.10-0.25 per niche for proper review scraping if full review analysis is required.
 
 ### 2. DataDive keyword/roots responses exceed context window
 - **First seen:** 2026-02-23
