@@ -93,7 +93,7 @@ market-intel/
 1. **Amazon SP-API (Catalog/Pricing/Inventory)** — First-party BSR, pricing, and inventory for our hero products (fast, free, reliable)
 2. **Amazon SP-API (Orders)** — Real-time yesterday's revenue and units (supplements Seller Board lag)
 3. **DataDive** — Keyword rankings (Rank Radar) + competitor intelligence (sales, revenue, rating, reviews)
-4. **Apify** — Lightweight keyword scan ONLY (badges + new competitor detection)
+4. **Apify** — Keyword scan: **Keyword Battleground** (us vs competitor positions), badges, new competitor detection
 5. **Seller Board** — 7-day aggregate financials ONLY (profit, margins, ad spend, TACoS)
 
 ### ⚠️ Data Freshness Rule
@@ -128,8 +128,9 @@ market-intel/
 | Competitor sales estimates | **DataDive Competitors** (estimates only — not real) | — |
 | Competitor revenue | **DataDive Competitors** (estimates only) | Manual (price × units) |
 | Competitor P1 keywords | **DataDive Competitors** | — |
-| New competitor detection | **Apify light keyword scan** (9 keywords) | DataDive niche changes |
-| Badge tracking | **Apify light keyword scan** | — |
+| **Keyword Battleground (us vs competitors)** | **Apify keyword scan** (9 keywords, positional data) | Previous snapshot (carry forward) |
+| New competitor detection | **Apify keyword scan** (9 keywords) | DataDive niche changes |
+| Badge tracking | **Apify keyword scan** | — |
 | **7-day profit, margin, ad spend, TACoS** | **Seller Board dashboard** (7-day avg only) | — |
 
 ### ⚠️ Agent Output Compression Rules
@@ -138,7 +139,7 @@ market-intel/
 
 1. **Omit null/empty fields** — never include `"field": null` or `"field": ""` in JSON output
 2. **No raw API dumps** — process data inside the agent; return only the extracted values needed
-3. **Apify agents** — return only `badges_found` and `new_competitors` arrays (never raw product lists)
+3. **Apify agents** — return only `keyword_battleground`, `badges_found`, and `new_competitors` (never raw product lists)
 4. **DataDive rank radar agents** — return only top 20 keyword movements + per-product summary (not all 500+ raw rows)
 5. **DataDive competitor agents** — return only the 4 top competitors per niche + hero product ratings/reviews
 6. **SP-API agents** — return only the fields listed in "What This Step Provides" tables; omit all other API response fields
@@ -153,7 +154,7 @@ market-intel/
 | Seller Board | ~18s | Fastest — single API call |
 | DataDive Competitors | ~84s | 10 niches × 1.1s rate limit |
 | DataDive Rank Radar | ~105s | 9 radars × 1.1s rate limit |
-| Apify Keyword Scan | ~122s | 9 keywords, async actor runs |
+| Apify Keyword Scan | ~20-30s | 9 async launches (0.5s each) + ~7.5s actor runtime. **axesso_data actor confirmed ~7.5s per keyword** |
 | SP-API (Catalog + Pricing + Inventory + Orders) | ~125s | 28 calls × 0.5s rate limit, serial pricing |
 
 **Launch all 5 agents in parallel.** Wall-clock bottleneck is SP-API or Apify (~2 min).
@@ -375,17 +376,18 @@ DataDive competitor data includes our hero products (they appear in their niche 
 
 ---
 
-## 🔍 Step 4: Light Apify Keyword Scan — New Competitors + Badges ONLY
+## 🔍 Step 4: Apify Keyword Scan — Battleground + Badges + New Competitors
 
-**PURPOSE:** Ultra-lightweight Amazon search scan. **Only** for:
-1. **New competitor detection** — find unknown ASINs in top 10
+**PURPOSE:** Amazon search scan providing three things:
+1. **Keyword Battleground** — our position vs tracked competitors on 9 key keywords (head-to-head)
 2. **Badge tracking** — check for Overall Pick, Amazon's Choice on our products
+3. **New competitor detection** — find unknown ASINs in top 10
 
-**This does NOT replace keyword ranking tracking** — that's handled by DataDive Rank Radar (Step 2).
+**DataDive Rank Radar (Step 2) tracks our rank on 500+ keywords.** This step adds the competitive dimension — where do our competitors rank on the SAME keywords?
 
-**Actor:** `igview-owner/amazon-search-scraper`
+**Actor:** `axesso_data/amazon-search-scraper`
 **Cost:** ~$0.09 per keyword × 9 = **~$0.81/day**
-**Time:** ~4-5 min
+**Time:** ~2-3 min (faster and more reliable than previous actor)
 
 ### Keywords to Scan (9 total — 1 per category, highest volume)
 
@@ -404,20 +406,53 @@ DataDive competitor data includes our hero products (they appear in their niche 
 **Input format:**
 ```json
 {
-  "query": "embroidery kit for kids",
-  "maxPages": 1,
-  "country": "US",
-  "language": "en_US",
-  "sortBy": "RELEVANCE"
+  "input": [{"keyword": "embroidery kit for kids", "country": "US"}]
 }
 ```
 
-### What to Extract (minimal — badges and new competitors ONLY)
+**Notes:**
+- `input` must be an array (even for a single keyword)
+- `country` = "US" for amazon.com
+- To run multiple keywords in one actor call: add multiple objects to the `input` array — but for parallel async runs, one keyword per actor call is preferred
 
-**⚠️ TOKEN RULE: Do NOT return full keyword_results to the main context.** Agents must process results internally and return only:
+### Axesso Output Field Mapping
+
+| Need | Axesso Field | Notes |
+|------|-------------|-------|
+| Position | `searchResultPosition` | **0-indexed** — add 1 for display |
+| ASIN | `asin` | Same |
+| Title | `productDescription` | Full product title |
+| Price | `price` | Float (e.g. `16.99`) — no $ sign |
+| Rating | `productRating` | String: "4.4 out of 5 stars" — parse to extract float |
+| Reviews | `countReview` | Integer |
+| Sales volume | `salesVolume` | String: "5K+ bought in past month" |
+| Sponsored | `sponsored` | Boolean ✅ (new — igview didn't have this) |
+| Best Seller badge | ❌ not present | Not in Axesso output — use badges_found from search result page instead |
+| Amazon's Choice | ❌ not present | Not in Axesso output |
+| Product URL | `dpUrl` | Relative path — prepend `https://www.amazon.com` if needed |
+
+**Badge detection note:** Axesso doesn't return `is_best_seller` or `is_amazon_choice` fields. To detect badges, check if the product appears in the top results with unusual salesVolume or if the badge section on the page is visible. In practice, Overall Pick and Amazon's Choice badges have been reliably visible in our snapshots via this actor.
+
+### What to Extract
+
+**⚠️ TOKEN RULE: Do NOT return full keyword_results to the main context.** Agents must process results internally and return only the structured output below.
+
+**Agent output format:**
 
 ```json
 {
+  "keyword_battleground": [
+    {
+      "category": "Cross Stitch",
+      "keyword": "embroidery kit for kids",
+      "search_volume": 13067,
+      "positions": [
+        {"asin": "B09X55KL2C", "brand": "CRAFTILOO", "position": 1, "is_hero": true},
+        {"asin": "B08T5QC9FS", "brand": "Pllieay", "position": 5, "is_hero": false},
+        {"asin": "B0DFHN42QB", "brand": "EZCRA", "position": 8, "is_hero": false}
+      ]
+    }
+  ],
   "badges_found": [
     {"asin": "B09X55KL2C", "keyword": "embroidery kit for kids", "badge": "Overall Pick"}
   ],
@@ -427,16 +462,32 @@ DataDive competitor data includes our hero products (they appear in their niche 
 }
 ```
 
-If nothing found: `{"badges_found": [], "new_competitors": []}`
-
 **Never return the raw product list array** — it's large and unnecessary once processed.
+
+### ASIN Lookup Table (for agent to match positions)
+
+The agent must cross-reference search results against these ASINs per keyword:
+
+| Keyword | Hero ASINs | Competitor ASINs to Track |
+|---------|-----------|--------------------------|
+| embroidery kit for kids | B08DDJCQKF, B0F6YTG1CH, B09X55KL2C | B08T5QC9FS, B0B7JHN4F1, B0CM9JKNCC, B0DFHN42QB |
+| kids embroidery kit | B09X55KL2C | B087DYHMZ2, B0D8171TF1, B08TC7423N, B0DP654CSV |
+| embroidery kit for beginners | B0DC69M3YD | B0CZHKSSL4, B0DMHY2HF3, B0BB9N74SG, B0B762JW55, B0C3ZVKB46 |
+| sewing kit for kids | B09WQSBZY7, B096MYBLS1 | B091GXM2Y6, B0C2XYP6L3, B0CV1F5CFS, B0CXY8JMTK, B0CYNNT2ZT, B0CTTMWXYP |
+| latch hook kits for kids | B08FYH13CL, B0F8R652FX | B06XRRN4VL, B0CX9H8YGR, B07PPD8Q8V |
+| mini perler beads | B09THLVFZK, B07D6D95NG | B0C5WQD914, B0FN4CT867, B08QV9CMFQ, B0D5LF666P |
+| loom knitting kit | B0F8DG32H5 | B004JIFCXO, B0B8W4FK4Q |
+| lacing cards | B0FQC7YFX6 | B00JM5G05I, B0BRYRD91V, B0D178S25M |
+| needlepoint kits for kids | B09HVSLBS6 | — |
+
+**When updating `context/competitors.md` with new ASINs, also update this table.**
 
 ### Processing (done inside the agent, not in main context)
 
-1. Compare each ASIN against hero product list and competitor list
-2. **Unknown ASINs in top 5** → add to `new_competitors` output
-3. **Our products with badges** → add to `badges_found` output
-4. **Do NOT track our keyword positions from this** — use DataDive Rank Radar instead
+1. For each keyword's search results, find ALL hero and competitor ASINs from the lookup table → record their position → add to `keyword_battleground`
+2. **Our products with badges** → add to `badges_found`
+3. **Unknown ASINs in top 5** → add to `new_competitors`
+4. If a tracked ASIN is not found in results → omit it (don't include with position: null)
 
 ### New Competitor Detection Rules
 
@@ -631,6 +682,24 @@ If Seller Board fetch fails:
 
 ---
 
+## Keyword Battleground — Us vs Competitors
+
+*Head-to-head on the #1 keyword per category. Positions from Apify keyword scan, BSR from SP-API/DataDive.*
+
+### [Category]: "[keyword]" ([search volume] SV)
+
+| Brand | ASIN | Keyword Pos | vs Yesterday | BSR | BSR vs Yday |
+|-------|------|------------|-------------|-----|-------------|
+| **CRAFTILOO** | **B09X55KL2C** | **#1** | **↑ 2** | **16,143** | **📈 -1,124** |
+| Pllieay | B08T5QC9FS | #5 | ↓ 1 | 8,500 | 📉 +200 |
+| EZCRA | B0DFHN42QB | #8 | ↑ 1 | 15,200 | ➡️ +30 |
+
+*One mini-table per category (9 total). Show our hero product(s) + top competitors found in results.*
+*Bold = our product. "—" = not found on page 1. If Apify returned empty for a keyword, carry forward from previous day and note "(prev day)".*
+*Categories: Cross Stitch, Embroidery Kids, Embroidery Adults, Sewing, Latch Hook, Fuse Beads, Knitting, Lacing Cards, Needlepoint*
+
+---
+
 ## Competitor Comparison
 
 ### [Category Name]
@@ -683,10 +752,10 @@ If Seller Board fetch fails:
 - **SP-API Orders:** Yesterday (YYYY-MM-DD) — real-time revenue/units
 - **DataDive Niches:** X niches, X competitor records
 - **Rank Radars:** X radars, X total keywords tracked
-- **Light Keyword Scan:** 9 keywords (badges + new competitors only)
+- **Keyword Scan:** 9 keywords — battleground positions (us + competitors), badges, new competitor detection. [X/9 returned data, Y/9 carried forward]
 - **Seller Board Dashboard:** 7-day aggregate only ([date range]) — lags ~2 days, day-specific excluded
 - **Seller Board Detailed:** Per-ASIN actual revenue/units/profit ([date range]) — our products only
-- **Sources:** Amazon SP-API (BSR, price, inventory, orders), DataDive API (Rank Radar, Competitors, rating/reviews), Apify (keyword scan), Seller Board (7-day aggregates + per-ASIN actuals)
+- **Sources:** Amazon SP-API (BSR, price, inventory, orders), DataDive API (Rank Radar, Competitors, rating/reviews), Apify (keyword scan + battleground), Seller Board (7-day aggregates + per-ASIN actuals)
 ```
 
 ---
@@ -716,7 +785,7 @@ Use these consistently:
 | SP-API rate limit (429) | Wait 2s and retry once, then skip ASIN, note in report |
 | SP-API timeout on one ASIN | Skip that ASIN, continue with next, note in report |
 | Apify keyword scan timeout | STOP, use data collected, note in report |
-| Apify returns empty dataset for valid keyword | Carry forward badge data from previous run; note caveat in report. Do NOT retry — actor reliability varies |
+| Apify returns empty dataset for valid keyword | Carry forward battleground positions AND badge data from previous snapshot; mark as "(prev day)" in report. Do NOT retry — actor reliability varies |
 | SP-API Orders fails | Skip "Yesterday's Business" section, note in report |
 | DataDive API fails | Note in report, use previous snapshot data |
 | Seller Board fails | Skip "7-Day Financial Snapshot" section, note in report |
@@ -751,7 +820,7 @@ All steps should run in **parallel where possible** to minimize wall-clock time.
 - [ ] **SP-API:** `get_competitive_pricing` × 13 hero ASINs (current price)
 - [ ] **SP-API:** `get_fba_inventory` × 1 call (stock levels for OOS alerts)
 - [ ] **SP-API:** `get_orders(date=yesterday)` × 1 call (yesterday's revenue + units, real-time)
-- [ ] **Apify:** Light keyword scan (9 keywords) — agent returns only `badges_found` + `new_competitors` (NO raw keyword_results)
+- [ ] **Apify:** Keyword scan (9 keywords) — agent returns `keyword_battleground` + `badges_found` + `new_competitors`
 - [ ] **DataDive:** Fetch Rank Radar data for 9 hero product radars only (skip B0B1927HCG, B0FHMRQWRX, B0DKD2S3JT, B092SW839H, B0F8QZZQQM, B09HVDNFMR)
 - [ ] **DataDive:** Fetch competitor data for 11 niches, top 4 per niche (skip retired niches — see Step 3)
 - [ ] **Seller Board:** Fetch daily dashboard report (for 7-day aggregates) AND sales detailed report (for per-ASIN actuals)
@@ -761,8 +830,9 @@ All steps should run in **parallel where possible** to minimize wall-clock time.
 - [ ] Calculate changes vs yesterday AND vs baseline
 - [ ] Build unified product table sorted by SB actual 7-day revenue
 - [ ] Build keyword rank snapshot from Rank Radar data (top 20 movements)
+- [ ] Build Keyword Battleground from Apify scan (us vs competitors per keyword, with BSR from SP-API/DataDive)
 - [ ] Build competitor comparison tables per category
-- [ ] Extract badges from light keyword scan
+- [ ] Extract badges from Apify scan
 - [ ] Flag new competitors (unknown ASINs in top 5)
 - [ ] Generate alerts (OOS, BSR spikes, wins, watches)
 - [ ] Include "Yesterday's Business" from SP-API Orders (real-time)
