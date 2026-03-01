@@ -82,11 +82,18 @@
 - Hundreds of thousands of satisfied customers
 - Numerous positive reviews
 - Multi-marketplace presence
+- **Annual revenue:** ~$2M USD
 
 ### Sales Channels
 - **Primary:** Amazon US
 - **Shopify** website
 - **Retail:** Barnes & Noble
+
+### Operations
+- **US Warehousing:** Amazon FBA only — no 3PL or owned US warehouse
+- **Production MOQ:** 1,000 units per SKU
+- **Trademark:** Craftiloo is a registered trademark
+- **Influencer:** No current influencer partnerships
 
 ## Competitors
 
