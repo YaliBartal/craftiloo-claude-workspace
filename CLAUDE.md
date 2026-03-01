@@ -263,7 +263,7 @@ Custom Python MCP server for Apify Platform API. Auth: Bearer token. Rate limiti
 
 **Commonly used actors:**
 - `saswave~amazon-product-scraper` — Product data (BSR, price, reviews, ratings)
-- `igview-owner~amazon-search-scraper` — Keyword search results (position, badges, prices)
+- `axesso_data~amazon-search-scraper` — Keyword search results (position, badges, prices). Input: `{"input": [{"keyword": "...", "country": "US"}]}`. Fields: `searchResultPosition` (0-indexed), `productDescription` (title), `price` (float), `productRating` (string), `countReview`, `salesVolume`, `sponsored` (bool).
 
 **Skills using Apify data:**
 - **Daily Market Intel** → Product scraping for BSR/price/review snapshots

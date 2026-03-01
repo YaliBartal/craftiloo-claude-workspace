@@ -24,6 +24,21 @@
 
 <!-- Add new entries at the TOP (newest first). Use this exact format: -->
 
+### Skill Update: 2026-02-26 — Switched Apify actor to axesso_data
+**Changes:**
+- Replaced `igview-owner~amazon-search-scraper` with `axesso_data~amazon-search-scraper`
+- Updated input format: `{"input": [{"keyword": "...", "country": "US"}]}` (array-wrapped, `keyword` not `query`)
+- Updated field mapping in SKILL.md: `searchResultPosition` (0-indexed +1), `productDescription` (title), `price` (float), `productRating` (string to parse), `countReview`, `salesVolume`, `sponsored` (boolean, new)
+- Updated timing: Apify step now ~20-30s (was ~122s) since axesso completes in ~7.5s/keyword
+
+**Trigger:** igview returned completely wrong data (smartphones for cross stitch query — cached/wrong search). Head-to-head test: Axesso correct, igview broken.
+
+**Resolved:** "Apify Empty Keyword Results" repeat error (see Resolved Issues below).
+
+**MCP server:** No changes needed — server is actor-agnostic, passes through any JSON.
+
+---
+
 ### Run: 2026-03-01
 **Goals:**
 - [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
@@ -445,11 +460,9 @@
 - **Workaround:** Make 2 calls or increase max_results. Or use Seller Board inventory report as fallback.
 - **Root cause:** FBA inventory API caps at 50 results per call
 
-### Issue: Apify Empty Results for Valid Keywords
-- **First seen:** 2026-02-25 (v2)
-- **Description:** Apify actor `igview-owner~amazon-search-scraper` returned 0 results for 3/9 keywords: "embroidery kit for kids", "kids embroidery kit", "lacing cards". These are valid high-volume keywords.
-- **Workaround:** Carry forward badge data from previous run with a caveat note. Consider retry or alternative actor.
-- **Root cause:** Unknown — possibly actor rate limiting, Amazon blocking, or temporary scraper issue
+### Issue: Apify Empty Results for Valid Keywords — RESOLVED 2026-02-26
+- **Root cause:** `igview-owner~amazon-search-scraper` was returning cached data from entirely different searches (smartphones for cross stitch queries). Fundamentally broken actor.
+- **Fix:** Switched to `axesso_data~amazon-search-scraper` — 104K runs, professional data company, confirmed correct results in head-to-head test. See Resolved Issues.
 
 ### Issue: DataDive Competitor Research Date Staleness
 - **First seen:** 2026-02-24
@@ -482,6 +495,10 @@
 - **Workaround:** Carry forward badge data. If 3+ consecutive runs fail, consider this keyword as unreliable for this actor.
 - **Root cause:** Unknown — possibly keyword-specific scraping issue or actor reliability.
 
+### Apify Empty Keyword Results (×2+ consecutive runs) — RESOLVED 2026-02-26
+- **Root cause:** `igview-owner~amazon-search-scraper` was broken — returning cached results from entirely different queries (smartphones for craft searches). Not a rate-limit/scraping issue — fundamentally broken actor.
+- **Fix:** Switched to `axesso_data~amazon-search-scraper`. Head-to-head test: Axesso returned correct cross stitch results in 7.5s. igview returned smartphone results for the same query.
+- **See:** Resolved Issues section for full detail.
 ### Apify Empty Keyword Results (×2+ consecutive runs → RESOLVED 2026-02-27)
 - **First seen:** 2026-02-25 (v2)
 - **Repeated:** 2026-02-26 — 4/9 keywords returned empty (up from 3/9)
@@ -492,6 +509,21 @@
 ---
 
 ## Resolved Issues
+
+### Issue: Apify Empty Keyword Results / Wrong Data (×3 runs → Resolved 2026-02-26)
+- **First seen:** 2026-02-25 (v2) — 3/9 keywords empty
+- **Repeated:** 2026-02-26 — 4/9 keywords empty, plus discovered returning smartphone results for craft queries
+- **Root cause:** `igview-owner~amazon-search-scraper` is fundamentally broken — returning cached data from unrelated previous searches. Not recoverable via retries.
+- **Fix:** Switched to `axesso_data~amazon-search-scraper`
+  - New input format: `{"input": [{"keyword": "...", "country": "US"}]}`
+  - Position field: `searchResultPosition` (0-indexed, add +1)
+  - Title field: `productDescription`
+  - Price field: `price` (float, not string)
+  - Rating field: `productRating` (string "4.4 out of 5 stars", parse to float)
+  - Review field: `countReview`
+  - New bonus field: `sponsored` (boolean)
+  - Missing vs igview: `is_best_seller`, `is_amazon_choice` (not in Axesso output)
+- **Timing:** Axesso ~7.5s/keyword, Apify step now ~20-30s total (vs ~122s before)
 
 ### Issue: B09HVSLBS6 No Competitive Pricing (×3 → Resolved)
 - **First seen:** 2026-02-24 (run 1)
