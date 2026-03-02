@@ -1,0 +1,7 @@
+## 2. Weekly PPC Review (Decision Layer)
+Compare last full week vs previous full week. Exclude the most recent 48 hours.
+### 2.1 Portfolio-Level Metrics (Seller Central)
+For each portfolio:
+- ACOS – Baseline target: ~30% (stage-dependent)
+- Conversion Rate – Expected: ~10%
+Identify week-over-week deviations and outliers. Only portfolios that materially change direction require intervention.

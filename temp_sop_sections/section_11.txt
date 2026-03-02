@@ -1,0 +1,23 @@
+## 10. Bid Adjustment Framework
+### 10.1 Bid Increase Criteria
+Increase bids when:
+- ACOS <25% and rank stagnant or declining
+- CVR >12% and impression share <50%
+- Losing TOS placement to competitors on hero keywords
+How much to increase:
+- Strong performers: +20-30%
+- Moderate performers: +10-15%
+- Test increments: +5-10%
+### 10.2 Bid Decrease Criteria
+Decrease bids when:
+- ACOS >40% for 7+ days with no rank improvement
+- CVR <6% (indicates poor relevance or listing issue)
+- Keyword is ranked top 5 organically (reduce paid dependency)
+How much to decrease:
+- Severe waste: -30-50%
+- Marginal efficiency: -15-20%
+### 10.3 Pause Criteria
+Pause keywords when:
+- 50+ clicks, 0 orders
+- ACOS consistently >100% with no strategic ranking value
+- Keyword intent completely misaligned with product

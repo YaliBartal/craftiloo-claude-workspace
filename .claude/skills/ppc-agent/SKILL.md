@@ -28,6 +28,17 @@ triggers:
   - post deal
   - deal ended
   - deal cleanup
+  - rank optimizer
+  - rank vs spend
+  - keyword rank analysis
+  - ppc rank check
+  - rank spend analysis
+  - rank investment
+  - create campaigns
+  - campaign creator
+  - build campaigns
+  - new campaigns
+  - propose campaigns
 output_location: outputs/research/ppc-agent/
 ---
 
@@ -73,6 +84,8 @@ If the file doesn't exist, create it with empty dates (everything is "never run"
   "last_portfolio_summary": null,
   "last_weekly_analysis": null,
   "last_monthly_review": null,
+  "last_rank_optimizer": null,
+  "last_campaign_creator": null,
   "last_negative_generation": {},
   "pending_actions": [],
   "applied_changes": []
@@ -94,6 +107,8 @@ If the file doesn't exist, create it with empty dates (everything is "never run"
 | "monthly ppc" / "monthly review" / "ppc month" | **Monthly PPC Review** | `.claude/skills/ppc-monthly-review/SKILL.md` |
 | "weekly ppc" / "ppc analysis" / "weekly review" | **Weekly PPC Analysis** (standalone) | `.claude/skills/weekly-ppc-analysis/SKILL.md` |
 | "negative keywords" / "generate negatives" | **Negative Keyword Generator** (standalone) | `.claude/skills/negative-keyword-generator/SKILL.md` |
+| "rank optimizer" / "rank vs spend" / "keyword rank analysis" / "ppc rank check" | **Keyword Rank Optimizer** | `.claude/skills/keyword-rank-optimizer/SKILL.md` |
+| "create campaigns" / "campaign creator" / "build campaigns" / "new campaigns" | **PPC Campaign Creator** | `.claude/skills/ppc-campaign-creator/SKILL.md` |
 | "deal prep" / "deal ppc" / "prep for deal" | **Deal Coordination** (Bid Recommender — deal mode) | `.claude/skills/ppc-bid-recommender/SKILL.md` |
 | "post deal" / "deal ended" / "deal cleanup" | **Deal Cleanup** (Bid Recommender — post-deal mode) | `.claude/skills/ppc-bid-recommender/SKILL.md` |
 | "ppc" / "ppc check" / "ppc status" (ambiguous) | **Cadence Checker** (Step 3) | This skill |
@@ -118,6 +133,10 @@ When routing to a sub-skill, check if upstream data already exists to avoid redu
 | Search term report | `outputs/research/ppc-weekly/snapshots/{recent}/search-term-report.json` | Search term harvester reads this if <3 days old |
 | Applied negatives | `outputs/research/negative-keywords/data/*-applied-*.json` | Search term harvester dedup check |
 | Weekly summary | `outputs/research/ppc-weekly/snapshots/{recent}/summary.json` | Portfolio summary + bid recommender + monthly review |
+| Targeting report | `outputs/research/ppc-weekly/snapshots/{recent}/targeting-report.json` | Keyword rank optimizer reads this instead of pulling fresh sp_keywords |
+| Rank radar snapshot | `outputs/research/ppc-agent/rank-optimizer/snapshots/{recent}/rank-radar-snapshot.json` | Bid recommender + search term harvester for rank context |
+| Rank-spend matrix | `outputs/research/ppc-agent/rank-optimizer/snapshots/{recent}/rank-spend-matrix.json` | Bid recommender for keyword waste signals |
+| Campaign creation log | `outputs/research/ppc-agent/campaign-creator/{recent}/*-creation-log.json` | Avoids re-reading upstream sources for campaign creator |
 
 **Key principle:** Never re-fetch data that a recent skill run already has on disk.
 
@@ -137,7 +156,11 @@ When the user says just "ppc" or "ppc check" without a specific task:
 | Bid Review | Every 2-3 days | >3 days ago |
 | Portfolio Summary | Every 2-3 days | >3 days ago |
 | Weekly Analysis | Weekly | >7 days ago |
+| Keyword Rank Optimizer | Weekly (after weekly) | >7 days ago |
 | Monthly Review | Monthly | >30 days ago |
+
+**Non-cadence tasks (run on demand):**
+- Campaign Creator: triggered by pending PROMOTE/REDIRECT/structure-gap actions (not time-based)
 
 3. Present the cadence status to the user:
 
@@ -151,6 +174,7 @@ When the user says just "ppc" or "ppc check" without a specific task:
 | Bid Review | {date or "Never"} | OK / OVERDUE |
 | Portfolio Summary | {date or "Never"} | OK / OVERDUE |
 | Weekly Analysis | {date or "Never"} | OK / OVERDUE |
+| Keyword Rank Optimizer | {date or "Never"} | OK / OVERDUE |
 | Monthly Review | {date or "Never"} | OK / OVERDUE |
 
 **Recommendation:** {most overdue task} is {N} days overdue. Run it now?
@@ -179,6 +203,8 @@ When the user says "ppc catch-up" or "ppc everything":
    - **P3:** Bid Adjustments (biggest time savings)
    - **P4:** Portfolio Summary (monitoring)
    - **P5:** Weekly Analysis (if overdue)
+   - **P5.5:** Keyword Rank Optimizer (after weekly provides fresh data)
+   - **P5.7:** Campaign Creator (if pending PROMOTE/REDIRECT/structure-gap actions exist)
    - **P6:** Monthly Review (if overdue)
 3. Ask the user: "These tasks are overdue: {list}. Run them all in order, or pick specific ones?"
 4. Execute in order, updating `agent-state.json` after each
@@ -241,6 +267,18 @@ Add a new entry at the **TOP** of the Run Log section:
 | New problem | Add to **Known Issues** |
 | Known Issue happened again | Move to **Repeat Errors**, increment count, **tell the user** |
 | Fixed a Known Issue | Move to **Resolved Issues** |
+
+---
+
+## Global PPC Operating Rules
+
+**These rules apply to ALL PPC sub-skills and must NEVER be violated:**
+
+1. **Never pause a campaign based on a single week of zero conversions.** Always check a longer timeframe (minimum 30 days, ideally 60 days) before recommending a pause. A campaign with zero orders in one week might just be in a rough patch. Only recommend pausing if the campaign shows sustained poor performance over the longer timeframe.
+2. **Never use round/organized bid amounts.** When lowering or placing bids, never use clean percentages like -30%, -50%. Always use slightly irregular amounts like -31%, -48%, -52%, -27%. This avoids predictable bid patterns and helps stand out in Amazon's auction dynamics.
+3. **Never negate a search term based on a single week of zero conversions.** Always check a minimum 30-day window of data before recommending a search term for negation. A search term with zero orders in one week might convert in other weeks. Only recommend negating if the search term shows sustained zero conversions AND is clearly irrelevant to the product over the full 30-day window.
+
+**Enforce these rules when routing to any sub-skill.** If a sub-skill output contains round bid amounts, single-week pause recommendations, or single-week negation recommendations, flag it before presenting to the user.
 
 ---
 

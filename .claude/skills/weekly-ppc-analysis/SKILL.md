@@ -90,6 +90,9 @@ outputs/research/ppc-weekly/
 - Do NOT combine PAUSED/ARCHIVED campaigns into analysis — filter them out
 - Do NOT use data from the last 2 days — the API date range automatically excludes last 2 days per SOP
 - Do NOT combine data from different date ranges in one analysis
+- **NEVER recommend pausing a campaign based on a single week of zero conversions.** Always check a longer timeframe (minimum 30 days, ideally 60 days) before recommending a pause. A campaign with zero orders in one week might just be in a rough patch. Only recommend pausing if the campaign shows sustained poor performance over the longer timeframe.
+- **NEVER use round/organized bid amounts.** When lowering or placing bids, never use clean percentages like -30%, -50%. Always use slightly irregular amounts like -31%, -48%, -52%, -27%. This avoids predictable bid patterns and helps stand out in Amazon's auction dynamics.
+- **NEVER negate a search term based on a single week of zero conversions.** Always check a minimum 30-day window of data before recommending a search term for negation. A search term with zero orders in one week might convert in other weeks. Only recommend negating if the search term shows sustained zero conversions AND is clearly irrelevant to the product over the full 30-day window.
 
 ---
 
@@ -105,6 +108,14 @@ outputs/research/ppc-weekly/
 | **Search Term** | `sp_search_terms` | searchTerm, campaignName, adGroupName, targeting, impressions, clicks, cost, purchases7d, sales7d, costPerClick, clickThroughRate |
 | **Placement** | `sp_placements` | campaignName, campaignId, placementClassification, impressions, clicks, cost, purchases7d, sales7d |
 | **Targeting** | `sp_keywords` | campaignName, adGroupName, targeting, matchType, impressions, clicks, cost, purchases7d, sales7d, topOfSearchImpressionShare |
+
+**Additional data pull (not a report — direct API call):**
+
+| Source | API Call | Key Fields |
+|--------|----------|------------|
+| **Campaign TOS Modifiers** | `list_sp_campaigns(state="ENABLED", marketplace="US")` | `placementBidding` (current TOS/ROS/PP modifier percentages per campaign) |
+
+This enables the "Current TOS%" column in placement health analysis and the Bid Recommender's lever selection logic.
 
 ### API Field → Metric Mapping
 
@@ -495,9 +506,9 @@ When recommending bid changes, use these SOP-defined percentage ranges:
 
 | Performance Level | Increase Range |
 |-------------------|---------------|
-| Strong performers | +20-30% |
-| Moderate performers | +10-15% |
-| Test increments | +5-10% |
+| Strong performers | +19-31% (use irregular amounts, e.g., +22%, +27%, +31%) |
+| Moderate performers | +8-16% (e.g., +9%, +13%, +16%) |
+| Test increments | +4-11% (e.g., +6%, +8%, +11%) |
 
 **Bid Decrease Criteria:**
 - ACoS >40% for 7+ days with no rank improvement → decrease bids
@@ -506,13 +517,17 @@ When recommending bid changes, use these SOP-defined percentage ranges:
 
 | Severity | Decrease Range |
 |----------|---------------|
-| Severe waste | -30-50% |
-| Marginal efficiency | -15-20% |
+| Severe waste | -28-52% (use irregular amounts, e.g., -31%, -43%, -52%) |
+| Marginal efficiency | -13-22% (e.g., -14%, -17%, -22%) |
+
+**IMPORTANT: Never use round/clean percentages** like -30%, -50%, +20%. Always use slightly irregular amounts (e.g., -31%, -48%, +22%) to avoid predictable bid patterns in Amazon's auction.
 
 **Pause Criteria:**
-- 50+ clicks, 0 orders
-- ACoS consistently >100% with no strategic ranking value
+- 50+ clicks, 0 orders (over a 30-60 day window — never based on a single week)
+- ACoS consistently >100% with no strategic ranking value (verified over 30+ days)
 - Keyword intent completely misaligned with product
+- **NEVER pause a campaign based on a single week of zero conversions.** Always verify sustained poor performance over minimum 30 days, ideally 60 days.
+- **NEVER negate a search term based on a single week of zero conversions.** Always check a minimum 30-day window before recommending negation. Only negate if the term shows sustained zero conversions AND is clearly irrelevant over the full 30-day window.
 
 **Important:** For TOS campaigns, always check Data Dive for rank movement before decreasing bids — the SOP permits high ACoS if rank is improving.
 
@@ -613,11 +628,28 @@ Note any gaps — missing campaign types the portfolio should have based on its 
    - What % of total spend goes to TOS vs ROS vs Product Pages?
    - What % of total orders come from each placement?
 
-5. Identify placement insights:
-   - Campaigns where TOS ACoS is much better than ROS → recommend increasing TOS bid modifier
-   - Campaigns where TOS ACoS is much worse than ROS → recommend decreasing TOS bid modifier
-   - Portfolios with very low TOS impression share → potential opportunity
-   - Campaigns spending heavily on Product Pages with poor CVR → investigate
+5. **Read current TOS/ROS/PP modifier percentages** from the `list_sp_campaigns` call. Match each campaign by `campaignId` to attach the current modifiers to the placement performance data.
+
+6. **Classify each campaign's Placement Health** using the same framework as the Bid Recommender (see `ppc-bid-recommender/SKILL.md` → Step 4b for the full classification table). For each campaign, assign one of:
+
+   | Classification | Condition |
+   |---|---|
+   | **TOS DOMINANT** | TOS is efficient (below stage target) and drives most orders |
+   | **TOS EFFICIENT / ROS-PP BLEEDING** | TOS below target, ROS and/or PP significantly above target |
+   | **TOS BLEEDING / ROS-PP EFFICIENT** | TOS above target, ROS and/or PP below target |
+   | **ALL EFFICIENT** | All placements within stage target |
+   | **ALL BLEEDING** | All placements above stage target |
+   | **INSUFFICIENT DATA** | Not enough clicks/spend to classify |
+
+   Compare each placement's ACoS against the portfolio's stage target. The **relative performance between placements** determines the classification.
+
+7. Identify placement insights:
+   - Campaigns classified TOS EFFICIENT / ROS-PP BLEEDING → recommend lowering default bid (not TOS modifier)
+   - Campaigns classified TOS BLEEDING → recommend lowering TOS modifier
+   - Campaigns classified ALL BLEEDING → flag as listing/targeting issue, not a bid problem
+   - Campaigns where TOS modifier is low but TOS ACoS is efficient → leaving TOS share on the table
+   - Campaigns where TOS modifier is very high but TOS ACoS is above target → overpaying for TOS
+   - Campaigns with no TOS modifier set (0%) → missing TOS strategy entirely
 
 ### Step 9: Parse Targeting Report
 
@@ -879,9 +911,36 @@ After generating the report:
     }
   },
   "placement": {
-    "top_of_search": { "spend": 0.00, "sales": 0.00, "acos": 0.00, "orders": 0 },
-    "rest_of_search": { "spend": 0.00, "sales": 0.00, "acos": 0.00, "orders": 0 },
-    "product_pages": { "spend": 0.00, "sales": 0.00, "acos": 0.00, "orders": 0 }
+    "account_totals": {
+      "top_of_search": { "spend": 0.00, "sales": 0.00, "acos": 0.00, "orders": 0, "cvr": 0.00 },
+      "rest_of_search": { "spend": 0.00, "sales": 0.00, "acos": 0.00, "orders": 0, "cvr": 0.00 },
+      "product_pages": { "spend": 0.00, "sales": 0.00, "acos": 0.00, "orders": 0, "cvr": 0.00 }
+    },
+    "per_campaign_health": [
+      {
+        "campaign_id": "...",
+        "campaign_name": "...",
+        "portfolio": "...",
+        "tos_acos": 0.00,
+        "ros_acos": 0.00,
+        "pp_acos": 0.00,
+        "tos_spend_share": 0.00,
+        "tos_order_share": 0.00,
+        "current_tos_modifier": 0,
+        "current_ros_modifier": 0,
+        "current_pp_modifier": 0,
+        "health": "TOS_DOMINANT",
+        "recommended_lever": "tos_modifier"
+      }
+    ],
+    "health_distribution": {
+      "tos_dominant": 0,
+      "tos_efficient_ros_pp_bleeding": 0,
+      "tos_bleeding_ros_pp_efficient": 0,
+      "all_efficient": 0,
+      "all_bleeding": 0,
+      "insufficient_data": 0
+    }
   },
   "search_terms": {
     "total_terms": 0,
@@ -1116,11 +1175,24 @@ For each portfolio, show whether PPC spend is translating to rank improvements:
 | Rest of Search | ${X} | X% | ${X} | X% | X | X% |
 | Product Pages | ${X} | X% | ${X} | X% | X | X% |
 
-### Placement Optimization Recommendations
+### Per-Campaign Placement Health (top campaigns by spend)
 
-- {Portfolio/Campaign}: {TOS is outperforming — consider increasing TOS bid modifier}
-- {Portfolio/Campaign}: {TOS is underperforming — consider decreasing TOS bid modifier or checking Data Dive for rank impact}
-- {Portfolio/Campaign}: {Product Pages driving spend with poor CVR — investigate}
+| Campaign | Portfolio | TOS ACoS | ROS ACoS | PP ACoS | TOS Spend% | Current TOS% | Health | Recommended Lever |
+|----------|-----------|----------|----------|---------|------------|--------------|--------|-------------------|
+| {name} | {portfolio} | X% | X% | X% | X% | X% | {classification} | {TOS modifier / Default bid / Hold / Flag listing} |
+
+**Health Distribution:** {N} TOS Dominant, {N} TOS Eff/ROS Bleed, {N} TOS Bleeding, {N} All Efficient, {N} All Bleeding, {N} Insufficient Data
+
+### TOS Modifier Opportunities
+
+- {Campaign}: TOS is efficient but modifier is low — leaving TOS impression share on the table
+- {Campaign}: TOS modifier is very high but TOS ACoS is above target — overpaying for TOS
+- {Campaign}: No TOS modifier set (0%) — missing TOS strategy entirely
+
+### ROS/PP Bleed Alerts
+
+- {Campaign}: ROS+PP spend dominates and ACoS is significantly worse than TOS → lower default bid
+- {Campaign}: Product Pages spending heavily with poor CVR → investigate targeting
 
 ---
 

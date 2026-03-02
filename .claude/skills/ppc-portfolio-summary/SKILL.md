@@ -44,6 +44,14 @@ A **focused portfolio-level scan** that classifies each portfolio's health, chec
 
 ---
 
+## Operating Rules
+
+1. **Never recommend pausing a campaign or portfolio based on a single week of zero conversions.** Always check a longer timeframe (minimum 30 days, ideally 60 days) before recommending a pause. A campaign with zero orders in one week might just be in a rough patch. Only recommend pausing if the campaign shows sustained poor performance over the longer timeframe.
+2. **Never use round/organized bid amounts in any recommendations.** When suggesting bid changes, never use clean percentages like -30%, -50%. Always use slightly irregular amounts like -31%, -48%, -52%, -27%. This avoids predictable bid patterns and helps stand out in Amazon's auction dynamics.
+3. **Never recommend negating a search term based on a single week of zero conversions.** Always check a minimum 30-day window of data before recommending a search term for negation. A search term with zero orders in one week might convert in other weeks. Only recommend negating if the search term shows sustained zero conversions AND is clearly irrelevant to the product over the full 30-day window.
+
+---
+
 ## Efficiency Standards
 
 - **<40K tokens** per run
@@ -102,6 +110,9 @@ For each portfolio, aggregate:
 | **CPC** | Spend / Clicks |
 | **Campaign Count** | Number of ENABLED campaigns |
 | **Campaign Types** | Count of Auto, Broad, SK, MK, PT, Shield, Other |
+| **Avg TOS Modifier** | Average of `placementBidding` TOS percentage across portfolio campaigns (from `list_sp_campaigns`) |
+| **Campaigns with No TOS** | Count of campaigns where TOS modifier = 0% or `placementBidding` is empty |
+| **TOS Health Mix** | Count of campaigns per Placement Health category (from weekly snapshot `placement.per_campaign_health`, if <7 days old) |
 
 ### Step 5: Classify Portfolio Health
 
@@ -162,12 +173,12 @@ Flag portfolios that changed classification since the weekly analysis.
 
 ## Portfolio Rankings
 
-| Rank | Portfolio | Stage | ACoS | CVR | Spend | Orders | Status | vs Weekly |
-|------|-----------|-------|------|-----|-------|--------|--------|-----------|
-| 1 | {name} | Scaling | X% | X% | ${X} | {N} | TOP PERFORMER | Stable |
-| 2 | {name} | Launch | X% | X% | ${X} | {N} | HEALTHY | Improving |
-| ... | ... | ... | ... | ... | ... | ... | ... | ... |
-| 15 | {name} | Scaling | X% | X% | ${X} | {N} | RED FLAG | Worsening |
+| Rank | Portfolio | Stage | ACoS | CVR | Spend | Orders | Avg TOS% | TOS Health | Status | vs Weekly |
+|------|-----------|-------|------|-----|-------|--------|----------|------------|--------|-----------|
+| 1 | {name} | Scaling | X% | X% | ${X} | {N} | X% | Strong | TOP PERFORMER | Stable |
+| 2 | {name} | Launch | X% | X% | ${X} | {N} | X% | No Data | HEALTHY | Improving |
+| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+| 15 | {name} | Scaling | X% | X% | ${X} | {N} | X% | Bleeding | RED FLAG | Worsening |
 
 ## Top 3 Portfolios Needing Action
 
@@ -194,6 +205,23 @@ Flag portfolios that changed classification since the weekly analysis.
 
 **Structural gaps found:** {N} portfolios missing required campaign types
 **Dormant campaigns:** {N} campaigns with $0 spend (consider cleanup)
+
+## TOS Strategy Audit
+
+Per our TOS-First Bidding Philosophy, all portfolios should have TOS modifiers set on their campaigns. This audit checks for gaps.
+
+| Portfolio | Campaigns | Avg TOS% | TOS Dominant | TOS Eff/ROS Bleed | TOS Bleeding | All Efficient | All Bleeding | No TOS% |
+|-----------|-----------|----------|-------------|-------------------|-------------|---------------|-------------|---------|
+| {name} | {N} | X% | {N} | {N} | {N} | {N} | {N} | {N} |
+
+**TOS Health** column values: "Strong" (mostly TOS DOMINANT/ALL EFFICIENT), "Bleeding" (multiple TOS/ALL BLEEDING), "Mixed", "No Data"
+
+**Flags:**
+- **Portfolios missing TOS strategy:** {list any portfolio where most campaigns have TOS modifier = 0%}
+- **Over-indexed TOS:** {list any portfolio where avg TOS% is very high but ACoS is above stage target}
+- **TOS opportunity:** {list any portfolio where TOS is efficient but avg modifier is low — room to scale}
+
+**Source:** Campaign TOS modifiers from `list_sp_campaigns` → `placementBidding`. Placement health from weekly snapshot `summary.json` → `placement.per_campaign_health` (if available and <7 days old).
 
 ## Experimental Campaign Check (SOP Section 13)
 
@@ -253,7 +281,11 @@ Check campaign creation dates from `list_sp_campaigns` results:
       "structure_complete": true,
       "missing_types": [],
       "idle_campaigns": 0,
-      "vs_weekly": "stable"
+      "vs_weekly": "stable",
+      "avg_tos_modifier": 0,
+      "campaigns_no_tos": 0,
+      "tos_health": "Strong",
+      "tos_health_mix": {"tos_dominant": 0, "tos_efficient_ros_bleeding": 0, "tos_bleeding": 0, "all_efficient": 0, "all_bleeding": 0, "insufficient_data": 0}
     }
   ],
   "account_totals": {

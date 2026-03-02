@@ -72,6 +72,9 @@ outputs/research/negative-keywords/
 - Do NOT skip the review step — ALWAYS present the list for human approval before generating copy-paste output
 - Do NOT auto-negate competitor brand names — flag for human decision
 - Do NOT negate broad gift terms that could apply to any Craftiloo product (e.g., "craft kit for kids", "arts and crafts")
+- **NEVER recommend pausing a campaign based on a single week of zero conversions.** Always check a longer timeframe (minimum 30 days, ideally 60 days) before recommending a pause. A campaign with zero orders in one week might just be in a rough patch.
+- **NEVER use round/organized bid amounts** when recommending bid adjustments alongside negatives. Use slightly irregular amounts like -31%, -48%, -52%, -27% instead of clean -30%, -50%. This avoids predictable bid patterns in Amazon's auction dynamics.
+- **NEVER negate a search term based on a single week of zero conversions.** Always check a minimum 30-day window of data before recommending a search term for negation. A search term with zero orders in one week might convert in other weeks. Only recommend negating if the search term shows sustained zero conversions AND is clearly irrelevant to the product over the full 30-day window.
 
 ---
 

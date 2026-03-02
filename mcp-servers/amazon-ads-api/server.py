@@ -61,6 +61,7 @@ V3_HEADERS = {
     "negativeKeywords": "application/vnd.spNegativeKeyword.v3+json",
     "campaignNegativeKeywords": "application/vnd.spCampaignNegativeKeyword.v3+json",
     "targets": "application/vnd.spTargetingClause.v3+json",
+    "productAds": "application/vnd.spProductAd.v3+json",
     "negativeTargets": "application/vnd.spNegativeTargetingClause.v3+json",
     "bidRecommendations": "application/vnd.spTargetBidRecommendation.v3+json",
     "budgetUsage": "application/vnd.spCampaignBudgetUsage.v1+json",
@@ -76,7 +77,6 @@ REPORT_PRESETS = {
         "columns": [
             "campaignName", "campaignId", "campaignStatus",
             "campaignBudgetAmount", "campaignBudgetType",
-            "portfolioId",
             "impressions", "clicks", "cost",
             "purchases7d", "sales7d", "unitsSoldClicks7d",
             "costPerClick", "clickThroughRate",
@@ -352,7 +352,7 @@ async def _paginate_list(path: str, body: dict, marketplace: str = "US",
         if items is None:
             for key in ["campaigns", "adGroups", "keywords", "negativeKeywords",
                          "campaignNegativeKeywords", "targetingClauses",
-                         "negativeTargetingClauses", "results"]:
+                         "negativeTargetingClauses", "productAds", "results"]:
                 items = data.get(key)
                 if items is not None:
                     break
@@ -545,6 +545,7 @@ async def list_sp_campaigns(
             "budget": budget.get("budget"),
             "budgetType": budget.get("budgetType"),
             "biddingStrategy": bidding.get("strategy"),
+            "placementBidding": bidding.get("placementBidding", []),
             "portfolioId": c.get("portfolioId", ""),
             "startDate": c.get("startDate", ""),
         })
@@ -683,6 +684,80 @@ async def update_sp_ad_groups(ad_groups: str, marketplace: str = "US") -> str:
 
     results = data.get("adGroups", data) if isinstance(data, dict) else data
     return format_json(results, title="Ad Group Update Results")
+
+
+# ============================================================
+# TOOLS — Sponsored Products: Product Ads
+# ============================================================
+
+@mcp.tool()
+async def list_sp_product_ads(
+    campaign_id: str = "",
+    ad_group_id: str = "",
+    state: str = "ENABLED",
+    marketplace: str = "US",
+    max_results: int = 500,
+) -> str:
+    """List Sponsored Products product ads (advertised ASINs).
+
+    Args:
+        campaign_id: Filter by campaign.
+        ad_group_id: Filter by ad group.
+        state: ENABLED, PAUSED, ARCHIVED, or ALL.
+        marketplace: US or CA.
+        max_results: Default 500.
+    """
+    body = {}
+    if state.upper() != "ALL":
+        body["stateFilter"] = {"include": [state.upper()]}
+    if campaign_id:
+        body["campaignIdFilter"] = {"include": [campaign_id]}
+    if ad_group_id:
+        body["adGroupIdFilter"] = {"include": [ad_group_id]}
+
+    items = await _paginate_list("/sp/productAds/list", body, marketplace, "productAds", max_results)
+    if isinstance(items, str):
+        return items
+
+    results = []
+    for ad in items:
+        results.append({
+            "adId": ad.get("adId"),
+            "asin": ad.get("asin"),
+            "state": ad.get("state"),
+            "adGroupId": ad.get("adGroupId"),
+            "campaignId": ad.get("campaignId"),
+        })
+    return format_json(results, title=f"SP Product Ads ({marketplace})", max_items=max_results)
+
+
+@mcp.tool()
+async def manage_sp_product_ads(action: str, product_ads: str, marketplace: str = "US") -> str:
+    """Create or update SP product ads (associate ASINs with ad groups).
+
+    Args:
+        action: 'create' or 'update'.
+        product_ads: JSON array.
+            Create: [{"campaignId": "...", "adGroupId": "...", "asin": "B0B1927HCG", "state": "ENABLED"}]
+            Update: [{"adId": "...", "state": "PAUSED"}]
+        marketplace: US or CA.
+    """
+    parsed = _parse_json_param(product_ads, "product_ads")
+    if isinstance(parsed, str):
+        return parsed
+
+    body = {"productAds": parsed if isinstance(parsed, list) else [parsed]}
+    if action.lower() == "create":
+        data = await ads_api_post("/sp/productAds", body, marketplace, "productAds")
+    elif action.lower() == "update":
+        data = await ads_api_put("/sp/productAds", body, marketplace, "productAds")
+    else:
+        return f"Error: Invalid action '{action}'. Use 'create' or 'update'."
+
+    if isinstance(data, str):
+        return data
+    results = data.get("productAds", data) if isinstance(data, dict) else data
+    return format_json(results, title=f"Product Ad {action.title()} Results")
 
 
 # ============================================================
@@ -1554,9 +1629,9 @@ async def manage_portfolios(action: str, portfolios: str, marketplace: str = "US
 
     items = parsed if isinstance(parsed, list) else [parsed]
     if action.lower() == "create":
-        data = await ads_api_post("/portfolios", items, marketplace)
+        data = await ads_api_post("/v2/portfolios", items, marketplace)
     elif action.lower() == "update":
-        data = await ads_api_put("/portfolios", items, marketplace)
+        data = await ads_api_put("/v2/portfolios", items, marketplace)
     else:
         return f"Error: Invalid action '{action}'. Use 'create' or 'update'."
 

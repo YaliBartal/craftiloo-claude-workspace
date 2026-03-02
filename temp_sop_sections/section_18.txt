@@ -1,0 +1,10 @@
+## Quick Reference: Decision Matrix
+
+  | Scenario | Action |
+  | ACOS 15%, Rank #8 → #5 | Lower TOS bid -15%, harvest profit |
+  | ACOS 45%, Rank #22 → #18 | Maintain spend, keyword is gaining traction |
+  | ACOS 65%, Rank #30 → #32 | Pause or lower bid -30%, reassess relevance |
+  | CVR 15%, ACOS 28% | Increase budget, scale this campaign |
+  | CVR 4%, ACOS 50% | Check listing quality, consider pausing |
+  | Competitor launches deal | Increase TOS bids +20%, defend position |
+  | Hero keyword drops 8 spots | Create dedicated SK campaign if none exists, or increase bid +25% |

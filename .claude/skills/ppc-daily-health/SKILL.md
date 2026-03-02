@@ -40,6 +40,14 @@ A **5-minute scan** that tells the PPC worker "everything is normal" or "these 2
 
 ---
 
+## Operating Rules
+
+1. **Never recommend pausing a campaign based on a single day or week of zero conversions.** Always flag for further investigation with the Bid Recommender, which checks minimum 30 days (ideally 60 days) of data before recommending a pause. A campaign with zero orders in one period might just be in a rough patch.
+2. **Never use round/organized bid amounts in any recommendations.** When suggesting bid adjustments, never use clean percentages like -30%, -50%. Always use slightly irregular amounts like -31%, -48%, -52%, -27%. This avoids predictable bid patterns and helps stand out in Amazon's auction dynamics.
+3. **Never recommend negating a search term based on a single week of zero conversions.** Always flag for further investigation with the Search Term Harvester, which checks a minimum 30-day window before recommending negation. A search term with zero orders in one week might convert in other weeks. Only recommend negating if the search term shows sustained zero conversions AND is clearly irrelevant to the product over the full 30-day window.
+
+---
+
 ## Efficiency Standards
 
 - **<30K tokens** per run
@@ -62,6 +70,7 @@ Load these files (read in parallel where possible):
 | `outputs/research/ppc-agent/agent-state.json` | Last run dates, pending actions |
 | Most recent `outputs/research/market-intel/snapshots/*.json` | Seller Board data (TACoS, ad spend, margin, organic ratio) |
 | Most recent `outputs/research/ppc-agent/daily/*-health-snapshot.json` | Yesterday's health check (for day-over-day comparison) |
+| Most recent `outputs/research/ppc-weekly/snapshots/*/summary.json` → `placement` section | Per-campaign placement health classifications (use if <7 days old) |
 
 **If today's Market Intel snapshot exists:** Use it. Do NOT re-fetch Seller Board data.
 **If no Market Intel snapshot exists for today:** Note: "No market intel snapshot for today. Running with campaign data only. Consider running /daily-market-intel first for the full picture."
@@ -79,6 +88,7 @@ list_sp_campaigns(state="ENABLED", marketplace="US", max_results=200)
 - `campaignId` — for reference
 - `budget` → `budget.budget` — daily budget
 - `state` — should all be ENABLED (we filtered)
+- `placementBidding` — current TOS/ROS/PP modifier percentages (for TOS health context)
 
 **Then group campaigns by portfolio:**
 ```
@@ -139,6 +149,8 @@ For each portfolio, compute a traffic-light status:
 - Launch portfolio: ACoS 60-80%
 - Spend 30-50% above 7-day average
 - 1-2 hero keywords dropped out of top 10
+- Multiple campaigns in portfolio classified as "TOS BLEEDING" in weekly placement snapshot
+- Most campaigns in portfolio have no TOS modifier set (0%) — missing TOS strategy
 
 **RED — Needs attention today:**
 - Scaling portfolio: ACoS >50%
@@ -146,6 +158,8 @@ For each portfolio, compute a traffic-light status:
 - Spend >50% above 7-day average (budget blowout)
 - 3+ hero keywords dropped out of top 10
 - ACoS more than doubled from yesterday
+- Majority of campaigns in portfolio classified as "ALL BLEEDING" in weekly placement snapshot (not a bid problem — flag listing/targeting)
+- Very high TOS modifier with poor TOS ACoS in weekly snapshot (overpaying for TOS)
 
 #### Stage-Specific Context
 
@@ -183,17 +197,21 @@ List any pending P1 actions in the brief.
 
 ## Portfolio Status
 
-| Portfolio | Stage | ACoS | Spend | Status | Note |
-|-----------|-------|------|-------|--------|------|
-| {name} | Scaling | X% | ${X} | GREEN | — |
-| {name} | Launch | X% | ${X} | YELLOW | ACoS elevated but expected for launch |
-| {name} | Scaling | X% | ${X} | RED | ACoS doubled overnight — check campaigns |
+| Portfolio | Stage | ACoS | Spend | TOS Health | Status | Note |
+|-----------|-------|------|-------|------------|--------|------|
+| {name} | Scaling | X% | ${X} | Strong | GREEN | — |
+| {name} | Launch | X% | ${X} | No Data | YELLOW | ACoS elevated but expected for launch |
+| {name} | Scaling | X% | ${X} | Bleeding | RED | TOS bleeding on 3/12 campaigns |
+
+**TOS Health** column: "Strong" (mostly TOS DOMINANT/EFFICIENT), "Bleeding" (multiple TOS BLEEDING campaigns), "Mixed" (mixed classifications), "No Data" (no weekly placement snapshot or >7 days old)
 
 **RED flags ({count}):**
 - {Portfolio}: {specific issue and suggested action}
+- {Portfolio}: ALL BLEEDING pattern — likely a listing/targeting issue, not a bid problem
 
 **YELLOW flags ({count}):**
 - {Portfolio}: {what to monitor}
+- {Portfolio}: No TOS modifier set on most campaigns — missing TOS strategy
 
 ## Rank Radar Summary
 
@@ -239,6 +257,8 @@ List any pending P1 actions in the brief.
       "acos": 0,
       "spend": 0,
       "status": "GREEN",
+      "tos_health": "Strong",
+      "avg_tos_modifier": 0,
       "campaign_count": 0,
       "note": ""
     }

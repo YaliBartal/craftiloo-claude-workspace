@@ -36,6 +36,40 @@ output_location: outputs/research/ppc-agent/bids/
 
 ---
 
+## TOS-First Bidding Philosophy
+
+**This is how we manage bids. All bid decisions must follow this framework.**
+
+### Core Principles
+
+1. **TOS (Top of Search) is the primary conversion channel.** Most orders come from TOS. It consistently has the best ACoS and CVR across placements.
+
+2. **The TOS modifier is how we control TOS visibility — not the default bid.** When we want more visibility on TOS, we increase the TOS modifier percentage. The default bid is NOT the lever for this.
+
+3. **The default bid controls ROS (Rest of Search) and PP (Product Pages) exposure.** These placements use the base bid directly. Lowering the default bid shrinks ROS/PP traffic without affecting TOS (because the TOS modifier compensates).
+
+4. **New campaigns start TOS-heavy** — high TOS modifier from day one, with a conservative default bid. This means most initial traffic goes to the highest-converting placement while limiting exposure on lower-converting placements.
+
+5. **Bid increases = TOS modifier increases.** When we want to scale, defend rank, or increase visibility — the TOS modifier goes up.
+
+6. **Bid decreases depend on WHERE the problem is:**
+   - TOS is efficient but ROS/PP are wasting money → **lower default bid** (TOS stays stable via modifier, ROS/PP shrink)
+   - TOS is bleeding → **lower TOS modifier**
+   - Everything is bleeding → **not a bid problem** — flag for listing/targeting review
+
+7. **ROS/PP modifiers are a rare, tertiary lever.** Only used when TOS is underperforming but ROS or PP are converting well — which is uncommon but valid.
+
+### New Campaign Defaults
+
+| Parameter | Default | Rationale |
+|---|---|---|
+| TOS modifier | Start high | TOS converts best. Start aggressive, let data adjust. |
+| Default bid | Start conservative | Low base limits ROS/PP bleed. TOS modifier handles competitiveness. |
+| Bidding strategy | LEGACY_FOR_SALES | Down-only dynamic. Prevents Amazon auto-escalating bids. |
+| ROS/PP modifier | Unset (0%) | Let default bid handle naturally. |
+
+---
+
 ## What This Does
 
 Codifies the PPC SOP's bid adjustment decision matrix into an automated recommendation engine. Reads campaign performance data, cross-references rank movement, applies stage-specific thresholds, and produces a concrete bid change table for user approval.
@@ -80,22 +114,26 @@ create_ads_report(report_type="sp_placements", date_range="LAST_7_DAYS", marketp
 ```
 Poll and download as in Weekly PPC Analysis.
 
-### Step 1b: Load Placement Performance Data
+### Step 1b: Load Placement Performance Data + Current TOS Modifiers
 
-The SOP requires TOS (Top of Search) specific bid decisions. Load placement-level data:
+The TOS-First Bidding Philosophy requires per-placement performance AND current modifier percentages. Load both:
 
-| File | Purpose |
-|------|---------|
-| Most recent `outputs/research/ppc-weekly/snapshots/*/placement-report.json` | TOS vs Rest of Search vs Product Pages ACoS |
+| Source | Data | How |
+|--------|------|-----|
+| Weekly snapshot `placement-report.json` | Per-campaign per-placement ACoS, CVR, spend, orders | Read file |
+| Weekly snapshot `summary.json` → `placement.per_campaign_health` | Pre-classified placement health per campaign | Read file |
+| `list_sp_campaigns(state="ENABLED", marketplace="US")` | Current TOS/ROS/PP modifier percentages via `placementBidding` | API call |
 
-If the weekly snapshot has placement data, use it. If not, pull via `sp_placements` report (see above).
+If the weekly snapshot has placement data (<3 days old), use it. If not, pull fresh via `sp_placements` report (see Step 1).
+
+**Always pull current TOS modifiers fresh** via `list_sp_campaigns` — these can change between weekly runs.
 
 For each campaign, extract:
-- **TOS ACoS** — cost / sales for `PLACEMENT_TOP` rows
-- **Rest of Search ACoS** — cost / sales for `PLACEMENT_REST_OF_SEARCH`
-- **Product Pages ACoS** — cost / sales for `PLACEMENT_PRODUCT_PAGE`
+- **Per-placement metrics:** TOS ACoS, ROS ACoS, PP ACoS, spend share, order share, CVR
+- **Current modifiers:** TOS %, ROS %, PP % from `placementBidding` array
+- **Placement health classification** (from weekly snapshot, or classify fresh using Step 4b)
 
-This data informs whether TOS bid modifiers should increase, decrease, or hold.
+This data feeds into Step 4b (Placement Health Classification) to determine which lever to pull.
 
 ### Step 2: Load Rank Data
 
@@ -134,33 +172,103 @@ For each active campaign with meaningful spend (>$5 in the period), apply the de
 
 #### The SOP Decision Matrix
 
+**CRITICAL RULES (apply to ALL rows below):**
+1. **Never pause a campaign based on a single week of zero conversions.** Always check minimum 30 days (ideally 60 days) of data before recommending a pause. A campaign with zero orders in one week might just be in a rough patch.
+2. **Never use round/organized bid amounts.** When applying percentage changes, never use clean numbers like -30%, -50%, +20%. Always use slightly irregular amounts like -31%, -48%, +22%, -27%. This avoids predictable bid patterns in Amazon's auction dynamics.
+3. **Never negate a search term based on a single week of zero conversions.** Always check a minimum 30-day window of data before recommending a search term for negation. A search term with zero orders in one week might convert in other weeks. Only recommend negating if the search term shows sustained zero conversions AND is clearly irrelevant to the product over the full 30-day window.
+
 | ACoS | CVR | Rank Trend | Stage | Action | Bid Change |
 |------|-----|------------|-------|--------|------------|
-| <20% | >12% | Stable/Rising | Any | **Scale** — increase budget + TOS bid | TOS +20-30% |
-| <25% | >10% | Stable | Scaling | **Harvest** — lower TOS bid slightly | TOS -10-15% |
+| <20% | >12% | Stable/Rising | Any | **Scale** — increase budget + TOS bid | TOS +22-31% |
+| <25% | >10% | Stable | Scaling | **Harvest** — lower TOS bid slightly | TOS -11-16% |
 | <25% | >10% | Declining | Any | **Maintain** — rank dropping despite good performance | Hold, investigate listing |
 | 25-35% | >10% | Rising | Any | **On track** — no change | Hold |
 | 25-35% | >10% | Stable | Scaling | **Target zone** — minor optimization | Hold |
 | 25-35% | 6-10% | Any | Any | **Monitor** — acceptable but not strong | Hold |
 | 35-50% | >10% | Rising | Launch | **Acceptable** — launch phase, rank gaining | Hold, monitor weekly |
-| 35-50% | >10% | Stable | Scaling | **Concerning** — cut TOS bid | TOS -15-20% |
-| 35-50% | <6% | Any | Any | **Listing issue** — CVR too low for any bid level | Pause keyword, flag listing |
-| >50% | Any | Rising | Launch | **Evaluate** — burning money but gaining rank | Reduce -10%, reassess in 3 days |
-| >50% | Any | Stable/Declining | Scaling | **Bleeding** — immediate action | Decrease -30-50% or pause |
-| >50% | Any | Stable/Declining | Launch | **Reassess** — spending without rank movement | Decrease -20-30% |
-| >100% | Any | Any | Any | **Emergency** — pause unless strategic ranking play | Pause |
+| 35-50% | >10% | Stable | Scaling | **Concerning** — cut TOS bid | TOS -16-22% |
+| 35-50% | <6% | Any | Any | **Listing issue** — CVR too low for any bid level | Pause keyword (only after 30+ days of data), flag listing |
+| >50% | Any | Rising | Launch | **Evaluate** — burning money but gaining rank | Reduce -11%, reassess in 3 days |
+| >50% | Any | Stable/Declining | Scaling | **Bleeding** — immediate action | Decrease -31-48% (verify 30+ days before pause) |
+| >50% | Any | Stable/Declining | Launch | **Reassess** — spending without rank movement | Decrease -22-31% |
+| >100% | Any | Any | Any | **Emergency** — pause only after verifying 30+ days of sustained >100% ACoS | Pause (confirm long-term data) |
 
 #### Additional Rules
 
 | Scenario | Action |
 |----------|--------|
-| 50+ clicks, 0 orders | **Pause keyword** — dead weight |
-| Hero keyword drops 5+ positions | **Increase TOS +25%** or create dedicated SK campaign |
-| Ranked top 5 organically | **Reduce paid dependency** — lower bid -15-20% |
+| 50+ clicks, 0 orders (over 30-60 day window) | **Pause keyword** — dead weight. **Never based on a single week.** |
+| Hero keyword drops 5+ positions | **Increase TOS +26%** or create dedicated SK campaign |
+| Ranked top 5 organically | **Reduce paid dependency** — lower bid -16-22% |
 | Budget starved + ACoS <30% | **Increase budget** — campaign is efficient but capped |
 | Budget starved + ACoS >40% | **Do NOT increase budget** — it would waste more money |
-| Competitor launches deal on our hero keyword | **Increase TOS +20%** — defend position temporarily |
+| Competitor launches deal on our hero keyword | **Increase TOS +22%** — defend position temporarily |
 | Campaign idle (LOW BID) for >14 days | **Flag for cleanup** — pause or increase bid to re-enter |
+| Campaign with 0 orders in a single week | **Do NOT pause.** Check 30-60 day performance first. May just be a rough patch. |
+
+### Step 4b: Placement Health Classification
+
+**For every campaign with meaningful spend, classify its placement health before deciding which lever to pull.**
+
+The SOP Decision Matrix above determines **how much** to change. This step determines **which lever** to pull (TOS modifier vs default bid vs ROS/PP modifier).
+
+#### Input Data Per Campaign
+
+Pull from the `sp_placements` report (or weekly snapshot) and `list_sp_campaigns`:
+
+- **Per-placement ACoS, CVR, spend share, order share** — from `sp_placements` report
+- **Current TOS/ROS/PP modifier percentages** — from `list_sp_campaigns` → `placementBidding`
+
+#### Placement Health Categories
+
+| Classification | What It Means | Which Lever |
+|---|---|---|
+| **TOS DOMINANT** | TOS is efficient (below stage target ACoS) and drives most orders | Scale via TOS modifier. Never lower default bid. |
+| **TOS EFFICIENT / ROS-PP BLEEDING** | TOS ACoS is below target, but ROS and/or PP ACoS are significantly above target | Lower default bid to shrink ROS/PP. Keep or increase TOS modifier. |
+| **TOS BLEEDING / ROS-PP EFFICIENT** | TOS ACoS is significantly above target, but ROS and/or PP are below target | Lower TOS modifier. Optionally add ROS/PP modifiers. |
+| **ALL EFFICIENT** | All three placements are within stage target ACoS | Hold or scale budget. If scaling: increase TOS modifier. |
+| **ALL BLEEDING** | All three placements are above stage target ACoS | **Not a bid problem.** Flag for listing/targeting review. Do not adjust bids. |
+| **INSUFFICIENT DATA** | Not enough clicks or spend on one or more placements to classify | Hold and revisit next run. |
+
+**How to classify:** Compare each placement's ACoS and CVR against the portfolio's stage target. The **relative performance between placements** determines the classification, not absolute numbers. What matters is which placements are working and which are not.
+
+#### Applying the Classification
+
+For each campaign:
+
+1. Read current TOS modifier % from `list_sp_campaigns` → `placementBidding`
+2. Read placement performance from `sp_placements` report (or weekly snapshot `placement.per_campaign_health`)
+3. Classify using the table above
+4. Combine with SOP matrix recommendation:
+
+| SOP Matrix Says | Placement Health Says | Final Action |
+|---|---|---|
+| **Scale** | TOS DOMINANT or ALL EFFICIENT | Increase TOS modifier |
+| **Scale** | TOS BLEEDING | Do not scale TOS. Investigate why TOS is underperforming. |
+| **Concerning / Bleeding** | TOS EFFICIENT / ROS-PP BLEEDING | Lower default bid (not TOS modifier — TOS is working) |
+| **Concerning / Bleeding** | TOS BLEEDING / ROS-PP EFFICIENT | Lower TOS modifier |
+| **Concerning / Bleeding** | ALL BLEEDING | Do not adjust bids. Flag listing/targeting issue. |
+| **Harvest** | TOS DOMINANT | Reduce TOS modifier to capture profit |
+| Any | INSUFFICIENT DATA | Hold — not enough placement data to act on |
+
+#### Lever Selection Summary
+
+**TOS modifier (primary lever) — use for:**
+- Scaling efficient campaigns UP
+- Defending hero keyword rank (rank drops)
+- Deal prep (increase for high-converting deal traffic)
+- New campaign setup (start high)
+
+**Default bid decrease (secondary lever) — use for:**
+- ROS/PP bleeding while TOS is efficient (lower default bid shrinks ROS/PP; TOS modifier keeps TOS stable)
+- Overall spend reduction needed across all placements
+- Campaign-wide profitability emergency (default bid is the "pull everything back" lever)
+
+**ROS/PP modifier increase (rare, tertiary lever) — use for:**
+- TOS bleeding but ROS/PP converting well (uncommon)
+- Product Pages driving strong CVR on specific ASINs
+
+---
 
 #### Deal Coordination Mode (SOP Section 14)
 
@@ -227,6 +335,16 @@ Use Amazon's recommendation as a **reference point**, not as the final bid. The 
 **Campaigns analyzed:** {N}
 **Campaigns with recommended changes:** {N}
 **Campaigns on hold (no change):** {N}
+
+---
+
+## Placement Health Summary
+
+| Campaign | Portfolio | TOS ACoS | ROS ACoS | PP ACoS | TOS Spend% | Current TOS% | Health | Lever |
+|----------|-----------|----------|----------|---------|------------|--------------|--------|-------|
+| {name} | {portfolio} | X% | X% | X% | X% | X% | {classification} | TOS modifier / Default bid / Hold |
+
+**Health Distribution:** {N} TOS Dominant, {N} TOS Eff/ROS Bleed, {N} TOS Bleeding, {N} All Efficient, {N} All Bleeding, {N} Insufficient Data
 
 ---
 
@@ -350,7 +468,7 @@ After user approval:
    )
    ```
 
-3. **Ad group-level base bid changes (use only for overall bid decreases or pausing):**
+3. **Default bid changes (use per TOS-First Philosophy — see Step 4b for when):**
    ```
    update_sp_ad_groups(
        ad_groups=[
@@ -359,8 +477,31 @@ After user approval:
        marketplace="US"
    )
    ```
-   **Note:** Per SOP, bid *increases* go through TOS placement modifiers (item 1 above).
-   Use `defaultBid` decreases only when reducing overall spend, not for ranking plays.
+   **Per TOS-First Philosophy, default bid changes are the SECONDARY lever:**
+   - **Lower default bid** when placement health = TOS EFFICIENT / ROS-PP BLEEDING (shrinks ROS/PP while TOS modifier maintains TOS)
+   - **Lower default bid** for campaign-wide spend emergencies
+   - **Never increase default bid to scale** — use TOS modifier increase instead
+   - Always log the `placement_health` classification that justified this lever choice
+
+4. **ROS/PP placement modifier changes (rare — see Step 4b lever selection):**
+   ```
+   update_sp_campaigns(
+       campaigns=[
+           {
+               "campaignId": "{id}",
+               "dynamicBidding": {
+                   "strategy": "LEGACY_FOR_SALES",
+                   "placementBidding": [
+                       {"placement": "PLACEMENT_REST_OF_SEARCH", "percentage": {new_ros_percentage}},
+                       {"placement": "PLACEMENT_PRODUCT_PAGE", "percentage": {new_pp_percentage}}
+                   ]
+               }
+           }
+       ],
+       marketplace="US"
+   )
+   ```
+   Only used when TOS is bleeding but ROS/PP are converting well (TOS BLEEDING / ROS-PP EFFICIENT classification).
 
 4. **Keyword-level pauses:**
    ```
@@ -392,10 +533,17 @@ After user approval:
     {
       "campaign_name": "...",
       "campaign_id": "...",
-      "change_type": "bid_decrease",
-      "previous_value": 0,
-      "new_value": 0,
-      "reason": "ACoS 52% in Scaling portfolio, SOP: decrease -30%",
+      "change_type": "tos_modifier_increase",
+      "lever": "tos_modifier",
+      "placement_health": "TOS_DOMINANT",
+      "tos_acos": 0,
+      "ros_acos": 0,
+      "pp_acos": 0,
+      "previous_tos_modifier": 0,
+      "new_tos_modifier": 0,
+      "previous_default_bid": 0,
+      "new_default_bid": 0,
+      "reason": "TOS DOMINANT — scaling efficient campaign via TOS modifier",
       "status": "success"
     }
   ],

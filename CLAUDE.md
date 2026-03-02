@@ -176,6 +176,8 @@ Claude Code Workspace/
 │       ├── ppc-bid-recommender/      # SOP-based bid adjustment recommendations
 │       ├── ppc-search-term-harvester/ # Reactive search term harvesting (NEGATE/PROMOTE/DISCOVER)
 │       ├── ppc-portfolio-summary/    # Portfolio-level performance summary + structure audit
+│       ├── ppc-campaign-creator/        # Proposes + creates PPC campaigns from upstream signals
+│       ├── keyword-rank-optimizer/   # PPC spend vs organic rank cross-reference
 │       ├── ppc-monthly-review/       # Monthly strategic PPC review
 │       ├── negative-keyword-generator/  # Proactive negative keyword generation from product knowledge
 │       ├── customer-review-analyzer/  # Amazon review analysis for our products + competitors
@@ -192,7 +194,7 @@ Claude Code Workspace/
 │   │   └── server.py
 │   ├── amazon-sp-api/     # Amazon SP-API (orders, catalog, inventory, pricing, reports)
 │   │   └── server.py
-│   ├── amazon-ads-api/    # Amazon Ads API (campaigns, keywords, targeting, reports, 27 tools)
+│   ├── amazon-ads-api/    # Amazon Ads API (campaigns, keywords, targeting, product ads, reports, 29 tools)
 │   │   └── server.py
 │   ├── notion/            # Notion API server (pages, blocks, databases, 28 tools)
 │   │   └── server.py
@@ -232,6 +234,8 @@ Claude Code Workspace/
 | "Adjust bids" / "Bid recommendations" / "Bid review" | → `.claude/skills/ppc-agent/` (routes to ppc-bid-recommender) |
 | "Portfolio check" / "Portfolio health" / "Portfolio flags" | → `.claude/skills/ppc-agent/` (routes to ppc-portfolio-summary) |
 | "Harvest search terms" / "Negate and promote" / "Search term review" | → `.claude/skills/ppc-agent/` (routes to ppc-search-term-harvester) |
+| "Create campaigns" / "Campaign creator" / "Build campaigns" / "New campaigns" | → `.claude/skills/ppc-agent/` (routes to ppc-campaign-creator) |
+| "Rank optimizer" / "Rank vs spend" / "Keyword rank analysis" / "PPC rank check" | → `.claude/skills/ppc-agent/` (routes to keyword-rank-optimizer) |
 | "Monthly PPC" / "Monthly review" / "PPC month" | → `.claude/skills/ppc-agent/` (routes to ppc-monthly-review) |
 | "Weekly PPC" / "PPC analysis" / "Campaign analysis" | → `.claude/skills/weekly-ppc-analysis/` (standalone) |
 | "Search term analysis" / "Keyword mining" | → `.claude/skills/weekly-ppc-analysis/` |
@@ -258,7 +262,7 @@ Claude Code Workspace/
 | **Seller Board** | Sales, profit, inventory, PPC, daily dashboard (6 CSV reports) | ⚙️ Configured |
 | **DataDive** | Keyword rank tracking, competitor data, search volume, niche research (12 tools) | ⚙️ Configured |
 | **Amazon SP-API** | Orders, catalog, inventory, pricing, reports — direct Amazon data (13 tools) | ⚙️ Configured |
-| **Amazon Ads API** | Campaign management, keywords, targeting, negative keywords, bid recs, async reports (27 tools) | ⚙️ Configured |
+| **Amazon Ads API** | Campaign management, keywords, targeting, product ads, negative keywords, bid recs, async reports (29 tools) | ⚙️ Configured |
 
 **Apify MCP Server** (`mcp-servers/apify/server.py`):
 
@@ -390,6 +394,8 @@ Custom Python MCP server for Amazon Advertising API (SP/SB/SD campaigns). Auth: 
 | `list_sp_campaign_negative_keywords` | SP Negatives | Campaign level negatives |
 | `create_sp_campaign_negative_keywords` | SP Negatives | Create campaign level negatives |
 | `list_sp_targets` | SP Targeting | ASIN/category targets |
+| `list_sp_product_ads` | SP Product Ads | List advertised ASINs in ad groups |
+| `manage_sp_product_ads` | SP Product Ads | Create or update product ads (ASIN associations) |
 | `manage_sp_targets` | SP Targeting | Create or update product targets |
 | `manage_sp_negative_targets` | SP Targeting | Create or list negative targets |
 | `get_sp_bid_recommendations` | SP Bids | Suggested bids by competitiveness |

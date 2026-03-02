@@ -169,6 +169,18 @@
 **Root cause:** Running server uses old code (`GET /v2/portfolios`), fixed code uses `POST /portfolios/list`. Server not restarted.
 **Workaround:** Extract portfolioIds from `list_sp_campaigns` with name filters (works but slower).
 
+### 7. RULE: Never pause a campaign based on a single week of zero conversions
+**Impact:** HIGH — Premature pausing kills campaigns that may just be in a rough patch.
+**Rule:** Always check a longer timeframe (minimum 30 days, ideally 60 days) before recommending a pause. Only recommend pausing if the campaign shows sustained poor performance over the longer timeframe.
+
+### 8. RULE: Never use round/organized bid amounts
+**Impact:** MEDIUM — Predictable bid patterns reduce competitiveness in Amazon's auction dynamics.
+**Rule:** When lowering or placing bids, never use clean percentages like -30%, -50%. Always use slightly irregular amounts like -31%, -48%, -52%, -27%.
+
+### 9. RULE: Never negate a search term based on a single week of zero conversions
+**Impact:** HIGH — Premature negation kills search terms that may convert in other weeks.
+**Rule:** Always check a minimum 30-day window of data before recommending a search term for negation. A search term with zero orders in one week might convert in other weeks. Only recommend negating if the search term shows sustained zero conversions AND is clearly irrelevant to the product over the full 30-day window.
+
 ### 4. Seller Board vs PPC date range mismatch
 **Impact:** LOW — TACoS calculation uses slightly different windows.
 **Fix needed:** Either pass explicit date params to Seller Board (if supported) or accept ±2 day mismatch.

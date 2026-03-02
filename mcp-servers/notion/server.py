@@ -1181,7 +1181,7 @@ async def get_block(block_id: str) -> str:
 
 
 @mcp.tool()
-async def append_blocks(parent_id: str, blocks_json: str) -> str:
+async def append_blocks(parent_id: str, blocks_json: str, after: str = "") -> str:
     """Append block children to a page or block using raw Notion block JSON.
     Auto-chunks into batches of 100 if needed.
     For simpler content creation, use append_markdown instead.
@@ -1189,6 +1189,7 @@ async def append_blocks(parent_id: str, blocks_json: str) -> str:
     Args:
         parent_id: Page ID or block ID to append to.
         blocks_json: JSON string of block objects (Notion block format).
+        after: Optional block ID to insert after. New blocks appear immediately after this block.
     """
     pid = _normalize_id(parent_id)
 
@@ -1203,18 +1204,26 @@ async def append_blocks(parent_id: str, blocks_json: str) -> str:
     total = len(blocks)
     chunks = _chunk_blocks(blocks)
     appended = 0
+    after_id = _normalize_id(after) if after else None
 
     for chunk in chunks:
-        result = await api_patch(f"/blocks/{pid}/children", {"children": chunk})
+        body: dict = {"children": chunk}
+        if after_id:
+            body["after"] = after_id
+            after_id = None  # only first chunk uses after; subsequent chunks append naturally
+        result = await api_patch(f"/blocks/{pid}/children", body)
         if isinstance(result, str):
             return f"Error after appending {appended}/{total} blocks: {result}"
+        # Track last block ID for subsequent chunks
+        if result.get("results"):
+            after_id = result["results"][-1]["id"]
         appended += len(chunk)
 
     return f"## Blocks Appended\n\n- **Parent:** {pid}\n- **Blocks appended:** {appended}\n"
 
 
 @mcp.tool()
-async def append_markdown(parent_id: str, markdown: str) -> str:
+async def append_markdown(parent_id: str, markdown: str, after: str = "") -> str:
     """Convert simplified markdown to Notion blocks and append to a page or block.
     This is the primary content creation tool. Auto-chunks at 100 blocks.
 
@@ -1225,6 +1234,7 @@ async def append_markdown(parent_id: str, markdown: str) -> str:
     Args:
         parent_id: Page ID or block ID to append to.
         markdown: Content in simplified markdown format.
+        after: Optional block ID to insert after. New blocks appear immediately after this block.
     """
     pid = _normalize_id(parent_id)
     blocks = _parse_markdown(markdown)
@@ -1235,11 +1245,18 @@ async def append_markdown(parent_id: str, markdown: str) -> str:
     total = len(blocks)
     chunks = _chunk_blocks(blocks)
     appended = 0
+    after_id = _normalize_id(after) if after else None
 
     for chunk in chunks:
-        result = await api_patch(f"/blocks/{pid}/children", {"children": chunk})
+        body: dict = {"children": chunk}
+        if after_id:
+            body["after"] = after_id
+            after_id = None
+        result = await api_patch(f"/blocks/{pid}/children", body)
         if isinstance(result, str):
             return f"Error after appending {appended}/{total} blocks: {result}"
+        if result.get("results"):
+            after_id = result["results"][-1]["id"]
         appended += len(chunk)
 
     return f"## Markdown Appended\n\n- **Parent:** {pid}\n- **Blocks created:** {appended}\n"
