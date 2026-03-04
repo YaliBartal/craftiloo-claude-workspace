@@ -1,0 +1,12 @@
+## 6. Naming Convention (Strict Standard)
+Format:
+Portfolio Nickname – SPM/A / Campaign Type – Keyword Structure – Placement
+Example:
+latch hook pillow – SPM SK latch hook kits for kids TOS
+Breakdown:
+- Portfolio Nickname: latch hook pillow
+- SPM: Sponsored Products Manual (use "SPA" for Auto campaigns)
+- SK: Single Keyword (use "MK" for Multi Keyword same root)
+- Keyword: latch hook kits for kids
+- TOS: Top of Search focused
+Naming clarity is non-negotiable. Campaign intent must be obvious without opening it.

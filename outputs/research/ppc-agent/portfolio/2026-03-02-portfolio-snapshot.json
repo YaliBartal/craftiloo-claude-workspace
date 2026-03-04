@@ -1,0 +1,37 @@
+{
+  "date": "2026-03-02",
+  "data_source": "weekly_snapshot_2026-03-01 + live_campaigns_2026-03-02",
+  "portfolios": [
+    {"name": ".Catch All Auto", "stage": "General", "acos": 26.3, "cvr": 10.2, "spend": 844.89, "orders": 140, "status": "HEALTHY", "campaign_count": 6, "campaign_types": {"auto": 5, "other": 1}, "structure_complete": true, "missing_types": [], "idle_campaigns": 0, "vs_weekly": "baseline"},
+    {"name": "Cross Stitch Hero", "stage": "Scaling", "acos": 26.3, "cvr": 11.3, "spend": 421.88, "orders": 74, "status": "HEALTHY", "campaign_count": 14, "campaign_types": {"auto": 1, "broad": 2, "sk": 3, "mk": 1, "shield": 1, "other": 2}, "structure_complete": true, "missing_types": [], "idle_campaigns": 4, "vs_weekly": "baseline"},
+    {"name": "Shield All", "stage": "General", "acos": 29.7, "cvr": 11.5, "spend": 157.32, "orders": 23, "status": "HEALTHY", "campaign_count": 4, "campaign_types": {"shield": 4}, "structure_complete": true, "missing_types": [], "idle_campaigns": 0, "vs_weekly": "baseline"},
+    {"name": "Cross & Embroidery Kits", "stage": "Launch", "acos": 39.1, "cvr": 8.3, "spend": 175.46, "orders": 22, "status": "HEALTHY", "campaign_count": 7, "campaign_types": {"auto": 1, "broad": 1, "sk": 3, "mk": 2}, "structure_complete": true, "missing_types": [], "idle_campaigns": 0, "vs_weekly": "baseline"},
+    {"name": "Biggie Beads", "stage": "Scaling", "acos": 31.1, "cvr": 9.8, "spend": 263.79, "orders": 32, "status": "NEEDS ATTENTION", "campaign_count": 5, "campaign_types": {"auto": 1, "sk": 2, "mk": 2}, "structure_complete": false, "missing_types": ["Broad"], "idle_campaigns": 0, "vs_weekly": "baseline"},
+    {"name": "Latch Hook Kits", "stage": "Scaling", "acos": 33.7, "cvr": 8.9, "spend": 201.78, "orders": 24, "status": "NEEDS ATTENTION", "campaign_count": 12, "campaign_types": {"auto": 1, "sk": 8, "mk": 1, "pt": 2}, "structure_complete": false, "missing_types": ["Broad"], "idle_campaigns": 0, "vs_weekly": "baseline"},
+    {"name": "Fuse Beads", "stage": "Scaling", "acos": 36.0, "cvr": 7.3, "spend": 872.80, "orders": 73, "status": "NEEDS ATTENTION", "campaign_count": 14, "campaign_types": {"auto": 1, "sk": 6, "mk": 3, "pt": 1}, "structure_complete": false, "missing_types": ["Broad"], "idle_campaigns": 3, "vs_weekly": "baseline"},
+    {"name": "Fairy Family", "stage": "Scaling", "acos": 39.8, "cvr": 8.5, "spend": 569.41, "orders": 64, "status": "NEEDS ATTENTION", "campaign_count": 20, "campaign_types": {"auto": 1, "sk": 7, "mk": 4, "pt": 1}, "structure_complete": false, "missing_types": ["Broad"], "idle_campaigns": 7, "vs_weekly": "baseline"},
+    {"name": "Latch Hook Pillow", "stage": "Launch", "acos": 49.0, "cvr": 7.0, "spend": 281.62, "orders": 22, "status": "NEEDS ATTENTION", "campaign_count": 10, "campaign_types": {"auto": 1, "broad": 1, "sk": 7, "pt": 1}, "structure_complete": true, "missing_types": [], "idle_campaigns": 0, "vs_weekly": "baseline"},
+    {"name": "Cat & Hat Knitting", "stage": "Launch", "acos": 51.7, "cvr": 6.4, "spend": 276.48, "orders": 21, "status": "NEEDS ATTENTION", "campaign_count": 12, "campaign_types": {"auto": 1, "broad": 1, "sk": 4, "pt": 6}, "structure_complete": true, "missing_types": [], "idle_campaigns": 0, "vs_weekly": "baseline"},
+    {"name": "Needlepoint", "stage": "Scaling", "acos": 56.8, "cvr": 6.1, "spend": 142.34, "orders": 13, "status": "RED FLAG", "campaign_count": 5, "campaign_types": {"auto": 1, "sk": 3, "mk": 1}, "structure_complete": false, "missing_types": ["Broad"], "idle_campaigns": 0, "vs_weekly": "baseline"},
+    {"name": "Bunny Knitting", "stage": "Scaling", "acos": 61.2, "cvr": 5.5, "spend": 56.30, "orders": 4, "status": "RED FLAG", "campaign_count": 0, "campaign_types": {}, "structure_complete": false, "missing_types": ["Auto", "Broad", "SK"], "idle_campaigns": 0, "vs_weekly": "baseline"},
+    {"name": "Embroidery for Kids", "stage": "Scaling", "acos": 61.3, "cvr": 5.8, "spend": 331.51, "orders": 23, "status": "RED FLAG", "campaign_count": 8, "campaign_types": {"sk": 2, "mk": 1, "pt": 1}, "structure_complete": false, "missing_types": ["Auto", "Broad"], "idle_campaigns": 4, "vs_weekly": "baseline"},
+    {"name": "4 Flowers Embroidery", "stage": "Scaling", "acos": 67.3, "cvr": 5.0, "spend": 230.09, "orders": 14, "status": "RED FLAG", "campaign_count": 7, "campaign_types": {"sk": 2, "mk": 1, "pt": 2, "shield": 1, "other": 1}, "structure_complete": false, "missing_types": ["Auto", "Broad"], "idle_campaigns": 0, "vs_weekly": "baseline"},
+    {"name": "Princess Lacing", "stage": "Scaling", "acos": 67.9, "cvr": 5.3, "spend": 351.35, "orders": 24, "status": "RED FLAG", "campaign_count": 8, "campaign_types": {"auto": 1, "sk": 5, "mk": 1, "pt": 1}, "structure_complete": false, "missing_types": ["Broad"], "idle_campaigns": 0, "vs_weekly": "baseline"},
+    {"name": "Dessert Family", "stage": "Scaling", "acos": 72.3, "cvr": 4.2, "spend": 96.35, "orders": 6, "status": "RED FLAG", "campaign_count": 4, "campaign_types": {"sk": 2, "mk": 2}, "structure_complete": false, "missing_types": ["Auto", "Broad"], "idle_campaigns": 0, "vs_weekly": "baseline", "note": "PAUSED 2026-03-02 — restock in ~2 weeks"},
+    {"name": "Punch Needle", "stage": "Scaling", "acos": 43.4, "cvr": 4.0, "spend": 8.67, "orders": 1, "status": "LOW VOLUME", "campaign_count": 2, "campaign_types": {"sk": 2}, "structure_complete": false, "missing_types": ["Auto", "Broad"], "idle_campaigns": 0, "vs_weekly": "baseline"},
+    {"name": "Ballerina", "stage": "Scaling", "acos": 31.2, "cvr": 3.3, "spend": 8.43, "orders": 1, "status": "LOW VOLUME", "campaign_count": 0, "campaign_types": {}, "structure_complete": false, "missing_types": ["Auto", "Broad", "SK"], "idle_campaigns": 0, "vs_weekly": "baseline"}
+  ],
+  "account_totals": {
+    "spend": 5290.47,
+    "sales": 14125.43,
+    "acos": 37.5,
+    "orders": 581
+  },
+  "red_flag_count": 6,
+  "needs_attention_count": 6,
+  "healthy_count": 4,
+  "low_volume_count": 2,
+  "dormant_campaign_count": 31,
+  "missing_broad_count": 9,
+  "new_campaigns_this_week": 0
+}

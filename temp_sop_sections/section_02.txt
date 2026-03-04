@@ -1,0 +1,10 @@
+## 1. Daily Operating Routine (Baseline Control)
+### 1.1 Business Reality Check – Sellerboard
+Before touching PPC:
+- Review total sales vs ad spend
+- Identify product-level performance
+- Evaluate spend efficiency by ASIN
+- Track BSR movement
+- Note active deals, coupons, or promotions
+Purpose:
+Validate whether PPC behavior aligns with business performance. Identify external factors affecting conversion or velocity.

@@ -22,13 +22,55 @@
 
 ## Run Log
 
-_No runs logged yet._
+### Run: 2026-03-02
+**Product:** 4 Embroidery Flowers Kit (B0DC69M3YD / EK17)
+**Mode:** Rewrite based on Listing Optimizer audit (not from-scratch)
+**Goals:**
+- [x] Generate 3 title options with keyword placement rationale
+- [x] Generate 5 recommended bullets with alternatives for each
+- [x] Generate 2 description options (full + mobile-friendly)
+- [x] Generate backend keywords (247/249 bytes)
+- [x] Upload to Notion under Product Listing Development
+- [ ] Scrape competitor Q&A (product scraper doesn't return Q&A — used competitor bullets + web search instead)
+
+**Result:** ✅ Success
+
+**What worked:**
+- Using the listing-optimizer audit report as input saved massive time — no need to redo competitor research, keyword gaps, or rank radar analysis
+- Competitor bullet scraping via `saswave~amazon-product-scraper` confirmed all 3 competitor bullet sets
+- Keyword placement map ties each keyword to specific title/bullet/backend location with search volume
+- Notion upload successful (109 blocks, page ID: 31757318-d05c-816b-9f38-db4da7e7c6e5)
+- All measurements in inches per US market rule
+
+**What didn't work:**
+1. **Apify product scraper doesn't include Q&A sections** — `saswave~amazon-product-scraper` returns title, bullets, price, BSR but NOT customer questions. Searched for dedicated Q&A scraper (`epctex/amazon-questions-answers-scraper`) but it didn't appear in Apify store search results
+2. **Workaround:** Used competitor bullet themes + web search for common embroidery kit questions. Mapped these to bullet answers successfully
+
+**Is this a repeat error?** No — first run
+
+**Lessons learned:**
+- When a listing-optimizer audit exists, use it as primary input — saves 50%+ tokens
+- `saswave~amazon-product-scraper` does NOT include Q&A data — need a different actor or manual web scraping for customer questions
+- Competitor bullets are nearly as useful as Q&A for understanding customer concerns — every competitor's bullets are written to answer the same questions
+- Product catalog discrepancy: products.md says "4 threaders" but hero-products.md says "2 needle threaders" — need user to verify
+
+**Tokens/cost:** ~45K tokens, ~$0.04 Apify (3 competitor scrapes)
 
 ---
 
 ## Known Issues
 
-_None yet._
+### 1. Apify product scraper does not include customer Q&A
+- **First seen:** 2026-03-02
+- **Details:** `saswave~amazon-product-scraper` returns product data but no Q&A. Dedicated scraper `epctex/amazon-questions-answers-scraper` not found in Apify store search.
+- **Workaround:** Use competitor bullets + web search to infer top customer questions. Map to bullet answers.
+- **TODO:** Search Apify store more thoroughly or try direct URL scraping of Amazon Q&A pages
+
+### 2. Product catalog discrepancy — threader count
+- **First seen:** 2026-03-02
+- **Details:** `context/products.md` says EK17 has "4 threaders" but `context/hero-products.md` says "2 needle threaders"
+- **Impact:** Bullet 1 may have wrong count
+- **Fix:** Ask user to verify actual kit contents
 
 ---
 

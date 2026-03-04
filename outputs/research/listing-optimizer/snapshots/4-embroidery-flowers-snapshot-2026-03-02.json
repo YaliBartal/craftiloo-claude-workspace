@@ -1,0 +1,100 @@
+{
+  "date": "2026-03-02",
+  "mode": "single_audit",
+  "product": {
+    "name": "4 Embroidery Flowers Kit",
+    "asin": "B0DC69M3YD",
+    "category": "Embroidery Kits (Adults/Beginners)",
+    "niche_id": "gfot2FZUBU",
+    "sku": "EK17",
+    "price": 28.98
+  },
+  "ranking_juice": {
+    "our_title_score": 5412,
+    "our_bullets_score": 468,
+    "our_description_score": 0,
+    "our_overall_score": 17172,
+    "optimized_title_max": 43325,
+    "optimized_bullets_max": 16329,
+    "optimized_description_max": 9844,
+    "optimized_overall_max": 172477,
+    "title_pct": 12.5,
+    "bullets_pct": 2.9,
+    "description_pct": 0.0,
+    "overall_pct": 10.0,
+    "our_rank_in_niche": 10,
+    "niche_total_products": 11,
+    "top_5_competitors": [
+      {"asin": "B08DDJCQKF", "overall_score": 109617, "title_score": 25549, "bullets_score": 16485, "description_score": 0},
+      {"asin": "B0FK57P8PV", "overall_score": 94599, "title_score": 28851, "bullets_score": 4023, "description_score": 0},
+      {"asin": "B09X55KL2C", "overall_score": 85725, "title_score": 27987, "bullets_score": 882, "description_score": 0},
+      {"asin": "B0DP654CSV", "overall_score": 60346, "title_score": 18480, "bullets_score": 2453, "description_score": 0},
+      {"asin": "B0D75S8P78", "overall_score": 59013, "title_score": 18575, "bullets_score": 1644, "description_score": 0}
+    ]
+  },
+  "rank_radar": {
+    "total_keywords_tracked": 67,
+    "keywords_analyzed": 50,
+    "top_10_count": 1,
+    "top_10_sv": 250,
+    "top_50_count": 38,
+    "top_50_sv": 218081,
+    "declining_count": 27,
+    "declining_pct": 54,
+    "improving_count": 7,
+    "improving_pct": 14,
+    "stable_count": 16,
+    "stable_pct": 32,
+    "avg_rank_early": 48.1,
+    "avg_rank_recent": 54.8,
+    "rank_change": 6.8,
+    "trend": "WORSENING"
+  },
+  "performance": {
+    "jan_2026": {
+      "total_sales": 49.96,
+      "organic_sales": 0.00,
+      "ppc_sales": 49.96,
+      "units": 2,
+      "sessions": 152,
+      "cvr": 1.32,
+      "ad_spend": 69.39,
+      "net_profit": -46.07,
+      "margin": -92.21,
+      "real_acos": 138.89
+    },
+    "feb_2026": {
+      "total_sales": 149.88,
+      "organic_sales": 99.92,
+      "ppc_sales": 49.96,
+      "units": 6,
+      "sessions": 129,
+      "cvr": 4.65,
+      "ad_spend": 66.73,
+      "net_profit": -15.11,
+      "margin": -10.08,
+      "real_acos": 44.52
+    },
+    "combined": {
+      "total_sales": 199.84,
+      "total_units": 8,
+      "total_ad_spend": 136.12,
+      "total_net_profit": -61.18,
+      "avg_cvr": 2.85,
+      "ppc_dependency": 50.0
+    }
+  },
+  "competitors": {
+    "CYANFOUR_B0CZHKSSL4": {"bsr": 235, "emb_rank": 1, "stars": 4.4, "reviews": 1309, "price_usd": 14.50},
+    "ETSPIL_B0C3ZVKB46": {"bsr": 731, "emb_rank": 2, "stars": 4.4, "reviews": 2047, "price_usd": 18.00},
+    "CYANFOUR_B0DMHY2HF3": {"bsr": 1019, "emb_rank": 3, "stars": 4.4, "reviews": 319, "price_usd": 16.00},
+    "Bradove_B0B762JW55": {"bsr": 1781, "emb_rank": 4, "stars": 4.6, "reviews": 1982, "price_usd": 24.98},
+    "Santune_B0BB9N74SG": {"bsr": 2019, "emb_rank": 5, "stars": 4.6, "reviews": 2849, "price_usd": 22.00}
+  },
+  "listing_copy": {
+    "title": "CRAFTILOO 4 Pack Embroidery Kit for Beginners Stamped Cross Stitch Kits for Beginners Needlepoint Kits for Adults Sunflower Cross Stitch Embroidery Kits Needlework Kit DIY Crafts for Woman",
+    "description": "Embroidery Kit",
+    "bullets_available": false,
+    "price": 28.98
+  }
+}

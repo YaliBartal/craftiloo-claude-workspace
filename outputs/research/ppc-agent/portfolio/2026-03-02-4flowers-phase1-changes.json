@@ -1,0 +1,76 @@
+{
+  "date": "2026-03-02",
+  "portfolio": "4 Flowers Embroidery",
+  "portfolio_id": "110971277744354",
+  "hero_asin": "B0DC69M3YD",
+  "phase": "Phase 1 — Emergency Stabilization",
+  "context": {
+    "acos_7d": 67.3,
+    "acos_target": "28-32%",
+    "stage": "Scaling",
+    "status": "RED FLAG",
+    "rank_trend": "SEVERE DECLINE (-209 net positions)",
+    "organic_sales_ratio": "<10%",
+    "keywords_top_10": 0,
+    "keywords_top_20": 6,
+    "keywords_tracked": 67,
+    "diagnosis": "Death spiral — organic ranks collapsing, Auto+Broad paused killing discovery, PPC carrying all sales"
+  },
+  "changes_applied": [
+    {
+      "action": "RE-ENABLED Auto campaign",
+      "campaign_id": "315988388205283",
+      "campaign_name": "4 flowers - SPA Auto",
+      "previous_state": "PAUSED",
+      "new_state": "ENABLED",
+      "budget": 5.0,
+      "ad_group_id": "304409576676327",
+      "default_bid": 0.31,
+      "previous_bid": 0.26,
+      "reason": "Restart keyword discovery — no new search terms found while paused"
+    },
+    {
+      "action": "RE-ENABLED Broad campaign",
+      "campaign_id": "513250035569495",
+      "campaign_name": "4 flowers - SPM MK Broad TOS",
+      "previous_state": "PAUSED",
+      "new_state": "ENABLED",
+      "budget": 5.0,
+      "ad_group_id": "402432355816524",
+      "default_bid": 0.27,
+      "previous_bid": 0.27,
+      "reason": "Broad match finds phrase variations Auto misses — restarts keyword pipeline"
+    },
+    {
+      "action": "INCREASED SK keyword bid",
+      "campaign_id": "483417459201567",
+      "campaign_name": "4 flowers - SPM SK beginners embroidery kit for adults TOS",
+      "keyword_id": "562753113852099",
+      "keyword": "beginners embroidery kit for adults",
+      "match_type": "EXACT",
+      "previous_bid": 0.38,
+      "new_bid": 0.43,
+      "reason": "Defend rank #11 — one of only 6 remaining top-20 positions"
+    }
+  ],
+  "budget_impact": {
+    "additional_daily_budget": 10.5,
+    "additional_weekly_estimate": 73.0,
+    "note": "Auto $5/day + Broad $5/day + SK bid increase ~$0.50/day"
+  },
+  "campaigns_now_enabled": 9,
+  "campaigns_previously_enabled": 7,
+  "not_changed": [
+    "SK embroidery starter kit beginner (310858826990920) — $0.59 bid, kept as-is",
+    "MK broad ultra targeted (377667215373720) — no bid cuts per user decision",
+    "Defence brand KW (476503955320337) — protective, unchanged",
+    "Shield brand self target (328307551065979) — protective, unchanged",
+    "PT Category (432225410295477) — $0.15, unchanged",
+    "PT Brand ASINs (342533675718898) — $0.40, unchanged"
+  ],
+  "next_steps": {
+    "7_days": "Search term harvest — review Auto+Broad discovery results",
+    "14_days": "Bid review + rank check via DataDive",
+    "if_ranks_decline": "Listing audit via listing-optimizer skill"
+  }
+}

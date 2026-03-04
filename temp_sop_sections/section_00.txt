@@ -1,0 +1,17 @@
+## PPC
+
+- **ID:** 2f157318-d05c-80a0-bea1-e2bb31a1f00d
+- **URL:** https://www.notion.so/PPC-2f157318d05c80a0bea1e2bb31a1f00d
+- **Created:** 2026-01-23
+- **Last edited:** 2026-01-23
+
+### Properties
+
+- **title:** PPC
+
+### Content
+
+# Amazon PPC Standard Operating Procedure
+Product Type: Subjective
+Objective: Rank, defend, and dominate profitable keywords while controlling spend
+Method: Stage-based campaign structure with controlled progression

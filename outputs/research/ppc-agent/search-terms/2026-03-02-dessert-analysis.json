@@ -1,0 +1,125 @@
+{
+  "date": "2026-03-02",
+  "portfolio": "Dessert Family",
+  "report_period": "2026-01-31 to 2026-03-01",
+  "total_terms": 46,
+  "terms_with_spend": 46,
+  "total_spend": 428.15,
+  "total_sales": 580.88,
+  "total_orders": 26,
+  "p1_negate": [
+    {
+      "term": "sewing for kids",
+      "spend": 49.11,
+      "clicks": 87,
+      "orders": 1,
+      "campaign": "dessert sewing - SPM SK sewing for kids TOS"
+    },
+    {
+      "term": "sewing kit for kids",
+      "spend": 14.02,
+      "clicks": 9,
+      "orders": 0,
+      "campaign": "dessert sewing - SPM MK broad sewing kit root"
+    },
+    {
+      "term": "kids sewing kit",
+      "spend": 12.69,
+      "clicks": 8,
+      "orders": 0,
+      "campaign": "dessert sewing - SPM MK broad sewing kit root"
+    }
+  ],
+  "p2_negate": [
+    {
+      "term": "beginners sewing kit for kids",
+      "spend": 7.04,
+      "clicks": 4,
+      "orders": 0,
+      "campaign": "dessert sewing - SPM SK beginner sewing kit for kids TOS"
+    },
+    {
+      "term": "sewing kids",
+      "spend": 5.38,
+      "clicks": 6,
+      "orders": 0,
+      "campaign": "dessert sewing - SPM SK sewing for kids TOS"
+    },
+    {
+      "term": "sewing kit kids ages 8-12",
+      "spend": 4.54,
+      "clicks": 3,
+      "orders": 0,
+      "campaign": "dessert sewing - SPM SK sewing kit for kids ages 8-12 TOS"
+    },
+    {
+      "term": "sewing kits for kids",
+      "spend": 4.23,
+      "clicks": 3,
+      "orders": 0,
+      "campaign": "dessert sewing - SPM MK broad sewing kit root"
+    },
+    {
+      "term": "sewing kit for kids",
+      "spend": 3.6,
+      "clicks": 5,
+      "orders": 0,
+      "campaign": "dessert sewing - SPM MK broad sewing kit root"
+    },
+    {
+      "term": "kids sewing kits",
+      "spend": 3.42,
+      "clicks": 2,
+      "orders": 0,
+      "campaign": "dessert sewing - SPM MK broad sewing kit root"
+    },
+    {
+      "term": "felt sewing kit",
+      "spend": 2.19,
+      "clicks": 3,
+      "orders": 0,
+      "campaign": "dessert sewing - SPM MK broad sewing kit root"
+    },
+    {
+      "term": "sewing kit for kids age 8-12",
+      "spend": 2.11,
+      "clicks": 1,
+      "orders": 0,
+      "campaign": "dessert sewing - SPM SK sewing kit for kids ages 8-12 TOS"
+    },
+    {
+      "term": "felt sewing kit for kids",
+      "spend": 2.03,
+      "clicks": 2,
+      "orders": 0,
+      "campaign": "dessert sewing - SPM MK broad sewing kit root"
+    }
+  ],
+  "promote": [],
+  "discover": [
+    {
+      "term": "sewing kit for kids 8-12",
+      "spend": 3.85,
+      "clicks": 2,
+      "orders": 1,
+      "acos": 16.8,
+      "campaign": "dessert sewing - SPM SK sewing kit for kids ages 8-12 TOS"
+    },
+    {
+      "term": "sewing kits for 13 year old girls",
+      "spend": 1.71,
+      "clicks": 1,
+      "orders": 1,
+      "acos": 7.4,
+      "campaign": "dessert sewing - SPM MK broad sewing kit root"
+    },
+    {
+      "term": "kids sewing kit",
+      "spend": 0.72,
+      "clicks": 1,
+      "orders": 1,
+      "acos": 4.0,
+      "campaign": "dessert sewing - SPM MK broad sewing kit root"
+    }
+  ]
+}

@@ -72,6 +72,53 @@
 
 ---
 
+### Run: 2026-03-01 (v3) — First run with updated skill
+**Goals:**
+- [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
+- [x] Fetch SP-API Orders for yesterday's revenue/units (2026-02-28)
+- [x] Fetch DataDive Rank Radar data for 9 hero radars (FULL keyword sets, no cap)
+- [x] Fetch DataDive competitor data for 11 niches
+- [x] Run Apify keyword scan — **20 keywords** (expanded from 9) with axesso_data actor
+- [x] Run Apify competitor BSR scan — **34 ASINs** via saswave (NEW — merged into Apify agent)
+- [x] Fetch Seller Board 7-day dashboard aggregates + per-ASIN detailed
+- [x] Compile full report with mandatory format (merged sections)
+- [x] Save snapshot
+- [x] Snapshot discovery logic (find most recent previous snapshot)
+
+**Result:** ✅ Success — All 5 agents completed, 20/20 keywords + 34/34 competitor BSR scans succeeded
+
+**What happened:**
+- All 5 parallel background agents completed successfully
+- **Apify: 20/20 keywords returned data** — first perfect expanded scan. All 11 new keywords worked on first attempt.
+- **Apify: 34/34 competitor BSR scans succeeded** — saswave actor with `amazon_domain: "www.amazon.com"` worked perfectly. First formalized run of Step 4B.
+- SP-API: 160 orders, 172 units, $2,715.65 revenue (Feb 28). B096MYBLS1 null price (5 units, Buy Box suppressed).
+- B09WQSBZY7 **BEST BSR EVER** — 8,903 (-24% vs baseline). 23 top-10 keywords.
+- B096MYBLS1 **FULL ORGANIC COLLAPSE** — all 50 tracked keywords at rank 101. BSR 92,044. 5 units. No Buy Box.
+- B0FQC7YFX6 **fastest improver** — +3 top-10 keywords, #1 on "lacing cards ages 3-5" and "ages 4-8" (sponsored).
+- B0F8DG32H5 improving — "finger knitting kit" jumped 13→4. 18 top-10 keywords. BSR -14.7%.
+- B08FYH13CL recovery FAILED again — BSR +26.9% vs yesterday. #18 on "latch hook kits for kids". Made By Me dominating.
+- Snapshot discovery logic worked — found 2026-02-28.json as previous snapshot (1-day gap).
+- Competitor BSR highlights: CYANFOUR BSR 246 (adult embroidery leader), KRAFUN BSR 538 (sewing leader), veirousa BSR 3,726 (latch hook).
+
+**What didn't work:**
+- **Seller Board detailed report STALE** — URL returned only Jan 28-29 data (over a month old). Used previous snapshot's per-ASIN data (Feb 20-26) as fallback. URL needs manual refresh in Seller Board Settings → Automation → Reports.
+- **DataDive Rank Radar API truncates at 50 keywords** — despite SKILL.md instruction to fetch ALL keywords. The `list_rank_radars` endpoint provides accurate top10/top50 totals (covers all keywords), but `get_rank_radar_data` detail data caps at 50. Radars with >50 keywords (B09WQSBZY7=87, B0F8DG32H5=81, B0DC69M3YD=67) have incomplete movement data.
+- **axesso still doesn't detect badges** — 0 badges detected. Carried forward 3 badges from Feb 28 snapshot (B09X55KL2C OP ×2, B09THLVFZK OP ×1).
+- B07D6D95NG still not found in any DD niche (ongoing).
+
+**Is this a repeat error?** B08FYH13CL latch hook instability continues (recovery failed again). B096MYBLS1 organic collapse escalating. B0DC69M3YD rank crisis continuing (0 top-10 KWs). B07D6D95NG missing from DD niches (ongoing). Axesso badge detection gap (ongoing).
+
+**Lesson learned:**
+- **20-keyword expansion validated** — 20/20 success rate on first run. No empty datasets. axesso handles the expanded set with no issues.
+- **Competitor BSR scan validated** — 34/34 ASINs returned data via saswave. Merging into the Apify agent (instead of 6th agent) works perfectly — both jobs run async in parallel.
+- **Seller Board detailed report URL can go stale** — the `.env` URL has an embedded date range. When it expires, it returns old data silently (no error). Must check the date range in returned data and flag if stale.
+- **Rank Radar 50-keyword API limit is a platform constraint** — cannot fix in SKILL.md instructions. The top10/top50 summary counts from `list_rank_radars` are accurate (cover all keywords), so use those for headline numbers. Movement detail is limited to 50 keywords per radar.
+- Total Apify cost ~$1.95 (20 keywords + 1 BSR batch). Within budget.
+
+**Tokens/cost:** ~100K tokens, ~$1.95 Apify cost
+
+---
+
 ### Run: 2026-03-01
 **Goals:**
 - [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
@@ -132,7 +179,7 @@
 
 ---
 
-### Run: 2026-03-01
+### Run: 2026-03-01 (v1 — igview era + NEW competitor BSR scan)
 **Goals:**
 - [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
 - [x] Fetch SP-API Orders for yesterday's revenue/units (2026-02-28)
@@ -487,49 +534,27 @@
 
 ---
 
-### Run: 2026-02-09
-**Goals:**
-- [ ] Fetch competitor data via Apify API
-- [ ] Generate daily market intel brief
-
-**Result:** ⚠️ Partial
-
-**What happened:**
-- Eventually completed the report after user provided data manually
-
-**What didn't work:**
-- Assumed API access to Apify would work — tried multiple endpoints without checking if data already existed
-- No upfront question — should have asked "where is the scraper output?" immediately
-- Wasted attempts on incorrect API endpoints
-- Didn't check for existing JSON files in outputs/ before fetching
-- Used 60% of context budget on failed API calls
-
-**Is this a repeat error?** No — first run
-
-**Lesson learned:**
-- ASK FIRST: "Do you have fresh scraper data, or should I run a new scrape?"
-- CHECK for existing recent files in outputs/ before fetching via API
-- Don't retry failed API approaches — ask user for guidance immediately
-- Be direct with questions early to save context budget
-
-**Tokens/cost:** ~60% of budget wasted on failed API calls
-
----
-
 ## Known Issues
 
-### Issue: Seller Board Report Tokens Expired (401 Unauthorized) — NEW 2026-03-02
+### Issue: Seller Board Report Tokens Expired (401 Unauthorized)
 - **First seen:** 2026-03-02
-- **Description:** All 5 Seller Board report URLs returned 401 Unauthorized. Tokens embedded in the URLs have expired.
+- **Description:** All 5 Seller Board report URLs returned 401 Unauthorized. Tokens embedded in the URLs have expired. This happened previously in 2026-03-01 v3 (returned stale data) and now returns outright 401.
 - **Fix:** Log into Seller Board → Settings → Automation → Reports → regenerate all 5 report URLs → update `.env` with new values.
 - **Affected:** SELLERBOARD_DAILY_DASHBOARD, SELLERBOARD_SALES_DETAILED, SELLERBOARD_SALES_SUMMARY, SELLERBOARD_INVENTORY_REPORT, SELLERBOARD_PPC_MARKETING.
 - **Workaround:** Carry forward previous SB data — always clearly label as stale. Report works without SB (market data still fully available).
+- **Prevention:** If any SB report returns 401 or stale data, check ALL URLs — they share the same token.
 
-### Issue: FBA Inventory API Shows 0 for Active Products — NEW 2026-03-02
+### Issue: FBA Inventory API Shows 0 for Active Products
 - **First seen:** 2026-03-02
 - **Description:** `get_fba_inventory(asin_filter=...)` returned 0 for B08FYH13CL, B0F8R652FX, B09THLVFZK, B07D6D95NG — all clearly active (ranking, getting sales, BSR intact). API data is wrong.
 - **OOS detection rule (use ALL THREE signals):** Real OOS = 0 inventory + BSR crashing + keywords collapsing. A product showing 0 inventory alone is NOT a confirmed OOS.
 - **Workaround:** When FBA shows 0 but BSR is stable/improving and keywords are ranking, mark as "⚠️ FBA data anomaly — verify in Seller Central" and do NOT alert OOS.
+
+### Issue: DataDive Rank Radar API Truncates at 50 Keywords
+- **First seen:** 2026-03-01 (v3)
+- **Description:** `get_rank_radar_data` returns at most 50 keyword detail rows per radar, even for radars with 67-87 keywords. The `list_rank_radars` endpoint returns accurate top10/top50 summary counts covering ALL keywords.
+- **Workaround:** Use `list_rank_radars` for headline top10/top50 counts (accurate). Accept that movement detail analysis covers only the first 50 keywords per radar. Radars affected: B09WQSBZY7 (87 kws), B0F8DG32H5 (81 kws), B0DC69M3YD (67 kws).
+- **Root cause:** DataDive API pagination limit. No known workaround — the API does not expose a pagination parameter for rank radar keyword data.
 
 ### Issue: Apify saswave/amazon-product-scraper Returns EUR Prices
 - **First seen:** 2026-03-01
@@ -539,14 +564,9 @@
 
 ### Issue: Apify Compute Credit Limit (402 on Keyword Scan)
 - **First seen:** 2026-03-01
-- **Description:** When running 9 keyword scans + 1 product scan in the same session, Apify account hit compute credit limit. 9th keyword ("needlepoint kits for kids") failed with 402 Payment Required.
-- **Workaround:** Top up Apify credits before next run. For days with both keyword scan AND competitor BSR scan, check credit balance first.
-- **Root cause:** Running both keyword scan (8 runs) + competitor BSR scan (1 large run) depleted remaining credits.
-
-### Issue: DataDive Competitor BSR Not Available — RESOLVED via Apify
-- **First seen:** 2026-02-28
-- **Resolved:** 2026-03-01 — Added Apify saswave/amazon-product-scraper scan for 27 competitor ASINs as Agent 6.
-- **Note:** Prices are in EUR (see above issue) but BSR and reviews are accurate. This is now a standard part of the daily skill run.
+- **Description:** When running keyword scans + competitor BSR scan, Apify account can hit compute credit limit. Originally failed on 9th of 9 keywords. Now running 20 keywords + 34-ASIN BSR scan (~$1.95/day total).
+- **Workaround:** Top up Apify credits before next run. Estimated daily cost is ~$1.95 (20 keywords × $0.09 + 1 BSR scan × $0.15). Ensure sufficient balance.
+- **Root cause:** Multiple async actor runs in a single session can deplete credits rapidly.
 
 ### Issue: Seller Board CSV Comma-in-Name Parsing
 - **First seen:** 2026-02-28
@@ -563,17 +583,13 @@
 ### Issue: FBA Inventory API Pagination
 - **First seen:** 2026-02-24
 - **Description:** `get_fba_inventory(max_results=50)` returns only 50 SKUs. 5-6 hero ASINs consistently fall outside the first 50 results.
-- **Workaround:** Make 2 calls or increase max_results. Or use Seller Board inventory report as fallback.
-- **Root cause:** FBA inventory API caps at 50 results per call
-
-### Issue: Apify Empty Results for Valid Keywords — RESOLVED 2026-02-26
-- **Root cause:** `igview-owner~amazon-search-scraper` was returning cached data from entirely different searches (smartphones for cross stitch queries). Fundamentally broken actor.
-- **Fix:** Switched to `axesso_data~amazon-search-scraper` — 104K runs, professional data company, confirmed correct results in head-to-head test. See Resolved Issues.
+- **Workaround:** Use `asin_filter` parameter to filter to hero ASINs only (resolved the truncation issue — see Resolved Issues).
+- **Root cause:** FBA inventory API caps at 50 results per call without filtering
 
 ### Issue: DataDive Competitor Research Date Staleness
 - **First seen:** 2026-02-24
 - **Description:** DataDive niche competitor data has research dates ranging from Dec 2025 to Feb 2026. Sales/revenue estimates may be 2+ months old.
-- **Workaround:** Note research dates in report. Use BSR-to-sales estimates for more current data.
+- **Workaround:** Note research dates in report.
 - **Root cause:** DataDive niches need manual re-running to refresh competitor data
 
 ---
@@ -587,34 +603,31 @@
 - **Root cause:** API was fetching all 294 SKUs correctly, but `format_json()` had `max_items=50` default that truncated the output.
 - **Fix:** Pass `asin_filter="B08DDJCQKF,B09X55KL2C,..."` (comma-separated hero ASINs). Server now filters to only those ASINs, aggregates multiple SKUs per ASIN, and reports missing ASINs explicitly. No more truncation.
 
-### B08FYH13CL Latch Hook Rank Instability (×5+ days — RECOVERY FAILED as of 2026-03-01)
+### B08FYH13CL Latch Hook Rank Instability (×6+ days — RECOVERY FAILED, ESCALATING)
 - **First seen:** 2026-02-25 (run 1)
-- **Repeated:** 2026-02-25 (v2), 2026-02-26, 2026-02-27 (false recovery), 2026-02-28 (partial stall), 2026-03-01 (crash confirmed)
-- **False recovery signal:** 2026-02-27 — BSR improved -6,501. Recovery appeared genuine.
-- **Confirmed failure:** 2026-03-01 — BSR crashed back 26,023→33,024 (+7,001). Keyword rank #17 for "latch hook kits for kids". The Feb 27 recovery was a single-day spike.
-- **Status:** ESCALATED — needs listing/PPC investigation. Not a monitoring issue. Root cause unknown. Made By Me (BSR 1,534, 11,876 reviews) and B0DJQPGDMQ (unknown, #1 in niche) are likely taking share.
+- **Repeated:** 2026-02-25 (v2), 2026-02-26, 2026-02-27 (false recovery), 2026-02-28 (partial stall), 2026-03-01 v1 (crash confirmed), 2026-03-01 v3 (continued decline), 2026-03-02 (BSR improved but key keyword fell off page)
+- **Latest:** 2026-03-02 — BSR improved (-2,594) but "latch hook kits" (11.7K SV) fell to rank 101. Made By Me now #1 in latch hook.
+- **Status:** ESCALATED — needs listing/PPC investigation. Not a monitoring issue. Made By Me (BSR 1,458, 11,876 reviews) and B0DJQPGDMQ (veirousa, BSR 3,726) are taking share.
 
-### "kids embroidery kit" Apify Empty Results (×2 consecutive runs)
-- **First seen:** 2026-03-01
-- **Repeated:** 2026-03-01 (and likely same in prior run)
-- **Description:** Apify igview-owner/amazon-search-scraper returns 0 results for "kids embroidery kit" keyword. Consistent across 2 consecutive runs.
-- **Workaround:** Carry forward badge data. If 3+ consecutive runs fail, consider this keyword as unreliable for this actor.
-- **Root cause:** Unknown — possibly keyword-specific scraping issue or actor reliability.
-
-### Apify Empty Keyword Results (×2+ consecutive runs) — RESOLVED 2026-02-26
-- **Root cause:** `igview-owner~amazon-search-scraper` was broken — returning cached results from entirely different queries (smartphones for craft searches). Not a rate-limit/scraping issue — fundamentally broken actor.
-- **Fix:** Switched to `axesso_data~amazon-search-scraper`. Head-to-head test: Axesso returned correct cross stitch results in 7.5s. igview returned smartphone results for the same query.
-- **See:** Resolved Issues section for full detail.
-### Apify Empty Keyword Results (×2+ consecutive runs → RESOLVED 2026-02-27)
-- **First seen:** 2026-02-25 (v2)
-- **Repeated:** 2026-02-26 — 4/9 keywords returned empty (up from 3/9)
-- **Resolved:** 2026-02-27 — 9/9 keywords returned data successfully (best run in 4 days)
-- **Root cause:** Appears to be intermittent actor reliability, not a systematic issue. The actor self-recovered.
-- **Note:** Keep carry-forward approach as the workaround for future empty-result days. If 3+ consecutive runs fail on same keywords, consider trying alternative Apify actor.
+### "kids embroidery kit" Apify Empty Results (×2 consecutive runs) — RESOLVED 2026-03-02
+- **First seen:** 2026-03-01 v1 (igview era)
+- **Resolved:** 2026-03-02 — axesso actor returned data for this keyword on 2nd consecutive perfect scan.
+- **See:** Resolved Issues for full detail on igview → axesso switch.
 
 ---
 
 ## Resolved Issues
+
+### Issue: Seller Board Detailed Report URL Stale (Returns Old Data)
+- **First seen:** 2026-03-01 (v3) — URL returned only Jan 28-29 data (over a month old)
+- **Resolved:** 2026-03-01 — Token refreshed. Also added new `SELLERBOARD_SALES_DETAILED_7D` report (7-day window, ~460 rows vs 2,335). SKILL.md updated to use `get_sales_detailed_7d_report` instead of `get_sales_detailed_report`.
+- **Root cause:** Auth token expired across all 5 Seller Board URLs simultaneously.
+- **Note:** Token expiry is recurring — see active Known Issue "Seller Board Report Tokens Expired (401)" for latest occurrence.
+
+### Issue: DataDive Competitor BSR Not Available (Resolved 2026-03-01)
+- **First seen:** 2026-02-28 — DataDive niche competitor endpoint does NOT return BSR for competitor products.
+- **Resolved:** 2026-03-01 — Added Apify saswave/amazon-product-scraper scan for competitor ASINs. Now formalized as Step 4B in SKILL.md (34 ASINs, merged into Apify agent).
+- **Note:** saswave prices return in EUR (not usable), but BSR, rating, and reviews are accurate.
 
 ### Issue: Apify Empty Keyword Results / Wrong Data (×3 runs → Resolved 2026-02-26)
 - **First seen:** 2026-02-25 (v2) — 3/9 keywords empty
@@ -641,3 +654,13 @@
 ### Issue: Data Source Assumptions (from 2026-02-09)
 - **Resolved:** 2026-02-24
 - **How:** Rebuilt skill to use direct MCP connections (SP-API, DataDive, Seller Board) instead of relying on pre-existing Apify scraper data. No more guessing about data availability — all sources are API-based now.
+
+---
+
+## Archived Run Logs
+
+<!-- Runs older than 2 weeks. Kept for reference only. -->
+
+### Run: 2026-02-09 (Pre-MCP era)
+**Result:** Partial — Required manual data from user. Pre-dates current MCP-based architecture.
+**Key lesson:** Always use direct API/MCP connections. Don't assume data availability — ask or fetch programmatically.

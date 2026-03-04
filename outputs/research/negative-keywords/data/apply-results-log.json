@@ -1,0 +1,85 @@
+{
+  "total_submitted": 3999,
+  "total_success": 3994,
+  "total_errors": 5,
+  "details": [
+    {
+      "file": "10-embroidery-patterns.json",
+      "chunk": 0,
+      "success": 456,
+      "errors": 0
+    },
+    {
+      "file": "4-flowers-embroidery.json",
+      "chunk": 0,
+      "success": 154,
+      "errors": 0
+    },
+    {
+      "file": "biggie-beads.json",
+      "chunk": 0,
+      "success": 144,
+      "errors": 0
+    },
+    {
+      "file": "cross-stitch-girls-part1.json",
+      "chunk": 0,
+      "success": 497,
+      "errors": 3
+    },
+    {
+      "file": "cross-stitch-girls-part2.json",
+      "chunk": 0,
+      "success": 313,
+      "errors": 2
+    },
+    {
+      "file": "dessert-sewing.json",
+      "chunk": 0,
+      "success": 158,
+      "errors": 0
+    },
+    {
+      "file": "fairy-sewing-part1.json",
+      "chunk": 0,
+      "success": 500,
+      "errors": 0
+    },
+    {
+      "file": "fairy-sewing-part2.json",
+      "chunk": 0,
+      "success": 436,
+      "errors": 0
+    },
+    {
+      "file": "knitting-cat-hat.json",
+      "chunk": 0,
+      "success": 292,
+      "errors": 0
+    },
+    {
+      "file": "latch-hook-pencil-cases.json",
+      "chunk": 0,
+      "success": 304,
+      "errors": 0
+    },
+    {
+      "file": "latch-hook-rainbow-heart.json",
+      "chunk": 0,
+      "success": 148,
+      "errors": 0
+    },
+    {
+      "file": "needlepoint-cat-wallet.json",
+      "chunk": 0,
+      "success": 300,
+      "errors": 0
+    },
+    {
+      "file": "princess-lacing-card.json",
+      "chunk": 0,
+      "success": 292,
+      "errors": 0
+    }
+  ]
+}

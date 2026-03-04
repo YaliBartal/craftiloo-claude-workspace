@@ -1,0 +1,97 @@
+{
+  "date": "2026-03-01",
+  "data_window": "Feb 20-26, 2026 (PPC 7d attr.) | Feb 22-28, 2026 (Seller Board 1d attr.)",
+  "data_completeness": "COMPLETE — 166 campaigns, 4,001 search terms, 566 targeting. Placement report failed (fix applied, needs restart).",
+  "account": {
+    "sp_spend": 5291.11,
+    "ppc_sales_7d": 14125.43,
+    "ppc_acos_7d": 37.5,
+    "ppc_orders": 581,
+    "ppc_cvr": 7.8,
+    "ppc_cpc": 0.70,
+    "total_revenue_sb": 28496.57,
+    "organic_sales_sb": 20022.23,
+    "organic_ratio": 70.26,
+    "tacos": 18.79,
+    "net_profit_sb": 5138.25,
+    "profit_margin": 17.8,
+    "sessions": 14539,
+    "total_orders_sb": 1123,
+    "total_ad_spend": 5355.93,
+    "sbv_ad_spend": 239.82,
+    "sd_ad_spend": 5.46,
+    "active_campaigns": 166,
+    "active_portfolios": 18
+  },
+  "search_terms": {
+    "total_terms": 4001,
+    "zero_order_terms": 3592,
+    "zero_order_spend": 2786.25,
+    "zero_order_pct_of_spend": 53.5,
+    "total_spend": 5209.69,
+    "total_sales": 14072.47,
+    "top_negation_candidates": [
+      {"term": "beginner crochet kit for kids", "cost": 37.75, "clicks": 32, "campaign": "knitting bunny TOS"},
+      {"term": "kids sewing kit", "cost": 14.79, "clicks": 17, "campaign": "fairy sewing MK broad"},
+      {"term": "sewing for toddlers", "cost": 12.09, "clicks": 5, "campaign": "princess lacing MK broad"},
+      {"term": "embroidery kit kids", "cost": 11.62, "clicks": 11, "campaign": "embroidery beginners SK"},
+      {"term": "embroidery for beginners", "cost": 11.46, "clicks": 11, "campaign": "4 flowers SK"},
+      {"term": "beginner sewing kit for kids", "cost": 10.96, "clicks": 12, "campaign": "dessert sewing SK"},
+      {"term": "lacing cards for kids ages 3-5", "cost": 10.42, "clicks": 6, "campaign": "princess lacing SK"},
+      {"term": "craftiloo latch hook kits for kids", "cost": 9.95, "clicks": 11, "campaign": "shield brand"},
+      {"term": "melty beads", "cost": 9.88, "clicks": 13, "campaign": "mini fuse beads MK broad"},
+      {"term": "lacing cards", "cost": 9.85, "clicks": 7, "campaign": "princess lacing MK"}
+    ],
+    "top_performers": [
+      {"term": "kids cross stitch kit", "cvr": 42.9, "acos": 12.4, "orders": 6, "sales": 128.88},
+      {"term": "cross stitch kits", "cvr": 23.8, "acos": 11.5, "orders": 5, "sales": 104.90},
+      {"term": "fuse beads", "cvr": 15.5, "acos": 20.4, "orders": 11, "sales": 364.76}
+    ]
+  },
+  "targeting": {
+    "total_entries": 566,
+    "zero_order_entries": 436,
+    "zero_order_spend": 561.07,
+    "worst_target": {"keyword": "toddler sewing", "cost": 112.56, "sales": 59.94, "acos": 187.8, "campaign": "princess lacing MK broad"}
+  },
+  "portfolios": {
+    "Fuse Beads": {"spend": 872.80, "sales": 2423.72, "acos": 36.0, "orders": 73, "campaigns": 12, "status": "HEALTHY"},
+    ".Catch All Auto": {"spend": 844.89, "sales": 3209.72, "acos": 26.3, "orders": 140, "campaigns": 6, "status": "TOP PERFORMER"},
+    "Fairy Family": {"spend": 569.41, "sales": 1430.72, "acos": 39.8, "orders": 64, "campaigns": 12, "status": "NEEDS ATTENTION"},
+    "Cross Stitch Hero": {"spend": 421.88, "sales": 1602.24, "acos": 26.3, "orders": 74, "campaigns": 7, "status": "TOP PERFORMER"},
+    "Princess Lacing": {"spend": 351.35, "sales": 517.46, "acos": 67.9, "orders": 24, "campaigns": 10, "status": "RED FLAG"},
+    "Embroidery for Kids": {"spend": 331.51, "sales": 541.16, "acos": 61.3, "orders": 23, "campaigns": 6, "status": "RED FLAG"},
+    "Latch Hook Pillow": {"spend": 281.62, "sales": 574.54, "acos": 49.0, "orders": 22, "campaigns": 11, "status": "NEEDS ATTENTION"},
+    "Cat & Hat Knitting": {"spend": 276.48, "sales": 534.58, "acos": 51.7, "orders": 21, "campaigns": 12, "status": "NEEDS ATTENTION"},
+    "Biggie Beads": {"spend": 263.79, "sales": 849.32, "acos": 31.1, "orders": 32, "campaigns": 5, "status": "TOP PERFORMER"},
+    "4 Flowers Embroidery": {"spend": 230.09, "sales": 341.72, "acos": 67.3, "orders": 14, "campaigns": 11, "status": "RED FLAG"},
+    "Latch Hook Kits": {"spend": 201.78, "sales": 599.46, "acos": 33.7, "orders": 24, "campaigns": 13, "status": "HEALTHY"},
+    "Cross & Embroidery Kits": {"spend": 175.46, "sales": 448.56, "acos": 39.1, "orders": 22, "campaigns": 10, "status": "HEALTHY"},
+    "Shield All": {"spend": 157.32, "sales": 529.34, "acos": 29.7, "orders": 23, "campaigns": 4, "status": "TOP PERFORMER"},
+    "Needlepoint": {"spend": 142.34, "sales": 250.73, "acos": 56.8, "orders": 13, "campaigns": 6, "status": "NEEDS ATTENTION"},
+    "Dessert Family": {"spend": 96.35, "sales": 133.28, "acos": 72.3, "orders": 6, "campaigns": 4, "status": "RED FLAG"},
+    "Bunny Knitting": {"spend": 56.30, "sales": 91.92, "acos": 61.2, "orders": 4, "campaigns": 2, "status": "RED FLAG"},
+    "Punch Needle": {"spend": 8.67, "sales": 19.98, "acos": 43.4, "orders": 1, "campaigns": 2, "status": "LOW VOLUME"},
+    "Ballerina": {"spend": 8.43, "sales": 26.98, "acos": 31.2, "orders": 1, "campaigns": 1, "status": "LOW VOLUME"},
+    "LOW BID (dormant)": {"spend": 0.64, "sales": 0, "acos": null, "orders": 0, "campaigns": 31, "status": "DORMANT"}
+  },
+  "bleeding_campaigns_total": 232.11,
+  "rank_movement": {
+    "cross_stitch_B0B1927HCG": {"top_10": 36, "of": 38, "net": "+2", "trend": "STABLE/DOMINANT"},
+    "fuse_beads_B09THLVFZK": {"top_10": 11, "of": 18, "net": "-28", "trend": "MIXED/DECLINING"},
+    "cat_hat_knitting": {"net": "+233", "trend": "FASTEST IMPROVER"},
+    "four_flowers": {"net": "-209", "trend": "SEVERE DECLINE"},
+    "fairy_family": {"net": "-56", "trend": "DECLINING"},
+    "latch_hook_pillow": {"net": "+15", "trend": "SLIGHT IMPROVEMENT"}
+  },
+  "p1_actions": [
+    "TECHNICAL | Restart MCP server for placement report (campaignPlacement fix)",
+    "SEARCH TERMS | Negate top 10 zero-order terms — $139/week savings",
+    "SEARCH TERMS | Harvest 'cross stitch kits' to dedicated exact match (11.5% ACoS, 23.8% CVR)",
+    "PRINCESS LACING | Negate 'toddler sewing' broad — $112/week at 187.8% ACoS",
+    "CAMPAIGNS | Pause 6 bleeding campaigns — $110+/week waste",
+    "RANK | 'cross-stitch kits' dropped #9->#28 — create dedicated SK",
+    "RANK | 'perler beads' dropped #6->#11 — increase TOS spend",
+    "CAMPAIGNS | Lower bids -50% on 7 bleeding campaigns — $120/week waste"
+  ]
+}

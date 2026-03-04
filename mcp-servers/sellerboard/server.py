@@ -56,6 +56,10 @@ REPORTS = {
         "env": "SELLERBOARD_PPC_MARKETING",
         "description": "PPC Marketing Performance report (15 cols) — PPC sales, organic turnover, ad spend, TACOS, ROAS, ACOS, CPC, conversion rate, period comparison",
     },
+    "sales_detailed_7d": {
+        "env": "SELLERBOARD_SALES_DETAILED_7D",
+        "description": "Sales Detailed 7-Day report — Dashboard by product, daily for previous 7 days (same columns as Sales Detailed but shorter window)",
+    },
 }
 
 
@@ -153,8 +157,18 @@ async def get_ppc_marketing_report() -> str:
 
 
 @mcp.tool()
+async def get_sales_detailed_7d_report() -> str:
+    """Fetch the Sales Detailed 7-Day report from Seller Board.
+    Same per-ASIN data as Sales Detailed but only the previous 7 days. Ideal for daily market intel."""
+    raw = await fetch_report("SELLERBOARD_SALES_DETAILED_7D")
+    if raw.startswith("Error:"):
+        return raw
+    return csv_to_summary(raw)
+
+
+@mcp.tool()
 async def get_all_reports_summary() -> str:
-    """Fetch all 5 Seller Board reports and return a combined summary.
+    """Fetch all 6 Seller Board reports and return a combined summary.
     Useful for a complete business snapshot."""
     results = []
     for name, config in REPORTS.items():
