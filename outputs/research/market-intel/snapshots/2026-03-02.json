@@ -1,0 +1,123 @@
+{
+  "date": "2026-03-02",
+  "source": "SP-API + DataDive + Apify axesso + Apify saswave",
+  "notes": "Seller Board 401 — tokens expired, all SB data carried forward from Feb 21-27. FBA inventory API anomaly: B08FYH13CL/B0F8R652FX/B09THLVFZK/B07D6D95NG show 0 (inconsistent with BSR — verify in Seller Central). B09THLVFZK new BSR record 5,012 (beats baseline 5,856). B0F8DG32H5 +9 top-10 keywords. Apify 9/9 keywords returned data. B096MYBLS1 confirmed OOS.",
+  "hero_products": {
+    "B08DDJCQKF": {"name": "Cross Stitch Backpack Charms", "bsr": 4503, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 3, "subcategory": "Cross-Stitch Stamped Kits", "reviews": 1297, "rating": 4.5, "price": 19.98, "stock": 1392},
+    "B0F6YTG1CH": {"name": "My First Cross Stitch", "bsr": 47758, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 29, "subcategory": "Cross-Stitch Counted Kits", "reviews": 44, "rating": 4.7, "price": 16.98, "stock": 211},
+    "B09X55KL2C": {"name": "10 Embroidery Patterns", "bsr": 15496, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 61, "subcategory": "Embroidery Kits", "reviews": 694, "rating": 4.5, "price": 23.98, "stock": 1632, "badges": ["Overall Pick (embroidery kit for kids) — carried forward", "Overall Pick (kids embroidery kit) — carried forward"]},
+    "B0DC69M3YD": {"name": "4 Embroidery Flowers (Adults)", "bsr": 28929, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 114, "subcategory": "Embroidery Kits", "reviews": 633, "rating": 4.5, "price": 24.98, "stock": 601, "alert": "RANK CRISIS day 20+ — 0 top-10 keywords, embroidery kit (225K SV) back to 101"},
+    "B09WQSBZY7": {"name": "Fairy Sewing Kit", "bsr": 9370, "bsr_category": "Toys & Games", "subcategory_rank": 11, "subcategory": "Kids' Sewing Kits", "reviews": 617, "rating": 4.6, "price": 21.98, "stock": 543},
+    "B096MYBLS1": {"name": "Dessert Sewing Kit", "bsr": 127041, "bsr_category": "Toys & Games", "subcategory_rank": 111, "subcategory": "Kids' Felt Craft Kits", "reviews": 266, "rating": 4.6, "price": 22.98, "stock": 0, "alert": "OOS CONFIRMED — 0 units, all 50 keywords rank 101, BSR +34,997"},
+    "B08FYH13CL": {"name": "Latch Hook Pencil Cases", "bsr": 30430, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 23, "subcategory": "Latch Hook Kits", "reviews": 498, "rating": 4.4, "price": 19.98, "stock": 0, "note": "FBA shows 0 — possible API anomaly, verify in Seller Central"},
+    "B0F8R652FX": {"name": "Latch Hook Rainbow Heart", "bsr": 23368, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 15, "subcategory": "Latch Hook Kits", "reviews": 48, "rating": 4.5, "price": 24.98, "stock": 0, "note": "FBA shows 0 — possible API anomaly, verify in Seller Central"},
+    "B0F8DG32H5": {"name": "Knitting Cat & Hat", "bsr": 20800, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 24, "subcategory": "Knitting Kits", "reviews": 31, "rating": 4.9, "price": 26.98, "stock": 432},
+    "B09THLVFZK": {"name": "Mini Fuse Beads 48 Colors", "bsr": 5012, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 8, "subcategory": "Fuse & Perler Beads", "reviews": 2922, "rating": 4.6, "price": 32.98, "stock": 0, "note": "FBA shows 0 — API anomaly (BSR 5,012 confirms product is active/in-stock). Amazon's Choice badge carried forward.", "badges": ["Amazon's Choice (mini perler beads) — carried forward"]},
+    "B07D6D95NG": {"name": "10mm Big Fuse Beads", "bsr": 33442, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 58, "subcategory": "Fuse & Perler Beads", "reviews": 103, "rating": 4.1, "price": 24.98, "stock": 0, "note": "FBA shows 0 — possible API anomaly, verify in Seller Central"},
+    "B0FQC7YFX6": {"name": "Princess Lacing Card", "bsr": 46311, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 26, "subcategory": "Card Making Kits", "reviews": 30, "rating": 4.8, "price": 19.98, "stock": 315},
+    "B09HVSLBS6": {"name": "Needlepoint Cat Wallet", "bsr": 26846, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 82, "subcategory": "Sewing Project Kits", "reviews": 171, "rating": 4.2, "price": 17.98, "stock": 0, "alert": "OOS — 0 units, not in keyword top 48"}
+  },
+  "orders_yesterday": {
+    "date": "2026-03-01",
+    "total_orders": 168,
+    "total_units": 163,
+    "shipped_revenue_incl_tax": 2527.88
+  },
+  "seller_board_7day": {
+    "date_range": "2026-02-21 to 2026-02-27",
+    "days": 7,
+    "revenue": 28783.06,
+    "net_profit": 5181.77,
+    "ad_spend": 5483.71,
+    "tacos_pct": 19.05,
+    "avg_margin_pct": 17.76,
+    "status": "STALE — carried forward (SB 401 error today)"
+  },
+  "seller_board_per_asin": {
+    "date_range": "Feb 21-27",
+    "status": "STALE — carried forward (SB 401 error today)",
+    "B08DDJCQKF": {"sb_rev_7d": 4168.62, "sb_units_7d": 209, "sb_profit_7d": 1261.05},
+    "B0F6YTG1CH": {"sb_rev_7d": 294.66, "sb_units_7d": 17, "sb_profit_7d": -397.14},
+    "B09X55KL2C": {"sb_rev_7d": 1424.44, "sb_units_7d": 58, "sb_profit_7d": 80.37},
+    "B0DC69M3YD": {"sb_rev_7d": 599.52, "sb_units_7d": 24, "sb_profit_7d": 15.61},
+    "B09WQSBZY7": {"sb_rev_7d": 2967.30, "sb_units_7d": 136, "sb_profit_7d": 898.62},
+    "B096MYBLS1": {"sb_rev_7d": 743.54, "sb_units_7d": 33, "sb_profit_7d": 254.88},
+    "B08FYH13CL": {"sb_rev_7d": 1198.80, "sb_units_7d": 60, "sb_profit_7d": 338.02},
+    "B0F8R652FX": {"sb_rev_7d": 1448.84, "sb_units_7d": 58, "sb_profit_7d": -372.60},
+    "B0F8DG32H5": {"sb_rev_7d": 809.40, "sb_units_7d": 30, "sb_profit_7d": 6.87},
+    "B09THLVFZK": {"sb_rev_7d": 5259.90, "sb_units_7d": 160, "sb_profit_7d": 1213.77},
+    "B07D6D95NG": {"sb_rev_7d": 1398.88, "sb_units_7d": 56, "sb_profit_7d": 138.70},
+    "B0FQC7YFX6": {"sb_rev_7d": 611.34, "sb_units_7d": 31, "sb_profit_7d": -91.86},
+    "B09HVSLBS6": {"sb_rev_7d": 107.88, "sb_units_7d": 6, "sb_profit_7d": 35.23}
+  },
+  "rank_radar_summary": {
+    "radars_fetched": 9,
+    "date_range": "2026-03-01 to 2026-03-02",
+    "products": {
+      "B09X55KL2C": {"top10": 23, "top50": 52, "total": 55, "trend": "stable"},
+      "B09WQSBZY7": {"top10": 23, "top50": 61, "total": 87, "trend": "improving"},
+      "B0F8DG32H5": {"top10": 19, "top50": 59, "total": 81, "trend": "improving"},
+      "B08FYH13CL": {"top10": 13, "top50": 21, "total": 53, "trend": "stable"},
+      "B07D6D95NG": {"top10": 13, "top50": 25, "total": 38, "trend": "stable"},
+      "B09THLVFZK": {"top10": 11, "top50": 16, "total": 18, "trend": "stable"},
+      "B0FQC7YFX6": {"top10": 9, "top50": 30, "total": 52, "trend": "stable"},
+      "B0DC69M3YD": {"top10": 0, "top50": 36, "total": 67, "trend": "critical"},
+      "B096MYBLS1": {"top10": 0, "top50": 0, "total": 50, "trend": "collapsed"}
+    }
+  },
+  "keyword_battleground": {
+    "embroidery_kit_for_kids": {"hero_positions": {"B09X55KL2C": 1, "B08DDJCQKF": 6}, "top_competitor": {"B0B7JHN4F1": 11}},
+    "kids_embroidery_kit": {"hero_positions": {"B09X55KL2C": 1, "B08DDJCQKF": 2}, "top_competitor": {"B0FR7Y8VHB": 3}},
+    "embroidery_kit_for_beginners": {"hero_positions": {"B0DC69M3YD": 37}, "top_competitor": {"B0C3ZVKB46": 1}},
+    "sewing_kit_for_kids": {"hero_positions": {"B09WQSBZY7": 12}, "top_competitor": {"B091GXM2Y6": 1}},
+    "latch_hook_kits_for_kids": {"hero_positions": {"B0F8R652FX": 5, "B08FYH13CL": 10}, "top_competitor": {"B07PPD8Q8V": 1}},
+    "mini_perler_beads": {"hero_positions": {"B09THLVFZK": 1}, "top_competitor": {"B0C5WQD914": 2}},
+    "loom_knitting_kit": {"hero_positions": {"B0F8DG32H5": 14}, "top_competitor": {"B0DS23C1YX": 1}},
+    "lacing_cards": {"hero_positions": {"B0FQC7YFX6": 28}, "top_competitor": {"B00JM5G05I": 1}},
+    "needlepoint_kits_for_kids": {"hero_positions": {}, "top_competitor": {"B0CG9FN2CH": 1}, "note": "B09HVSLBS6 not in top 48"}
+  },
+  "badges": [
+    {"asin": "B09X55KL2C", "keyword": "embroidery kit for kids", "badge": "Overall Pick", "status": "carried_forward"},
+    {"asin": "B09X55KL2C", "keyword": "kids embroidery kit", "badge": "Overall Pick", "status": "carried_forward"},
+    {"asin": "B09THLVFZK", "keyword": "mini perler beads", "badge": "Amazon's Choice", "status": "carried_forward"}
+  ],
+  "new_competitors_detected": [
+    {"asin": "B0FQN3CF1J", "brand": "Bradove", "keywords": ["embroidery kit for kids"], "positions": [2], "days_seen": 1},
+    {"asin": "B0FK57P8PV", "brand": "Pllieay", "keywords": ["embroidery kit for kids"], "positions": [3], "days_seen": 1},
+    {"asin": "B0FR7Y8VHB", "brand": "Louise Maelys", "keywords": ["kids embroidery kit"], "positions": [3], "days_seen": "3+"},
+    {"asin": "B0CJZ3JV3K", "brand": "kullaloo", "keywords": ["sewing kit for kids"], "positions": [2], "days_seen": "4+"},
+    {"asin": "B0DS4GHZTT", "brand": "Numptain", "keywords": ["latch hook kits for kids"], "positions": [4], "days_seen": 1},
+    {"asin": "B07PPD8Q8V", "brand": "Made By Me (Horizon Group)", "keywords": ["latch hook kits for kids", "loom knitting kit"], "positions": [1, 2], "days_seen": "4+", "priority": "HIGH"},
+    {"asin": "B0DJQPGDMQ", "brand": "veirousa", "source": "DD Niche #1 Latch Hook", "sales": 1271, "priority": "HIGH"}
+  ],
+  "competitor_bsr": {
+    "B08T5QC9FS": {"brand": "Pllieay", "category": "Cross Stitch", "bsr": 28176, "rating": 4.2, "reviews": 1353},
+    "B0B7JHN4F1": {"brand": "KRAFUN", "category": "Cross Stitch", "bsr": 18662, "rating": 4.6, "reviews": 292},
+    "B0CM9JKNCC": {"brand": "Caydo", "category": "Cross Stitch", "bsr": 57991, "rating": 3.9, "reviews": 54},
+    "B0DFHN42QB": {"brand": "EZCRA", "category": "Cross Stitch", "bsr": 13447, "rating": 4.6, "reviews": 183},
+    "B087DYHMZ2": {"brand": "CraftLab", "category": "Embroidery Kids", "bsr": 36102, "rating": 4.5, "reviews": 618},
+    "B0D8171TF1": {"brand": "KRAFUN", "category": "Embroidery Kids", "bsr": 27208, "rating": 4.5, "reviews": 169},
+    "B08TC7423N": {"brand": "Pllieay", "category": "Embroidery Kids", "bsr": 73690, "rating": 4.5, "reviews": 442},
+    "B0DP654CSV": {"brand": "Louise Maelys", "category": "Embroidery Kids", "bsr": 11888, "rating": 4.5, "reviews": 43},
+    "B0CZHKSSL4": {"brand": "CYANFOUR", "category": "Embroidery Adults", "bsr": 229, "rating": 4.4, "reviews": 1309},
+    "B0DMHY2HF3": {"brand": "CYANFOUR", "category": "Embroidery Adults", "bsr": 1002, "rating": 4.4, "reviews": 319},
+    "B0BB9N74SG": {"brand": "Santune", "category": "Embroidery Adults", "bsr": 2027, "rating": 4.6, "reviews": 2849},
+    "B0B762JW55": {"brand": "Bradove", "category": "Embroidery Adults", "bsr": 1842, "rating": 4.6, "reviews": 1982},
+    "B0C3ZVKB46": {"brand": "ETSPIL", "category": "Embroidery Adults", "bsr": 794, "rating": 4.4, "reviews": 2047},
+    "B091GXM2Y6": {"brand": "KRAFUN", "category": "Sewing", "bsr": 466, "rating": 4.8, "reviews": 3622},
+    "B0C2XYP6L3": {"brand": "KRAFUN", "category": "Sewing", "bsr": 2753, "rating": 4.6, "reviews": 1918},
+    "B0CV1F5CFS": {"brand": "KRAFUN", "category": "Sewing", "bsr": 9936, "rating": 4.7, "reviews": 627},
+    "B0CXY8JMTK": {"brand": "EZCRA", "category": "Sewing", "bsr": 5922, "rating": 4.7, "reviews": 267},
+    "B0CYNNT2ZT": {"brand": "EZCRA", "category": "Sewing", "bsr": 3990, "rating": 4.8, "reviews": 416},
+    "B0CTTMWXYP": {"brand": "Klever Kits", "category": "Sewing", "bsr": 3707, "rating": 4.5, "reviews": 763},
+    "B06XRRN4VL": {"brand": "LatchKits", "category": "Latch Hook", "bsr": 10298, "rating": 4.6, "reviews": 7196},
+    "B0CX9H8YGR": {"brand": "LatchKits", "category": "Latch Hook", "bsr": 12806, "rating": 4.4, "reviews": 1112},
+    "B07PPD8Q8V": {"brand": "Made By Me", "category": "Latch Hook", "bsr": 1372, "rating": 4.6, "reviews": 11878},
+    "B004JIFCXO": {"brand": "Creativity for Kids", "category": "Knitting", "bsr": null, "rating": 4.5, "reviews": 3340},
+    "B0B8W4FK4Q": {"brand": "Hapinest", "category": "Knitting", "bsr": 13202, "rating": 4.5, "reviews": 428},
+    "B0C5WQD914": {"brand": "INSCRAFT", "category": "Fuse Beads", "bsr": 9189, "rating": 4.5, "reviews": 391},
+    "B0FN4CT867": {"brand": "ARTKAL", "category": "Fuse Beads", "bsr": 77129, "rating": 4.6, "reviews": 11},
+    "B00JM5G05I": {"brand": "Melissa & Doug", "category": "Lacing Cards", "bsr": 15102, "rating": 4.8, "reviews": 1039}
+  },
+  "apify_note": "9/9 keywords returned data (second consecutive perfect scan). No 402 credit limit errors. B08DDJCQKF dropped from #2 to #6 on 'embroidery kit for kids'. B08FYH13CL improved from #18 to #10 on 'latch hook kits for kids'. B0FQC7YFX6 improved from #41 to #28 on 'lacing cards'."
+}
