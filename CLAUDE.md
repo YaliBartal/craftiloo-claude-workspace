@@ -177,6 +177,7 @@ Claude Code Workspace/
 │       ├── ppc-search-term-harvester/ # Reactive search term harvesting (NEGATE/PROMOTE/DISCOVER)
 │       ├── ppc-portfolio-summary/    # Portfolio-level performance summary + structure audit
 │       ├── ppc-campaign-creator/        # Proposes + creates PPC campaigns from upstream signals
+│       ├── ppc-portfolio-action-plan/  # Single-portfolio deep dive + action plan + execution
 │       ├── keyword-rank-optimizer/   # PPC spend vs organic rank cross-reference
 │       ├── ppc-monthly-review/       # Monthly strategic PPC review
 │       ├── negative-keyword-generator/  # Proactive negative keyword generation from product knowledge
@@ -192,7 +193,7 @@ Claude Code Workspace/
 │   │   └── server.py
 │   ├── datadive/          # DataDive API server (keywords, ranks, competitors)
 │   │   └── server.py
-│   ├── amazon-sp-api/     # Amazon SP-API (orders, catalog, inventory, pricing, reports)
+│   ├── amazon-sp-api/     # Amazon SP-API (orders, catalog, inventory, pricing, listings, reports)
 │   │   └── server.py
 │   ├── amazon-ads-api/    # Amazon Ads API (campaigns, keywords, targeting, product ads, reports, 29 tools)
 │   │   └── server.py
@@ -235,6 +236,7 @@ Claude Code Workspace/
 | "Portfolio check" / "Portfolio health" / "Portfolio flags" | → `.claude/skills/ppc-agent/` (routes to ppc-portfolio-summary) |
 | "Harvest search terms" / "Negate and promote" / "Search term review" | → `.claude/skills/ppc-agent/` (routes to ppc-search-term-harvester) |
 | "Create campaigns" / "Campaign creator" / "Build campaigns" / "New campaigns" | → `.claude/skills/ppc-agent/` (routes to ppc-campaign-creator) |
+| "Portfolio deep dive" / "Deep dive" / "Portfolio action plan" / "Fix portfolio" / "Work on portfolio" | → `.claude/skills/ppc-agent/` (routes to ppc-portfolio-action-plan) |
 | "Rank optimizer" / "Rank vs spend" / "Keyword rank analysis" / "PPC rank check" | → `.claude/skills/ppc-agent/` (routes to keyword-rank-optimizer) |
 | "Monthly PPC" / "Monthly review" / "PPC month" | → `.claude/skills/ppc-agent/` (routes to ppc-monthly-review) |
 | "Weekly PPC" / "PPC analysis" / "Campaign analysis" | → `.claude/skills/weekly-ppc-analysis/` (standalone) |
@@ -365,8 +367,10 @@ Custom Python MCP server for direct Amazon Selling Partner API access. Auth: LWA
 | `get_report_status` | Reports | Check report progress (DONE/IN_PROGRESS/FATAL) |
 | `get_report_document` | Reports | Download completed report data (CSV/TSV) |
 | `get_my_listings` | Reports | Shortcut: request all-listings report |
+| `get_listing` | Listings | Current listing attributes: title, bullets, description, keywords, product type |
+| `update_listing` | Listings | PATCH listing text: title, bullets, description, backend keywords |
 
-**Env variables:** `SP_API_CLIENT_ID`, `SP_API_CLIENT_SECRET`, `SP_API_REFRESH_TOKEN`, `SP_API_MARKETPLACE_US`, `SP_API_MARKETPLACE_CA`, `SP_API_MARKETPLACE_MX`
+**Env variables:** `SP_API_CLIENT_ID`, `SP_API_CLIENT_SECRET`, `SP_API_REFRESH_TOKEN`, `SP_API_SELLER_ID`, `SP_API_MARKETPLACE_US`, `SP_API_MARKETPLACE_CA`, `SP_API_MARKETPLACE_MX`
 
 **No AWS credentials required** — auth uses LWA token exchange only. Access token auto-refreshes (1hr expiry).
 

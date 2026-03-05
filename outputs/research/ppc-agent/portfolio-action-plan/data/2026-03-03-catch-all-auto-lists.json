@@ -1,0 +1,718 @@
+{
+  "negate_list": [
+    "24000 fuse beads kit",
+    "aqua beads",
+    "aqua beads kit",
+    "aqua beads refill",
+    "aqua beads refill pack",
+    "aqua beads refill with patterns",
+    "aquabeads",
+    "aquabeads kit",
+    "aquabeads refill pack",
+    "aquabeads refills",
+    "aquabeads with water",
+    "art & craft kit for cross stitch",
+    "arts and crafts",
+    "ballerina crafts for girls",
+    "bead art",
+    "bead kit",
+    "bead kits",
+    "bead sets",
+    "beados",
+    "beads bulk",
+    "beads for crafts",
+    "beads for kids",
+    "beads for pens",
+    "beginner cross stitch for kids",
+    "beginner cross stitch kit",
+    "beginner sewing kit",
+    "cartoon beads",
+    "cat cross stitch kits",
+    "counted cross stitch kits for adults",
+    "craft kit",
+    "crafts for girls",
+    "crafts for girls ages 8-12",
+    "crafts for kids",
+    "cross stitch",
+    "cross stitch kit",
+    "cross stitch kits for adults",
+    "cross stitch kits for kids",
+    "cupcake latch hook kit",
+    "disney cross stitch kits",
+    "dog cross stitch kits",
+    "elephant cross stitch",
+    "embroidery",
+    "embroidery for kids",
+    "embroidery kit for beginners adults",
+    "embroidery kit kids",
+    "embroidery kits for adults",
+    "embroidery kits for kids",
+    "fairy doll",
+    "fairy dolls",
+    "fairy garden kit for kids",
+    "fairy plush",
+    "felt sewing kit",
+    "fuse bead kit",
+    "fuse beads",
+    "fuse beads bulk",
+    "fuse beads kit",
+    "fuse beads pegboards",
+    "fuze beads",
+    "hama",
+    "hama beads",
+    "hama beads 5mm",
+    "hama beads kit",
+    "hook rug kits for kids",
+    "iron beads",
+    "iron beads for kids kit",
+    "kids cross stitch",
+    "kids latch hook kit",
+    "kids needlepoint kits for beginners",
+    "latch hook for kids",
+    "latch hook kit",
+    "latch hook kit for kids",
+    "latch hook kit pillow",
+    "latch hook kits for adults",
+    "latch hook kits for kids ages 8-12",
+    "latch hook rug kits for kids",
+    "latch kit",
+    "latch kits",
+    "latchkits",
+    "marvel cross stitch kits",
+    "melting beads",
+    "melting beads for kids",
+    "melty beads",
+    "melty beads kit",
+    "micro beads",
+    "mini beads",
+    "mini fuse beads kit",
+    "mini iron",
+    "mini perler bead kit",
+    "mini perler beads",
+    "mini perler beads kit",
+    "needlepoint",
+    "needlepoint kids",
+    "needlepoint kit",
+    "pencil case",
+    "perler bead",
+    "perler bead patterns",
+    "perler bead pegboard",
+    "perler bead supplies",
+    "perler beads bulk",
+    "perler beads kit",
+    "perler beads kit for kids",
+    "perler beads pegboards",
+    "perler beads set",
+    "perler beads storage",
+    "perler beads tools",
+    "perler kits for adults",
+    "perler mini beads",
+    "perler patterns",
+    "pixel art",
+    "poly beads",
+    "punch needle",
+    "punch needle kit for beginners",
+    "punch needle kits adults beginner",
+    "qixels",
+    "quefe beads",
+    "rave beads",
+    "rice beads",
+    "sewing craft kit",
+    "sewing for kids",
+    "sewing kit for adults",
+    "sewing kit for beginners",
+    "sewing kit for kids",
+    "sewing kits for kids",
+    "sewing patterns for beginners",
+    "small beads",
+    "small latch hook kit",
+    "small perler beads",
+    "stamped cross stitch kits for beginners",
+    "stitch and zip needlepoint"
+  ],
+  "negate_with_spend": [
+    {
+      "term": "needlepoint",
+      "cost": 5.77,
+      "clicks": 31,
+      "impressions": 3242
+    },
+    {
+      "term": "needlepoint kit",
+      "cost": 5.670000000000001,
+      "clicks": 30,
+      "impressions": 1950
+    },
+    {
+      "term": "cross stitch kit",
+      "cost": 4.3500000000000005,
+      "clicks": 11,
+      "impressions": 253
+    },
+    {
+      "term": "stamped cross stitch kits for beginners",
+      "cost": 3.9,
+      "clicks": 9,
+      "impressions": 248
+    },
+    {
+      "term": "punch needle kits adults beginner",
+      "cost": 3.0,
+      "clicks": 9,
+      "impressions": 116
+    },
+    {
+      "term": "latch hook kits for adults",
+      "cost": 2.26,
+      "clicks": 9,
+      "impressions": 113
+    },
+    {
+      "term": "punch needle kit for beginners",
+      "cost": 1.98,
+      "clicks": 4,
+      "impressions": 47
+    },
+    {
+      "term": "sewing patterns for beginners",
+      "cost": 1.87,
+      "clicks": 4,
+      "impressions": 42
+    },
+    {
+      "term": "fairy doll",
+      "cost": 1.86,
+      "clicks": 3,
+      "impressions": 61
+    },
+    {
+      "term": "sewing for kids",
+      "cost": 1.76,
+      "clicks": 4,
+      "impressions": 38
+    },
+    {
+      "term": "sewing kit for kids",
+      "cost": 1.5299999999999998,
+      "clicks": 9,
+      "impressions": 238
+    },
+    {
+      "term": "embroidery kits for adults",
+      "cost": 1.27,
+      "clicks": 7,
+      "impressions": 46
+    },
+    {
+      "term": "cross stitch kits for adults",
+      "cost": 1.25,
+      "clicks": 3,
+      "impressions": 116
+    },
+    {
+      "term": "embroidery for kids",
+      "cost": 1.21,
+      "clicks": 2,
+      "impressions": 21
+    },
+    {
+      "term": "craft kit",
+      "cost": 1.03,
+      "clicks": 3,
+      "impressions": 11
+    },
+    {
+      "term": "latch hook kit",
+      "cost": 0.94,
+      "clicks": 4,
+      "impressions": 70
+    },
+    {
+      "term": "punch needle",
+      "cost": 0.81,
+      "clicks": 2,
+      "impressions": 15
+    },
+    {
+      "term": "fuse beads",
+      "cost": 0.76,
+      "clicks": 4,
+      "impressions": 96
+    },
+    {
+      "term": "sewing craft kit",
+      "cost": 0.63,
+      "clicks": 2,
+      "impressions": 16
+    },
+    {
+      "term": "cat cross stitch kits",
+      "cost": 0.62,
+      "clicks": 1,
+      "impressions": 12
+    },
+    {
+      "term": "embroidery kits for kids",
+      "cost": 0.62,
+      "clicks": 1,
+      "impressions": 12
+    },
+    {
+      "term": "stitch and zip needlepoint",
+      "cost": 0.62,
+      "clicks": 1,
+      "impressions": 3
+    },
+    {
+      "term": "perler beads bulk",
+      "cost": 0.57,
+      "clicks": 3,
+      "impressions": 19
+    },
+    {
+      "term": "crafts for kids",
+      "cost": 0.53,
+      "clicks": 2,
+      "impressions": 16
+    },
+    {
+      "term": "embroidery kit kids",
+      "cost": 0.44,
+      "clicks": 1,
+      "impressions": 32
+    },
+    {
+      "term": "latch hook for kids",
+      "cost": 0.44,
+      "clicks": 1,
+      "impressions": 2
+    },
+    {
+      "term": "needlepoint kids",
+      "cost": 0.44,
+      "clicks": 1,
+      "impressions": 260
+    },
+    {
+      "term": "aquabeads kit",
+      "cost": 0.43,
+      "clicks": 1,
+      "impressions": 3
+    },
+    {
+      "term": "small latch hook kit",
+      "cost": 0.43,
+      "clicks": 1,
+      "impressions": 25
+    },
+    {
+      "term": "kids cross stitch",
+      "cost": 0.42,
+      "clicks": 1,
+      "impressions": 3
+    },
+    {
+      "term": "embroidery",
+      "cost": 0.38,
+      "clicks": 2,
+      "impressions": 7
+    },
+    {
+      "term": "mini perler beads",
+      "cost": 0.38,
+      "clicks": 2,
+      "impressions": 13
+    },
+    {
+      "term": "perler beads kit",
+      "cost": 0.38,
+      "clicks": 2,
+      "impressions": 28
+    },
+    {
+      "term": "arts and crafts",
+      "cost": 0.37,
+      "clicks": 1,
+      "impressions": 9
+    },
+    {
+      "term": "counted cross stitch kits for adults",
+      "cost": 0.37,
+      "clicks": 1,
+      "impressions": 41
+    },
+    {
+      "term": "crafts for girls",
+      "cost": 0.37,
+      "clicks": 1,
+      "impressions": 1
+    },
+    {
+      "term": "cross stitch kits for kids",
+      "cost": 0.37,
+      "clicks": 1,
+      "impressions": 13
+    },
+    {
+      "term": "dog cross stitch kits",
+      "cost": 0.37,
+      "clicks": 1,
+      "impressions": 1
+    },
+    {
+      "term": "aquabeads",
+      "cost": 0.19,
+      "clicks": 1,
+      "impressions": 1
+    },
+    {
+      "term": "beados",
+      "cost": 0.19,
+      "clicks": 2,
+      "impressions": 9
+    },
+    {
+      "term": "disney cross stitch kits",
+      "cost": 0.19,
+      "clicks": 1,
+      "impressions": 1
+    },
+    {
+      "term": "iron beads",
+      "cost": 0.19,
+      "clicks": 1,
+      "impressions": 12
+    },
+    {
+      "term": "latch hook kit for kids",
+      "cost": 0.19,
+      "clicks": 1,
+      "impressions": 1
+    },
+    {
+      "term": "melty beads",
+      "cost": 0.19,
+      "clicks": 1,
+      "impressions": 1
+    },
+    {
+      "term": "perler bead pegboard",
+      "cost": 0.19,
+      "clicks": 1,
+      "impressions": 4
+    },
+    {
+      "term": "sewing kits for kids",
+      "cost": 0.19,
+      "clicks": 1,
+      "impressions": 5
+    },
+    {
+      "term": "mini beads",
+      "cost": 0.15,
+      "clicks": 1,
+      "impressions": 4
+    },
+    {
+      "term": "perler bead patterns",
+      "cost": 0.12,
+      "clicks": 2,
+      "impressions": 35
+    },
+    {
+      "term": "hama beads",
+      "cost": 0.08,
+      "clicks": 1,
+      "impressions": 12
+    },
+    {
+      "term": "hama beads kit",
+      "cost": 0.08,
+      "clicks": 1,
+      "impressions": 7
+    },
+    {
+      "term": "perler bead",
+      "cost": 0.08,
+      "clicks": 1,
+      "impressions": 1
+    },
+    {
+      "term": "cross stitch",
+      "cost": 0.07,
+      "clicks": 1,
+      "impressions": 3
+    },
+    {
+      "term": "hama",
+      "cost": 0.06,
+      "clicks": 1,
+      "impressions": 1
+    },
+    {
+      "term": "24000 fuse beads kit",
+      "cost": 0.03,
+      "clicks": 1,
+      "impressions": 1
+    }
+  ],
+  "unnegate_list": [
+    {
+      "term": "cross stitch kits",
+      "negated_in": "Cmp1, Cmp3",
+      "orders": 9,
+      "sales": 184.82,
+      "acos": 18.1
+    },
+    {
+      "term": "cross stitch for kids",
+      "negated_in": "Cmp2",
+      "orders": 4,
+      "sales": 99.9,
+      "acos": 4.6
+    },
+    {
+      "term": "cross stitch kits for beginners",
+      "negated_in": "Cmp1, Cmp2, Cmp3",
+      "orders": 3,
+      "sales": 57.94,
+      "acos": 17.1
+    },
+    {
+      "term": "sewing kit for kids ages 8-12",
+      "negated_in": "Cmp1",
+      "orders": 3,
+      "sales": 66.94,
+      "acos": 2.8
+    },
+    {
+      "term": "punch needle kit",
+      "negated_in": "Cmp2",
+      "orders": 2,
+      "sales": 44.96,
+      "acos": 6.5
+    },
+    {
+      "term": "embroidery kit for beginners",
+      "negated_in": "Cmp1, Cmp3",
+      "orders": 2,
+      "sales": 49.96,
+      "acos": 4.8
+    },
+    {
+      "term": "waldorf",
+      "negated_in": "Cmp3",
+      "orders": 2,
+      "sales": 48.96,
+      "acos": 1.5
+    },
+    {
+      "term": "knitting kit",
+      "negated_in": "Cmp3",
+      "orders": 2,
+      "sales": 51.96,
+      "acos": 9.7
+    },
+    {
+      "term": "needlepoint kits for beginners",
+      "negated_in": "Cmp1, Cmp2, Cmp3",
+      "orders": 2,
+      "sales": 37.96,
+      "acos": 12.2
+    },
+    {
+      "term": "needlepoint canvas",
+      "negated_in": "Cmp3",
+      "orders": 1,
+      "sales": 17.98,
+      "acos": 36.7
+    },
+    {
+      "term": "latch hook kits for kids beginner easy",
+      "negated_in": "Cmp3",
+      "orders": 1,
+      "sales": 24.98,
+      "acos": 11.9
+    },
+    {
+      "term": "needlepoint kits for kids",
+      "negated_in": "Cmp1, Cmp2, Cmp3",
+      "orders": 1,
+      "sales": 21.98,
+      "acos": 2.9
+    },
+    {
+      "term": "stitch and zip needlepoint kits",
+      "negated_in": "Cmp1, Cmp2, Cmp3",
+      "orders": 1,
+      "sales": 17.98,
+      "acos": 10.2
+    },
+    {
+      "term": "kids embroidery kit",
+      "negated_in": "Cmp2",
+      "orders": 1,
+      "sales": 19.98,
+      "acos": 8.2
+    },
+    {
+      "term": "crafts for adults",
+      "negated_in": "Cmp2",
+      "orders": 1,
+      "sales": 27.98,
+      "acos": 0.7
+    },
+    {
+      "term": "loom",
+      "negated_in": "Cmp2, Cmp3",
+      "orders": 1,
+      "sales": 18.38,
+      "acos": 1.6
+    },
+    {
+      "term": "cross stitch kids",
+      "negated_in": "Cmp2",
+      "orders": 1,
+      "sales": 19.98,
+      "acos": 5.1
+    },
+    {
+      "term": "sewing kit",
+      "negated_in": "Cmp1, Cmp2",
+      "orders": 1,
+      "sales": 21.98,
+      "acos": 20.2
+    },
+    {
+      "term": "latch hook",
+      "negated_in": "Cmp1, Cmp2",
+      "orders": 1,
+      "sales": 19.98,
+      "acos": 32.5
+    },
+    {
+      "term": "needle point kits adults beginner",
+      "negated_in": "Cmp3",
+      "orders": 1,
+      "sales": 22.98,
+      "acos": 6.2
+    },
+    {
+      "term": "hama beads mini",
+      "negated_in": "Cmp2",
+      "orders": 1,
+      "sales": 26.38,
+      "acos": 0.3
+    },
+    {
+      "term": "stamped cross stitch kits",
+      "negated_in": "Cmp1, Cmp2",
+      "orders": 1,
+      "sales": 19.98,
+      "acos": 12.3
+    },
+    {
+      "term": "embroidery kit",
+      "negated_in": "Cmp1, Cmp2, Cmp3",
+      "orders": 1,
+      "sales": 24.98,
+      "acos": 20.4
+    },
+    {
+      "term": "fairy stuffed doll",
+      "negated_in": "Cmp3",
+      "orders": 1,
+      "sales": 21.98,
+      "acos": 2.8
+    },
+    {
+      "term": "cross stitch kits kids",
+      "negated_in": "Cmp2",
+      "orders": 1,
+      "sales": 21.98,
+      "acos": 3.7
+    },
+    {
+      "term": "crochet kit for beginners",
+      "negated_in": "Cmp2, Cmp3",
+      "orders": 1,
+      "sales": 26.98,
+      "acos": 19.4
+    },
+    {
+      "term": "beginner cross stitch kits for kids",
+      "negated_in": "Cmp1, Cmp2, Cmp3",
+      "orders": 1,
+      "sales": 19.98,
+      "acos": 5.3
+    },
+    {
+      "term": "sewing patterns",
+      "negated_in": "Cmp2",
+      "orders": 1,
+      "sales": 19.98,
+      "acos": 12.6
+    },
+    {
+      "term": "beads",
+      "negated_in": "Cmp1, Cmp2, Cmp3",
+      "orders": 1,
+      "sales": 34.98,
+      "acos": 1.7
+    },
+    {
+      "term": "perler bead kit",
+      "negated_in": "Cmp2",
+      "orders": 1,
+      "sales": 32.98,
+      "acos": 3.0
+    },
+    {
+      "term": "arts and crafts for kids ages 8-12",
+      "negated_in": "Cmp3",
+      "orders": 1,
+      "sales": 19.98,
+      "acos": 5.0
+    },
+    {
+      "term": "sewing for kids ages 8-12",
+      "negated_in": "Cmp1",
+      "orders": 1,
+      "sales": 19.98,
+      "acos": 1.9
+    },
+    {
+      "term": "cross stitch backpack charms",
+      "negated_in": "Cmp2",
+      "orders": 1,
+      "sales": 21.98,
+      "acos": 3.2
+    },
+    {
+      "term": "stamped cross stitch kits for kids",
+      "negated_in": "Cmp2",
+      "orders": 1,
+      "sales": 19.98,
+      "acos": 5.0
+    },
+    {
+      "term": "needlepoint kits for adults",
+      "negated_in": "Cmp3",
+      "orders": 1,
+      "sales": 17.98,
+      "acos": 26.4
+    },
+    {
+      "term": "ballerina craft",
+      "negated_in": "Cmp1, Cmp2",
+      "orders": 1,
+      "sales": 21.98,
+      "acos": 7.7
+    }
+  ],
+  "summary": {
+    "total_negate": 129,
+    "negate_active_waste": "$52.59/14d",
+    "total_unnegate": 36
+  }
+}

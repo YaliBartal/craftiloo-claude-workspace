@@ -1,5 +1,5 @@
 {
-  "last_daily_health": "2026-03-02",
+  "last_daily_health": "2026-03-05",
   "last_search_harvest": "2026-03-02",
   "last_bid_review": "2026-03-02",
   "last_portfolio_summary": "2026-03-02",
@@ -7,77 +7,279 @@
   "last_monthly_review": null,
   "last_rank_optimizer": null,
   "last_negative_generation": {},
-  "pending_actions": [
-    {"source": "weekly-ppc-2026-03-01", "action": "Negate top 10 zero-order terms — $139/week savings", "priority": "P1", "status": "pending"},
-    {"source": "weekly-ppc-2026-03-01", "action": "Negate 'toddler sewing' broad in Princess Lacing — $112/week at 187.8% ACoS", "priority": "P1", "status": "pending"},
-    {"source": "weekly-ppc-2026-03-01", "action": "Pause 6 bleeding campaigns — $110+/week waste", "priority": "P1", "status": "pending"},
-    {"source": "weekly-ppc-2026-03-01", "action": "Lower bids -50% on 7 bleeding campaigns — $120/week waste", "priority": "P1", "status": "pending"},
-    {"source": "weekly-ppc-2026-03-01", "action": "Harvest 'cross stitch kits' to exact match (11.5% ACoS, 23.8% CVR)", "priority": "P1", "status": "pending"},
-    {"source": "weekly-ppc-2026-03-01", "action": "'cross-stitch kits' dropped #9→#28 — create dedicated SK", "priority": "P1", "status": "pending"},
-    {"source": "weekly-ppc-2026-03-01", "action": "'perler beads' dropped #6→#11 — increase TOS spend", "priority": "P1", "status": "pending"},
-    {"source": "daily-health-2026-03-02", "action": "Pause Dessert Family PPC — 5 units stock, no Buy Box", "priority": "P1", "status": "completed"},
-    {"source": "daily-health-2026-03-02", "action": "Update business.md portfolio stages — Princess Lacing, Needlepoint, Punch Needle, Ballerina missing", "priority": "P2", "status": "pending"},
-    {"source": "portfolio-summary-2026-03-02", "action": "Add Broad campaigns to Fairy Family (top spend portfolio missing Broad — Fuse Beads has MK broad)", "priority": "P1", "status": "pending"},
-    {"source": "fuse-beads-deep-dive-2026-03-02", "action": "Reduce SK fuse beads TOS 895%->350%, budget $100->$25/day", "priority": "P1", "status": "completed"},
-    {"source": "fuse-beads-deep-dive-2026-03-02", "action": "Increase SK mini perler beads budget $15->$25/day", "priority": "P1", "status": "completed"},
-    {"source": "fuse-beads-deep-dive-2026-03-02", "action": "Create SK for 'perler beads bulk' (rank #40, 4534 SV)", "priority": "P1", "status": "completed"},
-    {"source": "fuse-beads-deep-dive-2026-03-02", "action": "Add melty beads + melting beads to MK multi root", "priority": "P2", "status": "completed"},
-    {"source": "fuse-beads-deep-dive-2026-03-02", "action": "Negate 'mini fuse beads' exact in MK broad (saves ~$102/wk)", "priority": "P2", "status": "completed"},
-    {"source": "fuse-beads-deep-dive-2026-03-02", "action": "Lower MK mini root TOS push — TOS 148%, ROS 0%, PP 72%, base $0.25", "priority": "P2", "status": "completed"},
-    {"source": "portfolio-summary-2026-03-02", "action": "Run bid review for Princess Lacing, 4 Flowers, Embroidery for Kids (worst RED FLAGS)", "priority": "P1", "status": "in_progress", "note": "4 Flowers Phase 1 done 2026-03-02 — Phase 2+ pending"},
-    {"source": "portfolio-summary-2026-03-02", "action": "Create 1-2 experimental campaigns this week (SOP Section 13 — 0 new campaigns found)", "priority": "P2", "status": "pending"},
-    {"source": "portfolio-summary-2026-03-02", "action": "Clean up Stitch Dictionary LOW BIDs (13 dormant) — archive or reactivate", "priority": "P2", "status": "pending"}
+
+  "portfolio_index": {
+    "fairy-family": {
+      "name": "Fairy Family",
+      "id": "279805104407998",
+      "tracker": "portfolios/fairy-family.json",
+      "stage": "Scaling",
+      "last_deep_dive": "2026-03-03",
+      "last_updated": "2026-03-05",
+      "health_status": "YELLOW",
+      "trend": "improving",
+      "acos": 39.8,
+      "pending_count": 5,
+      "top_action": "[P1] SK sewing for kids bleeding at 65% ACoS — lower TOS 161%->108%",
+      "next_review": "2026-03-10"
+    },
+    "fuse-beads": {
+      "name": "Fuse Beads",
+      "id": "195178133158684",
+      "tracker": "portfolios/fuse-beads.json",
+      "stage": "Scaling",
+      "last_deep_dive": "2026-03-02",
+      "last_updated": "2026-03-05",
+      "health_status": "YELLOW",
+      "trend": "improving",
+      "acos": 35.0,
+      "pending_count": 0,
+      "top_action": null,
+      "next_review": "2026-03-09"
+    },
+    "cross-embroidery-kits": {
+      "name": "Cross And Embroidery Kits",
+      "id": "8418766616949",
+      "tracker": "portfolios/cross-embroidery-kits.json",
+      "stage": "Launch",
+      "last_deep_dive": "2026-03-05",
+      "last_updated": "2026-03-05",
+      "health_status": "GREEN",
+      "trend": "stable",
+      "acos": 41.8,
+      "pending_count": 0,
+      "top_action": null,
+      "next_review": "2026-03-12"
+    },
+    "4-flowers-embroidery": {
+      "name": "4 Flowers Embroidery",
+      "id": "110971277744354",
+      "tracker": "portfolios/4-flowers-embroidery.json",
+      "stage": "Scaling",
+      "last_deep_dive": null,
+      "last_updated": "2026-03-05",
+      "health_status": null,
+      "trend": "unknown",
+      "acos": null,
+      "pending_count": 2,
+      "top_action": "[P1] Post-listing-update re-audit — check rank recovery, CVR change (due Mar 10)",
+      "next_review": "2026-03-09"
+    },
+    "catch-all-auto": {
+      "name": "Catch All Auto",
+      "id": null,
+      "tracker": "portfolios/catch-all-auto.json",
+      "stage": "General",
+      "last_deep_dive": null,
+      "last_updated": "2026-03-05",
+      "health_status": null,
+      "trend": null,
+      "acos": null,
+      "pending_count": 0,
+      "top_action": null,
+      "next_review": "2026-03-10"
+    },
+    "dessert-family": {
+      "name": "Dessert Family",
+      "id": "254077831589383",
+      "tracker": "portfolios/dessert-family.json",
+      "stage": "Scaling",
+      "last_deep_dive": null,
+      "last_updated": "2026-03-05",
+      "health_status": null,
+      "trend": null,
+      "acos": null,
+      "pending_count": 0,
+      "top_action": null,
+      "next_review": null
+    },
+    "embroidery-for-kids": {
+      "name": "Embroidery for Kids",
+      "id": null,
+      "tracker": "portfolios/embroidery-for-kids.json",
+      "stage": "Scaling",
+      "last_deep_dive": null,
+      "last_updated": "2026-03-05",
+      "health_status": null,
+      "trend": null,
+      "acos": null,
+      "pending_count": 0,
+      "top_action": null,
+      "next_review": null
+    },
+    "cross-stitch-backpack-charms": {
+      "name": "Cross Stitch Backpack Charms",
+      "id": null,
+      "tracker": "portfolios/cross-stitch-backpack-charms.json",
+      "stage": "Scaling",
+      "last_deep_dive": null,
+      "last_updated": "2026-03-05",
+      "health_status": null,
+      "trend": null,
+      "acos": null,
+      "pending_count": 0,
+      "top_action": null,
+      "next_review": null
+    },
+    "shield-all": {
+      "name": "Shield All",
+      "id": null,
+      "tracker": "portfolios/shield-all.json",
+      "stage": "General",
+      "last_deep_dive": null,
+      "last_updated": "2026-03-05",
+      "health_status": null,
+      "trend": null,
+      "acos": null,
+      "pending_count": 0,
+      "top_action": null,
+      "next_review": null
+    },
+    "cat-and-hat-knitting": {
+      "name": "Cat and Hat Knitting",
+      "id": null,
+      "tracker": "portfolios/cat-and-hat-knitting.json",
+      "stage": "Scaling",
+      "last_deep_dive": null,
+      "last_updated": "2026-03-05",
+      "health_status": null,
+      "trend": null,
+      "acos": null,
+      "pending_count": 0,
+      "top_action": null,
+      "next_review": null
+    },
+    "latch-hook-pillow": {
+      "name": "Latch Hook Pillow",
+      "id": null,
+      "tracker": "portfolios/latch-hook-pillow.json",
+      "stage": "Scaling",
+      "last_deep_dive": null,
+      "last_updated": "2026-03-05",
+      "health_status": null,
+      "trend": null,
+      "acos": null,
+      "pending_count": 0,
+      "top_action": null,
+      "next_review": null
+    },
+    "bunny-knitting-loom-kit": {
+      "name": "Bunny Knitting Loom Kit",
+      "id": null,
+      "tracker": "portfolios/bunny-knitting-loom-kit.json",
+      "stage": "Scaling",
+      "last_deep_dive": null,
+      "last_updated": "2026-03-05",
+      "health_status": null,
+      "trend": null,
+      "acos": null,
+      "pending_count": 0,
+      "top_action": null,
+      "next_review": null
+    },
+    "latch-hook-kits": {
+      "name": "Latch Hook Kits",
+      "id": null,
+      "tracker": "portfolios/latch-hook-kits.json",
+      "stage": "Scaling",
+      "last_deep_dive": null,
+      "last_updated": "2026-03-05",
+      "health_status": null,
+      "trend": null,
+      "acos": null,
+      "pending_count": 0,
+      "top_action": null,
+      "next_review": null
+    },
+    "biggie-beads": {
+      "name": "Biggie Beads",
+      "id": null,
+      "tracker": "portfolios/biggie-beads.json",
+      "stage": "Scaling",
+      "last_deep_dive": null,
+      "last_updated": "2026-03-05",
+      "health_status": null,
+      "trend": null,
+      "acos": null,
+      "pending_count": 0,
+      "top_action": null,
+      "next_review": null
+    },
+    "stitch-dictionary-all": {
+      "name": "Stitch Dictionary All",
+      "id": null,
+      "tracker": "portfolios/stitch-dictionary-all.json",
+      "stage": "Scaling",
+      "last_deep_dive": null,
+      "last_updated": "2026-03-05",
+      "health_status": null,
+      "trend": null,
+      "acos": null,
+      "pending_count": 1,
+      "top_action": "[P2] Clean up LOW BIDs (13 dormant campaigns) — archive or reactivate",
+      "next_review": null
+    }
+  },
+
+  "all_pending_actions": [
+    {"portfolio": "Fairy Family", "id": "ff-001", "priority": "P1", "category": "BID_DECREASE", "action": "SK sewing for kids bleeding at 65% ACoS — lower TOS 161%->108%", "created": "2026-03-03"},
+    {"portfolio": "4 Flowers Embroidery", "id": "4f-001", "priority": "P1", "category": "AUDIT", "action": "Post-listing-update re-audit — check rank recovery, CVR change (due Mar 10)", "created": "2026-03-03"},
+    {"portfolio": "4 Flowers Embroidery", "id": "4f-002", "priority": "P1", "category": "SEARCH_TERM_HARVEST", "action": "7-day search term harvest from re-enabled Auto+Broad (due Mar 9)", "created": "2026-03-02"},
+    {"portfolio": "Cross And Embroidery Kits", "id": "ce-001", "priority": "P2", "category": "CAMPAIGN_PAUSE", "action": "Decision on dead embroidery campaigns — PAUSED ad groups in ENABLED campaigns", "created": "2026-03-05"},
+    {"portfolio": "Cross And Embroidery Kits", "id": "ce-002", "priority": "P2", "category": "CAMPAIGN_ENABLE", "action": "Decision on large kit B0F8QZZQQM reactivation — losing rank (-60 positions/28d)", "created": "2026-03-05"},
+    {"portfolio": "Cross And Embroidery Kits", "id": "ce-004", "priority": "P3", "category": "CAMPAIGN_ENABLE", "action": "Reactivate PT campaign with fresh competitor ASINs", "created": "2026-03-05"},
+    {"portfolio": "Fairy Family", "id": "ff-003", "priority": "P2", "category": "CAMPAIGN_CREATE", "action": "Create SK 'sewing kit for beginners' (6,553 SV, rank 61)", "created": "2026-03-03"},
+    {"portfolio": "Fairy Family", "id": "ff-004", "priority": "P2", "category": "CAMPAIGN_CREATE", "action": "Create SK 'beginner sewing kit' (4,326 SV, rank 40)", "created": "2026-03-03"},
+    {"portfolio": "Fairy Family", "id": "ff-005", "priority": "P2", "category": "LISTING_REVIEW", "action": "B0BP8GCK1G (Fairy Elves) zero sales with 26 sessions — investigate listing", "created": "2026-03-03"},
+    {"portfolio": "Fairy Family", "id": "ff-002", "priority": "P3", "category": "STRUCTURAL", "action": "900% TOS on 2 Auto TOS campaigns — structural cleanup (zero activity)", "created": "2026-03-03"},
+    {"portfolio": "Stitch Dictionary All", "id": "sd-001", "priority": "P2", "category": "STRUCTURAL", "action": "Clean up LOW BIDs (13 dormant campaigns) — archive or reactivate", "created": "2026-03-02"}
   ],
+
+  "upcoming_reviews": [
+    {"date": "2026-03-09", "portfolio": "Fuse Beads", "type": "7-day re-check", "source": "fuse-beads-deep-dive-2026-03-02"},
+    {"date": "2026-03-09", "portfolio": "4 Flowers Embroidery", "type": "7-day search term harvest", "source": "4-flowers-phase-1-2026-03-02"},
+    {"date": "2026-03-10", "portfolio": "Fairy Family", "type": "7-day re-check", "source": "fairy-family-deep-dive-2026-03-03"},
+    {"date": "2026-03-10", "portfolio": "4 Flowers Embroidery", "type": "Full re-audit", "source": "listing-update-2026-03-03"},
+    {"date": "2026-03-10", "portfolio": "Catch All Auto", "type": "Scheduled review", "source": "search-term-harvest-2026-03-02"},
+    {"date": "2026-03-12", "portfolio": "Cross And Embroidery Kits", "type": "7-day re-check", "source": "cross-embroidery-deep-dive-2026-03-05"}
+  ],
+
+  "global_pending_actions": [
+    {"source": "weekly-ppc-2026-03-01", "action": "Lower bids on 7 bleeding campaigns — $120/week waste", "priority": "P1", "status": "completed", "note": "Verified 2026-03-05: 3/7 already PAUSED (2 Dessert, 1 4-Flowers). 1/7 false positive (Shield latch hook pillow — 39.1% ACoS over 30d). 3/7 adjusted: Latch Hook Auto TOS 132%→81%, Needlepoint SK bid $0.40→$0.32, Cross Stitch Adult MK 5 bids lowered ~20% + TOS 113%→81%."},
+    {"source": "daily-health-2026-03-02", "action": "Update business.md portfolio stages — Princess Lacing, Needlepoint, Punch Needle, Ballerina missing", "priority": "P2", "status": "pending"},
+    {"source": "portfolio-summary-2026-03-02", "action": "Run bid review for Princess Lacing, 4 Flowers, Embroidery for Kids (worst RED FLAGS)", "priority": "P1", "status": "in_progress", "note": "4 Flowers Phase 1 (PPC stabilization) done 2026-03-02. Phase 2 (listing rewrite) done 2026-03-03. Phase 3 (7-day harvest + re-audit) due 2026-03-09. Princess Lacing + Embroidery for Kids still outstanding."},
+    {"source": "portfolio-summary-2026-03-02", "action": "Create 1-2 experimental campaigns this week (SOP Section 13 — 0 new campaigns found)", "priority": "P2", "status": "pending"}
+  ],
+
   "applied_changes": [
     {
-      "date": "2026-03-02",
-      "action": "PAUSED all 4 Dessert Family campaigns (portfolio 254077831589383)",
-      "campaigns_paused": ["561798860977632", "538519825019289", "429281836821251", "352020912218313"],
-      "reason": "5 units stock, full organic collapse, 72.3% ACoS — restock ETA ~2 weeks",
-      "relaunch_plan": "Re-enable SK ages 8-12 + SK beginner at restock with lower bids. Keep SK sewing for kids + MK broad paused until negatives applied.",
-      "savings": "$14/day (~$96/week)"
-    },
-    {
-      "date": "2026-03-02",
-      "action": "Dessert Family search term harvest + bid optimization (while paused)",
-      "negatives_applied": [
-        {"term": "no sew kits for kids", "campaign": "MK broad (352020912218313)", "match": "NEGATIVE_EXACT"},
-        {"term": "sewing kit for kids sewing machine", "campaign": "MK broad (352020912218313)", "match": "NEGATIVE_EXACT"},
-        {"term": "wuyosin sewing kits for kids", "campaign": "MK broad (352020912218313)", "match": "NEGATIVE_EXACT"},
-        {"term": "felt crafts", "campaign": "MK broad (352020912218313)", "match": "NEGATIVE_EXACT"}
-      ],
-      "bids_lowered": [
-        {"keyword": "sewing kit for kids ages 8-12", "campaign": "SK ages 8-12 (561798860977632)", "old_bid": 0.74, "new_bid": 0.61, "reduction": "17.6%"},
-        {"keyword": "beginner sewing kit for kids", "campaign": "SK beginner (538519825019289)", "old_bid": 0.92, "new_bid": 0.73, "reduction": "20.7%"}
-      ],
-      "finding": "37/46 search terms were protected sewing keywords — problem was stock, not keywords"
-    },
-    {
-      "date": "2026-03-02",
-      "action": "4 Flowers Phase 1 — Emergency Stabilization",
-      "portfolio": "4 Flowers Embroidery (110971277744354)",
+      "date": "2026-03-03",
+      "action": "User-Directed Actions — Negations, TOS Reductions, Campaign Re-enable (multi-portfolio)",
+      "portfolios_affected": ["fuse-beads", "4-flowers-embroidery", "princess-lacing", "cross-embroidery-kits"],
       "changes": [
-        "RE-ENABLED Auto (315988388205283) — $5/day, bid $0.31 (was $0.26)",
-        "RE-ENABLED Broad (513250035569495) — $5/day, bid $0.27",
-        "INCREASED SK bid 'beginners embroidery kit for adults' $0.38→$0.43 (rank #11 defense)"
+        "NEGATED 'melty beads' NEGATIVE_EXACT in Fuse Beads MK broad",
+        "LOWERED TOS on 4 Flowers SK embroidery for beginners: 161%→20%",
+        "LOWERED TOS on Princess Lacing SK lacing cards ages 3-5: 431%→216%",
+        "NEGATED 'lacing cards' NEGATIVE_EXACT in Princess Lacing MK lacing root",
+        "RE-ENABLED Cross Stitch Kits SK (309035836424147): PAUSED→ENABLED, TOS 422%→140%"
       ],
-      "reason": "Death spiral — ranks -209 net, 0 top-10 KWs, organic near-zero, Auto+Broad were paused killing discovery",
-      "budget_added": "$10.50/day (~$73/week)",
-      "next_review": "2026-03-09 (7-day search term harvest)"
+      "note": "Multi-portfolio action. Individual changes also logged in respective portfolio trackers."
     },
     {
-      "date": "2026-03-02",
-      "action": "Fuse Beads Portfolio — 5 Actions Applied",
-      "portfolio": "Fuse Beads (195178133158684)",
+      "date": "2026-03-03",
+      "action": "P1 Action Item Review — Cross-Portfolio Verification",
       "changes": [
-        "SK fuse beads TOS (520275010613914): TOS 895%→350%, budget $100→$25/day",
-        "SK mini perler beads (493619120082777): budget $15→$25/day",
-        "CREATED SK perler beads bulk (218889381864980): $15/day, bid $0.47, TOS 178%, ASIN B09THLVFZK",
-        "MK broad mini root (487800929938065): added NEGATIVE_EXACT 'mini fuse beads'",
-        "MK multi root TOS (409059613193543): added EXACT 'melty beads' ($0.37) + 'melting beads' ($0.34)"
+        "NEGATED 'toddler sewing' in Princess Lacing MK broad. Saves ~$112/wk.",
+        "VERIFIED 3 bleeding campaigns already PAUSED.",
+        "RE-ENABLED cross stitch kits SK.",
+        "VERIFIED perler beads budget already raised.",
+        "VERIFIED Fairy Family MK broad exists."
       ],
-      "budget_impact": "SK fuse beads: -$75/day saved. SK mini perler: +$10/day. New SK: +$15/day. Net: -$50/day (~-$350/week)",
-      "next_review": "2026-03-09 (7-day check on new campaign + TOS reduction impact)"
+      "savings_confirmed": "$112/wk"
     }
-  ]
+  ],
+
+  "last_campaign_creator": "2026-03-05",
+
+  "_migration_note": "Migrated 2026-03-05. Portfolio-specific pending_actions and applied_changes moved to individual portfolio tracker files in portfolios/. Only global/cross-portfolio items remain here. Completed items removed."
 }

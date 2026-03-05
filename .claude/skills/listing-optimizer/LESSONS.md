@@ -58,6 +58,8 @@
 
 **Tokens/cost:** ~95K tokens, ~$0.08 Apify (5 competitor scrapes)
 
+**Post-run update (2026-03-03):** Audit recommendations were implemented. Listing creator generated the rewrite, then all 4 fields (title, bullets, description, backend keywords) were pushed live via SP-API Listings Items API PATCH. Submission ACCEPTED. Key discovery: Amazon SKU is `7B-EONH-U3A3` (not internal catalog name EK17). Product type: `ART_CRAFT_KIT`. SP-API `get_listing` + `update_listing` tools now available for future audits → direct application. Re-audit due 2026-03-10 to measure rank recovery and CVR impact.
+
 ---
 
 ## Known Issues

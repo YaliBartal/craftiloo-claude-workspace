@@ -1,0 +1,74 @@
+{
+  "date": "2026-03-05",
+  "data_source": "Weekly PPC (Feb 20-26 attr.) + Market Intel (Mar 1) + Live campaigns (Mar 5) + DataDive (Mar 5)",
+  "account": {
+    "total_spend_7d": 5291.11,
+    "total_sales_7d": 14125.43,
+    "acos_7d": 37.5,
+    "tacos": 18.79,
+    "organic_ratio": 70.26,
+    "total_revenue_7d": 28496.57,
+    "net_profit_7d": 5138.25,
+    "profit_margin": 17.8,
+    "active_campaigns": 156,
+    "active_portfolios": 18,
+    "total_daily_budget": 2563.50,
+    "vs_mar3_campaigns": 1
+  },
+  "portfolios": [
+    {"name": ".Catch All Auto", "stage": "General", "acos": 26.3, "spend_7d": 844.89, "budget_daily": 355, "campaigns": 6, "avg_tos": 30, "status": "GREEN", "note": "Top performer"},
+    {"name": "Cross Stitch Hero", "stage": "Scaling", "acos": 26.3, "spend_7d": 421.88, "budget_daily": 244, "campaigns": 15, "avg_tos": 248, "rank_top10": 35, "rank_total": 38, "rank_change": -1, "status": "GREEN", "note": "Dominant — minor -1 dip"},
+    {"name": "Shield All", "stage": "General", "acos": 29.7, "spend_7d": 157.32, "budget_daily": 36, "campaigns": 4, "avg_tos": 101, "status": "GREEN", "note": "Brand defense"},
+    {"name": "Biggie Beads", "stage": "Scaling", "acos": 31.1, "spend_7d": 263.79, "budget_daily": 84, "campaigns": 5, "avg_tos": 210, "rank_top10": 13, "rank_total": 38, "rank_change": 0, "status": "GREEN", "note": "Stable"},
+    {"name": "Latch Hook Kits", "stage": "Scaling", "acos": 33.7, "spend_7d": 201.78, "budget_daily": 217, "campaigns": 12, "avg_tos": 162, "rank_top10": 10, "rank_total": 53, "rank_change": 1, "status": "GREEN", "note": "Pencil Cases recovering +1"},
+    {"name": "Cross & Embroidery Kits", "stage": "Launch", "acos": 39.1, "spend_7d": 175.46, "budget_daily": 128, "campaigns": 7, "avg_tos": 171, "rank_top10": 6, "rank_total": 51, "rank_change": -1, "status": "GREEN", "note": "Launch ACoS expected"},
+    {"name": "Latch Hook Pillow", "stage": "Launch", "acos": 49.0, "spend_7d": 281.62, "budget_daily": 96, "campaigns": 10, "avg_tos": 165, "rank_top10": 14, "rank_total": 50, "rank_change": 2, "status": "GREEN", "note": "Recovering +2"},
+    {"name": "Cat & Hat Knitting", "stage": "Launch", "acos": 51.7, "spend_7d": 276.48, "budget_daily": 162, "campaigns": 12, "avg_tos": 157, "rank_top10": 16, "rank_total": 81, "rank_change": -2, "status": "GREEN", "note": "Launch — ranks slipped -2"},
+    {"name": "Punch Needle", "stage": "Unknown", "acos": 43.4, "spend_7d": 8.67, "budget_daily": 40, "campaigns": 2, "avg_tos": 312, "rank_top10": 1, "rank_total": 25, "rank_change": 1, "status": "GREEN", "note": "Low volume"},
+    {"name": "Fuse Beads", "stage": "Scaling", "acos": 36.0, "spend_7d": 872.80, "budget_daily": 258, "campaigns": 15, "avg_tos": 253, "rank_top10": 11, "rank_total": 18, "rank_change": -2, "status": "YELLOW", "note": "Mini Fuse ranks dropping -2"},
+    {"name": "Fairy Family", "stage": "Scaling", "acos": 39.8, "spend_7d": 569.41, "budget_daily": 297, "campaigns": 20, "avg_tos": 250, "rank_top10": 25, "rank_total": 87, "rank_change": 3, "status": "YELLOW", "note": "Ranks surging +3 after deep dive changes"},
+    {"name": "Needlepoint", "stage": "Unknown", "acos": 56.8, "spend_7d": 142.34, "budget_daily": 46, "campaigns": 5, "avg_tos": 109, "rank_top10": 1, "rank_total": 50, "rank_change": 1, "status": "YELLOW", "note": "Stage not defined"},
+    {"name": "Stitch Dictionary", "stage": "Scaling", "acos": null, "spend_7d": 0.64, "budget_daily": 135, "campaigns": 14, "avg_tos": 366, "status": "YELLOW", "note": "13/14 dormant LOW BID"},
+    {"name": "Embroidery for Kids", "stage": "Scaling", "acos": 61.3, "spend_7d": 331.51, "budget_daily": 106, "campaigns": 8, "avg_tos": 263, "rank_top10": 24, "rank_total": 55, "rank_change": -1, "status": "RED", "note": "ACoS >50%, ranks softening"},
+    {"name": "Bunny Knitting", "stage": "Scaling", "acos": 61.2, "spend_7d": 56.30, "budget_daily": 79, "campaigns": 3, "avg_tos": null, "rank_top10": 19, "rank_total": 50, "rank_change": -2, "status": "RED", "note": "Low orders, ranks declining -2"},
+    {"name": "4 Flowers Embroidery", "stage": "Scaling", "acos": 67.3, "spend_7d": 230.09, "budget_daily": 124, "campaigns": 9, "avg_tos": 112, "rank_top10": 1, "rank_total": 67, "rank_change": 0, "status": "RED", "note": "Listing rewrite applied Mar 3 — VERIFY LIVE (overdue)"},
+    {"name": "Princess Lacing", "stage": "Unknown", "acos": 67.9, "spend_7d": 351.35, "budget_daily": 139, "campaigns": 8, "avg_tos": 253, "rank_top10": 6, "rank_total": 52, "rank_change": -1, "status": "RED", "note": "Continuing decline despite toddler sewing negation"},
+    {"name": "Dessert Family", "stage": "Scaling", "acos": null, "spend_7d": 0, "budget_daily": 0, "campaigns": 0, "status": "PAUSED", "rank_top10": 0, "rank_total": 50, "rank_change": -1, "note": "All campaigns paused Mar 2 — organic fully collapsed"}
+  ],
+  "rank_radar_summary": [
+    {"product": "Cross Stitch Kits", "asin": "B0B1927HCG", "total_keywords": 38, "top10": 35, "top50": 38, "vs_mar3": -1, "trend": "dominant"},
+    {"product": "Fairy Sewing", "asin": "B09WQSBZY7", "total_keywords": 87, "top10": 25, "top50": 60, "vs_mar3": 3, "trend": "surging"},
+    {"product": "10 Embroidery", "asin": "B09X55KL2C", "total_keywords": 55, "top10": 24, "top50": 52, "vs_mar3": -1, "trend": "strong"},
+    {"product": "Bunny Knitting", "asin": "B0DKD2S3JT", "total_keywords": 50, "top10": 19, "top50": 40, "vs_mar3": -2, "trend": "declining"},
+    {"product": "Cat & Hat Knitting", "asin": "B0F8DG32H5", "total_keywords": 81, "top10": 16, "top50": 61, "vs_mar3": -2, "trend": "slipping"},
+    {"product": "Latch Hook Pillow", "asin": "B0FHMRQWRX", "total_keywords": 50, "top10": 14, "top50": 29, "vs_mar3": 2, "trend": "recovering"},
+    {"product": "Biggie Beads", "asin": "B07D6D95NG", "total_keywords": 38, "top10": 13, "top50": 21, "vs_mar3": 0, "trend": "stable"},
+    {"product": "Mini Fuse Beads", "asin": "B09THLVFZK", "total_keywords": 18, "top10": 11, "top50": 16, "vs_mar3": -2, "trend": "declining"},
+    {"product": "Latch Hook Pencil", "asin": "B08FYH13CL", "total_keywords": 53, "top10": 10, "top50": 22, "vs_mar3": 1, "trend": "recovering"},
+    {"product": "Princess Lacing", "asin": "B0FQC7YFX6", "total_keywords": 52, "top10": 6, "top50": 27, "vs_mar3": -1, "trend": "declining"},
+    {"product": "Cross & Emb Kit", "asin": "B0F8QZZQQM", "total_keywords": 51, "top10": 6, "top50": 19, "vs_mar3": -1, "trend": "soft"},
+    {"product": "4 Flowers", "asin": "B0DC69M3YD", "total_keywords": 67, "top10": 1, "top50": 40, "vs_mar3": 0, "trend": "listing rewrite pending"},
+    {"product": "Punch Needle", "asin": "B092SW839H", "total_keywords": 25, "top10": 1, "top50": 3, "vs_mar3": 1, "trend": "low"},
+    {"product": "Needlepoint", "asin": "B09HVDNFMR", "total_keywords": 50, "top10": 1, "top50": 7, "vs_mar3": 1, "trend": "low"},
+    {"product": "Dessert Sewing", "asin": "B096MYBLS1", "total_keywords": 50, "top10": 0, "top50": 0, "vs_mar3": -1, "trend": "collapsed"}
+  ],
+  "red_flags": [
+    "Embroidery for Kids: 61.3% ACoS on Scaling portfolio, ranks softening -1",
+    "Princess Lacing: 67.9% ACoS, continuing decline (-1 top-10), toddler sewing negation needs more time",
+    "4 Flowers: 67.3% ACoS, listing rewrite applied Mar 3 — VERIFY LIVE (overdue since Mar 4)",
+    "Bunny Knitting: 61.2% ACoS, ranks dropping -2, low volume (4 orders/wk)"
+  ],
+  "yellow_flags": [
+    "Fuse Beads: 36.0% ACoS, Mini Fuse ranks dropped -2 after restructuring",
+    "Fairy Family: 39.8% ACoS but ranks surging +3 — deep dive changes working",
+    "Needlepoint: 56.8% ACoS, stage not defined, gained +1 top-10",
+    "Stitch Dictionary: 13/14 campaigns dormant LOW BID, $135/day budget unused"
+  ],
+  "pending_actions_count": 13,
+  "new_flags_today": [
+    "Mini Fuse Beads: -2 top-10 (13→11). Post-restructuring rank loss — may need monitoring.",
+    "Cat & Hat Knitting: -2 top-10 (18→16). First decline for this product in a while.",
+    "Bunny Knitting: -2 top-10 (21→19). Combined with high ACoS, needs attention.",
+    "4 Flowers listing verification OVERDUE (was due Mar 4)."
+  ]
+}

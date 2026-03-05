@@ -56,6 +56,8 @@
 
 **Tokens/cost:** ~45K tokens, ~$0.04 Apify (3 competitor scrapes)
 
+**Post-run update (2026-03-03):** Listing rewrite was pushed live to Amazon via SP-API `update_listing` tool. Submission ID: a7db9ea7233c4245962c10e5821723a0. Status: ACCEPTED. All 4 fields updated (title Option A, 5 recommended bullets, description Option A, backend keywords 247/249 bytes). SKU on Amazon is `7B-EONH-U3A3` (not EK17 — that's the internal catalog name). Product type: `ART_CRAFT_KIT`.
+
 ---
 
 ## Known Issues

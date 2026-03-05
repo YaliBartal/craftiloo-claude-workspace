@@ -1,0 +1,218 @@
+{
+  "$schema_version": "1.0",
+  "last_updated": "2026-03-05",
+
+  "portfolio": {
+    "name": "4 Flowers Embroidery",
+    "id": "110971277744354",
+    "slug": "4-flowers-embroidery",
+    "stage": "Scaling",
+    "hero_asins": [
+      {"asin": "B0DC69M3YD", "product": "4 Flowers Embroidery Kit for Beginners", "sku": "7B-EONH-U3A3", "role": "hero"}
+    ],
+    "secondary_asins": [],
+    "hero_keywords": [
+      {"keyword": "embroidery kit for beginners", "search_volume": 103000},
+      {"keyword": "beginners embroidery kit for adults", "search_volume": null}
+    ],
+    "niche_id": null,
+    "rank_radar_id": null,
+    "campaigns_enabled": null,
+    "campaigns_paused": null
+  },
+
+  "goals": {
+    "acos_target": 30,
+    "acos_red_flag": 50,
+    "cvr_target": 10,
+    "budget_envelope_daily": null,
+    "rank_targets": [
+      {"keyword": "beginners embroidery kit for adults", "target_rank": 10, "current_rank": 11}
+    ],
+    "strategic_notes": [
+      "Was in death spiral: ranks -209 net, 0 top-10 KWs, organic near-zero",
+      "Phase 1 (PPC stabilization) done Mar 2 — Auto+Broad re-enabled",
+      "Phase 2 (full listing rewrite) done Mar 3 — title, bullets, description, backend keywords all rewritten",
+      "Phase 3 (7-day harvest + re-audit) due Mar 9-10",
+      "Listing changes verified live Mar 5 via SP-API"
+    ],
+    "updated": "2026-03-05"
+  },
+
+  "baseline": null,
+
+  "latest_metrics": null,
+
+  "metric_history": [],
+
+  "change_log": [
+    {
+      "date": "2026-03-02",
+      "skill": "ppc-portfolio-action-plan",
+      "summary": "4 Flowers Phase 1 — Emergency Stabilization",
+      "changes": [
+        {
+          "category": "CAMPAIGN_ENABLE",
+          "description": "RE-ENABLED Auto (315988388205283) — $5/day, bid $0.31",
+          "campaign_id": "315988388205283",
+          "old_value": {"state": "PAUSED", "bid": 0.26},
+          "new_value": {"state": "ENABLED", "budget": 5, "bid": 0.31},
+          "status": "success"
+        },
+        {
+          "category": "CAMPAIGN_ENABLE",
+          "description": "RE-ENABLED Broad (513250035569495) — $5/day, bid $0.27",
+          "campaign_id": "513250035569495",
+          "old_value": {"state": "PAUSED"},
+          "new_value": {"state": "ENABLED", "budget": 5, "bid": 0.27},
+          "status": "success"
+        },
+        {
+          "category": "BID_INCREASE",
+          "description": "INCREASED SK bid 'beginners embroidery kit for adults' $0.38->$0.43 (rank #11 defense)",
+          "campaign_id": null,
+          "old_value": {"bid": 0.38},
+          "new_value": {"bid": 0.43},
+          "status": "success"
+        }
+      ],
+      "budget_impact_daily": 10.50,
+      "estimated_weekly_impact": "+$73/week budget added",
+      "key_findings": [
+        "Death spiral — ranks -209 net, 0 top-10 KWs, organic near-zero",
+        "Auto+Broad were paused killing discovery — re-enabled"
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "skill": "listing-optimizer",
+      "summary": "4 Flowers Phase 2 — Full Listing Rewrite via SP-API",
+      "changes": [
+        {
+          "category": "LISTING_UPDATE",
+          "description": "TITLE: Removed 'Sunflower' (wrong product), front-loaded 'Embroidery Kit for Beginners' (103K SV)",
+          "campaign_id": null,
+          "old_value": {"title": "incorrect with Sunflower"},
+          "new_value": {"title": "optimized with 17 Stitches, Needlepoint Kit, Video Tutorial"},
+          "status": "success"
+        },
+        {
+          "category": "LISTING_UPDATE",
+          "description": "BULLETS: 5 keyword-optimized, Q&A-addressing bullets",
+          "campaign_id": null,
+          "old_value": {"bullets": "generic"},
+          "new_value": {"bullets": "optimized"},
+          "status": "success"
+        },
+        {
+          "category": "LISTING_UPDATE",
+          "description": "DESCRIPTION: Was 'Embroidery Kit' (2 words). Now 400+ word SEO description.",
+          "campaign_id": null,
+          "old_value": {"description": "Embroidery Kit"},
+          "new_value": {"description": "400+ word SEO optimized"},
+          "status": "success"
+        },
+        {
+          "category": "LISTING_UPDATE",
+          "description": "BACKEND KEYWORDS: Was empty. Now 247/249 bytes.",
+          "campaign_id": null,
+          "old_value": {"backend_keywords": ""},
+          "new_value": {"backend_keywords": "247/249 bytes filled"},
+          "status": "success"
+        }
+      ],
+      "budget_impact_daily": 0,
+      "estimated_weekly_impact": "Ranking Juice 10%->60-80%. CVR 2.8%->4-6% expected.",
+      "key_findings": [
+        "Listing audit showed 10% Ranking Juice, 0% description score, wrong product in title",
+        "54% of 67 tracked keywords declining. CVR at 2.8% vs industry 5-8%"
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "skill": "user-directed",
+      "summary": "TOS reduction on SK embroidery for beginners",
+      "changes": [
+        {
+          "category": "BID_DECREASE",
+          "description": "LOWERED TOS on SK embroidery for beginners (145201311633066): 161%->20%",
+          "campaign_id": "145201311633066",
+          "old_value": {"tos_pct": 161},
+          "new_value": {"tos_pct": 20},
+          "status": "success"
+        }
+      ],
+      "budget_impact_daily": 0,
+      "key_findings": ["Campaign remains PAUSED — TOS change takes effect on re-enable"]
+    }
+  ],
+
+  "pending_actions": [
+    {
+      "id": "4f-001",
+      "source": "listing-update-2026-03-03",
+      "category": "AUDIT",
+      "action": "Post-listing-update re-audit — check rank recovery, CVR change, impression share after full listing rewrite",
+      "priority": "P1",
+      "status": "pending",
+      "created": "2026-03-03",
+      "due": "2026-03-10",
+      "notes": "Listing verified live Mar 5. Full re-audit needs 7 days of data."
+    },
+    {
+      "id": "4f-002",
+      "source": "portfolio-summary-2026-03-02",
+      "category": "SEARCH_TERM_HARVEST",
+      "action": "7-day search term harvest from re-enabled Auto+Broad campaigns",
+      "priority": "P1",
+      "status": "pending",
+      "created": "2026-03-02",
+      "due": "2026-03-09",
+      "notes": "Auto+Broad re-enabled Mar 2. First harvest after 7 days of data."
+    }
+  ],
+
+  "scheduled_reviews": [
+    {
+      "date": "2026-03-09",
+      "type": "7-day search term harvest",
+      "verify": ["Auto+Broad search term quality", "New keyword discoveries", "Negative keyword needs"],
+      "source": "4-flowers-phase-1-2026-03-02",
+      "status": "pending"
+    },
+    {
+      "date": "2026-03-10",
+      "type": "Full re-audit",
+      "verify": ["Rank recovery after listing rewrite", "CVR improvement from 2.8%", "Impression share changes", "Ranking Juice improvement"],
+      "source": "listing-update-2026-03-03",
+      "status": "pending"
+    }
+  ],
+
+  "skills_run": [
+    {
+      "date": "2026-03-02",
+      "skill": "ppc-portfolio-action-plan",
+      "result": "success",
+      "key_output": "Phase 1 emergency stabilization. Auto+Broad re-enabled. Bid increased on hero KW.",
+      "output_ref": null
+    },
+    {
+      "date": "2026-03-03",
+      "skill": "listing-optimizer",
+      "result": "success",
+      "key_output": "Full listing rewrite: title, bullets, description, backend keywords. Submitted via SP-API.",
+      "output_ref": null
+    }
+  ],
+
+  "improvement_assessment": {
+    "last_assessed": "2026-03-05",
+    "overall_trend": "unknown",
+    "confidence": "low",
+    "summary": "Emergency intervention in progress. Phase 1 (PPC re-enable) done Mar 2, Phase 2 (listing rewrite) done Mar 3, listing verified live Mar 5. No post-change performance data yet. First real assessment on Mar 10.",
+    "metric_trends": {},
+    "verdict": "Intervention phase. Assessment deferred to Mar 10 re-audit.",
+    "history": []
+  }
+}

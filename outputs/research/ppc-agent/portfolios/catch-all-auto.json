@@ -1,0 +1,111 @@
+{
+  "$schema_version": "1.0",
+  "last_updated": "2026-03-05",
+
+  "portfolio": {
+    "name": "Catch All Auto",
+    "id": null,
+    "slug": "catch-all-auto",
+    "stage": "General",
+    "hero_asins": [],
+    "secondary_asins": [],
+    "hero_keywords": [],
+    "niche_id": null,
+    "rank_radar_id": null,
+    "campaigns_enabled": 6,
+    "campaigns_paused": 0
+  },
+
+  "goals": {
+    "acos_target": null,
+    "acos_red_flag": null,
+    "cvr_target": null,
+    "budget_envelope_daily": null,
+    "rank_targets": [],
+    "strategic_notes": [
+      "General portfolio — catch-all auto campaigns for discovery",
+      "Negative keyword gap fix applied Mar 3 (240 negatives + 36 un-negations)",
+      "Revenue unlock: 36 terms un-negated in campaigns 1-3 — potential $1,053.76/14d"
+    ],
+    "updated": "2026-03-03"
+  },
+
+  "baseline": null,
+
+  "latest_metrics": null,
+
+  "metric_history": [],
+
+  "change_log": [
+    {
+      "date": "2026-03-03",
+      "skill": "user-directed",
+      "summary": "Catch-All Auto — Negative Keyword Gap Fix + Un-negation",
+      "changes": [
+        {
+          "category": "NEGATE_SEARCH_TERM",
+          "description": "NEGATED 5 top waste terms in campaigns 4, 5, 6 (15 negatives total)",
+          "campaign_id": null,
+          "old_value": null,
+          "new_value": {"negatives_count": 15, "campaigns": ["352155109175473", "536527652001300", "294828151510965"]},
+          "status": "success"
+        },
+        {
+          "category": "NEGATE_SEARCH_TERM",
+          "description": "NEGATED 75 preventive terms in campaigns 4, 5, 6 (225 negatives total)",
+          "campaign_id": null,
+          "old_value": null,
+          "new_value": {"negatives_count": 225},
+          "status": "success"
+        },
+        {
+          "category": "KEYWORD_ENABLE",
+          "description": "UN-NEGATED 36 converting terms in campaigns 1, 2, 3 (58 keyword IDs set to PAUSED)",
+          "campaign_id": null,
+          "old_value": {"state": "ENABLED", "type": "negatives blocking conversions"},
+          "new_value": {"state": "PAUSED", "terms_unblocked": 36},
+          "status": "success"
+        }
+      ],
+      "budget_impact_daily": 0,
+      "estimated_weekly_impact": "~$22.69/14d waste savings + $1,053.76/14d revenue unlock potential",
+      "key_findings": [
+        "240 total negatives applied to close waste gap",
+        "36 converting terms were blocked in campaigns 1-3 but converting in 4-6",
+        "50 orders and $1,053.76 sales at 10.8% ACoS were blocked"
+      ]
+    }
+  ],
+
+  "pending_actions": [],
+
+  "scheduled_reviews": [
+    {
+      "date": "2026-03-10",
+      "type": "7-day re-check",
+      "verify": ["Negative impact on waste reduction", "Un-negation uplift in campaigns 1-3"],
+      "source": "catch-all-auto-negation-2026-03-03",
+      "status": "pending"
+    }
+  ],
+
+  "skills_run": [
+    {
+      "date": "2026-03-03",
+      "skill": "user-directed",
+      "result": "success",
+      "key_output": "240 negatives applied + 36 un-negations. Revenue unlock potential.",
+      "output_ref": null
+    }
+  ],
+
+  "improvement_assessment": {
+    "last_assessed": "2026-03-05",
+    "overall_trend": "unknown",
+    "confidence": "low",
+    "summary": "Major negation work done Mar 3. No post-change data yet. Re-check Mar 10.",
+    "metric_trends": {},
+    "verdict": "Awaiting post-negation data.",
+    "history": []
+  }
+}

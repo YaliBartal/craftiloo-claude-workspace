@@ -976,6 +976,30 @@ async def create_sp_campaign_negative_keywords(keywords: str, marketplace: str =
     return format_json(results, title="Campaign Negative Keyword Creation Results")
 
 
+@mcp.tool()
+async def update_sp_campaign_negative_keywords(keywords: str, marketplace: str = "US") -> str:
+    """Update campaign-level negative keywords (e.g. archive/enable them).
+
+    Args:
+        keywords: JSON array of keyword updates. Required: keywordId, state.
+            Example: [{"keywordId": "123", "state": "ARCHIVED"}]
+        marketplace: US or CA.
+    """
+    parsed = _parse_json_param(keywords, "keywords")
+    if isinstance(parsed, str):
+        return parsed
+
+    body = {"campaignNegativeKeywords": parsed if isinstance(parsed, list) else [parsed]}
+    data = await ads_api_put(
+        "/sp/campaignNegativeKeywords", body, marketplace, "campaignNegativeKeywords"
+    )
+    if isinstance(data, str):
+        return data
+
+    results = data.get("campaignNegativeKeywords", data) if isinstance(data, dict) else data
+    return format_json(results, title="Campaign Negative Keyword Update Results")
+
+
 # ============================================================
 # TOOLS — Sponsored Products: Targeting
 # ============================================================

@@ -63,7 +63,7 @@ Pulls the search term report from the Amazon Ads API and classifies every term i
 
 ## Process
 
-### Step 1: Load Context
+### Step 1: Load Context + Portfolio Trackers
 
 Load in parallel:
 
@@ -71,9 +71,15 @@ Load in parallel:
 |------|---------|
 | `context/business.md` | Portfolio stages + ACoS targets |
 | `context/search-terms.md` | **PROTECTED terms — never negate these** |
+| `outputs/research/ppc-agent/portfolios/*.json` | **Portfolio trackers** — recent change_log for dedup (negatives already applied), pending NEGATE actions |
 | `outputs/research/negative-keywords/data/*-applied-*.json` | Previously applied negatives (dedup) |
-| `outputs/research/ppc-agent/agent-state.json` | Last harvest date |
+| `outputs/research/ppc-agent/agent-state.json` | Last harvest date, portfolio_index |
 | Most recent `outputs/research/ppc-weekly/snapshots/*/summary.json` | Weekly baseline for context |
+
+**From portfolio trackers, use:**
+- `change_log` entries with `category: "NEGATE_SEARCH_TERM"` — dedup against these (negatives already applied in previous runs)
+- `pending_actions` with category containing "NEGATE" or "PROMOTE" — check if already queued from another skill
+- `goals.acos_target` — use portfolio-specific targets instead of stage defaults when available
 
 ### Step 2: Pull Search Term Report
 
@@ -285,13 +291,33 @@ After user approval:
    - Suggested daily budget
    - Note: "Add '{term}' as negative EXACT in {source campaign} after creating the SK campaign"
 
-### Step 10: Save Outputs
+### Step 10: Save Outputs + Update Portfolio Trackers
 
 **Brief:**
 `outputs/research/ppc-agent/search-terms/{YYYY-MM-DD}-search-term-harvest.md`
 
 **Applied actions log:**
 `outputs/research/ppc-agent/search-terms/{YYYY-MM-DD}-applied-actions.json`
+
+**Portfolio tracker updates** — for each portfolio with applied negatives, update its tracker at `outputs/research/ppc-agent/portfolios/{slug}.json`:
+
+1. **`change_log`** — append entry:
+   ```json
+   {
+     "date": "YYYY-MM-DD",
+     "source": "ppc-search-term-harvester",
+     "summary": "{N} negatives applied, {N} promote candidates identified",
+     "changes": [
+       {"category": "NEGATE_SEARCH_TERM", "term": "{search term}", "campaign": "{name}", "status": "success"}
+     ]
+   }
+   ```
+2. **`pending_actions`** — add PROMOTE candidates as pending actions (category: "PROMOTE", priority: "P2")
+3. **`skills_run`** — append: `{"skill": "ppc-search-term-harvester", "date": "YYYY-MM-DD", "result": "success", "key_metrics": {"negatives_applied": N, "promote_candidates": N, "weekly_savings_est": "$X"}}`
+
+**`agent-state.json` update:**
+- Update `portfolio_index.{slug}.last_updated` for each affected portfolio
+- Update `portfolio_index.{slug}.pending_count` from tracker
 
 ```json
 {

@@ -39,6 +39,11 @@ triggers:
   - build campaigns
   - new campaigns
   - propose campaigns
+  - portfolio deep dive
+  - deep dive
+  - portfolio action plan
+  - fix portfolio
+  - work on portfolio
 output_location: outputs/research/ppc-agent/
 ---
 
@@ -69,7 +74,7 @@ The PPC Agent is an **orchestrator** — it does not perform PPC analysis itself
 
 ---
 
-## Step 1: Read Agent State
+## Step 1: Read Agent State + Portfolio Trackers
 
 Read `outputs/research/ppc-agent/agent-state.json` to understand what has been run recently.
 
@@ -85,12 +90,69 @@ If the file doesn't exist, create it with empty dates (everything is "never run"
   "last_weekly_analysis": null,
   "last_monthly_review": null,
   "last_rank_optimizer": null,
-  "last_campaign_creator": null,
   "last_negative_generation": {},
-  "pending_actions": [],
+  "portfolio_index": {
+    "{portfolio-slug}": {
+      "name": "Portfolio Name",
+      "id": "portfolio_id",
+      "tracker": "portfolios/{slug}.json",
+      "stage": "Scaling/Launch/General",
+      "last_deep_dive": "YYYY-MM-DD",
+      "last_updated": "YYYY-MM-DD",
+      "health_status": "GREEN/YELLOW/RED",
+      "trend": "improving/stable/declining/unknown",
+      "acos": 30.0,
+      "pending_count": 0,
+      "top_action": "[P1] Brief description of most urgent pending action",
+      "next_review": "YYYY-MM-DD"
+    }
+  },
+  "all_pending_actions": [
+    {"portfolio": "Name", "id": "ff-001", "priority": "P1", "category": "BID_DECREASE", "action": "Brief description", "created": "YYYY-MM-DD"}
+  ],
+  "upcoming_reviews": [
+    {"date": "YYYY-MM-DD", "portfolio": "Name", "type": "7-day re-check", "source": "skill-run-date"}
+  ],
+  "global_pending_actions": [],
   "applied_changes": []
 }
 ```
+
+**The state file is the single source of truth for quick decisions.** Any skill can read agent-state.json and immediately know:
+- Which portfolios need attention (`health_status`, `top_action`)
+- What's overdue (`upcoming_reviews`, cadence timestamps)
+- All pending work across all portfolios (`all_pending_actions`)
+- Portfolio trends (`trend`, `acos`)
+
+**No skill should need to read all 15 tracker files for routing or overview purposes.** Only open a specific tracker when working on that portfolio.
+
+### Surfaced Data (maintained by every sub-skill)
+
+| Field | What it surfaces | Updated by |
+|-------|-----------------|------------|
+| `portfolio_index.{slug}.acos` | Latest ACoS from tracker's `latest_metrics` | Daily health, portfolio summary, deep dive |
+| `portfolio_index.{slug}.trend` | From tracker's `improvement_assessment.overall_trend` | Deep dive, significant metric shifts |
+| `portfolio_index.{slug}.top_action` | Highest-priority pending action description | Any skill that adds/completes pending actions |
+| `portfolio_index.{slug}.health_status` | Traffic light from last health check | Daily health, deep dive |
+| `all_pending_actions` | **All** pending actions from all portfolio trackers, sorted by priority | Any skill that adds/completes pending actions |
+| `upcoming_reviews` | **All** scheduled reviews from all portfolio trackers, sorted by date | Deep dive, bid recommender, search term harvester |
+
+**When a sub-skill modifies a portfolio tracker's `pending_actions` or `scheduled_reviews`, it MUST also update `all_pending_actions` and `upcoming_reviews` in agent-state.json to keep them in sync.**
+
+### Portfolio Tracker System (deep context)
+
+Each portfolio has a dedicated tracker file at `outputs/research/ppc-agent/portfolios/{slug}.json` containing full detail:
+- **goals** — ACoS/CVR targets, rank targets, strategic notes
+- **baseline** — write-once metrics snapshot from before agent started changes
+- **latest_metrics** — most recent snapshot + delta vs baseline
+- **metric_history** — time-series for trend tracking (max 90 entries)
+- **change_log** — every API change made to this portfolio
+- **pending_actions** — queued work with priority and due dates (source of truth, surfaced to agent-state)
+- **scheduled_reviews** — upcoming re-check dates (source of truth, surfaced to agent-state)
+- **skills_run** — log of skill executions
+- **improvement_assessment** — is this portfolio improving?
+
+When routing to a sub-skill, pass the portfolio tracker path so the sub-skill can read/write it directly.
 
 ---
 
@@ -109,6 +171,7 @@ If the file doesn't exist, create it with empty dates (everything is "never run"
 | "negative keywords" / "generate negatives" | **Negative Keyword Generator** (standalone) | `.claude/skills/negative-keyword-generator/SKILL.md` |
 | "rank optimizer" / "rank vs spend" / "keyword rank analysis" / "ppc rank check" | **Keyword Rank Optimizer** | `.claude/skills/keyword-rank-optimizer/SKILL.md` |
 | "create campaigns" / "campaign creator" / "build campaigns" / "new campaigns" | **PPC Campaign Creator** | `.claude/skills/ppc-campaign-creator/SKILL.md` |
+| "portfolio deep dive" / "deep dive {name}" / "portfolio action plan" / "fix {portfolio}" / "work on {portfolio}" | **Portfolio Action Plan** | `.claude/skills/ppc-portfolio-action-plan/SKILL.md` |
 | "deal prep" / "deal ppc" / "prep for deal" | **Deal Coordination** (Bid Recommender — deal mode) | `.claude/skills/ppc-bid-recommender/SKILL.md` |
 | "post deal" / "deal ended" / "deal cleanup" | **Deal Cleanup** (Bid Recommender — post-deal mode) | `.claude/skills/ppc-bid-recommender/SKILL.md` |
 | "ppc" / "ppc check" / "ppc status" (ambiguous) | **Cadence Checker** (Step 3) | This skill |
@@ -180,15 +243,31 @@ When the user says just "ppc" or "ppc check" without a specific task:
 **Recommendation:** {most overdue task} is {N} days overdue. Run it now?
 ```
 
-4. **Also show pending actions** if any exist from previous runs:
+4. **Show portfolio health from `portfolio_index`:**
 
 ```
-**Pending Actions ({count})**
+**Portfolio Health Overview**
+
+| Portfolio | Status | Pending | Next Review | Last Updated |
+|-----------|--------|---------|-------------|--------------|
+| {name} | GREEN/YELLOW/RED | {N} actions | {date or "—"} | {date} |
+```
+
+For any portfolio with `pending_count > 0`, load its tracker file and list the top pending actions:
+```
+**Portfolios with Pending Work ({count})**
+- {Portfolio Name}: {pending_count} actions — top: "{highest priority action}" (P1, from {source})
+```
+
+5. **Also show global pending actions** if any exist from previous runs:
+
+```
+**Global Pending Actions ({count})**
 - [P1] {action description} (from {source skill}, {date})
 - [P2] {action description}
 ```
 
-5. Wait for user to choose which task to run, then route to that skill.
+6. Wait for user to choose which task to run, then route to that skill.
 
 ---
 
@@ -213,25 +292,61 @@ When the user says "ppc catch-up" or "ppc everything":
 
 ---
 
-## Step 5: Update Agent State (after every sub-skill run)
+## Step 5: Update Agent State + Portfolio Trackers (after every sub-skill run)
 
-After any sub-skill completes, update `agent-state.json`:
+After any sub-skill completes, update **both** `agent-state.json` and affected portfolio tracker(s):
+
+### 5a. Update `agent-state.json`
 
 1. **Update the timestamp** for the task that just ran
-2. **Add any new pending actions** from the sub-skill's output (P1/P2 action items)
-3. **Remove any pending actions** that were addressed during this run
-4. **Log applied changes** (bid changes, negatives applied, etc.)
+2. **Add any new global pending actions** from the sub-skill's output (cross-portfolio items only)
+3. **Remove any global pending actions** that were addressed during this run
+4. **Log applied changes** to `applied_changes` (only for multi-portfolio changes)
 
-Example update:
+### 5b. Update `portfolio_index` in `agent-state.json`
+
+For each portfolio touched by the sub-skill:
+
+1. **Update `last_updated`** to today's date
+2. **Update `health_status`** based on sub-skill output (GREEN/YELLOW/RED)
+3. **Update `trend`** — from tracker's `improvement_assessment.overall_trend`
+4. **Update `acos`** — from tracker's `latest_metrics.metrics.acos`
+5. **Update `pending_count`** — count of pending actions in the portfolio's tracker
+6. **Update `top_action`** — `"[{priority}] {description}"` of highest-priority pending action (null if none)
+7. **Update `next_review`** — earliest pending review from the portfolio's `scheduled_reviews`
+8. **Update `last_deep_dive`** — if the sub-skill was a portfolio action plan
+
+### 5b-2. Sync `all_pending_actions` in `agent-state.json`
+
+**Rebuild from portfolio trackers after any change to pending actions.** This is the aggregated view — every pending action from every portfolio, sorted by priority (P1 first), then by date:
+
 ```json
-{
-  "last_daily_health": "2026-03-01",
-  "last_search_harvest": "2026-02-27",
-  "pending_actions": [
-    {"source": "daily-health-2026-03-01", "action": "Dessert Family ACoS at 72% — needs bid review", "priority": "P1", "status": "pending"}
-  ]
-}
+{"portfolio": "Name", "id": "ff-001", "priority": "P1", "category": "BID_DECREASE", "action": "Brief description", "created": "YYYY-MM-DD"}
 ```
+
+**When adding/completing pending actions in a tracker, also add/remove them from `all_pending_actions`.**
+
+### 5b-3. Sync `upcoming_reviews` in `agent-state.json`
+
+**Rebuild from portfolio trackers after any change to scheduled reviews.** Sorted by date (soonest first):
+
+```json
+{"date": "YYYY-MM-DD", "portfolio": "Name", "type": "7-day re-check", "source": "skill-run-date"}
+```
+
+### 5c. Update Portfolio Tracker Files
+
+For each affected portfolio, update its tracker at `outputs/research/ppc-agent/portfolios/{slug}.json`:
+
+1. **`skills_run`** — append entry: `{"skill": "{skill-name}", "date": "{today}", "result": "success/partial/failed", "key_metrics": {}}`
+2. **`change_log`** — append any API changes made (bid changes, negatives, campaigns created)
+3. **`pending_actions`** — add new P1/P2 items, mark completed items
+4. **`latest_metrics`** — update if the sub-skill produced fresh metrics
+5. **`metric_history`** — append new entry if `latest_metrics` was updated (max 90 entries)
+6. **`scheduled_reviews`** — add if sub-skill recommends a re-check date
+7. **`improvement_assessment`** — update if enough history exists (compare `latest_metrics` vs `baseline`)
+
+**Key principle:** Portfolio-specific data goes in the portfolio tracker. Only global/cross-portfolio data stays in `agent-state.json`.
 
 ---
 
