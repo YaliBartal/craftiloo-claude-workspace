@@ -154,8 +154,8 @@ market-intel/
 |-------|-----------------|-------|
 | Seller Board | ~18s | Fastest — 2 API calls |
 | DataDive Competitors | ~84s | 11 niches × 1.1s rate limit |
-| DataDive Rank Radar | ~105s | 9 radars × 1.1s rate limit |
-| Apify (Keywords + Competitor BSR) | ~40-60s | 20 keyword scans + 1 BSR batch, all async. axesso ~7.5s/keyword, saswave ~40s |
+| DataDive Rank Radar | ~115s | 10 radars × 1.1s rate limit (incl. B08DDJCQKF added 2026-03-02) |
+| Apify (Keywords + Competitor BSR) | ~40-60s | 20 keyword scans + 1 BSR batch, all async. **axesso_data ~7.5s/keyword**, saswave ~40s for BSR batch |
 | SP-API (Catalog + Pricing + Inventory + Orders) | ~125s | 28 calls × 0.5s rate limit, serial pricing |
 
 **Launch all 5 agents in parallel.** Wall-clock bottleneck is SP-API (~2 min). Apify now does more work but it's all async so wall-clock is ~60s.
@@ -169,7 +169,7 @@ market-intel/
 | Apify cost/day | **~$1.95** | ~$1.80 keywords + ~$0.15 BSR scan |
 | SP-API calls | **~28** | 13 catalog + 13 pricing + 1 inventory + 1 orders |
 | DataDive niches | **11** | 11 (updated Feb 25) |
-| DataDive radars | **9** | 9 hero product radars |
+| DataDive radars | **10** | 10 hero product radars (incl. B08DDJCQKF added 2026-03-02) |
 | Keywords searched (Apify) | **20** | 20 keywords (some may return empty) |
 | Competitor BSR ASINs (Apify) | **34** | 34 ASINs via saswave |
 
@@ -273,6 +273,7 @@ Competitors tracked in `context/competitors.md`:
 ### Active Rank Radars (hero products only)
 
 Fetch radars for these hero product ASINs **only**:
+- **B08DDJCQKF (Cross Stitch Backpack Charms)** — include always (user requirement 2026-03-02)
 - B09X55KL2C (Embroidery Kids) — 55 keywords
 - B0DC69M3YD (Embroidery Adults) — 67 keywords
 - B09WQSBZY7 (Fairy Sewing Kit) — 87 keywords
@@ -954,7 +955,7 @@ All steps should run in **parallel where possible** to minimize wall-clock time.
 - [ ] **SP-API:** `get_fba_inventory` × 1 call (stock levels for OOS alerts)
 - [ ] **SP-API:** `get_orders(date=yesterday)` × 1 call (yesterday's revenue + units, real-time)
 - [ ] **Apify:** Keyword scan (20 keywords) + Competitor BSR scan (34 ASINs) — agent returns `keyword_battleground` + `badges_found` + `new_competitors` + `competitor_bsr`
-- [ ] **DataDive:** Fetch Rank Radar data for 9 hero product radars only (skip B0B1927HCG, B0FHMRQWRX, B0DKD2S3JT, B092SW839H, B0F8QZZQQM, B09HVDNFMR)
+- [ ] **DataDive:** Fetch Rank Radar data for 10 hero product radars: B08DDJCQKF + 9 others (skip B0B1927HCG, B0FHMRQWRX, B0DKD2S3JT, B092SW839H, B0F8QZZQQM, B09HVDNFMR)
 - [ ] **DataDive:** Fetch competitor data for 11 niches, top 4 per niche (skip retired niches — see Step 3)
 - [ ] **Seller Board:** Fetch daily dashboard report (for 7-day aggregates) AND sales detailed report (for per-ASIN actuals)
 

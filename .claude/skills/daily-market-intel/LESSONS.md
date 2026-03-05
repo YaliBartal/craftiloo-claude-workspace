@@ -24,6 +24,54 @@
 
 <!-- Add new entries at the TOP (newest first). Use this exact format: -->
 
+### Run: 2026-03-02
+**Goals:**
+- [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
+- [x] Fetch SP-API Orders for yesterday's revenue/units (2026-03-01)
+- [x] Fetch DataDive Rank Radar data for 9 hero radars
+- [x] Fetch DataDive competitor data for 11 niches
+- [x] Run Apify keyword scan (9 keywords) with axesso_data actor
+- [x] Run Apify competitor BSR scan (27 ASINs — saswave actor)
+- [ ] Fetch Seller Board 7-day dashboard aggregates + per-ASIN detailed — ❌ FAILED (401)
+- [x] Compile full report with mandatory format
+- [x] Save snapshot
+
+**Result:** ⚠️ Partial — 5/6 data sources fetched. Seller Board unavailable (401).
+
+**What happened:**
+- Apify: 9/9 keywords returned data (2nd consecutive perfect scan). No 402 errors. "kids embroidery kit" resolved (was empty ×2 consecutive).
+- Competitor BSR scan: 27/27 ASINs returned. B004JIFCXO no BSR (same as last run).
+- SP-API: 2 pricing 429s (auto-retried). Inventory showing 0 for B08FYH13CL, B0F8R652FX, B09THLVFZK, B07D6D95NG — inconsistent with BSR data, likely API anomaly.
+- B09THLVFZK: BSR 5,012 — NEW ALL-TIME BEST, first time beating baseline (5,856).
+- B0F8DG32H5: Rank Radar 10→19 top-10 keywords — biggest single-day jump so far.
+- B09WQSBZY7: Rank Radar 17→23 top-10 keywords — strong keyword performance.
+- B096MYBLS1: OOS confirmed. BSR 127,041 (+34,997). All 50 keywords collapsed.
+- B09HVSLBS6: OOS confirmed. Not in keyword scan top 48.
+- B0DC69M3YD: Day 20+ rank crisis. "embroidery kit" (225K SV) back to 101 after briefly returning.
+- B08FYH13CL: BSR improved (-2,594) but "latch hook kits" (11.7K SV) fell to rank 101.
+- B08DDJCQKF dropped from #2 to #6 on "embroidery kit for kids" — new entrants (Bradove, Pllieay) took positions 2-3.
+- Made By Me now #1 latch hook + #2 loom knitting — cross-category expansion confirmed.
+
+**What didn't work:**
+- Seller Board: All 5 URLs returned 401 Unauthorized. Tokens expired.
+- SP-API FBA inventory: 0 for 4 ASINs that are clearly active (API anomaly).
+- B07D6D95NG BSR declined -5,975 — no clear cause.
+
+**Is this a repeat error?** Seller Board 401 is a NEW issue. FBA inventory anomaly (multiple 0s for active products) is NEW variant of the truncation issue. B0DC69M3YD rank crisis ongoing (day 20+). B08FYH13CL instability continuing.
+
+**Lesson learned:**
+- Seller Board report tokens can expire without warning — add check to .env update process. The fix is: Seller Board → Settings → Automation → Reports → regenerate all URLs → update .env.
+- FBA inventory API showing 0 for clearly active products (B09THLVFZK at BSR 5,012 cannot be OOS) — when BSR is active and improving, treat 0 inventory as API anomaly not real OOS. Real OOS = 0 inventory + BSR crashing + keywords collapsing (all three together).
+- "kids embroidery kit" empty ×2 resolved on its own — the carry-forward approach was correct. Axesso actor is reliable overall.
+- B0F8DG32H5 +9 top-10 keyword jump suggests the knitting category may be seasonally improving. Watch this product for BSR follow-through in next 2-3 days.
+- B08DDJCQKF dropped from #2 to #6 on high-SV keyword — could be a one-day fluctuation or start of displacement. Monitor tomorrow.
+
+**Tokens/cost:** ~95K tokens, ~$0.81 Apify cost
+
+**User instruction (2026-03-02):** Always include B08DDJCQKF (Cross Stitch Backpack Charms) in the Rank Radar fetch and the "Hero Products — Top Keyword Positions" table. SKILL.md updated — now 10 radars.
+
+---
+
 ### Run: 2026-03-05
 **Goals:**
 - [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
@@ -182,7 +230,7 @@
 
 ---
 
-### Run: 2026-03-01
+### Run: 2026-03-01 (v1 — igview era + NEW competitor BSR scan)
 **Goals:**
 - [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
 - [x] Fetch SP-API Orders for yesterday's revenue/units (2026-02-28)
@@ -539,11 +587,19 @@
 
 ## Known Issues
 
-### Issue: Seller Board Detailed Report URL Stale (Returns Old Data) — RESOLVED 2026-03-01
-- **First seen:** 2026-03-01 (v3)
-- **Resolved:** 2026-03-01 — Token refreshed. Also added new `SELLERBOARD_SALES_DETAILED_7D` report (7-day window, ~460 rows vs 2,335). SKILL.md updated to use `get_sales_detailed_7d_report` instead of `get_sales_detailed_report`.
-- **Root cause:** Auth token expired across all 5 Seller Board URLs simultaneously.
+### Issue: Seller Board Report Tokens Expired (401 Unauthorized)
+- **First seen:** 2026-03-02
+- **Description:** All 5 Seller Board report URLs returned 401 Unauthorized. Tokens embedded in the URLs have expired. This happened previously in 2026-03-01 v3 (returned stale data) and now returns outright 401.
+- **Fix:** Log into Seller Board → Settings → Automation → Reports → regenerate all 5 report URLs → update `.env` with new values.
+- **Affected:** SELLERBOARD_DAILY_DASHBOARD, SELLERBOARD_SALES_DETAILED, SELLERBOARD_SALES_SUMMARY, SELLERBOARD_INVENTORY_REPORT, SELLERBOARD_PPC_MARKETING.
+- **Workaround:** Carry forward previous SB data — always clearly label as stale. Report works without SB (market data still fully available).
 - **Prevention:** If any SB report returns 401 or stale data, check ALL URLs — they share the same token.
+
+### Issue: FBA Inventory API Shows 0 for Active Products
+- **First seen:** 2026-03-02
+- **Description:** `get_fba_inventory(asin_filter=...)` returned 0 for B08FYH13CL, B0F8R652FX, B09THLVFZK, B07D6D95NG — all clearly active (ranking, getting sales, BSR intact). API data is wrong.
+- **OOS detection rule (use ALL THREE signals):** Real OOS = 0 inventory + BSR crashing + keywords collapsing. A product showing 0 inventory alone is NOT a confirmed OOS.
+- **Workaround:** When FBA shows 0 but BSR is stable/improving and keywords are ranking, mark as "⚠️ FBA data anomaly — verify in Seller Central" and do NOT alert OOS.
 
 ### Issue: DataDive Rank Radar API Truncates at 50 Keywords
 - **First seen:** 2026-03-01 (v3)
@@ -578,13 +634,13 @@
 ### Issue: FBA Inventory API Pagination
 - **First seen:** 2026-02-24
 - **Description:** `get_fba_inventory(max_results=50)` returns only 50 SKUs. 5-6 hero ASINs consistently fall outside the first 50 results.
-- **Workaround:** Make 2 calls or increase max_results. Or use Seller Board inventory report as fallback.
-- **Root cause:** FBA inventory API caps at 50 results per call
+- **Workaround:** Use `asin_filter` parameter to filter to hero ASINs only (resolved the truncation issue — see Resolved Issues).
+- **Root cause:** FBA inventory API caps at 50 results per call without filtering
 
 ### Issue: DataDive Competitor Research Date Staleness
 - **First seen:** 2026-02-24
 - **Description:** DataDive niche competitor data has research dates ranging from Dec 2025 to Feb 2026. Sales/revenue estimates may be 2+ months old.
-- **Workaround:** Note research dates in report. Use BSR-to-sales estimates for more current data.
+- **Workaround:** Note research dates in report.
 - **Root cause:** DataDive niches need manual re-running to refresh competitor data
 
 ---
@@ -600,18 +656,24 @@
 
 ### B08FYH13CL Latch Hook Rank Instability (×6+ days — RECOVERY FAILED, ESCALATING)
 - **First seen:** 2026-02-25 (run 1)
-- **Repeated:** 2026-02-25 (v2), 2026-02-26, 2026-02-27 (false recovery), 2026-02-28 (partial stall), 2026-03-01 v1 (crash confirmed), 2026-03-01 v3 (continued decline)
-- **Latest:** 2026-03-01 v3 — BSR 33,025 (+26.9% vs yesterday). #18 on "latch hook kits for kids". Made By Me dominating category.
+- **Repeated:** 2026-02-25 (v2), 2026-02-26, 2026-02-27 (false recovery), 2026-02-28 (partial stall), 2026-03-01 v1 (crash confirmed), 2026-03-01 v3 (continued decline), 2026-03-02 (BSR improved but key keyword fell off page)
+- **Latest:** 2026-03-02 — BSR improved (-2,594) but "latch hook kits" (11.7K SV) fell to rank 101. Made By Me now #1 in latch hook.
 - **Status:** ESCALATED — needs listing/PPC investigation. Not a monitoring issue. Made By Me (BSR 1,458, 11,876 reviews) and B0DJQPGDMQ (veirousa, BSR 3,726) are taking share.
 
-### "kids embroidery kit" Apify Empty Results (×2 consecutive runs) — RESOLVED 2026-02-26
-- **First seen:** 2026-02-25 (v2)
-- **Resolved:** 2026-02-26 — Switched from `igview-owner~amazon-search-scraper` to `axesso_data~amazon-search-scraper`. Axesso returns correct results for this keyword.
+### "kids embroidery kit" Apify Empty Results (×2 consecutive runs) — RESOLVED 2026-03-02
+- **First seen:** 2026-03-01 v1 (igview era)
+- **Resolved:** 2026-03-02 — axesso actor returned data for this keyword on 2nd consecutive perfect scan.
 - **See:** Resolved Issues for full detail on igview → axesso switch.
 
 ---
 
 ## Resolved Issues
+
+### Issue: Seller Board Detailed Report URL Stale (Returns Old Data)
+- **First seen:** 2026-03-01 (v3) — URL returned only Jan 28-29 data (over a month old)
+- **Resolved:** 2026-03-01 — Token refreshed. Also added new `SELLERBOARD_SALES_DETAILED_7D` report (7-day window, ~460 rows vs 2,335). SKILL.md updated to use `get_sales_detailed_7d_report` instead of `get_sales_detailed_report`.
+- **Root cause:** Auth token expired across all 5 Seller Board URLs simultaneously.
+- **Note:** Token expiry is recurring — see active Known Issue "Seller Board Report Tokens Expired (401)" for latest occurrence.
 
 ### Issue: DataDive Competitor BSR Not Available (Resolved 2026-03-01)
 - **First seen:** 2026-02-28 — DataDive niche competitor endpoint does NOT return BSR for competitor products.
