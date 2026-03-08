@@ -117,13 +117,14 @@ async def get_inventory_report() -> str:
 
 
 @mcp.tool()
-async def get_sales_detailed_report() -> str:
+async def get_sales_detailed_report(save_path: str = "") -> str:
     """Fetch the Sales Detailed report from Seller Board.
-    Returns per-ASIN data: organic/PPC sales, FBA fees, COGS, profit, ACOS, sessions by date."""
+    Returns per-ASIN data: organic/PPC sales, FBA fees, COGS, profit, ACOS, sessions by date.
+    Pass save_path to save full CSV to disk (recommended for large reports with 1000+ rows)."""
     raw = await fetch_report("SELLERBOARD_SALES_DETAILED")
     if raw.startswith("Error:"):
         return raw
-    return csv_to_summary(raw)
+    return csv_to_summary(raw, save_path=save_path if save_path else None)
 
 
 @mcp.tool()
@@ -157,13 +158,14 @@ async def get_ppc_marketing_report() -> str:
 
 
 @mcp.tool()
-async def get_sales_detailed_7d_report() -> str:
+async def get_sales_detailed_7d_report(save_path: str = "") -> str:
     """Fetch the Sales Detailed 7-Day report from Seller Board.
-    Same per-ASIN data as Sales Detailed but only the previous 7 days. Ideal for daily market intel."""
+    Same per-ASIN data as Sales Detailed but only the previous 7 days. Ideal for daily market intel.
+    Pass save_path to save full CSV to disk (recommended for large reports)."""
     raw = await fetch_report("SELLERBOARD_SALES_DETAILED_7D")
     if raw.startswith("Error:"):
         return raw
-    return csv_to_summary(raw)
+    return csv_to_summary(raw, save_path=save_path if save_path else None)
 
 
 @mcp.tool()

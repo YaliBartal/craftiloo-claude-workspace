@@ -149,15 +149,16 @@
 **Fix applied:** `server.py` line 1334 — `max_items=max_rows`. **Needs server restart.**
 **Workaround:** None effective. Must restart server.
 
-### 2. sp_placements preset groupBy bug
-**Impact:** MEDIUM — Placement report cannot be generated.
-**Fix applied:** `server.py` line 119 — moved `placementClassification` from `columns` to `groupBy`. **Needs server restart.**
-**Workaround:** Skip placement analysis until restart.
+### 2. sp_placements preset — RESOLVED
+**Impact:** Was MEDIUM — Placement report returned 4 unlabeled rows per campaign.
+**Root cause:** `placementClassification` was removed from `columns` and never added back. `campaignPlacement` is a groupBy dimension only; `placementClassification` is the column name (v3 equivalent of v2 `placement`).
+**Fix applied (2026-03-05):** Added `placementClassification` to `columns` array in server.py line 122. Tested and confirmed — report now returns labeled placements: "Top of Search on-Amazon", "Detail Page on-Amazon", "Other on-Amazon", "Off Amazon".
+**Status:** RESOLVED. Needs server restart to take effect in running server.
 
-### 3. No portfolio field in sp_campaigns report
+### 3. No portfolio field in sp_campaigns report — CANNOT FIX
 **Impact:** MEDIUM — Cannot group campaigns by portfolio without additional API calls.
-**Fix needed:** Either add `portfolioId` to the `sp_campaigns` groupBy/columns, or call `list_portfolios` at the start to build a mapping.
-**Workaround:** Infer portfolio from campaign name (unreliable for many campaigns).
+**Attempted fix (2026-03-05):** Tried adding `portfolioId` to sp_campaigns report columns — Amazon Ads API rejects it with HTTP 400. `portfolioId` is NOT a valid async report column. It is only available via the `list_sp_campaigns` live API response.
+**Workaround:** Call `list_sp_campaigns` or `list_portfolios` at the start to build a campaign-to-portfolio mapping. This is the only reliable approach.
 
 ### 5. list_sp_* function truncation (same as format_json issue)
 **Impact:** HIGH — All list functions (list_sp_campaigns, list_sp_ad_groups, list_sp_keywords, etc.) call `format_json()` without `max_items` parameter, defaulting to 50 rows.
@@ -190,12 +191,12 @@
 
 ## Repeat Errors
 
-### 1. sp_placements report 400 error (×3)
-**Count:** 3 (all 3 runs on 2026-03-01)
-- Run 1-2: `placementClassification` in columns → moved to groupBy
-- Run 3: `placementClassification` in groupBy → wrong value entirely. **Correct value: `campaignPlacement`**
-**Root cause:** Amazon API uses `campaignPlacement` not `placementClassification` as the groupBy value.
-**Fix applied:** server.py line 119 now has `campaignPlacement`. **Needs server restart.**
+### 1. sp_placements report — RESOLVED (2026-03-05)
+**Count:** 3 (all 3 runs on 2026-03-01), then unlabeled output (×7+ across skills)
+- Run 1-2: `placementClassification` wrongly placed in groupBy → 400 error
+- Run 3: Changed groupBy to `campaignPlacement` → report worked but rows had no placement labels
+- Root cause: `campaignPlacement` is a **groupBy dimension**, `placementClassification` is a **column name**. Both are needed — groupBy uses `campaignPlacement`, columns uses `placementClassification`.
+**Fix applied:** server.py line 122 now has `placementClassification` in columns. Confirmed working — returns "Top of Search on-Amazon", "Detail Page on-Amazon", "Other on-Amazon", "Off Amazon".
 
 ### 2. format_json 50-row truncation (×2 — PARTIALLY RESOLVED)
 **Count:** 2 (runs 1-2 on 2026-03-01). **Resolved for download_ads_report after restart.**

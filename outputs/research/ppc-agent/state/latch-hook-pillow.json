@@ -1,0 +1,412 @@
+{
+  "$schema_version": "1.0",
+  "last_updated": "2026-03-05",
+  "portfolio": {
+    "name": "Latch Hook Pillow",
+    "id": "123410007744587",
+    "slug": "latch-hook-pillow",
+    "stage": "Late Launch / Early Scaling",
+    "hero_asins": [
+      "B0F8R652FX"
+    ],
+    "secondary_asins": [
+      "B0FHMRQWRX",
+      "B0F8R6J7JR"
+    ],
+    "hero_keywords": [
+      "latch hook kits for kids",
+      "latch hook pillow kit",
+      "latch hook kit for kids"
+    ],
+    "niche_id": "3qbggwOhO2",
+    "rank_radar_id": "33be5797-5be3-480a-93b3-07677d5a124f",
+    "campaigns_enabled": 10,
+    "campaigns_paused": 0
+  },
+  "goals": {
+    "acos_target": 30,
+    "acos_red_flag": 45,
+    "cvr_target": 10,
+    "budget_envelope_daily": 82,
+    "rank_targets": [
+      {
+        "keyword": "latch hook kits for kids",
+        "target_rank": 5,
+        "current_rank": 8
+      },
+      {
+        "keyword": "latch hook pillow kit",
+        "target_rank": 10,
+        "current_rank": null
+      },
+      {
+        "keyword": "latch hook kit",
+        "target_rank": 30,
+        "current_rank": 42
+      }
+    ],
+    "strategic_notes": [
+      "Late Launch → Early Scaling transition. ACoS discipline starting to apply (~30% target).",
+      "Rank velocity still matters for generic keywords where positions are slipping.",
+      "Owl variant (B0FHMRQWRX) is the profit engine — 87% organic, 26.9% margin. Don't disrupt.",
+      "Googley Eyes (B0F8R6J7JR) has 0.72% CVR — listing problem, not PPC problem. Do NOT advertise."
+    ],
+    "updated": "2026-03-05",
+    "tacos_target": 42,
+    "tacos_red_flag": 60,
+    "break_even_acos": -0.5
+  },
+  "baseline": {
+    "date": "2026-03-05",
+    "source": "seller-board-30d + search-term-30d",
+    "metrics": {
+      "ppc_spend": 1358.75,
+      "ppc_sales": 3710.96,
+      "ppc_orders": 148,
+      "ppc_acos": 36.6,
+      "ppc_cvr": 10.2,
+      "ppc_cpc": 0.94,
+      "total_sales": 8953,
+      "total_profit": 760,
+      "hero_margin": 2.1,
+      "hero_tacos": 25.8,
+      "owl_margin": 26.9,
+      "owl_tacos": 7.3,
+      "organic_ratio_hero": 51.3,
+      "organic_ratio_owl": 87.2
+    }
+  },
+  "latest_metrics": {
+    "date": "2026-03-05",
+    "source": "seller-board-30d + search-term-30d",
+    "metrics": {
+      "ppc_spend": 1358.75,
+      "ppc_sales": 3710.96,
+      "ppc_orders": 148,
+      "ppc_acos": 36.6,
+      "ppc_cvr": 10.2,
+      "ppc_cpc": 0.94,
+      "total_sales": 8953,
+      "total_profit": 760,
+      "hero_margin": 2.1,
+      "hero_tacos": 25.8,
+      "tacos_30d": 17.5,
+      "organic_ratio_30d": 50.0,
+      "margin_pct": -0.5,
+      "organic_momentum_score": 48,
+      "profit_health": "LOSS-MAKING"
+    },
+    "delta_vs_baseline": null
+  },
+  "metric_history": [
+    {
+      "date": "2026-03-05",
+      "acos": 36.6,
+      "spend": 1358.75,
+      "sales": 3710.96,
+      "orders": 148,
+      "cvr": 10.2
+    },
+    {
+      "date": "2026-03-06",
+      "source": "tacos-optimizer",
+      "tacos": 17.5,
+      "organic_momentum": 48,
+      "profit_health": "LOSS-MAKING",
+      "margin_pct": -0.5
+    }
+  ],
+  "change_log": [
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "CAMPAIGN_UPDATE",
+      "details": "Action 9: SK latch hook kit for kids budget $10/d → $14/d",
+      "campaign": "411352796073981",
+      "before": {
+        "budget": 10
+      },
+      "after": {
+        "budget": 14
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "BID_INCREASE",
+      "details": "Action 4: SK pillow kit — added PP +26%, ROS +31%",
+      "campaign": "413866374359755",
+      "before": {
+        "tos": 121,
+        "pp": 0,
+        "ros": 0
+      },
+      "after": {
+        "tos": 121,
+        "pp": 26,
+        "ros": 31
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "BID_INCREASE",
+      "details": "Action 5a: SK beginners — added PP +13%, ROS +18%",
+      "campaign": "50357682143387",
+      "before": {
+        "tos": 238,
+        "pp": 0,
+        "ros": 0
+      },
+      "after": {
+        "tos": 238,
+        "pp": 13,
+        "ros": 18
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "BID_INCREASE",
+      "details": "Action 5b: SK hook rug kids — added PP +13%, ROS +18%",
+      "campaign": "468885209912268",
+      "before": {
+        "tos": 141,
+        "pp": 0,
+        "ros": 0
+      },
+      "after": {
+        "tos": 141,
+        "pp": 13,
+        "ros": 18
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "BID_INCREASE",
+      "details": "Action 5c: MK root — added PP +13%, ROS +18%",
+      "campaign": "310123971196621",
+      "before": {
+        "tos": 111,
+        "pp": 0,
+        "ros": 0
+      },
+      "after": {
+        "tos": 111,
+        "pp": 13,
+        "ros": 18
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "BID_INCREASE",
+      "details": "Action 5d: MK other root — added PP +13%, ROS +18%",
+      "campaign": "558680582588533",
+      "before": {
+        "tos": 81,
+        "pp": 0,
+        "ros": 0
+      },
+      "after": {
+        "tos": 81,
+        "pp": 13,
+        "ros": 18
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "CAMPAIGN_UPDATE",
+      "details": "Action 10: MK broad — added PP +13%, ROS +18%, budget $20 → $15",
+      "campaign": "445458354271564",
+      "before": {
+        "tos": 153,
+        "pp": 0,
+        "ros": 0,
+        "budget": 20
+      },
+      "after": {
+        "tos": 153,
+        "pp": 13,
+        "ros": 18,
+        "budget": 15
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "BID_DECREASE",
+      "details": "Action 3: Auto — TOS 181% → 131%, default bid $0.23 → $0.19",
+      "campaign": "494352861026210",
+      "before": {
+        "tos": 181,
+        "default_bid": 0.23
+      },
+      "after": {
+        "tos": 131,
+        "default_bid": 0.19
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "BID_INCREASE",
+      "details": "Action 12: SK pillow kit keyword bid $0.37 → $0.47",
+      "campaign": "413866374359755",
+      "before": {
+        "keyword_bid": 0.37
+      },
+      "after": {
+        "keyword_bid": 0.47
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "BID_DECREASE",
+      "details": "Action 2: PT target b06xrrn4vl bid $0.51 → $0.38",
+      "campaign": "476731433753477",
+      "before": {
+        "target_bid": 0.51
+      },
+      "after": {
+        "target_bid": 0.38
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "NEGATE_TARGET",
+      "details": "Action 1: Negated self-ASIN B0F8R652FX in PT campaign",
+      "campaign": "476731433753477",
+      "negative_target_id": "365057767729615"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "NEGATE_KEYWORD",
+      "details": "Action 6: Added 'adults' NEGATIVE_PHRASE to Auto + MK broad",
+      "campaigns": [
+        "494352861026210",
+        "445458354271564"
+      ],
+      "keyword": "adults",
+      "match_type": "NEGATIVE_PHRASE"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "NEGATE_KEYWORD",
+      "details": "Action 7: Added 'crochet' NEGATIVE_PHRASE to Auto + MK broad",
+      "campaigns": [
+        "494352861026210",
+        "445458354271564"
+      ],
+      "keyword": "crochet",
+      "match_type": "NEGATIVE_PHRASE"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "NEGATE_KEYWORD",
+      "details": "Action 11: Cross-campaign isolation negatives — MK root: negated 'latch hook kit for kids' + 'beginner latch hook kits for kids'; MK other root: negated 'hook rug kits for kids' + 'latch hook rug kits for kids'",
+      "campaigns": [
+        "310123971196621",
+        "558680582588533"
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "TARGET_ADD",
+      "details": "Action 8: Added #1 competitor B0DJQPGDMQ (veirousa) to PT at $0.47",
+      "campaign": "476731433753477",
+      "target_id": "457189120795620",
+      "asin": "B0DJQPGDMQ",
+      "bid": 0.47
+    }
+  ],
+  "pending_actions": [
+    {
+      "id": "lhp-001",
+      "priority": "P4",
+      "category": "MONITOR",
+      "action": "Evaluate 'latch hook kit' as potential SK campaign after 14d of other fixes",
+      "created": "2026-03-05",
+      "due": "2026-03-19",
+      "status": "pending"
+    },
+    {
+      "id": "lhp-002",
+      "priority": "P4",
+      "category": "MONITOR",
+      "action": "Evaluate adding Owl variant (B0FHMRQWRX) to PPC campaigns after 14d",
+      "created": "2026-03-05",
+      "due": "2026-03-19",
+      "status": "pending"
+    },
+    {
+      "id": "lhp-003",
+      "priority": "P4",
+      "category": "MONITOR",
+      "action": "Investigate Googley Eyes (B0F8R6J7JR) listing quality — 0.72% CVR needs fixing",
+      "created": "2026-03-05",
+      "due": "2026-03-19",
+      "status": "pending"
+    },
+    {
+      "id": "lhp-004",
+      "priority": "P3",
+      "category": "MONITOR",
+      "action": "Review Auto/MK Broad 152-negative list for over-restriction after PP/ROS campaigns activate",
+      "created": "2026-03-05",
+      "due": "2026-03-12",
+      "status": "pending"
+    }
+  ],
+  "scheduled_reviews": [
+    {
+      "date": "2026-03-12",
+      "type": "7-day post-action check",
+      "source": "2026-03-05 deep dive"
+    },
+    {
+      "date": "2026-03-19",
+      "type": "14-day P4 monitor items review",
+      "source": "2026-03-05 deep dive"
+    }
+  ],
+  "skills_run": [
+    {
+      "skill": "ppc-portfolio-action-plan",
+      "date": "2026-03-05",
+      "result": "success",
+      "key_metrics": {
+        "actions_executed": 12,
+        "campaigns_modified": 10,
+        "negatives_added": 9,
+        "targets_added": 1,
+        "targets_negated": 1
+      }
+    },
+    {
+      "skill": "ppc-tacos-optimizer",
+      "date": "2026-03-06",
+      "result": "success",
+      "key_metrics": {
+        "tacos_30d": 17.5,
+        "tacos_grade": "A",
+        "organic_momentum": 48,
+        "profit_health": "LOSS-MAKING"
+      },
+      "output_ref": "tacos-optimizer/2026-03-06-tacos-scorecard.md"
+    }
+  ],
+  "improvement_assessment": {
+    "overall_trend": "unknown",
+    "notes": "First deep dive — no comparison data yet. Baseline set. Re-assess after 7-14 days.",
+    "updated": "2026-03-05"
+  }
+}

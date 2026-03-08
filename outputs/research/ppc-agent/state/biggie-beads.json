@@ -1,0 +1,420 @@
+{
+  "$schema_version": "1.0",
+  "last_updated": "2026-03-06",
+  "portfolio": {
+    "name": "Biggie Beads",
+    "id": "212667249843570",
+    "slug": "biggie-beads",
+    "stage": "Scaling",
+    "hero_asins": [
+      "B07D6D95NG"
+    ],
+    "secondary_asins": [],
+    "hero_keywords": [
+      "biggie beads",
+      "big fuse beads",
+      "10mm fuse beads",
+      "melty beads for kids"
+    ],
+    "niche_id": null,
+    "rank_radar_id": null,
+    "campaigns_enabled": 7,
+    "campaigns_paused": 1
+  },
+  "goals": {
+    "acos_target": 30,
+    "acos_red_flag": 50,
+    "cvr_target": 10,
+    "budget_envelope_daily": 84,
+    "rank_targets": [
+      {
+        "keyword": "biggie beads",
+        "target_rank": 1,
+        "current_rank": 1
+      },
+      {
+        "keyword": "big fuse beads",
+        "target_rank": 3,
+        "current_rank": 5
+      },
+      {
+        "keyword": "melty beads",
+        "target_rank": 8,
+        "current_rank": 12
+      },
+      {
+        "keyword": "fuse beads kit",
+        "target_rank": 30,
+        "current_rank": 65
+      }
+    ],
+    "strategic_notes": [
+      "Dominant on branded 'biggie beads' family (all #1-2, 250 SV each)",
+      "Weak on high-volume generics: perler beads #101 (85K SV), fuse beads #75 (36K SV)",
+      "Product is 10mm large beads for ages 4-7 at $24.98 \u00e2\u20ac\u201d differentiated from standard 5mm fuse beads"
+    ],
+    "updated": "2026-03-05",
+    "tacos_target": 16,
+    "tacos_red_flag": 25,
+    "break_even_acos": 12.9
+  },
+  "baseline": {
+    "date": "2026-03-05",
+    "source": "cached-30d-search-terms-2026-03-03",
+    "metrics": {
+      "spend": 1001,
+      "sales": 3142,
+      "acos": 31.9,
+      "orders": 116,
+      "cvr": 10.6,
+      "clicks": 1094
+    },
+    "campaign_breakdown": {
+      "mk_broad_tos": {
+        "spend": 547,
+        "sales": 2043,
+        "acos": 26.8,
+        "orders": 75,
+        "cvr": 17.4
+      },
+      "spa_auto": {
+        "spend": 222,
+        "sales": 575,
+        "acos": 38.7,
+        "orders": 22
+      },
+      "biggie_auto_archived": {
+        "spend": 225,
+        "sales": 525,
+        "acos": 42.8,
+        "orders": 19
+      },
+      "mk_root": {
+        "spend": 1.04,
+        "sales": 0,
+        "acos": null,
+        "orders": 0
+      },
+      "sk_10mm": {
+        "spend": 6.44,
+        "sales": 0,
+        "acos": null,
+        "orders": 0
+      }
+    },
+    "structure_issues": [
+      "No PP/ROS modifiers on any campaign",
+      "SK biggie beads outbid by MK broad \u00e2\u20ac\u201d zero traffic",
+      "MK root dead \u00e2\u20ac\u201d hero keyword PAUSED",
+      "3 campaigns with zero negatives",
+      "Old biggie beads auto ARCHIVED but still showing in cached 30d data"
+    ]
+  },
+  "latest_metrics": {
+    "date": "2026-03-05",
+    "source": "cached-30d-search-terms-2026-03-03",
+    "metrics": {
+      "spend": 1001,
+      "sales": 3142,
+      "acos": 31.9,
+      "orders": 116,
+      "cvr": 10.6,
+      "clicks": 1094,
+      "tacos_30d": 13.9,
+      "organic_ratio_30d": 44.9,
+      "margin_pct": 12.9,
+      "organic_momentum_score": 65,
+      "profit_health": "PROFITABLE"
+    },
+    "delta_vs_baseline": null,
+    "note": "First deep dive \u00e2\u20ac\u201d baseline equals latest. Next update should come from 7-day re-check."
+  },
+  "metric_history": [
+    {
+      "date": "2026-03-05",
+      "period": "30d",
+      "spend": 1001,
+      "sales": 3142,
+      "acos": 31.9,
+      "orders": 116,
+      "cvr": 10.6
+    },
+    {
+      "date": "2026-03-06",
+      "source": "tacos-optimizer",
+      "tacos": 13.9,
+      "organic_momentum": 65,
+      "profit_health": "PROFITABLE",
+      "margin_pct": 12.9
+    }
+  ],
+  "change_log": [
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "MODIFIER_ADD",
+      "campaign": "biggie beads - SPM MK broad TOS",
+      "campaign_id": "554379436829100",
+      "before": "TOS 161%, PP 0%, ROS 0%",
+      "after": "TOS 161%, PP 47%, ROS 23%",
+      "rationale": "Star campaign (26.8% ACoS) \u00e2\u20ac\u201d unlock PP/ROS placements for cheaper impressions"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "BID_INCREASE",
+      "campaign": "biggie beads - SPM SK biggie beads TOS",
+      "campaign_id": "390763449770493",
+      "keyword_id": "561083924601337",
+      "keyword": "biggie beads",
+      "before": "$0.52",
+      "after": "$1.08",
+      "rationale": "Isolate #1 converting term (31% CVR, 15.1% ACoS) \u00e2\u20ac\u201d was outbid by MK broad at $0.87"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "MODIFIER_ADD",
+      "campaign": "biggie beads - SPM SK biggie beads TOS",
+      "campaign_id": "390763449770493",
+      "before": "TOS 211%, PP 0%, ROS 0%",
+      "after": "TOS 211%, PP 32%, ROS 17%",
+      "rationale": "Unlock PP/ROS for brand term campaign \u00e2\u20ac\u201d user-specified modifiers"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "NEGATE_SEARCH_TERM",
+      "campaign": "biggie beads - SPM MK broad TOS",
+      "campaign_id": "554379436829100",
+      "negative_id": "429382940693924",
+      "term": "biggie beads",
+      "match_type": "NEGATIVE_EXACT",
+      "rationale": "Traffic isolation \u00e2\u20ac\u201d force 'biggie beads' traffic to dedicated SK campaign"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "MODIFIER_CHANGE",
+      "campaign": "biggie beads - SPA auto",
+      "campaign_id": "495740578607391",
+      "before": "TOS 148%, PP 0%, ROS 0%",
+      "after": "TOS 97%, PP 17%, ROS 8%",
+      "rationale": "Discovery campaign \u00e2\u20ac\u201d reduce TOS aggression, unlock PP/ROS for broader discovery"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "NEGATE_SEARCH_TERM",
+      "campaign": "biggie beads - SPM MK broad TOS",
+      "campaign_id": "554379436829100",
+      "negative_id": "498325839841906",
+      "term": "orbeez",
+      "match_type": "NEGATIVE_EXACT",
+      "rationale": "Irrelevant \u00e2\u20ac\u201d water beads not fuse beads. $12/30d waste, 0 orders."
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "NEGATE_SEARCH_TERM",
+      "campaign": "biggie beads - SPA auto",
+      "campaign_id": "495740578607391",
+      "negative_id": "288845328429786",
+      "term": "orbeez",
+      "match_type": "NEGATIVE_EXACT",
+      "rationale": "Irrelevant \u00e2\u20ac\u201d water beads not fuse beads."
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-campaign-creator",
+      "type": "CAMPAIGN_CREATE",
+      "campaign": "biggie beads - SPM MK large perler TOS",
+      "campaign_id": "71307692964721",
+      "ad_group_id": "357473517120362",
+      "ad_id": "514937175997997",
+      "keywords": [
+        {
+          "keyword": "large perler beads",
+          "match_type": "EXACT",
+          "bid": "$0.78",
+          "keyword_id": "404119303100834"
+        },
+        {
+          "keyword": "big perler beads",
+          "match_type": "EXACT",
+          "bid": "$0.83",
+          "keyword_id": "454226481650245"
+        }
+      ],
+      "budget": "$12/d",
+      "bidding": "TOS 143%, PP 31%, ROS 14%",
+      "rationale": "Capture 'large perler beads' family \u00e2\u20ac\u201d 18 combined orders, 17.8% ACoS from search term harvest"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-campaign-creator",
+      "type": "CAMPAIGN_CREATE",
+      "campaign": "biggie beads - SPM MK large fuse TOS",
+      "campaign_id": "95143615191804",
+      "ad_group_id": "443603765566767",
+      "ad_id": "491890171691865",
+      "keywords": [
+        {
+          "keyword": "large fuse beads",
+          "match_type": "EXACT",
+          "bid": "$0.72",
+          "keyword_id": "285622354052770"
+        },
+        {
+          "keyword": "jumbo perler beads",
+          "match_type": "EXACT",
+          "bid": "$0.68",
+          "keyword_id": "335730775485252"
+        }
+      ],
+      "budget": "$10/d",
+      "bidding": "TOS 137%, PP 27%, ROS 12%",
+      "rationale": "Capture 'large fuse beads' family \u00e2\u20ac\u201d 11 combined orders, 13.5% ACoS from search term harvest"
+    },
+    {
+      "date": "2026-03-06",
+      "skill": "listing-creator",
+      "type": "LISTING_PUSH",
+      "campaign": "N/A (listing update)",
+      "asin": "B07D6D95NG",
+      "sku": "O9-70DP-C5J6",
+      "submission_id": "54986da36c924c8d9607be42f969e546",
+      "status": "ACCEPTED",
+      "fields": [
+        "title",
+        "bullets (5)",
+        "backend_keywords (248/249 bytes)"
+      ],
+      "skipped": [
+        "description (check if A+ active)"
+      ],
+      "rationale": "Full listing rewrite: +iron beads in title, +kids, +brand name, all 5 bullets rewritten with keyword-rich content, backend expanded from 105 to 248 bytes (+136%). Ranking Juice coverage estimated to improve from 24.6% to ~50%.",
+      "verify_by": "2026-03-08",
+      "re_audit_due": "2026-03-13"
+    }
+  ],
+  "pending_actions": [
+    {
+      "id": "bb-001",
+      "priority": "P2",
+      "category": "CAMPAIGN_PAUSE",
+      "action": "Decision on MK root campaign (539441065400489) \u00e2\u20ac\u201d spending $1/month, hero keyword PAUSED",
+      "created": "2026-03-05",
+      "status": "pending"
+    },
+    {
+      "id": "bb-002",
+      "priority": "P2",
+      "category": "MODIFIER_ADD",
+      "action": "Add PP 41% + ROS 18% + basic negatives to SK 10mm fuse beads (304521381065387)",
+      "created": "2026-03-05",
+      "status": "pending"
+    },
+    {
+      "id": "bb-003",
+      "priority": "P2",
+      "category": "SEARCH_TERM_HARVEST",
+      "action": "Harvest converting terms from Auto for promotion to manual campaigns",
+      "created": "2026-03-05",
+      "status": "pending"
+    },
+    {
+      "id": "bb-004",
+      "priority": "P3",
+      "category": "RANK_RESCUE",
+      "action": "Address declining rank: fuse beads kit -29 positions, melting beads for kids crafts -58, hama beads -30",
+      "created": "2026-03-05",
+      "status": "pending"
+    },
+    {
+      "id": "bb-005",
+      "priority": "P3",
+      "category": "NEGATE_SEARCH_TERM",
+      "action": "Deep clean Auto negatives \u00e2\u20ac\u201d $327/30d waste across 160 zero-order terms (confirm 30d+ no conversion)",
+      "created": "2026-03-05",
+      "status": "pending"
+    }
+  ],
+  "scheduled_reviews": [
+    {
+      "date": "2026-03-12",
+      "type": "7-day re-check \u00e2\u20ac\u201d verify PP/ROS activation, SK biggie beads traffic isolation, Auto TOS reduction",
+      "source": "biggie-beads-deep-dive-2026-03-05"
+    },
+    {
+      "date": "2026-03-12",
+      "type": "7-day check \u00e2\u20ac\u201d new MK large perler TOS + MK large fuse TOS campaigns getting impressions/clicks",
+      "source": "biggie-beads-campaign-creator-2026-03-05"
+    },
+    {
+      "date": "2026-03-08",
+      "type": "Verify listing push live on Amazon \u2014 title, bullets, backend keywords",
+      "source": "listing-creator-2026-03-06"
+    },
+    {
+      "date": "2026-03-13",
+      "type": "Post-listing-update re-audit \u2014 check rank recovery for fuse beads kit, melting beads, iron beads",
+      "source": "listing-creator-2026-03-06"
+    }
+  ],
+  "skills_run": [
+    {
+      "skill": "ppc-portfolio-action-plan",
+      "date": "2026-03-05",
+      "result": "success",
+      "key_metrics": {
+        "spend_30d": 1001,
+        "sales_30d": 3142,
+        "acos_30d": 31.9,
+        "actions_executed": 7,
+        "actions_pending": 5
+      },
+      "summary": "First deep dive. 7 API changes: 3 campaigns got PP/ROS modifiers, 1 bid increase, 3 campaign-level negatives. Fixed traffic isolation for #1 converting term. Old 'biggie beads auto' already ARCHIVED."
+    },
+    {
+      "skill": "ppc-campaign-creator",
+      "date": "2026-03-05",
+      "result": "success",
+      "key_metrics": {
+        "campaigns_created": 2,
+        "keywords_added": 4,
+        "total_daily_budget": 22
+      },
+      "summary": "Created 2 MK campaigns from search term PROMOTE candidates. 'large perler TOS' ($12/d, 2 keywords) + 'large fuse TOS' ($10/d, 2 keywords). No traffic isolation negatives applied per user request."
+    },
+    {
+      "skill": "ppc-tacos-optimizer",
+      "date": "2026-03-06",
+      "result": "success",
+      "key_metrics": {
+        "tacos_30d": 13.9,
+        "tacos_grade": "A",
+        "organic_momentum": 65,
+        "profit_health": "PROFITABLE"
+      },
+      "output_ref": "tacos-optimizer/2026-03-06-tacos-scorecard.md"
+    },
+    {
+      "skill": "listing-creator",
+      "date": "2026-03-06",
+      "result": "success",
+      "key_metrics": {
+        "fields_pushed": 3,
+        "backend_bytes": "248/249",
+        "backend_improvement": "+136%",
+        "new_keywords_added": "iron beads, kids, jumbo, toddler, preschool, non-toxic, EVA, screen-free, perler (backend), hama (backend)"
+      },
+      "summary": "Full listing rewrite pushed to Amazon. Title Option A with iron beads + kids + brand. All 5 bullets rewritten. Backend expanded from 105 to 248 bytes. Bullet 5 changed from return policy to educational value."
+    }
+  ],
+  "improvement_assessment": {
+    "overall_trend": "stable",
+    "note": "First deep dive \u00e2\u20ac\u201d no history to compare. Portfolio ACoS at 31.9% is just above 30% target. Structural fixes (PP/ROS, traffic isolation) should bring improvement within 7 days.",
+    "last_assessed": "2026-03-05"
+  }
+}

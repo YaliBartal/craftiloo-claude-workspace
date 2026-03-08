@@ -160,6 +160,57 @@
 
 ---
 
+### Run: 2026-03-05
+**Goals:**
+- [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
+- [x] Fetch SP-API Orders for yesterday's revenue/units (2026-03-04)
+- [x] Fetch DataDive Rank Radar data for 9 hero radars
+- [x] Fetch DataDive competitor data for 11 niches
+- [x] Run Apify keyword scan — 20 keywords with axesso_data actor
+- [x] Run Apify competitor BSR scan — 34 ASINs via saswave
+- [x] Fetch Seller Board 7-day dashboard aggregates + per-ASIN detailed (7D report)
+- [x] Compile full report with mandatory format
+- [x] Save snapshot
+
+**Result:** ✅ Success — All 5 agents completed, 20/20 keywords + 34/34 BSR scans succeeded
+
+**What happened:**
+- All 5 parallel background agents completed successfully
+- **Apify: 20/20 keywords returned data** — second consecutive perfect scan
+- **Apify: 34/34 competitor BSR scans succeeded** — saswave reliable again
+- **Seller Board 7D report working** — date range Feb 25–Mar 3, NOT stale. Token refresh resolved the previous stale URL issue.
+- SP-API: 202 orders, 208 units, $3,110 revenue (Mar 4). B096MYBLS1 null price (OOS, 0 units).
+- B09WQSBZY7 **ALL-TIME BEST BSR 4,748** (-47% vs Mar 1, -59% vs baseline). Price cut $21.98→$17.98 driving explosive growth. Units 129→176 (+36%).
+- B09THLVFZK **#1 earner** at $5,841/7d. BSR 4,585 (-21% vs Mar 1). "perler beads" (86K SV) slipping #6→#10 — watch closely.
+- B09X55KL2C BSR 12,132 (-22% vs Mar 1). 24 top-10 KWs (+1). Revenue $1,916/7d (+$543).
+- B096MYBLS1 **FULLY DEAD** — OOS (0 units), BSR 166,727 (+81% vs Mar 1). All 50 keywords at rank 101. No Buy Box.
+- B0DC69M3YD **first top-10 keyword** (was 0). Keyword rotation: lost "embroidery kit for beginners" (33K SV, 41→101) but gained "embroidery kits for adults" (15K SV, 101→37).
+- B0FQC7YFX6 lost 3 top-10 KWs (9→6). Lost sponsored #1 positions from Mar 1. Only 30 reviews vs competitors' 919+.
+- B08FYH13CL BSR improved -9% but lost 3 top-10 KWs (13→10). Mixed signals continue.
+- Profit up 36% ($6,992 vs $5,138) on flat ad spend. Margin 23.1% (was 17.8%). TACoS 17.8% (was 18.8%).
+- kullaloo confirmed at #2 for "sewing kit for kids" (21K SV) — multi-run threat.
+- Made By Me expanding: BSR 1,455, 11,880 reviews, appearing at #1 latch hook + #5 on knitting/sewing keywords.
+
+**What didn't work:**
+- **4-day gap** between snapshots (Mar 1 → Mar 5) — missed Mar 2-4 data points. "vs yesterday" comparisons not possible, used "vs Mar 1" instead.
+- **axesso actor requires tilde format** — `axesso_data~amazon-search-scraper` (not forward slash). Agent initially tried forward slash which caused 404 errors.
+- B07D6D95NG still not found in any DD niche (ongoing).
+- Axesso still doesn't detect OP/AC badges — carried forward 3 badges from Mar 1.
+- B0F8R652FX not found on "latch hook pillow kit" keyword — not competitive on this term.
+
+**Is this a repeat error?** B07D6D95NG missing from DD niches (ongoing). Axesso badge detection gap (ongoing). B096MYBLS1 OOS/collapse (escalating). B0DC69M3YD rank crisis (continuing but showing first improvement signal).
+
+**Lesson learned:**
+- **B09WQSBZY7 price cut validated** — $4 price drop ($21.98→$17.98) resulted in 36% unit increase and 47% BSR improvement in 4 days. Revenue also increased (+28%) despite lower price. Price elasticity is extremely high in sewing kits.
+- **Seller Board 7D report is the correct tool** — `get_sales_detailed_7d_report` returned current data (Feb 25–Mar 3, not stale). The stale URL issue from Mar 1 was resolved by token refresh.
+- **axesso_data actor requires tilde format on Apify API** — document this: use `axesso_data~amazon-search-scraper`, not `axesso_data/amazon-search-scraper`. Forward slash causes 404 on runs API.
+- **Profit surge (+36%) on flat ad spend = efficiency improving** — this is the most important business signal. Revenue up 6% but profit up 36% means margins are expanding significantly.
+- **B09THLVFZK "perler beads" keyword (86K SV) slipping** — this is our highest-volume keyword and it's moving from #6 to #10. Needs PPC attention before losing page 1.
+
+**Tokens/cost:** ~95K tokens, ~$1.95 Apify cost
+
+---
+
 ### Run: 2026-03-01 (v3) — First run with updated skill
 **Goals:**
 - [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs

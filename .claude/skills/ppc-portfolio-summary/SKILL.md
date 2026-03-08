@@ -6,7 +6,7 @@ triggers:
   - portfolio health
   - portfolio flags
   - portfolio summary
-output_location: outputs/research/ppc-agent/portfolio/
+output_location: outputs/research/ppc-agent/portfolio-summaries/
 ---
 
 # Portfolio Performance Summary
@@ -71,8 +71,8 @@ Load in parallel:
 |------|---------|
 | `context/business.md` | Portfolio stages (Launch/Scaling/General) |
 | Most recent `outputs/research/ppc-weekly/snapshots/*/summary.json` | Weekly baseline for delta comparison |
-| Most recent `outputs/research/ppc-agent/portfolio/*-portfolio-snapshot.json` | Previous portfolio summary (for trend) |
-| `outputs/research/ppc-agent/agent-state.json` | Last run dates |
+| Most recent `outputs/research/ppc-agent/portfolio-summaries/*-portfolio-snapshot.json` | Previous portfolio summary (for trend) |
+| `outputs/research/ppc-agent/state/agent-state.json` | Last run dates |
 
 ### Step 2: Pull Fresh Campaign Data
 
@@ -259,10 +259,10 @@ Check campaign creation dates from `list_sp_campaigns` results:
 ### Step 9: Save Outputs
 
 **Brief:**
-`outputs/research/ppc-agent/portfolio/{YYYY-MM-DD}-portfolio-summary.md`
+`outputs/research/ppc-agent/portfolio-summaries/{YYYY-MM-DD}-portfolio-summary.md`
 
 **Snapshot (machine-readable):**
-`outputs/research/ppc-agent/portfolio/{YYYY-MM-DD}-portfolio-snapshot.json`
+`outputs/research/ppc-agent/portfolio-summaries/{YYYY-MM-DD}-portfolio-snapshot.json`
 
 ```json
 {

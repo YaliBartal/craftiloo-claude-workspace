@@ -6,7 +6,7 @@ triggers:
   - daily ppc
   - ppc health
   - morning ppc check
-output_location: outputs/research/ppc-agent/daily/
+output_location: outputs/research/ppc-agent/daily-health/
 ---
 
 # Daily PPC Health Check
@@ -60,17 +60,24 @@ A **5-minute scan** that tells the PPC worker "everything is normal" or "these 2
 
 ## Process
 
-### Step 1: Load Context
+### Step 1: Load Context + Portfolio Trackers
 
 Load these files (read in parallel where possible):
 
 | File | Purpose |
 |------|---------|
 | `context/business.md` | Portfolio stages (Launch/Scaling/General) |
-| `outputs/research/ppc-agent/agent-state.json` | Last run dates, pending actions |
+| `outputs/research/ppc-agent/state/agent-state.json` | Last run dates, global pending actions, portfolio_index |
+| `outputs/research/ppc-agent/state/*.json` | **All portfolio trackers** — for scheduled reviews, pending actions, improvement trends |
 | Most recent `outputs/research/market-intel/snapshots/*.json` | Seller Board data (TACoS, ad spend, margin, organic ratio) |
-| Most recent `outputs/research/ppc-agent/daily/*-health-snapshot.json` | Yesterday's health check (for day-over-day comparison) |
+| Most recent `outputs/research/ppc-agent/daily-health/*-health-snapshot.json` | Yesterday's health check (for day-over-day comparison) |
 | Most recent `outputs/research/ppc-weekly/snapshots/*/summary.json` → `placement` section | Per-campaign placement health classifications (use if <7 days old) |
+
+**From portfolio trackers, extract per portfolio:**
+- `scheduled_reviews` — any reviews due today or overdue
+- `pending_actions` with `status: "pending"` — count for the brief
+- `improvement_assessment` — trend direction for context
+- `latest_metrics` — for day-over-day comparison
 
 **If today's Market Intel snapshot exists:** Use it. Do NOT re-fetch Seller Board data.
 **If no Market Intel snapshot exists for today:** Note: "No market intel snapshot for today. Running with campaign data only. Consider running /daily-market-intel first for the full picture."
@@ -170,13 +177,18 @@ Always note the portfolio stage next to its status:
 
 ### Step 5: Check Pending Actions
 
-Read `agent-state.json` for any pending P1 actions from previous skill runs:
+Read pending actions from **two sources**:
 
-- Unapplied bid changes from Bid Recommender
-- Unflagged negatives from Search Term Harvester
-- P1 action items from Weekly PPC Analysis
+**Portfolio trackers** (primary — portfolio-specific actions):
+- For each portfolio, check `pending_actions` with `status: "pending"`
+- Summarize: "{Portfolio Name}: {count} pending — top: {highest priority action}"
 
-List any pending P1 actions in the brief.
+**`agent-state.json`** (secondary — global/cross-portfolio actions):
+- Read `global_pending_actions` for any cross-portfolio P1 items
+
+Also check `scheduled_reviews` in each portfolio tracker — flag any reviews due today or overdue.
+
+List all pending P1 actions + overdue reviews in the brief.
 
 ### Step 6: Generate Morning Brief
 
@@ -232,13 +244,23 @@ List any pending P1 actions in the brief.
 {If RED flags exist: "Priority: Address {portfolio} — {specific action}. Then {secondary recommendation}."}
 ```
 
-### Step 7: Save Outputs
+### Step 7: Save Outputs + Update Portfolio Trackers
 
 **Brief:**
-`outputs/research/ppc-agent/daily/{YYYY-MM-DD}-health-check.md`
+`outputs/research/ppc-agent/daily-health/{YYYY-MM-DD}-health-check.md`
 
 **Snapshot (machine-readable for other skills):**
-`outputs/research/ppc-agent/daily/{YYYY-MM-DD}-health-snapshot.json`
+`outputs/research/ppc-agent/daily-health/{YYYY-MM-DD}-health-snapshot.json`
+
+**Portfolio tracker updates** — for each portfolio touched, update its tracker at `outputs/research/ppc-agent/state/{slug}.json`:
+
+1. **`latest_metrics`** — update with today's health check data (spend, ACoS from campaign grouping, campaign_count)
+2. **`metric_history`** — append entry (max 90)
+3. **`skills_run`** — append: `{"skill": "ppc-daily-health", "date": "YYYY-MM-DD", "result": "success", "key_metrics": {"status": "GREEN/YELLOW/RED", "acos": X}}`
+
+**`agent-state.json` update:**
+- Update `portfolio_index.{slug}.health_status` for each portfolio based on today's traffic light
+- Update `portfolio_index.{slug}.last_updated` to today
 
 ```json
 {

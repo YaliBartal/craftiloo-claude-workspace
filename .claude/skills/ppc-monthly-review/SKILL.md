@@ -57,10 +57,10 @@ Gather snapshots from the past 4 weeks. Read in parallel:
 | File Pattern | Purpose |
 |-------------|---------|
 | `outputs/research/ppc-weekly/snapshots/*/summary.json` | 4 weekly summaries for trend calculation |
-| `outputs/research/ppc-agent/portfolio/*-portfolio-snapshot.json` | All portfolio summaries this month |
+| `outputs/research/ppc-agent/portfolio-summaries/*-portfolio-snapshot.json` | All portfolio summaries this month |
 | `outputs/research/ppc-agent/bids/*-bid-changes-applied.json` | All bid changes made this month |
 | `outputs/research/ppc-agent/search-terms/*-applied-actions.json` | All search term actions this month |
-| `outputs/research/ppc-agent/daily/*-health-snapshot.json` | Daily health checks for trend granularity |
+| `outputs/research/ppc-agent/daily-health/*-health-snapshot.json` | Daily health checks for trend granularity |
 | `outputs/research/market-intel/snapshots/*.json` | Market intel for competitive context |
 | `context/business.md` | Current portfolio stages |
 

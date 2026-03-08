@@ -180,6 +180,48 @@ async def api_post(path: str, body: dict = None) -> dict | list | str:
         return response.text
 
 
+async def api_patch(path: str, body: dict = None, params: dict = None) -> dict | list | str:
+    """PATCH request to SP-API with auth and rate limiting."""
+    token = await _get_access_token()
+    if not token:
+        return "Error: SP-API credentials not set. Check .env."
+
+    await _rate_limit()
+
+    headers = {
+        "x-amz-access-token": token,
+        "Content-Type": "application/json",
+    }
+
+    try:
+        async with httpx.AsyncClient(timeout=60.0) as client:
+            response = await client.patch(
+                f"{BASE_URL}{path}", headers=headers, json=body or {}, params=params
+            )
+    except httpx.TimeoutException:
+        return f"Error: Request timed out (60s). Path: {path}"
+    except httpx.RequestError as e:
+        return f"Error: Request failed — {e}"
+
+    if response.status_code == 429:
+        return "Error: Rate limit exceeded (429). Wait and try again."
+    if response.status_code == 403:
+        return f"Error: Forbidden (403). Your app may not have the Listings role. Path: {path}"
+    if response.status_code not in (200, 201):
+        resp_body = response.text[:500]
+        return f"Error: HTTP {response.status_code}. Path: {path}. Response: {resp_body}"
+
+    try:
+        return response.json()
+    except json.JSONDecodeError:
+        return response.text
+
+
+def _seller_id() -> str:
+    """Get seller ID from env."""
+    return os.environ.get("SP_API_SELLER_ID", "")
+
+
 def _serialize_value(val, max_len: int = 2000) -> str:
     """Serialize values for display. Returns compact JSON for nested structures."""
     if val is None:
@@ -703,6 +745,209 @@ async def get_my_listings(
     Requests GET_MERCHANT_LISTINGS_ALL_DATA report and returns the report ID.
     Use get_report_status and get_report_document to retrieve the data."""
     return await create_report("GET_MERCHANT_LISTINGS_ALL_DATA", marketplace, days_back=1)
+
+
+@mcp.tool()
+async def get_listing(
+    sku: str,
+    marketplace: str = "US",
+) -> str:
+    """Get current listing data for a SKU.
+    Returns product type, attributes (title, bullets, description, keywords), issues, and offers.
+    Use this before update_listing to find the required product_type.
+
+    Args:
+        sku: The seller SKU of the product (e.g. 'EK17').
+        marketplace: US, CA, or MX.
+    """
+    seller_id = _seller_id()
+    if not seller_id:
+        return "Error: SP_API_SELLER_ID not set in .env. Find your Merchant ID in Seller Central → Account Info → Merchant Token."
+
+    params = {
+        "marketplaceIds": _marketplace_id(marketplace),
+        "includedData": "attributes,issues,offers,fulfillmentAvailability",
+    }
+    data = await api_get(f"/listings/2021-08-01/items/{seller_id}/{sku}", params=params)
+    if isinstance(data, str):
+        return data
+
+    # Extract key info for easy reading
+    output = f"## Listing: {sku}\n\n"
+    output += f"- **Product Type:** {data.get('productType', 'UNKNOWN')}\n"
+    output += f"- **SKU:** {sku}\n\n"
+
+    attrs = data.get("attributes", {})
+    if attrs:
+        # Title
+        item_name = attrs.get("item_name", [])
+        if item_name:
+            title_val = item_name[0].get("value", "") if isinstance(item_name, list) else item_name
+            output += f"### Current Title\n{title_val}\n\n"
+
+        # Bullets
+        bullets = attrs.get("bullet_point", [])
+        if bullets:
+            output += "### Current Bullet Points\n"
+            for i, b in enumerate(bullets, 1):
+                val = b.get("value", "") if isinstance(b, dict) else b
+                output += f"{i}. {val}\n"
+            output += "\n"
+
+        # Description
+        desc = attrs.get("product_description", [])
+        if desc:
+            desc_val = desc[0].get("value", "") if isinstance(desc, list) else desc
+            output += f"### Current Description\n{desc_val}\n\n"
+
+        # Backend keywords
+        keywords = attrs.get("generic_keyword", [])
+        if keywords:
+            kw_val = keywords[0].get("value", "") if isinstance(keywords, list) else keywords
+            output += f"### Current Backend Keywords\n{kw_val}\n\n"
+
+    # Issues
+    issues = data.get("issues", [])
+    if issues:
+        output += f"### Issues ({len(issues)})\n"
+        for issue in issues:
+            severity = issue.get("severity", "")
+            msg = issue.get("message", "")
+            output += f"- **[{severity}]** {msg}\n"
+
+    # Also include raw attributes for full inspection
+    output += "\n### All Attributes (raw)\n```json\n"
+    output += json.dumps(attrs, indent=2)[:8000]
+    output += "\n```\n"
+
+    return output
+
+
+@mcp.tool()
+async def update_listing(
+    sku: str,
+    product_type: str,
+    marketplace: str = "US",
+    title: str = "",
+    bullet_points: str = "",
+    description: str = "",
+    generic_keywords: str = "",
+) -> str:
+    """Update an Amazon listing's text content. Uses PATCH — only updates fields you provide.
+
+    IMPORTANT: Run get_listing(sku) first to find the required product_type.
+
+    Args:
+        sku: The seller SKU (e.g. 'EK17').
+        product_type: Amazon product type from get_listing (e.g. 'HOME_BED_AND_BATH'). Required.
+        marketplace: US, CA, or MX.
+        title: New product title. Leave blank to skip.
+        bullet_points: New bullet points separated by ||| (triple pipe). Leave blank to skip.
+                       Example: "First bullet|||Second bullet|||Third bullet"
+        description: New product description. Leave blank to skip.
+        generic_keywords: New backend keywords (space-separated, 249 bytes max). Leave blank to skip.
+    """
+    seller_id = _seller_id()
+    if not seller_id:
+        return "Error: SP_API_SELLER_ID not set in .env. Find your Merchant ID in Seller Central → Account Info → Merchant Token."
+
+    mp_id = _marketplace_id(marketplace)
+    patches = []
+
+    if title:
+        patches.append({
+            "op": "replace",
+            "path": "/attributes/item_name",
+            "value": [{"value": title, "marketplace_id": mp_id}],
+        })
+
+    if bullet_points:
+        bullets = [b.strip() for b in bullet_points.split("|||") if b.strip()]
+        patches.append({
+            "op": "replace",
+            "path": "/attributes/bullet_point",
+            "value": [{"value": b, "marketplace_id": mp_id} for b in bullets],
+        })
+
+    if description:
+        patches.append({
+            "op": "replace",
+            "path": "/attributes/product_description",
+            "value": [{"value": description, "marketplace_id": mp_id}],
+        })
+
+    if generic_keywords:
+        # Validate byte count
+        kw_bytes = len(generic_keywords.encode("utf-8"))
+        if kw_bytes > 249:
+            return f"Error: Backend keywords are {kw_bytes} bytes (max 249). Shorten them and try again."
+        patches.append({
+            "op": "replace",
+            "path": "/attributes/generic_keyword",
+            "value": [{"value": generic_keywords, "marketplace_id": mp_id}],
+        })
+
+    if not patches:
+        return "Error: No fields to update. Provide at least one of: title, bullet_points, description, generic_keywords."
+
+    body = {
+        "productType": product_type,
+        "patches": patches,
+    }
+
+    query_params = {"marketplaceIds": mp_id}
+
+    data = await api_patch(
+        f"/listings/2021-08-01/items/{seller_id}/{sku}",
+        body=body,
+        params=query_params,
+    )
+    if isinstance(data, str):
+        return data
+
+    # Format response
+    status = data.get("status", "UNKNOWN")
+    submission_id = data.get("submissionId", "N/A")
+    output = f"## Listing Update: {sku}\n\n"
+    output += f"- **Status:** {status}\n"
+    output += f"- **Submission ID:** {submission_id}\n"
+    output += f"- **Product Type:** {product_type}\n"
+
+    # Show what was updated
+    fields = []
+    if title:
+        fields.append("Title")
+    if bullet_points:
+        count = len([b for b in bullet_points.split("|||") if b.strip()])
+        fields.append(f"Bullet Points ({count})")
+    if description:
+        fields.append("Description")
+    if generic_keywords:
+        fields.append(f"Backend Keywords ({len(generic_keywords.encode('utf-8'))}/249 bytes)")
+    output += f"- **Fields submitted:** {', '.join(fields)}\n"
+
+    if status == "ACCEPTED":
+        output += "\nChanges accepted and queued for processing. They typically appear on the listing within 15 minutes to a few hours.\n"
+    elif status == "INVALID":
+        output += "\n**Submission was rejected.** Check the issues below and fix before retrying.\n"
+
+    # Show issues if any
+    issues = data.get("issues", [])
+    if issues:
+        output += f"\n### Issues ({len(issues)})\n"
+        for issue in issues:
+            severity = issue.get("severity", "")
+            msg = issue.get("message", "")
+            code = issue.get("code", "")
+            attr_names = issue.get("attributeNames", [])
+            output += f"- **[{severity}]** {msg}"
+            if code:
+                output += f" (code: {code})"
+            if attr_names:
+                output += f" — attributes: {', '.join(attr_names)}"
+            output += "\n"
+
+    return output
 
 
 # --- Main ---

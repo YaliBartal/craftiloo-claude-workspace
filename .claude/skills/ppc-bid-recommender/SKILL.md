@@ -91,19 +91,26 @@ Codifies the PPC SOP's bid adjustment decision matrix into an automated recommen
 
 ## Process
 
-### Step 1: Load Data Sources
+### Step 1: Load Data Sources + Portfolio Trackers
 
 Load in parallel:
 
 | File | Purpose | Freshness Rule |
 |------|---------|----------------|
 | `context/business.md` | Portfolio stages + ACoS targets | Always current |
+| `outputs/research/ppc-agent/state/*.json` | **Portfolio trackers** — goals, pending bid actions, recent change_log (avoid re-recommending), baseline for context | Always read |
 | Most recent `outputs/research/ppc-weekly/snapshots/*/campaign-report.json` | Campaign performance data | Use if <3 days old |
 | Most recent `outputs/research/ppc-weekly/snapshots/*/targeting-report.json` | Keyword/target performance | Use if <3 days old |
 | Most recent `outputs/research/ppc-weekly/snapshots/*/summary.json` | Weekly baseline metrics | Use if <7 days old |
-| `outputs/research/ppc-agent/daily/*-health-snapshot.json` | Recent daily health checks | Last 3 days |
+| `outputs/research/ppc-agent/daily-health/*-health-snapshot.json` | Recent daily health checks | Last 3 days |
 | `outputs/research/ppc-agent/bids/*-bid-changes-applied.json` | Previous bid changes | For tracking what we already changed |
-| `outputs/research/ppc-agent/agent-state.json` | Last bid review date | |
+| `outputs/research/ppc-agent/state/agent-state.json` | Last bid review date, portfolio_index | |
+
+**From portfolio trackers, use:**
+- `change_log` — avoid re-recommending changes already made in the last 7 days
+- `pending_actions` with category containing "BID" — these are queued bid actions from previous skills
+- `goals.acos_target` — use portfolio-specific targets instead of stage defaults when available
+- `baseline` + `latest_metrics` — for trend context (is this portfolio improving or declining?)
 
 **If campaign data is >3 days old or doesn't exist:** Pull fresh reports:
 ```
@@ -516,13 +523,33 @@ After user approval:
 
 5. **Report results:** Success/failure per change.
 
-### Step 9: Save Outputs
+### Step 9: Save Outputs + Update Portfolio Trackers
 
 **Brief:**
 `outputs/research/ppc-agent/bids/{YYYY-MM-DD}-bid-recommendations.md`
 
 **Applied changes log:**
 `outputs/research/ppc-agent/bids/{YYYY-MM-DD}-bid-changes-applied.json`
+
+**Portfolio tracker updates** — for each portfolio with applied changes, update its tracker at `outputs/research/ppc-agent/state/{slug}.json`:
+
+1. **`change_log`** — append entry:
+   ```json
+   {
+     "date": "YYYY-MM-DD",
+     "source": "ppc-bid-recommender",
+     "summary": "{N} bid changes applied",
+     "changes": [
+       {"category": "BID_DECREASE", "campaign": "{name}", "old": "TOS 50%", "new": "TOS 33%", "status": "success"}
+     ]
+   }
+   ```
+2. **`pending_actions`** — mark completed any bid-related pending actions that were addressed; add new P3/P4 items
+3. **`skills_run`** — append: `{"skill": "ppc-bid-recommender", "date": "YYYY-MM-DD", "result": "success", "key_metrics": {"changes_applied": N, "net_weekly_impact": "$X"}}`
+
+**`agent-state.json` update:**
+- Update `portfolio_index.{slug}.last_updated` for each affected portfolio
+- Update `portfolio_index.{slug}.pending_count` from tracker
 
 ```json
 {

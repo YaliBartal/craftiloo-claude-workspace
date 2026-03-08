@@ -1,0 +1,86 @@
+{
+  "date": "2026-03-05",
+  "mode": "single_audit",
+  "product": {
+    "name": "My First Cross Stitch Kit for Kids",
+    "asin": "B0F6YTG1CH",
+    "sku": "75-24RO-YAXR",
+    "category": "Cross Stitch Kits for Kids",
+    "niche_id": "b4Nisjv3xy",
+    "portfolio": "Cross And Embroidery Kits",
+    "portfolio_phase": "Launch"
+  },
+  "ranking_juice": {
+    "note": "B0F6YTG1CH is NOT tracked in DataDive niche b4Nisjv3xy — no direct Ranking Juice score available",
+    "our_title_score": null,
+    "our_bullets_score": null,
+    "our_description_score": null,
+    "our_overall_score": null,
+    "niche_avg_title": 293000,
+    "niche_avg_bullets": 71000,
+    "niche_avg_description": 0,
+    "niche_avg_overall": 1100000,
+    "niche_max_overall": 1693548,
+    "niche_competitors": [
+      {"asin": "B08DDJCQKF", "brand": "Craftiloo", "overall": 1682627, "title": 535455, "bullets": 38131},
+      {"asin": "B08QCX1Z5V", "brand": "Pllieay", "overall": 1545159, "title": 386199, "bullets": 104345},
+      {"asin": "B09M8DKHH6", "brand": "Unknown", "overall": 1450434, "title": 413455, "bullets": 78223},
+      {"asin": "B0DFHN42QB", "brand": "EZCRA", "overall": 1042507, "title": 347209, "bullets": 440},
+      {"asin": "B0B97Q1Q4T", "brand": "KRAFUN", "overall": 996923, "title": 282176, "bullets": 78563},
+      {"asin": "B08T5QC9FS", "brand": "Pllieay", "overall": 965638, "title": 25964, "bullets": 443873},
+      {"asin": "B0F8QZZQQM", "brand": "Craftiloo", "overall": 775247, "title": 224122, "bullets": 44145},
+      {"asin": "B087DYHMZ2", "brand": "Unknown", "overall": 263043, "title": 0, "bullets": 0}
+    ]
+  },
+  "keyword_analysis": {
+    "total_core_related_keywords": 58,
+    "word_level_coverage": 34,
+    "word_level_coverage_pct": 59,
+    "missing_word_keywords": 24,
+    "unique_missing_words": ["easy", "girls", "8", "stitching", "beginning", "kid", "needle", "point", "5", "age"],
+    "critical_missing_from_title": ["embroidery", "kits", "easy", "girls"],
+    "keywords_in_listing": ["kids cross stitch kit", "embroidery kit for kids", "cross stitch kits for beginners", "cross stitch kits for kids", "needlepoint for kids", "my first cross stitch kit", "cross stitch for kids", "beginner cross stitch"],
+    "top_keyword_gaps_by_sv": [
+      {"keyword": "easy (missing word)", "combined_sv": 5685, "affected_keywords": 3},
+      {"keyword": "stitching (missing word)", "combined_sv": 2486, "affected_keywords": 3},
+      {"keyword": "beginning (missing word)", "combined_sv": 1543, "affected_keywords": 2},
+      {"keyword": "girls (missing word)", "combined_sv": 1051, "affected_keywords": 2},
+      {"keyword": "8 - ages 8-12 (missing)", "combined_sv": 12000, "affected_keywords": 10}
+    ]
+  },
+  "root_analysis": {
+    "total_high_volume_roots_checked": 19,
+    "roots_in_title": ["cross", "stitch", "kit", "kids", "beginner", "needlepoint", "ages"],
+    "roots_missing_from_title": ["kits", "beginners", "embroidery", "sewing", "girls", "easy", "beginning", "stitching", "needle", "point", "craft", "girl"],
+    "roots_missing_from_entire_listing": ["easy", "girls", "beginning", "stitching", "needle", "point", "girl"]
+  },
+  "performance": {
+    "data_days": 2,
+    "cvr": 4.96,
+    "sessions": 121,
+    "organic_sales": 39.96,
+    "ppc_sales": 79.92,
+    "total_sales": 119.88,
+    "units": 6,
+    "ppc_dependency_pct": 66.7,
+    "net_profit": -6.65,
+    "margin_pct": -5.5
+  },
+  "competitors_scraped": {
+    "B08T5QC9FS": {"brand": "Pllieay", "stars": 4.2, "reviews": 1354, "bsr_subcategory": "#105 Embroidery Kits"},
+    "B0B7JHN4F1": {"brand": "KRAFUN", "stars": 4.6, "reviews": 294, "bsr_subcategory": "#42 Embroidery Kits"},
+    "B0DFHN42QB": {"brand": "EZCRA", "stars": 4.6, "reviews": 183, "bsr_subcategory": "#14 Kids Sewing Kits"},
+    "B0CM9JKNCC": {"brand": "Caydo", "stars": 3.9, "reviews": 54, "bsr_subcategory": "#284 Embroidery Kits"},
+    "B0F6YTG1CH": {"brand": "Craftiloo", "stars": 4.5, "reviews": 46, "bsr_subcategory": "#27 Cross-Stitch Counted Kits"}
+  },
+  "rank_radar": {
+    "note": "No Rank Radar found for B0F6YTG1CH",
+    "total_keywords_tracked": 0
+  },
+  "ai_copywriter": {
+    "note": "All 4 modes failed with HTTP 400 - repeat issue x2",
+    "modes_attempted": ["cosmo", "ranking-juice", "nlp", "cosmo-rufus"],
+    "modes_succeeded": 0
+  },
+  "priority_score": null
+}

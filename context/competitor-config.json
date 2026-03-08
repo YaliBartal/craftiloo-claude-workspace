@@ -1,0 +1,565 @@
+{
+  "_description": "Competitor tracking config. Source of truth for tracked ASINs, keywords per category, and alert thresholds.",
+  "_updated": "2026-03-06",
+  "_sources": "context/competitors.md, context/search-terms.md, context/business.md",
+  "categories": {
+    "cross-stitch-kids": {
+      "display_name": "Cross Stitch Kids",
+      "portfolio_slugs": [
+        "cross-embroidery-kits",
+        "cross-stitch-backpack-charms",
+        "my-first-cross-stitch"
+      ],
+      "our_asins": [
+        "B08DDJCQKF",
+        "B0F6YTG1CH",
+        "B0DT8HXWK4",
+        "B0DT8JRP6M",
+        "B0DT8K5N3Q",
+        "B0FHVNXK4R",
+        "B0FHVP3M8K"
+      ],
+      "competitor_asins": [
+        {
+          "asin": "B08T5QC9FS",
+          "brand": "Pllieay",
+          "notes": "10-in-1 beginner kits, ages 7-13",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0B7JHN4F1",
+          "brand": "KRAFUN",
+          "notes": "My First line, felt keyrings",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0CM9JKNCC",
+          "brand": "Caydo",
+          "notes": "Woodland animal patterns",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0DFHN42QB",
+          "brand": "EZCRA",
+          "notes": "Beginner kits ages 5-8",
+          "status": "tracked"
+        }
+      ],
+      "keywords": [
+        "embroidery kit for kids",
+        "kids cross stitch kit",
+        "beginner cross stitch kits for kids",
+        "cross stitch kits for kids",
+        "cross stitch for kids",
+        "embroidery for kids",
+        "cross stitch kits for beginners kids",
+        "embroidery kit kids",
+        "cross stitch for kids 8-12",
+        "kids cross stitch kits ages 8-12"
+      ]
+    },
+    "embroidery-kids": {
+      "display_name": "Embroidery Kids",
+      "portfolio_slugs": [
+        "embroidery-for-kids"
+      ],
+      "our_asins": [
+        "B09X55KL2C",
+        "B0BMLZ7MFL",
+        "B0BMLXLP5S",
+        "B0BN2DP3ST"
+      ],
+      "competitor_asins": [
+        {
+          "asin": "B087DYHMZ2",
+          "brand": "CraftLab",
+          "notes": "Parents Picks Award, premium packaging",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0D8171TF1",
+          "brand": "KRAFUN",
+          "notes": "My First beginner line",
+          "status": "tracked"
+        },
+        {
+          "asin": "B08TC7423N",
+          "brand": "Pllieay",
+          "notes": "Punch needle + cross stitch combos",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0DP654CSV",
+          "brand": "Louise Maelys",
+          "notes": "Beginner needlepoint, pre-printed",
+          "status": "tracked"
+        }
+      ],
+      "keywords": [
+        "kids embroidery kit",
+        "embroidery kit for beginners kids",
+        "kids embroidery kits ages 8-12",
+        "kids embroidery kits age 5-8",
+        "embroidery kits for kids",
+        "embroidery kit for kids ages 8-12",
+        "beginner embroidery kit for kids",
+        "kids embroidery",
+        "girls embroidery kit",
+        "kid embroidery kit"
+      ]
+    },
+    "embroidery-adults": {
+      "display_name": "Embroidery Adults/Beginners",
+      "portfolio_slugs": [
+        "4-flowers-embroidery"
+      ],
+      "our_asins": [
+        "B0DC69M3YD",
+        "B0D5KXLR7M"
+      ],
+      "competitor_asins": [
+        {
+          "asin": "B0CZHKSSL4",
+          "brand": "CYANFOUR",
+          "notes": "4-6 stage learning kits, market leader",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0DMHY2HF3",
+          "brand": "CYANFOUR",
+          "notes": "Second CYANFOUR listing",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0BB9N74SG",
+          "brand": "Santune",
+          "notes": "Best overall kit, 3-4 pack sets",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0B762JW55",
+          "brand": "Bradove",
+          "notes": "Stitch practice kits",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0C3ZVKB46",
+          "brand": "ETSPIL",
+          "notes": "4 floral patterns, 33 stitches",
+          "status": "tracked"
+        }
+      ],
+      "keywords": [
+        "embroidery kit for beginners",
+        "embroidery kits for adults",
+        "needle point kits adults",
+        "beginner embroidery kit",
+        "needlepoint kits for adults beginners",
+        "beginner needlepoint kits for adults",
+        "embroidery for beginners",
+        "easy embroidery kits for beginners",
+        "beginners embroidery kits for adults",
+        "embroidery set"
+      ]
+    },
+    "sewing-kids": {
+      "display_name": "Sewing Kids",
+      "portfolio_slugs": [
+        "fairy-family",
+        "dessert-family"
+      ],
+      "our_asins": [
+        "B09WQSBZY7",
+        "B096MYBLS1",
+        "B0DCQWL8R3",
+        "B0DCQX7K5N"
+      ],
+      "competitor_asins": [
+        {
+          "asin": "B091GXM2Y6",
+          "brand": "KRAFUN",
+          "notes": "My First Sewing, market leader ~25%",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0C2XYP6L3",
+          "brand": "KRAFUN",
+          "notes": "Second KRAFUN sewing listing",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0CV1F5CFS",
+          "brand": "KRAFUN",
+          "notes": "Third KRAFUN sewing listing",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0CXY8JMTK",
+          "brand": "EZCRA",
+          "notes": "Unicorn Sewing Kit",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0CYNNT2ZT",
+          "brand": "EZCRA",
+          "notes": "8-in-1 beginner kits",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0CTTMWXYP",
+          "brand": "Klever Kits",
+          "notes": "Themed pillow projects",
+          "status": "tracked"
+        }
+      ],
+      "keywords": [
+        "sewing kit for kids",
+        "kids sewing kit",
+        "sewing kits for kids 8-12",
+        "sewing for kids",
+        "beginner sewing kit for kids",
+        "felt sewing kit for kids",
+        "kids sewing kits ages 8-12",
+        "kids sewing crafts",
+        "girls sewing kits ages 8-10",
+        "sewing kits for kids"
+      ]
+    },
+    "latch-hook": {
+      "display_name": "Latch Hook Kits",
+      "portfolio_slugs": [
+        "latch-hook-kits",
+        "latch-hook-pillow"
+      ],
+      "our_asins": [
+        "B08FYH13CL",
+        "B0F8R652FX",
+        "B0CLL4PBX3",
+        "B0CLL3JFNK",
+        "B0CLL2XM9P",
+        "B0CLL5TN4K",
+        "B0F8RK3P7N"
+      ],
+      "competitor_asins": [
+        {
+          "asin": "B06XRRN4VL",
+          "brand": "LatchKits (PlayMonster)",
+          "notes": "Market leader ~25%, retail distribution",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0CX9H8YGR",
+          "brand": "LatchKits (PlayMonster)",
+          "notes": "Second LatchKits listing",
+          "status": "tracked"
+        }
+      ],
+      "keywords": [
+        "latch hook kits for kids",
+        "latch hook kit",
+        "latch hook kits",
+        "hook rug kits for kids",
+        "latch kits",
+        "latch hook rug kits for kids",
+        "latch hook for kids",
+        "latch hook kits for beginners",
+        "beginner latch hook kits for kids",
+        "unicorn latch hook kit"
+      ]
+    },
+    "loom-knitting": {
+      "display_name": "Loom Knitting",
+      "portfolio_slugs": [
+        "cat-and-hat-knitting",
+        "bunny-knitting-loom-kit"
+      ],
+      "our_asins": [
+        "B0F8DG32H5",
+        "B0F4XNWK7R"
+      ],
+      "competitor_asins": [
+        {
+          "asin": "B004JIFCXO",
+          "brand": "Creativity for Kids",
+          "notes": "Quick Knit Loom, retail presence",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0B8W4FK4Q",
+          "brand": "Hapinest",
+          "notes": "Hat and Scarf Loom Kit, ages 8-12",
+          "status": "tracked"
+        }
+      ],
+      "keywords": [
+        "loom knitting kit",
+        "knitting loom kit",
+        "knitting kit for kids",
+        "loom kit for kids",
+        "learn to knit kit",
+        "kids knitting kit",
+        "knitting looms for beginners",
+        "knitting kit for kids ages 8-12",
+        "finger knitting kit",
+        "kids knitting kits for beginners"
+      ]
+    },
+    "mini-fuse-beads": {
+      "display_name": "Mini Fuse Beads (2.6mm)",
+      "portfolio_slugs": [
+        "fuse-beads"
+      ],
+      "our_asins": [
+        "B09THLVFZK",
+        "B08DDJCQKF"
+      ],
+      "competitor_asins": [
+        {
+          "asin": "B0C5WQD914",
+          "brand": "INSCRAFT",
+          "notes": "28,000 beads/48 colors, 7 pegboards",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0FN4CT867",
+          "brand": "ARTKAL",
+          "notes": "Food-grade, 110+ colors",
+          "status": "tracked"
+        },
+        {
+          "asin": "B08QV9CMFQ",
+          "brand": "LIHAO",
+          "notes": "24,000 beads, budget",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0D5LF666P",
+          "brand": "FUNZBO",
+          "notes": "Kids-focused beginner kits",
+          "status": "tracked"
+        }
+      ],
+      "keywords": [
+        "mini perler beads",
+        "mini fuse beads",
+        "mini beads",
+        "fuse beads bulk",
+        "2.6mm fuse beads",
+        "mini perler beads kit",
+        "perler beads mini",
+        "fuse beads",
+        "melty beads",
+        "fuse bead kit"
+      ]
+    },
+    "biggie-fuse-beads": {
+      "display_name": "Biggie Fuse Beads (10mm)",
+      "portfolio_slugs": [
+        "biggie-beads"
+      ],
+      "our_asins": [
+        "B07D6D95NG",
+        "B07D6F3HL5"
+      ],
+      "competitor_asins": [],
+      "_note": "No specific competitor ASINs mapped yet. SERP scraping will discover them via keywords.",
+      "keywords": [
+        "melty beads",
+        "melty beads kit",
+        "melting beads for kids crafts",
+        "melt beads",
+        "fuse beads for kids",
+        "iron beads for kids",
+        "fuse beads kit",
+        "iron beads",
+        "hama beads",
+        "bead melting craft kit"
+      ]
+    },
+    "lacing-cards": {
+      "display_name": "Lacing Cards",
+      "portfolio_slugs": [],
+      "_portfolio_note": "Princess Lacing Cards portfolio not yet in portfolio-name-map. Map when created.",
+      "our_asins": [
+        "B0FQC7YFX6",
+        "B0FQC8WK5H",
+        "B0FQC9JM3T"
+      ],
+      "competitor_asins": [
+        {
+          "asin": "B00JM5G05I",
+          "brand": "Melissa and Doug",
+          "notes": "Market leader ~35%, brand trust",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0BRYRD91V",
+          "brand": "KRAFUN",
+          "notes": "Safari themes",
+          "status": "tracked"
+        },
+        {
+          "asin": "B0D178S25M",
+          "brand": "Serabeena",
+          "notes": "Safari animals, fine motor focus",
+          "status": "tracked"
+        }
+      ],
+      "keywords": [
+        "lacing cards",
+        "lacing cards for kids ages 3-5",
+        "lacing cards for kids ages 4-8",
+        "sewing cards for kids ages 3-5",
+        "sewing cards",
+        "lacing cards for toddlers 2-4",
+        "toddler sewing kits ages 2-4",
+        "toddler lacing cards",
+        "sewing cards for kids",
+        "toddler sewing cards"
+      ]
+    },
+    "needlepoint-kids": {
+      "display_name": "Needlepoint Kids",
+      "portfolio_slugs": [
+        "needlepoint-kits"
+      ],
+      "our_asins": [
+        "B09HVSLBS6",
+        "B0F8DH5K9L",
+        "B0F8DJ2M7P"
+      ],
+      "competitor_asins": [],
+      "_note": "No specific competitor ASINs mapped yet. SERP scraping will discover them via keywords.",
+      "keywords": [
+        "needlepoint kits for kids",
+        "kids needlepoint kit",
+        "cross stitch kits for kids",
+        "kids cross stitch kit",
+        "cross stitch for kids",
+        "beginner cross stitch kits for kids",
+        "kids embroidery kits ages 8-12",
+        "cross stitch kits for beginners kids",
+        "kids cross stitch kits age 5-8",
+        "needlepoint keychain kit"
+      ]
+    },
+    "gem-art": {
+      "display_name": "Gem Art Kids",
+      "portfolio_slugs": [],
+      "_portfolio_note": "Barbie gem art portfolio TBD (product launching). Map when available.",
+      "our_asins": [],
+      "competitor_asins": [
+        {
+          "asin": "B0CWLTTZ2G",
+          "brand": "EZCRA",
+          "notes": "Market leader ~45%, only real competitor",
+          "status": "tracked"
+        }
+      ],
+      "keywords": [
+        "gem art kit for kids",
+        "gem art for kids",
+        "gem art kit",
+        "gem sticker kit for kids",
+        "gem sticker craft kit",
+        "gem painting kit for kids",
+        "diamond art for kids",
+        "diamond art kits for kids",
+        "barbie craft kit",
+        "barbie arts and crafts"
+      ]
+    }
+  },
+  "uncategorized_asins": {
+    "_description": "ASINs from business.md 72-ASIN list not yet mapped to a category. Will be scraped for product data and categorized based on SERP overlap during first run.",
+    "asins": [
+      "B08YS42GPG",
+      "B0CCN877BL",
+      "B0B5RBBGC9",
+      "B09C1KQG2J",
+      "B0CZF266QH",
+      "B0B7JF9FW2",
+      "B07PPD8Q8V",
+      "B0CL22LLSY",
+      "B08CVSB189",
+      "B0DF7Q6P5J",
+      "B0BMFV811F",
+      "B0D9NSPBSS",
+      "B0DG7VK3HX",
+      "B0CN8Z1XKM",
+      "B0D4V9B9SH",
+      "B0D45DCDWJ",
+      "B0CND45Y4Z",
+      "B08BC56MQ8",
+      "B0D5QZ5CZF",
+      "B0CB6WDB7S",
+      "B09GK6WQQ1",
+      "B0CKQZ3BRV",
+      "B0D26CVQSH",
+      "B08C7SWHY7",
+      "B00ZSE93LA",
+      "B0CHVF4VFX",
+      "B0DP5N76G4",
+      "B0D9WH15DW",
+      "B0BPJBTXN7",
+      "B096Z5MCHJ",
+      "B07HBGHS5W",
+      "B0CYG4676W",
+      "B0BZP4FRMR",
+      "B0DPLZWBZL",
+      "B0DHH1QBYN",
+      "B0DJRLQDHH",
+      "B0DN1ZG6Q7",
+      "B001TC0UGC",
+      "B0DJFZLJFL",
+      "B0CJXQTM35",
+      "B096N2Q2YV",
+      "B0D9XZGP79",
+      "B0C74JCL87",
+      "B0DMSQQSPY",
+      "B0DFPYD2RW",
+      "B0C689CVY4",
+      "B0BNH7FLJC",
+      "B0CZ9MDYQ3",
+      "B0CQHL4R7X",
+      "B0D9L9XWGV",
+      "B00JYGPLUK",
+      "B0DKX5G74Q",
+      "B0DCHB6CLJ",
+      "B0CZDGNM8L",
+      "B09Q63J9RV",
+      "B0DK2V2D83",
+      "B0CKGYD2ZF",
+      "B0CHBF4RR3",
+      "B0DT72GZXP",
+      "B0DS7TGGC2",
+      "B08CZQ3ZMY",
+      "B08Y1W2JMJ",
+      "B0F1MFR5KN",
+      "B0DBZHG3KD",
+      "B0BNK1HSXL",
+      "B09DTHQH3Q"
+    ]
+  },
+  "alert_thresholds": {
+    "price_drop_pct": 10,
+    "price_drop_high_pct": 20,
+    "price_increase_pct": 15,
+    "review_surge_per_week": 20,
+    "bsr_improvement_pct": 25,
+    "bsr_decline_pct": 30,
+    "new_asin_in_top_n": 10,
+    "serp_position_jump": 5,
+    "rating_drop": 0.3
+  },
+  "scrape_settings": {
+    "product_batch_size": 5,
+    "serp_depth": 48,
+    "product_actor": "saswave~amazon-product-scraper",
+    "serp_actor": "axesso_data~amazon-search-scraper",
+    "poll_interval_seconds": 10,
+    "batch_timeout_seconds": 120,
+    "batch_delay_seconds": 2
+  },
+  "unassigned_asins": []
+}

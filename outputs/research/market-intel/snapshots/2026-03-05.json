@@ -1,0 +1,119 @@
+{
+  "date": "2026-03-05",
+  "source": "SP-API + DataDive + Apify (20kw + 34 BSR) + Seller Board",
+  "notes": "All 5 agents succeeded. 20/20 keywords, 34/34 BSR scans. B09WQSBZY7 BSR 4,748 ALL-TIME BEST (-47% vs Mar 1, -59% vs baseline). Price cut $21.98→$17.98 driving explosive growth. Profit up 36% on flat ad spend. B096MYBLS1 fully OOS (BSR 166,727). B0DC69M3YD first top-10 keyword.",
+  "hero_products": {
+    "B08DDJCQKF": {"name": "Cross Stitch Backpack Charms", "bsr": 4658, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 3, "subcategory": "Cross-Stitch Stamped Kits", "reviews": 1297, "rating": 4.5, "price": 19.98, "stock": 1481},
+    "B0F6YTG1CH": {"name": "My First Cross Stitch", "bsr": 54696, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 27, "subcategory": "Cross-Stitch Counted Kits", "reviews": 44, "rating": 4.7, "price": 16.98, "stock": 210},
+    "B09X55KL2C": {"name": "10 Embroidery Patterns", "bsr": 12132, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 41, "subcategory": "Embroidery Kits", "reviews": 701, "rating": 4.5, "price": 23.98, "stock": 1765, "badges": ["Overall Pick (embroidery kit for kids)", "Overall Pick (kids embroidery kit)"]},
+    "B0DC69M3YD": {"name": "4 Embroidery Flowers (Adults)", "bsr": 28325, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 107, "subcategory": "Embroidery Kits", "reviews": 633, "rating": 4.5, "price": 24.98, "stock": 643, "alert": "RANK CRISIS continuing — 1 top-10 KW (first!). #46 on 'embroidery kit for beginners' (103K SV). Keyword rotation: gaining 'adults' keywords, losing 'beginners' keywords."},
+    "B09WQSBZY7": {"name": "Fairy Sewing Kit", "bsr": 4748, "bsr_category": "Toys & Games", "subcategory_rank": 4, "subcategory": "Kids' Sewing Kits", "reviews": 617, "rating": 4.6, "price": 17.98, "stock": 1317, "note": "ALL-TIME BEST BSR. -47% vs Mar 1, -59% vs baseline. Price cut $21.98→$17.98 driving explosive growth. 25 top-10 keywords."},
+    "B096MYBLS1": {"name": "Dessert Sewing Kit", "bsr": 166727, "bsr_category": "Toys & Games", "subcategory_rank": 157, "subcategory": "Kids' Felt Craft Kits", "reviews": 266, "rating": 4.6, "price": null, "stock": 0, "alert": "FULLY OOS. BSR 166,727 (+81% vs Mar 1). All 50 keywords at rank 101. No Buy Box."},
+    "B08FYH13CL": {"name": "Latch Hook Pencil Cases", "bsr": 29921, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 17, "subcategory": "Latch Hook Kits", "reviews": 498, "rating": 4.4, "price": 19.98, "stock": 791, "note": "BSR improved -9% vs Mar 1 but lost 3 top-10 KWs (13→10). #12 on main keyword."},
+    "B0F8R652FX": {"name": "Latch Hook Rainbow Heart", "bsr": 15627, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 7, "subcategory": "Latch Hook Kits", "reviews": 48, "rating": 4.5, "price": 24.98, "stock": 468},
+    "B0F8DG32H5": {"name": "Knitting Cat & Hat", "bsr": 19713, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 22, "subcategory": "Knitting Kits", "reviews": 31, "rating": 4.9, "price": 26.98, "stock": 489, "note": "Stable BSR. Lost 2 top-10 KWs (18→16). 'finger knitting kit' improved to #4."},
+    "B09THLVFZK": {"name": "Mini Fuse Beads 48 Colors", "bsr": 4585, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 8, "subcategory": "Fuse & Perler Beads", "reviews": 2922, "rating": 4.6, "price": 32.98, "stock": 865, "badges": ["Overall Pick (mini perler beads)"], "note": "#1 earner $5,841/7d. #1 mini perler + mini fuse beads. Watch: 'perler beads' (86K SV) slipping #6→#10."},
+    "B07D6D95NG": {"name": "10mm Big Fuse Beads", "bsr": 21777, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 42, "subcategory": "Fuse & Perler Beads", "reviews": 103, "rating": 4.1, "price": 24.98, "stock": 297},
+    "B0FQC7YFX6": {"name": "Princess Lacing Card", "bsr": 38788, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 20, "subcategory": "Card Making Kits", "reviews": 30, "rating": 4.8, "price": 19.98, "stock": 356, "note": "Lost 3 top-10 KWs (9→6). Lost sponsored #1 positions from Mar 1. Needs more reviews (30 vs competitors' 919+)."},
+    "B09HVSLBS6": {"name": "Needlepoint Cat Wallet", "bsr": 33470, "bsr_category": "Arts, Crafts & Sewing", "subcategory_rank": 96, "subcategory": "Sewing Project Kits", "reviews": 171, "rating": 4.2, "price": 17.98, "stock": 124}
+  },
+  "orders_yesterday": {
+    "date": "2026-03-04",
+    "total_orders": 202,
+    "total_units": 208,
+    "shipped_revenue_incl_tax": 3110.00
+  },
+  "seller_board_7day": {
+    "date_range": "2026-02-25 to 2026-03-03",
+    "days": 7,
+    "revenue": 30194.58,
+    "net_profit": 6992.06,
+    "ad_spend": 5359.17,
+    "tacos_pct": 17.75,
+    "avg_margin_pct": 23.07
+  },
+  "seller_board_per_asin": {
+    "date_range": "2026-02-25 to 2026-03-03",
+    "B08DDJCQKF": {"sb_rev_7d": 4329.66, "sb_units_7d": 217, "sb_profit_7d": 1214.31},
+    "B0F6YTG1CH": {"sb_rev_7d": 389.53, "sb_units_7d": 23, "sb_profit_7d": -63.55},
+    "B09X55KL2C": {"sb_rev_7d": 1916.00, "sb_units_7d": 80, "sb_profit_7d": 231.43},
+    "B0DC69M3YD": {"sb_rev_7d": 594.52, "sb_units_7d": 24, "sb_profit_7d": 30.22},
+    "B09WQSBZY7": {"sb_rev_7d": 3610.10, "sb_units_7d": 176, "sb_profit_7d": 1032.25},
+    "B096MYBLS1": {"sb_rev_7d": 260.96, "sb_units_7d": 12, "sb_profit_7d": 104.30},
+    "B08FYH13CL": {"sb_rev_7d": 779.22, "sb_units_7d": 39, "sb_profit_7d": 170.78},
+    "B0F8R652FX": {"sb_rev_7d": 1348.92, "sb_units_7d": 54, "sb_profit_7d": 40.41},
+    "B0F8DG32H5": {"sb_rev_7d": 944.30, "sb_units_7d": 35, "sb_profit_7d": 116.07},
+    "B09THLVFZK": {"sb_rev_7d": 5840.85, "sb_units_7d": 178, "sb_profit_7d": 1387.78},
+    "B07D6D95NG": {"sb_rev_7d": 1298.96, "sb_units_7d": 52, "sb_profit_7d": 155.51},
+    "B0FQC7YFX6": {"sb_rev_7d": 635.34, "sb_units_7d": 32, "sb_profit_7d": 8.91},
+    "B09HVSLBS6": {"sb_rev_7d": 125.86, "sb_units_7d": 7, "sb_profit_7d": 12.51}
+  },
+  "rank_radar_summary": {
+    "radars_fetched": 9,
+    "date_range": "2026-03-04 to 2026-03-05",
+    "products": {
+      "B09WQSBZY7": {"top10": 25, "top50": 60, "total": 87, "vs_previous_top10": 2, "trend": "dominant"},
+      "B09X55KL2C": {"top10": 24, "top50": 52, "total": 55, "vs_previous_top10": 1, "trend": "dominant"},
+      "B0F8DG32H5": {"top10": 16, "top50": 61, "total": 81, "vs_previous_top10": -2, "trend": "declining"},
+      "B07D6D95NG": {"top10": 13, "top50": 21, "total": 38, "vs_previous_top10": 0, "trend": "stable"},
+      "B09THLVFZK": {"top10": 11, "top50": 16, "total": 18, "vs_previous_top10": 0, "trend": "stable"},
+      "B08FYH13CL": {"top10": 10, "top50": 22, "total": 53, "vs_previous_top10": -3, "trend": "declining"},
+      "B0FQC7YFX6": {"top10": 6, "top50": 27, "total": 52, "vs_previous_top10": -3, "trend": "declining"},
+      "B0DC69M3YD": {"top10": 1, "top50": 40, "total": 67, "vs_previous_top10": 1, "trend": "improving"},
+      "B096MYBLS1": {"top10": 0, "top50": 0, "total": 50, "vs_previous_top10": 0, "trend": "crisis"}
+    }
+  },
+  "keyword_battleground": {
+    "keywords_scanned": 20,
+    "keywords_returned": 20,
+    "keywords_empty": 0,
+    "summary": {
+      "we_hold_top_1": ["embroidery kit for kids", "cross stitch kits for kids", "cross stitch for kids", "kids embroidery kit", "mini perler beads", "mini fuse beads"],
+      "we_hold_top_5": ["kids sewing kit (#5)"],
+      "we_hold_top_10": ["latch hook kits for kids (#7 B0F8R652FX)", "perler beads (#8)", "sewing kit for kids (#9)", "knitting kit for kids (#10)"],
+      "we_not_on_page": ["embroidery kit for beginners (#46)", "latch hook pillow kit (not found)", "loom knitting kit (#18)", "loom knitting (not found)", "knitting kit for beginners (not found)", "lacing cards (#25)", "lacing cards ages 3-5 (#16)", "lacing cards ages 4-8 (#11)", "needlepoint kits for kids (not found)"]
+    }
+  },
+  "competitor_bsr": {
+    "B0CZHKSSL4": {"bsr": 330, "brand": "CYANFOUR"},
+    "B091GXM2Y6": {"bsr": 599, "brand": "KRAFUN"},
+    "B0C3ZVKB46": {"bsr": 1006, "brand": "ETSPIL"},
+    "B0DMHY2HF3": {"bsr": 1162, "brand": "CYANFOUR"},
+    "B07PPD8Q8V": {"bsr": 1455, "brand": "Made By Me"},
+    "B0CWLTTZ2G": {"bsr": 2105, "brand": "EZCRA"},
+    "B0B762JW55": {"bsr": 2393, "brand": "Bradove"},
+    "B0BB9N74SG": {"bsr": 2463, "brand": "Santune"},
+    "B0BRYRD91V": {"bsr": 2754, "brand": "KRAFUN"},
+    "B0C2XYP6L3": {"bsr": 3402, "brand": "KRAFUN"},
+    "B0DJQPGDMQ": {"bsr": 4513, "brand": "veirousa"},
+    "B0CXY8JMTK": {"bsr": 5406, "brand": "EZCRA"},
+    "B0CTTMWXYP": {"bsr": 7831, "brand": "Klever Kits"},
+    "B0C5WQD914": {"bsr": 9483, "brand": "INSCRAFT"},
+    "B0DS23C1YX": {"bsr": 9520, "brand": "READAEER"},
+    "B0DP654CSV": {"bsr": 10696, "brand": "Louise Maelys"},
+    "B0182IQHYE": {"bsr": 11145, "brand": "READAEER"},
+    "B06XRRN4VL": {"bsr": 12868, "brand": "LatchKits"},
+    "B0DFHN42QB": {"bsr": 13218, "brand": "EZCRA"},
+    "B0CG9FN2CH": {"bsr": 15127, "brand": "Pllieay"},
+    "B0CX9H8YGR": {"bsr": 15075, "brand": "LatchKits"},
+    "B08QV9CMFQ": {"bsr": 17559, "brand": "LIHAO"},
+    "B0D5LF666P": {"bsr": 17887, "brand": "FUNZBO"},
+    "B0B7JHN4F1": {"bsr": 21248, "brand": "KRAFUN"},
+    "B0B8W4FK4Q": {"bsr": 21852, "brand": "Hapinest"},
+    "B00JM5G05I": {"bsr": 26446, "brand": "Melissa & Doug"},
+    "B0D8171TF1": {"bsr": 26722, "brand": "KRAFUN"},
+    "B08T5QC9FS": {"bsr": 27997, "brand": "Pllieay"},
+    "B087DYHMZ2": {"bsr": 33250, "brand": "CraftLab"},
+    "B08TC7423N": {"bsr": 44173, "brand": "Pllieay"},
+    "B0CM9JKNCC": {"bsr": 70219, "brand": "Caydo"},
+    "B0FN4CT867": {"bsr": 106229, "brand": "ARTKAL"},
+    "B0D178S25M": {"bsr": 137205, "brand": "Serabeena"},
+    "B004JIFCXO": {"bsr": null, "brand": "Creativity for Kids"}
+  },
+  "badges": [
+    {"asin": "B09X55KL2C", "keyword": "embroidery kit for kids", "badge": "Overall Pick", "source": "carried forward from Mar 1"},
+    {"asin": "B09X55KL2C", "keyword": "kids embroidery kit", "badge": "Overall Pick", "source": "carried forward from Mar 1"},
+    {"asin": "B09THLVFZK", "keyword": "mini perler beads", "badge": "Overall Pick", "source": "carried forward from Mar 1"}
+  ],
+  "apify_note": "20/20 keywords returned data. 34/34 competitor BSR scans succeeded. 0 badges detected by axesso (carried forward). Actor format note: use tilde (axesso_data~amazon-search-scraper), not forward slash. Cost: ~$1.95."
+}

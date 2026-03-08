@@ -1,0 +1,122 @@
+{
+  "date": "2026-03-03",
+  "portfolio": "Fairy Family",
+  "portfolio_id": "279805104407998",
+  "stage": "Scaling",
+  "acos_target": 30,
+  "health_score": "5/10",
+  "data_limitations": "30d campaign report, 14d search term report, 7d placement report all PENDING (Amazon-side). Using weekly snapshot (Feb 20-26) + live campaign structure + rank radar (28d) + niche keywords.",
+  "metrics_weekly": {
+    "spend": 569.41,
+    "sales": 1430.72,
+    "acos": 39.8,
+    "orders": 64,
+    "cvr_est": 8.5,
+    "cpc_est": 0.76,
+    "roas": 2.51,
+    "budget_utilization_pct": 25,
+    "total_daily_budget": 322
+  },
+  "asins": [
+    {"asin": "B09WQSBZY7", "product": "Fairy Sewing Kit", "role": "hero", "sku": "DH-0K32-KCGU", "7d_sales_est": 483.56, "organic_ratio": 54.6, "margin": 32.08},
+    {"asin": "B0BNDVTTSH", "product": "Ballerina Dancers Sewing Kit", "role": "secondary", "sku": "KS-48AQ-488J", "7d_sales_est": 87.92, "organic_ratio": 100, "margin": 46.44},
+    {"asin": "B0BP8GCK1G", "product": "Fairy Elves Sewing Kit", "role": "underperformer", "7d_sales_est": 0, "sessions": 26},
+    {"asin": "B0C3YQ5RG1", "product": "Pirates Sewing Kit", "role": "minimal"},
+    {"asin": "B0CDH84QDP", "product": "Dogs Stuffed Animal Kit", "role": "minimal"}
+  ],
+  "campaigns": {
+    "enabled": 20,
+    "paused": 14,
+    "by_type": {
+      "auto": 5,
+      "sk": 7,
+      "mk_root": 3,
+      "mk_broad": 1,
+      "mk_lowbid_discovery": 2,
+      "pt": 2
+    },
+    "details": [
+      {"name": "SPA auto", "id": "200590672288098", "type": "auto", "budget": 18, "tos": 194, "state": "ENABLED"},
+      {"name": "SK doll making kit TOS", "id": "84662042674582", "type": "sk", "keyword": "doll making kit", "bid": 0.49, "budget": 11, "tos": 161, "state": "ENABLED"},
+      {"name": "SK kids sewing kits age 5-8 TOS", "id": "194578560916118", "type": "sk", "keyword": "kids sewing kits age 5-8", "bid": 0.79, "budget": 14, "tos": 110, "state": "ENABLED"},
+      {"name": "PT low bid", "id": "369595481013488", "type": "pt", "budget": 10, "tos": null, "targets": 1, "state": "ENABLED"},
+      {"name": "SPA auto low bid fairy", "id": "330753309504409", "type": "auto", "budget": 10, "tos": 100, "state": "ENABLED"},
+      {"name": "MK manual low bid fairy", "id": "347834918794567", "type": "mk_discovery", "budget": 10, "tos": null, "keywords": 174, "avg_bid": 0.11, "state": "ENABLED"},
+      {"name": "SPA auto TOS low bid ballerina", "id": "282769301324838", "type": "auto", "budget": 10, "tos": 900, "state": "ENABLED", "flag": "EXTREME_TOS"},
+      {"name": "SPA auto low bid ballerina", "id": "330669479750073", "type": "auto", "budget": 10, "tos": 100, "state": "ENABLED"},
+      {"name": "SPA auto TOS low bid fairy", "id": "465199092942357", "type": "auto", "budget": 10, "tos": 900, "state": "ENABLED", "flag": "EXTREME_TOS"},
+      {"name": "MK manual low bid ballerina", "id": "417602612011663", "type": "mk_discovery", "budget": 10, "tos": null, "keywords": 339, "avg_bid": 0.12, "state": "ENABLED"},
+      {"name": "MK sewing kit kids root TOS", "id": "405205635215074", "type": "mk", "budget": 14, "tos": 111, "keywords": 2, "state": "ENABLED"},
+      {"name": "SK sewing kit for kids TOS", "id": "417324377096629", "type": "sk", "keyword": "sewing kit for kids", "bid": 0.34, "budget": 18, "tos": 261, "state": "ENABLED", "flag": "HERO_KW_DROPPING"},
+      {"name": "MK sewing kit root TOS", "id": "420410022305575", "type": "mk", "budget": 15, "tos": 151, "keywords": 3, "state": "ENABLED"},
+      {"name": "MK kids sewing kit root", "id": "365377278886208", "type": "mk", "budget": 8, "tos": 161, "keywords": 2, "state": "ENABLED"},
+      {"name": "PT product targeting", "id": "483685655952741", "type": "pt", "budget": 4, "tos": 201, "targets": 4, "state": "ENABLED"},
+      {"name": "SK crafts for kids TOS push ballerina", "id": "452348817646551", "type": "sk", "keyword": "crafts for kids", "bid": 0.58, "budget": 26, "tos": 161, "state": "ENABLED"},
+      {"name": "SK fairy sewing kit for kids TOS", "id": "449540884891211", "type": "sk", "keyword": "fairy sewing kit for kids", "bid": 0.52, "budget": 20, "tos": 311, "state": "ENABLED"},
+      {"name": "SK sewing for kids TOS", "id": "524947739371988", "type": "sk", "keyword": "sewing for kids", "bid": 0.62, "budget": 15, "tos": 161, "state": "ENABLED"},
+      {"name": "SK sewing kit for kids ages 8-12 TOS", "id": "316614216936661", "type": "sk", "keyword": "sewing kit for kids ages 8-12", "bid": 0.48, "budget": 30, "tos": 0, "state": "ENABLED", "flag": "MISSING_TOS"},
+      {"name": "MK broad", "id": "331838355911626", "type": "mk_broad", "budget": 35, "tos": 85, "ros": 26, "pp": 8, "keywords": 7, "state": "ENABLED"}
+    ]
+  },
+  "structure_audit": {
+    "auto": 5,
+    "broad": 1,
+    "sk": 7,
+    "mk": 5,
+    "pt": 2,
+    "missing": [],
+    "flags": ["EXCESS_AUTO", "MISSING_TOS_ON_TOP_SK"],
+    "complete": true
+  },
+  "rank_data": {
+    "radar_id": "3ef2dcb4-0d08-45a1-8ecf-be5795e30773",
+    "keywords_tracked": 87,
+    "top_10_now": 17,
+    "top_10_28d_ago": 22,
+    "net_7d": -45,
+    "net_28d": -124,
+    "critical_drops": [
+      {"keyword": "sewing kit for kids", "sv": 18533, "now": 14, "was_7d": 7, "was_28d": 7},
+      {"keyword": "felt craft kit", "sv": 1233, "now": 101, "was_7d": 23, "was_28d": 23},
+      {"keyword": "stuffed animal sewing kit", "sv": 851, "now": 101, "was_7d": 60, "was_28d": 60}
+    ],
+    "strong_positions": [
+      {"keyword": "fairy sewing kit for kids", "rank": 1},
+      {"keyword": "felt sewing kit for kids", "rank": 2},
+      {"keyword": "sewing kits for kids 5-8", "rank": 3},
+      {"keyword": "sewing for kids", "rank": 5}
+    ]
+  },
+  "niche_data": {
+    "niche_id": "RmbSD3OH6t",
+    "total_keywords": 309,
+    "total_sv": 165272,
+    "ranked_pct": 87.4,
+    "top_10_sv_pct": 50.7,
+    "gaps": [
+      {"keyword": "sewing kit for beginners", "sv": 6553, "rank": 61},
+      {"keyword": "beginner sewing kit", "sv": 4326, "rank": 40},
+      {"keyword": "diy stuffed animal kit", "sv": 1017, "rank": null}
+    ]
+  },
+  "search_term_summary": {
+    "data_available": false,
+    "reason": "14d search term report stuck in PENDING",
+    "report_id": "956738c1-1c7e-4538-9a8d-ef85bd618d91"
+  },
+  "seller_board": {
+    "hero_organic_ratio": 54.6,
+    "hero_margin": 32.08,
+    "hero_7d_profit": 155.12,
+    "ballerina_margin": 46.44,
+    "elves_zero_sales": true
+  },
+  "action_plan": {
+    "total_items": 12,
+    "p1_count": 5,
+    "p2_count": 4,
+    "p3_count": 2,
+    "p4_count": 1,
+    "est_weekly_impact": "$80-120 savings + rank defense"
+  }
+}
