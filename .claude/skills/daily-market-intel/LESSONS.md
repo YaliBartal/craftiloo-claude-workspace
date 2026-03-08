@@ -24,6 +24,94 @@
 
 <!-- Add new entries at the TOP (newest first). Use this exact format: -->
 
+### Run: 2026-03-08
+**Goals:**
+- [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
+- [x] Fetch SP-API Orders for yesterday's revenue/units (2026-03-07)
+- [x] Fetch DataDive Rank Radar data for 10 hero radars (9 fetched — B08DDJCQKF no radar)
+- [x] Fetch DataDive competitor data for 11 niches
+- [x] Run Apify keyword scan (20 keywords) with axesso_data actor
+- [x] Run Apify competitor BSR scan (34 ASINs — saswave actor — BSR field returned null)
+- [ ] Fetch Seller Board 7-day dashboard + per-ASIN detailed — ❌ FAILED 401 (×3 consecutive)
+- [x] Compile full report with mandatory format
+- [x] Save snapshot
+
+**Result:** ⚠️ Partial — 5/5 non-SB data sources succeeded. SB 401 again (third consecutive run).
+
+**What happened:**
+- SP-API: 171 orders, 189 units, $2,389.91 shipped revenue for Mar 7 (down from 214 orders Mar 6 — Sunday effect?). 4 pricing calls hit QuotaExceeded, auto-retried successfully.
+- B08DDJCQKF inventory showing 82 (was 1,386 yesterday) — almost certainly API anomaly (BSR/keywords stable). Flagged as verify-in-Seller-Central.
+- DataDive Rank Radar: 9/9 radars. B09X55KL2C reclaimed top-50 on "cross stitch for kids" (+71). B09WQSBZY7 massive long-tail gains (+72 on make your own stuffed animal). B08FYH13CL recovering — "latch hook kit" (20.6K SV) returned to rank 42 from off-page. B0F8DG32H5 lost "knitting for beginners kit" (-62) and "knitting kits" (-53) off page — new alert.
+- DataDive Competitors: 11/11 niches. veirousa now #1 in latch hook niche (1,271 sales/mo at BSR 4,285). QUEFE brand emerging on perler beads.
+- Apify keyword scan: 20/20 perfect. B09X55KL2C RECLAIMED #1 on "kids embroidery kit" (was #5 yesterday). B08DDJCQKF holding #1 on cross stitch keywords + needlepoint. LIHAO now #1 on "mini perler beads" (we dropped to #2).
+- Apify saswave: 34/34 ASINs processed but BSR field returned null for all ASINs — actor output field name issue. Previous snapshot BSR used as fallback.
+- Seller Board: 401 again (third consecutive run, since 2026-03-02).
+
+**What didn't work:**
+- Seller Board 401 — tokens still expired.
+- Apify saswave: BSR field returned null across all 34 ASINs. The actor output format uses a different field name than "bsr". Need to inspect raw actor output to find correct field name (e.g., "rankingInCategory", "salesRank", etc.). Will need to fix field extraction in next run.
+- B08DDJCQKF inventory showing 82 vs 1,386 — FBA API anomaly (known issue).
+
+**Is this a repeat error?** Seller Board 401 = Repeat Error ×3 (escalating). saswave BSR null = NEW issue (first occurrence of this specific variant — saswave worked fine in 2026-02-28 and 2026-03-02 runs). Investigate field mapping next run.
+
+**Lesson learned:**
+- Need to audit saswave actor raw output to find correct BSR field name. The `bsr` field worked in Feb but may have changed in actor version or is named differently. Add field-name fallback list: try `bsr`, `bestSellerRank`, `salesRank`, `rankingInCategory`, `rank`.
+- B08DDJCQKF inventory drop from 1,386→82 in one day = FBA API anomaly per LESSONS known issue. Rule reinforced: check BSR + keywords stability before flagging.
+
+**Tokens/cost:** ~95K tokens, ~$0.95 Apify cost (20 keywords + 1 BSR scan)
+
+---
+
+### Run: 2026-03-07
+**Goals:**
+- [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
+- [x] Fetch SP-API Orders for yesterday's revenue/units (2026-03-06)
+- [x] Fetch DataDive Rank Radar data for 10 hero radars
+- [x] Fetch DataDive competitor data for 11 niches
+- [x] Run Apify keyword scan (20 keywords) with axesso_data actor
+- [x] Run Apify competitor BSR scan (34 ASINs — saswave actor)
+- [ ] Fetch Seller Board 7-day dashboard + per-ASIN detailed — ❌ FAILED 401 (×2 consecutive)
+- [x] Compile full report with mandatory format
+- [x] Save snapshot
+
+**Result:** ⚠️ Partial — 5/5 non-SB data sources succeeded. SB 401 again (second consecutive run).
+
+**What happened:**
+- SP-API: 214 orders, 227 units, $3,612.67 revenue for Mar 6 (strong day, up from 168/163/$2,527 on Mar 1).
+- B09WQSBZY7 ALL-TIME BEST BSR: 4,624 (-4,746 vs Mar 2). Subcat rank #4 in Kids' Sewing Kits. Price dropped from $21.98→$17.98 — likely driving the surge. 34 top-10 keywords (+11 vs Mar 2).
+- B0F8R652FX BSR 15,793 (-7,575 vs Mar 2). #1 sponsored "latch hook kits for kids."
+- B07D6D95NG BSR 26,438 (-7,004). Strong keyword gains: melting beads +58, fuse beads kit +51, perler bead kit +29.
+- B0FQC7YFX6 BSR 36,195 (-10,116) — best since launch.
+- B08DDJCQKF: #1 organic "cross stitch for kids", #2 "embroidery kit for kids" (improved from #6 on Mar 2), #2 "needlepoint kits for kids."
+- B09X55KL2C ALERT: dropped from #1 to #5 on "kids embroidery kit" — Louise Maelys (B0FR7Y8VHB) now #1. Also "cross stitch for kids" fell 28→101.
+- B0DC69M3YD: Day 24+ rank crisis. 0 top-10 keywords. Multiple high-SV terms fell off page today. BSR improved 28,929→23,800 (misleading — keywords still collapsed).
+- B096MYBLS1: OOS deepening. BSR 155,054 (+28K vs Mar 2). All 50 keywords at 101.
+- B08FYH13CL: Latch hook instability day 7+. latch hook (10K SV) fell to 101. hook rug kits (-87), latchkits (-90) all off page. Only sponsored visibility.
+- B08DDJCQKF has NO Rank Radar in DataDive — cannot track keyword performance for our 2nd-highest revenue product.
+- 9/10 Rank Radars fetched (no radar for B08DDJCQKF).
+- Apify: 20/20 keywords, 34/34 competitor BSR — perfect scan again.
+- 5-day gap between snapshots (Mar 2 → Mar 7). Days Mar 3-6 missed.
+
+**What didn't work:**
+- Seller Board: 401 again (second consecutive run, fifth+ week without SB data).
+- Apify agent full JSON not available in task output (file was 1 line). Only summary was returned in task notification. Competitor BSR table partially reconstructed from previous snapshot.
+- B08DDJCQKF: No Rank Radar configured in DataDive. This is our #2 revenue product — needs a radar set up.
+
+**Is this a repeat error?** Seller Board 401 = Repeat Error ×2 (escalating — move to Repeat Errors). B08FYH13CL instability = Repeat Error ×7+. B08DDJCQKF no Rank Radar = was flagged as user requirement on 2026-03-02 but still not configured.
+
+**Lesson learned:**
+- Apify agent task output file is unreliable for reading back detailed JSON (arrives empty or 1 line). When agent summary gives key positions, build the battleground table from that summary. Don't block the report waiting for the file.
+- B09WQSBZY7 price drop ($21.98→$17.98) is the likely driver of BSR 4,624 (all-time best). Need to monitor margin via SB once tokens fixed. If BSR was won through price reduction, profitability may be impacted.
+- B09X55KL2C losing #1 on "kids embroidery kit" to Louise Maelys is a key competitive event. If this holds for 2+ more runs, it should trigger a PPC/listing response.
+- Louise Maelys (B0FR7Y8VHB) appearing 10+ days on multiple keywords at high positions — officially a major new competitor in embroidery kids space.
+- B08DDJCQKF DataDive Rank Radar needs to be created urgently — it's one of our top 2 products and we have zero keyword rank visibility.
+- kullaloo (B0CJZ3JV3K) holding #2 on both sewing keywords 7+ days — needs to be added to context/competitors.md.
+- Daily run cadence slipped to 5-day gap (Mar 2→Mar 7). Missing consecutive daily runs reduces trend visibility.
+
+**Tokens/cost:** ~95K tokens, ~$0.08 Apify cost (unusually low — may be estimate error; typical ~$0.95)
+
+---
+
 ### Run: 2026-03-02
 **Goals:**
 - [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
@@ -536,6 +624,19 @@
 
 ## Known Issues
 
+### Issue: B08DDJCQKF Has No Rank Radar in DataDive
+- **First seen:** 2026-03-07
+- **Description:** B08DDJCQKF (Cross Stitch Backpack Charms — our #2 revenue product at ~$4,169/7d) has no Rank Radar configured in DataDive. This means we cannot track keyword performance for one of our top 2 revenue products.
+- **User requirement:** Per 2026-03-02 instruction, B08DDJCQKF should always be included in Rank Radar fetch. But no radar exists.
+- **Fix:** Create a Rank Radar for B08DDJCQKF in DataDive. Go to DataDive → Rank Radars → Create New → seed with B08DDJCQKF ASIN.
+- **Workaround:** Use Apify keyword scan positions (which show B08DDJCQKF performing well: #1 "cross stitch for kids", #2 "embroidery kit for kids"). No daily rank tracking available.
+
+### Issue: Apify Agent Task Output File Empty/Unusable
+- **First seen:** 2026-03-07
+- **Description:** The Apify background agent's detailed JSON output is not accessible via the task output file (file contains only 1 line). Only the summary in the task notification is available. This means the full competitor_bsr table, keyword_battleground details, and badge data cannot be read from the file.
+- **Workaround:** Build battleground tables from the task notification summary. For competitor BSR, fall back to previous snapshot data for any ASINs not explicitly mentioned in the summary. This approach works but loses some detail.
+- **Root cause:** Background agent output file appears to be a reference to the agent transcript, not the returned text. The actual result is in the task notification.
+
 ### Issue: Seller Board Report Tokens Expired (401 Unauthorized)
 - **First seen:** 2026-03-02
 - **Description:** All 5 Seller Board report URLs returned 401 Unauthorized. Tokens embedded in the URLs have expired. This happened previously in 2026-03-01 v3 (returned stale data) and now returns outright 401.
@@ -555,6 +656,13 @@
 - **Description:** `get_rank_radar_data` returns at most 50 keyword detail rows per radar, even for radars with 67-87 keywords. The `list_rank_radars` endpoint returns accurate top10/top50 summary counts covering ALL keywords.
 - **Workaround:** Use `list_rank_radars` for headline top10/top50 counts (accurate). Accept that movement detail analysis covers only the first 50 keywords per radar. Radars affected: B09WQSBZY7 (87 kws), B0F8DG32H5 (81 kws), B0DC69M3YD (67 kws).
 - **Root cause:** DataDive API pagination limit. No known workaround — the API does not expose a pagination parameter for rank radar keyword data.
+
+### Issue: Apify saswave BSR Field Returns Null (2026-03-08)
+- **First seen:** 2026-03-08
+- **Description:** saswave/amazon-product-scraper returned rating data for all 34 ASINs but `bsr` field was null for every ASIN. The BSR data was accessible in Feb/Mar runs but field name may have changed in actor update.
+- **Workaround:** Fall back to previous snapshot's BSR data for competitor tables. Note "(prev snapshot)" in BSR source column.
+- **Fix:** Audit raw saswave actor output to find correct BSR field name. Try: `bsr`, `bestSellerRank`, `salesRank`, `rankingInCategory`, `rank`. Update agent prompt with correct field name once identified.
+- **Root cause:** Actor output format may have changed, or the field name was always different and the extraction code used an incorrect mapping.
 
 ### Issue: Apify saswave/amazon-product-scraper Returns EUR Prices
 - **First seen:** 2026-03-01
@@ -595,6 +703,13 @@
 ---
 
 ## Repeat Errors
+
+### Seller Board 401 Unauthorized (×3) — ACTIVE
+- **First seen:** 2026-03-02
+- **Repeated:** 2026-03-07, 2026-03-08
+- **Status:** ACTIVE — tokens expired for 6+ days now
+- **Fix:** Log into Sellerboard → Settings → Automation → Reports → regenerate all 5 URLs → update `.env`
+- **Impact:** All SB financials/per-ASIN data stale (carrying forward Feb 21–27). Cannot see profit, margin, TACoS, per-ASIN revenue until fixed.
 
 ### FBA Inventory API Truncation (×2) — RESOLVED
 - **First seen:** 2026-02-24 (run 1)
