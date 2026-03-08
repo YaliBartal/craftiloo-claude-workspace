@@ -1,0 +1,315 @@
+{
+  "$schema_version": "1.0",
+  "last_updated": "2026-03-05",
+  "portfolio": {
+    "name": "Embroidery for Kids",
+    "id": "71655754369545",
+    "slug": "embroidery-for-kids",
+    "stage": "Scaling",
+    "hero_asins": [
+      "B09X55KL2C"
+    ],
+    "secondary_asins": [
+      "B08DJYBH4D"
+    ],
+    "hero_keywords": [
+      "embroidery kit for kids",
+      "kids embroidery kit",
+      "embroidery for kids",
+      "embroidery kits for kids"
+    ],
+    "niche_id": "QE8zCak2Cs",
+    "rank_radar_id": "a3e561c4-5ff0-4c3f-91e7-3cadc03507f0",
+    "campaigns_enabled": 8,
+    "campaigns_paused": 8
+  },
+  "goals": {
+    "acos_target": 30,
+    "acos_red_flag": 50,
+    "cvr_target": 10,
+    "budget_envelope_daily": null,
+    "rank_targets": [
+      {
+        "keyword": "embroidery kit for kids",
+        "target_rank": 1,
+        "current_rank": 1
+      },
+      {
+        "keyword": "kids embroidery kit",
+        "target_rank": 1,
+        "current_rank": 1
+      },
+      {
+        "keyword": "embroidery for kids",
+        "target_rank": 1,
+        "current_rank": 1
+      }
+    ],
+    "strategic_notes": [
+      "B08DJYBH4D sells organically with all PPC paused — monitor",
+      "Product has negative net profit per Seller Board — ACoS improvement is existential",
+      "Hero keywords are #1 organically — TOS spending not needed for rank defense",
+      "MK broad cannibalization pattern confirmed — needs SK isolation"
+    ],
+    "updated": "2026-03-05",
+    "tacos_target": 16,
+    "tacos_red_flag": 25,
+    "break_even_acos": 1.1
+  },
+  "baseline": {
+    "date": "2026-03-05",
+    "source": "first-deep-dive",
+    "metrics": {
+      "spend_30d": 1231.28,
+      "sales_30d": 2923.65,
+      "acos": 42.1,
+      "orders_30d": 118,
+      "cvr": 9.2,
+      "cpc": 0.96,
+      "roas": 2.37
+    },
+    "structure": {
+      "campaigns_enabled": 8,
+      "sk_campaigns": 1,
+      "mk_broad_spend_pct": 47.9,
+      "health_score": "3.5/10",
+      "structure_grade": "2.85/10"
+    }
+  },
+  "latest_metrics": {
+    "date": "2026-03-05",
+    "source": "campaign-report-30d-2026-03-02 + placements-30d-2026-03-05",
+    "metrics": {
+      "spend_30d": 1231.28,
+      "sales_30d": 2923.65,
+      "acos": 42.1,
+      "orders_30d": 118,
+      "cvr": 9.2,
+      "cpc": 0.96,
+      "roas": 2.37,
+      "tacos_30d": 12.6,
+      "organic_ratio_30d": 69.2,
+      "margin_pct": 1.1,
+      "organic_momentum_score": 75,
+      "profit_health": "BREAK-EVEN"
+    },
+    "delta_vs_baseline": null
+  },
+  "metric_history": [
+    {
+      "date": "2026-03-05",
+      "acos": 42.1,
+      "spend_30d": 1231.28,
+      "sales_30d": 2923.65,
+      "orders_30d": 118,
+      "cvr": 9.2,
+      "cpc": 0.96
+    },
+    {
+      "date": "2026-03-06",
+      "source": "tacos-optimizer",
+      "tacos": 12.6,
+      "organic_momentum": 75,
+      "profit_health": "BREAK-EVEN",
+      "margin_pct": 1.1
+    }
+  ],
+  "change_log": [
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "action": "P1 — 4 changes executed",
+      "changes": [
+        {
+          "type": "BUDGET_INCREASE",
+          "campaign_id": "442370005643256",
+          "campaign_name": "PT (product targeting)",
+          "from": "$7/d",
+          "to": "$12/d",
+          "reason": "Budget starved at 99.66% utilization, 31.8% ACoS — best campaign can't spend"
+        },
+        {
+          "type": "BID_DECREASE",
+          "campaign_id": "369353866282446",
+          "campaign_name": "MK broad TOS",
+          "from": "TOS 114%",
+          "to": "TOS 67%",
+          "reason": "47.9% of portfolio spend at 45.9% ACoS, TOS placement 45.8% ACoS, cannibalization confirmed"
+        },
+        {
+          "type": "BID_DECREASE",
+          "campaign_id": "311962155538874",
+          "campaign_name": "SK embroidery kit for beginners TOS",
+          "from": "TOS 199%",
+          "to": "TOS 118%",
+          "reason": "96.7% of spend on TOS at 46.7% ACoS, singular term at 58.7% ACoS"
+        },
+        {
+          "type": "BID_DECREASE",
+          "campaign_id": "381587421028993",
+          "campaign_name": "MK exact",
+          "from": "TOS 158%",
+          "to": "TOS 107%",
+          "reason": "TOS efficient at 32.3% but Other at 81.5% — moderate reduction"
+        }
+      ],
+      "api_errors": 0
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-search-term-harvester (promote execution)",
+      "changes": [
+        {
+          "type": "KEYWORD_CREATE",
+          "campaign": "MK exact (381587421028993)",
+          "action": "Added 'embroidery for kids' EXACT at $0.39 (keyword ID 303473841275449). Was only covered by BROAD/PHRASE — now has dedicated EXACT for bid control."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan (P2 execution)",
+      "changes": [
+        {
+          "type": "NEGATE",
+          "campaign_id": "369353866282446",
+          "campaign_name": "MK broad TOS",
+          "term": "embroidery kit for kids",
+          "match_type": "NEGATIVE_EXACT",
+          "negative_id": "416804601122507",
+          "reason": "Stop cannibalization — hero keyword should only match in SK campaign"
+        },
+        {
+          "type": "NEGATE",
+          "campaign_id": "442370005643256",
+          "campaign_name": "PT (product targeting)",
+          "term": "punch needle kit kids",
+          "match_type": "NEGATIVE_EXACT",
+          "negative_id": "396349808020910",
+          "reason": "Irrelevant craft category, $7.50/30d waste, 0 orders"
+        }
+      ],
+      "api_errors": 0
+    }
+  ],
+  "pending_actions": [
+    {
+      "id": "ek-001",
+      "priority": "P2",
+      "category": "NEGATE_SEARCH_TERM",
+      "action": "Negate 'embroidery kit for kids' EXACT in MK broad — stop cannibalization with SK",
+      "created": "2026-03-05",
+      "status": "completed",
+      "completed": "2026-03-05",
+      "negative_id": "416804601122507"
+    },
+    {
+      "id": "ek-002",
+      "priority": "P2",
+      "category": "NEGATE_SEARCH_TERM",
+      "action": "Negate 'punch needle kit kids' EXACT in PT — irrelevant, $7.50/30d waste",
+      "created": "2026-03-05",
+      "status": "completed",
+      "completed": "2026-03-05",
+      "negative_id": "396349808020910"
+    },
+    {
+      "id": "ek-003",
+      "priority": "P2",
+      "category": "CAMPAIGN_CREATE",
+      "action": "Create SK 'kids embroidery kit' EXACT — RESOLVED: already exists in MK exact campaign 381587421028993 at $0.37",
+      "created": "2026-03-05",
+      "status": "completed",
+      "completed": "2026-03-05"
+    },
+    {
+      "id": "ek-004",
+      "priority": "P2",
+      "category": "CAMPAIGN_CREATE",
+      "action": "Create SK 'embroidery for kids' EXACT — RESOLVED: added as EXACT keyword ($0.39) to MK exact campaign 381587421028993",
+      "created": "2026-03-05",
+      "status": "completed",
+      "completed": "2026-03-05"
+    },
+    {
+      "id": "ek-005",
+      "priority": "P3",
+      "category": "BUDGET_DECREASE",
+      "action": "Lower MK broad budget $20/d -> $14/d (after new SK campaigns created)",
+      "created": "2026-03-05",
+      "status": "pending"
+    },
+    {
+      "id": "ek-006",
+      "priority": "P3",
+      "category": "BID_DECREASE",
+      "action": "Lower 900% TOS on Auto TOS campaign (390180579716853) to 100%",
+      "created": "2026-03-05",
+      "status": "pending"
+    },
+    {
+      "id": "ek-007",
+      "priority": "P3",
+      "category": "CAMPAIGN_PAUSE",
+      "action": "Pause 2 dead low-bid campaigns: PT low bid (534466935351230), MK research (380377457874946)",
+      "created": "2026-03-05",
+      "status": "pending"
+    }
+  ],
+  "scheduled_reviews": [
+    {
+      "date": "2026-03-12",
+      "type": "7-day re-check",
+      "source": "embroidery-for-kids-deep-dive-2026-03-05",
+      "notes": "Check TOS reduction impact on ACoS, spend distribution, rank stability. Check PT budget utilization at $12/d."
+    },
+    {
+      "date": "2026-03-12",
+      "type": "7-day check",
+      "source": "promote-execution-2026-03-05",
+      "notes": "Check 'embroidery for kids' EXACT keyword performance in MK exact campaign 381587421028993."
+    }
+  ],
+  "skills_run": [
+    {
+      "skill": "ppc-portfolio-action-plan",
+      "date": "2026-03-05",
+      "result": "success",
+      "key_metrics": {
+        "health_score": "3.5/10",
+        "structure_grade": "2.85/10",
+        "acos": 42.1,
+        "actions_proposed": 12,
+        "actions_executed": 4,
+        "api_errors": 0
+      }
+    },
+    {
+      "skill": "ppc-search-term-harvester",
+      "date": "2026-03-05",
+      "result": "success",
+      "key_metrics": {
+        "promote_executed": 1
+      },
+      "actions_taken": 1,
+      "note": "Added 'embroidery for kids' EXACT at $0.39 to MK exact campaign. ek-003 resolved (already existed). ek-004 resolved (added to MK)."
+    },
+    {
+      "skill": "ppc-tacos-optimizer",
+      "date": "2026-03-06",
+      "result": "success",
+      "key_metrics": {
+        "tacos_30d": 12.6,
+        "tacos_grade": "A",
+        "organic_momentum": 75,
+        "profit_health": "BREAK-EVEN"
+      },
+      "output_ref": "tacos-optimizer/2026-03-06-tacos-scorecard.md"
+    }
+  ],
+  "improvement_assessment": {
+    "overall_trend": "unknown",
+    "note": "First deep dive — no historical comparison available. Baseline established. Re-assess at 7-day re-check (2026-03-12).",
+    "updated": "2026-03-05"
+  }
+}

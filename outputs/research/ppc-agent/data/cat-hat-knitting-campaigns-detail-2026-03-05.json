@@ -1,0 +1,306 @@
+{
+  "portfolio": {
+    "name": "Cat and Hat Knitting",
+    "portfolioId": "280615211735082",
+    "pulledAt": "2026-03-05",
+    "advertisedAsin": "B0F8DG32H5",
+    "totalCampaigns": 13,
+    "enabledCampaigns": 12,
+    "pausedCampaigns": 1,
+    "totalDailyBudget": 161.5
+  },
+  "campaigns": [
+    {
+      "campaignId": "436541520771091",
+      "name": "cat knitting - SPM MK knitting kit root TOS",
+      "state": "ENABLED",
+      "type": "Manual Keyword - Multi-Keyword Exact",
+      "budget": 7.0,
+      "biddingStrategy": "LEGACY_FOR_SALES",
+      "placementModifiers": [{"placement": "PLACEMENT_TOP", "percentage": 172}],
+      "startDate": "2025-08-11",
+      "budgetUsage": {"percent": 0.0, "asOf": "2026-03-05T08:13:46Z"},
+      "adGroup": {"adGroupId": "407941071061721", "name": "cat knitting - SPM knitting kit root TOS", "defaultBid": 0.47, "state": "ENABLED"},
+      "keywords": [
+        {"keywordId": "559457295279256", "text": "girls knitting kit for kids", "matchType": "EXACT", "bid": 0.47, "state": "ENABLED"},
+        {"keywordId": "462431222999617", "text": "girls knitting kit", "matchType": "EXACT", "bid": 0.51, "state": "ENABLED"},
+        {"keywordId": "562161006479684", "text": "kids knitting kit", "matchType": "EXACT", "bid": 0.47, "state": "ENABLED"},
+        {"keywordId": "500341985077242", "text": "loom knitting kit", "matchType": "EXACT", "bid": 0.47, "state": "PAUSED"}
+      ],
+      "adGroupNegativeKeywords": [],
+      "campaignNegativeKeywords": [],
+      "productAds": [{"adId": "534428272583753", "asin": "B0F8DG32H5", "state": "ENABLED"}],
+      "targets": []
+    },
+    {
+      "campaignId": "353947742933344",
+      "name": "cat knitting - SPM SK knitting kit for beginners TOS",
+      "state": "ENABLED",
+      "type": "Manual Keyword - Single Keyword Exact",
+      "budget": 15.0,
+      "biddingStrategy": "LEGACY_FOR_SALES",
+      "placementModifiers": [{"placement": "PLACEMENT_TOP", "percentage": 151}],
+      "startDate": "2025-08-11",
+      "budgetUsage": {"percent": 0.0, "asOf": "2026-03-05T08:13:46Z"},
+      "adGroup": {"adGroupId": "540314214214540", "name": "cat knitting - SPM knitting kit for beginners TOS", "defaultBid": 0.47, "state": "ENABLED"},
+      "keywords": [
+        {"keywordId": "453238141857091", "text": "knitting kit for beginners", "matchType": "EXACT", "bid": 0.35, "state": "ENABLED"}
+      ],
+      "adGroupNegativeKeywords": [],
+      "campaignNegativeKeywords": [],
+      "productAds": [{"adId": "533220614538825", "asin": "B0F8DG32H5", "state": "ENABLED"}],
+      "targets": []
+    },
+    {
+      "campaignId": "435648657448276",
+      "name": "cat knitting - SPM MK other root TOS",
+      "state": "ENABLED",
+      "type": "Manual Keyword - Multi-Keyword Exact",
+      "budget": 20.0,
+      "biddingStrategy": "LEGACY_FOR_SALES",
+      "placementModifiers": [{"placement": "PLACEMENT_TOP", "percentage": 121}],
+      "startDate": "2025-08-11",
+      "budgetUsage": {"percent": 0.0, "asOf": "2026-03-05T08:13:46Z"},
+      "adGroup": {"adGroupId": "542790030554966", "name": "cat knitting - SPM other root TOS", "defaultBid": 0.47, "state": "ENABLED"},
+      "keywords": [
+        {"keywordId": "323044842793166", "text": "knitting loom kit", "matchType": "EXACT", "bid": 0.42, "state": "ENABLED"},
+        {"keywordId": "385184818108545", "text": "knitting for kids", "matchType": "EXACT", "bid": 0.41, "state": "ENABLED"},
+        {"keywordId": "383951873471830", "text": "kids knitting loom kits ages 8-12", "matchType": "EXACT", "bid": 0.67, "state": "ENABLED"},
+        {"keywordId": "531251511044196", "text": "knitting for kids ages 8-12", "matchType": "EXACT", "bid": 0.35, "state": "ENABLED"},
+        {"keywordId": "438333123547171", "text": "knitting looms for beginners", "matchType": "EXACT", "bid": 0.35, "state": "ENABLED"}
+      ],
+      "adGroupNegativeKeywords": [],
+      "campaignNegativeKeywords": [],
+      "productAds": [{"adId": "368098408893546", "asin": "B0F8DG32H5", "state": "ENABLED"}],
+      "targets": []
+    },
+    {
+      "campaignId": "518311510221488",
+      "name": "cat knitting - SPA auto",
+      "state": "ENABLED",
+      "type": "Auto",
+      "budget": 6.0,
+      "biddingStrategy": "LEGACY_FOR_SALES",
+      "placementModifiers": [
+        {"placement": "PLACEMENT_PRODUCT_PAGE", "percentage": 21},
+        {"placement": "PLACEMENT_TOP", "percentage": 100}
+      ],
+      "startDate": "2025-08-11",
+      "budgetUsage": {"percent": 0.0, "asOf": "2026-03-05T08:13:46Z"},
+      "adGroup": {"adGroupId": "532401180963576", "name": "cat knitting - SPA auto", "defaultBid": 0.47, "state": "ENABLED"},
+      "keywords": [],
+      "adGroupNegativeKeywords": [
+        {"keywordId": "462710352334119", "text": "b0cn6ykh9r", "matchType": "NEGATIVE_EXACT", "state": "ENABLED"}
+      ],
+      "campaignNegativeKeywords_count": 146,
+      "campaignNegativeKeywords_summary": {
+        "negativePhrase": 130,
+        "negativeExact": 16,
+        "categories": {
+          "otherCrafts": ["crochet hook", "quilting", "weaving", "macrame", "diamond painting", "diamond art", "paint by number", "pottery", "clay", "slime", "tie dye", "scrapbook", "origami", "jewelry making", "fuse beads", "perler beads", "melty beads", "iron beads", "felt craft", "string art", "candle making", "soap making", "resin art", "latch hook", "punch needle"],
+          "accessories": ["knitting needles only", "yarn only", "knitting machine", "circular needles", "knitting gauge", "sewing machine", "serger", "embroidery machine"],
+          "ageTooYoung": ["toddler", "baby", "infant", "18 month", "preschool", "pre-k"],
+          "digitalProducts": ["free pattern", "free download", "printable pattern", "digital pattern", "pdf pattern", "ebook", "e-book", "virtual class", "online class", "workshop registration", "course enrollment"],
+          "commercialIntent": ["wholesale", "bulk order", "commercial", "industrial", "professional grade", "resale", "retail lot"],
+          "usedItems": ["used", "secondhand", "second hand", "rental"],
+          "partsOnly": ["replacement parts only", "repair kit", "spare parts", "refill only"],
+          "colors": 56,
+          "exactNegatives": ["knitting needles set", "yarn ball only", "scarf knitting pattern", "knitting machine", "finger knitting", "knitting needle case", "knitting bag", "knitting basket", "knitting counter", "stitch markers only", "dpn knitting needles", "cable knitting needles", "fuse beads kit", "lacing cards for kids", "sewing machine", "embroidery kit for adults"]
+        }
+      },
+      "productAds": [{"adId": "371840114828286", "asin": "B0F8DG32H5", "state": "ENABLED"}],
+      "targets": []
+    },
+    {
+      "campaignId": "288627398113245",
+      "name": "cat knitting - SPM SK knitting kit for kids ages 8-12 TOS",
+      "state": "ENABLED",
+      "type": "Manual Keyword - Single Keyword Exact",
+      "budget": 11.0,
+      "biddingStrategy": "LEGACY_FOR_SALES",
+      "placementModifiers": [{"placement": "PLACEMENT_TOP", "percentage": 261}],
+      "startDate": "2025-08-11",
+      "budgetUsage": {"percent": 0.0, "asOf": "2026-03-05T08:13:46Z"},
+      "adGroup": {"adGroupId": "336404229724563", "name": "cat knitting - SPM knitting kit for kids ages 8-12 TOS", "defaultBid": 0.47, "state": "ENABLED"},
+      "keywords": [
+        {"keywordId": "382483713121007", "text": "knitting kit for kids ages 8-12", "matchType": "EXACT", "bid": 0.39, "state": "ENABLED"}
+      ],
+      "adGroupNegativeKeywords": [],
+      "campaignNegativeKeywords": [],
+      "productAds": [{"adId": "400929360675995", "asin": "B0F8DG32H5", "state": "ENABLED"}],
+      "targets": []
+    },
+    {
+      "campaignId": "513939450761735",
+      "name": "cat knitting - SPM SK knitting kit for kids TOS",
+      "state": "ENABLED",
+      "type": "Manual Keyword - Single Keyword Exact",
+      "budget": 20.0,
+      "biddingStrategy": "LEGACY_FOR_SALES",
+      "placementModifiers": [
+        {"placement": "PLACEMENT_REST_OF_SEARCH", "percentage": 25},
+        {"placement": "PLACEMENT_PRODUCT_PAGE", "percentage": 13},
+        {"placement": "PLACEMENT_TOP", "percentage": 223}
+      ],
+      "startDate": "2025-08-11",
+      "budgetUsage": {"percent": 0.0, "asOf": "2026-03-05T08:13:46Z"},
+      "adGroup": {"adGroupId": "345443133503858", "name": "cat knitting - SPM knitting kit for kids TOS", "defaultBid": 0.47, "state": "ENABLED"},
+      "keywords": [
+        {"keywordId": "406413983441069", "text": "knitting kit for kids", "matchType": "EXACT", "bid": 0.49, "state": "ENABLED"}
+      ],
+      "adGroupNegativeKeywords": [],
+      "campaignNegativeKeywords": [],
+      "productAds": [{"adId": "518453240864643", "asin": "B0F8DG32H5", "state": "ENABLED"}],
+      "targets": []
+    },
+    {
+      "campaignId": "326196665351483",
+      "name": "cat knitting - SPM MK broad",
+      "state": "ENABLED",
+      "type": "Manual Keyword - Multi-Keyword Broad/Phrase",
+      "budget": 15.0,
+      "biddingStrategy": "LEGACY_FOR_SALES",
+      "placementModifiers": [{"placement": "PLACEMENT_TOP", "percentage": 207}],
+      "startDate": "2025-08-11",
+      "budgetUsage": {"percent": 4.8, "asOf": "2026-03-05T12:49:42Z"},
+      "adGroup": {"adGroupId": "507090499922863", "name": "cat knitting - SPM broad", "defaultBid": 0.47, "state": "ENABLED"},
+      "keywords": [
+        {"keywordId": "468146715629833", "text": "kids knitting kit", "matchType": "PHRASE", "bid": 0.54, "state": "ENABLED"},
+        {"keywordId": "414096604055595", "text": "knitting for kids", "matchType": "PHRASE", "bid": 0.46, "state": "ENABLED"},
+        {"keywordId": "476548069777841", "text": "loom knitting for beginners", "matchType": "BROAD", "bid": 0.45, "state": "ENABLED"},
+        {"keywordId": "527054162599868", "text": "loom knitting for beginners", "matchType": "PHRASE", "bid": 0.4, "state": "ENABLED"},
+        {"keywordId": "364855920353874", "text": "knitting kit for kids", "matchType": "BROAD", "bid": 0.38, "state": "ENABLED"},
+        {"keywordId": "562496439462292", "text": "knitting kit for kids", "matchType": "PHRASE", "bid": 0.48, "state": "ENABLED"},
+        {"keywordId": "552539428796798", "text": "loom knitting kit", "matchType": "BROAD", "bid": null, "state": "ENABLED"},
+        {"keywordId": "327854158881118", "text": "loom knitting kit", "matchType": "PHRASE", "bid": null, "state": "ENABLED"},
+        {"keywordId": "486717808726095", "text": "kids knitting kit", "matchType": "BROAD", "bid": 0.47, "state": "PAUSED"},
+        {"keywordId": "365412298950271", "text": "knitting for kids", "matchType": "BROAD", "bid": 0.5, "state": "PAUSED"},
+        {"keywordId": "553677839559332", "text": "knitting kit", "matchType": "BROAD", "bid": 0.31, "state": "PAUSED"},
+        {"keywordId": "475552731100174", "text": "knitting kit", "matchType": "PHRASE", "bid": 0.33, "state": "PAUSED"}
+      ],
+      "adGroupNegativeKeywords": [
+        {"keywordId": "442387658889091", "text": "loom knitting kit", "matchType": "NEGATIVE_EXACT", "state": "ENABLED"},
+        {"keywordId": "407806262998407", "text": "kids knitting kits age 5-8", "matchType": "NEGATIVE_EXACT", "state": "ENABLED"}
+      ],
+      "campaignNegativeKeywords_count": 146,
+      "campaignNegativeKeywords_note": "Same 146-keyword negative list as Auto campaign (other crafts, accessories, too-young ages, digital products, commercial, colors, etc.)",
+      "productAds": [{"adId": "331621700624805", "asin": "B0F8DG32H5", "state": "ENABLED"}],
+      "targets": []
+    },
+    {
+      "campaignId": "521042691449120",
+      "name": "cat knitting - SPM MP product targeting",
+      "state": "ENABLED",
+      "type": "Manual Product Targeting",
+      "budget": 14.0,
+      "biddingStrategy": "LEGACY_FOR_SALES",
+      "placementModifiers": [{"placement": "PLACEMENT_TOP", "percentage": 91}],
+      "startDate": "2025-10-15",
+      "budgetUsage": {"percent": 4.14, "asOf": "2026-03-05T15:30:03Z"},
+      "adGroup": {"adGroupId": "527980775555206", "name": "cat knitting - SPM product targeting", "defaultBid": 0.33, "state": "ENABLED"},
+      "keywords": [],
+      "adGroupNegativeKeywords": [],
+      "campaignNegativeKeywords": [],
+      "productAds": [{"adId": "340937452350613", "asin": "B0F8DG32H5", "state": "ENABLED"}],
+      "targets": [
+        {"targetId": "295271503695827", "expression": "ASIN_SAME_AS: B0B8W4FK4Q", "bid": 0.58, "state": "ENABLED"},
+        {"targetId": "431655446398143", "expression": "ASIN_SAME_AS: B004JIFCXO", "bid": 0.27, "state": "ENABLED"},
+        {"targetId": "549596935187826", "expression": "ASIN_SAME_AS: B0DKD2S3JT", "bid": 0.41, "state": "ENABLED"}
+      ]
+    },
+    {
+      "campaignId": "304214536644297",
+      "name": "cat knitting - SPM SK loom animals kit for kids TOS",
+      "state": "ENABLED",
+      "type": "Manual Keyword - Single Keyword Exact",
+      "budget": 14.0,
+      "biddingStrategy": "LEGACY_FOR_SALES",
+      "placementModifiers": [{"placement": "PLACEMENT_TOP", "percentage": 197}],
+      "startDate": "2025-11-20",
+      "budgetUsage": {"percent": 0.0, "asOf": "2026-03-05T08:13:46Z"},
+      "adGroup": {"adGroupId": "549035694472601", "name": "cat knitting - SPM SK loom animals kit for kids TOS", "defaultBid": 0.36, "state": "ENABLED"},
+      "keywords": [
+        {"keywordId": "459255392460613", "text": "loom animals kit for kids", "matchType": "EXACT", "bid": 0.41, "state": "ENABLED"}
+      ],
+      "adGroupNegativeKeywords": [],
+      "campaignNegativeKeywords": [],
+      "productAds": [{"adId": "337241598406188", "asin": "B0F8DG32H5", "state": "ENABLED"}],
+      "targets": []
+    },
+    {
+      "campaignId": "479619148408536",
+      "name": "cat knitting - SPM SK loom kit for kids TOS",
+      "state": "ENABLED",
+      "type": "Manual Keyword - Single Keyword Exact",
+      "budget": 8.5,
+      "biddingStrategy": "AUTO_FOR_SALES",
+      "placementModifiers": [{"placement": "PLACEMENT_TOP", "percentage": 36}],
+      "startDate": "2025-11-20",
+      "budgetUsage": {"percent": 0.0, "asOf": "2026-03-05T08:13:46Z"},
+      "adGroup": {"adGroupId": "475094052117044", "name": "cat knitting - SPM SK loom kit for kids TOS", "defaultBid": 0.36, "state": "ENABLED"},
+      "keywords": [
+        {"keywordId": "555370743143617", "text": "loom kit for kids", "matchType": "EXACT", "bid": 0.61, "state": "ENABLED"}
+      ],
+      "adGroupNegativeKeywords": [],
+      "campaignNegativeKeywords": [],
+      "productAds": [{"adId": "511594702047110", "asin": "B0F8DG32H5", "state": "ENABLED"}],
+      "targets": []
+    },
+    {
+      "campaignId": "439203778364995",
+      "name": "cat knitting - SPM SK loom knitting kit TOS",
+      "state": "ENABLED",
+      "type": "Manual Keyword - Single Keyword Exact",
+      "budget": 16.0,
+      "biddingStrategy": "AUTO_FOR_SALES",
+      "placementModifiers": [],
+      "startDate": "2026-01-07",
+      "budgetUsage": {"percent": 4.09, "asOf": "2026-03-05T12:43:24Z"},
+      "adGroup": {"adGroupId": "447813546237595", "name": "cat knitting - SPM SK loom knitting kit TOS", "defaultBid": 0.36, "state": "ENABLED"},
+      "keywords": [
+        {"keywordId": "447166748224812", "text": "loom knitting kit", "matchType": "EXACT", "bid": 0.68, "state": "ENABLED"}
+      ],
+      "adGroupNegativeKeywords": [],
+      "campaignNegativeKeywords": [],
+      "productAds": [{"adId": "312648331813323", "asin": "B0F8DG32H5", "state": "ENABLED"}],
+      "targets": []
+    },
+    {
+      "campaignId": "537472154514066",
+      "name": "cat knitting - SPM SK knitting beginner kit TOS",
+      "state": "ENABLED",
+      "type": "Manual Keyword - Single Keyword Exact",
+      "budget": 15.0,
+      "biddingStrategy": "LEGACY_FOR_SALES",
+      "placementModifiers": [{"placement": "PLACEMENT_TOP", "percentage": 171}],
+      "startDate": "2026-01-07",
+      "budgetUsage": {"percent": 0.0, "asOf": "2026-03-05T08:13:46Z"},
+      "adGroup": {"adGroupId": "356866402655428", "name": "cat knitting - SPM SK knitting beginner kit TOS", "defaultBid": 0.36, "state": "ENABLED"},
+      "keywords": [
+        {"keywordId": "528332880531947", "text": "knitting beginner kit", "matchType": "EXACT", "bid": 0.53, "state": "ENABLED"}
+      ],
+      "adGroupNegativeKeywords": [],
+      "campaignNegativeKeywords": [],
+      "productAds": [{"adId": "432054348955558", "asin": "B0F8DG32H5", "state": "ENABLED"}],
+      "targets": []
+    },
+    {
+      "campaignId": "391388364383488",
+      "name": "cat knitting - SPM SK beginner knitting kit TOS",
+      "state": "PAUSED",
+      "type": "Manual Keyword - Single Keyword Exact",
+      "budget": 10.0,
+      "biddingStrategy": "LEGACY_FOR_SALES",
+      "placementModifiers": [{"placement": "PLACEMENT_TOP", "percentage": 161}],
+      "startDate": "2025-12-25",
+      "adGroup": {"adGroupId": "542913361139755", "name": "cat knitting - SPM SK beginner knitting kit TOS", "defaultBid": 0.44, "state": "ENABLED"},
+      "keywords": [
+        {"keywordId": "323883209688342", "text": "beginner knitting kit", "matchType": "EXACT", "bid": 0.59, "state": "ENABLED"}
+      ],
+      "adGroupNegativeKeywords": [],
+      "campaignNegativeKeywords": [],
+      "productAds": [{"adId": "325141189398485", "asin": "B0F8DG32H5", "state": "ENABLED"}],
+      "targets": []
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "portfolio": {
+    "name": "Princess Lacing Cards",
+    "id": "96459368614125",
+    "slug": "princess-lacing-cards",
+    "stage": "Launch",
+    "asin_hero": "B0FQC7YFX6",
+    "sku_hero": "6P-KW6N-9F9J",
+    "price": 19.98,
+    "rank_radar_id": "09d3cb4c-1b3f-4cd3-9a19-36af276d0278",
+    "niche_id": "Aw4EQhG6bP"
+  },
+  "goals": {
+    "acos_target": "60% flexible (Launch \u2014 rank velocity is primary KPI)",
+    "cvr_target": "10%+",
+    "rank_targets": {
+      "lacing cards": "top 15 (currently 34, was 22)",
+      "lacing cards for kids ages 3-5": "top 8 (currently 15, was 12)",
+      "lacing cards for kids ages 4-8": "top 8 (currently 12, was 6)"
+    },
+    "strategic_notes": "Launch portfolio. Primary goal is building organic rank on 'lacing' keyword family. Product identity crisis: Amazon algorithm drifting toward 'sewing' association. Must redirect PPC spend toward 'lacing' keywords to correct."
+  },
+  "baseline": {
+    "date": "2026-03-05",
+    "source": "30d cached report (ending Mar 2) + 14d search terms + Seller Board 7d + Rank Radar",
+    "metrics": {
+      "spend_30d": 1458.5,
+      "sales_30d": 2338.62,
+      "orders_30d": 113,
+      "acos_30d": 62.4,
+      "cvr": 10.0,
+      "cpc_weighted": 1.29,
+      "impressions_30d": 48094,
+      "daily_spend_avg": 48.62,
+      "daily_budget_total": 139.0,
+      "profit_margin_est": "6-8%",
+      "organic_ratio_est": "~50%"
+    },
+    "rank_snapshot": {
+      "lacing cards": {
+        "rank": 34,
+        "sv": 6761,
+        "trend": "CRITICAL",
+        "28d_ago": 22
+      },
+      "lacing cards for kids ages 3-5": {
+        "rank": 15,
+        "sv": 4697,
+        "trend": "DECLINING",
+        "28d_ago": 12
+      },
+      "lacing cards for kids ages 4-8": {
+        "rank": 12,
+        "sv": 2499,
+        "trend": "DECLINING",
+        "28d_ago": 6
+      },
+      "lacing cards for toddlers 2-4": {
+        "rank": 22,
+        "sv": 1577,
+        "trend": "STABLE",
+        "28d_ago": 24
+      },
+      "sewing cards for kids ages 3-5": {
+        "rank": 13,
+        "sv": 1229,
+        "trend": "DECLINING",
+        "28d_ago": 10
+      },
+      "toddler sewing kit": {
+        "rank": 18,
+        "sv": 734,
+        "trend": "IMPROVING",
+        "28d_ago": 37
+      },
+      "sewing cards": {
+        "rank": 11,
+        "sv": 589,
+        "trend": "IMPROVING",
+        "28d_ago": 15
+      },
+      "toddler sewing": {
+        "rank": 10,
+        "sv": 529,
+        "trend": "IMPROVING",
+        "28d_ago": 15
+      }
+    },
+    "campaigns_enabled": 8,
+    "campaigns_paused": 5,
+    "structure_health_score": "3/10"
+  },
+  "latest_metrics": {
+    "date": "2026-03-05",
+    "source": "baseline (first deep dive)",
+    "metrics": {
+      "spend_30d": 1458.5,
+      "sales_30d": 2338.62,
+      "orders_30d": 113,
+      "acos_30d": 62.4,
+      "cvr": 10.0,
+      "cpc_weighted": 1.29
+    },
+    "delta_vs_baseline": null
+  },
+  "metric_history": [
+    {
+      "date": "2026-03-05",
+      "acos": 62.4,
+      "spend_30d": 1458.5,
+      "sales_30d": 2338.62,
+      "orders_30d": 113,
+      "cvr": 10.0,
+      "source": "baseline"
+    }
+  ],
+  "change_log": [
+    {
+      "date": "2026-03-03",
+      "source": "ppc-search-term-harvester",
+      "changes": [
+        "Negated 'toddler sewing' PHRASE+EXACT in MK broad",
+        "Lowered TOS on SK lacing cards 3-5 (PAUSED campaign 353388205196087) from 431% to 216%",
+        "Negated 'lacing cards' in MK lacing root"
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "source": "ppc-portfolio-action-plan (first deep dive)",
+      "changes": [
+        "MK broad TOS 262% \u2192 148%",
+        "MK broad budget $20 \u2192 $16",
+        "MK broad: added 6 campaign negatives (sewing cards for kids PHRASE, childrens sewing PHRASE, sewing activities PHRASE, kids sewing PHRASE, sewing kit for toddlers PHRASE, lacing cards for kids ages 4-8 EXACT)",
+        "MK broad: added 2 campaign negatives for hero SK isolation (lacing cards EXACT, lacing cards for kids ages 3-5 EXACT)",
+        "MK broad: paused dead keywords (toddler sewing BROAD+PHRASE \u2014 blocked by own negatives)",
+        "PT TOS 132% \u2192 78%",
+        "PT bid B0CP8VJ56S $0.85 \u2192 $0.57",
+        "SK sewing cards 4-8 TOS 337% \u2192 182%",
+        "RE-ENABLED SK lacing cards (534155725258823): budget $18/day, TOS 312%, bid $0.35\u2192$0.68",
+        "RE-ENABLED SK lacing cards 3-5 (353388205196087): budget $15/day, TOS 287%, bid $0.35\u2192$0.54"
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "source": "listing-optimizer + listing-creator",
+      "changes": [
+        "Listing audit completed: bullets have 0% Ranking Juice, title missing brand + 3 high-BSV roots (sewing/toy/threading)",
+        "Listing rewrite options generated: 3 title options, 5 keyword-indexed bullets, backend KW expanded to 247/249 bytes",
+        "NOT YET PUSHED \u2014 user reviewing options before push"
+      ]
+    }
+  ],
+  "pending_actions": [
+    {
+      "id": "plc-001",
+      "priority": "P3",
+      "category": "INVESTIGATE",
+      "action": "Investigate SK gem art sticker (0 impressions/30d) \u2014 check if keyword has search volume",
+      "created": "2026-03-05",
+      "source": "portfolio-action-plan"
+    },
+    {
+      "id": "plc-002",
+      "priority": "P3",
+      "category": "CAMPAIGN_CREATE",
+      "action": "Evaluate creating SK exact 'lacing cards for toddlers 2-4' (1,577 SV, rank 22)",
+      "created": "2026-03-05",
+      "source": "portfolio-action-plan"
+    },
+    {
+      "id": "plc-003",
+      "priority": "P4",
+      "category": "BUDGET_REALLOC",
+      "action": "Consider increasing Auto budget $8\u2192$15 once hero SK campaigns prove out",
+      "created": "2026-03-05",
+      "source": "portfolio-action-plan"
+    },
+    {
+      "id": "plc-004",
+      "priority": "P4",
+      "category": "MONITOR",
+      "action": "Pull placement data when reports resolve \u2014 validate TOS decisions",
+      "created": "2026-03-05",
+      "source": "portfolio-action-plan"
+    },
+    {
+      "id": "plc-005",
+      "priority": "P1",
+      "category": "LISTING_PUSH",
+      "action": "Push approved listing rewrite to Amazon via SP-API (title + 5 bullets + backend KW). Audit + options at outputs/research/listings/briefs/princess-lacing-card-listing-2026-03-06.md",
+      "created": "2026-03-06",
+      "source": "listing-optimizer + listing-creator"
+    }
+  ],
+  "scheduled_reviews": [
+    {
+      "date": "2026-03-12",
+      "type": "7-day re-check",
+      "focus": "Are SK lacing hero campaigns getting impressions? Is 'lacing cards' rank stabilizing? Has MK broad spend dropped?",
+      "source": "2026-03-05 deep dive"
+    },
+    {
+      "date": "2026-03-19",
+      "type": "14-day rank check",
+      "focus": "Compare rank radar: 'lacing cards' recovery trajectory. Evaluate dead SK campaigns (sewing 4-8, lacing 4-8) post-isolation.",
+      "source": "2026-03-05 deep dive"
+    },
+    {
+      "date": "2026-03-13",
+      "type": "Post-listing-push re-audit",
+      "focus": "Check Ranking Juice improvement, rank recovery on lacing/sewing keywords, CVR impact after listing rewrite",
+      "source": "2026-03-06 listing audit"
+    }
+  ],
+  "skills_run": [
+    {
+      "skill": "ppc-portfolio-action-plan",
+      "date": "2026-03-05",
+      "result": "success",
+      "key_metrics": {
+        "actions_proposed": 12,
+        "actions_approved": 9,
+        "actions_executed": 15,
+        "api_errors": 0
+      },
+      "notes": "First-ever deep dive. Restructured from MK-broad-led to SK-exact-led. Re-enabled 2 paused hero SK campaigns. Launch portfolio \u2014 rank velocity is primary KPI."
+    },
+    {
+      "skill": "listing-optimizer + listing-creator",
+      "date": "2026-03-06",
+      "result": "success",
+      "key_metrics": {
+        "ranking_juice_before": "~15% (bullets 0%)",
+        "ranking_juice_after_est": "~75-85%",
+        "missing_roots_found": 3,
+        "backend_kw_bytes": "247/249",
+        "title_options": 3,
+        "bullet_options": 5
+      },
+      "notes": "Bullets had ZERO Ranking Juice. Three missing high-BSV roots: sewing (7130), toy (4098), threading (2267). Options generated, awaiting user approval before push."
+    }
+  ],
+  "improvement_assessment": {
+    "overall_trend": "restructuring",
+    "notes": "First deep dive \u2014 baseline established. Cannot assess improvement yet. Major structural changes applied (MK broad demoted, hero SKs enabled, traffic isolation via negatives). Re-check at 7d and 14d."
+  }
+}

@@ -39,6 +39,13 @@ triggers:
   - build campaigns
   - new campaigns
   - propose campaigns
+  - tacos check
+  - tacos optimizer
+  - tacos scorecard
+  - profit check
+  - profit reality
+  - tacos
+  - profit
   - portfolio deep dive
   - deep dive
   - portfolio action plan
@@ -76,7 +83,7 @@ The PPC Agent is an **orchestrator** — it does not perform PPC analysis itself
 
 ## Step 1: Read Agent State + Portfolio Trackers
 
-Read `outputs/research/ppc-agent/agent-state.json` to understand what has been run recently.
+Read `outputs/research/ppc-agent/state/agent-state.json` to understand what has been run recently.
 
 If the file doesn't exist, create it with empty dates (everything is "never run" — first-time setup).
 
@@ -90,12 +97,13 @@ If the file doesn't exist, create it with empty dates (everything is "never run"
   "last_weekly_analysis": null,
   "last_monthly_review": null,
   "last_rank_optimizer": null,
+  "last_tacos_optimizer": null,
   "last_negative_generation": {},
   "portfolio_index": {
     "{portfolio-slug}": {
       "name": "Portfolio Name",
       "id": "portfolio_id",
-      "tracker": "portfolios/{slug}.json",
+      "tracker": "state/{slug}.json",
       "stage": "Scaling/Launch/General",
       "last_deep_dive": "YYYY-MM-DD",
       "last_updated": "YYYY-MM-DD",
@@ -131,6 +139,10 @@ If the file doesn't exist, create it with empty dates (everything is "never run"
 | Field | What it surfaces | Updated by |
 |-------|-----------------|------------|
 | `portfolio_index.{slug}.acos` | Latest ACoS from tracker's `latest_metrics` | Daily health, portfolio summary, deep dive |
+| `portfolio_index.{slug}.tacos` | Latest TACoS from TACoS optimizer | TACoS optimizer |
+| `portfolio_index.{slug}.tacos_target` | Portfolio TACoS goal | TACoS optimizer |
+| `portfolio_index.{slug}.tacos_grade` | TACoS grade (A-F) | TACoS optimizer |
+| `portfolio_index.{slug}.organic_momentum` | Organic momentum score (0-100) | TACoS optimizer |
 | `portfolio_index.{slug}.trend` | From tracker's `improvement_assessment.overall_trend` | Deep dive, significant metric shifts |
 | `portfolio_index.{slug}.top_action` | Highest-priority pending action description | Any skill that adds/completes pending actions |
 | `portfolio_index.{slug}.health_status` | Traffic light from last health check | Daily health, deep dive |
@@ -141,7 +153,7 @@ If the file doesn't exist, create it with empty dates (everything is "never run"
 
 ### Portfolio Tracker System (deep context)
 
-Each portfolio has a dedicated tracker file at `outputs/research/ppc-agent/portfolios/{slug}.json` containing full detail:
+Each portfolio has a dedicated tracker file at `outputs/research/ppc-agent/state/{slug}.json` containing full detail:
 - **goals** — ACoS/CVR targets, rank targets, strategic notes
 - **baseline** — write-once metrics snapshot from before agent started changes
 - **latest_metrics** — most recent snapshot + delta vs baseline
@@ -173,6 +185,7 @@ When routing to a sub-skill, pass the portfolio tracker path so the sub-skill ca
 | "create campaigns" / "campaign creator" / "build campaigns" / "new campaigns" | **PPC Campaign Creator** | `.claude/skills/ppc-campaign-creator/SKILL.md` |
 | "portfolio deep dive" / "deep dive {name}" / "portfolio action plan" / "fix {portfolio}" / "work on {portfolio}" | **Portfolio Action Plan** | `.claude/skills/ppc-portfolio-action-plan/SKILL.md` |
 | "deal prep" / "deal ppc" / "prep for deal" | **Deal Coordination** (Bid Recommender — deal mode) | `.claude/skills/ppc-bid-recommender/SKILL.md` |
+| "tacos check" / "tacos optimizer" / "profit check" / "tacos scorecard" / "profit reality" | **TACoS & Profit Optimizer** | `.claude/skills/ppc-tacos-optimizer/SKILL.md` |
 | "post deal" / "deal ended" / "deal cleanup" | **Deal Cleanup** (Bid Recommender — post-deal mode) | `.claude/skills/ppc-bid-recommender/SKILL.md` |
 | "ppc" / "ppc check" / "ppc status" (ambiguous) | **Cadence Checker** (Step 3) | This skill |
 | "ppc catch-up" / "ppc everything" | **Run All Overdue** (Step 4) | This skill |
@@ -199,6 +212,7 @@ When routing to a sub-skill, check if upstream data already exists to avoid redu
 | Targeting report | `outputs/research/ppc-weekly/snapshots/{recent}/targeting-report.json` | Keyword rank optimizer reads this instead of pulling fresh sp_keywords |
 | Rank radar snapshot | `outputs/research/ppc-agent/rank-optimizer/snapshots/{recent}/rank-radar-snapshot.json` | Bid recommender + search term harvester for rank context |
 | Rank-spend matrix | `outputs/research/ppc-agent/rank-optimizer/snapshots/{recent}/rank-spend-matrix.json` | Bid recommender for keyword waste signals |
+| TACoS snapshot | `outputs/research/ppc-agent/tacos-optimizer/snapshots/{recent}/*-tacos-snapshot.json` | Bid recommender for profit-aware bid decisions; monthly review for TACoS trends |
 | Campaign creation log | `outputs/research/ppc-agent/campaign-creator/{recent}/*-creation-log.json` | Avoids re-reading upstream sources for campaign creator |
 
 **Key principle:** Never re-fetch data that a recent skill run already has on disk.
@@ -220,6 +234,7 @@ When the user says just "ppc" or "ppc check" without a specific task:
 | Portfolio Summary | Every 2-3 days | >3 days ago |
 | Weekly Analysis | Weekly | >7 days ago |
 | Keyword Rank Optimizer | Weekly (after weekly) | >7 days ago |
+| TACoS & Profit Optimizer | Weekly (after weekly) | >7 days ago |
 | Monthly Review | Monthly | >30 days ago |
 
 **Non-cadence tasks (run on demand):**
@@ -283,6 +298,7 @@ When the user says "ppc catch-up" or "ppc everything":
    - **P4:** Portfolio Summary (monitoring)
    - **P5:** Weekly Analysis (if overdue)
    - **P5.5:** Keyword Rank Optimizer (after weekly provides fresh data)
+   - **P5.6:** TACoS & Profit Optimizer (after weekly, before bid recommender)
    - **P5.7:** Campaign Creator (if pending PROMOTE/REDIRECT/structure-gap actions exist)
    - **P6:** Monthly Review (if overdue)
 3. Ask the user: "These tasks are overdue: {list}. Run them all in order, or pick specific ones?"
@@ -293,6 +309,8 @@ When the user says "ppc catch-up" or "ppc everything":
 ---
 
 ## Step 5: Update Agent State + Portfolio Trackers (after every sub-skill run)
+
+**CRITICAL — DO NOT SKIP THIS STEP.** After ANY API change (bid, keyword, campaign, negative), you MUST update both agent-state.json AND the affected portfolio tracker JSON files BEFORE presenting results to the user. This is a hard requirement, not optional.
 
 After any sub-skill completes, update **both** `agent-state.json` and affected portfolio tracker(s):
 
@@ -336,7 +354,7 @@ For each portfolio touched by the sub-skill:
 
 ### 5c. Update Portfolio Tracker Files
 
-For each affected portfolio, update its tracker at `outputs/research/ppc-agent/portfolios/{slug}.json`:
+For each affected portfolio, update its tracker at `outputs/research/ppc-agent/state/{slug}.json`:
 
 1. **`skills_run`** — append entry: `{"skill": "{skill-name}", "date": "{today}", "result": "success/partial/failed", "key_metrics": {}}`
 2. **`change_log`** — append any API changes made (bid changes, negatives, campaigns created)

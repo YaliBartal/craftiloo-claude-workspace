@@ -1,0 +1,362 @@
+{
+  "$schema_version": "1.0",
+  "last_updated": "2026-03-06",
+  "portfolio": {
+    "name": "Cross Stitch Backpack Charms",
+    "id": "69655270409648",
+    "slug": "cross-stitch-backpack-charms",
+    "stage": "Scaling",
+    "hero_asins": [
+      "B08DDJCQKF"
+    ],
+    "secondary_asins": [
+      "B0B1935V5N",
+      "B0B18ZRRCQ",
+      "B08L8BHD4Z"
+    ],
+    "hero_keywords": [
+      "kids cross stitch kit",
+      "cross stitch kits for kids",
+      "embroidery kit for kids",
+      "cross stitch kits for beginners"
+    ],
+    "niche_id": "b4Nisjv3xy",
+    "rank_radar_id": "B0B1927HCG",
+    "campaigns_enabled": 15,
+    "campaigns_paused": 4
+  },
+  "goals": {
+    "acos_target": 30,
+    "acos_red_flag": 50,
+    "cvr_target": 10,
+    "budget_envelope_daily": null,
+    "rank_targets": [
+      {
+        "keyword": "kids cross stitch kit",
+        "target_rank": 1,
+        "current_rank": 1
+      },
+      {
+        "keyword": "embroidery kit for kids",
+        "target_rank": 2,
+        "current_rank": 2
+      },
+      {
+        "keyword": "cross stitch kits for kids",
+        "target_rank": 3,
+        "current_rank": 4
+      }
+    ],
+    "strategic_notes": [
+      "B08DDJCQKF ranks #1 organically on most core keywords — TOS spending has diminishing returns",
+      "6 dormant campaigns with $80/day budget — investigate ad group status or archive",
+      "Product pages placement shows exceptional CVR (30-50%) across campaigns"
+    ],
+    "updated": "2026-03-05",
+    "tacos_target": 16,
+    "tacos_red_flag": 25,
+    "break_even_acos": 20.2
+  },
+  "baseline": {
+    "date": "2026-03-05",
+    "period": "LAST_30_DAYS",
+    "metrics": {
+      "spend": 2001.4,
+      "sales": 6325.64,
+      "acos": 31.6,
+      "orders": 293,
+      "clicks": 1960,
+      "impressions": 58000,
+      "cvr": 15.0,
+      "cpc": 1.02,
+      "roas": 3.16
+    },
+    "note": "First baseline. Corrected portfolio scope (15 campaigns only, excludes cross-embroidery and shield campaigns)."
+  },
+  "latest_metrics": {
+    "date": "2026-03-05",
+    "period": "LAST_30_DAYS",
+    "metrics": {
+      "spend": 2001.4,
+      "sales": 6325.64,
+      "acos": 31.6,
+      "orders": 293,
+      "clicks": 1960,
+      "impressions": 58000,
+      "cvr": 15.0,
+      "cpc": 1.02,
+      "roas": 3.16,
+      "tacos_30d": 13.3,
+      "organic_ratio_30d": 68.4,
+      "margin_pct": 20.2,
+      "organic_momentum_score": 90,
+      "profit_health": "PROFITABLE"
+    },
+    "delta_vs_baseline": null
+  },
+  "metric_history": [
+    {
+      "date": "2026-03-05",
+      "acos": 31.6,
+      "spend": 2001.4,
+      "sales": 6325.64,
+      "orders": 293,
+      "cvr": 15.0
+    },
+    {
+      "date": "2026-03-06",
+      "source": "tacos-optimizer",
+      "tacos": 13.3,
+      "organic_momentum": 90,
+      "profit_health": "PROFITABLE",
+      "margin_pct": 20.2
+    }
+  ],
+  "change_log": [
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "changes": [
+        {
+          "type": "BUDGET_INCREASE",
+          "campaign": "MK broad 2 (353429750115312)",
+          "before": "$35/d",
+          "after": "$45/d",
+          "reason": "Best campaign at 28.9% ACoS — budget-capped"
+        },
+        {
+          "type": "BUDGET_INCREASE",
+          "campaign": "SPA auto (546586309361386)",
+          "before": "$12/d",
+          "after": "$20/d",
+          "reason": "Second best at 28.5% ACoS — budget-capped"
+        },
+        {
+          "type": "TOS_DECREASE",
+          "campaign": "SK CS kits for kids TOS (346818126626032)",
+          "before": "158%",
+          "after": "123%",
+          "reason": "TOS at 45.2% ACoS — reduce to improve portfolio ACoS"
+        },
+        {
+          "type": "TOS_DECREASE",
+          "campaign": "MK broad 1 (311459404488143)",
+          "before": "128%",
+          "after": "103%",
+          "reason": "TOS at 46.0% ACoS — reduce to improve portfolio ACoS"
+        },
+        {
+          "type": "TOS_DECREASE",
+          "campaign": "cross girl SK TOS Push (309035836424147)",
+          "before": "422%",
+          "after": "197%",
+          "reason": "0 orders in 30d at $17 spend — product ranks #1 organically"
+        },
+        {
+          "type": "TOS_DECREASE",
+          "campaign": "SK beginner CS kits TOS push (390466866098720)",
+          "before": "171%",
+          "after": "116%",
+          "reason": "63.7% ACoS, 1 order in 30d — TOS at 55% ACoS"
+        },
+        {
+          "type": "NEGATE",
+          "campaign": "SPA auto (546586309361386)",
+          "terms": [
+            "punch needle",
+            "crochet",
+            "for adults"
+          ],
+          "match_type": "NEGATIVE_PHRASE"
+        },
+        {
+          "type": "NEGATE",
+          "campaign": "MK broad 2 (353429750115312)",
+          "terms": [
+            "punch needle",
+            "crochet",
+            "for adults"
+          ],
+          "match_type": "NEGATIVE_PHRASE"
+        },
+        {
+          "type": "NEGATE",
+          "campaign": "MK broad 1 (311459404488143)",
+          "terms": [
+            "punch needle",
+            "crochet",
+            "for adults"
+          ],
+          "match_type": "NEGATIVE_PHRASE"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-search-term-harvester (promote execution)",
+      "changes": [
+        {
+          "type": "CAMPAIGN_UPDATE",
+          "campaign": "SK CS kits for beginners (309035836424147)",
+          "action": "Renamed to 'cross stitch charms - SPM SK cross stitch kits for beginners TOS'. Enabled keyword 'cross stitch kits for beginners' at $0.36. Set TOS 13%, budget $7/d. Paused 'cross stitch kits' keyword (covered in SK 44316151159540 + MK exact)."
+        },
+        {
+          "type": "CAMPAIGN_CREATE",
+          "campaign": "SK cross stitch for kids 8-12 (270472026768698)",
+          "action": "New campaign: 'cross stitch charms - SPM SK cross stitch for kids 8-12 TOS'. Keyword EXACT $0.47, TOS 86%, budget $10/d, ASIN B08DDJCQKF."
+        }
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "skill": "listing-optimizer + listing-creator",
+      "changes": [
+        {
+          "type": "LISTING_PUSH",
+          "asin": "B08DDJCQKF",
+          "sku": "FH-FMO5-Y9LJ",
+          "submission_id": "ddf05f2bfb65436ca3157af3c8629dd0",
+          "status": "ACCEPTED",
+          "fields": [
+            "title",
+            "bullets",
+            "backend_keywords"
+          ],
+          "skipped": [
+            "description (A+ active)"
+          ]
+        },
+        {
+          "type": "TITLE_CHANGE",
+          "before": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids...",
+          "after": "CRAFTILOO Cross Stitch Kit for Kids - 5 Easy Stamped Cross Stitch Kits for Beginners | Embroidery Kit for Girls Ages 7-13 | Needlepoint Craft Set, Backpack Charms & Keychains",
+          "reason": "Added brand, ages 7-13, easy, girls, keychains. Removed keyword-stuffed period format."
+        },
+        {
+          "type": "BULLETS_REWRITE",
+          "reason": "Fixed factual error (2 needles -> 4+2 threaders), replaced wasted ORDER WITH CONFIDENCE bullet, added age range, screen-free, social proof. Bullets RJ was 96% maintained."
+        },
+        {
+          "type": "BACKEND_KW_EXPAND",
+          "before_bytes": 183,
+          "after_bytes": 213,
+          "reason": "Added missing roots: unicorn, rainbow, owl, heart, cat, screen free, birthday, ages 8-12, fine motor, rainy day, DIY, educational, creative, learning"
+        }
+      ]
+    }
+  ],
+  "pending_actions": [
+    {
+      "id": "csbc-001",
+      "priority": "P3",
+      "category": "INVESTIGATE",
+      "action": "Investigate 6 dormant campaigns — check ad group status, bid levels. Either activate or archive to reclaim $80/d budget.",
+      "created": "2026-03-05",
+      "due": "2026-03-12"
+    },
+    {
+      "id": "csbc-002",
+      "priority": "P3",
+      "category": "INVESTIGATE",
+      "action": "MK exact all animals — ROS at 55.9% ACoS (4 orders, 4.9% CVR). Investigate if bid adjustment or negative needed.",
+      "created": "2026-03-05",
+      "due": "2026-03-12"
+    },
+    {
+      "id": "csbc-003",
+      "priority": "P2",
+      "category": "VERIFY",
+      "action": "Verify listing push live on Amazon (title, bullets, backend KW). Check indexing for new keywords: ages 7-13, easy, girls, screen-free.",
+      "created": "2026-03-06",
+      "due": "2026-03-08"
+    },
+    {
+      "id": "csbc-004",
+      "priority": "P2",
+      "category": "RE-AUDIT",
+      "action": "Re-audit listing after 7 days. Check Ranking Juice improvement, rank changes on Rank Radar, CVR impact.",
+      "created": "2026-03-06",
+      "due": "2026-03-13"
+    }
+  ],
+  "scheduled_reviews": [
+    {
+      "date": "2026-03-12",
+      "type": "7-day re-check",
+      "source": "deep-dive-2026-03-05",
+      "check": "Verify TOS changes improved ACoS. Check if MK broad 2 and auto spend increased with new budgets."
+    },
+    {
+      "date": "2026-03-12",
+      "type": "7-day check",
+      "source": "promote-execution-2026-03-05",
+      "check": "Check new SK 'cross stitch for kids 8-12' (270472026768698) performance. Check reactivated 'CS kits for beginners' keyword in SK 309035836424147."
+    },
+    {
+      "date": "2026-03-08",
+      "type": "listing-verify",
+      "source": "listing-push-2026-03-06",
+      "check": "Verify B08DDJCQKF listing update is live. Check title, bullets, backend KW indexing."
+    },
+    {
+      "date": "2026-03-13",
+      "type": "7-day re-audit",
+      "source": "listing-push-2026-03-06",
+      "check": "Re-audit B08DDJCQKF. Check Ranking Juice score, Rank Radar trends, CVR and sales impact."
+    }
+  ],
+  "skills_run": [
+    {
+      "skill": "ppc-portfolio-action-plan",
+      "date": "2026-03-05",
+      "result": "success",
+      "key_metrics": {
+        "acos": 31.6,
+        "spend": 2001.4,
+        "orders": 293
+      },
+      "actions_taken": 7,
+      "actions_deferred": 2
+    },
+    {
+      "skill": "ppc-search-term-harvester",
+      "date": "2026-03-05",
+      "result": "success",
+      "key_metrics": {
+        "promote_executed": 2
+      },
+      "actions_taken": 3,
+      "note": "Reactivated SK for 'CS kits for beginners' ($0.36, 13% TOS, $7/d). Created new SK for 'cross stitch for kids 8-12' ($0.47, 86% TOS, $10/d). Paused duplicate 'cross stitch kits' keyword."
+    },
+    {
+      "skill": "listing-optimizer + listing-creator",
+      "date": "2026-03-06",
+      "result": "success",
+      "key_metrics": {
+        "ranking_juice_pct": 81.7,
+        "title_rj_gap": 9387,
+        "bullets_rj_pct": 96.0,
+        "backend_kw_bytes": "183->213"
+      },
+      "actions_taken": 1,
+      "note": "Full audit + listing rewrite. Pushed Title A + 5 bullets + backend KW. Fixed 2-needle factual error. Added brand, ages 7-13, screen-free. Submission ACCEPTED."
+    },
+    {
+      "skill": "ppc-tacos-optimizer",
+      "date": "2026-03-06",
+      "result": "success",
+      "key_metrics": {
+        "tacos_30d": 13.3,
+        "tacos_grade": "A",
+        "organic_momentum": 90,
+        "profit_health": "PROFITABLE"
+      },
+      "output_ref": "tacos-optimizer/2026-03-06-tacos-scorecard.md"
+    }
+  ],
+  "improvement_assessment": {
+    "overall_trend": "stable",
+    "note": "First deep dive — baseline established. Portfolio health YELLOW-GREEN. Strong organic ranks, hero campaign performing well but was budget-capped. TOS pushes on already-ranked keywords were dragging ACoS above target. Changes applied should bring ACoS closer to 30% target within 7 days.",
+    "updated": "2026-03-05"
+  }
+}

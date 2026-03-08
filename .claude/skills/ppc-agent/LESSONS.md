@@ -4,6 +4,214 @@
 
 *(New entries go at the TOP)*
 
+### Run: 2026-03-05 (14)
+**Task routed:** Latch Hook Kits Portfolio Deep Dive (ppc-portfolio-action-plan)
+**Result:** Success
+
+**What happened:**
+- Routed to ppc-portfolio-action-plan for Latch Hook Kits (189174727582199). First deep dive.
+- All 5 reports downloaded successfully. Portfolio: 36.5% ACoS, 72 orders, $548 spend, $1,504 sales.
+- 8 API changes executed: 4 PP modifiers, 4 bid boosts + 1 keyword re-enable, 1 campaign pause, 2 bid reductions, 2 new campaigns created.
+- Key discovery: "latch hook pencil case" converting at 5.1% ACoS in Auto — exact product name match. Promoted to dedicated SK campaign.
+- Rank collapse identified on "latch hook kit" (20.6K SV) and "latch hook" (10.2K SV) — both dropped from page 1-2 to >100. Boosted bids in root exact campaign and re-enabled "latch hook kit" keyword.
+
+**Lesson learned:**
+- Product ad creation requires SKU (not just ASIN) for sellers. Use SP-API GET_MERCHANT_LISTINGS_ALL_DATA report to find SKU-to-ASIN mapping.
+- Report field `sales7d` used instead of `sales14d` — always check actual field names before processing.
+- Context restart mid-session required full data re-filtering from saved JSON files. All data was preserved.
+
+**Tokens/cost:** ~100K tokens
+
+### Run: 2026-03-05 (13)
+**Task routed:** Shield All Portfolio Deep Dive (ppc-portfolio-action-plan)
+**Result:** Success
+
+**What happened:**
+- First deep dive for Shield All defensive portfolio. 4 ENABLED + 7 PAUSED campaigns, 27.7% ACoS, 141 orders/30d.
+- 14 API changes: TOS on 2 ENABLED campaigns (cross stitch 10%→47%, latch hook 85%→47%), enable brand BROAD keyword, increase 2 pillow target bids, re-enable 7 paused campaigns at $2/d with 50%+ TOS cuts, reduce 3 high bids.
+- User emphasized conservative approach — all paused campaigns were paused for poor performance. $2/d caps, 50%+ modifier cuts, 7-day review gate.
+- Context restart mid-session. All data recovered from summary.
+
+**What didn't work:**
+- Reports PENDING initially (x8+), resolved within session.
+
+**Lesson learned:**
+- "Conservative re-enable" pattern: $2/d budget, 50%+ modifier cuts, bid caps, 7-day ACoS gate. Good template for future re-enable requests.
+- Shield campaigns need budget utilization checks — many had 0% utilization despite being ENABLED.
+
+**Tokens/cost:** ~80K tokens
+
+### Run: 2026-03-05 (12)
+**Task routed:** Cat and Hat Knitting Portfolio Deep Dive + Execution (ppc-portfolio-action-plan)
+**Result:** Success
+
+**What happened:**
+- First deep dive for Cat and Hat Knitting portfolio. Late Launch → Early Scaling, 45.1% ACoS, 92 orders/30d.
+- 12 API changes executed: Auto budget $6→$20, SK loom kit strategy switch (AUTO_FOR_SALES→LEGACY, +PP/ROS, bid $0.68→$0.47), MK broad TOS 183%→148% + budget $15→$12, PT Bunny self-target paused + Hapinest bid $0.58→$0.38, PP/ROS ~15% added to 5 dormant SK campaigns, SK kids TOS 223%→152%.
+- Action 7 (pause 2 dead MK campaigns) rejected — user wants more analysis, sees potential in knitting root.
+- PP/ROS modifiers flagged as "test run" by user. Must monitor conversion at 7-day re-check.
+- 0 API errors across all 12 calls.
+
+**What didn't work:**
+- Nothing significant. Clean execution.
+
+**Lesson learned:**
+- User may reject pause recommendations in favor of investigate. Don't default to pausing.
+- PP/ROS conversion uncertainty is a real concern — track placement-specific performance at re-check.
+- Portfolio tracker + agent-state updated immediately after API calls (rule #4 compliance).
+
+**Tokens/cost:** ~60K tokens
+
+### Run: 2026-03-05 (11)
+**Task routed:** Biggie Beads Portfolio Deep Dive + Search Term Harvest (ppc-portfolio-action-plan + ppc-search-term-harvester)
+**Result:** Success
+
+**What happened:**
+- Routed "deep dive for Biggie Beads portfolio" → ppc-portfolio-action-plan, then search term harvest.
+- First deep dive. 5 ENABLED campaigns, 31.9% ACoS (target 30%). Old "biggie beads auto" was ARCHIVED (not active).
+- 7 P1 API changes: PP/ROS on MK broad + SK biggie beads + SPA auto, bid increase on SK biggie beads ($0.52→$1.08), traffic isolation negative, orbeez negation.
+- Search term harvest: 687 terms, 0 P1 negates, 14 PROMOTE candidates. Identified 2 keyword families for new SK campaigns.
+- Context restart mid-session due to token limit. All data recovered from summary.
+
+**What didn't work:**
+- Reports stuck PENDING (x11+). Used cached 30d data.
+- Context hit limit during initial analysis — required session restart. All findings preserved in summary.
+
+**Lesson learned:**
+- Large deep dives with search term harvesting can hit context limits. Consider splitting into 2 sessions proactively.
+- PP/ROS missing continues to be systemic — now found on 3rd portfolio.
+
+**Tokens/cost:** ~80K tokens across 2 sessions
+
+### Run: 2026-03-05 (10)
+**Task routed:** Latch Hook Pillow Portfolio Deep Dive (ppc-portfolio-action-plan)
+**Result:** Success
+
+**What happened:**
+- Routed "deep dive on latch hook pillow portfolio" → ppc-portfolio-action-plan.
+- First-ever deep dive. Late Launch → Early Scaling portfolio. 10 ENABLED campaigns, 3 ASINs, 36.6% ACoS (target 30%).
+- All 10 Amazon Ads reports stuck PENDING (worst occurrence: 10 reports, 0 resolved). Used cached account-wide search term data filtered by campaign IDs as workaround — provided full 30d per-campaign performance.
+- Root cause of under-spending: 7 of 10 campaigns missing PP/ROS modifiers = invisible on non-TOS placements. Budget utilization 0% was misleading (daily snapshot, not structural).
+- 12-item action plan: self-ASIN negation, PT restructure, Auto taming, PP/ROS activation on 7 campaigns, waste negatives, competitor targeting, star campaign budget increase, cross-campaign isolation.
+- User approved all 12 with modification (Action 4: PP +26%, ROS +31%). All executed, 0 API errors.
+- Portfolio tracker + agent-state fully updated. 4 pending P4 actions, 2 scheduled reviews.
+
+**What didn't work:**
+- Reports stuck PENDING x10 (worst ever). Cached data workaround was effective.
+- API format issues: `ASIN_SAME_AS` (not camelCase), campaign negative keywords need `campaignId` + `state` per object.
+
+**Lesson learned:**
+- Missing PP/ROS modifiers is likely a systemic issue — check in every deep dive. Campaigns appear "dead" but are just invisible on non-TOS placements.
+- Account-wide cached search term data is a reliable fallback for campaign-level analysis when reports are stuck.
+- 0% budget utilization is a daily snapshot, not structural. Always cross-reference with 30d spend data.
+
+**Tokens/cost:** ~120K tokens across 2 sessions
+
+### Run: 2026-03-05 (9)
+**Task routed:** Princess Lacing Cards Portfolio Deep Dive (ppc-portfolio-action-plan)
+**Result:** Success
+
+**What happened:**
+- Routed "deep dive for princess lacing card portfolio" → ppc-portfolio-action-plan.
+- First-ever deep dive. Launch portfolio (NOT Scaling — user corrected mid-session). 62.4% ACoS, single ASIN B0FQC7YFX6.
+- Major finding: keyword identity crisis — PPC driving "sewing" rank while "lacing" rank declining. "Lacing cards" (6,761 SV) dropped 22→34.
+- Restructured from MK-broad-led (49.6% of spend) to SK-exact-led with 2 hero campaigns re-enabled.
+- 15 API calls, 0 errors. Reports stuck PENDING (x7), used cached fallback.
+
+**Lesson learned:**
+- **Verify portfolio stage (Launch/Scaling/General) before any analysis.** Wrong stage = wrong recommendations. Launch prioritizes rank velocity over ACoS efficiency.
+- **Check for existing PAUSED campaigns before creating new ones.** Amazon rejects duplicate names.
+- **Keyword identity drift is detectable via rank radar trend patterns.** If one keyword family is improving while another declines, PPC spend may be sending the wrong relevance signal.
+
+**Tokens/cost:** ~80K tokens across 2 sessions
+
+### Run: 2026-03-05 (8)
+**Task routed:** Search Term Promote Execution (ppc-search-term-harvester follow-up)
+**Result:** Success
+
+**What happened:**
+- Follow-up to harvest run: verified all 8 PROMOTE candidates against actual keyword lists in 20+ campaigns.
+- 6 of 8 already fully covered with EXACT match — would have created redundant campaigns without checking.
+- Executed 3 approved actions: reactivated SK for "cross stitch kits for beginners" ($0.36, 13% TOS, $7/d), added "embroidery for kids" EXACT to MK campaign ($0.39), created new SK for "cross stitch for kids 8-12" ($0.47, 86% TOS, $10/d).
+- Product ad creation requires SKU (not just ASIN) — found via Sellerboard inventory report.
+- 0 errors across all API calls.
+
+**Lesson learned:**
+- **Always verify existing keyword coverage before promoting.** 75% of candidates were already targeted. Skipping this step would have created 6+ redundant campaigns.
+- **Amazon Ads API create_sp_campaigns requires YYYY-MM-DD date format**, not YYYYMMDD.
+- **Product ad creation requires merchant SKU** — get from Sellerboard inventory or SP-API listings.
+
+**Tokens/cost:** ~30K tokens
+
+### Run: 2026-03-05 (7)
+**Task routed:** Embroidery for Kids Portfolio Deep Dive (ppc-portfolio-action-plan)
+**Result:** Success
+
+**What happened:**
+- Routed "deep dive of embroidery kit for kids portfolio" → ppc-portfolio-action-plan.
+- Portfolio 71655754369545 identified. 8 ENABLED, 8 PAUSED campaigns. First-ever deep dive.
+- Reports initially PENDING (repeat error x5+), resolved after ~30 minutes. All 5 downloaded: campaigns, search terms, placements, keywords, targets.
+- Health score 3.5/10, structure grade 2.85/10. MK broad at 47.9% of spend (48.8% ACoS) — classic cannibalization. SK TOS at 199% bleeding at 46.7%. PT budget-starved at 99.66%.
+- **Placement data revealed Item 4 needed revision** — MK exact TOS was efficient (32.3%) while "Other" was the waste (81.5%). Presented 3 options transparently.
+- 12-item action plan, user approved all 4 P1. Executed: 3 TOS reductions + 1 budget increase. 0 errors.
+- 7 pending P2/P3 actions queued. 7-day re-check scheduled for 2026-03-12.
+
+**What didn't work:**
+- Reports stuck PENDING initially. Resolved within session.
+- Context window ran out — required session continuation.
+
+**Lesson learned:**
+- Placement data is essential for TOS decisions — campaign-level ACoS masks placement-level efficiency.
+- "Other on-Amazon" has no bid modifier — when waste is in "Other", default bid reduction is the lever, not TOS reduction.
+- Reports DO resolve within sessions — worth checking periodically rather than immediately falling back.
+
+**Tokens/cost:** ~100K tokens (multi-session)
+
+### Run: 2026-03-05 (6)
+**Task routed:** Cross Stitch Backpack Charms Portfolio Deep Dive (ppc-portfolio-action-plan)
+**Result:** Success
+
+**What happened:**
+- Routed "portfolio deep dive on Cross Stitch Kits for Kids Girl Cross Stitch Portfolio" → ppc-portfolio-action-plan.
+- Portfolio 69655270409648 identified. 15 ENABLED campaigns. 30d reports pulled (all 3 completed after initial PENDING).
+- Initial analysis WRONG — included campaigns from other portfolios due to name-based matching. User caught the error. Rebuilt analysis using only campaigns with portfolioId=69655270409648.
+- Corrected 30d metrics: $2,001 spend, $6,326 sales, 31.6% ACoS, 293 orders, 15.0% CVR.
+- 9-item action plan. User approved 7 with modifications (budget $50→$45). Required detailed placement breakdowns before approving TOS changes.
+- 7 actions executed via API: 2 budget increases, 4 TOS reductions, 9 phrase negatives. 0 errors.
+- Portfolio tracker and agent-state.json fully updated. 2 pending P3 investigate actions deferred.
+
+**What didn't work:**
+- Name-based portfolio scoping included wrong campaigns (CRITICAL error caught by user).
+- Reports stuck PENDING initially (6th occurrence — repeat error).
+- Context window ran out, requiring session continuation.
+
+**Lesson learned:**
+- **Portfolio scoping must use portfolioId, never name patterns.** Added as Known Issue #1 in ppc-portfolio-action-plan LESSONS.md.
+- User needs per-placement data (TOS/ROS/PP breakdown) before approving TOS modifier changes — this should be standard in all action plans.
+- Budget-capped campaigns at good ACoS are the easiest wins — always check budget utilization first.
+
+**Tokens/cost:** ~90K tokens (multi-session)
+
+### Run: 2026-03-05 (5)
+**Task routed:** Search Term Harvest — Full Account (ppc-search-term-harvester)
+**Result:** Success
+
+**What happened:**
+- First full-account search term harvest. Used cached 30-day report (Mar 3) after fresh report stuck PENDING.
+- 10,193 unique terms analyzed. Safety check removed 22 protected terms ($662) — critical protection.
+- User approved 19 terms (13 P1 + 3 flagged + needlepoint pouch + 2 P2). 72 campaign-level negatives applied, 0 errors.
+- Identified 10 PROMOTE candidates without SK campaigns (top: "cross stitch kits for beginners" 35 orders/24% ACoS).
+
+**What didn't work:**
+- Amazon Ads API report stuck PENDING (6th occurrence). Fell back to cached 30-day data.
+
+**Lesson learned:**
+- 30-day cached data is actually superior for harvesting (30-day rule requires it). Request 30d directly next time.
+- Python batch processing pipeline (classify + safety check) scales well for 13K+ rows.
+- Most waste concentrated in Catch All Auto campaigns — consider dedicated cleanup.
+
+**Tokens/cost:** ~35K tokens
+
 ### Run: 2026-03-05 (4)
 **Task routed:** PT Campaign Restructuring — Cross & Embroidery (ppc-portfolio-action-plan)
 **Result:** Success
@@ -228,13 +436,13 @@
 **What didn't work:**
 - `create_sp_campaigns` startDate format: API requires `YYYY-MM-DD` (with dashes), not `YYYYMMDD`. Documentation example was misleading.
 - `manage_sp_product_ads` create: requires `sku` field for seller accounts, not just `asin`. Had to pull listings report from SP-API to get SKU.
-- `sp_placements` report preset: `campaignPlacement` groupBy dimension NOT included as column in report output. Report has 4 rows per campaign but no placement labels. Amazon API does not allow `campaignPlacement` as a column value — it's only a groupBy dimension.
+- `sp_placements` report preset was returning unlabeled rows. **RESOLVED 2026-03-05:** `campaignPlacement` is a groupBy dimension (correct), but `placementClassification` must be in `columns` to get labels. Added to server.py — now returns "Top of Search on-Amazon", "Detail Page on-Amazon", etc.
 
 **Lesson learned:**
 - Campaign creation startDate must use dashes: `2026-03-02` not `20260302`.
 - Product ad creation needs both ASIN and SKU. Keep a SKU-ASIN mapping file or cache the listings report.
-- sp_placements report is broken — need to fix by either adding a mapping or using v2 placement API.
-- CPC analysis can infer placement: highest CPC = TOS (modifier amplifies bid), highest impressions = ROS/Other.
+- sp_placements report FIXED — `placementClassification` in columns gives labels. No need for CPC inference.
+- Key: `campaignPlacement` = groupBy dimension, `placementClassification` = column name. Both needed.
 - Batch independent campaign updates into single API call for efficiency.
 
 **Tokens/cost:** ~45K tokens
@@ -338,6 +546,15 @@
 ### 3. RULE: Never negate a search term based on a single week of zero conversions
 **Impact:** HIGH — Premature negation kills search terms that may convert in other weeks.
 **Rule:** Always check a minimum 30-day window of data before recommending a search term for negation. A search term with zero orders in one week might convert in other weeks. Only recommend negating if the search term shows sustained zero conversions AND is clearly irrelevant to the product over the full 30-day window. Enforce this across all sub-skills.
+
+### 4. RULE: Always update portfolio tracker JSON files after any API change
+**Impact:** HIGH — Skipping tracker updates means the system loses track of what was done, making future reviews and re-checks unreliable.
+**Rule:** After ANY API change (bid change, keyword create/update, campaign create/update, negative applied), ALWAYS update the affected portfolio tracker file(s) at `outputs/research/ppc-agent/state/{slug}.json`. Update these sections:
+- `change_log` — append the change with date, skill, type, campaign, before/after
+- `pending_actions` — mark completed items, add new items
+- `scheduled_reviews` — add re-check dates for changes made
+- `skills_run` — append skill execution entry
+This is NOT optional. Do it immediately after API calls succeed, before presenting results to user.
 
 ---
 

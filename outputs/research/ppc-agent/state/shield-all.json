@@ -1,0 +1,298 @@
+{
+  "$schema_version": "1.0",
+  "last_updated": "2026-03-05",
+  "portfolio": {
+    "name": "Shield All",
+    "id": "226460450341570",
+    "slug": "shield-all",
+    "stage": "General",
+    "hero_asins": [],
+    "secondary_asins": [],
+    "hero_keywords": ["craftiloo"],
+    "niche_id": null,
+    "rank_radar_id": null,
+    "campaigns_enabled": 11,
+    "campaigns_paused": 0
+  },
+  "goals": {
+    "acos_target": 30.0,
+    "acos_red_flag": 45.0,
+    "cvr_target": 10.0,
+    "budget_envelope_daily": 30.0,
+    "rank_targets": [],
+    "strategic_notes": [
+      "General portfolio — defensive/shield campaigns",
+      "PT campaigns target own ASINs (ASIN_SAME_AS) to defend product pages from competitor ads",
+      "Brand campaign defends 'craftiloo' brand search results",
+      "Conservative re-enable: all 7 previously-paused campaigns at $2/day with 50%+ TOS cuts",
+      "7-day review gate: ACoS >45% on any re-enabled campaign → flag for pause"
+    ],
+    "updated": "2026-03-05"
+  },
+  "baseline": {
+    "date": "2026-03-05",
+    "period": "30d",
+    "note": "Pre-deep-dive baseline. Only 4 campaigns ENABLED at this point.",
+    "metrics": {
+      "cost": 899.0,
+      "sales": 3245.0,
+      "acos": 27.7,
+      "orders": 141,
+      "clicks": 1085,
+      "impressions": null,
+      "cvr": 13.0,
+      "cpc": 0.83
+    },
+    "by_campaign": {
+      "shield-product-cross-stitch-kits": {
+        "campaignId": "516544362198886",
+        "cost": 410.0,
+        "sales": 1189.0,
+        "acos": 34.5,
+        "orders": 55,
+        "tos_is": 7.5
+      },
+      "shield-product-latch-hook-kits": {
+        "campaignId": "363414756362888",
+        "cost": 251.0,
+        "sales": 988.0,
+        "acos": 25.4,
+        "orders": 41,
+        "tos_is": 16.3
+      },
+      "shield-brand-name": {
+        "campaignId": "442314287721734",
+        "cost": 185.0,
+        "sales": 907.0,
+        "acos": 20.4,
+        "orders": 38,
+        "tos_is": 89.0
+      },
+      "shield-product-latch-hook-pillow": {
+        "campaignId": "350108554440602",
+        "cost": 53.0,
+        "sales": 161.0,
+        "acos": 33.0,
+        "orders": 7,
+        "tos_is": 11.0
+      }
+    }
+  },
+  "latest_metrics": {
+    "date": "2026-03-05",
+    "period": "30d",
+    "metrics": {
+      "cost": 899.0,
+      "sales": 3245.0,
+      "acos": 27.7,
+      "orders": 141,
+      "clicks": 1085,
+      "cvr": 13.0,
+      "cpc": 0.83
+    },
+    "delta_vs_baseline": null
+  },
+  "metric_history": [
+    {
+      "date": "2026-03-05",
+      "period": "30d",
+      "cost": 899.0,
+      "sales": 3245.0,
+      "acos": 27.7,
+      "orders": 141,
+      "cvr": 13.0
+    }
+  ],
+  "change_log": [
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "TOS_CHANGE",
+      "campaign": "shield product - cross stitch kits (516544362198886)",
+      "before": "TOS 10%",
+      "after": "TOS 47%",
+      "reason": "TOS-IS only 7.5% — competitors own 92.5% of product page"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "TOS_CHANGE",
+      "campaign": "shield product - latch hook kits (363414756362888)",
+      "before": "TOS 85%",
+      "after": "TOS 47%",
+      "reason": "Overspending on TOS at 85%, reduce to balanced 47%"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "KEYWORD_ENABLE",
+      "campaign": "shield brand name (442314287721734)",
+      "before": "craftiloo BROAD PAUSED ($0.56)",
+      "after": "craftiloo BROAD ENABLED ($0.56)",
+      "reason": "Additional brand defense coverage via broad match"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "BID_INCREASE",
+      "campaign": "shield product - latch hook pillow (350108554440602)",
+      "before": "target 402027859810014: $0.40, target 488236330720511: $0.46",
+      "after": "target 402027859810014: $0.52, target 488236330720511: $0.58",
+      "reason": "Low TOS-IS 11-19%, increase bids to win more product page impressions"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "CAMPAIGN_ENABLE",
+      "campaign": "shield product - bunny knitting (557043974674181)",
+      "before": "PAUSED, $2/d, TOS 101%",
+      "after": "ENABLED, $2/d, TOS 47%",
+      "reason": "Conservative re-enable with $2/d budget cap and 50%+ TOS reduction"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "CAMPAIGN_ENABLE",
+      "campaign": "shield product - embroidery for kids (451322907435771)",
+      "before": "PAUSED, $1/d, TOS 74%, PP 77%",
+      "after": "ENABLED, $2/d, TOS 37%, PP 37%",
+      "reason": "Conservative re-enable with $2/d budget cap and 50% modifier reduction"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "CAMPAIGN_ENABLE",
+      "campaign": "shield product - dessert sewing (365967498919724)",
+      "before": "PAUSED, $10/d, TOS 204%",
+      "after": "ENABLED, $2/d, TOS 97%",
+      "reason": "Conservative re-enable with $2/d budget cap (was $10) and TOS cut from 204% to 97%"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "CAMPAIGN_ENABLE",
+      "campaign": "shield product - fairy sewing exact (465088244495263)",
+      "before": "PAUSED, $2/d, TOS 111%",
+      "after": "ENABLED, $2/d, TOS 53%",
+      "reason": "Conservative re-enable with 50%+ TOS reduction"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "CAMPAIGN_ENABLE",
+      "campaign": "shield product - mini fuse beads (345585516535071)",
+      "before": "PAUSED, $2/d, TOS 208%, ROS 56%, PP 26%",
+      "after": "ENABLED, $2/d, TOS 97%, ROS 27%, PP 13%",
+      "reason": "Conservative re-enable with 50%+ modifier reductions across all placements"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "CAMPAIGN_ENABLE",
+      "campaign": "shield product - cross and embroidery (409740398136017)",
+      "before": "PAUSED, $15/d, TOS 121%",
+      "after": "ENABLED, $2/d, TOS 57%",
+      "reason": "Conservative re-enable with $2/d budget (was $15) and TOS cut from 121% to 57%"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "CAMPAIGN_ENABLE",
+      "campaign": "shield product - cat knitting (292341791769587)",
+      "before": "PAUSED, $7/d, TOS 73%",
+      "after": "ENABLED, $2/d, TOS 37%",
+      "reason": "Conservative re-enable with $2/d budget (was $7) and TOS cut from 73% to 37%"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "BID_DECREASE",
+      "campaign": "shield product - dessert sewing (365967498919724)",
+      "before": "target 394529267573327: $0.93",
+      "after": "target 394529267573327: $0.47",
+      "reason": "High bid on re-enabled campaign — cap at $0.47"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "BID_DECREASE",
+      "campaign": "shield product - cross and embroidery (409740398136017)",
+      "before": "target 450665148739845 (B0F8QZZQQM): $0.71",
+      "after": "target 450665148739845: $0.43",
+      "reason": "High bid on re-enabled campaign — cap at $0.43"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-portfolio-action-plan",
+      "type": "BID_DECREASE",
+      "campaign": "shield product - cat knitting (292341791769587)",
+      "before": "target 363833412264890: $0.68",
+      "after": "target 363833412264890: $0.43",
+      "reason": "High bid on re-enabled campaign — cap at $0.43"
+    }
+  ],
+  "pending_actions": [
+    {
+      "id": "sa-001",
+      "priority": "P1",
+      "category": "MONITOR",
+      "action": "7-day review gate: check all 7 re-enabled campaigns. ACoS >45% → flag for pause",
+      "created": "2026-03-05",
+      "due": "2026-03-12",
+      "campaigns": [
+        "557043974674181",
+        "451322907435771",
+        "365967498919724",
+        "465088244495263",
+        "345585516535071",
+        "409740398136017",
+        "292341791769587"
+      ]
+    },
+    {
+      "id": "sa-002",
+      "priority": "P2",
+      "category": "MONITOR",
+      "action": "Verify cross stitch kits TOS-IS improved from 7.5% after TOS 10%→47% increase",
+      "created": "2026-03-05",
+      "due": "2026-03-12"
+    },
+    {
+      "id": "sa-003",
+      "priority": "P3",
+      "category": "MONITOR",
+      "action": "Check brand BROAD keyword performance — is it capturing additional brand searches?",
+      "created": "2026-03-05",
+      "due": "2026-03-12"
+    }
+  ],
+  "scheduled_reviews": [
+    {
+      "date": "2026-03-12",
+      "type": "7-day post-deep-dive re-check — verify 7 re-enabled campaigns, TOS changes, bid adjustments",
+      "source": "shield-all-deep-dive-2026-03-05"
+    }
+  ],
+  "skills_run": [
+    {
+      "skill": "ppc-portfolio-action-plan",
+      "date": "2026-03-05",
+      "result": "success",
+      "key_metrics": {
+        "api_calls": 14,
+        "api_errors": 0,
+        "campaigns_modified": 11,
+        "campaigns_reenabled": 7,
+        "bids_changed": 5,
+        "tos_changes": 9,
+        "baseline_acos": 27.7,
+        "baseline_orders": 141
+      }
+    }
+  ],
+  "improvement_assessment": {
+    "overall_trend": "restructuring",
+    "assessment": "First deep dive — all 7 paused campaigns re-enabled conservatively ($2/day, 50%+ TOS cuts). Need 7 days of data before meaningful improvement can be assessed.",
+    "last_updated": "2026-03-05"
+  }
+}

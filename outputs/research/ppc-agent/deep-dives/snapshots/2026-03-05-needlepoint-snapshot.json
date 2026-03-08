@@ -1,0 +1,170 @@
+{
+  "date": "2026-03-05",
+  "portfolio": "Needlepoint",
+  "portfolio_id": "45080904945580",
+  "stage": "Scaling",
+  "acos_target": 30,
+  "health_score": "3/10",
+  "metrics_30d": {
+    "spend": 557.54,
+    "sales": 982.76,
+    "acos": 56.7,
+    "orders": 50,
+    "cvr": 5.1,
+    "cpc": 0.57,
+    "roas": 1.76
+  },
+  "campaigns": [
+    {
+      "name": "needlepoint - SPM MK broad and phrase TOS",
+      "campaign_id": "400878727568208",
+      "type": "MK_BROAD",
+      "state": "ENABLED",
+      "spend_30d": 301.03,
+      "sales_30d": 562.30,
+      "acos": 53.5,
+      "orders": 30,
+      "cvr": 7.2,
+      "cpc": 0.73,
+      "tos_modifier": 78,
+      "budget": 10.0,
+      "budget_utilization": "102%",
+      "status": "BLEEDING"
+    },
+    {
+      "name": "needlepoint - SPA auto TOS",
+      "campaign_id": "372981829297208",
+      "type": "AUTO",
+      "state": "ENABLED",
+      "spend_30d": 151.52,
+      "sales_30d": 216.68,
+      "acos": 69.9,
+      "orders": 10,
+      "cvr": 2.9,
+      "cpc": 0.44,
+      "tos_modifier": 0,
+      "budget": 5.0,
+      "budget_utilization": "100%",
+      "status": "BLEEDING"
+    },
+    {
+      "name": "needlepoint - SPM SK needlepoint kits for beginners TOS",
+      "campaign_id": "424611391216881",
+      "type": "SK",
+      "state": "ENABLED",
+      "spend_30d": 53.02,
+      "sales_30d": 129.86,
+      "acos": 40.8,
+      "orders": 6,
+      "cvr": 4.7,
+      "cpc": 0.42,
+      "tos_modifier": 50,
+      "budget": 15.0,
+      "budget_utilization": "0%",
+      "status": "ABOVE_TARGET"
+    },
+    {
+      "name": "needlepoint - SPM SK kids needlepoint kit TOS",
+      "campaign_id": "408514915378721",
+      "type": "SK",
+      "state": "ENABLED",
+      "spend_30d": 34.84,
+      "sales_30d": 53.94,
+      "acos": 64.6,
+      "orders": 3,
+      "cvr": 5.3,
+      "cpc": 0.61,
+      "tos_modifier": 207,
+      "budget": 8.0,
+      "budget_utilization": "4.6%",
+      "status": "BLEEDING"
+    },
+    {
+      "name": "needlepoint - SPM SK needlepoint kit for kids TOS",
+      "campaign_id": "500165166136541",
+      "type": "SK",
+      "state": "ENABLED",
+      "spend_30d": 17.13,
+      "sales_30d": 19.98,
+      "acos": 85.7,
+      "orders": 1,
+      "cvr": 3.0,
+      "cpc": 0.52,
+      "tos_modifier": 101,
+      "budget": 8.0,
+      "budget_utilization": "0%",
+      "status": "BLEEDING"
+    }
+  ],
+  "paused_campaigns": [
+    {"name": "SC INCR needlepoint cat and dog AUTO", "campaign_id": "226802686186529"},
+    {"name": "SC INCR Needlepoint cat AUTO", "campaign_id": "70374762536558"},
+    {"name": "SC INCR Needlepoint Mermaid AUTO", "campaign_id": "187790001910836"},
+    {"name": "Wallet Cross stitch All exact", "campaign_id": "515469911598787"},
+    {"name": "NEEDLEPOINT KIT AUTO", "campaign_id": "523680695193777"},
+    {"name": "NEEDLEPOINT KIT MANUAL", "campaign_id": "447829926559233"}
+  ],
+  "structure_audit": {
+    "auto": 1,
+    "broad": 1,
+    "sk": 3,
+    "mk": 0,
+    "pt": 0,
+    "missing": ["PT", "MK_ROOT"],
+    "complete": false,
+    "spend_distribution": {
+      "sk_pct": 18.8,
+      "mk_broad_pct": 54.0,
+      "auto_pct": 27.2,
+      "mk_root_pct": 0,
+      "pt_pct": 0,
+      "other_pct": 0
+    },
+    "single_targeting_campaigns": 3,
+    "structure_health_grade": "4/10",
+    "structure_health_breakdown": {
+      "type_completeness": 4,
+      "spend_balance": 2,
+      "keyword_coverage": 6,
+      "targeting_precision": 6,
+      "negative_hygiene": 1
+    }
+  },
+  "rank_data": {
+    "keywords_tracked": 50,
+    "improving": 4,
+    "stable": 43,
+    "declining": 2,
+    "critical": 0,
+    "key_ranks": {
+      "needlepoint_kits": {"sv": 15617, "rank": 19, "trend": "IMPROVING"},
+      "needlepoint_kit": {"sv": 24095, "rank": 25, "trend": "DECLINING"},
+      "needlepoint": {"sv": 51649, "rank": 67, "trend": "IMPROVING"},
+      "needlepoint_kits_for_beginners": {"sv": 6461, "rank": 78, "trend": "IMPROVING"}
+    }
+  },
+  "niche_ranks": {
+    "half_stitch_needlepoint_kits": {"sv": 1425, "rank": 4, "relevancy": 0.3},
+    "needlepoint_for_kids": {"sv": 701, "rank": 10, "relevancy": 1.0},
+    "kids_needlepoint_kit": {"sv": 902, "rank": 11, "relevancy": 0.9},
+    "needlepoint_kits_for_kids": {"sv": 1109, "rank": 14, "relevancy": 0.9}
+  },
+  "search_term_summary": {
+    "total_terms": 191,
+    "top_converters": 15,
+    "zero_order_waste_spend": 42.50,
+    "cannibalized_terms": 12
+  },
+  "cannibalization": {
+    "detected": true,
+    "severity": "CRITICAL",
+    "mk_broad_pct_of_spend": 54.0,
+    "overlapping_sk_terms": 4
+  },
+  "dead_asin": "B09HVDYMDK",
+  "actions_proposed": 14,
+  "actions_p1": 4,
+  "actions_p2": 4,
+  "actions_p3": 3,
+  "actions_p4": 3
+}

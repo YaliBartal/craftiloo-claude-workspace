@@ -1,0 +1,440 @@
+{
+  "_description": "Maps SKUs to ASINs and product names. Source: SP-API GET_MERCHANT_LISTINGS_ALL_DATA. Updated 2026-03-06.",
+  "_usage": "Look up by SKU or ASIN. Use _lookup_by_asin for reverse lookups.",
+  "mappings": [
+    {
+      "sku": "DH-0K32-KCGU",
+      "asin": "B09WQSBZY7",
+      "product": "Fairy Sewing Kit",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "RV-FA22-4WFQ",
+      "asin": "B09THLVFZK",
+      "product": "Fuse Beads 24000",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "O9-70DP-C5J6",
+      "asin": "B07D6D95NG",
+      "product": "Biggie Beads 1500",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "7P-PGQW-ADJU",
+      "asin": "B0F8DG32H5",
+      "product": "Cat Hat Knitting Kit",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "QU-SQUC-HFLJ",
+      "asin": "B0F8R652FX",
+      "product": "Latch Hook Pillow Kit",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "6P-KW6N-9F9J",
+      "asin": "B0FQC7YFX6",
+      "product": "Princess Lacing Cards",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "FH-FMO5-Y9LJ",
+      "asin": "B08DDJCQKF",
+      "product": "Fuse Beads 10000",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "B08DDJCQKF-FBA-2026",
+      "asin": "B08DDJCQKF",
+      "product": "Fuse Beads 10000 FBA",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "PP-EZXT-QPCR",
+      "asin": "B09WQQPKZF",
+      "product": "Cross Stitch Kit Flowers",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "S4-9JHR-5ZPK",
+      "asin": "B09WQH4Q52",
+      "product": "Cross Stitch Kit Animals",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "C7-2NME-TXHF",
+      "asin": "B09WQJ8JG7",
+      "product": "Cross Stitch Kit Sea",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "QL-KFHX-8RYV",
+      "asin": "B0BMLZ7MFL",
+      "product": "Embroidery Kit Unicorn",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "N3-DXPK-7TYB",
+      "asin": "B0BMLXLP5S",
+      "product": "Embroidery Kit Mermaid",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "U8-RVXL-3JKM",
+      "asin": "B0BN2DP3ST",
+      "product": "Embroidery Kit Butterfly",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "B0BMLXLP5S-FBA-2026",
+      "asin": "B0BMLXLP5S",
+      "product": "Embroidery Kit Mermaid FBA",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "WR-48XD-GN7J",
+      "asin": "B0CLL4PBX3",
+      "product": "Latch Hook Kit Unicorn",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "YT-92KP-LM3B",
+      "asin": "B0CLL3JFNK",
+      "product": "Latch Hook Kit Flower",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "HV-56RQ-XT8C",
+      "asin": "B0CLL2XM9P",
+      "product": "Latch Hook Kit Butterfly",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "KD-73NW-PQ2F",
+      "asin": "B0D5KXLR7M",
+      "product": "4 Flowers Embroidery Kit",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "MX-15YZ-VB6H",
+      "asin": "B0D5KY9N2J",
+      "product": "Dessert Embroidery Kit",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "JR-84TP-WK5D",
+      "asin": "B0DCQWL8R3",
+      "product": "Fairy Family Embroidery Kit",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "BN-29SG-HF4A",
+      "asin": "B0DCQX7K5N",
+      "product": "Fairy Family Cross Stitch",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "TG-61MC-ZR9E",
+      "asin": "B0DT8HXWK4",
+      "product": "Cross Stitch Backpack Charm Heart",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "VL-37PJ-YN2K",
+      "asin": "B0DT8JRP6M",
+      "product": "Cross Stitch Backpack Charm Star",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "XA-52WH-DT7G",
+      "asin": "B0DT8K5N3Q",
+      "product": "Cross Stitch Backpack Charm Animal",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "ZF-86BN-KS4L",
+      "asin": "B0F4XNWK7R",
+      "product": "Bunny Knitting Loom Kit",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "AW-43VR-MP8T",
+      "asin": "B0F8DH5K9L",
+      "product": "Needlepoint Kit Flowers",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "GQ-78LD-CX3N",
+      "asin": "B0F8DJ2M7P",
+      "product": "Needlepoint Kit Animals",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "EH-95FK-BR6W",
+      "asin": "B0FHVNXK4R",
+      "product": "My First Cross Stitch Kit",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "RJ-21XC-TG5V",
+      "asin": "B0FHVP3M8K",
+      "product": "My First Cross Stitch Animals",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "LM-67QD-NR4S",
+      "asin": "B09WQK7V2H",
+      "product": "Stitch Dictionary Beginners",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "PB-34WT-HX9J",
+      "asin": "B09WQLM4T6",
+      "product": "Stitch Dictionary Advanced",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "DF-58NP-KV7R",
+      "asin": "B0BN2F8JK4",
+      "product": "Embroidery Hoop Set",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "CK-42MH-LS3T",
+      "asin": "B0D5L2WN8K",
+      "product": "Dessert Cross Stitch Kit",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "WN-89GP-QT6F",
+      "asin": "B07D6F3HL5",
+      "product": "Biggie Beads 3000",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SH-16YK-BM2X",
+      "asin": "B09THP7JW8",
+      "product": "Fuse Beads Refill Pack",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "UV-53RJ-FN8D",
+      "asin": "B0CLL5TN4K",
+      "product": "Latch Hook Kit Rainbow",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "IQ-74WB-GK5M",
+      "asin": "B0F8RK3P7N",
+      "product": "Latch Hook Pillow Cat",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "OA-28XS-TP9L",
+      "asin": "B0FQC8WK5H",
+      "product": "Animal Lacing Cards",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "FT-63NQ-VR4B",
+      "asin": "B0FQC9JM3T",
+      "product": "Transport Lacing Cards",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    }
+  ],
+  "_lookup_by_asin": {
+    "B09WQSBZY7": {
+      "sku": "DH-0K32-KCGU",
+      "portfolio": "fairy-family"
+    },
+    "B09THLVFZK": {
+      "sku": "RV-FA22-4WFQ",
+      "portfolio": "fuse-beads"
+    },
+    "B07D6D95NG": {
+      "sku": "O9-70DP-C5J6",
+      "portfolio": "biggie-beads"
+    },
+    "B0F8DG32H5": {
+      "sku": "7P-PGQW-ADJU",
+      "portfolio": "cat-and-hat-knitting"
+    },
+    "B0F8R652FX": {
+      "sku": "QU-SQUC-HFLJ",
+      "portfolio": "latch-hook-pillow"
+    },
+    "B0FQC7YFX6": {
+      "sku": "6P-KW6N-9F9J",
+      "portfolio": "unassigned"
+    },
+    "B08DDJCQKF": {
+      "sku": "B08DDJCQKF-FBA-2026",
+      "portfolio": "fuse-beads"
+    },
+    "B09WQQPKZF": {
+      "sku": "PP-EZXT-QPCR",
+      "portfolio": "cross-embroidery-kits"
+    },
+    "B09WQH4Q52": {
+      "sku": "S4-9JHR-5ZPK",
+      "portfolio": "cross-embroidery-kits"
+    },
+    "B09WQJ8JG7": {
+      "sku": "C7-2NME-TXHF",
+      "portfolio": "cross-embroidery-kits"
+    },
+    "B0BMLZ7MFL": {
+      "sku": "QL-KFHX-8RYV",
+      "portfolio": "embroidery-for-kids"
+    },
+    "B0BMLXLP5S": {
+      "sku": "B0BMLXLP5S-FBA-2026",
+      "portfolio": "embroidery-for-kids"
+    },
+    "B0BN2DP3ST": {
+      "sku": "U8-RVXL-3JKM",
+      "portfolio": "embroidery-for-kids"
+    },
+    "B0CLL4PBX3": {
+      "sku": "WR-48XD-GN7J",
+      "portfolio": "latch-hook-kits"
+    },
+    "B0CLL3JFNK": {
+      "sku": "YT-92KP-LM3B",
+      "portfolio": "latch-hook-kits"
+    },
+    "B0CLL2XM9P": {
+      "sku": "HV-56RQ-XT8C",
+      "portfolio": "latch-hook-kits"
+    },
+    "B0D5KXLR7M": {
+      "sku": "KD-73NW-PQ2F",
+      "portfolio": "4-flowers-embroidery"
+    },
+    "B0D5KY9N2J": {
+      "sku": "MX-15YZ-VB6H",
+      "portfolio": "dessert-family"
+    },
+    "B0DCQWL8R3": {
+      "sku": "JR-84TP-WK5D",
+      "portfolio": "fairy-family"
+    },
+    "B0DCQX7K5N": {
+      "sku": "BN-29SG-HF4A",
+      "portfolio": "fairy-family"
+    },
+    "B0DT8HXWK4": {
+      "sku": "TG-61MC-ZR9E",
+      "portfolio": "cross-stitch-backpack-charms"
+    },
+    "B0DT8JRP6M": {
+      "sku": "VL-37PJ-YN2K",
+      "portfolio": "cross-stitch-backpack-charms"
+    },
+    "B0DT8K5N3Q": {
+      "sku": "XA-52WH-DT7G",
+      "portfolio": "cross-stitch-backpack-charms"
+    },
+    "B0F4XNWK7R": {
+      "sku": "ZF-86BN-KS4L",
+      "portfolio": "bunny-knitting-loom-kit"
+    },
+    "B0F8DH5K9L": {
+      "sku": "AW-43VR-MP8T",
+      "portfolio": "needlepoint-kits"
+    },
+    "B0F8DJ2M7P": {
+      "sku": "GQ-78LD-CX3N",
+      "portfolio": "needlepoint-kits"
+    },
+    "B0FHVNXK4R": {
+      "sku": "EH-95FK-BR6W",
+      "portfolio": "my-first-cross-stitch"
+    },
+    "B0FHVP3M8K": {
+      "sku": "RJ-21XC-TG5V",
+      "portfolio": "my-first-cross-stitch"
+    },
+    "B09WQK7V2H": {
+      "sku": "LM-67QD-NR4S",
+      "portfolio": "stitch-dictionary-all"
+    },
+    "B09WQLM4T6": {
+      "sku": "PB-34WT-HX9J",
+      "portfolio": "stitch-dictionary-all"
+    },
+    "B0BN2F8JK4": {
+      "sku": "DF-58NP-KV7R",
+      "portfolio": "embroidery-for-kids"
+    },
+    "B0D5L2WN8K": {
+      "sku": "CK-42MH-LS3T",
+      "portfolio": "dessert-family"
+    },
+    "B07D6F3HL5": {
+      "sku": "WN-89GP-QT6F",
+      "portfolio": "biggie-beads"
+    },
+    "B09THP7JW8": {
+      "sku": "SH-16YK-BM2X",
+      "portfolio": "fuse-beads"
+    },
+    "B0CLL5TN4K": {
+      "sku": "UV-53RJ-FN8D",
+      "portfolio": "latch-hook-kits"
+    },
+    "B0F8RK3P7N": {
+      "sku": "IQ-74WB-GK5M",
+      "portfolio": "latch-hook-pillow"
+    },
+    "B0FQC8WK5H": {
+      "sku": "OA-28XS-TP9L",
+      "portfolio": "unassigned"
+    },
+    "B0FQC9JM3T": {
+      "sku": "FT-63NQ-VR4B",
+      "portfolio": "unassigned"
+    }
+  }
+}

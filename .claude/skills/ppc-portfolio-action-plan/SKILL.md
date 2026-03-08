@@ -7,7 +7,7 @@ triggers:
   - portfolio action plan
   - fix portfolio
   - work on portfolio
-output_location: outputs/research/ppc-agent/portfolio-action-plan/
+output_location: outputs/research/ppc-agent/deep-dives/
 ---
 
 # PPC Portfolio Action Plan
@@ -49,7 +49,7 @@ A **mini-orchestrator** that takes a single portfolio through a complete cycle:
 
 ### File Organization
 ```
-outputs/research/ppc-agent/portfolio-action-plan/
+outputs/research/ppc-agent/deep-dives/
   briefs/          # Deep dive + action plan briefs (user reads first)
   snapshots/       # Machine-readable portfolio state JSON
   action-logs/     # What was proposed, approved, executed, results
@@ -80,7 +80,7 @@ Ask the user which portfolio to analyze, or extract the portfolio name from thei
 - Hero ASIN(s) in portfolio
 - ASIN-to-portfolio mapping
 
-**Load the portfolio tracker** at `outputs/research/ppc-agent/portfolios/{portfolio-slug}.json`:
+**Load the portfolio tracker** at `outputs/research/ppc-agent/state/{portfolio-slug}.json`:
 - **If tracker exists:** Read it — this is your primary context. It contains goals, baseline, all previous changes, pending actions, scheduled reviews, and improvement history.
 - **If tracker doesn't exist:** Create it with the skeleton structure (see ppc-agent SKILL.md for schema). Set `portfolio.stage` and `goals` from `context/business.md`.
 
@@ -114,9 +114,9 @@ Read ALL of these in parallel:
 |------|---------|-----------|
 | `context/business.md` | Stage, targets, hero ASINs | Yes |
 | `context/search-terms.md` | Protected terms for negation safety | Yes |
-| `outputs/research/ppc-agent/agent-state.json` | Pending actions, last runs | Yes |
+| `outputs/research/ppc-agent/state/agent-state.json` | Pending actions, last runs | Yes |
 | Most recent `outputs/research/ppc-weekly/snapshots/*/summary.json` | Weekly baseline for WoW comparison | If <7d old |
-| Most recent `outputs/research/ppc-agent/portfolio/*-portfolio-snapshot.json` | Previous portfolio summary | If exists |
+| Most recent `outputs/research/ppc-agent/portfolio-summaries/*-portfolio-snapshot.json` | Previous portfolio summary | If exists |
 | Most recent `outputs/research/ppc-agent/bids/*-bid-changes-applied.json` | Recent bid changes (avoid re-recommending) | If <7d old |
 | Most recent `outputs/research/ppc-agent/search-terms/*-applied-actions.json` | Recent negatives (dedup) | If <14d old |
 | Most recent `outputs/research/ppc-agent/rank-optimizer/snapshots/*/rank-spend-matrix.json` | Previous rank classifications | If exists |
@@ -254,8 +254,81 @@ Score each dimension (0-10), then combine:
 **This grade feeds into the overall Health Score** alongside performance metrics. A portfolio can have good ACoS but terrible structure (e.g., all spend going through a single broad campaign with no SK isolation).
 
 ## TOS Strategy Audit
-| Campaign | TOS% | Effective TOS Bid | TOS ACoS | ROS ACoS | PP ACoS | Health |
+| Campaign | TOS% | Effective TOS Bid | TOS ACoS | ROS ACoS | PP ACoS | PP% | ROS% | Health |
 {Health classifications: TOS_DOMINANT, TOS_EFFICIENT_ROS_BLEEDING, TOS_BLEEDING, ALL_EFFICIENT, ALL_BLEEDING, INSUFFICIENT_DATA}
+
+## PP/ROS Placement Modifier Decision Framework
+
+**CRITICAL: Adding PP/ROS modifiers is NOT a default recommendation.** Each campaign must be evaluated individually using placement data. Do NOT blanket-recommend "add PP +X% and ROS +Y% to all campaigns missing them."
+
+### Required Data Before Any PP/ROS Recommendation
+
+You MUST have at least ONE of these before recommending PP/ROS changes:
+1. **Placement report data** (sp_placements) — shows per-placement ACoS, spend, sales, orders
+2. **30d search term data with placement context** — shows which placements are converting
+3. **Budget utilization data** — shows if campaign is spend-constrained
+
+**If placement data is unavailable:** Do NOT recommend PP/ROS changes. Instead, flag as P4 Monitor: "Collect placement data before adjusting PP/ROS."
+
+### Decision Matrix: When to ADD PP/ROS Modifiers (currently at 0%)
+
+| Condition | Add PP/ROS? | Rationale |
+|-----------|-------------|-----------|
+| Campaign has TOS modifier, base bid is competitive (≥70% of Amazon rec), and is spending normally | **NO** | Base bid alone is winning non-TOS auctions. Adding modifiers would overpay. |
+| Campaign has TOS modifier, base bid is low (<70% of Amazon rec), campaign is NOT spending, AND the campaign has proven TOS conversion data (ACoS ≤ target) | **MAYBE** | Low base bid may explain under-spending. But first check: is MK broad cannibalizing? Is there a structural issue? PP/ROS is only the fix if the campaign is truly being outbid on non-TOS. |
+| Campaign is dormant (near-zero spend over 30d) with no other structural explanation | **INVESTIGATE FIRST** | Check for: paused ad groups, zero keywords, MK broad stealing traffic, irrelevant targeting. PP/ROS won't fix a structurally broken campaign. |
+| Campaign is budget-capped (≥80% utilization) | **NO** | Adding PP/ROS increases reach but campaign can't afford more impressions. Fix budget first, then reassess. |
+| New campaign (created this session) | **YES (conservative)** | Start with PP +10%, ROS +10% to test non-TOS performance. Revisit after 14d of data. |
+| Portfolio stage is LAUNCH and campaign targets hero keywords | **YES (moderate)** | Launch needs maximum visibility. PP +15-25%, ROS +15-25% to drive impressions across all placements. |
+| Placement data shows non-TOS placements are MORE efficient than TOS | **YES** | Lean into what's working. Set PP/ROS modifiers to shift spend toward efficient placements. |
+
+### Decision Matrix: When to INCREASE Existing PP/ROS Modifiers
+
+| Condition | Increase? | How Much |
+|-----------|-----------|----------|
+| PP/ROS placement ACoS is ≤80% of target AND campaign is NOT budget-capped | **YES** | +5-10pp incremental. Never more than +15pp in one change. |
+| Campaign is performing well overall but non-TOS share is <30% of spend | **MAYBE** | Only if TOS is saturated (high impression share) and non-TOS is efficient. |
+| Non-TOS ACoS is worse than TOS ACoS | **NO** | The current modifiers may already be too high. |
+
+### Decision Matrix: When to DECREASE or REMOVE PP/ROS Modifiers
+
+| Condition | Action | Rationale |
+|-----------|--------|-----------|
+| PP or ROS placement ACoS is >1.5x target | **Decrease by 10-20pp** | Non-TOS is bleeding. Reduce exposure. |
+| PP or ROS placement ACoS is >2x target with significant spend | **Remove (set to 0%)** | Non-TOS is a waste channel for this campaign. |
+| Campaign is overspending (ACoS above target) and non-TOS is the primary waste source | **Decrease or remove** | "Other on-Amazon" has no modifier — lowering default bid is the only lever. PP can be directly reduced. |
+
+### PP/ROS Modifier Ranges by Context
+
+| Context | PP Range | ROS Range | Notes |
+|---------|----------|-----------|-------|
+| Launch (hero keywords) | +15-25% | +15-25% | Maximum visibility |
+| Scaling (proven converters) | +10-20% | +10-20% | Only if placement data supports |
+| Mature (organic rank #1-3) | +0-10% | +0-10% | Organic handles most non-TOS traffic |
+| New campaign (testing) | +10% | +10% | Conservative start, adjust after 14d |
+| Dormant rescue (confirmed bid issue) | +10-15% | +10-15% | Only after ruling out structural issues |
+
+### What PP/ROS Modifiers Do NOT Fix
+
+- MK Broad cannibalizing SK campaigns → Fix with negatives, not modifiers
+- Paused ad groups → Re-enable the ad group
+- Zero keywords in campaign → Add keywords
+- Low base bid on all placements → Raise base bid (affects ALL placements including TOS)
+- "Other on-Amazon" waste → No modifier exists for this. Lower the default bid instead.
+
+### Presentation Requirement for PP/ROS Actions
+
+When proposing a PP/ROS change, the action item MUST include:
+1. **Current modifiers:** TOS %, PP %, ROS % (or "none")
+2. **Placement performance:** Per-placement ACoS/spend/orders if available, or "no placement data"
+3. **Why this campaign specifically:** What evidence supports this change vs leaving as-is
+4. **Alternative considered:** What else could explain the under-spending (if that's the motivation)
+
+**Example of a GOOD PP/ROS recommendation:**
+> "Add PP +15%, ROS +15% to SK latch hook kit. **Evidence:** Placement data shows TOS at 28% ACoS (35% target), PP at 31% ACoS, but PP gets only 8% of spend despite 40% of impressions. Base bid $0.34 is below Amazon rec $0.52 for non-TOS. Campaign is NOT budget-capped (23% utilization). No MK broad cannibalization detected."
+
+**Example of a BAD PP/ROS recommendation (DO NOT DO THIS):**
+> "Add PP +13%, ROS +18% to 7 campaigns missing modifiers. These campaigns are under-spending."
 
 ## Keyword Strategy Analysis
 **Roots covered:** {list root words present across campaigns}
@@ -320,9 +393,9 @@ Score each dimension (0-10), then combine:
 {Numbered list of root causes found across all sections above. Not just symptoms -- explain WHY each issue exists and its downstream impact.}
 ```
 
-**Save the brief:** `outputs/research/ppc-agent/portfolio-action-plan/briefs/{YYYY-MM-DD}-{portfolio-slug}-brief.md`
+**Save the brief:** `outputs/research/ppc-agent/deep-dives/briefs/{YYYY-MM-DD}-{portfolio-slug}-brief.md`
 
-**Save the snapshot:** `outputs/research/ppc-agent/portfolio-action-plan/snapshots/{YYYY-MM-DD}-{portfolio-slug}-snapshot.json`
+**Save the snapshot:** `outputs/research/ppc-agent/deep-dives/snapshots/{YYYY-MM-DD}-{portfolio-slug}-snapshot.json`
 
 Snapshot JSON structure:
 ```json
@@ -409,6 +482,8 @@ Analyze every section of the brief and generate ALL applicable actions. Cover ev
 | Portfolio Structure Health (spend imbalance) | `BID_DECREASE` / `BUDGET_DECREASE` (on over-dominant campaigns) |
 | TOS Strategy Audit (TOS bleeding) | `BID_DECREASE` (TOS modifier) |
 | TOS Strategy Audit (efficient but low TOS) | `BID_INCREASE` (TOS modifier) |
+| PP/ROS Decision Framework (under-spending, placement data supports) | `BID_INCREASE` (PP/ROS modifier) — only after ruling out structural causes |
+| PP/ROS Decision Framework (non-TOS bleeding) | `BID_DECREASE` (PP/ROS modifier) or remove |
 | Keyword Strategy (gaps) | `KEYWORD_ADD`, `CAMPAIGN_CREATE` (MK) |
 | Rank Radar (declining keywords) | `BID_INCREASE` (rank defense) |
 | Search Terms (zero-order waste) | `NEGATE_SEARCH_TERM` |
@@ -573,7 +648,7 @@ Execute in this strict sequence:
 
 ### API Call Patterns
 
-**BID_DECREASE / BID_INCREASE (TOS modifier):**
+**BID_DECREASE / BID_INCREASE (TOS modifier only):**
 ```
 update_sp_campaigns(
   campaigns=[{
@@ -582,6 +657,24 @@ update_sp_campaigns(
       "strategy": "LEGACY_FOR_SALES",
       "placementBidding": [
         {"placement": "PLACEMENT_TOP", "percentage": {new_tos_pct}}
+      ]
+    }
+  }],
+  marketplace="US"
+)
+```
+
+**BID_INCREASE / BID_DECREASE (PP/ROS modifiers — requires decision framework approval):**
+```
+update_sp_campaigns(
+  campaigns=[{
+    "campaignId": "{id}",
+    "dynamicBidding": {
+      "strategy": "LEGACY_FOR_SALES",
+      "placementBidding": [
+        {"placement": "PLACEMENT_TOP", "percentage": {tos_pct}},
+        {"placement": "PLACEMENT_PRODUCT_PAGE", "percentage": {pp_pct}},
+        {"placement": "PLACEMENT_REST_OF_SEARCH", "percentage": {ros_pct}}
       ]
     }
   }],
@@ -640,6 +733,93 @@ create_sp_campaign_negative_keywords(
 Batch max 100 per call.
 
 **CAMPAIGN_CREATE (full pipeline -- follow Campaign Creator Steps 7a-7e):**
+
+### Campaign Creation Approval Card (MANDATORY)
+
+**Before executing ANY campaign creation, present this card to the user and wait for explicit approval. Do NOT create the campaign until the user says yes.**
+
+```markdown
+---
+
+## New Campaign Proposal
+
+### Why This Campaign?
+{2-3 sentences explaining the strategic rationale. What gap does it fill? What evidence supports it?}
+
+| | |
+|---|---|
+| **Evidence** | {e.g., "Search term 'lacing cards' converts at 13.7% ACoS, 18.5% CVR across 14 orders in Auto/MK broad. No dedicated SK exists."} |
+| **Source signal** | {PROMOTE from search terms / Rank defense / Structure gap / Keyword opportunity} |
+
+---
+
+### Campaign Settings
+
+| Setting | Value | Rationale |
+|---------|-------|-----------|
+| **Name** | `{SOP name}` | {naming convention} |
+| **Type** | SK Exact / MK Broad / Auto / PT | {why this match type} |
+| **Portfolio** | {portfolio name} ({portfolio_id}) | |
+| **Targeting** | MANUAL / AUTO | |
+| **State** | PAUSED (user enables) | |
+| **Daily Budget** | ${amount} | {stage default or custom — explain if custom} |
+| **Bidding Strategy** | LEGACY_FOR_SALES | Fixed bids + down only |
+| **Start Date** | {YYYY-MM-DD} | |
+
+### Placement Modifiers
+
+| Placement | Modifier | Rationale |
+|-----------|----------|-----------|
+| **TOS** | {X}% | {source: PROMOTE 47% / rank defense 63% / gap fill 41% / new KW 33%} |
+| **Product Page** | {X}% | {from PP/ROS defaults table — explain why this level} |
+| **Rest of Search** | {X}% | {from PP/ROS defaults table — explain why this level} |
+
+### Ad Group
+
+| Setting | Value |
+|---------|-------|
+| **Name** | `{campaign_name} - Ad Group` |
+| **Default Bid** | ${bid} |
+| **Bid source** | {how bid was calculated: Amazon rec, CPC from search term data, manual} |
+
+### Product Ads
+
+| ASIN | SKU | Product | Role |
+|------|-----|---------|------|
+| {ASIN} | {SKU} | {product name} | Hero / Secondary |
+
+### Keywords (manual campaigns only)
+
+| Keyword | Match Type | Bid | Search Volume | Current Rank | Evidence |
+|---------|-----------|-----|---------------|-------------|----------|
+| {keyword} | EXACT / BROAD | ${bid} | {SV} | #{rank} or "unranked" | {where this KW was validated — search terms, niche keywords, rank radar} |
+
+### Negative Keywords (seeded)
+
+| Source | Count | Examples |
+|--------|-------|---------|
+| Proactive negative list | {N} | {top 3-5 examples} |
+| Cross-campaign isolation | {N} | {terms negated to prevent cannibalization — list all} |
+| **Total negatives** | {N} | |
+
+### Risk Assessment
+
+| Risk | Level | Mitigation |
+|------|-------|-----------|
+| Cannibalization with existing campaigns | LOW / MED / HIGH | {what negatives/isolation is in place} |
+| Budget impact on portfolio | LOW / MED / HIGH | {total portfolio budget before/after} |
+| Keyword overlap with other portfolios | LOW / MED / HIGH | {any cross-portfolio concerns} |
+
+---
+
+**Create this campaign?** (yes / modify / skip)
+```
+
+**Rules:**
+- Every field must be filled — no "TBD" or "N/A" unless truly not applicable (e.g., keywords for Auto campaigns)
+- If multiple campaigns are being created in one session, present each card separately
+- User modifications to any field must be confirmed before proceeding
+- If user modifies bid/budget/TOS, recalculate effective bids and update the card before creating
 
 Step A -- Create campaign:
 ```
@@ -729,6 +909,14 @@ Apply as campaign-level `NEGATIVE_PHRASE`.
 | Structure gap fill | 41% |
 | New keyword opportunity | 33% |
 
+**PP/ROS modifier defaults for new campaigns (see PP/ROS Decision Framework for existing campaigns):**
+| Stage | PP % | ROS % | Notes |
+|-------|------|-------|-------|
+| Launch (hero keywords) | 15% | 15% | Maximum visibility across placements |
+| Scaling (proven converters) | 10% | 10% | Conservative start, adjust after 14d with placement data |
+| General/new keyword | 10% | 10% | Conservative start, adjust after 14d with placement data |
+| Discovery/testing | 0% | 0% | Let TOS drive initial data before expanding |
+
 **All campaigns created in PAUSED state.** User enables manually.
 
 **CAMPAIGN_PAUSE / CAMPAIGN_ENABLE / CAMPAIGN_ARCHIVE:**
@@ -745,8 +933,8 @@ manage_sp_targets(
   action="create",
   targets=[{
     "campaignId": "{id}", "adGroupId": "{id}",
-    "expressionType": "manual",
-    "expression": [{"type": "asinSameAs", "value": "{ASIN}"}],
+    "expressionType": "MANUAL",
+    "expression": [{"type": "ASIN_SAME_AS", "value": "{ASIN}"}],
     "bid": {bid}, "state": "ENABLED"
   }],
   marketplace="US"
@@ -820,7 +1008,7 @@ Run all approved items in sequence. Present a final summary:
 
 ### 7a. Update Portfolio Tracker
 
-Update the portfolio's tracker file at `outputs/research/ppc-agent/portfolios/{portfolio-slug}.json`:
+Update the portfolio's tracker file at `outputs/research/ppc-agent/state/{portfolio-slug}.json`:
 
 1. **`baseline`** — If `null` (first deep dive for this portfolio), set it now from the 30d metrics:
    ```json
@@ -874,7 +1062,7 @@ Update the portfolio's tracker file at `outputs/research/ppc-agent/portfolios/{p
 
 ### 7b. Action Log (JSON)
 
-Save to `outputs/research/ppc-agent/portfolio-action-plan/action-logs/{YYYY-MM-DD}-{portfolio-slug}-action-log.json`:
+Save to `outputs/research/ppc-agent/deep-dives/action-logs/{YYYY-MM-DD}-{portfolio-slug}-action-log.json`:
 
 ```json
 {
@@ -928,7 +1116,7 @@ Save to `outputs/research/ppc-agent/portfolio-action-plan/action-logs/{YYYY-MM-D
 
 ### 7c. Update Agent State
 
-Update `outputs/research/ppc-agent/agent-state.json`:
+Update `outputs/research/ppc-agent/state/agent-state.json`:
 
 1. **Update `portfolio_index.{portfolio-slug}`:**
    - `last_deep_dive`: today's date
@@ -956,10 +1144,65 @@ After execution (or after saving brief-only):
 - **Approved:** {N} | **Executed:** {N} success, {N} failed, {N} skipped
 - **Estimated weekly impact:** ${X}
 
+---
+
+### Action Items Summary (P1 / P2 / P3)
+
+**MANDATORY: Always include this section.** The user should never have to ask "what are the action items?" — they're right here with full context.
+
+#### P1 — Critical (execute ASAP)
+
+For each P1 item, include ALL of these:
+
+| # | Category | Action | Campaign | Score |
+|---|----------|--------|----------|-------|
+| {n} | {BID_DECREASE / BUDGET_INCREASE / etc.} | {what was done or needs doing} | {campaign name} | {impact score} |
+
+**Per-item detail (REQUIRED for every P1):**
+
+> **Item {N}: {Action title}**
+> - **What:** {1-sentence description of the change}
+> - **Why:** {Strategic rationale — what problem does this solve? What evidence supports it?}
+> - **Data:** {30d spend, sales, ACoS, orders, CVR for the affected campaign}
+> - **Before → After:** {specific values changed, e.g., TOS 895% → 347%, budget $20/d → $31/d}
+> - **Expected impact:** {estimated $/week savings or additional profitable spend}
+> - **Status:** {EXECUTED / APPROVED-PENDING / DEFERRED / FAILED — with detail if failed}
+
+#### P2 — Optimization (execute if time allows)
+
+Same per-item format as P1. Include data backing for every recommendation.
+
+> **Item {N}: {Action title}**
+> - **What / Why / Data / Before → After / Expected impact / Status**
+
+#### P3 — Maintenance (queued for next run)
+
+For P3 items, a shorter format is acceptable but still include the "why":
+
+| # | Category | Action | Campaign | Why | When |
+|---|----------|--------|----------|-----|------|
+| {n} | {category} | {description} | {campaign} | {1-sentence rationale + key data point} | {suggested timing: "next deep dive", "7-day re-check", "after P1 results settle"} |
+
+#### P4 — Monitor Only (no action, observation)
+
+- {keyword/campaign} — {what to watch for} — {re-evaluate in N days}
+
+---
+
+### Pending Actions Carried Forward
+
+{List any P2/P3/P4 items that were NOT executed this session, with their priority and suggested timing. These get written to the portfolio tracker's `pending_actions` field.}
+
+| # | Priority | Action | Suggested Timing | Notes |
+|---|----------|--------|-----------------|-------|
+| {n} | P2/P3 | {description} | {date or trigger condition} | {any context needed for the future run} |
+
+---
+
 ### Files Saved
-- Brief: `outputs/research/ppc-agent/portfolio-action-plan/briefs/{filename}`
-- Snapshot: `outputs/research/ppc-agent/portfolio-action-plan/snapshots/{filename}`
-- Action Log: `outputs/research/ppc-agent/portfolio-action-plan/action-logs/{filename}`
+- Brief: `outputs/research/ppc-agent/deep-dives/briefs/{filename}`
+- Snapshot: `outputs/research/ppc-agent/deep-dives/snapshots/{filename}`
+- Action Log: `outputs/research/ppc-agent/deep-dives/action-logs/{filename}`
 
 ### Next Steps
 - {Recommended follow-up: e.g., "Re-check in 7 days", "Run bid review in 3 days", "Monitor rank on {keyword}"}

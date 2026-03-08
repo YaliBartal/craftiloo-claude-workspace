@@ -98,13 +98,13 @@ Load in parallel:
 | File | Purpose | Freshness Rule |
 |------|---------|----------------|
 | `context/business.md` | Portfolio stages + ACoS targets | Always current |
-| `outputs/research/ppc-agent/portfolios/*.json` | **Portfolio trackers** — goals, pending bid actions, recent change_log (avoid re-recommending), baseline for context | Always read |
+| `outputs/research/ppc-agent/state/*.json` | **Portfolio trackers** — goals, pending bid actions, recent change_log (avoid re-recommending), baseline for context | Always read |
 | Most recent `outputs/research/ppc-weekly/snapshots/*/campaign-report.json` | Campaign performance data | Use if <3 days old |
 | Most recent `outputs/research/ppc-weekly/snapshots/*/targeting-report.json` | Keyword/target performance | Use if <3 days old |
 | Most recent `outputs/research/ppc-weekly/snapshots/*/summary.json` | Weekly baseline metrics | Use if <7 days old |
-| `outputs/research/ppc-agent/daily/*-health-snapshot.json` | Recent daily health checks | Last 3 days |
+| `outputs/research/ppc-agent/daily-health/*-health-snapshot.json` | Recent daily health checks | Last 3 days |
 | `outputs/research/ppc-agent/bids/*-bid-changes-applied.json` | Previous bid changes | For tracking what we already changed |
-| `outputs/research/ppc-agent/agent-state.json` | Last bid review date, portfolio_index | |
+| `outputs/research/ppc-agent/state/agent-state.json` | Last bid review date, portfolio_index | |
 
 **From portfolio trackers, use:**
 - `change_log` — avoid re-recommending changes already made in the last 7 days
@@ -531,7 +531,7 @@ After user approval:
 **Applied changes log:**
 `outputs/research/ppc-agent/bids/{YYYY-MM-DD}-bid-changes-applied.json`
 
-**Portfolio tracker updates** — for each portfolio with applied changes, update its tracker at `outputs/research/ppc-agent/portfolios/{slug}.json`:
+**Portfolio tracker updates** — for each portfolio with applied changes, update its tracker at `outputs/research/ppc-agent/state/{slug}.json`:
 
 1. **`change_log`** — append entry:
    ```json

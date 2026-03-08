@@ -44,11 +44,11 @@ Load in parallel:
 | File | Purpose | Required |
 |------|---------|----------|
 | `context/business.md` | Portfolio stages, hero ASINs, ACoS targets | Always |
-| `outputs/research/ppc-agent/agent-state.json` | Pending actions requesting campaign creation | Always |
+| `outputs/research/ppc-agent/state/agent-state.json` | Pending actions requesting campaign creation | Always |
 | Most recent `outputs/research/ppc-agent/search-terms/*-search-term-harvest.md` | PROMOTE candidates | If exists |
 | Most recent `outputs/research/ppc-agent/rank-optimizer/snapshots/*/rank-spend-matrix.json` | REDIRECT/PROTECT keywords | If exists |
 | Most recent `outputs/research/ppc-agent/rank-optimizer/briefs/*-rank-optimizer.md` | REDIRECT/PROTECT briefs | If exists |
-| Most recent `outputs/research/ppc-agent/portfolio/*-portfolio-snapshot.json` | Structure gaps per portfolio | If exists |
+| Most recent `outputs/research/ppc-agent/portfolio-summaries/*-portfolio-snapshot.json` | Structure gaps per portfolio | If exists |
 | Most recent `outputs/research/negative-keywords/briefs/*-negatives-*.md` | Proactive negative lists for seeding | For negative seeding |
 
 **If no input files exist from any source:** Tell the user "No campaign creation signals found. Run Search Term Harvester, Rank Optimizer, or Portfolio Summary first to generate candidates."
@@ -161,7 +161,13 @@ For each candidate (up to 5), generate all fields:
 | REDIRECT | 33% |
 | Structure gap | 41% |
 
-**No Product Pages or Rest of Search modifiers.** TOS only at creation. Bid Recommender adds others later based on performance data.
+**PP/ROS modifiers at creation follow the defaults table in the Portfolio Action Plan skill's PP/ROS Decision Framework:**
+| Stage | PP % | ROS % | Notes |
+|-------|------|-------|-------|
+| Launch (hero keywords) | 15% | 15% | Maximum visibility |
+| Scaling (proven converters) | 10% | 10% | Conservative start |
+| General/new keyword | 10% | 10% | Conservative start |
+| Discovery/testing | 0% | 0% | TOS-only until placement data exists |
 
 #### E. Keywords / Targets
 
@@ -236,7 +242,9 @@ If duplicate found: remove from proposal, note: "Skipped: {campaign name} — al
 | **Keyword** | `{keyword}` |
 | **Match Type** | EXACT |
 | **Base Bid** | ${bid} (Amazon rec: ${rec} med, ×{factor} for {reason}) |
-| **TOS Modifier** | {pct}% (only placement bid — no Product Pages, no Rest of Search) |
+| **TOS Modifier** | {pct}% |
+| **PP Modifier** | {pct}% ({rationale — stage default or "0% — discovery/testing"}) |
+| **ROS Modifier** | {pct}% ({rationale — stage default or "0% — discovery/testing"}) |
 | **Daily Budget** | ${budget} ({stage} default) |
 | **Bidding Strategy** | LEGACY_FOR_SALES (down-only dynamic) |
 | **State** | PAUSED (you enable manually after review) |
@@ -290,7 +298,7 @@ create_sp_campaigns(campaigns='[{
 }]', marketplace="US")
 ```
 
-Extract `campaignId` from response. **Only PLACEMENT_TOP** — no PLACEMENT_PRODUCT_PAGE or PLACEMENT_REST_OF_SEARCH.
+Extract `campaignId` from response. Include `PLACEMENT_PRODUCT_PAGE` and `PLACEMENT_REST_OF_SEARCH` entries in `placementBidding` if the PP/ROS defaults table specifies non-zero values for this campaign's stage/context.
 
 #### 7b. Create Ad Group
 
@@ -375,7 +383,7 @@ create_sp_campaign_negative_keywords(keywords='[
 
 #### 8b. Update Agent-State
 
-In `outputs/research/ppc-agent/agent-state.json`:
+In `outputs/research/ppc-agent/state/agent-state.json`:
 - Mark completed `pending_actions` as `"status": "completed"` with date
 - Add entry to `applied_changes`:
 ```json

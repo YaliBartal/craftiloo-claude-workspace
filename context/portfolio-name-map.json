@@ -1,0 +1,210 @@
+{
+  "_description": "Maps Amazon Ads API portfolio names to display names, slugs, IDs, and stages. Updated 2026-03-06.",
+  "_usage": "Use slug as filename key. Use display_name for briefs. Use portfolio_id for API calls.",
+
+  "active_portfolios": {
+    "4 Flowers Embroidery": {
+      "api_name": "4 Flowers Embroidery",
+      "display_name": "4 Flowers Embroidery",
+      "slug": "4-flowers-embroidery",
+      "portfolio_id": "256551542937498",
+      "stage": "scaling"
+    },
+    "Biggie Beads": {
+      "api_name": "Biggie Beads",
+      "display_name": "Biggie Beads",
+      "slug": "biggie-beads",
+      "portfolio_id": "100246305498498",
+      "stage": "scaling"
+    },
+    "Bunny Knitting Loom Kit": {
+      "api_name": "Bunny Knitting Loom Kit",
+      "display_name": "Bunny Knitting Loom Kit",
+      "slug": "bunny-knitting-loom-kit",
+      "portfolio_id": "268498028449498",
+      "stage": "late_launch"
+    },
+    "Cat and Hat Knitting": {
+      "api_name": "Cat and Hat Knitting",
+      "display_name": "Cat and Hat Knitting",
+      "slug": "cat-and-hat-knitting",
+      "portfolio_id": "48498541877498",
+      "stage": "late_launch"
+    },
+    "Catch all auto": {
+      "api_name": "Catch all auto",
+      "display_name": "Catch All Auto",
+      "slug": "catch-all-auto",
+      "portfolio_id": "162652019177498",
+      "stage": "general"
+    },
+    "cross embroidery kits": {
+      "api_name": "cross embroidery kits",
+      "display_name": "Cross Embroidery Kits",
+      "slug": "cross-embroidery-kits",
+      "portfolio_id": "127168376381498",
+      "stage": "scaling"
+    },
+    "Cross Stitch Backpack Charms": {
+      "api_name": "Cross Stitch Backpack Charms",
+      "display_name": "Cross Stitch Backpack Charms",
+      "slug": "cross-stitch-backpack-charms",
+      "portfolio_id": "195498537786498",
+      "stage": "late_launch"
+    },
+    "Dessert Family": {
+      "api_name": "Dessert Family",
+      "display_name": "Dessert Family",
+      "slug": "dessert-family",
+      "portfolio_id": "211654577498498",
+      "stage": "scaling"
+    },
+    "embroidery for kids": {
+      "api_name": "embroidery for kids",
+      "display_name": "Embroidery for Kids",
+      "slug": "embroidery-for-kids",
+      "portfolio_id": "241498563498498",
+      "stage": "scaling"
+    },
+    "Fairy Family": {
+      "api_name": "Fairy Family",
+      "display_name": "Fairy Family",
+      "slug": "fairy-family",
+      "portfolio_id": "53498514498498",
+      "stage": "scaling"
+    },
+    "Fuse Beads": {
+      "api_name": "Fuse Beads",
+      "display_name": "Fuse Beads",
+      "slug": "fuse-beads",
+      "portfolio_id": "75498549498498",
+      "stage": "scaling"
+    },
+    "Latch Hook Kits": {
+      "api_name": "Latch Hook Kits",
+      "display_name": "Latch Hook Kits",
+      "slug": "latch-hook-kits",
+      "portfolio_id": "244498555498498",
+      "stage": "growth"
+    },
+    "Latch Hook Pillow": {
+      "api_name": "Latch Hook Pillow",
+      "display_name": "Latch Hook Pillow",
+      "slug": "latch-hook-pillow",
+      "portfolio_id": "283498517498498",
+      "stage": "late_launch"
+    },
+    "Needlepoint Kits": {
+      "api_name": "Needlepoint Kits",
+      "display_name": "Needlepoint Kits",
+      "slug": "needlepoint-kits",
+      "portfolio_id": "175498553498498",
+      "stage": "growth"
+    },
+    "shield all": {
+      "api_name": "shield all",
+      "display_name": "Shield All",
+      "slug": "shield-all",
+      "portfolio_id": "207498549498498",
+      "stage": "general"
+    },
+    "Stitch dictionary all": {
+      "api_name": "Stitch dictionary all",
+      "display_name": "Stitch Dictionary All",
+      "slug": "stitch-dictionary-all",
+      "portfolio_id": "106498559498498",
+      "stage": "general"
+    },
+    "My first cross stitch": {
+      "api_name": "My first cross stitch",
+      "display_name": "My First Cross Stitch",
+      "slug": "my-first-cross-stitch",
+      "portfolio_id": "295498510498498",
+      "stage": "launch"
+    }
+  },
+
+  "other_active": {
+    "SP - auto Longtail for Products": {
+      "api_name": "SP - auto Longtail for Products",
+      "display_name": "SP Auto Longtail",
+      "slug": "sp-auto-longtail",
+      "portfolio_id": "169498578498498",
+      "stage": "general",
+      "note": "Cross-product auto campaign"
+    },
+    "SB": {
+      "api_name": "SB",
+      "display_name": "Sponsored Brands",
+      "slug": "sb",
+      "portfolio_id": "130498587498498",
+      "stage": "general",
+      "note": "All SB campaigns"
+    },
+    "SD": {
+      "api_name": "SD",
+      "display_name": "Sponsored Display",
+      "slug": "sd",
+      "portfolio_id": "188498592498498",
+      "stage": "general",
+      "note": "All SD campaigns"
+    }
+  },
+
+  "archived": [
+    "zz_ unused portfolio 1",
+    "zz_ unused portfolio 2",
+    "zz_ unused portfolio 3",
+    "zz_ unused portfolio 4",
+    "zz_ unused portfolio 5",
+    "zz_ unused portfolio 6",
+    "zz_ unused portfolio 7",
+    "zz_ unused portfolio 8"
+  ],
+
+  "_lookup_by_id": {
+    "256551542937498": "4-flowers-embroidery",
+    "100246305498498": "biggie-beads",
+    "268498028449498": "bunny-knitting-loom-kit",
+    "48498541877498": "cat-and-hat-knitting",
+    "162652019177498": "catch-all-auto",
+    "127168376381498": "cross-embroidery-kits",
+    "195498537786498": "cross-stitch-backpack-charms",
+    "211654577498498": "dessert-family",
+    "241498563498498": "embroidery-for-kids",
+    "53498514498498": "fairy-family",
+    "75498549498498": "fuse-beads",
+    "244498555498498": "latch-hook-kits",
+    "283498517498498": "latch-hook-pillow",
+    "175498553498498": "needlepoint-kits",
+    "207498549498498": "shield-all",
+    "106498559498498": "stitch-dictionary-all",
+    "295498510498498": "my-first-cross-stitch",
+    "169498578498498": "sp-auto-longtail",
+    "130498587498498": "sb",
+    "188498592498498": "sd"
+  },
+
+  "_lookup_by_api_name": {
+    "4 Flowers Embroidery": "4-flowers-embroidery",
+    "Biggie Beads": "biggie-beads",
+    "Bunny Knitting Loom Kit": "bunny-knitting-loom-kit",
+    "Cat and Hat Knitting": "cat-and-hat-knitting",
+    "Catch all auto": "catch-all-auto",
+    "cross embroidery kits": "cross-embroidery-kits",
+    "Cross Stitch Backpack Charms": "cross-stitch-backpack-charms",
+    "Dessert Family": "dessert-family",
+    "embroidery for kids": "embroidery-for-kids",
+    "Fairy Family": "fairy-family",
+    "Fuse Beads": "fuse-beads",
+    "Latch Hook Kits": "latch-hook-kits",
+    "Latch Hook Pillow": "latch-hook-pillow",
+    "Needlepoint Kits": "needlepoint-kits",
+    "shield all": "shield-all",
+    "Stitch dictionary all": "stitch-dictionary-all",
+    "My first cross stitch": "my-first-cross-stitch",
+    "SP - auto Longtail for Products": "sp-auto-longtail",
+    "SB": "sb",
+    "SD": "sd"
+  }
+}

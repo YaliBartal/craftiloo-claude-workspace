@@ -1,0 +1,604 @@
+{
+  "$schema_version": "1.0",
+  "last_updated": "2026-03-06",
+  "portfolio": {
+    "name": "Fairy Family",
+    "id": "279805104407998",
+    "slug": "fairy-family",
+    "stage": "Scaling",
+    "hero_asins": [
+      {
+        "asin": "B09WQSBZY7",
+        "product": "Fairy Sewing Kit",
+        "role": "hero"
+      }
+    ],
+    "secondary_asins": [
+      {
+        "asin": "B0BNDVTTSH",
+        "product": "Ballerina Dancers Sewing Kit",
+        "role": "secondary"
+      },
+      {
+        "asin": "B0BP8GCK1G",
+        "product": "Fairy Elves Sewing Kit",
+        "role": "underperformer"
+      },
+      {
+        "asin": "B0C3YQ5RG1",
+        "product": "Pirates Sewing Kit",
+        "role": "minimal"
+      },
+      {
+        "asin": "B0CDH84QDP",
+        "product": "Dogs Stuffed Animal Kit",
+        "role": "minimal"
+      }
+    ],
+    "hero_keywords": [
+      {
+        "keyword": "sewing kit for kids",
+        "search_volume": 18533
+      },
+      {
+        "keyword": "fairy sewing kit for kids",
+        "search_volume": 987
+      },
+      {
+        "keyword": "sewing for kids",
+        "search_volume": 7215
+      },
+      {
+        "keyword": "felt sewing kit for kids",
+        "search_volume": 1877
+      },
+      {
+        "keyword": "sewing kits for kids 5-8",
+        "search_volume": 1544
+      }
+    ],
+    "niche_id": "RmbSD3OH6t",
+    "rank_radar_id": "3ef2dcb4-0d08-45a1-8ecf-be5795e30773",
+    "campaigns_enabled": 20,
+    "campaigns_paused": 14
+  },
+  "goals": {
+    "acos_target": 30,
+    "acos_red_flag": 50,
+    "cvr_target": 10,
+    "budget_envelope_daily": 322,
+    "rank_targets": [
+      {
+        "keyword": "sewing kit for kids",
+        "target_rank": 10,
+        "current_rank": 14
+      },
+      {
+        "keyword": "fairy sewing kit for kids",
+        "target_rank": 3,
+        "current_rank": 1
+      },
+      {
+        "keyword": "sewing for kids",
+        "target_rank": 8,
+        "current_rank": 5
+      },
+      {
+        "keyword": "felt sewing kit for kids",
+        "target_rank": 5,
+        "current_rank": 2
+      },
+      {
+        "keyword": "sewing kits for kids 5-8",
+        "target_rank": 5,
+        "current_rank": 3
+      }
+    ],
+    "strategic_notes": [
+      "Defend hero KW 'sewing kit for kids' rank â€” dropped #7->#14 in Feb",
+      "Reduce MK broad dominance (was 41% of spend at 46.2% ACoS)",
+      "Investigate Fairy Elves (B0BP8GCK1G) zero-sales listing â€” 26 sessions, 0 orders",
+      "Scale SK fairy sewing kit (top performer 13.3% ACoS, 29.6% CVR)"
+    ],
+    "updated": "2026-03-03",
+    "tacos_target": 16,
+    "tacos_red_flag": 25,
+    "break_even_acos": 24.9
+  },
+  "baseline": {
+    "date": "2026-03-02",
+    "source": "portfolio-summary-2026-03-02 + weekly-ppc-2026-03-01",
+    "metrics": {
+      "acos": 39.8,
+      "spend_7d": 569.41,
+      "sales_7d": 1430.72,
+      "orders_7d": 64,
+      "cvr": 8.5,
+      "cpc": 0.76,
+      "roas": 2.51,
+      "organic_ratio": 54.6,
+      "margin": 32.08
+    },
+    "rank_snapshot": {
+      "keywords_tracked": 87,
+      "top_10": 17,
+      "top_50": 60,
+      "net_28d_movement": -124
+    },
+    "structure": {
+      "health_score": "5/10",
+      "campaigns_enabled": 20,
+      "campaigns_paused": 14,
+      "negatives_count": 0,
+      "campaign_types": {
+        "auto": 5,
+        "sk": 7,
+        "mk": 5,
+        "pt": 2
+      }
+    },
+    "health_status": "YELLOW"
+  },
+  "latest_metrics": {
+    "date": "2026-03-05",
+    "source": "daily-health-2026-03-05",
+    "metrics": {
+      "acos": 39.8,
+      "spend_7d": 569.41,
+      "sales_7d": 1430.72,
+      "orders_7d": 64,
+      "cvr": 8.5,
+      "cpc": 0.76,
+      "roas": 2.51,
+      "organic_ratio": 54.6,
+      "margin": 32.08,
+      "tacos_30d": 13.4,
+      "organic_ratio_30d": 77.1,
+      "margin_pct": 24.9,
+      "organic_momentum_score": 82,
+      "profit_health": "PROFITABLE"
+    },
+    "rank_snapshot": {
+      "keywords_tracked": 87,
+      "top_10": 25,
+      "top_50": 60,
+      "net_7d_movement": 3
+    },
+    "health_status": "YELLOW",
+    "delta_vs_baseline": {
+      "acos_change": 0.0,
+      "spend_7d_change_pct": 0.0,
+      "orders_7d_change_pct": 0.0,
+      "cvr_change": 0.0,
+      "rank_top10_change": 8,
+      "rank_trend": "surging"
+    }
+  },
+  "metric_history": [
+    {
+      "date": "2026-03-02",
+      "source": "portfolio-summary",
+      "acos": 39.8,
+      "spend_7d": 569.41,
+      "sales_7d": 1430.72,
+      "orders_7d": 64,
+      "cvr": 8.5,
+      "rank_top10": 17,
+      "rank_net_7d": -45,
+      "health_status": "YELLOW",
+      "health_score": "5/10",
+      "campaigns_enabled": 20,
+      "note": "Pre-deep-dive baseline. Ranks declining -124 net 28d."
+    },
+    {
+      "date": "2026-03-03",
+      "source": "portfolio-action-plan",
+      "acos": 39.8,
+      "spend_7d": 569.41,
+      "sales_7d": 1430.72,
+      "orders_7d": 64,
+      "cvr": 8.5,
+      "rank_top10": 22,
+      "rank_net_7d": null,
+      "health_status": "YELLOW",
+      "health_score": "5/10",
+      "campaigns_enabled": 20,
+      "note": "Deep dive day. 5 actions applied: TOS rebalancing + broad reduction."
+    },
+    {
+      "date": "2026-03-05",
+      "source": "daily-health",
+      "acos": 39.8,
+      "spend_7d": 569.41,
+      "sales_7d": 1430.72,
+      "orders_7d": 64,
+      "cvr": 8.5,
+      "rank_top10": 25,
+      "rank_net_7d": 3,
+      "health_status": "YELLOW",
+      "health_score": "5/10",
+      "campaigns_enabled": 20,
+      "note": "Ranks surging +3 top-10 after deep dive changes. ACoS stable."
+    },
+    {
+      "date": "2026-03-06",
+      "source": "tacos-optimizer",
+      "tacos": 13.4,
+      "organic_momentum": 82,
+      "profit_health": "PROFITABLE",
+      "margin_pct": 24.9
+    }
+  ],
+  "change_log": [
+    {
+      "date": "2026-03-03",
+      "skill": "ppc-portfolio-action-plan",
+      "summary": "Fairy Family Deep Dive â€” 5 Actions Applied",
+      "changes": [
+        {
+          "category": "BID_INCREASE",
+          "description": "SK sewing kit for kids ages 8-12: TOS 0%->167%",
+          "campaign_id": "316614216936661",
+          "old_value": {
+            "tos_pct": 0
+          },
+          "new_value": {
+            "tos_pct": 167
+          },
+          "status": "success"
+        },
+        {
+          "category": "BID_INCREASE",
+          "description": "SK sewing kit for kids: TOS 261%->312%, bid $0.34->$0.41 (hero KW rank defense)",
+          "campaign_id": "417324377096629",
+          "old_value": {
+            "tos_pct": 261,
+            "bid": 0.34
+          },
+          "new_value": {
+            "tos_pct": 312,
+            "bid": 0.41
+          },
+          "status": "success"
+        },
+        {
+          "category": "BUDGET_INCREASE",
+          "description": "SK fairy sewing kit for kids: budget $20->$31/day (top performer 13.3% ACoS, 29.6% CVR)",
+          "campaign_id": "449540884891211",
+          "old_value": {
+            "budget": 20
+          },
+          "new_value": {
+            "budget": 31
+          },
+          "status": "success"
+        },
+        {
+          "category": "BID_DECREASE",
+          "description": "MK broad: TOS 85%->52% (cannibalization fix, 46.2% ACoS)",
+          "campaign_id": "331838355911626",
+          "old_value": {
+            "tos_pct": 85
+          },
+          "new_value": {
+            "tos_pct": 52
+          },
+          "status": "success"
+        },
+        {
+          "category": "BUDGET_DECREASE",
+          "description": "MK broad: budget $35->$23/day",
+          "campaign_id": "331838355911626",
+          "old_value": {
+            "budget": 35
+          },
+          "new_value": {
+            "budget": 23
+          },
+          "status": "success"
+        }
+      ],
+      "budget_impact_daily": -1,
+      "estimated_weekly_impact": "$40-60/wk savings + rank defense",
+      "key_findings": [
+        "900% TOS autos had zero activity â€” not burning money, just dead",
+        "SK fairy sewing kit is top performer at 13.3% ACoS â€” budget increase, not TOS reduction",
+        "MK broad at 46.2% ACoS is cannibalization source â€” reduced TOS and budget"
+      ],
+      "action_log_ref": "portfolio-action-plan/action-logs/2026-03-03-fairy-family-action-log.json"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-bid-recommender",
+      "summary": "3 TOS reductions applied",
+      "changes": [
+        {
+          "category": "BID_DECREASE",
+          "campaign": "fairy sewing - SPM SK sewing for kids TOS",
+          "campaign_id": "524947739371988",
+          "old": "TOS 161%",
+          "new": "TOS 107%",
+          "change": "-34%",
+          "reason": "ff-001: Bleeding 57.9% ACoS vs 30% target",
+          "status": "success"
+        },
+        {
+          "category": "BID_DECREASE",
+          "campaign": "fairy sewing - SPM SK kids sewing kits age 5-8 TOS",
+          "campaign_id": "194578560916118",
+          "old": "TOS 110%",
+          "new": "TOS 87%",
+          "change": "-21%",
+          "reason": "36.5% ACoS above 30% target, 11.1% CVR strong — harvest profit",
+          "status": "success"
+        },
+        {
+          "category": "BID_DECREASE",
+          "campaign": "fairy sewing - SPM MP product targeting",
+          "campaign_id": "483685655952741",
+          "old": "TOS 201%",
+          "new": "TOS 147%",
+          "change": "-27%",
+          "reason": "45% ACoS, 15.7% CVR. TOS 201% too aggressive for PT campaign",
+          "status": "success"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "skill": "listing-optimizer + listing-creator",
+      "summary": "Fairy Sewing Kit (B09WQSBZY7) listing rewrite pushed via SP-API",
+      "changes": [
+        {
+          "category": "LISTING_UPDATE",
+          "description": "New title: added ages 5-12, beginner, stuffed animal keywords. RJ title was #8/10 in niche (13,827 vs avg 34,727)",
+          "field": "title",
+          "status": "success"
+        },
+        {
+          "category": "LISTING_UPDATE",
+          "description": "All 5 bullets rewritten with fairy-specific content, keyword-optimized. Bullets RJ was #1 in niche (22,990)",
+          "field": "bullets",
+          "status": "success"
+        },
+        {
+          "category": "LISTING_UPDATE",
+          "description": "Backend keywords maximized: 246/249 bytes. Added stuffed animal, plush doll, craft activity, screen free, fine motor, etc.",
+          "field": "backend_keywords",
+          "status": "success"
+        },
+        {
+          "category": "LISTING_UPDATE",
+          "description": "Description SKIPPED (A+ content active)",
+          "field": "description",
+          "status": "skipped"
+        }
+      ],
+      "sku": "DH-0K32-KCGU",
+      "product_type": "ART_CRAFT_KIT",
+      "submission_id": "ce4555272818413d9801469b2ce64e89",
+      "submission_status": "ACCEPTED",
+      "key_findings": [
+        "Title was core weakness: RJ #8/10 in niche (13,827 vs avg 34,727)",
+        "Bullets were strongest: RJ #1 in niche (22,990)",
+        "23/50 tracked keywords declining in Rank Radar",
+        "Root gaps: ages, 8-12, beginners = 80K+ BSV missing from title",
+        "AI Copywriter skipped (repeat x3 - HTTP 400)",
+        "Apify competitor scrape returned empty (new issue)"
+      ]
+    }
+  ],
+  "pending_actions": [
+    {
+      "id": "ff-001",
+      "source": "fairy-family-deep-dive-2026-03-03",
+      "category": "BID_DECREASE",
+      "action": "SK sewing for kids (524947739371988) bleeding at 65% ACoS â€” lower TOS 161%->108% and bid $0.62->$0.47",
+      "priority": "P1",
+      "status": "completed",
+      "created": "2026-03-03",
+      "due": null,
+      "notes": "30d data: $138 spend, 10 orders, $213 sales. Main term 'sewing for kids' at 96.4% ACoS. Not approved this run.",
+      "completed_date": "2026-03-05",
+      "completed_by": "ppc-bid-recommender"
+    },
+    {
+      "id": "ff-002",
+      "source": "fairy-family-deep-dive-2026-03-03",
+      "category": "STRUCTURAL",
+      "action": "900% TOS on Auto TOS fairy (465199092942357) + Auto TOS ballerina (282769301324838) â€” structural cleanup",
+      "priority": "P3",
+      "status": "pending",
+      "created": "2026-03-03",
+      "due": null,
+      "notes": "Zero activity in 30d (no spend, no clicks). Not causing waste but anti-pattern."
+    },
+    {
+      "id": "ff-003",
+      "source": "fairy-family-deep-dive-2026-03-03",
+      "category": "CAMPAIGN_CREATE",
+      "action": "Create SK 'sewing kit for beginners' (6,553 SV, rank 61) â€” high-volume keyword gap",
+      "priority": "P2",
+      "status": "pending",
+      "created": "2026-03-03",
+      "due": null,
+      "notes": "No dedicated campaign. Product is relevant (beginner kit). Proposed $10/day, bid $0.47, TOS 63%."
+    },
+    {
+      "id": "ff-004",
+      "source": "fairy-family-deep-dive-2026-03-03",
+      "category": "CAMPAIGN_CREATE",
+      "action": "Create SK 'beginner sewing kit' (4,326 SV, rank 40) â€” high-volume keyword gap",
+      "priority": "P2",
+      "status": "pending",
+      "created": "2026-03-03",
+      "due": null,
+      "notes": "No dedicated campaign. Proposed $10/day, bid $0.43, TOS 63%."
+    },
+    {
+      "id": "ff-005",
+      "source": "fairy-family-deep-dive-2026-03-03",
+      "category": "LISTING_REVIEW",
+      "action": "B0BP8GCK1G (Fairy Elves) zero sales with 26 sessions â€” investigate listing quality",
+      "priority": "P2",
+      "status": "pending",
+      "created": "2026-03-03",
+      "due": null,
+      "notes": null
+    },
+    {
+      "id": "ff-006",
+      "source": "listing-optimizer-2026-03-06",
+      "category": "LISTING_REVIEW",
+      "action": "Post-listing-update re-audit - check rank recovery and CVR impact on B09WQSBZY7 (Fairy Sewing Kit)",
+      "priority": "P2",
+      "status": "pending",
+      "created": "2026-03-06",
+      "due": "2026-03-13",
+      "notes": "Title was #8/10 RJ in niche, now optimized with ages+beginner+stuffed animal. Expect rank improvement on 23 declining keywords. Re-audit after 7 days of data."
+    }
+  ],
+  "scheduled_reviews": [
+    {
+      "date": "2026-03-10",
+      "type": "7-day re-check",
+      "verify": [
+        "Impact of TOS changes on hero KW 'sewing kit for kids' rank (was #14)",
+        "MK broad spend reduction impact (TOS 85%->52%, budget $35->$23)",
+        "SK fairy sewing kit utilized increased budget ($20->$31/day)",
+        "Overall rank recovery trend (was -124 net 28d)"
+      ],
+      "source": "fairy-family-deep-dive-2026-03-03",
+      "status": "pending"
+    },
+    {
+      "date": "2026-03-08",
+      "type": "3-day bid change re-check",
+      "focus": "Did 3 TOS cuts (sewing for kids 161→107%, 5-8 110→87%, MP PT 201→147%) improve portfolio ACoS?",
+      "source": "2026-03-05 bid recommender"
+    },
+    {
+      "date": "2026-03-13",
+      "type": "7-day listing push re-check",
+      "verify": [
+        "Rank recovery on 23 declining keywords (especially sewing kit for kids, kids sewing kit)",
+        "CVR change after title+bullets rewrite (baseline: 8.5%)",
+        "Title RJ score improvement (was 13,827 vs avg 34,727)",
+        "Backend keywords indexing check"
+      ],
+      "source": "listing-optimizer-2026-03-06",
+      "status": "pending"
+    },
+    {
+      "date": "2026-03-20",
+      "type": "14-day listing push full re-audit",
+      "verify": [
+        "Full Ranking Juice re-score (title, bullets, description)",
+        "Organic rank trend on hero keywords",
+        "CVR and revenue impact assessment",
+        "Determine if further listing adjustments needed"
+      ],
+      "source": "listing-optimizer-2026-03-06",
+      "status": "pending"
+    }
+  ],
+  "skills_run": [
+    {
+      "date": "2026-03-02",
+      "skill": "ppc-portfolio-summary",
+      "result": "success",
+      "health_status": "YELLOW",
+      "health_score": "5/10",
+      "acos_at_run": 39.8,
+      "key_output": "Flagged as NEEDS ATTENTION. MK broad cannibalization detected.",
+      "output_ref": "portfolio/2026-03-02-portfolio-snapshot.json"
+    },
+    {
+      "date": "2026-03-03",
+      "skill": "ppc-portfolio-action-plan",
+      "result": "success",
+      "health_score": "5/10",
+      "acos_at_run": 39.8,
+      "actions_proposed": 12,
+      "actions_approved": 5,
+      "actions_executed": 5,
+      "key_output": "Deep dive completed. TOS rebalancing + broad reduction. Rank surging +3 by Mar 5.",
+      "output_ref": "portfolio-action-plan/action-logs/2026-03-03-fairy-family-action-log.json"
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-daily-health",
+      "result": "success",
+      "health_status": "YELLOW",
+      "acos_at_run": 39.8,
+      "key_output": "Ranks surging +3 top-10 after deep dive changes. ACoS stable.",
+      "output_ref": "daily/2026-03-05-health-snapshot.json"
+    },
+    {
+      "skill": "ppc-bid-recommender",
+      "date": "2026-03-05",
+      "result": "success",
+      "key_metrics": {
+        "changes_applied": 3,
+        "net_weekly_impact": "-$18/week est."
+      }
+    },
+    {
+      "date": "2026-03-06",
+      "skill": "listing-optimizer + listing-creator",
+      "result": "success",
+      "acos_at_run": 39.8,
+      "key_output": "Full audit + listing rewrite pushed. Title RJ #8->optimized. 23/50 keywords declining. Submission ACCEPTED.",
+      "output_ref": "listing-optimizer/briefs/fairy-sewing-listing-audit-2026-03-06.md"
+    },
+    {
+      "skill": "ppc-tacos-optimizer",
+      "date": "2026-03-06",
+      "result": "success",
+      "key_metrics": {
+        "tacos_30d": 13.4,
+        "tacos_grade": "A",
+        "organic_momentum": 82,
+        "profit_health": "PROFITABLE"
+      },
+      "output_ref": "tacos-optimizer/2026-03-06-tacos-scorecard.md"
+    }
+  ],
+  "improvement_assessment": {
+    "last_assessed": "2026-03-05",
+    "overall_trend": "improving",
+    "confidence": "medium",
+    "summary": "Rank recovery underway (+8 top-10 keywords since baseline, +3 since deep dive). ACoS stable at 39.8% â€” too early for financial impact. MK broad cannibalization fix in progress. Full assessment deferred to 7-day re-check on Mar 10.",
+    "metric_trends": {
+      "acos": {
+        "direction": "stable",
+        "baseline": 39.8,
+        "latest": 39.8
+      },
+      "rank_top10": {
+        "direction": "improving",
+        "baseline": 17,
+        "latest": 25
+      },
+      "cvr": {
+        "direction": "stable",
+        "baseline": 8.5,
+        "latest": 8.5
+      },
+      "orders_7d": {
+        "direction": "stable",
+        "baseline": 64,
+        "latest": 64
+      }
+    },
+    "verdict": "Early positive signals (rank recovery). Financial impact pending 7-day data window.",
+    "history": [
+      {
+        "date": "2026-03-05",
+        "overall_trend": "improving",
+        "confidence": "medium",
+        "note": "Post-deep-dive rank surge. Financial impact pending."
+      }
+    ]
+  }
+}

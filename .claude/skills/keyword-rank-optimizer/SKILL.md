@@ -86,7 +86,7 @@ Read in parallel:
 | Most recent `outputs/research/ppc-weekly/snapshots/*/summary.json` | Weekly baseline metrics | Always |
 | Most recent `outputs/research/ppc-agent/rank-optimizer/snapshots/*/rank-spend-matrix.json` | Previous run's classifications for delta tracking | If exists |
 | Most recent `outputs/research/ppc-agent/rank-optimizer/snapshots/*/rank-radar-snapshot.json` | Previous rank data for cross-week trending | If exists |
-| `outputs/research/ppc-agent/agent-state.json` | Last run dates | Always |
+| `outputs/research/ppc-agent/state/agent-state.json` | Last run dates | Always |
 | `outputs/research/ppc-agent/bids/*-bid-changes-applied.json` | Recent bid changes (correlation: did changes move rank?) | Last 30 days |
 
 **If targeting report is >7 days old or missing:** Pull a fresh keyword report:
@@ -603,7 +603,7 @@ Present findings and ask:
 
 ### Step 13: Update Agent State
 
-Update `outputs/research/ppc-agent/agent-state.json` with:
+Update `outputs/research/ppc-agent/state/agent-state.json` with:
 ```json
 "last_rank_optimizer": "YYYY-MM-DD"
 ```

@@ -71,9 +71,9 @@ Load in parallel:
 |------|---------|
 | `context/business.md` | Portfolio stages + ACoS targets |
 | `context/search-terms.md` | **PROTECTED terms — never negate these** |
-| `outputs/research/ppc-agent/portfolios/*.json` | **Portfolio trackers** — recent change_log for dedup (negatives already applied), pending NEGATE actions |
+| `outputs/research/ppc-agent/state/*.json` | **Portfolio trackers** — recent change_log for dedup (negatives already applied), pending NEGATE actions |
 | `outputs/research/negative-keywords/data/*-applied-*.json` | Previously applied negatives (dedup) |
-| `outputs/research/ppc-agent/agent-state.json` | Last harvest date, portfolio_index |
+| `outputs/research/ppc-agent/state/agent-state.json` | Last harvest date, portfolio_index |
 | Most recent `outputs/research/ppc-weekly/snapshots/*/summary.json` | Weekly baseline for context |
 
 **From portfolio trackers, use:**
@@ -299,7 +299,7 @@ After user approval:
 **Applied actions log:**
 `outputs/research/ppc-agent/search-terms/{YYYY-MM-DD}-applied-actions.json`
 
-**Portfolio tracker updates** — for each portfolio with applied negatives, update its tracker at `outputs/research/ppc-agent/portfolios/{slug}.json`:
+**Portfolio tracker updates** — for each portfolio with applied negatives, update its tracker at `outputs/research/ppc-agent/state/{slug}.json`:
 
 1. **`change_log`** — append entry:
    ```json

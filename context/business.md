@@ -52,6 +52,8 @@
 | Dessert Family | Scaling |
 | Biggie Beads | Scaling |
 | Stitch Dictionary All | Scaling |
+| Needlepoint | Scaling |
+| Princess Lacing Cards | Launch |
 
 **Phase definitions:**
 - **General** — Catch-all / Shield portfolios (account-wide, not stage-specific)

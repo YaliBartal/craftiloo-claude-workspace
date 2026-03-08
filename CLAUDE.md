@@ -183,7 +183,8 @@ Claude Code Workspace/
 │       ├── negative-keyword-generator/  # Proactive negative keyword generation from product knowledge
 │       ├── customer-review-analyzer/  # Amazon review analysis for our products + competitors
 │       ├── niche-category-analysis/  # New niche/category deep-dive research & viability
-│       └── listing-optimizer/        # Listing audit & optimization (Ranking Juice + keywords + rank trends)
+│       ├── listing-optimizer/        # Listing audit & optimization (Ranking Juice + keywords + rank trends)
+│       └── competitor-price-serp-tracker/  # Weekly competitor price/BSR/SERP tracking
 │       # Each skill folder contains:
 │       #   SKILL.md    — Instructions (reads LESSONS.md first, writes to it last)
 │       #   LESSONS.md  — Run log, known issues, repeat errors, resolved issues
@@ -239,12 +240,14 @@ Claude Code Workspace/
 | "Portfolio deep dive" / "Deep dive" / "Portfolio action plan" / "Fix portfolio" / "Work on portfolio" | → `.claude/skills/ppc-agent/` (routes to ppc-portfolio-action-plan) |
 | "Rank optimizer" / "Rank vs spend" / "Keyword rank analysis" / "PPC rank check" | → `.claude/skills/ppc-agent/` (routes to keyword-rank-optimizer) |
 | "Monthly PPC" / "Monthly review" / "PPC month" | → `.claude/skills/ppc-agent/` (routes to ppc-monthly-review) |
+| "TACoS check" / "TACoS optimizer" / "Profit check" / "Profit reality" / "TACoS scorecard" | -> `.claude/skills/ppc-agent/` (routes to ppc-tacos-optimizer) |
 | "Weekly PPC" / "PPC analysis" / "Campaign analysis" | → `.claude/skills/weekly-ppc-analysis/` (standalone) |
 | "Search term analysis" / "Keyword mining" | → `.claude/skills/weekly-ppc-analysis/` |
 | "Generate negatives" / "Negative keywords" / "Negative keyword list" | → `.claude/skills/negative-keyword-generator/` (standalone) |
 | "Review analysis" / "Customer reviews" / "What are customers saying" | → `.claude/skills/customer-review-analyzer/` |
 | "Niche analysis" / "Category research" / "Explore a niche" / "New niche" | → `.claude/skills/niche-category-analysis/` |
 | "Listing audit" / "Audit listing" / "Listing optimizer" / "Listing score" / "Portfolio scan" / "Listing health" | → `.claude/skills/listing-optimizer/` |
+| "Competitor check" / "Competitor tracker" / "Weekly competitors" / "SERP tracker" / "Competitive intel" | → `.claude/skills/competitor-price-serp-tracker/` |
 
 **New skills** → Always save to `.claude/skills/[skill-name]/SKILL.md` (project-local, not global)
 

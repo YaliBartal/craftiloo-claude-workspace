@@ -119,7 +119,7 @@ REPORT_PRESETS = {
         "reportTypeId": "spCampaigns",
         "groupBy": ["campaign", "campaignPlacement"],
         "columns": [
-            "campaignName", "campaignId",
+            "campaignName", "campaignId", "placementClassification",
             "impressions", "clicks", "cost",
             "purchases7d", "sales7d",
         ],
@@ -724,6 +724,7 @@ async def list_sp_product_ads(
         results.append({
             "adId": ad.get("adId"),
             "asin": ad.get("asin"),
+            "sku": ad.get("sku"),
             "state": ad.get("state"),
             "adGroupId": ad.get("adGroupId"),
             "campaignId": ad.get("campaignId"),

@@ -1,0 +1,466 @@
+{
+  "$schema_version": "1.0",
+  "last_updated": "2026-03-06",
+  "portfolio": {
+    "name": "Fuse Beads",
+    "id": "195178133158684",
+    "slug": "fuse-beads",
+    "stage": "Scaling",
+    "hero_asins": [
+      {
+        "asin": "B09THLVFZK",
+        "product": "24,000 Mini Fuse Beads Kit",
+        "role": "hero"
+      }
+    ],
+    "secondary_asins": [
+      {
+        "asin": "B076N1Q31T",
+        "product": "Fuse Beads Kit",
+        "role": "secondary"
+      },
+      {
+        "asin": "B07PXN4K8N",
+        "product": "Fuse Beads Refill",
+        "role": "secondary"
+      },
+      {
+        "asin": "B0CRZ8M2G1",
+        "product": "Fuse Beads Variety",
+        "role": "secondary"
+      }
+    ],
+    "hero_keywords": [
+      {
+        "keyword": "perler beads",
+        "search_volume": 75347
+      },
+      {
+        "keyword": "fuse beads",
+        "search_volume": 28964
+      },
+      {
+        "keyword": "mini perler beads",
+        "search_volume": 1642
+      },
+      {
+        "keyword": "perler beads bulk",
+        "search_volume": 4534
+      },
+      {
+        "keyword": "melty beads",
+        "search_volume": 3505
+      }
+    ],
+    "niche_id": null,
+    "rank_radar_id": null,
+    "campaigns_enabled": 14,
+    "campaigns_paused": 0
+  },
+  "goals": {
+    "acos_target": 30,
+    "acos_red_flag": 50,
+    "cvr_target": 10,
+    "budget_envelope_daily": 258,
+    "rank_targets": [
+      {
+        "keyword": "perler beads",
+        "target_rank": 6,
+        "current_rank": 6
+      },
+      {
+        "keyword": "fuse beads",
+        "target_rank": 5,
+        "current_rank": 10
+      },
+      {
+        "keyword": "mini perler beads",
+        "target_rank": 1,
+        "current_rank": 1
+      },
+      {
+        "keyword": "perler beads bulk",
+        "target_rank": 15,
+        "current_rank": 40
+      },
+      {
+        "keyword": "melty beads",
+        "target_rank": 10,
+        "current_rank": 14
+      }
+    ],
+    "strategic_notes": [
+      "Recover 'fuse beads' rank #4->#10 â€” hero keyword with 28,964 SV",
+      "New SK 'perler beads bulk' created Mar 2 to defend #40 rank",
+      "Reduce MK campaign cannibalization (3 MK campaigns targeting similar mini roots)",
+      "SK fuse beads TOS was catastrophic (895% TOS, $100/day, 119.5% ACoS) â€” fixed Mar 2"
+    ],
+    "updated": "2026-03-02",
+    "tacos_target": 16,
+    "tacos_red_flag": 25,
+    "break_even_acos": 20.6
+  },
+  "baseline": {
+    "date": "2026-03-02",
+    "source": "fuse-beads-deep-dive-2026-03-02",
+    "metrics": {
+      "acos": 35.0,
+      "spend_30d": 3626.91,
+      "sales_30d": 10363.39,
+      "orders_30d": 311,
+      "cvr": 8.2,
+      "cpc": 0.96,
+      "roas": 2.86,
+      "organic_ratio": 78,
+      "organic_sales_daily": 461.72,
+      "ppc_sales_daily": 131.92,
+      "real_acos_vs_total": 20.61
+    },
+    "rank_snapshot": {
+      "keywords_tracked": 18,
+      "top_10": 13,
+      "net_28d_movement": -28
+    },
+    "structure": {
+      "health_score": null,
+      "campaigns_enabled": 14,
+      "campaigns_paused": 0,
+      "negatives_count": null,
+      "campaign_types": {
+        "auto": 2,
+        "sk": 4,
+        "mk": 5,
+        "pt": 3
+      }
+    },
+    "health_status": "YELLOW"
+  },
+  "latest_metrics": {
+    "date": "2026-03-05",
+    "source": "daily-health-2026-03-05",
+    "metrics": {
+      "acos": 36.0,
+      "spend_7d": 872.8,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "cpc": null,
+      "roas": null,
+      "tacos_30d": 13.9,
+      "organic_ratio_30d": 60.3,
+      "margin_pct": 20.6,
+      "organic_momentum_score": 78,
+      "profit_health": "PROFITABLE"
+    },
+    "rank_snapshot": {
+      "keywords_tracked": 18,
+      "top_10": 11,
+      "net_7d_movement": -2
+    },
+    "health_status": "YELLOW",
+    "delta_vs_baseline": {
+      "acos_change": 1.0,
+      "rank_top10_change": -2,
+      "rank_trend": "declining"
+    }
+  },
+  "metric_history": [
+    {
+      "date": "2026-03-02",
+      "source": "portfolio-action-plan",
+      "acos": 35.0,
+      "spend_30d": 3626.91,
+      "sales_30d": 10363.39,
+      "orders_30d": 311,
+      "cvr": 8.2,
+      "rank_top10": 13,
+      "rank_net_28d": -28,
+      "health_status": "YELLOW",
+      "campaigns_enabled": 14,
+      "note": "Deep dive baseline. SK fuse beads TOS at 895% ACoS. #1 spend portfolio."
+    },
+    {
+      "date": "2026-03-05",
+      "source": "daily-health",
+      "acos": 36.0,
+      "spend_7d": 872.8,
+      "rank_top10": 11,
+      "rank_net_7d": -2,
+      "health_status": "YELLOW",
+      "campaigns_enabled": 15,
+      "note": "Mini fuse ranks slipping post-restructuring. New SK perler beads bulk active."
+    },
+    {
+      "date": "2026-03-06",
+      "source": "tacos-optimizer",
+      "tacos": 13.9,
+      "organic_momentum": 78,
+      "profit_health": "PROFITABLE",
+      "margin_pct": 20.6
+    }
+  ],
+  "change_log": [
+    {
+      "date": "2026-03-06",
+      "skill": "listing-optimizer + listing-creator",
+      "summary": "Listing rewrite pushed: anti-refund strategy (8 signals) + keyword optimization",
+      "changes": [
+        {
+          "category": "LISTING_PUSH",
+          "description": "Title rewritten: added (NOT Standard 5mm), melty/iron/bulk/pixel art keywords. RJ expected 31%->65-70%",
+          "asin": "B09THLVFZK",
+          "sku": "RV-FA22-4WFQ",
+          "old_value": {
+            "title_rj": 117349,
+            "ranking_juice_pct": 31
+          },
+          "new_value": {
+            "title_rj_estimated": "~250000",
+            "ranking_juice_pct_estimated": "65-70"
+          },
+          "status": "success"
+        },
+        {
+          "category": "LISTING_PUSH",
+          "description": "5 bullets rewritten: replaced 1 failed all-caps warning with 8 distributed anti-refund signals (educate > warn)",
+          "asin": "B09THLVFZK",
+          "old_value": {
+            "bullet1": "ALL CAPS safety disclaimer",
+            "anti_refund_signals": 1
+          },
+          "new_value": {
+            "anti_refund_signals": 8,
+            "strategy": "educate > warn"
+          },
+          "status": "success"
+        },
+        {
+          "category": "LISTING_PUSH",
+          "description": "Backend keywords expanded 182->244 bytes (+34%)",
+          "asin": "B09THLVFZK",
+          "old_value": {
+            "backend_bytes": 182
+          },
+          "new_value": {
+            "backend_bytes": 244
+          },
+          "status": "success"
+        }
+      ],
+      "submission_id": "2bfbdf753cba40ada513c843bbe295c0",
+      "submission_status": "ACCEPTED",
+      "fields_pushed": [
+        "title",
+        "bullets",
+        "backend_keywords"
+      ],
+      "fields_skipped": [
+        "description (A+ active)"
+      ],
+      "key_findings": [
+        "Ranking Juice 31% of optimal - title weakest (117K vs top 291K)",
+        "10/18 Rank Radar keywords on page 1, fuse beads #3->#7, perler beads bulk #33",
+        "Core problem: wrong-buyer refunds (parents buying for kids, 2.6mm too small)",
+        "Solution: 8 anti-refund signals woven naturally vs 1 failed all-caps warning"
+      ],
+      "verify_by": "2026-03-08",
+      "re_audit_due": "2026-03-13"
+    },
+    {
+      "date": "2026-03-02",
+      "skill": "ppc-portfolio-action-plan",
+      "summary": "Fuse Beads Portfolio â€” 5 Actions Applied",
+      "changes": [
+        {
+          "category": "BID_DECREASE",
+          "description": "SK fuse beads TOS: TOS 895%->350%, budget $100->$25/day",
+          "campaign_id": "520275010613914",
+          "old_value": {
+            "tos_pct": 895,
+            "budget": 100
+          },
+          "new_value": {
+            "tos_pct": 350,
+            "budget": 25
+          },
+          "status": "success"
+        },
+        {
+          "category": "BUDGET_INCREASE",
+          "description": "SK mini perler beads: budget $15->$25/day (top performer 23.1% ACoS)",
+          "campaign_id": "493619120082777",
+          "old_value": {
+            "budget": 15
+          },
+          "new_value": {
+            "budget": 25
+          },
+          "status": "success"
+        },
+        {
+          "category": "CAMPAIGN_CREATE",
+          "description": "Created SK 'perler beads bulk' â€” $15/day, bid $0.47, TOS 178%",
+          "campaign_id": "218889381864980",
+          "old_value": null,
+          "new_value": {
+            "budget": 15,
+            "bid": 0.47,
+            "tos_pct": 178
+          },
+          "status": "success"
+        },
+        {
+          "category": "NEGATE_SEARCH_TERM",
+          "description": "MK broad mini root: NEGATIVE_EXACT 'mini fuse beads' (saves ~$102/wk)",
+          "campaign_id": "487800929938065",
+          "old_value": null,
+          "new_value": {
+            "negative": "mini fuse beads",
+            "match_type": "NEGATIVE_EXACT"
+          },
+          "status": "success"
+        },
+        {
+          "category": "BID_DECREASE",
+          "description": "MK mini root TOS push: lowered TOS (148% with ROS 0%, PP 72%)",
+          "campaign_id": null,
+          "old_value": {
+            "tos_pct": 148
+          },
+          "new_value": {
+            "tos_pct": null
+          },
+          "status": "success"
+        }
+      ],
+      "budget_impact_daily": -50,
+      "estimated_weekly_impact": "-$350/wk cap reduction. SK fuse beads -$75/day, SK mini perler +$10/day, new SK +$15/day.",
+      "key_findings": [
+        "SK fuse beads was catastrophic: 895% TOS, $100/day budget, 119.5% ACoS, only 2 orders in 30d",
+        "SK mini perler beads is star performer: 23.1% ACoS, 10.6% CVR â€” deserves more budget",
+        "'perler beads bulk' rank collapsed #20->#40 with zero PPC coverage â€” new campaign created",
+        "'mini fuse beads' in MK broad was $102/wk waste at 103% ACoS"
+      ],
+      "action_log_ref": null
+    }
+  ],
+  "pending_actions": [
+    {
+      "priority": "P2",
+      "action": "Post-listing-update re-audit - check rank recovery + CVR + refund rate",
+      "due": "2026-03-13",
+      "source": "listing-optimizer-2026-03-06",
+      "status": "pending"
+    }
+  ],
+  "scheduled_reviews": [
+    {
+      "date": "2026-03-09",
+      "type": "7-day re-check",
+      "verify": [
+        "SK fuse beads TOS reduction impact (895%->350%) â€” ACoS should drop",
+        "New SK 'perler beads bulk' campaign performance",
+        "'fuse beads' rank recovery (#10 -> ?)",
+        "MK broad waste reduction after 'mini fuse beads' negation"
+      ],
+      "source": "fuse-beads-deep-dive-2026-03-02",
+      "status": "pending"
+    },
+    {
+      "date": "2026-03-08",
+      "type": "listing-push-verification",
+      "verify": [
+        "Confirm new title/bullets/backend live on Amazon",
+        "Check indexing for added keywords: melty, iron, bulk, pixel art",
+        "Monitor refund rate trend (baseline: high due to wrong-buyer problem)"
+      ],
+      "source": "listing-optimizer-2026-03-06",
+      "status": "pending"
+    },
+    {
+      "date": "2026-03-13",
+      "type": "listing-push-re-audit",
+      "verify": [
+        "Re-run Ranking Juice - target 65-70% (was 31%)",
+        "Check Rank Radar: fuse beads, perler beads bulk, melty beads recovery",
+        "CVR impact from anti-refund strategy",
+        "Refund rate change"
+      ],
+      "source": "listing-optimizer-2026-03-06",
+      "status": "pending"
+    }
+  ],
+  "skills_run": [
+    {
+      "date": "2026-03-02",
+      "skill": "ppc-portfolio-action-plan",
+      "result": "success",
+      "acos_at_run": 35.0,
+      "actions_proposed": 5,
+      "actions_approved": 5,
+      "actions_executed": 5,
+      "key_output": "Major restructuring: SK fuse beads TOS fixed, new campaign created, top performer scaled.",
+      "output_ref": null
+    },
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-daily-health",
+      "result": "success",
+      "health_status": "YELLOW",
+      "acos_at_run": 36.0,
+      "key_output": "Mini fuse ranks slipping post-restructuring. New SK active. ACoS +1pp.",
+      "output_ref": "daily/2026-03-05-health-snapshot.json"
+    },
+    {
+      "date": "2026-03-06",
+      "skill": "listing-optimizer + listing-creator",
+      "result": "success",
+      "key_output": "Listing rewrite: anti-refund strategy (8 signals), RJ 31%->est 65-70%, backend +34%. Pushed & ACCEPTED.",
+      "output_ref": "outputs/research/listing-optimizer/briefs/mini-fuse-beads-listing-audit-2026-03-06.md"
+    },
+    {
+      "skill": "ppc-tacos-optimizer",
+      "date": "2026-03-06",
+      "result": "success",
+      "key_metrics": {
+        "tacos_30d": 13.9,
+        "tacos_grade": "A",
+        "organic_momentum": 78,
+        "profit_health": "PROFITABLE"
+      },
+      "output_ref": "tacos-optimizer/2026-03-06-tacos-scorecard.md"
+    }
+  ],
+  "improvement_assessment": {
+    "last_assessed": "2026-03-05",
+    "overall_trend": "stable",
+    "confidence": "low",
+    "summary": "Major restructuring on Mar 2 (895% TOS fix, new campaign, budget rebalancing). ACoS slightly worse (+1pp) and ranks slipping (-2 top-10). Too early to judge â€” restructuring disrupts short-term performance. 7-day re-check due Mar 9.",
+    "metric_trends": {
+      "acos": {
+        "direction": "stable",
+        "baseline": 35.0,
+        "latest": 36.0
+      },
+      "rank_top10": {
+        "direction": "declining",
+        "baseline": 13,
+        "latest": 11
+      },
+      "cvr": {
+        "direction": "unknown",
+        "baseline": 8.2,
+        "latest": null
+      }
+    },
+    "verdict": "Post-restructuring transition period. Short-term disruption expected. Full assessment on Mar 9.",
+    "history": [
+      {
+        "date": "2026-03-05",
+        "overall_trend": "stable",
+        "confidence": "low",
+        "note": "3 days post-restructuring. Short-term rank disruption expected."
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "$schema_version": "1.0",
+  "last_updated": "2026-03-05",
+  "portfolio": {
+    "name": "Bunny Knitting Loom Kit",
+    "id": null,
+    "slug": "bunny-knitting-loom-kit",
+    "stage": "Scaling",
+    "hero_asins": [],
+    "secondary_asins": [],
+    "hero_keywords": [],
+    "niche_id": null,
+    "rank_radar_id": null,
+    "campaigns_enabled": null,
+    "campaigns_paused": null
+  },
+  "goals": {
+    "acos_target": 30,
+    "acos_red_flag": 50,
+    "cvr_target": 10,
+    "budget_envelope_daily": null,
+    "rank_targets": [],
+    "strategic_notes": [],
+    "updated": "2026-03-05"
+  },
+  "baseline": null,
+  "latest_metrics": null,
+  "metric_history": [],
+  "change_log": [
+    {
+      "date": "2026-03-05",
+      "skill": "ppc-bid-recommender",
+      "summary": "1 TOS reduction applied",
+      "changes": [
+        {
+          "category": "BID_DECREASE",
+          "campaign": "knitting bunny - SP - TOS beginners crochet kit for kids",
+          "campaign_id": "296211829760644",
+          "old": "TOS 258%",
+          "new": "TOS 152%",
+          "change": "-41%",
+          "reason": "Bleeding 84.4% ACoS vs 30% Scaling target. Never been analyzed.",
+          "status": "success"
+        }
+      ]
+    }
+  ],
+  "pending_actions": [
+    {
+      "id": "bk-001",
+      "priority": "P2",
+      "category": "DEEP_DIVE",
+      "action": "Portfolio needs a full deep dive \u2014 never been analyzed. $158/30d at 84% ACoS, 8 orders. Possible listing/targeting issue.",
+      "created": "2026-03-05",
+      "status": "pending"
+    }
+  ],
+  "scheduled_reviews": [
+    {
+      "date": "2026-03-08",
+      "type": "3-day bid change re-check",
+      "focus": "Did -41% TOS cut improve ACoS from 84%? Flag for deep dive if still >60%.",
+      "source": "2026-03-05 bid recommender"
+    }
+  ],
+  "skills_run": [
+    {
+      "skill": "ppc-bid-recommender",
+      "date": "2026-03-05",
+      "result": "success",
+      "key_metrics": {
+        "changes_applied": 1,
+        "net_weekly_impact": "-$9/week est."
+      }
+    }
+  ],
+  "improvement_assessment": null
+}

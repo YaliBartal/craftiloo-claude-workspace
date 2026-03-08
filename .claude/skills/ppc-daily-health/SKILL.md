@@ -6,7 +6,7 @@ triggers:
   - daily ppc
   - ppc health
   - morning ppc check
-output_location: outputs/research/ppc-agent/daily/
+output_location: outputs/research/ppc-agent/daily-health/
 ---
 
 # Daily PPC Health Check
@@ -67,10 +67,10 @@ Load these files (read in parallel where possible):
 | File | Purpose |
 |------|---------|
 | `context/business.md` | Portfolio stages (Launch/Scaling/General) |
-| `outputs/research/ppc-agent/agent-state.json` | Last run dates, global pending actions, portfolio_index |
-| `outputs/research/ppc-agent/portfolios/*.json` | **All portfolio trackers** — for scheduled reviews, pending actions, improvement trends |
+| `outputs/research/ppc-agent/state/agent-state.json` | Last run dates, global pending actions, portfolio_index |
+| `outputs/research/ppc-agent/state/*.json` | **All portfolio trackers** — for scheduled reviews, pending actions, improvement trends |
 | Most recent `outputs/research/market-intel/snapshots/*.json` | Seller Board data (TACoS, ad spend, margin, organic ratio) |
-| Most recent `outputs/research/ppc-agent/daily/*-health-snapshot.json` | Yesterday's health check (for day-over-day comparison) |
+| Most recent `outputs/research/ppc-agent/daily-health/*-health-snapshot.json` | Yesterday's health check (for day-over-day comparison) |
 | Most recent `outputs/research/ppc-weekly/snapshots/*/summary.json` → `placement` section | Per-campaign placement health classifications (use if <7 days old) |
 
 **From portfolio trackers, extract per portfolio:**
@@ -247,12 +247,12 @@ List all pending P1 actions + overdue reviews in the brief.
 ### Step 7: Save Outputs + Update Portfolio Trackers
 
 **Brief:**
-`outputs/research/ppc-agent/daily/{YYYY-MM-DD}-health-check.md`
+`outputs/research/ppc-agent/daily-health/{YYYY-MM-DD}-health-check.md`
 
 **Snapshot (machine-readable for other skills):**
-`outputs/research/ppc-agent/daily/{YYYY-MM-DD}-health-snapshot.json`
+`outputs/research/ppc-agent/daily-health/{YYYY-MM-DD}-health-snapshot.json`
 
-**Portfolio tracker updates** — for each portfolio touched, update its tracker at `outputs/research/ppc-agent/portfolios/{slug}.json`:
+**Portfolio tracker updates** — for each portfolio touched, update its tracker at `outputs/research/ppc-agent/state/{slug}.json`:
 
 1. **`latest_metrics`** — update with today's health check data (spend, ACoS from campaign grouping, campaign_count)
 2. **`metric_history`** — append entry (max 90)
