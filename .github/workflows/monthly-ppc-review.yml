@@ -1,8 +1,8 @@
 name: Monthly PPC Review
 
 on:
-  schedule:
-    - cron: '0 8 1 * *'  # 1st of every month, 10:00 AM Israel time (UTC+2)
+  # schedule:
+  #   - cron: '0 8 1 * *'  # 1st of every month, 10:00 AM Israel time (UTC+2)
   workflow_dispatch:
 
 permissions:

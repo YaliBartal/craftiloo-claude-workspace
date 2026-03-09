@@ -1,8 +1,8 @@
 name: Tuesday Portfolio Summary
 
 on:
-  schedule:
-    - cron: '30 7 * * 2'  # Tuesday 9:30 AM Israel time (UTC+2)
+  # schedule:
+  #   - cron: '30 7 * * 2'  # Tuesday 9:30 AM Israel time (UTC+2)
   workflow_dispatch:
 
 permissions:
