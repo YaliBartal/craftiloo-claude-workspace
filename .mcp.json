@@ -1,0 +1,86 @@
+{
+  "mcpServers": {
+    "apify": {
+      "command": "python3",
+      "args": ["mcp-servers/apify/server.py"],
+      "env": {
+        "APIFY_API_TOKEN": "${APIFY_API_TOKEN}"
+      }
+    },
+    "notion": {
+      "command": "python3",
+      "args": ["mcp-servers/notion/server.py"],
+      "env": {
+        "NOTION_API_KEY": "${NOTION_API_KEY}"
+      }
+    },
+    "asana": {
+      "command": "python3",
+      "args": ["mcp-servers/asana/server.py"],
+      "env": {
+        "ASANA_PERSONAL_ACCESS_TOKEN": "${ASANA_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "slack": {
+      "command": "python3",
+      "args": ["mcp-servers/slack/server.py"],
+      "env": {
+        "SLACK_WORKSPACE_1_BOT_TOKEN": "${SLACK_WORKSPACE_1_BOT_TOKEN}",
+        "SLACK_WORKSPACE_1_TEAM_ID": "${SLACK_WORKSPACE_1_TEAM_ID}",
+        "SLACK_WORKSPACE_1_NAME": "${SLACK_WORKSPACE_1_NAME}",
+        "SLACK_WORKSPACE_1_ALIASES": "${SLACK_WORKSPACE_1_ALIASES}",
+        "SLACK_WORKSPACE_2_BOT_TOKEN": "${SLACK_WORKSPACE_2_BOT_TOKEN}",
+        "SLACK_WORKSPACE_2_TEAM_ID": "${SLACK_WORKSPACE_2_TEAM_ID}",
+        "SLACK_WORKSPACE_2_NAME": "${SLACK_WORKSPACE_2_NAME}"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "sellerboard": {
+      "command": "python3",
+      "args": ["mcp-servers/sellerboard/server.py"],
+      "env": {
+        "SELLERBOARD_INVENTORY_REPORT": "${SELLERBOARD_INVENTORY_REPORT}",
+        "SELLERBOARD_SALES_DETAILED": "${SELLERBOARD_SALES_DETAILED}",
+        "SELLERBOARD_SALES_SUMMARY": "${SELLERBOARD_SALES_SUMMARY}",
+        "SELLERBOARD_DAILY_DASHBOARD": "${SELLERBOARD_DAILY_DASHBOARD}",
+        "SELLERBOARD_PPC_MARKETING": "${SELLERBOARD_PPC_MARKETING}"
+      }
+    },
+    "datadive": {
+      "command": "python3",
+      "args": ["mcp-servers/datadive/server.py"],
+      "env": {
+        "DATADIVE_API_KEY": "${DATADIVE_API_KEY}"
+      }
+    },
+    "amazon-sp-api": {
+      "command": "python3",
+      "args": ["mcp-servers/amazon-sp-api/server.py"],
+      "env": {
+        "SP_API_CLIENT_ID": "${SP_API_CLIENT_ID}",
+        "SP_API_CLIENT_SECRET": "${SP_API_CLIENT_SECRET}",
+        "SP_API_REFRESH_TOKEN": "${SP_API_REFRESH_TOKEN}",
+        "SP_API_MARKETPLACE_US": "${SP_API_MARKETPLACE_US}",
+        "SP_API_MARKETPLACE_CA": "${SP_API_MARKETPLACE_CA}",
+        "SP_API_MARKETPLACE_MX": "${SP_API_MARKETPLACE_MX}"
+      }
+    },
+    "amazon-ads-api": {
+      "command": "python3",
+      "args": ["mcp-servers/amazon-ads-api/server.py"],
+      "env": {
+        "ADS_API_CLIENT_ID": "${ADS_API_CLIENT_ID}",
+        "ADS_API_CLIENT_SECRET": "${ADS_API_CLIENT_SECRET}",
+        "ADS_API_REFRESH_TOKEN": "${ADS_API_REFRESH_TOKEN}",
+        "ADS_API_PROFILE_US": "${ADS_API_PROFILE_US}",
+        "ADS_API_PROFILE_CA": "${ADS_API_PROFILE_CA}"
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
-# API keys and MCP config (contains secrets)
+# API keys (contains secrets)
 .env
-.mcp.json
+# Note: .mcp.json is committed — it only has ${ENV_VAR} placeholders, no actual secrets
 
 # OS files
 .DS_Store
