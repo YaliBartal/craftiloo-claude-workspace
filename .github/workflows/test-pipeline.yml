@@ -1,0 +1,54 @@
+name: Test Pipeline
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  test-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python for MCP servers
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install MCP dependencies
+        run: pip install mcp httpx
+
+      - name: Test Claude Code + MCP servers
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          show_full_output: true
+          prompt: |
+            This is a quick test run. Do these 3 things and nothing else:
+            1. List files in outputs/ directory (just ls, don't read them)
+            2. Try calling ONE MCP tool: use the slack MCP to call list_workspaces
+            3. Write a tiny test file: outputs/test-pipeline.txt with content "Pipeline test successful at $(date)"
+
+            Report what worked and what failed. Keep it brief. Do NOT run any skills.
+          claude_args: |
+            --max-turns 5
+            --model claude-sonnet-4-6
+        env:
+          SLACK_WORKSPACE_1_BOT_TOKEN: ${{ secrets.SLACK_WORKSPACE_1_BOT_TOKEN }}
+          SLACK_WORKSPACE_1_TEAM_ID: ${{ secrets.SLACK_WORKSPACE_1_TEAM_ID }}
+          SLACK_WORKSPACE_1_NAME: ${{ secrets.SLACK_WORKSPACE_1_NAME }}
+
+      - name: Commit test output
+        run: |
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add outputs/ || true
+          git diff --staged --quiet || git commit -m "Test pipeline $(date +%Y-%m-%d)"
+          git push || true
