@@ -2,7 +2,7 @@ name: Tuesday Bid Recommender
 
 on:
   schedule:
-    - cron: '30 10 * * 2'  # Tuesday 10:30 AM UTC
+    - cron: '30 8 * * 2'  # Tuesday 10:30 AM Israel time (UTC+2)
   workflow_dispatch:
 
 permissions:
