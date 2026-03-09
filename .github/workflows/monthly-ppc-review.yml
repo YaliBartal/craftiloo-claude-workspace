@@ -1,18 +1,18 @@
-name: Daily Market Intel
+name: Monthly PPC Review
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # 8:00 AM UTC daily
-  workflow_dispatch:       # Manual "Run workflow" button in GitHub UI
+    - cron: '0 10 1 * *'  # 1st of every month, 10:00 AM UTC
+  workflow_dispatch:
 
 permissions:
   id-token: write
   contents: write
 
 jobs:
-  run-market-intel:
+  run-monthly-review:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
 
     steps:
       - name: Checkout repo
@@ -26,30 +26,32 @@ jobs:
       - name: Install MCP dependencies
         run: pip install mcp httpx
 
-      - name: Run daily-market-intel skill
+      - name: Run ppc-monthly-review skill
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           prompt: |
-            Run the daily-market-intel skill.
+            Run the ppc-monthly-review skill.
             After completing the skill, use the notification-hub skill to post
-            the results summary to Slack channel #claude-morning-brief.
-            If the notification-hub fails, that's OK — the skill output is
-            still valuable. Do not retry notifications.
+            the results summary to Slack channel #claude-ppc-updates.
+            If the notification-hub fails, that's OK. Do not retry notifications.
           claude_args: |
             --max-turns 30
             --model claude-sonnet-4-6
             --mcp-config ./.mcp.json
         env:
-          APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
+          ADS_API_CLIENT_ID: ${{ secrets.ADS_API_CLIENT_ID }}
+          ADS_API_CLIENT_SECRET: ${{ secrets.ADS_API_CLIENT_SECRET }}
+          ADS_API_REFRESH_TOKEN: ${{ secrets.ADS_API_REFRESH_TOKEN }}
+          ADS_API_PROFILE_US: ${{ secrets.ADS_API_PROFILE_US }}
           DATADIVE_API_KEY: ${{ secrets.DATADIVE_API_KEY }}
+          SELLERBOARD_SALES_DETAILED_7D: ${{ secrets.SELLERBOARD_SALES_DETAILED_7D }}
+          SELLERBOARD_PPC_MARKETING: ${{ secrets.SELLERBOARD_PPC_MARKETING }}
           SP_API_CLIENT_ID: ${{ secrets.SP_API_CLIENT_ID }}
           SP_API_CLIENT_SECRET: ${{ secrets.SP_API_CLIENT_SECRET }}
           SP_API_REFRESH_TOKEN: ${{ secrets.SP_API_REFRESH_TOKEN }}
           SP_API_SELLER_ID: ${{ secrets.SP_API_SELLER_ID }}
           SP_API_MARKETPLACE_US: ${{ secrets.SP_API_MARKETPLACE_US }}
-          SELLERBOARD_SALES_DETAILED_7D: ${{ secrets.SELLERBOARD_SALES_DETAILED_7D }}
-          SELLERBOARD_INVENTORY_REPORT: ${{ secrets.SELLERBOARD_INVENTORY_REPORT }}
           SLACK_WORKSPACE_1_BOT_TOKEN: ${{ secrets.SLACK_WORKSPACE_1_BOT_TOKEN }}
           SLACK_WORKSPACE_1_TEAM_ID: ${{ secrets.SLACK_WORKSPACE_1_TEAM_ID }}
           SLACK_WORKSPACE_1_NAME: ${{ secrets.SLACK_WORKSPACE_1_NAME }}
@@ -60,7 +62,7 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add outputs/ || true
-          git diff --staged --quiet || git commit -m "Daily market intel $(date +%Y-%m-%d)"
+          git diff --staged --quiet || git commit -m "Monthly PPC review $(date +%Y-%m-%d)"
           git push || true
 
       - name: Alert on failure
@@ -69,5 +71,5 @@ jobs:
           curl -s -X POST \
             -H "Authorization: Bearer ${{ secrets.SLACK_WORKSPACE_1_BOT_TOKEN }}" \
             -H "Content-Type: application/json" \
-            -d '{"channel":"#claude-alerts","text":"⚠️ Daily market intel workflow FAILED at '"$(date -u +%Y-%m-%d' '%H:%M)"' UTC. Check GitHub Actions logs."}' \
+            -d '{"channel":"#claude-alerts","text":"⚠️ Monthly PPC review workflow FAILED at '"$(date -u +%Y-%m-%d' '%H:%M)"' UTC. Check GitHub Actions logs."}' \
             https://slack.com/api/chat.postMessage || true
