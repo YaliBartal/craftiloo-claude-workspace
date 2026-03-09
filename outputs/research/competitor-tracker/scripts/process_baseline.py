@@ -18,7 +18,7 @@ except ImportError:
     import httpx
 
 # === CONFIG ===
-APIFY_TOKEN = os.environ.get("APIFY_API_TOKEN", "apify_api_J8uvkBKDoqiLJPGYBeZRSaXKThscz63LbgYd")
+APIFY_TOKEN = os.environ.get("APIFY_API_TOKEN", "")
 BASE_URL = "https://api.apify.com/v2"
 TODAY = "2026-03-08"
 
