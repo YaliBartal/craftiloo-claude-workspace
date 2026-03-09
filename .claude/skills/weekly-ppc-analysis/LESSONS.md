@@ -22,6 +22,61 @@
 
 ## Run Log
 
+### Run: 2026-03-08 (Step 13b update)
+**Goals:**
+- [x] Add 30-day trajectory calculations to existing weekly report
+- [x] Detect inflection points with z-score algorithm
+- [x] Correlate inflections with change_log events from portfolio trackers
+- [x] Update summary.json with trajectory data for future runs
+
+**Result:** SUCCESS — Trajectories + inflections added to report and snapshot
+
+**What worked:**
+- 3 weekly snapshots + 4 daily health snapshots provided enough data for trajectory calculation
+- Z-score inflection detection identified 6 inflection points (3 positive, 3 negative)
+- Change_log correlation revealed clear pattern: listing push + PPC deep dive → rank surge → ACoS improvement 5-10 days later
+- Stored trajectory data in summary.json for future WoW trajectory comparison
+
+**Lessons learned:**
+1. **3 financial data points is barely enough** for trajectories — confidence is "low" across the board. Need 4+ weekly snapshots for "medium" confidence.
+2. **Daily health snapshots have stale financial data** — they reuse the latest weekly numbers. Only rank/campaign data is fresh. Don't count them as independent financial data points.
+3. **The temporal lag between intervention and data is critical** — portfolios restructured on Mar 5-6 show negative inflections because the data window (Feb 27–Mar 5) predates the changes. Must annotate this clearly.
+4. **Trajectory stored in summary.json** enables future runs to compare trajectories WoW, not just metrics WoW. This is the real value of Step 13b.
+
+**Tokens/cost:** ~30K tokens (read-only — no API calls, just analysis of existing data)
+
+### Run: 2026-03-08
+**Goals:**
+- [x] Pull all 4 PPC reports via Amazon Ads API (campaigns, search terms, placements, targeting)
+- [x] Download full data (184 campaigns, 3,907 search terms, 499 placements, 630 targeting)
+- [x] Fetch Seller Board daily dashboard (7 days)
+- [x] Fetch DataDive rank radar summary (15 radars)
+- [x] WoW comparison against Mar 1 snapshot
+- [x] Save snapshot + generate comprehensive report
+
+**Result:** SUCCESS — Full analysis with all 4 reports including placement (first time!)
+
+**What worked:**
+- **Placement report is WORKING!** — 499 rows with proper labels (Top of Search, Detail Page, Other, Off Amazon). Fix from Mar 5 confirmed.
+- **save_to_file on all 4 reports** — saved raw JSON to snapshot folder + returned summary. Efficient token usage.
+- **3 parallel analysis agents** — campaigns+placements, search terms, targeting processed simultaneously. Total ~300K agent tokens but main context stayed lean.
+- **Reports took ~5 minutes to generate** (all 4 stuck in PENDING for 4+ min, then all completed at once). 6 polls total.
+- **Account had best week ever:** ACoS 37.5%→34.2%, Net Profit +41.6%, zero-order waste -20.5%, orders +7.7%.
+
+**What didn't work:**
+1. **Reports PENDING for 4+ minutes** — all 4 reports stuck in PENDING through 6 polling cycles (~4.5 min). Eventually all completed at once. This is Amazon's queue, not our code.
+2. **No portfolioId in async reports** — still must map campaigns to portfolios by name prefix (Known Issue #3, cannot fix).
+3. **Agent campaign total discrepancy** — agent calculated $3,299 spend vs report total $5,033. Agent was filtering more aggressively (only campaigns it could map to portfolios). The report-level totals ($5,033/$14,720) are more accurate.
+
+**Lessons learned:**
+1. **5+ minute PENDING is normal for 4 simultaneous reports.** Don't panic — set expectations at 5 min, poll every 30-60s.
+2. **save_to_file for ALL reports** is the right pattern — even campaign report (184 rows) benefits from being saved to disk for later analysis.
+3. **3 parallel agents for data processing** is efficient — keeps main context clean while doing deep analysis.
+4. **Placement report data validates TOS strategy** — 58% of spend goes to TOS at 32.7% ACoS with 12.4% CVR. Detail Page and Other are lower CVR. Off-Amazon is pure waste ($99/wk, 0 sales).
+5. **Phrase match is underutilized** — 32.7% ACoS and 13.7% CVR vs exact's 41.2% ACoS and 9.4% CVR. Exact TOS pushes need review.
+
+**Tokens/cost:** ~80K main context + ~300K across 3 agents. 0 API cost.
+
 ### Run: 2026-03-01 (post-restart — COMPLETE DATA)
 **Goals:**
 - [x] Re-create all PPC reports after server restart
@@ -153,7 +208,7 @@
 **Impact:** Was MEDIUM — Placement report returned 4 unlabeled rows per campaign.
 **Root cause:** `placementClassification` was removed from `columns` and never added back. `campaignPlacement` is a groupBy dimension only; `placementClassification` is the column name (v3 equivalent of v2 `placement`).
 **Fix applied (2026-03-05):** Added `placementClassification` to `columns` array in server.py line 122. Tested and confirmed — report now returns labeled placements: "Top of Search on-Amazon", "Detail Page on-Amazon", "Other on-Amazon", "Off Amazon".
-**Status:** RESOLVED. Needs server restart to take effect in running server.
+**Status:** FULLY RESOLVED (confirmed working 2026-03-08 — 499 placement rows with proper labels).
 
 ### 3. No portfolio field in sp_campaigns report — CANNOT FIX
 **Impact:** MEDIUM — Cannot group campaigns by portfolio without additional API calls.

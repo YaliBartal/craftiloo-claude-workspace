@@ -1,0 +1,1812 @@
+{
+  "reportSpecification": {
+    "reportType": "GET_BRAND_ANALYTICS_SEARCH_CATALOG_PERFORMANCE_REPORT",
+    "reportOptions": {
+      "reportPeriod": "WEEK"
+    },
+    "dataStartTime": "2026-02-22",
+    "dataEndTime": "2026-02-28",
+    "marketplaceIds": [
+      "ATVPDKIKX0DER"
+    ]
+  },
+  "dataByAsin": [
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B08DDJCQKF",
+      "impressionData": {
+        "impressionCount": 74959,
+        "impressionMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 4377,
+        "oneDayShippingImpressionCount": 41149,
+        "twoDayShippingImpressionCount": 14982
+      },
+      "clickData": {
+        "clickCount": 1271,
+        "clickRate": 0.017,
+        "clickedMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 72,
+        "oneDayShippingClickCount": 698,
+        "twoDayShippingClickCount": 262
+      },
+      "cartAddData": {
+        "cartAddCount": 372,
+        "cartAddedMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 27,
+        "oneDayShippingCartAddCount": 197,
+        "twoDayShippingCartAddCount": 76
+      },
+      "purchaseData": {
+        "purchaseCount": 118,
+        "searchTrafficSales": {
+          "amount": 2394.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0928,
+        "purchaseMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 11,
+        "oneDayShippingPurchaseCount": 70,
+        "twoDayShippingPurchaseCount": 17
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B08DJYBH4D",
+      "impressionData": {
+        "impressionCount": 1415,
+        "impressionMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 62,
+        "oneDayShippingImpressionCount": 637,
+        "twoDayShippingImpressionCount": 395
+      },
+      "clickData": {
+        "clickCount": 8,
+        "clickRate": 0.0057,
+        "clickedMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 6,
+        "twoDayShippingClickCount": 1
+      },
+      "cartAddData": {
+        "cartAddCount": 3,
+        "cartAddedMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 2,
+        "twoDayShippingCartAddCount": 1
+      },
+      "purchaseData": {
+        "purchaseCount": 2,
+        "searchTrafficSales": {
+          "amount": 39.96,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.25,
+        "purchaseMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 2,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B08FYH13CL",
+      "impressionData": {
+        "impressionCount": 13001,
+        "impressionMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 292,
+        "oneDayShippingImpressionCount": 4562,
+        "twoDayShippingImpressionCount": 4135
+      },
+      "clickData": {
+        "clickCount": 223,
+        "clickRate": 0.0172,
+        "clickedMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 7,
+        "oneDayShippingClickCount": 81,
+        "twoDayShippingClickCount": 63
+      },
+      "cartAddData": {
+        "cartAddCount": 54,
+        "cartAddedMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 2,
+        "oneDayShippingCartAddCount": 17,
+        "twoDayShippingCartAddCount": 14
+      },
+      "purchaseData": {
+        "purchaseCount": 13,
+        "searchTrafficSales": {
+          "amount": 259.74,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0583,
+        "purchaseMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 5,
+        "twoDayShippingPurchaseCount": 1
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B08L8BHD4Z",
+      "impressionData": {
+        "impressionCount": 10429,
+        "impressionMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 190,
+        "oneDayShippingImpressionCount": 3394,
+        "twoDayShippingImpressionCount": 3506
+      },
+      "clickData": {
+        "clickCount": 142,
+        "clickRate": 0.0136,
+        "clickedMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 2,
+        "oneDayShippingClickCount": 48,
+        "twoDayShippingClickCount": 47
+      },
+      "cartAddData": {
+        "cartAddCount": 47,
+        "cartAddedMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 18,
+        "twoDayShippingCartAddCount": 14
+      },
+      "purchaseData": {
+        "purchaseCount": 9,
+        "searchTrafficSales": {
+          "amount": 197.82,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0634,
+        "purchaseMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 3,
+        "twoDayShippingPurchaseCount": 2
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B092SW839H",
+      "impressionData": {
+        "impressionCount": 6765,
+        "impressionMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 155,
+        "oneDayShippingImpressionCount": 2381,
+        "twoDayShippingImpressionCount": 2048
+      },
+      "clickData": {
+        "clickCount": 93,
+        "clickRate": 0.0137,
+        "clickedMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 3,
+        "oneDayShippingClickCount": 34,
+        "twoDayShippingClickCount": 23
+      },
+      "cartAddData": {
+        "cartAddCount": 22,
+        "cartAddedMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 2,
+        "oneDayShippingCartAddCount": 10,
+        "twoDayShippingCartAddCount": 4
+      },
+      "purchaseData": {
+        "purchaseCount": 1,
+        "searchTrafficSales": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0108,
+        "purchaseMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 1,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B096MYBLS1",
+      "impressionData": {
+        "impressionCount": 5218,
+        "impressionMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 5,
+        "oneDayShippingImpressionCount": 415,
+        "twoDayShippingImpressionCount": 1115
+      },
+      "clickData": {
+        "clickCount": 83,
+        "clickRate": 0.0159,
+        "clickedMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 5,
+        "twoDayShippingClickCount": 23
+      },
+      "cartAddData": {
+        "cartAddCount": 27,
+        "cartAddedMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 2,
+        "twoDayShippingCartAddCount": 9
+      },
+      "purchaseData": {
+        "purchaseCount": 7,
+        "searchTrafficSales": {
+          "amount": 198.02,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0843,
+        "purchaseMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 1,
+        "twoDayShippingPurchaseCount": 3
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09BRC2VYV",
+      "impressionData": {
+        "impressionCount": 179,
+        "impressionMedianPrice": {
+          "amount": 16.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 0,
+        "oneDayShippingImpressionCount": 55,
+        "twoDayShippingImpressionCount": 51
+      },
+      "clickData": {
+        "clickCount": 3,
+        "clickRate": 0.0168,
+        "clickedMedianPrice": {
+          "amount": 16.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 0,
+        "twoDayShippingClickCount": 1
+      },
+      "cartAddData": {
+        "cartAddCount": 0,
+        "cartAddedMedianPrice": null,
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09HVCCNM2",
+      "impressionData": {
+        "impressionCount": 8385,
+        "impressionMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 54,
+        "oneDayShippingImpressionCount": 1402,
+        "twoDayShippingImpressionCount": 3287
+      },
+      "clickData": {
+        "clickCount": 126,
+        "clickRate": 0.015,
+        "clickedMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 2,
+        "oneDayShippingClickCount": 29,
+        "twoDayShippingClickCount": 48
+      },
+      "cartAddData": {
+        "cartAddCount": 17,
+        "cartAddedMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 3,
+        "twoDayShippingCartAddCount": 8
+      },
+      "purchaseData": {
+        "purchaseCount": 4,
+        "searchTrafficSales": {
+          "amount": 71.92,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0317,
+        "purchaseMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 1,
+        "twoDayShippingPurchaseCount": 2
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09HVDNFMR",
+      "impressionData": {
+        "impressionCount": 16663,
+        "impressionMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 10,
+        "oneDayShippingImpressionCount": 1145,
+        "twoDayShippingImpressionCount": 5008
+      },
+      "clickData": {
+        "clickCount": 332,
+        "clickRate": 0.0199,
+        "clickedMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 15,
+        "twoDayShippingClickCount": 105
+      },
+      "cartAddData": {
+        "cartAddCount": 68,
+        "cartAddedMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 2,
+        "twoDayShippingCartAddCount": 19
+      },
+      "purchaseData": {
+        "purchaseCount": 8,
+        "searchTrafficSales": {
+          "amount": 143.84,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0241,
+        "purchaseMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 3
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09HVDYMDK",
+      "impressionData": {
+        "impressionCount": 2041,
+        "impressionMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 0,
+        "oneDayShippingImpressionCount": 109,
+        "twoDayShippingImpressionCount": 723
+      },
+      "clickData": {
+        "clickCount": 22,
+        "clickRate": 0.0108,
+        "clickedMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 2,
+        "twoDayShippingClickCount": 8
+      },
+      "cartAddData": {
+        "cartAddCount": 2,
+        "cartAddedMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 2
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09HVSLBS6",
+      "impressionData": {
+        "impressionCount": 2045,
+        "impressionMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 0,
+        "oneDayShippingImpressionCount": 0,
+        "twoDayShippingImpressionCount": 0
+      },
+      "clickData": {
+        "clickCount": 26,
+        "clickRate": 0.0127,
+        "clickedMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 0,
+        "twoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "cartAddCount": 6,
+        "cartAddedMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 1,
+        "searchTrafficSales": {
+          "amount": 35.96,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0385,
+        "purchaseMedianPrice": {
+          "amount": 17.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09WQSBZY7",
+      "impressionData": {
+        "impressionCount": 43104,
+        "impressionMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 2037,
+        "oneDayShippingImpressionCount": 21023,
+        "twoDayShippingImpressionCount": 10236
+      },
+      "clickData": {
+        "clickCount": 741,
+        "clickRate": 0.0172,
+        "clickedMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 43,
+        "oneDayShippingClickCount": 381,
+        "twoDayShippingClickCount": 158
+      },
+      "cartAddData": {
+        "cartAddCount": 221,
+        "cartAddedMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 11,
+        "oneDayShippingCartAddCount": 124,
+        "twoDayShippingCartAddCount": 42
+      },
+      "purchaseData": {
+        "purchaseCount": 50,
+        "searchTrafficSales": {
+          "amount": 1308.82,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0675,
+        "purchaseMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 3,
+        "oneDayShippingPurchaseCount": 24,
+        "twoDayShippingPurchaseCount": 11
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09X55KL2C",
+      "impressionData": {
+        "impressionCount": 26558,
+        "impressionMedianPrice": {
+          "amount": 23.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 1423,
+        "oneDayShippingImpressionCount": 13968,
+        "twoDayShippingImpressionCount": 5924
+      },
+      "clickData": {
+        "clickCount": 607,
+        "clickRate": 0.0229,
+        "clickedMedianPrice": {
+          "amount": 23.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 38,
+        "oneDayShippingClickCount": 314,
+        "twoDayShippingClickCount": 129
+      },
+      "cartAddData": {
+        "cartAddCount": 137,
+        "cartAddedMedianPrice": {
+          "amount": 23.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 12,
+        "oneDayShippingCartAddCount": 61,
+        "twoDayShippingCartAddCount": 33
+      },
+      "purchaseData": {
+        "purchaseCount": 25,
+        "searchTrafficSales": {
+          "amount": 609.1,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0412,
+        "purchaseMedianPrice": {
+          "amount": 23.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 4,
+        "oneDayShippingPurchaseCount": 11,
+        "twoDayShippingPurchaseCount": 5
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0B18ZHYKR",
+      "impressionData": {
+        "impressionCount": 1166,
+        "impressionMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 17,
+        "oneDayShippingImpressionCount": 276,
+        "twoDayShippingImpressionCount": 425
+      },
+      "clickData": {
+        "clickCount": 5,
+        "clickRate": 0.0043,
+        "clickedMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 2,
+        "twoDayShippingClickCount": 1
+      },
+      "cartAddData": {
+        "cartAddCount": 0,
+        "cartAddedMedianPrice": null,
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0B18ZRRCQ",
+      "impressionData": {
+        "impressionCount": 2982,
+        "impressionMedianPrice": {
+          "amount": 26.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 0,
+        "oneDayShippingImpressionCount": 161,
+        "twoDayShippingImpressionCount": 737
+      },
+      "clickData": {
+        "clickCount": 50,
+        "clickRate": 0.0168,
+        "clickedMedianPrice": {
+          "amount": 26.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 0,
+        "twoDayShippingClickCount": 21
+      },
+      "cartAddData": {
+        "cartAddCount": 14,
+        "cartAddedMedianPrice": {
+          "amount": 26.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 6
+      },
+      "purchaseData": {
+        "purchaseCount": 2,
+        "searchTrafficSales": {
+          "amount": 53.96,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.04,
+        "purchaseMedianPrice": {
+          "amount": 26.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0B2XL9D8D",
+      "impressionData": {
+        "impressionCount": 1122,
+        "impressionMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 8,
+        "oneDayShippingImpressionCount": 201,
+        "twoDayShippingImpressionCount": 471
+      },
+      "clickData": {
+        "clickCount": 13,
+        "clickRate": 0.0116,
+        "clickedMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 2,
+        "twoDayShippingClickCount": 6
+      },
+      "cartAddData": {
+        "cartAddCount": 3,
+        "cartAddedMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 1,
+        "twoDayShippingCartAddCount": 2
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0B3PGPVV5",
+      "impressionData": {
+        "impressionCount": 1077,
+        "impressionMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 22,
+        "oneDayShippingImpressionCount": 336,
+        "twoDayShippingImpressionCount": 391
+      },
+      "clickData": {
+        "clickCount": 16,
+        "clickRate": 0.0149,
+        "clickedMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 2,
+        "twoDayShippingClickCount": 6
+      },
+      "cartAddData": {
+        "cartAddCount": 2,
+        "cartAddedMedianPrice": {
+          "amount": 19.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 1,
+        "twoDayShippingCartAddCount": 1
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0B8TFW4MN",
+      "impressionData": {
+        "impressionCount": 957,
+        "impressionMedianPrice": {
+          "amount": 23.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 8,
+        "oneDayShippingImpressionCount": 393,
+        "twoDayShippingImpressionCount": 311
+      },
+      "clickData": {
+        "clickCount": 20,
+        "clickRate": 0.0209,
+        "clickedMedianPrice": {
+          "amount": 23.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 9,
+        "twoDayShippingClickCount": 7
+      },
+      "cartAddData": {
+        "cartAddCount": 5,
+        "cartAddedMedianPrice": {
+          "amount": 23.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 4,
+        "twoDayShippingCartAddCount": 1
+      },
+      "purchaseData": {
+        "purchaseCount": 2,
+        "searchTrafficSales": {
+          "amount": 95.92,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.1,
+        "purchaseMedianPrice": {
+          "amount": 23.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 2,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0BNDVTTSH",
+      "impressionData": {
+        "impressionCount": 4655,
+        "impressionMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 249,
+        "oneDayShippingImpressionCount": 2494,
+        "twoDayShippingImpressionCount": 996
+      },
+      "clickData": {
+        "clickCount": 72,
+        "clickRate": 0.0155,
+        "clickedMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 5,
+        "oneDayShippingClickCount": 38,
+        "twoDayShippingClickCount": 14
+      },
+      "cartAddData": {
+        "cartAddCount": 15,
+        "cartAddedMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 1,
+        "oneDayShippingCartAddCount": 4,
+        "twoDayShippingCartAddCount": 4
+      },
+      "purchaseData": {
+        "purchaseCount": 2,
+        "searchTrafficSales": {
+          "amount": 43.96,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0278,
+        "purchaseMedianPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 2,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0BP8GCK1G",
+      "impressionData": {
+        "impressionCount": 3732,
+        "impressionMedianPrice": {
+          "amount": 26.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 97,
+        "oneDayShippingImpressionCount": 1612,
+        "twoDayShippingImpressionCount": 1127
+      },
+      "clickData": {
+        "clickCount": 42,
+        "clickRate": 0.0113,
+        "clickedMedianPrice": {
+          "amount": 26.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 21,
+        "twoDayShippingClickCount": 9
+      },
+      "cartAddData": {
+        "cartAddCount": 10,
+        "cartAddedMedianPrice": {
+          "amount": 26.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 2,
+        "twoDayShippingCartAddCount": 3
+      },
+      "purchaseData": {
+        "purchaseCount": 3,
+        "searchTrafficSales": {
+          "amount": 80.94,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0714,
+        "purchaseMedianPrice": {
+          "amount": 26.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 2
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0BPDCDXNK",
+      "impressionData": {
+        "impressionCount": 742,
+        "impressionMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 0,
+        "oneDayShippingImpressionCount": 62,
+        "twoDayShippingImpressionCount": 190
+      },
+      "clickData": {
+        "clickCount": 17,
+        "clickRate": 0.0229,
+        "clickedMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 2,
+        "twoDayShippingClickCount": 4
+      },
+      "cartAddData": {
+        "cartAddCount": 1,
+        "cartAddedMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0BWSGRTB1",
+      "impressionData": {
+        "impressionCount": 664,
+        "impressionMedianPrice": {
+          "amount": 27.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 0,
+        "oneDayShippingImpressionCount": 0,
+        "twoDayShippingImpressionCount": 0
+      },
+      "clickData": {
+        "clickCount": 11,
+        "clickRate": 0.0166,
+        "clickedMedianPrice": {
+          "amount": 27.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 0,
+        "twoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "cartAddCount": 1,
+        "cartAddedMedianPrice": {
+          "amount": 27.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 1,
+        "searchTrafficSales": {
+          "amount": 27.98,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0909,
+        "purchaseMedianPrice": {
+          "amount": 27.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0BXHJJMX1",
+      "impressionData": {
+        "impressionCount": 3525,
+        "impressionMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 58,
+        "oneDayShippingImpressionCount": 1349,
+        "twoDayShippingImpressionCount": 1159
+      },
+      "clickData": {
+        "clickCount": 38,
+        "clickRate": 0.0108,
+        "clickedMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 1,
+        "oneDayShippingClickCount": 14,
+        "twoDayShippingClickCount": 7
+      },
+      "cartAddData": {
+        "cartAddCount": 5,
+        "cartAddedMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 1,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 2,
+        "searchTrafficSales": {
+          "amount": 49.96,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0526,
+        "purchaseMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 1,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0C3YQ5RG1",
+      "impressionData": {
+        "impressionCount": 411,
+        "impressionMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 20,
+        "oneDayShippingImpressionCount": 183,
+        "twoDayShippingImpressionCount": 150
+      },
+      "clickData": {
+        "clickCount": 5,
+        "clickRate": 0.0122,
+        "clickedMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 1,
+        "twoDayShippingClickCount": 4
+      },
+      "cartAddData": {
+        "cartAddCount": 1,
+        "cartAddedMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 1
+      },
+      "purchaseData": {
+        "purchaseCount": 1,
+        "searchTrafficSales": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.2,
+        "purchaseMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 1
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0CDH84QDP",
+      "impressionData": {
+        "impressionCount": 855,
+        "impressionMedianPrice": {
+          "amount": 26.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 20,
+        "oneDayShippingImpressionCount": 501,
+        "twoDayShippingImpressionCount": 169
+      },
+      "clickData": {
+        "clickCount": 5,
+        "clickRate": 0.0058,
+        "clickedMedianPrice": {
+          "amount": 26.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 4,
+        "twoDayShippingClickCount": 1
+      },
+      "cartAddData": {
+        "cartAddCount": 2,
+        "cartAddedMedianPrice": {
+          "amount": 26.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 1,
+        "twoDayShippingCartAddCount": 1
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0CKTS6ZFZ",
+      "impressionData": {
+        "impressionCount": 119,
+        "impressionMedianPrice": {
+          "amount": 16.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 2,
+        "oneDayShippingImpressionCount": 40,
+        "twoDayShippingImpressionCount": 28
+      },
+      "clickData": {
+        "clickCount": 2,
+        "clickRate": 0.0168,
+        "clickedMedianPrice": {
+          "amount": 16.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 0,
+        "twoDayShippingClickCount": 1
+      },
+      "cartAddData": {
+        "cartAddCount": 0,
+        "cartAddedMedianPrice": null,
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0CP2KCF9R",
+      "impressionData": {
+        "impressionCount": 1535,
+        "impressionMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 25,
+        "oneDayShippingImpressionCount": 482,
+        "twoDayShippingImpressionCount": 563
+      },
+      "clickData": {
+        "clickCount": 26,
+        "clickRate": 0.0169,
+        "clickedMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 6,
+        "twoDayShippingClickCount": 10
+      },
+      "cartAddData": {
+        "cartAddCount": 5,
+        "cartAddedMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 2
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0CQHMJWR9",
+      "impressionData": {
+        "impressionCount": 450,
+        "impressionMedianPrice": {
+          "amount": 9.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 1,
+        "oneDayShippingImpressionCount": 68,
+        "twoDayShippingImpressionCount": 169
+      },
+      "clickData": {
+        "clickCount": 8,
+        "clickRate": 0.0178,
+        "clickedMedianPrice": {
+          "amount": 9.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 3,
+        "twoDayShippingClickCount": 3
+      },
+      "cartAddData": {
+        "cartAddCount": 1,
+        "cartAddedMedianPrice": {
+          "amount": 9.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 1
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0CRHX8G72",
+      "impressionData": {
+        "impressionCount": 246,
+        "impressionMedianPrice": {
+          "amount": 12.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 6,
+        "oneDayShippingImpressionCount": 91,
+        "twoDayShippingImpressionCount": 84
+      },
+      "clickData": {
+        "clickCount": 8,
+        "clickRate": 0.0325,
+        "clickedMedianPrice": {
+          "amount": 12.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 2,
+        "twoDayShippingClickCount": 3
+      },
+      "cartAddData": {
+        "cartAddCount": 1,
+        "cartAddedMedianPrice": {
+          "amount": 12.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 1,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0CSPRD746",
+      "impressionData": {
+        "impressionCount": 7,
+        "impressionMedianPrice": {
+          "amount": 12.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 0,
+        "oneDayShippingImpressionCount": 4,
+        "twoDayShippingImpressionCount": 0
+      },
+      "clickData": {
+        "clickCount": 0,
+        "clickRate": 0.0,
+        "clickedMedianPrice": null,
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 0,
+        "twoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "cartAddCount": 0,
+        "cartAddedMedianPrice": null,
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": null,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0CT962TMN",
+      "impressionData": {
+        "impressionCount": 977,
+        "impressionMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 20,
+        "oneDayShippingImpressionCount": 213,
+        "twoDayShippingImpressionCount": 398
+      },
+      "clickData": {
+        "clickCount": 28,
+        "clickRate": 0.0287,
+        "clickedMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 10,
+        "twoDayShippingClickCount": 6
+      },
+      "cartAddData": {
+        "cartAddCount": 5,
+        "cartAddedMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 4,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0CY2SXF6P",
+      "impressionData": {
+        "impressionCount": 3,
+        "impressionMedianPrice": {
+          "amount": 12.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 0,
+        "oneDayShippingImpressionCount": 0,
+        "twoDayShippingImpressionCount": 1
+      },
+      "clickData": {
+        "clickCount": 0,
+        "clickRate": 0.0,
+        "clickedMedianPrice": null,
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 0,
+        "twoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "cartAddCount": 0,
+        "cartAddedMedianPrice": null,
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": null,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0DC69M3YD",
+      "impressionData": {
+        "impressionCount": 27644,
+        "impressionMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 641,
+        "oneDayShippingImpressionCount": 12540,
+        "twoDayShippingImpressionCount": 7741
+      },
+      "clickData": {
+        "clickCount": 303,
+        "clickRate": 0.011,
+        "clickedMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 9,
+        "oneDayShippingClickCount": 138,
+        "twoDayShippingClickCount": 96
+      },
+      "cartAddData": {
+        "cartAddCount": 49,
+        "cartAddedMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 24,
+        "twoDayShippingCartAddCount": 19
+      },
+      "purchaseData": {
+        "purchaseCount": 11,
+        "searchTrafficSales": {
+          "amount": 274.78,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0363,
+        "purchaseMedianPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 5,
+        "twoDayShippingPurchaseCount": 4
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0DGVB7JWD",
+      "impressionData": {
+        "impressionCount": 22,
+        "impressionMedianPrice": {
+          "amount": 35.11,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 0,
+        "oneDayShippingImpressionCount": 9,
+        "twoDayShippingImpressionCount": 6
+      },
+      "clickData": {
+        "clickCount": 0,
+        "clickRate": 0.0,
+        "clickedMedianPrice": null,
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 0,
+        "twoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "cartAddCount": 0,
+        "cartAddedMedianPrice": null,
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": null,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0DGVDD5B1",
+      "impressionData": {
+        "impressionCount": 38,
+        "impressionMedianPrice": {
+          "amount": 61.7,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 0,
+        "oneDayShippingImpressionCount": 20,
+        "twoDayShippingImpressionCount": 7
+      },
+      "clickData": {
+        "clickCount": 0,
+        "clickRate": 0.0,
+        "clickedMedianPrice": null,
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 0,
+        "twoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "cartAddCount": 0,
+        "cartAddedMedianPrice": null,
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": null,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0DGVP19RR",
+      "impressionData": {
+        "impressionCount": 26,
+        "impressionMedianPrice": {
+          "amount": 42.5,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 0,
+        "oneDayShippingImpressionCount": 12,
+        "twoDayShippingImpressionCount": 8
+      },
+      "clickData": {
+        "clickCount": 0,
+        "clickRate": 0.0,
+        "clickedMedianPrice": null,
+        "sameDayShippingClickCount": 0,
+        "oneDayShippingClickCount": 0,
+        "twoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "cartAddCount": 0,
+        "cartAddedMedianPrice": null,
+        "sameDayShippingCartAddCount": 0,
+        "oneDayShippingCartAddCount": 0,
+        "twoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "purchaseCount": 0,
+        "searchTrafficSales": {
+          "amount": 0.0,
+          "currencyCode": "USD"
+        },
+        "conversionRate": null,
+        "purchaseMedianPrice": null,
+        "sameDayShippingPurchaseCount": 0,
+        "oneDayShippingPurchaseCount": 0,
+        "twoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B0DKD2S3JT",
+      "impressionData": {
+        "impressionCount": 15282,
+        "impressionMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingImpressionCount": 639,
+        "oneDayShippingImpressionCount": 8423,
+        "twoDayShippingImpressionCount": 3260
+      },
+      "clickData": {
+        "clickCount": 195,
+        "clickRate": 0.0128,
+        "clickedMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingClickCount": 11,
+        "oneDayShippingClickCount": 97,
+        "twoDayShippingClickCount": 43
+      },
+      "cartAddData": {
+        "cartAddCount": 57,
+        "cartAddedMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingCartAddCount": 5,
+        "oneDayShippingCartAddCount": 29,
+        "twoDayShippingCartAddCount": 13
+      },
+      "purchaseData": {
+        "purchaseCount": 15,
+        "searchTrafficSales": {
+          "amount": 371.68,
+          "currencyCode": "USD"
+        },
+        "conversionRate": 0.0769,
+        "purchaseMedianPrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "sameDayShippingPurchaseCount": 3,
+        "oneDayShippingPurchaseCount": 6,
+        "twoDayShippingPurchaseCount": 3
+      }
+    }
+  ]
+}

@@ -461,6 +461,70 @@ async def get_channel_info(
 
 
 @mcp.tool()
+async def create_channel(
+    workspace: str,
+    name: str,
+    is_private: bool = False,
+    description: str = "",
+) -> str:
+    """Create a new Slack channel.
+
+    workspace: Workspace name or alias.
+    name: Channel name (lowercase, no spaces, max 80 chars). Use hyphens for multi-word names.
+    is_private: Create as private channel (default: public).
+    description: Optional channel purpose/description."""
+    params: dict = {"name": name.lower().strip(), "is_private": is_private}
+
+    data = await slack_api(workspace, "conversations.create", params)
+    if isinstance(data, str):
+        return data
+
+    channel = data.get("channel", {})
+    channel_id = channel.get("id", "")
+    channel_name = channel.get("name", name)
+
+    _invalidate_channel_cache(workspace)
+
+    result = f"Channel created: #{channel_name} (`{channel_id}`)"
+
+    if description:
+        purpose_data = await slack_api(workspace, "conversations.setPurpose", {
+            "channel": channel_id,
+            "purpose": description,
+        })
+        if isinstance(purpose_data, str):
+            result += f"\n⚠️ Channel created but purpose failed: {purpose_data}"
+        else:
+            result += f"\nPurpose set: {description}"
+
+    return result
+
+
+@mcp.tool()
+async def invite_to_channel(
+    workspace: str,
+    channel: str,
+    user_ids: str,
+) -> str:
+    """Invite users to a Slack channel.
+
+    workspace: Workspace name or alias.
+    channel: Channel name (e.g. 'general') or ID (e.g. 'C01ABC123').
+    user_ids: Comma-separated Slack user IDs (e.g. 'U01ABC,U02DEF')."""
+    channel_id = await _resolve_channel(workspace, channel)
+    users = ",".join(uid.strip() for uid in user_ids.split(",") if uid.strip())
+
+    data = await slack_api(workspace, "conversations.invite", {
+        "channel": channel_id,
+        "users": users,
+    })
+    if isinstance(data, str):
+        return data
+
+    return f"Users invited to channel `{channel_id}`: {users}"
+
+
+@mcp.tool()
 async def set_channel_topic(
     workspace: str,
     channel: str,

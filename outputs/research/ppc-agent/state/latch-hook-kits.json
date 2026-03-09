@@ -98,6 +98,54 @@
   },
   "metric_history": [
     {
+      "date": "2026-02-20",
+      "source": "timeseries-backfill",
+      "acos": 31.52,
+      "spend_7d": 110.85,
+      "sales_7d": 351.66,
+      "orders_7d": 15,
+      "cvr": 12.3,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-01",
+      "source": "timeseries-backfill",
+      "acos": 33.7,
+      "spend_7d": 201.78,
+      "sales_7d": 599.46,
+      "orders_7d": 24,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-02",
+      "source": "timeseries-backfill",
+      "acos": 33.7,
+      "spend_7d": 201.78,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-03",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 9,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
       "date": "2026-03-05",
       "period": "30d",
       "acos": 36.5,
@@ -113,6 +161,18 @@
       "organic_momentum": 52,
       "profit_health": "BREAK-EVEN",
       "margin_pct": 1.2
+    },
+    {
+      "date": "2026-03-08",
+      "source": "timeseries-backfill",
+      "acos": 41.5,
+      "spend_7d": 168.29,
+      "sales_7d": 405.48,
+      "orders_7d": 18,
+      "cvr": 5.7,
+      "rank_top10": 11,
+      "health_status": null,
+      "note": "Backfilled from weekly+daily-health by timeseries-dashboard"
     }
   ],
   "change_log": [
@@ -331,6 +391,19 @@
       "type": "7-day post-listing re-audit",
       "source": "listing-push-2026-03-06",
       "focus": "Rank recovery on generic keywords (latch hook kit 20K SV, latch hook kits 12K SV), CVR change, RJ score improvement"
+    },
+    {
+      "date": "2026-03-23",
+      "type": "listing-ab-analyzer",
+      "skill": "listing-ab-analyzer",
+      "asin": "B08FYH13CL",
+      "change_date": "2026-03-06",
+      "what_changed": ["title", "bullets", "backend_keywords"],
+      "before_weeks": ["2026-02-15 to 2026-02-21", "2026-02-22 to 2026-02-28"],
+      "transition_week": "2026-03-01 to 2026-03-07",
+      "after_weeks": ["2026-03-08 to 2026-03-14", "2026-03-15 to 2026-03-21"],
+      "source": "listing-push-2026-03-06",
+      "status": "pending"
     }
   ],
   "skills_run": [
@@ -372,11 +445,21 @@
         "description": "skipped (A+ active)"
       },
       "submission_id": "c3e8e77c092e493b824fab5ce0091070"
+    },
+    {
+      "skill": "ppc-timeseries-dashboard",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "data_points": 6,
+        "inflections_detected": 0,
+        "trajectory_30d_acos": "declining"
+      }
     }
   ],
   "improvement_assessment": {
     "overall_trend": "mixed",
-    "notes": "First deep dive. Hero keyword stable at #4. Root keywords declining severely (latch hook kit #45->100+, latch hook #28->100+). ACoS 6.5pp over target. Strong CVR (12.1%). Major structural changes applied \u00e2\u20ac\u201d PP modifiers, bid boosts, 2 new campaigns, 1 pause.",
+    "notes": "First deep dive. Hero keyword stable at #4. Root keywords declining severely (latch hook kit #45->100+, latch hook #28->100+). ACoS 6.5pp over target. Strong CVR (12.1%). Major structural changes applied â€” PP modifiers, bid boosts, 2 new campaigns, 1 pause.",
     "last_assessed": "2026-03-05"
   }
 }

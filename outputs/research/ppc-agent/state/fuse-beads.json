@@ -166,6 +166,30 @@
   },
   "metric_history": [
     {
+      "date": "2026-02-20",
+      "source": "timeseries-backfill",
+      "acos": 31.83,
+      "spend_7d": 770.07,
+      "sales_7d": 2419.52,
+      "orders_7d": 73,
+      "cvr": 9.17,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-01",
+      "source": "timeseries-backfill",
+      "acos": 36.0,
+      "spend_7d": 872.8,
+      "sales_7d": 2423.72,
+      "orders_7d": 73,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
       "date": "2026-03-02",
       "source": "portfolio-action-plan",
       "acos": 35.0,
@@ -178,6 +202,18 @@
       "health_status": "YELLOW",
       "campaigns_enabled": 14,
       "note": "Deep dive baseline. SK fuse beads TOS at 895% ACoS. #1 spend portfolio."
+    },
+    {
+      "date": "2026-03-03",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 13,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
     },
     {
       "date": "2026-03-05",
@@ -197,9 +233,53 @@
       "organic_momentum": 78,
       "profit_health": "PROFITABLE",
       "margin_pct": 20.6
+    },
+    {
+      "date": "2026-03-08",
+      "source": "timeseries-backfill",
+      "acos": 24.6,
+      "spend_7d": 583.98,
+      "sales_7d": 2372.38,
+      "orders_7d": 75,
+      "cvr": 9.2,
+      "rank_top10": 10,
+      "health_status": null,
+      "note": "Backfilled from weekly+daily-health by timeseries-dashboard"
     }
   ],
   "change_log": [
+    {
+      "date": "2026-03-08",
+      "skill": "weekly-ppc-analysis (30d verified)",
+      "summary": "Bid cut on bleeding PT target + new SK campaign created",
+      "changes": [
+        {
+          "category": "BID_DECREASE",
+          "campaign": "fuse beads - mini - SPM MP product targeting (297546335847145)",
+          "target": "B0C5WQD914 (target ID 525600810533560)",
+          "from": "$0.43",
+          "to": "$0.31 (-28%)",
+          "reason": "30d ACoS 51.5% ($155 spend / $301 sales / 9 orders). Above 30% target, trending worse (7d at 135%)."
+        },
+        {
+          "category": "CAMPAIGN_CREATE",
+          "campaign": "fuse beads - mini - SPM SK 2.6mm fuse beads TOS (269507392038455)",
+          "ad_group_id": "317956558640690",
+          "keyword_id": "522511353939026",
+          "ad_id": "384096089614543",
+          "details": "EXACT '2.6mm fuse beads' at $0.83 bid, TOS 167%, PP 12%, $12/day budget, ASIN B09THLVFZK",
+          "reason": "30d: 37 clicks, 8 orders, 21.6% CVR, 14.7% ACoS — goldmine long-tail keyword."
+        },
+        {
+          "category": "CROSS_NEGATE",
+          "campaigns": ["MK broad mini root (487800929938065)", "MK multi root TOS (409059613193543)"],
+          "term": "2.6mm fuse beads",
+          "match_type": "NEGATIVE_EXACT",
+          "negative_ids": ["526966969717712", "402330777704317"],
+          "reason": "Traffic isolation for new SK campaign"
+        }
+      ]
+    },
     {
       "date": "2026-03-06",
       "skill": "listing-optimizer + listing-creator",
@@ -388,6 +468,19 @@
       ],
       "source": "listing-optimizer-2026-03-06",
       "status": "pending"
+    },
+    {
+      "date": "2026-03-23",
+      "type": "listing-ab-analyzer",
+      "skill": "listing-ab-analyzer",
+      "asin": "B09THLVFZK",
+      "change_date": "2026-03-06",
+      "what_changed": ["title", "bullets", "backend_keywords"],
+      "before_weeks": ["2026-02-15 to 2026-02-21", "2026-02-22 to 2026-02-28"],
+      "transition_week": "2026-03-01 to 2026-03-07",
+      "after_weeks": ["2026-03-08 to 2026-03-14", "2026-03-15 to 2026-03-21"],
+      "source": "listing-optimizer-2026-03-06",
+      "status": "pending"
     }
   ],
   "skills_run": [
@@ -429,6 +522,16 @@
         "profit_health": "PROFITABLE"
       },
       "output_ref": "tacos-optimizer/2026-03-06-tacos-scorecard.md"
+    },
+    {
+      "skill": "ppc-timeseries-dashboard",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "data_points": 6,
+        "inflections_detected": 0,
+        "trajectory_30d_acos": "improving"
+      }
     }
   ],
   "improvement_assessment": {

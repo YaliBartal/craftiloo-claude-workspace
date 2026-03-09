@@ -184,7 +184,10 @@ Claude Code Workspace/
 │       ├── customer-review-analyzer/  # Amazon review analysis for our products + competitors
 │       ├── niche-category-analysis/  # New niche/category deep-dive research & viability
 │       ├── listing-optimizer/        # Listing audit & optimization (Ranking Juice + keywords + rank trends)
-│       └── competitor-price-serp-tracker/  # Weekly competitor price/BSR/SERP tracking
+│       ├── listing-ab-analyzer/     # Before/after listing change impact analysis (Brand Analytics)
+│       ├── competitor-price-serp-tracker/  # Weekly competitor price/BSR/SERP tracking
+│       ├── brand-analytics-weekly/  # Weekly Brand Analytics digest (all 5 BA reports + WoW trends)
+│       └── notification-hub/        # Utility: Slack notifications + threshold alerts after skill runs
 │       # Each skill folder contains:
 │       #   SKILL.md    — Instructions (reads LESSONS.md first, writes to it last)
 │       #   LESSONS.md  — Run log, known issues, repeat errors, resolved issues
@@ -241,13 +244,17 @@ Claude Code Workspace/
 | "Rank optimizer" / "Rank vs spend" / "Keyword rank analysis" / "PPC rank check" | → `.claude/skills/ppc-agent/` (routes to keyword-rank-optimizer) |
 | "Monthly PPC" / "Monthly review" / "PPC month" | → `.claude/skills/ppc-agent/` (routes to ppc-monthly-review) |
 | "TACoS check" / "TACoS optimizer" / "Profit check" / "Profit reality" / "TACoS scorecard" | -> `.claude/skills/ppc-agent/` (routes to ppc-tacos-optimizer) |
+| "PPC trends" / "PPC dashboard" / "Trend check" / "Trajectory" / "Time series" / "30 day trend" | -> `.claude/skills/weekly-ppc-analysis/` (trajectories built into weekly) |
 | "Weekly PPC" / "PPC analysis" / "Campaign analysis" | → `.claude/skills/weekly-ppc-analysis/` (standalone) |
 | "Search term analysis" / "Keyword mining" | → `.claude/skills/weekly-ppc-analysis/` |
 | "Generate negatives" / "Negative keywords" / "Negative keyword list" | → `.claude/skills/negative-keyword-generator/` (standalone) |
 | "Review analysis" / "Customer reviews" / "What are customers saying" | → `.claude/skills/customer-review-analyzer/` |
 | "Niche analysis" / "Category research" / "Explore a niche" / "New niche" | → `.claude/skills/niche-category-analysis/` |
 | "Listing audit" / "Audit listing" / "Listing optimizer" / "Listing score" / "Portfolio scan" / "Listing health" | → `.claude/skills/listing-optimizer/` |
+| "Listing AB" / "Before after listing" / "Measure listing change" / "Did that listing change work" / "Listing impact" | → `.claude/skills/listing-ab-analyzer/` |
 | "Competitor check" / "Competitor tracker" / "Weekly competitors" / "SERP tracker" / "Competitive intel" | → `.claude/skills/competitor-price-serp-tracker/` |
+| "Brand analytics" / "BA weekly" / "BA digest" / "Organic search report" | → `.claude/skills/brand-analytics-weekly/` |
+| "Test notifications" / "Notification test" / "Check notifications" | → `.claude/skills/notification-hub/` |
 
 **New skills** → Always save to `.claude/skills/[skill-name]/SKILL.md` (project-local, not global)
 
@@ -366,12 +373,33 @@ Custom Python MCP server for direct Amazon Selling Partner API access. Auth: LWA
 | `get_competitive_pricing` | Pricing | Landed price, listing price, Buy Box data |
 | `get_item_offers` | Pricing | All active offers for an ASIN with prices, seller info |
 | `get_fba_inventory` | FBA Inventory | SKU/ASIN stock: fulfillable, inbound, reserved quantities |
-| `create_report` | Reports | Request any Amazon report (orders, traffic, inventory, Brand Analytics) |
+| `create_report` | Reports | Request any Amazon report (orders, traffic, inventory) |
+| `create_brand_analytics_report` | Brand Analytics | Calendar-aligned BA reports (see below) |
 | `get_report_status` | Reports | Check report progress (DONE/IN_PROGRESS/FATAL) |
-| `get_report_document` | Reports | Download completed report data (CSV/TSV) |
+| `get_report_document` | Reports | Download completed report data (CSV/TSV/JSON) |
 | `get_my_listings` | Reports | Shortcut: request all-listings report |
 | `get_listing` | Listings | Current listing attributes: title, bullets, description, keywords, product type |
 | `update_listing` | Listings | PATCH listing text: title, bullets, description, backend keywords |
+
+**Brand Analytics Tool** (`create_brand_analytics_report`):
+
+Dedicated tool for Brand Analytics reports with auto-calculated calendar-aligned dates. Free with Brand Registry.
+
+| report_name | Data | Processing Time |
+|-------------|------|----------------|
+| `search_terms` | Top search keywords + top 3 clicked ASINs + click/conversion share | ~5 min |
+| `market_basket` | Products frequently bought together with yours | ~45s |
+| `repeat_purchase` | Repeat vs one-time purchase quantities per ASIN | ~60s |
+| `sqp` | Search Query Performance — per-query impressions, clicks, carts, purchases (**requires asins param**) | ~60s |
+| `scp` | Search Catalog Performance — same funnel metrics organized by ASIN | ~60s |
+
+**Key parameters:** `period` (WEEK/MONTH/QUARTER), `periods_back` (default 1), `asins` (space-separated, required for sqp, max 200 chars)
+
+**Important constraints:**
+- Weekly = Sun-Sat. Use `periods_back=2` on Sun/Mon (48h SLA means most recent week may not be ready)
+- SQP requires `asins` param — other reports don't
+- Demographics report exists in Seller Central console but is NOT API-accessible
+- Reports are async: create → poll status → download when DONE
 
 **Env variables:** `SP_API_CLIENT_ID`, `SP_API_CLIENT_SECRET`, `SP_API_REFRESH_TOKEN`, `SP_API_SELLER_ID`, `SP_API_MARKETPLACE_US`, `SP_API_MARKETPLACE_CA`, `SP_API_MARKETPLACE_MX`
 
@@ -489,13 +517,15 @@ Custom Python MCP server replacing the official `@modelcontextprotocol/server-sl
 | `craft` | `crafti` | T06KHD4CS6N | Workspace 1 (craft crafti craftiloo) |
 | `craftiloo` | — | T01Q3BTU0DA | Workspace 2 (craftiloo) |
 
-**Tools (16):**
+**Tools (18):**
 
 | Tool | Group | Slack API Method | Key Capability |
 |------|-------|------------------|----------------|
 | `list_workspaces` | Utility | — | Show configured workspaces + aliases |
 | `list_channels` | Channels | `conversations.list` | List channels with pagination |
 | `get_channel_info` | Channels | `conversations.info` | Channel details: topic, purpose, members |
+| `create_channel` | Channels | `conversations.create` | Create public/private channel (needs `channels:manage` scope) |
+| `invite_to_channel` | Channels | `conversations.invite` | Invite users to channel (needs `channels:manage` scope) |
 | `set_channel_topic` | Channels | `conversations.setTopic` | Update channel topic |
 | `post_message` | Messages | `chat.postMessage` | Post to channel |
 | `reply_to_thread` | Messages | `chat.postMessage` (threaded) | Reply in thread |
@@ -519,6 +549,11 @@ Custom Python MCP server replacing the official `@modelcontextprotocol/server-sl
 - Scope-aware error messages (shows needed vs provided scopes)
 
 **Note:** `search_messages` requires a user token (`xoxp-`) with `search:read` scope. Bot tokens (`xoxb-`) will get a `missing_scope` error.
+
+**Note:** `create_channel` and `invite_to_channel` require `channels:manage` scope. Add in Slack App Settings → OAuth & Permissions if missing.
+
+**Skills using Slack:**
+- **Notification Hub** → All 20+ skills post summaries via `post_message` to 5 channels: `#claude-morning-brief`, `#claude-ppc-updates`, `#claude-product-updates`, `#claude-competitor-watch`, `#claude-alerts`. Config: `context/notification-config.json`.
 
 **If API stops working** → Check bot tokens in .env. Verify app is still installed in each workspace at https://api.slack.com/apps.
 

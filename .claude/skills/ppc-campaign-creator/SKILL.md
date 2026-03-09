@@ -455,7 +455,15 @@ In `outputs/research/ppc-agent/state/agent-state.json`:
 
 ---
 
-### Step 9: Update LESSONS.md (mandatory)
+### Step 9: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: ppc-campaign-creator".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
+
+---
+
+### Step 10: Update LESSONS.md (mandatory)
 
 Log entry format:
 

@@ -544,6 +544,14 @@ If the parent skill runs, it handles Notion upload for both. If this skill runs 
 
 ---
 
+### Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: image-planner".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
+
+---
+
 ## ⚠️ AFTER EVERY RUN — Update Lessons (MANDATORY)
 
 **Before presenting final results, update `.claude/skills/image-planner/LESSONS.md`.**

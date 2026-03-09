@@ -176,6 +176,30 @@
   },
   "metric_history": [
     {
+      "date": "2026-02-20",
+      "source": "timeseries-backfill",
+      "acos": 37.63,
+      "spend_7d": 584.75,
+      "sales_7d": 1553.86,
+      "orders_7d": 66,
+      "cvr": 10.66,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-01",
+      "source": "timeseries-backfill",
+      "acos": 39.8,
+      "spend_7d": 569.41,
+      "sales_7d": 1430.72,
+      "orders_7d": 64,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
       "date": "2026-03-02",
       "source": "portfolio-summary",
       "acos": 39.8,
@@ -227,9 +251,36 @@
       "organic_momentum": 82,
       "profit_health": "PROFITABLE",
       "margin_pct": 24.9
+    },
+    {
+      "date": "2026-03-08",
+      "source": "timeseries-backfill",
+      "acos": 31.2,
+      "spend_7d": 570.43,
+      "sales_7d": 1827.08,
+      "orders_7d": 84,
+      "cvr": 11.2,
+      "rank_top10": 34,
+      "health_status": null,
+      "note": "Backfilled from daily-health+weekly by timeseries-dashboard"
     }
   ],
   "change_log": [
+    {
+      "date": "2026-03-08",
+      "skill": "weekly-ppc-analysis (30d verified)",
+      "summary": "Bid increase on 'crafts for kids' SK campaign",
+      "changes": [
+        {
+          "category": "BID_INCREASE",
+          "campaign": "fairy sewing - ballerina - SPM SK crafts for kids TOS push (452348817646551)",
+          "keyword": "crafts for kids EXACT (495831407524756)",
+          "from": "$0.58",
+          "to": "$0.73 (initially $1.07, user corrected to $0.73)",
+          "reason": "30d: 66 clicks, 9 orders, 21.9% ACoS, 13.6% CVR — excellent performance but only 0.6% TOS impression share. Amazon recommends $1.05-$1.46. New bid $1.07 (low end) to increase impression share."
+        }
+      ]
+    },
     {
       "date": "2026-03-03",
       "skill": "ppc-portfolio-action-plan",
@@ -490,6 +541,19 @@
       "status": "pending"
     },
     {
+      "date": "2026-03-23",
+      "type": "listing-ab-analyzer",
+      "skill": "listing-ab-analyzer",
+      "asin": "B09WQSBZY7",
+      "change_date": "2026-03-06",
+      "what_changed": ["title", "bullets", "backend_keywords"],
+      "before_weeks": ["2026-02-15 to 2026-02-21", "2026-02-22 to 2026-02-28"],
+      "transition_week": "2026-03-01 to 2026-03-07",
+      "after_weeks": ["2026-03-08 to 2026-03-14", "2026-03-15 to 2026-03-21"],
+      "source": "listing-optimizer-2026-03-06",
+      "status": "pending"
+    },
+    {
       "date": "2026-03-20",
       "type": "14-day listing push full re-audit",
       "verify": [
@@ -562,6 +626,16 @@
         "profit_health": "PROFITABLE"
       },
       "output_ref": "tacos-optimizer/2026-03-06-tacos-scorecard.md"
+    },
+    {
+      "skill": "ppc-timeseries-dashboard",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "data_points": 6,
+        "inflections_detected": 0,
+        "trajectory_30d_acos": "improving"
+      }
     }
   ],
   "improvement_assessment": {

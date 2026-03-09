@@ -243,6 +243,50 @@ When skill triggers:
 
 6. **If DataDive fetch fails:** Continue with existing product-knowledge-based approach. Note: "DataDive data unavailable — using product knowledge only."
 
+### Step 0c: Brand Analytics SQP — Search Funnel Validation (Optional Enhancement)
+
+**PURPOSE:** Use Amazon's Search Query Performance data to validate negative candidates with real impression/click/conversion data. SQP shows which search terms actually drive (or fail to drive) conversions for our ASINs — far more reliable than spend-based guessing alone.
+
+**Cost:** $0 (Brand Analytics is free with Brand Registry)
+**Time:** ~60 seconds (report creation + download)
+**Tool:** `create_brand_analytics_report` (SP-API MCP)
+
+**How to use:**
+
+1. **Get the portfolio's hero ASINs** from `context/sku-asin-mapping.json` (match by portfolio name)
+
+2. **Create the SQP report:**
+   ```
+   create_brand_analytics_report(
+       report_name="sqp",
+       period="WEEK",
+       periods_back=2,
+       marketplace="US",
+       asins="B09WQSBZY7 B096MYBLS1"
+   )
+   ```
+   **Note:** Use `periods_back=2` on Sunday/Monday (48h SLA). ASINs are space-separated, max 200 chars.
+
+3. **Poll + download** (same as other BA reports — poll every 15s, max 8 times)
+
+4. **Use the data for smarter negation decisions:**
+
+   | SQP Metric | Use for Negation |
+   |------------|-----------------|
+   | High impressions + 0 clicks + 0 purchases | **Auto-negate candidate** — Amazon is showing us but shoppers aren't interested. Product/search mismatch. |
+   | High impressions + some clicks + 0 purchases | **Strong negate candidate** — shoppers click but don't buy. Wrong audience or product mismatch. |
+   | Low impressions + 0 everything | Ignore — too little data to act on |
+   | Any purchases > 0 | **NEVER negate** — this term converts, regardless of what the product profile says |
+
+5. **Add SQP-informed negatives to Category 7: "Brand Analytics Negatives"**
+   - List search terms from SQP where our ASIN received 50+ impressions but 0 purchases over the reporting period
+   - Cross-reference with Category 6 (spend-based negatives) — terms appearing in BOTH are highest confidence
+   - Terms in SQP with purchases > 0 that appear in other negative categories → **remove from negatives and flag as [BA PROTECTED]**
+
+6. **If SQP fails:** Continue with existing approach. Note: "Brand Analytics SQP unavailable — using spend data and product knowledge only."
+
+**This step runs after Step 0a (search term pull) and before Step 1 (product intelligence).** The SQP data enriches the negation decisions made in later steps.
+
 ### Step 1: Gather Product Intelligence
 
 1. **Identify the product(s)** from user's portfolio selection
@@ -296,6 +340,7 @@ Before presenting the list, check every generated term against:
 5. **Barbie check** — If this IS a Barbie product, preserve all Barbie-related terms. If NOT, consider adding "barbie" as a negative
 6. **Shinshin check** — Fuse bead products target ADULTS. Do NOT negate "adult" terms for fuse beads
 7. **DataDive rank check** — If DataDive data was fetched (Step 0b), check `asinRanks` for our ASIN on each keyword. If we rank organically on a keyword, do NOT negate it — the market considers it relevant even if it seems off. Flag as [REVIEW] instead.
+8. **Brand Analytics conversion check** — If SQP data was fetched (Step 0c), check if any NEGATE candidate has `purchases > 0` in SQP. If so, **remove from negatives** and flag as **[BA PROTECTED]** — Amazon's own data confirms this term converts for our product. This overrides all other signals.
 
 Flag any borderline terms with **[REVIEW]** marker.
 
@@ -436,6 +481,22 @@ Generate based on specific product analysis. Examples by category:
 | **$5-10 spend, 0 orders, CTR < 0.3%** | Negative EXACT (P1) |
 | **$5-10 spend, 0 orders, CTR > 0.3%** | Negative EXACT (P2 — flag for review) |
 | **ACoS > 100%, 3+ clicks** | Negative EXACT (P1) |
+
+### Category 6b: Brand Analytics Negatives (Negative EXACT) — FROM SQP DATA
+
+**From the SQP data pulled in Step 0c** (skip if SQP was unavailable):
+
+| SQP Pattern | Action | Confidence |
+|-------------|--------|------------|
+| **50+ impressions, 0 purchases** over reporting period | Negative EXACT candidate | **High** if also in Category 6 |
+| **100+ impressions, clicks > 0, 0 purchases** | Negative EXACT candidate | **Very High** — shoppers see us, click, but never buy |
+| **Any purchases > 0** in SQP data | **REMOVE from all other categories** — BA says this term converts | Override |
+
+**Key advantage:** Category 6 relies on PPC spend data (only shows terms we're PAYING for). SQP shows ALL search terms where our product appeared organically — catching irrelevant terms we didn't even know about.
+
+**Cross-reference rule:** Terms that appear in BOTH Category 6 (high spend, 0 orders) AND Category 6b (high impressions, 0 purchases) are the **highest confidence negatives**. Mark these as **[BA+PPC CONFIRMED]**.
+
+**Override rule:** If SQP shows a term has purchases > 0 but Category 6 flagged it as a negate (maybe orders came organically, not via PPC), **remove it from negatives** and flag as **[BA PROTECTED]** — the product genuinely converts on this term.
 
 ### Category 7: Cross-Portfolio Terms (Negative EXACT) — NICE TO HAVE
 
@@ -935,6 +996,14 @@ Before delivering the review list, verify:
 | Restructured campaigns | Regenerate negatives | Apply via Step 8, monitor with weekly analysis |
 | Weekly PPC flags category-level waste | Run this skill for systematic category negatives | Apply via Step 8 |
 | High-spend zero-order discovered | Auto-detected via Ads API search term data | Apply via Step 8 |
+
+---
+
+## Step 9: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: negative-keyword-generator".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
 
 ---
 

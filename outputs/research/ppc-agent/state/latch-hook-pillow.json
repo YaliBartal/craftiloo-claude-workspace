@@ -100,6 +100,54 @@
   },
   "metric_history": [
     {
+      "date": "2026-02-20",
+      "source": "timeseries-backfill",
+      "acos": 33.47,
+      "spend_7d": 287.61,
+      "sales_7d": 859.3,
+      "orders_7d": 35,
+      "cvr": 11.22,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-01",
+      "source": "timeseries-backfill",
+      "acos": 49.0,
+      "spend_7d": 281.62,
+      "sales_7d": 574.54,
+      "orders_7d": 22,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-02",
+      "source": "timeseries-backfill",
+      "acos": 49.0,
+      "spend_7d": 281.62,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 13,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-03",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 12,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
       "date": "2026-03-05",
       "acos": 36.6,
       "spend": 1358.75,
@@ -114,9 +162,35 @@
       "organic_momentum": 48,
       "profit_health": "LOSS-MAKING",
       "margin_pct": -0.5
+    },
+    {
+      "date": "2026-03-08",
+      "source": "timeseries-backfill",
+      "acos": 46.1,
+      "spend_7d": 265.02,
+      "sales_7d": 574.6,
+      "orders_7d": 25,
+      "cvr": 5.9,
+      "rank_top10": 12,
+      "health_status": null,
+      "note": "Backfilled from weekly+daily-health by timeseries-dashboard"
     }
   ],
   "change_log": [
+    {
+      "date": "2026-03-08",
+      "skill": "weekly-ppc-analysis (30d verified)",
+      "changes": [
+        {
+          "category": "BID_DECREASE",
+          "campaign": "latch hook pillow - SPM MP product targeting (476731433753477)",
+          "target": "B0CX9H8YGR (target ID 393592183496117)",
+          "from": "$0.51",
+          "to": "$0.37 (-28%)",
+          "reason": "30d ACoS 52.6% ($142 spend / $270 sales / 11 orders). Above 45% red flag but converting (7.7% CVR). 7d was a dry spell. Bid cut preferred over negation."
+        }
+      ]
+    },
     {
       "date": "2026-03-05",
       "skill": "ppc-portfolio-action-plan",
@@ -402,6 +476,16 @@
         "profit_health": "LOSS-MAKING"
       },
       "output_ref": "tacos-optimizer/2026-03-06-tacos-scorecard.md"
+    },
+    {
+      "skill": "ppc-timeseries-dashboard",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "data_points": 6,
+        "inflections_detected": 0,
+        "trajectory_30d_acos": "declining"
+      }
     }
   ],
   "improvement_assessment": {

@@ -1,0 +1,35 @@
+{
+  "slack": {
+    "workspace": "craft",
+    "channels": {
+      "morning_brief": "claude-morning-brief",
+      "ppc_updates": "claude-ppc-updates",
+      "product_updates": "claude-product-updates",
+      "competitor_watch": "claude-competitor-watch",
+      "alerts": "claude-alerts"
+    }
+  },
+  "asana": {
+    "enabled": false,
+    "workspace_gid": "TBD",
+    "project_gid": "TBD",
+    "sections": {
+      "p1_urgent": "TBD",
+      "p2_important": "TBD",
+      "p3_monitor": "TBD"
+    }
+  },
+  "alert_thresholds": {
+    "ppc_acos_red_scaling": 50,
+    "ppc_acos_red_launch": 80,
+    "overdue_days_alert": 3,
+    "stock_days_critical": 3,
+    "revenue_drop_wow_pct": 30,
+    "competitor_price_drop_pct": 20,
+    "hero_rank_drop_positions": 5,
+    "listing_score_critical": 30,
+    "niche_go_score_min": 32
+  },
+  "asana_dedup_window_days": 7,
+  "enabled": true
+}

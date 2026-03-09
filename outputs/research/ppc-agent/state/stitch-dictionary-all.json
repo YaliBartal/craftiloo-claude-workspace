@@ -25,7 +25,44 @@
   },
   "baseline": null,
   "latest_metrics": null,
-  "metric_history": [],
+  "metric_history": [
+    {
+      "date": "2026-03-03",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-05",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-08",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    }
+  ],
   "change_log": [],
   "pending_actions": [
     {
@@ -41,6 +78,17 @@
     }
   ],
   "scheduled_reviews": [],
-  "skills_run": [],
+  "skills_run": [
+    {
+      "skill": "ppc-timeseries-dashboard",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "data_points": 3,
+        "inflections_detected": 0,
+        "trajectory_30d_acos": "insufficient_data"
+      }
+    }
+  ],
   "improvement_assessment": null
 }

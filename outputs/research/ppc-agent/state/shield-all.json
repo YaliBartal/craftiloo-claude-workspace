@@ -8,7 +8,9 @@
     "stage": "General",
     "hero_asins": [],
     "secondary_asins": [],
-    "hero_keywords": ["craftiloo"],
+    "hero_keywords": [
+      "craftiloo"
+    ],
     "niche_id": null,
     "rank_radar_id": null,
     "campaigns_enabled": 11,
@@ -94,6 +96,54 @@
   },
   "metric_history": [
     {
+      "date": "2026-02-20",
+      "source": "timeseries-backfill",
+      "acos": 24.01,
+      "spend_7d": 202.98,
+      "sales_7d": 845.26,
+      "orders_7d": 33,
+      "cvr": 13.36,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-01",
+      "source": "timeseries-backfill",
+      "acos": 29.7,
+      "spend_7d": 157.32,
+      "sales_7d": 529.34,
+      "orders_7d": 23,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-02",
+      "source": "timeseries-backfill",
+      "acos": 29.7,
+      "spend_7d": 157.32,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-03",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
       "date": "2026-03-05",
       "period": "30d",
       "cost": 899.0,
@@ -101,6 +151,18 @@
       "acos": 27.7,
       "orders": 141,
       "cvr": 13.0
+    },
+    {
+      "date": "2026-03-08",
+      "source": "timeseries-backfill",
+      "acos": 34.2,
+      "spend_7d": 287.85,
+      "sales_7d": 840.54,
+      "orders_7d": 37,
+      "cvr": 8.3,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly+daily-health by timeseries-dashboard"
     }
   ],
   "change_log": [
@@ -287,6 +349,16 @@
         "tos_changes": 9,
         "baseline_acos": 27.7,
         "baseline_orders": 141
+      }
+    },
+    {
+      "skill": "ppc-timeseries-dashboard",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "data_points": 6,
+        "inflections_detected": 0,
+        "trajectory_30d_acos": "declining"
       }
     }
   ],

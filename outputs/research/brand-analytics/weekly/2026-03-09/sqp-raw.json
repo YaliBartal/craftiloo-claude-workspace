@@ -1,0 +1,1729 @@
+{
+  "reportSpecification": {
+    "reportType": "GET_BRAND_ANALYTICS_SEARCH_QUERY_PERFORMANCE_REPORT",
+    "reportOptions": {
+      "asin": "B09WQSBZY7 B09THLVFZK B07D6D95NG B0F8DG32H5 B0F8R652FX B0FQC7YFX6 B08DDJCQKF B09WQQPKZF B09WQH4Q52 B09WQJ8JG7 B0BMLZ7MFL B0BMLXLP5S B0BN2DP3ST B0CLL4PBX3 B0CLL3JFNK B0CLL2XM9P B0D5KXLR7M B0D5KY9N2J",
+      "reportPeriod": "WEEK"
+    },
+    "dataStartTime": "2026-02-22",
+    "dataEndTime": "2026-02-28",
+    "marketplaceIds": [
+      "ATVPDKIKX0DER"
+    ]
+  },
+  "dataByAsin": [
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "pixi beads with iron",
+        "searchQueryScore": 43,
+        "searchQueryVolume": 2
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 36,
+        "asinImpressionCount": 2,
+        "asinImpressionShare": 5.56
+      },
+      "clickData": {
+        "totalClickCount": 2,
+        "totalClickRate": 100.0,
+        "asinClickCount": 1,
+        "asinClickShare": 50.0,
+        "totalMedianClickPrice": {
+          "amount": 9.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 2,
+        "totalTwoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "totalCartAddCount": 2,
+        "totalCartAddRate": 100.0,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 50.0,
+        "totalMedianCartAddPrice": {
+          "amount": 9.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 2,
+        "totalTwoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 2,
+        "totalPurchaseRate": 100.0,
+        "asinPurchaseCount": 1,
+        "asinPurchaseShare": 50.0,
+        "totalMedianPurchasePrice": {
+          "amount": 9.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 2,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "perler bead stuff",
+        "searchQueryScore": 73,
+        "searchQueryVolume": 38
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 775,
+        "asinImpressionCount": 21,
+        "asinImpressionShare": 2.71
+      },
+      "clickData": {
+        "totalClickCount": 17,
+        "totalClickRate": 44.74,
+        "asinClickCount": 2,
+        "asinClickShare": 11.76,
+        "totalMedianClickPrice": {
+          "amount": 14.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 12,
+        "totalTwoDayShippingClickCount": 3
+      },
+      "cartAddData": {
+        "totalCartAddCount": 11,
+        "totalCartAddRate": 28.95,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 9.09,
+        "totalMedianCartAddPrice": {
+          "amount": 14.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 7,
+        "totalTwoDayShippingCartAddCount": 3
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 0,
+        "totalPurchaseRate": 0.0,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": null,
+        "totalMedianPurchasePrice": null,
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 0,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "perler bead kit",
+        "searchQueryScore": 4,
+        "searchQueryVolume": 3904
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 96319,
+        "asinImpressionCount": 2760,
+        "asinImpressionShare": 2.87
+      },
+      "clickData": {
+        "totalClickCount": 1964,
+        "totalClickRate": 50.31,
+        "asinClickCount": 40,
+        "asinClickShare": 2.04,
+        "totalMedianClickPrice": {
+          "amount": 24.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 185,
+        "totalOneDayShippingClickCount": 758,
+        "totalTwoDayShippingClickCount": 397
+      },
+      "cartAddData": {
+        "totalCartAddCount": 598,
+        "totalCartAddRate": 15.32,
+        "asinCartAddCount": 14,
+        "asinCartAddShare": 2.34,
+        "totalMedianCartAddPrice": {
+          "amount": 24.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 65,
+        "totalOneDayShippingCartAddCount": 242,
+        "totalTwoDayShippingCartAddCount": 123
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 118,
+        "totalPurchaseRate": 3.02,
+        "asinPurchaseCount": 1,
+        "asinPurchaseShare": 0.85,
+        "totalMedianPurchasePrice": {
+          "amount": 24.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingPurchaseCount": 17,
+        "totalOneDayShippingPurchaseCount": 57,
+        "totalTwoDayShippingPurchaseCount": 24
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "perler beads assorted",
+        "searchQueryScore": 34,
+        "searchQueryVolume": 16
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 357,
+        "asinImpressionCount": 13,
+        "asinImpressionShare": 3.64
+      },
+      "clickData": {
+        "totalClickCount": 6,
+        "totalClickRate": 37.5,
+        "asinClickCount": 1,
+        "asinClickShare": 16.67,
+        "totalMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 2,
+        "totalTwoDayShippingClickCount": 4
+      },
+      "cartAddData": {
+        "totalCartAddCount": 4,
+        "totalCartAddRate": 25.0,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 25.0,
+        "totalMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 1,
+        "totalTwoDayShippingCartAddCount": 3
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 2,
+        "totalPurchaseRate": 12.5,
+        "asinPurchaseCount": 1,
+        "asinPurchaseShare": 50.0,
+        "totalMedianPurchasePrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 1,
+        "totalTwoDayShippingPurchaseCount": 1
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "iron bead",
+        "searchQueryScore": 91,
+        "searchQueryVolume": 26
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 714,
+        "asinImpressionCount": 18,
+        "asinImpressionShare": 2.52
+      },
+      "clickData": {
+        "totalClickCount": 15,
+        "totalClickRate": 57.69,
+        "asinClickCount": 1,
+        "asinClickShare": 6.67,
+        "totalMedianClickPrice": {
+          "amount": 24.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 1,
+        "totalOneDayShippingClickCount": 4,
+        "totalTwoDayShippingClickCount": 6
+      },
+      "cartAddData": {
+        "totalCartAddCount": 6,
+        "totalCartAddRate": 23.08,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 16.67,
+        "totalMedianCartAddPrice": {
+          "amount": 9.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 3,
+        "totalTwoDayShippingCartAddCount": 2
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 0,
+        "totalPurchaseRate": 0.0,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": null,
+        "totalMedianPurchasePrice": null,
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 0,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "pearlers",
+        "searchQueryScore": 30,
+        "searchQueryVolume": 84
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 1920,
+        "asinImpressionCount": 58,
+        "asinImpressionShare": 3.02
+      },
+      "clickData": {
+        "totalClickCount": 40,
+        "totalClickRate": 47.62,
+        "asinClickCount": 1,
+        "asinClickShare": 2.5,
+        "totalMedianClickPrice": {
+          "amount": 23.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 3,
+        "totalOneDayShippingClickCount": 15,
+        "totalTwoDayShippingClickCount": 13
+      },
+      "cartAddData": {
+        "totalCartAddCount": 9,
+        "totalCartAddRate": 10.71,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 11.11,
+        "totalMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 3,
+        "totalOneDayShippingCartAddCount": 2,
+        "totalTwoDayShippingCartAddCount": 1
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 2,
+        "totalPurchaseRate": 2.38,
+        "asinPurchaseCount": 1,
+        "asinPurchaseShare": 50.0,
+        "totalMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingPurchaseCount": 1,
+        "totalOneDayShippingPurchaseCount": 1,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "mini fuse beads 2.6mm",
+        "searchQueryScore": 51,
+        "searchQueryVolume": 21
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 480,
+        "asinImpressionCount": 29,
+        "asinImpressionShare": 6.04
+      },
+      "clickData": {
+        "totalClickCount": 11,
+        "totalClickRate": 52.38,
+        "asinClickCount": 3,
+        "asinClickShare": 27.27,
+        "totalMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 5,
+        "totalTwoDayShippingClickCount": 3
+      },
+      "cartAddData": {
+        "totalCartAddCount": 6,
+        "totalCartAddRate": 28.57,
+        "asinCartAddCount": 2,
+        "asinCartAddShare": 33.33,
+        "totalMedianCartAddPrice": {
+          "amount": 28.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 3,
+        "totalTwoDayShippingCartAddCount": 2
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 1,
+        "totalPurchaseRate": 4.76,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": 0.0,
+        "totalMedianPurchasePrice": {
+          "amount": 9.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 0,
+        "totalTwoDayShippingPurchaseCount": 1
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "perler bead variety pack",
+        "searchQueryScore": 41,
+        "searchQueryVolume": 2
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 78,
+        "asinImpressionCount": 2,
+        "asinImpressionShare": 2.56
+      },
+      "clickData": {
+        "totalClickCount": 1,
+        "totalClickRate": 50.0,
+        "asinClickCount": 1,
+        "asinClickShare": 100.0,
+        "totalMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 1,
+        "totalTwoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "totalCartAddCount": 1,
+        "totalCartAddRate": 50.0,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 100.0,
+        "totalMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 1,
+        "totalTwoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 1,
+        "totalPurchaseRate": 50.0,
+        "asinPurchaseCount": 1,
+        "asinPurchaseShare": 100.0,
+        "totalMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 1,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "2.8 mm perler beads",
+        "searchQueryScore": 37,
+        "searchQueryVolume": 2
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 42,
+        "asinImpressionCount": 2,
+        "asinImpressionShare": 4.76
+      },
+      "clickData": {
+        "totalClickCount": 2,
+        "totalClickRate": 100.0,
+        "asinClickCount": 1,
+        "asinClickShare": 50.0,
+        "totalMedianClickPrice": {
+          "amount": 11.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 1,
+        "totalTwoDayShippingClickCount": 1
+      },
+      "cartAddData": {
+        "totalCartAddCount": 2,
+        "totalCartAddRate": 100.0,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 50.0,
+        "totalMedianCartAddPrice": {
+          "amount": 11.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 1,
+        "totalTwoDayShippingCartAddCount": 1
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 1,
+        "totalPurchaseRate": 50.0,
+        "asinPurchaseCount": 1,
+        "asinPurchaseShare": 100.0,
+        "totalMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 1,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "mini perler beads kit",
+        "searchQueryScore": 15,
+        "searchQueryVolume": 115
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 2478,
+        "asinImpressionCount": 196,
+        "asinImpressionShare": 7.91
+      },
+      "clickData": {
+        "totalClickCount": 61,
+        "totalClickRate": 53.04,
+        "asinClickCount": 13,
+        "asinClickShare": 21.31,
+        "totalMedianClickPrice": {
+          "amount": 29.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 6,
+        "totalOneDayShippingClickCount": 16,
+        "totalTwoDayShippingClickCount": 23
+      },
+      "cartAddData": {
+        "totalCartAddCount": 20,
+        "totalCartAddRate": 17.39,
+        "asinCartAddCount": 4,
+        "asinCartAddShare": 20.0,
+        "totalMedianCartAddPrice": {
+          "amount": 29.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 3,
+        "totalOneDayShippingCartAddCount": 4,
+        "totalTwoDayShippingCartAddCount": 8
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 3,
+        "totalPurchaseRate": 2.61,
+        "asinPurchaseCount": 1,
+        "asinPurchaseShare": 33.33,
+        "totalMedianPurchasePrice": {
+          "amount": 29.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingPurchaseCount": 2,
+        "totalOneDayShippingPurchaseCount": 1,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "perler beads mini",
+        "searchQueryScore": 9,
+        "searchQueryVolume": 86
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 1925,
+        "asinImpressionCount": 93,
+        "asinImpressionShare": 4.83
+      },
+      "clickData": {
+        "totalClickCount": 59,
+        "totalClickRate": 68.6,
+        "asinClickCount": 15,
+        "asinClickShare": 25.42,
+        "totalMedianClickPrice": {
+          "amount": 26.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 1,
+        "totalOneDayShippingClickCount": 14,
+        "totalTwoDayShippingClickCount": 9
+      },
+      "cartAddData": {
+        "totalCartAddCount": 30,
+        "totalCartAddRate": 34.88,
+        "asinCartAddCount": 8,
+        "asinCartAddShare": 26.67,
+        "totalMedianCartAddPrice": {
+          "amount": 25.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 5,
+        "totalTwoDayShippingCartAddCount": 4
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 3,
+        "totalPurchaseRate": 3.49,
+        "asinPurchaseCount": 1,
+        "asinPurchaseShare": 33.33,
+        "totalMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 1,
+        "totalTwoDayShippingPurchaseCount": 1
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "artkal mini fuse beads 48 colors",
+        "searchQueryScore": 45,
+        "searchQueryVolume": 1
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 48,
+        "asinImpressionCount": 1,
+        "asinImpressionShare": 2.08
+      },
+      "clickData": {
+        "totalClickCount": 1,
+        "totalClickRate": 100.0,
+        "asinClickCount": 1,
+        "asinClickShare": 100.0,
+        "totalMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 1,
+        "totalTwoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "totalCartAddCount": 1,
+        "totalCartAddRate": 100.0,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 100.0,
+        "totalMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 1,
+        "totalTwoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 1,
+        "totalPurchaseRate": 100.0,
+        "asinPurchaseCount": 1,
+        "asinPurchaseShare": 100.0,
+        "totalMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 1,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "fuse beads kit for adults",
+        "searchQueryScore": 72,
+        "searchQueryVolume": 17
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 637,
+        "asinImpressionCount": 22,
+        "asinImpressionShare": 3.45
+      },
+      "clickData": {
+        "totalClickCount": 4,
+        "totalClickRate": 23.53,
+        "asinClickCount": 2,
+        "asinClickShare": 50.0,
+        "totalMedianClickPrice": {
+          "amount": 28.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 0,
+        "totalTwoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "totalCartAddCount": 3,
+        "totalCartAddRate": 17.65,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 33.33,
+        "totalMedianCartAddPrice": {
+          "amount": 28.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 0,
+        "totalTwoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 0,
+        "totalPurchaseRate": 0.0,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": null,
+        "totalMedianPurchasePrice": null,
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 0,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "mini beads",
+        "searchQueryScore": 59,
+        "searchQueryVolume": 530
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 13912,
+        "asinImpressionCount": 251,
+        "asinImpressionShare": 1.8
+      },
+      "clickData": {
+        "totalClickCount": 274,
+        "totalClickRate": 51.7,
+        "asinClickCount": 7,
+        "asinClickShare": 2.55,
+        "totalMedianClickPrice": {
+          "amount": 9.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 12,
+        "totalOneDayShippingClickCount": 126,
+        "totalTwoDayShippingClickCount": 39
+      },
+      "cartAddData": {
+        "totalCartAddCount": 51,
+        "totalCartAddRate": 9.62,
+        "asinCartAddCount": 0,
+        "asinCartAddShare": 0.0,
+        "totalMedianCartAddPrice": {
+          "amount": 9.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": null,
+        "totalSameDayShippingCartAddCount": 2,
+        "totalOneDayShippingCartAddCount": 28,
+        "totalTwoDayShippingCartAddCount": 11
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 5,
+        "totalPurchaseRate": 0.94,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": 0.0,
+        "totalMedianPurchasePrice": {
+          "amount": 5.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 4,
+        "totalTwoDayShippingPurchaseCount": 1
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "pixel beads kit",
+        "searchQueryScore": 81,
+        "searchQueryVolume": 60
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 1171,
+        "asinImpressionCount": 39,
+        "asinImpressionShare": 3.33
+      },
+      "clickData": {
+        "totalClickCount": 24,
+        "totalClickRate": 40.0,
+        "asinClickCount": 1,
+        "asinClickShare": 4.17,
+        "totalMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 1,
+        "totalOneDayShippingClickCount": 10,
+        "totalTwoDayShippingClickCount": 9
+      },
+      "cartAddData": {
+        "totalCartAddCount": 9,
+        "totalCartAddRate": 15.0,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 11.11,
+        "totalMedianCartAddPrice": {
+          "amount": 26.59,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 1,
+        "totalOneDayShippingCartAddCount": 5,
+        "totalTwoDayShippingCartAddCount": 2
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 3,
+        "totalPurchaseRate": 5.0,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": 0.0,
+        "totalMedianPurchasePrice": {
+          "amount": 22.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 1,
+        "totalOneDayShippingPurchaseCount": 2,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "fuse beads bulk",
+        "searchQueryScore": 65,
+        "searchQueryVolume": 273
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 7007,
+        "asinImpressionCount": 81,
+        "asinImpressionShare": 1.16
+      },
+      "clickData": {
+        "totalClickCount": 120,
+        "totalClickRate": 43.96,
+        "asinClickCount": 2,
+        "asinClickShare": 1.67,
+        "totalMedianClickPrice": {
+          "amount": 21.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 4,
+        "totalOneDayShippingClickCount": 35,
+        "totalTwoDayShippingClickCount": 19
+      },
+      "cartAddData": {
+        "totalCartAddCount": 42,
+        "totalCartAddRate": 15.38,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 2.38,
+        "totalMedianCartAddPrice": {
+          "amount": 20.9,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 1,
+        "totalOneDayShippingCartAddCount": 13,
+        "totalTwoDayShippingCartAddCount": 9
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 10,
+        "totalPurchaseRate": 3.66,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": 0.0,
+        "totalMedianPurchasePrice": {
+          "amount": 29.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 4,
+        "totalTwoDayShippingPurchaseCount": 3
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "fuse bead starter kit",
+        "searchQueryScore": 77,
+        "searchQueryVolume": 9
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 183,
+        "asinImpressionCount": 11,
+        "asinImpressionShare": 6.01
+      },
+      "clickData": {
+        "totalClickCount": 3,
+        "totalClickRate": 33.33,
+        "asinClickCount": 2,
+        "asinClickShare": 66.67,
+        "totalMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 2,
+        "totalTwoDayShippingClickCount": 1
+      },
+      "cartAddData": {
+        "totalCartAddCount": 2,
+        "totalCartAddRate": 22.22,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 50.0,
+        "totalMedianCartAddPrice": {
+          "amount": 28.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 1,
+        "totalTwoDayShippingCartAddCount": 1
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 0,
+        "totalPurchaseRate": 0.0,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": null,
+        "totalMedianPurchasePrice": null,
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 0,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "2.6mm fuse beads pegboard",
+        "searchQueryScore": 60,
+        "searchQueryVolume": 99
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 2047,
+        "asinImpressionCount": 105,
+        "asinImpressionShare": 5.13
+      },
+      "clickData": {
+        "totalClickCount": 53,
+        "totalClickRate": 53.54,
+        "asinClickCount": 4,
+        "asinClickShare": 7.55,
+        "totalMedianClickPrice": {
+          "amount": 10.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 16,
+        "totalTwoDayShippingClickCount": 6
+      },
+      "cartAddData": {
+        "totalCartAddCount": 22,
+        "totalCartAddRate": 22.22,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 4.55,
+        "totalMedianCartAddPrice": {
+          "amount": 9.65,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 6,
+        "totalTwoDayShippingCartAddCount": 4
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 6,
+        "totalPurchaseRate": 6.06,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": 0.0,
+        "totalMedianPurchasePrice": {
+          "amount": 8.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 1,
+        "totalTwoDayShippingPurchaseCount": 2
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "tiny perler beads kit",
+        "searchQueryScore": 96,
+        "searchQueryVolume": 10
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 193,
+        "asinImpressionCount": 14,
+        "asinImpressionShare": 7.25
+      },
+      "clickData": {
+        "totalClickCount": 2,
+        "totalClickRate": 20.0,
+        "asinClickCount": 1,
+        "asinClickShare": 50.0,
+        "totalMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 1,
+        "totalTwoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "totalCartAddCount": 1,
+        "totalCartAddRate": 10.0,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 100.0,
+        "totalMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 1,
+        "totalTwoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 0,
+        "totalPurchaseRate": 0.0,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": null,
+        "totalMedianPurchasePrice": null,
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 0,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "small fuse beads",
+        "searchQueryScore": 64,
+        "searchQueryVolume": 44
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 943,
+        "asinImpressionCount": 54,
+        "asinImpressionShare": 5.73
+      },
+      "clickData": {
+        "totalClickCount": 29,
+        "totalClickRate": 65.91,
+        "asinClickCount": 3,
+        "asinClickShare": 10.34,
+        "totalMedianClickPrice": {
+          "amount": 28.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 13,
+        "totalTwoDayShippingClickCount": 5
+      },
+      "cartAddData": {
+        "totalCartAddCount": 7,
+        "totalCartAddRate": 15.91,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 14.29,
+        "totalMedianCartAddPrice": {
+          "amount": 20.9,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 0,
+        "totalTwoDayShippingCartAddCount": 1
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 0,
+        "totalPurchaseRate": 0.0,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": null,
+        "totalMedianPurchasePrice": null,
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 0,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "tiny perler beads",
+        "searchQueryScore": 70,
+        "searchQueryVolume": 20
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 632,
+        "asinImpressionCount": 32,
+        "asinImpressionShare": 5.06
+      },
+      "clickData": {
+        "totalClickCount": 10,
+        "totalClickRate": 50.0,
+        "asinClickCount": 2,
+        "asinClickShare": 20.0,
+        "totalMedianClickPrice": {
+          "amount": 28.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 8,
+        "totalTwoDayShippingClickCount": 2
+      },
+      "cartAddData": {
+        "totalCartAddCount": 7,
+        "totalCartAddRate": 35.0,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 14.29,
+        "totalMedianCartAddPrice": {
+          "amount": 29.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 5,
+        "totalTwoDayShippingCartAddCount": 2
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 1,
+        "totalPurchaseRate": 5.0,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": 0.0,
+        "totalMedianPurchasePrice": {
+          "amount": 29.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 0,
+        "totalTwoDayShippingPurchaseCount": 1
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "fuse bead kits",
+        "searchQueryScore": 27,
+        "searchQueryVolume": 117
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 2692,
+        "asinImpressionCount": 82,
+        "asinImpressionShare": 3.05
+      },
+      "clickData": {
+        "totalClickCount": 52,
+        "totalClickRate": 44.44,
+        "asinClickCount": 1,
+        "asinClickShare": 1.92,
+        "totalMedianClickPrice": {
+          "amount": 20.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 4,
+        "totalOneDayShippingClickCount": 22,
+        "totalTwoDayShippingClickCount": 9
+      },
+      "cartAddData": {
+        "totalCartAddCount": 20,
+        "totalCartAddRate": 17.09,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 5.0,
+        "totalMedianCartAddPrice": {
+          "amount": 19.66,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 2,
+        "totalOneDayShippingCartAddCount": 5,
+        "totalTwoDayShippingCartAddCount": 5
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 2,
+        "totalPurchaseRate": 1.71,
+        "asinPurchaseCount": 1,
+        "asinPurchaseShare": 50.0,
+        "totalMedianPurchasePrice": {
+          "amount": 24.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 1,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "pixie beads",
+        "searchQueryScore": 21,
+        "searchQueryVolume": 381
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 10334,
+        "asinImpressionCount": 376,
+        "asinImpressionShare": 3.64
+      },
+      "clickData": {
+        "totalClickCount": 152,
+        "totalClickRate": 39.9,
+        "asinClickCount": 14,
+        "asinClickShare": 9.21,
+        "totalMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 4,
+        "totalOneDayShippingClickCount": 65,
+        "totalTwoDayShippingClickCount": 25
+      },
+      "cartAddData": {
+        "totalCartAddCount": 49,
+        "totalCartAddRate": 12.86,
+        "asinCartAddCount": 2,
+        "asinCartAddShare": 4.08,
+        "totalMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 1,
+        "totalOneDayShippingCartAddCount": 16,
+        "totalTwoDayShippingCartAddCount": 5
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 1,
+        "totalPurchaseRate": 0.26,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": 0.0,
+        "totalMedianPurchasePrice": {
+          "amount": 63.49,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 1,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "fuse beads",
+        "searchQueryScore": 2,
+        "searchQueryVolume": 6274
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 150722,
+        "asinImpressionCount": 4713,
+        "asinImpressionShare": 3.13
+      },
+      "clickData": {
+        "totalClickCount": 2791,
+        "totalClickRate": 44.49,
+        "asinClickCount": 118,
+        "asinClickShare": 4.23,
+        "totalMedianClickPrice": {
+          "amount": 24.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 256,
+        "totalOneDayShippingClickCount": 1081,
+        "totalTwoDayShippingClickCount": 565
+      },
+      "cartAddData": {
+        "totalCartAddCount": 909,
+        "totalCartAddRate": 14.49,
+        "asinCartAddCount": 27,
+        "asinCartAddShare": 2.97,
+        "totalMedianCartAddPrice": {
+          "amount": 24.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 107,
+        "totalOneDayShippingCartAddCount": 366,
+        "totalTwoDayShippingCartAddCount": 175
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 218,
+        "totalPurchaseRate": 3.47,
+        "asinPurchaseCount": 5,
+        "asinPurchaseShare": 2.29,
+        "totalMedianPurchasePrice": {
+          "amount": 24.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingPurchaseCount": 30,
+        "totalOneDayShippingPurchaseCount": 112,
+        "totalTwoDayShippingPurchaseCount": 32
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "2.6 mm fuse bead organized set",
+        "searchQueryScore": 44,
+        "searchQueryVolume": 1
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 20,
+        "asinImpressionCount": 1,
+        "asinImpressionShare": 5.0
+      },
+      "clickData": {
+        "totalClickCount": 1,
+        "totalClickRate": 100.0,
+        "asinClickCount": 1,
+        "asinClickShare": 100.0,
+        "totalMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 0,
+        "totalOneDayShippingClickCount": 1,
+        "totalTwoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "totalCartAddCount": 1,
+        "totalCartAddRate": 100.0,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 100.0,
+        "totalMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 1,
+        "totalTwoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 1,
+        "totalPurchaseRate": 100.0,
+        "asinPurchaseCount": 1,
+        "asinPurchaseShare": 100.0,
+        "totalMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 1,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "perler bead making kit",
+        "searchQueryScore": 74,
+        "searchQueryVolume": 8
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 176,
+        "asinImpressionCount": 16,
+        "asinImpressionShare": 9.09
+      },
+      "clickData": {
+        "totalClickCount": 7,
+        "totalClickRate": 87.5,
+        "asinClickCount": 2,
+        "asinClickShare": 28.57,
+        "totalMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 4,
+        "totalOneDayShippingClickCount": 3,
+        "totalTwoDayShippingClickCount": 0
+      },
+      "cartAddData": {
+        "totalCartAddCount": 1,
+        "totalCartAddRate": 12.5,
+        "asinCartAddCount": 1,
+        "asinCartAddShare": 100.0,
+        "totalMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 0,
+        "totalOneDayShippingCartAddCount": 1,
+        "totalTwoDayShippingCartAddCount": 0
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 0,
+        "totalPurchaseRate": 0.0,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": null,
+        "totalMedianPurchasePrice": null,
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 0,
+        "totalTwoDayShippingPurchaseCount": 0
+      }
+    },
+    {
+      "startDate": "2026-02-22",
+      "endDate": "2026-02-28",
+      "asin": "B09THLVFZK",
+      "searchQueryData": {
+        "searchQuery": "2.6 mm perler beads",
+        "searchQueryScore": 47,
+        "searchQueryVolume": 124
+      },
+      "impressionData": {
+        "totalQueryImpressionCount": 2755,
+        "asinImpressionCount": 185,
+        "asinImpressionShare": 6.72
+      },
+      "clickData": {
+        "totalClickCount": 81,
+        "totalClickRate": 65.32,
+        "asinClickCount": 6,
+        "asinClickShare": 7.41,
+        "totalMedianClickPrice": {
+          "amount": 19.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianClickPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingClickCount": 3,
+        "totalOneDayShippingClickCount": 31,
+        "totalTwoDayShippingClickCount": 21
+      },
+      "cartAddData": {
+        "totalCartAddCount": 28,
+        "totalCartAddRate": 22.58,
+        "asinCartAddCount": 2,
+        "asinCartAddShare": 7.14,
+        "totalMedianCartAddPrice": {
+          "amount": 19.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianCartAddPrice": {
+          "amount": 32.98,
+          "currencyCode": "USD"
+        },
+        "totalSameDayShippingCartAddCount": 1,
+        "totalOneDayShippingCartAddCount": 9,
+        "totalTwoDayShippingCartAddCount": 9
+      },
+      "purchaseData": {
+        "totalPurchaseCount": 6,
+        "totalPurchaseRate": 4.84,
+        "asinPurchaseCount": 0,
+        "asinPurchaseShare": 0.0,
+        "totalMedianPurchasePrice": {
+          "amount": 9.99,
+          "currencyCode": "USD"
+        },
+        "asinMedianPurchasePrice": null,
+        "totalSameDayShippingPurchaseCount": 0,
+        "totalOneDayShippingPurchaseCount": 3,
+        "totalTwoDayShippingPurchaseCount": 2
+      }
+    }
+  ]
+}

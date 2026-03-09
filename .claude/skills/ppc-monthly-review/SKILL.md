@@ -41,9 +41,9 @@ A **strategic monthly deep dive** that aggregates 4 weeks of data to identify tr
 
 ## Efficiency Standards
 
-- **<100K tokens** per run
+- **<105K tokens** per run
 - **<10 minutes** execution time
-- **No fresh API calls** — reads exclusively from existing snapshots
+- **No fresh API calls** — reads exclusively from existing snapshots, **except** Brand Analytics monthly reports (the monthly cadence is a perfect match for BA's monthly period)
 - If insufficient snapshots exist, note what's missing rather than pulling fresh data
 
 ---
@@ -63,8 +63,36 @@ Gather snapshots from the past 4 weeks. Read in parallel:
 | `outputs/research/ppc-agent/daily-health/*-health-snapshot.json` | Daily health checks for trend granularity |
 | `outputs/research/market-intel/snapshots/*.json` | Market intel for competitive context |
 | `context/business.md` | Current portfolio stages |
+| `context/sku-asin-mapping.json` | ASIN list for Brand Analytics SQP queries |
 
 **Minimum requirement:** At least 2 weekly snapshots to compute trends. If fewer exist, note: "Insufficient data for full monthly analysis. {N} weekly snapshots available — need at least 2. Showing available data only."
+
+#### Step 1b: Fetch Brand Analytics Monthly Reports (Optional)
+
+**This is the one exception to the "no fresh API calls" rule.** Monthly cadence aligns perfectly with BA's monthly period — this is the right time to pull it.
+
+**Fetch in parallel:**
+
+1. **SCP Monthly Report** (per-ASIN organic search performance):
+   ```
+   create_brand_analytics_report(report_name="scp", period="MONTH", periods_back=1)
+   ```
+   Poll → download. Extract per ASIN: `impressions`, `clicks`, `cartAdds`, `purchases`, `clickShare`, `conversionShare`.
+
+2. **SQP Monthly Report** (per-keyword organic funnel):
+   - Get all hero ASINs from `context/sku-asin-mapping.json`, batch into max 200 chars
+   ```
+   create_brand_analytics_report(report_name="sqp", period="MONTH", periods_back=1, asins="{space-separated ASINs}")
+   ```
+   Poll → download. Extract per keyword: `searchQuery`, `impressions`, `clicks`, `cartAdds`, `purchases`.
+
+3. **Repeat Purchase Monthly Report** (customer loyalty signal):
+   ```
+   create_brand_analytics_report(report_name="repeat_purchase", period="MONTH", periods_back=1)
+   ```
+   Poll → download. Extract per ASIN: `orders`, `uniqueCustomers`, `repeatCustomerCount`, `repeatPurchaseRevenue`.
+
+**If any BA report fails:** Continue without it. Note in output: "Brand Analytics {report_name} unavailable."
 
 ### Step 2: Compute Monthly Trends
 
@@ -135,16 +163,24 @@ A Scaling portfolio should regress to Launch when:
 
 Compute how efficiently each portfolio uses its budget:
 
-| Portfolio | Monthly Spend | Monthly Orders | Cost Per Order | ROAS | Efficiency Rank |
-|-----------|-------------|----------------|----------------|------|----------------|
-| {name} | ${X} | {N} | ${X} | {X} | 1 (best) |
+| Portfolio | Monthly Spend | Monthly Orders | Cost Per Order | ROAS | Repeat Rate | LTV Factor | Efficiency Rank |
+|-----------|-------------|----------------|----------------|------|-------------|------------|----------------|
+| {name} | ${X} | {N} | ${X} | {X} | X% | {X}x | 1 (best) |
+
+**Repeat Rate / LTV Factor (from Brand Analytics Repeat Purchase report, if available):**
+- `repeat_rate` = repeatCustomerCount / uniqueCustomers × 100
+- `ltv_factor` = estimated LTV multiplier: 1.0x (0% repeat), 1.3x (10-20% repeat), 1.5x (20-30% repeat), 2.0x (30%+ repeat)
+- **Impact on budget allocation:** High-repeat portfolios justify higher ACoS thresholds because each customer is worth more over time. A portfolio with 25% repeat rate and 40% ACoS may actually be more profitable long-term than one with 0% repeat and 25% ACoS.
+
+**If no Repeat Purchase data:** Use "N/A" for Repeat Rate and 1.0x for LTV Factor (neutral assumption).
 
 **Budget reallocation recommendations:**
 
 Look for mismatches between spend and performance:
-- **Over-invested:** High spend + high ACoS + declining orders = shift budget away
+- **Over-invested:** High spend + high ACoS + declining orders + low repeat rate = shift budget away
 - **Under-invested:** Low spend + low ACoS + high CVR + budget starved = shift budget toward
 - **Right-sized:** Spend proportional to returns
+- **LTV-justified:** High ACoS but high repeat rate — may be worth maintaining (flag for user decision, don't auto-reduce)
 
 **Present as a simple table:**
 
@@ -268,6 +304,47 @@ If market intel snapshots exist, summarize competitive shifts:
 
 **Total cleanup candidates:** {N} campaigns, ${X}/month in potential savings
 
+## Organic Search Health (Brand Analytics)
+
+*Source: SQP + SCP monthly reports. If unavailable: "Brand Analytics data not available for this month."*
+
+### Portfolio-Level Organic Funnel
+
+| Portfolio | Impressions | Clicks | CTR | Cart Adds | Cart Rate | Purchases | Purchase Rate | Conv/Click Ratio |
+|-----------|------------|--------|-----|-----------|-----------|-----------|---------------|-----------------|
+| {name} | {N} | {N} | X% | {N} | X% | {N} | X% | {X}x |
+
+### Top Keywords by Organic Performance (SQP)
+
+| Keyword | Portfolio | Impressions | Click Share | Conv Share | Conv/Click Ratio | PPC Spend/wk | Signal |
+|---------|-----------|------------|-------------|------------|-----------------|-------------|--------|
+| {kw} | {port} | {N} | X% | X% | {X}x | ${X} | PPC redundant — strong organic |
+| {kw} | {port} | {N} | X% | X% | {X}x | ${X} | Needs PPC support — weak organic |
+
+**Signals:**
+- **PPC redundant:** Conv/Click Ratio >1.2 AND organic impressions high → candidate for PPC spend reduction
+- **Needs PPC support:** Conv/Click Ratio <0.8 OR organic impressions low → maintain or increase PPC
+- **Conversion problem:** Click Share high but Conv Share low → listing issue, not a PPC issue
+
+### Organic vs PPC Efficiency Summary
+
+- **Keywords where organic dominates** (PPC spend reducible): {N} keywords, ${X}/week savings potential
+- **Keywords where PPC carries organic** (must maintain): {N} keywords, ${X}/week
+- **Keywords with conversion problems** (listing fix needed): {N} keywords → flag for Listing Optimizer
+
+## Customer Loyalty (Brand Analytics)
+
+*Source: Repeat Purchase monthly report. If unavailable: "Repeat Purchase data not available."*
+
+| Portfolio | Unique Customers | Repeat Customers | Repeat Rate | Repeat Revenue | LTV Factor | Budget Implication |
+|-----------|-----------------|------------------|-------------|----------------|------------|-------------------|
+| {name} | {N} | {N} | X% | ${X} | {X}x | {justify higher ACoS / standard threshold} |
+
+**Key insights:**
+- **High-loyalty portfolios** (>20% repeat): {list} — these justify above-average ACoS because customer LTV is higher
+- **One-time purchase portfolios** (<5% repeat): {list} — standard ACoS thresholds apply, no LTV cushion
+- **Subscribe & Save candidates** (>30% repeat): {list} — consider setting up S&S for these products
+
 ## Competitive Landscape
 
 {Summary of competitor movements from market intel, or "No market intel snapshots available for competitive analysis"}
@@ -303,6 +380,18 @@ If market intel snapshots exist, summarize competitive shifts:
 | No bid change logs | Skip "Actions Taken" assessment |
 | No market intel snapshots | Skip competitive landscape section |
 | Portfolio stages outdated in business.md | Flag: "Portfolio stages in business.md were last updated {date}. Review stage assignments." |
+| BA SCP/SQP report fails | Skip "Organic Search Health" section. Note: "Brand Analytics search data unavailable." |
+| BA Repeat Purchase report fails | Use LTV Factor 1.0x for all portfolios. Note: "Repeat Purchase data unavailable — assuming standard LTV." |
+| No ASINs in sku-asin-mapping | Skip SQP (requires asins). SCP + Repeat Purchase still work. |
+| BA monthly period not yet closed | Use `periods_back=2` to get previous month. Note which month the BA data covers. |
+
+---
+
+### Step 11: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: ppc-monthly-review".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
 
 ---
 

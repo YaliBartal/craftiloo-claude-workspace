@@ -1,0 +1,80 @@
+[
+  {
+    "our_asin": "B09THLVFZK",
+    "our_product": "Fuse Beads 24000",
+    "co_purchased_asin": "B0CRZ8M2G1",
+    "frequency_pct": 5.26
+  },
+  {
+    "our_asin": "B09THLVFZK",
+    "our_product": "Fuse Beads 24000",
+    "co_purchased_asin": "B09CPF1R18",
+    "frequency_pct": 4.21
+  },
+  {
+    "our_asin": "B09THLVFZK",
+    "our_product": "Fuse Beads 24000",
+    "co_purchased_asin": "B09YQG4RVV",
+    "frequency_pct": 4.21
+  },
+  {
+    "our_asin": "B08DDJCQKF",
+    "our_product": "Fuse Beads 10000",
+    "co_purchased_asin": "B0DFHN42QB",
+    "frequency_pct": 2.99
+  },
+  {
+    "our_asin": "B08DDJCQKF",
+    "our_product": "Fuse Beads 10000",
+    "co_purchased_asin": "B08L8BHD4Z",
+    "frequency_pct": 1.49
+  },
+  {
+    "our_asin": "B09WQSBZY7",
+    "our_product": "Fairy Sewing Kit",
+    "co_purchased_asin": "B0BP8GCK1G",
+    "frequency_pct": 4.17
+  },
+  {
+    "our_asin": "B09WQSBZY7",
+    "our_product": "Fairy Sewing Kit",
+    "co_purchased_asin": "B075DCH5T4",
+    "frequency_pct": 2.08
+  },
+  {
+    "our_asin": "B07D6D95NG",
+    "our_product": "Biggie Beads 1500",
+    "co_purchased_asin": "B0DCFPTLLF",
+    "frequency_pct": 8.57
+  },
+  {
+    "our_asin": "B07D6D95NG",
+    "our_product": "Biggie Beads 1500",
+    "co_purchased_asin": "B079KL4C91",
+    "frequency_pct": 5.71
+  },
+  {
+    "our_asin": "B0F8R652FX",
+    "our_product": "Latch Hook Pillow Kit",
+    "co_purchased_asin": "B086XBRHK6",
+    "frequency_pct": 5.56
+  },
+  {
+    "our_asin": "B0FQC7YFX6",
+    "our_product": "Princess Lacing Cards",
+    "co_purchased_asin": "B0CXY8JMTK",
+    "frequency_pct": 10.0
+  },
+  {
+    "our_asin": "B0F8DG32H5",
+    "our_product": "Cat Hat Knitting Kit",
+    "co_purchased_asin": "B09DTHQH3Q",
+    "frequency_pct": 8.0
+  },
+  {
+    "our_asin": "B0F8DG32H5",
+    "our_product": "Cat Hat Knitting Kit",
+    "co_purchased_asin": "B0DKD2S3JT",
+    "frequency_pct": 8.0
+  }
+]

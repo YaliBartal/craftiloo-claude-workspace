@@ -96,6 +96,54 @@
   },
   "metric_history": [
     {
+      "date": "2026-02-20",
+      "source": "timeseries-backfill",
+      "acos": 35.48,
+      "spend_7d": 488.53,
+      "sales_7d": 1377.08,
+      "orders_7d": 62,
+      "cvr": 13.16,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-01",
+      "source": "timeseries-backfill",
+      "acos": 26.3,
+      "spend_7d": 421.88,
+      "sales_7d": 1602.24,
+      "orders_7d": 74,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-02",
+      "source": "timeseries-backfill",
+      "acos": 26.3,
+      "spend_7d": 421.88,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 36,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-03",
+      "source": "timeseries-backfill",
+      "acos": 26.3,
+      "spend_7d": 421.88,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 36,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
       "date": "2026-03-05",
       "acos": 31.6,
       "spend": 2001.4,
@@ -110,6 +158,18 @@
       "organic_momentum": 90,
       "profit_health": "PROFITABLE",
       "margin_pct": 20.2
+    },
+    {
+      "date": "2026-03-08",
+      "source": "timeseries-backfill",
+      "acos": 26.8,
+      "spend_7d": 500.63,
+      "sales_7d": 1866.62,
+      "orders_7d": 76,
+      "cvr": 8.5,
+      "rank_top10": 36,
+      "health_status": null,
+      "note": "Backfilled from daily-health+weekly by timeseries-dashboard"
     }
   ],
   "change_log": [
@@ -303,6 +363,19 @@
       "type": "7-day re-audit",
       "source": "listing-push-2026-03-06",
       "check": "Re-audit B08DDJCQKF. Check Ranking Juice score, Rank Radar trends, CVR and sales impact."
+    },
+    {
+      "date": "2026-03-23",
+      "type": "listing-ab-analyzer",
+      "skill": "listing-ab-analyzer",
+      "asin": "B08DDJCQKF",
+      "change_date": "2026-03-06",
+      "what_changed": ["title", "bullets", "backend_keywords"],
+      "before_weeks": ["2026-02-15 to 2026-02-21", "2026-02-22 to 2026-02-28"],
+      "transition_week": "2026-03-01 to 2026-03-07",
+      "after_weeks": ["2026-03-08 to 2026-03-14", "2026-03-15 to 2026-03-21"],
+      "source": "listing-push-2026-03-06",
+      "status": "pending"
     }
   ],
   "skills_run": [
@@ -352,6 +425,16 @@
         "profit_health": "PROFITABLE"
       },
       "output_ref": "tacos-optimizer/2026-03-06-tacos-scorecard.md"
+    },
+    {
+      "skill": "ppc-timeseries-dashboard",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "data_points": 6,
+        "inflections_detected": 0,
+        "trajectory_30d_acos": "improving"
+      }
     }
   ],
   "improvement_assessment": {

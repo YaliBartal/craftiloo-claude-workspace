@@ -52,6 +52,7 @@ This skill uses **3 MCP services** as primary data sources. Apify scraping is th
 | **1st** | **DataDive** | Competitor sales/revenue (Jungle Scout), keywords with search volumes, ranking juice scores, keyword roots |
 | **2nd** | **Amazon SP-API** | Real-time pricing, first-party BSR/category data, catalog search |
 | **3rd** | **Seller Board** | Our own profit data if we're already in this niche |
+| **4th** | **Brand Analytics** | Search intent validation (SQP), bundle opportunities (Market Basket), customer loyalty (Repeat Purchase) — only if we have existing ASINs in/near this niche |
 | **Fallback** | **Apify** | Review scraping (still needed), product data if MCP sources fail |
 
 **Key upgrade:** Sales estimates come from **Jungle Scout actuals** (via DataDive), NOT BSR lookup tables. Keyword data includes **real search volumes**, not title-frequency guessing.
@@ -241,6 +242,57 @@ If user confirmed they're already in this niche:
 - Pull our actual profit data for products in this category
 - Note our current position: revenue, units, profit margin, ACOS
 - Use as baseline for "what we know" vs competitor estimates
+
+#### Step 1.7: Brand Analytics Data (If We Have ASINs in/Near This Niche)
+
+**PURPOSE:** Add search intent validation, bundle intelligence, and customer loyalty signals to the niche assessment. This data is only available if Craftiloo already has products in the same or adjacent category.
+
+**Check first:** Read `context/sku-asin-mapping.json`. Do we have ASINs in this niche or a closely related one?
+- **If yes** → proceed with all 3 BA reports below
+- **If no** → skip this step entirely. Note: "No existing Craftiloo ASINs in this niche — Brand Analytics data unavailable. Market sizing based on DataDive estimates only."
+
+**All 3 reports can run in parallel** (each takes ~45-60s):
+
+##### 1.7a: SQP Report — Search Intent Validation
+
+**MCP Tool:** `create_brand_analytics_report(report_name="sqp", period="MONTH", periods_back=1, marketplace="US", asins="{space-separated Craftiloo ASINs in adjacent niche, max 200 chars}")`
+
+**What this provides:**
+- Per-search-term funnel: impressions → clicks → cart adds → purchases for our ASINs
+- Which keywords actually drive purchases (vs just impressions)
+- Conversion share per keyword — how much of the market's conversions we capture
+
+**Use for:**
+- **Intent-weighted market sizing:** Separate high-intent keywords (purchase rate > 3%) from browsing keywords (purchase rate < 1%). A niche with 50K monthly searches where 80% are browsers is very different from one where 60% are buyers.
+- **Keyword validation:** Cross-reference with DataDive keyword list — keywords with SQP purchases > 0 are CONFIRMED converters. Keywords with high DataDive search volume but 0 SQP purchases may indicate our products don't match that search intent.
+
+##### 1.7b: Market Basket Report — Bundle & Cross-Sell Intelligence
+
+**MCP Tool:** `create_brand_analytics_report(report_name="market_basket", period="MONTH", periods_back=1, marketplace="US")`
+
+**What this provides:**
+- Products frequently bought together with our products
+- Co-purchase frequency percentages
+
+**Use for:**
+- **Bundle opportunity identification:** If buyers of our cross-stitch kit also buy embroidery scissors from a competitor, that's a bundle opportunity
+- **Adjacent category discovery:** Co-purchased products may reveal adjacent niches worth exploring
+- **Competitive relationships:** If a competitor's product is frequently co-purchased with ours, they're complementary not competitive — changes the competitive analysis
+
+##### 1.7c: Repeat Purchase Report — Customer Loyalty Signal
+
+**MCP Tool:** `create_brand_analytics_report(report_name="repeat_purchase", period="MONTH", periods_back=1, marketplace="US")`
+
+**What this provides:**
+- Per-ASIN: repeat purchase count vs one-time purchase count
+- Repeat purchase rate (repeat / total)
+
+**Use for:**
+- **LTV estimation:** High repeat rate = customers come back = higher lifetime value per customer
+- **Niche quality signal:** Niches with high repeat purchase rates are more valuable long-term than one-time-purchase niches (even at lower revenue)
+- **Viability scoring:** Adds a "Customer Loyalty" dimension to the viability scorecard
+
+**Fallback if any BA report fails:** Note which report(s) failed. Continue with available data — all BA analysis is additive to the core DataDive + SP-API analysis.
 
 ---
 
@@ -490,21 +542,24 @@ Rate each factor 1-5:
 
 | Factor | Score | Notes |
 |---|---|---|
-| **Market Size** | /5 | Based on DataDive actual revenue data |
+| **Market Size** | /5 | Based on DataDive actual revenue data. If BA available: weighted by search intent (effective market size). |
 | **Competition Intensity** | /5 | 5 = low competition = good |
 | **Price Opportunity** | /5 | Room for profitable pricing (SP-API real pricing) |
 | **Differentiation Potential** | /5 | Review gaps + listing gaps + keyword gaps |
 | **Customer Pain Points** | /5 | Unresolved complaints = opportunity |
-| **Keyword Accessibility** | /5 | Real search volumes + ranking gaps from DataDive |
+| **Keyword Accessibility** | /5 | Real search volumes + ranking gaps from DataDive. If BA available: validated by SQP conversion data. |
 | **Listing Quality Gap** | /5 | Low Ranking Juice scores = weak competitors |
 | **Alignment with Brand** | /5 | Fits Craftiloo's strengths? |
-| **TOTAL** | /40 | |
+| **Customer Loyalty** | /5 | If BA available: repeat purchase rate. If not: estimate from product type (consumable/hobbyist = higher). |
+| **TOTAL** | /45 | |
 
 **Scoring Guide:**
-- **32-40:** Strong opportunity — move forward
-- **24-31:** Moderate opportunity — proceed with caution, address weak areas
-- **16-23:** Weak opportunity — significant challenges, consider alternatives
-- **<16:** Pass — too many barriers
+- **36-45:** Strong opportunity — move forward
+- **27-35:** Moderate opportunity — proceed with caution, address weak areas
+- **18-26:** Weak opportunity — significant challenges, consider alternatives
+- **<18:** Pass — too many barriers
+
+**Note on Customer Loyalty factor:** If Brand Analytics Repeat Purchase data is unavailable (no existing ASINs in niche), estimate based on product type: consumable/hobby supplies score 3-4, one-time purchases score 1-2, unknown score 3 (neutral).
 
 #### Data Confidence Rating
 
@@ -570,7 +625,7 @@ outputs/research/niche-analysis/
 ## Executive Summary
 {2-3 sentence overview: market size, competition level, key opportunity}
 
-**Data sources used:** DataDive (Jungle Scout) ✅/❌ | SP-API ✅/❌ | Seller Board ✅/❌ | Apify (reviews) ✅/❌
+**Data sources used:** DataDive (Jungle Scout) ✅/❌ | SP-API ✅/❌ | Seller Board ✅/❌ | Brand Analytics (SQP/Market Basket/Repeat) ✅/❌ | Apify (reviews) ✅/❌
 
 ---
 
@@ -652,6 +707,55 @@ outputs/research/niche-analysis/
 
 ---
 
+## Search Intent Analysis (Brand Analytics)
+
+> If Brand Analytics data unavailable: "No existing Craftiloo ASINs in this niche — Brand Analytics search intent data unavailable. Market sizing based on DataDive search volume estimates only."
+
+### Intent-Weighted Market Sizing
+
+| Metric | Value | Source |
+|--------|-------|--------|
+| Total Core Keyword Search Volume (DataDive) | {X}/mo | DataDive estimate |
+| High-Intent Keywords (purchase rate > 3%) | {X} keywords, {X}/mo combined SV | Brand Analytics SQP |
+| Low-Intent Keywords (purchase rate < 1%) | {X} keywords, {X}/mo combined SV | Brand Analytics SQP |
+| **Effective Market Size** (high-intent SV only) | {X}/mo | SQP-weighted |
+| Effective Market as % of Total SV | {X%} | — |
+
+**Interpretation:** {1-2 sentences — e.g., "Only 35% of searches in this niche are high-intent buyers. The raw 50K/month search volume overstates the real opportunity — effective demand is ~17.5K/month."}
+
+### Keyword Conversion Validation
+
+| Keyword | DataDive SV | SQP Purchase Rate | SQP Conv Share | Intent Level | DataDive vs BA |
+|---------|------------|-------------------|----------------|-------------|----------------|
+| {keyword} | {X}/mo | {X%} | {X%} | High / Low | {Confirmed / Overestimated / Underestimated} |
+
+### Bundle Opportunities (Market Basket)
+
+> If Market Basket data unavailable: skip this section.
+
+Products frequently bought together with our products in this niche:
+
+| Co-Purchased Product | ASIN | Co-Purchase Frequency | Relationship | Opportunity |
+|---------------------|------|----------------------|-------------|-------------|
+| {product name} | {ASIN} | {X%} of orders | Complementary / Competitive | {Bundle candidate / Cross-sell target / Adjacent niche signal} |
+
+**Bundle Recommendation:** {1-2 sentences — specific bundle ideas based on co-purchase data}
+
+### Customer Loyalty (Repeat Purchase)
+
+> If Repeat Purchase data unavailable: skip this section.
+
+| Metric | Value | Assessment |
+|--------|-------|------------|
+| Repeat Purchase Rate (our ASINs in niche) | {X%} | {High (>20%) / Medium (10-20%) / Low (<10%)} |
+| Repeat Units (monthly) | {X} | — |
+| One-Time Units (monthly) | {X} | — |
+| **Estimated LTV Multiplier** | {X}x | Based on repeat rate |
+
+**Niche Loyalty Assessment:** {1-2 sentences — e.g., "This niche has a 25% repeat purchase rate — buyers come back. Combined with $15 ASP, estimated customer LTV is ~$37.50 vs one-time value of $15. This justifies higher acquisition costs (tolerable ACoS up to 40%)."}
+
+---
+
 ## Customer Voice (Review Analysis)
 
 ### What Customers LOVE (Table Stakes)
@@ -717,15 +821,16 @@ outputs/research/niche-analysis/
 
 | Factor | Score | Reasoning |
 |---|---|---|
-| Market Size | {X}/5 | {why — cite actual revenue from DataDive} |
+| Market Size | {X}/5 | {why — cite actual revenue from DataDive. If BA: cite effective market size from SQP intent weighting.} |
 | Competition Intensity | {X}/5 | {why} |
 | Price Opportunity | {X}/5 | {why — cite SP-API pricing data} |
 | Differentiation Potential | {X}/5 | {why — cite review gaps + listing gaps} |
 | Customer Pain Points | {X}/5 | {why — cite review analysis} |
-| Keyword Accessibility | {X}/5 | {why — cite search volumes + ranking gaps} |
+| Keyword Accessibility | {X}/5 | {why — cite search volumes + ranking gaps. If BA: cite SQP conversion validation.} |
 | Listing Quality Gap | {X}/5 | {why — cite Ranking Juice scores} |
 | Brand Alignment | {X}/5 | {why} |
-| **TOTAL** | **{X}/40** | |
+| Customer Loyalty | {X}/5 | {If BA: cite repeat purchase rate. If no BA: estimate from product type.} |
+| **TOTAL** | **{X}/45** | |
 
 ### Data Confidence
 | Source | Used? | Notes |
@@ -733,6 +838,9 @@ outputs/research/niche-analysis/
 | DataDive competitors | ✅/❌ | {notes} |
 | DataDive keywords | ✅/❌ | {notes} |
 | DataDive ranking juice | ✅/❌ | {notes} |
+| Brand Analytics SQP | ✅/❌ | {notes — requires existing ASINs in niche} |
+| Brand Analytics Market Basket | ✅/❌ | {notes} |
+| Brand Analytics Repeat Purchase | ✅/❌ | {notes} |
 | SP-API pricing | ✅/❌ | {notes} |
 | SP-API catalog | ✅/❌ | {notes} |
 | Seller Board | ✅/❌ | {notes} |
@@ -766,7 +874,7 @@ outputs/research/niche-analysis/
 ---
 
 *Generated by Niche Category Analysis skill — {date}*
-*Data sources: DataDive (Jungle Scout) | Amazon SP-API | Seller Board | Apify*
+*Data sources: DataDive (Jungle Scout) | Amazon SP-API | Seller Board | Brand Analytics (SQP/Market Basket/Repeat) | Apify*
 ```
 
 ### Snapshot Format (JSON)
@@ -782,6 +890,9 @@ Save for future comparison:
     "datadive": true,
     "sp_api": true,
     "seller_board": false,
+    "brand_analytics_sqp": false,
+    "brand_analytics_market_basket": false,
+    "brand_analytics_repeat_purchase": false,
     "apify_reviews": true
   },
   "metrics": {
@@ -796,7 +907,11 @@ Save for future comparison:
     "total_core_search_volume": 0,
     "core_keyword_count": 0,
     "related_keyword_count": 0,
-    "avg_listing_score": 0
+    "avg_listing_score": 0,
+    "effective_market_sv": 0,
+    "high_intent_keyword_pct": 0,
+    "repeat_purchase_rate": 0,
+    "top_bundle_opportunity": ""
   },
   "top_competitors": [
     {
@@ -832,7 +947,7 @@ Save for future comparison:
     }
   ],
   "viability_score": 0,
-  "viability_max": 40,
+  "viability_max": 45,
   "verdict": "GO/CONDITIONAL GO/NO-GO",
   "data_confidence": "High/Medium/Low"
 }
@@ -918,6 +1033,9 @@ If DataDive niche doesn't exist AND user declines to create a niche dive:
 | All data sources fail | STOP. Report error. Ask user to try later |
 | Timeout on batch | Use partial data, note which ASINs are missing |
 | DataDive token balance low | Warn user, suggest using existing niche or SP-API fallback |
+| No existing Craftiloo ASINs in niche (for BA) | Skip Brand Analytics entirely. Note: "No existing ASINs — BA data unavailable." Customer Loyalty score estimated from product type. |
+| Brand Analytics SQP/Market Basket/Repeat report fails | Note which report(s) failed. Continue with all other data — BA is additive. |
+| Brand Analytics report timeout (>3 min) | Stop polling. Skip BA section. Note timeout. |
 
 ---
 
@@ -961,7 +1079,8 @@ Before starting, confirm:
 4. **Enrich with SP-API** — `get_catalog_item` for first-party details on top 15
 5. **Calculate market metrics** — Using Jungle Scout actuals, not BSR tables
 6. **Pull Seller Board data** — If already in niche, add internal context
-7. **Analyze pricing** — `get_competitive_pricing` (SP-API) for real-time Buy Box data
+7. **Pull Brand Analytics** — If existing ASINs in/near niche: SQP (intent validation) + Market Basket (bundle intel) + Repeat Purchase (loyalty signal) — all 3 in parallel (~60s)
+8. **Analyze pricing** — `get_competitive_pricing` (SP-API) for real-time Buy Box data
 8. **Pull keyword data** — `get_niche_keywords` + `get_niche_roots` (DataDive) with real search volumes
 9. **Map keyword landscape** — Ranking gaps, long-tail opportunities, root themes
 10. **Pull listing scores** — `get_niche_ranking_juices` (DataDive) for optimization gaps
@@ -974,6 +1093,14 @@ Before starting, confirm:
 17. **Save snapshot** — Enhanced JSON for future comparison
 18. **Present summary** — Key findings to user
 19. **Suggest next steps** — If GO, recommend follow-up actions with specific DataDive nicheId
+
+---
+
+## Step 20: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: niche-category-analysis".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
 
 ---
 

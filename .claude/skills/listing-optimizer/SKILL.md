@@ -48,6 +48,7 @@ Scores existing Craftiloo listings against competitors and produces actionable r
 - **Customer Review Analyzer** — Review language feeds rewrite recommendations
 - **Weekly PPC Analysis** — CVR data validates listing weaknesses identified here
 - **Daily Market Intel** — Sales velocity context for prioritization
+- **Brand Analytics (SCP/SQP)** — Actual search funnel data: impressions → clicks → carts → purchases per keyword. Shows WHERE in the funnel the listing is losing customers
 
 ---
 
@@ -348,6 +349,66 @@ Call `list_niches(page_size=50)` to get all active niches. Match each hero produ
 
 **Fallback if both fail:** Note "Sales data unavailable — CVR and revenue context skipped. Prioritization will be based on optimization scores only." Continue without.
 
+### Step 7c: Fetch Brand Analytics Search Funnel Data (Optional — Single Audit Primary)
+
+**PURPOSE:** Get actual Amazon search funnel data for our product — impressions → clicks → cart adds → purchases per search term. This reveals WHERE in the funnel the listing is losing customers, which Ranking Juice scores alone cannot show.
+
+**This step runs in parallel with Steps 7a/7b** (all are async API calls).
+
+#### SCP Report (Both Modes)
+
+**MCP Tool:** `create_brand_analytics_report(report_name="scp", period="WEEK", periods_back=2, marketplace="US")`
+
+SCP provides per-ASIN funnel data across ALL search terms. No `asins` parameter needed.
+
+- Poll `get_report_status` every 30 seconds until DONE (typically ~60s)
+- Download with `get_report_document`
+
+**Per-ASIN metrics from SCP:**
+
+| Field | What It Tells You |
+|-------|-------------------|
+| `searchFunnelImpressions` | How many times shoppers saw our product in search results |
+| `searchFunnelClicks` | How many clicked through to our listing |
+| `searchFunnelCartAdds` | How many added to cart after viewing |
+| `searchFunnelPurchases` | How many actually purchased |
+| `searchFunnelClickShare` | Our share of total clicks for searches where we appeared |
+| `searchFunnelConversionShare` | Our share of total conversions |
+
+**Derived metrics:**
+- **Click-Through Rate (CTR):** clicks / impressions — measures title + main image effectiveness
+- **Cart Rate:** cart adds / clicks — measures bullet points + pricing effectiveness
+- **Purchase Rate:** purchases / cart adds — measures checkout/competitor comparison
+- **Conversion Share vs Click Share ratio:** If conversion share > click share → product converts above average. If click share > conversion share → listing attracts clicks but fails to convert.
+
+#### SQP Report (Single Audit Only)
+
+**MCP Tool:** `create_brand_analytics_report(report_name="sqp", period="WEEK", periods_back=2, marketplace="US", asins="{ASIN being audited}")`
+
+SQP provides per-search-term funnel data FOR our specific ASIN. This shows which keywords convert well and which don't.
+
+- Poll and download same as SCP
+
+**Per-keyword metrics from SQP:**
+
+| Field | What It Tells You |
+|-------|-------------------|
+| `searchQuery` | The exact search term |
+| `searchQueryImpressions` | Total impressions for this search term |
+| `brandImpressions` / `brandClicks` / `brandPurchases` | OUR performance on this search term |
+| `brandClickShare` / `brandConversionShare` | Our share vs competitors on this search term |
+
+**Key analysis (feeds into Step 10 Correlation):**
+- Keywords with high impressions + low clicks = **title/main image problem** for this search intent
+- Keywords with high clicks + low cart adds = **bullet points/pricing problem**
+- Keywords with high cart adds + low purchases = **competitor undercutting at checkout**
+- Keywords with conversion share > click share = **listing converts well for this search** (PROTECT these elements)
+- Keywords with click share > conversion share = **listing attracts but fails to convert** (REWRITE priority)
+
+**For Portfolio Scan:** Use SCP data only (no SQP — too many ASINs). Flag products where conversion share < click share as "listing attracts clicks but doesn't convert — run Single Audit."
+
+**Fallback if BA reports fail:** Note "Brand Analytics data unavailable — search funnel analysis skipped. Proceeding with Ranking Juice + rank data only." Continue without — all BA analysis is additive.
+
 ### Step 8: Fetch Current Listing Copy
 
 **PURPOSE:** Get the actual current title, bullets, and description text for our product and top competitors.
@@ -484,8 +545,25 @@ Call `list_niches(page_size=50)` to get all active niches. Match each hero produ
    - If NOT in listing → adding it could push us to page 1
    - **Priority by:** searchVolume x (21 - currentRank) — higher = bigger opportunity
 
+5. **SQP Funnel Breakdown → Listing Element Diagnosis (Single Audit, if BA data available):**
+
+   For each keyword from SQP, diagnose WHERE in the funnel the listing fails:
+
+   | Funnel Signal | Diagnosis | Fix Target |
+   |---------------|-----------|------------|
+   | High impressions + low clicks (CTR < 2%) | Title or main image doesn't match search intent | **Title rewrite** for this keyword's intent |
+   | High clicks + low cart adds (Cart Rate < 15%) | Bullets/price not convincing after click | **Bullet rewrite** — address this keyword's buyer concerns |
+   | High cart adds + low purchases | Competitor undercut or checkout friction | **Price check** — not a listing copy issue |
+   | Conversion share > click share | Listing converts above average for this keyword | **PROTECT** — do not change elements tied to this keyword |
+   | Click share > conversion share | Listing attracts but fails to convert | **PRIORITY REWRITE** — bullets/description for this keyword |
+
+   **Cross-reference with Ranking Juice:** If Ranking Juice says listing scores well BUT SQP shows low conversion → the listing is "technically optimized" but doesn't actually convince buyers. This is a **false positive** — the copy reads well for algorithms but not for humans.
+
+   **Cross-reference with Rank Trends:** If a keyword is declining in rank AND SQP shows low purchase rate → double signal that the listing needs urgent attention for this keyword.
+
 **For Portfolio Scan:**
 - Simplified: Flag products where Ranking Juice < niche average AND CVR < portfolio average
+- **If SCP data available:** Also flag products where conversion share < click share — these attract clicks but don't convert, indicating listing quality issues even if Ranking Juice scores look decent
 - These products have both listing quality AND conversion issues — highest priority for Single Audit
 
 ### Step 11: Generate Rewrite Recommendations (Single Audit Only)
@@ -593,6 +671,35 @@ Based on all data collected, produce specific rewrite suggestions:
     "declining_7d": [],
     "almost_page_1": []
   },
+  "brand_analytics": {
+    "available": false,
+    "period": "WEEK",
+    "scp": {
+      "impressions": 0,
+      "clicks": 0,
+      "ctr": 0.0,
+      "cart_adds": 0,
+      "cart_rate": 0.0,
+      "purchases": 0,
+      "purchase_rate": 0.0,
+      "click_share": 0.0,
+      "conversion_share": 0.0,
+      "conv_vs_click_ratio": 0.0
+    },
+    "sqp_keywords": [
+      {
+        "search_term": "",
+        "impressions": 0,
+        "clicks": 0,
+        "ctr": 0.0,
+        "cart_adds": 0,
+        "purchases": 0,
+        "click_share": 0.0,
+        "conversion_share": 0.0,
+        "funnel_gap": "title|bullets|price|none"
+      }
+    ]
+  },
   "priority_score": 0.0
 }
 ```
@@ -660,7 +767,7 @@ After saving, present a concise summary:
 **Category:** {Amazon category}
 **DataDive Niche:** {niche label}
 **Previous Snapshot:** {YYYY-MM-DD} (or "None — first run")
-**Data Sources:** DataDive (Ranking Juice, MKL, Roots, Rank Radar), Amazon SP-API (listing copy, sessions/CVR), Seller Board (profit, PPC split), Apify (competitor listings)
+**Data Sources:** DataDive (Ranking Juice, MKL, Roots, Rank Radar), Amazon SP-API (listing copy, sessions/CVR), Seller Board (profit, PPC split), Apify (competitor listings), Brand Analytics (SCP search funnel, SQP per-keyword funnel)
 
 ---
 
@@ -820,6 +927,49 @@ Keywords where we rank top 5 and competitors do not. **Do NOT remove these from 
 
 ---
 
+## Search Funnel Analysis (Brand Analytics)
+
+> If Brand Analytics data unavailable: "Brand Analytics data unavailable — search funnel analysis skipped. Run again when BA reports are accessible."
+
+### Overall Funnel Health (from SCP)
+
+| Metric | Value | Assessment |
+|--------|-------|------------|
+| Search Impressions (weekly) | {X} | {High / Low vs niche} |
+| Search Clicks | {X} | — |
+| Click-Through Rate | {X%} | {Good / Weak — title & image effectiveness} |
+| Cart Adds | {X} | — |
+| Cart Rate (carts/clicks) | {X%} | {Good / Weak — bullet & price effectiveness} |
+| Purchases | {X} | — |
+| Purchase Rate (purchases/carts) | {X%} | {Good / Weak — checkout competitiveness} |
+| Click Share | {X%} | {Our share of all clicks when we appear} |
+| Conversion Share | {X%} | {Our share of all conversions} |
+| **Conv Share vs Click Share** | {ratio} | {> 1.0 = converts above avg / < 1.0 = attracts but doesn't convert} |
+
+### Per-Keyword Funnel (from SQP — Single Audit Only)
+
+Top keywords by impression volume, showing where in the funnel we lose customers:
+
+| # | Search Term | Impressions | Clicks | CTR | Cart Adds | Cart Rate | Purchases | Conv Share | Funnel Gap | Fix Target |
+|---|-------------|------------|--------|-----|-----------|-----------|-----------|------------|-----------|------------|
+| 1 | {term} | {X} | {X} | {X%} | {X} | {X%} | {X} | {X%} | {Title / Bullets / Price / None} | {Rewrite title / Rewrite bullet X / Check price / Protect} |
+
+### Funnel Insights
+
+**Title/Image Problems (low CTR keywords):**
+- {keyword}: Only {X%} CTR despite {X} impressions — title doesn't match "{keyword}" search intent. Consider adding "{missing element}" to title.
+
+**Bullet/Price Problems (low cart rate keywords):**
+- {keyword}: {X%} cart rate after click — shoppers click but don't add to cart. Bullet points may not address what "{keyword}" searchers expect.
+
+**Conversion Winners (PROTECT — do not change):**
+- {keyword}: Conversion share {X%} > click share {X%} — listing converts above average for this term. Protect listing elements tied to this keyword.
+
+**False Positive Alert:**
+> {If applicable: "Ranking Juice scores {X}/100 (above niche avg) but SQP shows conversion share < click share on {N} keywords. The listing is algorithmically optimized but not converting real shoppers. Prioritize human-readable rewrites over keyword-stuffing fixes."}
+
+---
+
 ## Correlation Map — Listing Weakness x Rank Decline
 
 **Core insight:** Where listing weaknesses are CAUSING rank losses.
@@ -943,6 +1093,8 @@ Keywords where we rank top 5 and competitors do not. **Do NOT remove these from 
 - **Seller Board:** Profit/PPC split data through {date}
 - **Apify:** {X} competitor ASINs scraped for listing copy
 - **AI Copywriter:** {X} modes run ({mode list})
+- **Brand Analytics SCP:** {Available/Unavailable} — search funnel data (weekly, free)
+- **Brand Analytics SQP:** {Available/Unavailable} — per-keyword funnel data (weekly, free)
 - **Snapshot saved:** {filepath}
 ```
 
@@ -1097,9 +1249,11 @@ Sorted by Priority Score = (Niche Avg Score - Our Score) x Monthly Revenue.
 | Seller Board Sales Detailed (profit/PPC split) | ~4K | Required |
 | Apify competitor listing scrape (5 ASINs) | ~7K | Required |
 | AI Copywriter (4 modes) | ~10K | Required |
+| Brand Analytics SCP report (search funnel) | ~3K | Optional (additive) |
+| Brand Analytics SQP report (per-keyword funnel) | ~5K | Optional (additive) |
 | Analysis + correlation | ~5K | Required |
 | Report generation | ~7K | Required |
-| **Total estimated** | **~86K** | — |
+| **Total estimated** | **~94K** | — |
 
 **If approaching token limit:**
 1. Reduce MKL to Core keywords only (skip Related) — saves ~5K
@@ -1147,6 +1301,8 @@ Sorted by Priority Score = (Niche Avg Score - Our Score) x Monthly Revenue.
 - [ ] Amazon SP-API Merchant Listings report fetched (our listing copy) — or fell back to Apify
 - [ ] Seller Board Sales Detailed fetched (profit, PPC split) — or failure noted
 - [ ] Apify competitor listing scrape completed (Single Audit only, 5 ASINs) — or failure noted
+- [ ] Brand Analytics SCP report fetched (search funnel data) — or failure noted
+- [ ] Brand Analytics SQP report fetched (Single Audit only, per-keyword funnel) — or failure noted
 - [ ] AI Copywriter run in all 4 modes (Single Audit only) — or failure noted
 
 ### Analysis
@@ -1196,6 +1352,8 @@ Sorted by Priority Score = (Niche Avg Score - Our Score) x Monthly Revenue.
 | Both SP-API and Seller Board fail for sales data | Note: "All sales data sources unavailable — CVR and revenue context skipped." Prioritize by optimization scores only. |
 | Apify competitor scrape fails (Single Audit) | Note: "Competitor listing copy unavailable." Our listing analysis continues using SP-API data. Rewrite recs will be keyword-focused rather than copy-comparison. |
 | Apify timeout (>3 minutes) | Use whatever data was collected. Note which competitor ASINs are missing. |
+| Brand Analytics SCP/SQP report fails | Note "Brand Analytics data unavailable — search funnel analysis skipped." Continue with all other data sources — BA is purely additive. |
+| Brand Analytics report still IN_PROGRESS after 3 min | Stop polling. Skip BA analysis. Note timeout. |
 | Previous snapshot JSON is corrupted | Skip trend comparison. Note: "Previous snapshot unreadable — treating as first run." |
 | Token budget tight (approaching 80K) | Priority cuts: 1) Reduce MKL to Core only, 2) Reduce Rank Radar window, 3) Cut AI Copywriter to 2 modes. Never cut: Ranking Juice, keyword gaps, correlation map. |
 | Product has no Rank Radar | Skip rank trend analysis. Note: "No Rank Radar found for {ASIN}." |
@@ -1232,6 +1390,14 @@ Sorted by Priority Score = (Niche Avg Score - Our Score) x Monthly Revenue.
 | **Listing not converting** | 1. Single Audit → 2. Customer Review Analyzer (customer language) → 3. Rewrite → 4. Monitor CVR in Weekly PPC |
 | **Rank dropping on key keywords** | 1. Single Audit → 2. Implement P1 rewrites → 3. Track rank recovery via Daily Market Intel |
 | **Post-listing-creator quality check** | 1. Run Listing Creator → 2. Single Audit after 2 weeks live → 3. Refine based on actual rank + CVR data |
+
+---
+
+### Step 15: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: listing-optimizer".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
 
 ---
 

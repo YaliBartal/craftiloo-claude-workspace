@@ -299,6 +299,12 @@ List all pending P1 actions + overdue reviews in the brief.
 }
 ```
 
+### Step 8: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: ppc-daily-health".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
+
 ---
 
 ## What This Does NOT Do

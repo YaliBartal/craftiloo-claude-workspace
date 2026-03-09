@@ -1,0 +1,5918 @@
+{
+  "scrape_date": "2026-03-08",
+  "scrape_metadata": {
+    "product_runs": [
+      "categorized",
+      "uncategorized_1",
+      "uncategorized_2"
+    ],
+    "serp_runs": [
+      "cross-stitch-embroidery-kids",
+      "embroidery-adults-sewing-kids",
+      "latch-hook-loom-knitting",
+      "fuse-beads",
+      "lacing-needlepoint-gem"
+    ],
+    "total_asins_scraped": 97,
+    "total_keywords_scraped": 103,
+    "total_serp_results": 5052,
+    "is_baseline": true
+  },
+  "products": {
+    "B087DYHMZ2": {
+      "asin": "B087DYHMZ2",
+      "title": "CraftLab Embroidery Sewing Kit for Beginners, Kids Craft Kit Gift for Girls Boys Ages 8-12, 10 Projects, Embroidery Hoops, Fabric, Patterns, Floss, Needles, Needlepoint Cross Stitching Supplies",
+      "price": 25.8035706,
+      "bsr_main": 40194,
+      "bsr_sub": 148,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 619,
+      "availability": true,
+      "brand": "CraftLab",
+      "categories": [
+        "embroidery-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CZHKSSL4": {
+      "asin": "B0CZHKSSL4",
+      "title": "CYANFOUR Embroidery Kit for Beginners, 4 Stages to Learn 38 Stitches, with Step-by-Step Instructions and Clear Videos, Includes Multiple Accessories, Gift for Craft Lovers.",
+      "price": 12.9060902,
+      "bsr_main": 346,
+      "bsr_sub": 1,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.4,
+      "reviews_count": 1326,
+      "availability": true,
+      "brand": "CYANFOUR",
+      "categories": [
+        "embroidery-adults"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0D8171TF1": {
+      "asin": "B0D8171TF1",
+      "title": "KRAFUN Beginner Embroidery Kit for Kids & Adults - Learn to Stitch Starter Set with 7 Pre-Printed Patterns & Tote Bag - DIY Hand Sewing Practice Project with Hoop, Tool Box & Instructions",
+      "price": 18.9329502,
+      "bsr_main": 23409,
+      "bsr_sub": 94,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 171,
+      "availability": true,
+      "brand": "KRAFUN",
+      "categories": [
+        "embroidery-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0B7JHN4F1": {
+      "asin": "B0B7JHN4F1",
+      "title": "KRAFUN Cross Stitch Kits for Kids Beginners, 4 Cross Stitching Keyrings Arts & Crafts with Butterfly and Flower, Needlepoint Embroidery Kit for Girls 5-13 Craft Kit Backpack Charms, Ornaments",
+      "price": 12.9060902,
+      "bsr_main": 20122,
+      "bsr_sub": 38,
+      "bsr_categories": [
+        "",
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 294,
+      "availability": true,
+      "brand": "KRAFUN",
+      "categories": [
+        "cross-stitch-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0C2XYP6L3": {
+      "asin": "B0C2XYP6L3",
+      "title": "KRAFUN Easy Sewing Kit for Beginner Kids Arts & Crafts, 8 Easy DIY Projects of Stuffed Animal Dolls of Puppies & Kittens, Dogs and Cats, Instructions & Felt, Gift for Girls, Boys, Learn to Sew",
+      "price": 15.4890302,
+      "bsr_main": 2486,
+      "bsr_sub": 2,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 1937,
+      "availability": true,
+      "brand": "KRAFUN",
+      "categories": [
+        "sewing-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DP654CSV": {
+      "asin": "B0DP654CSV",
+      "title": "Louise Maelys 12 Pre-Stamped Embroidery Kits for Beginners, Kids Girls Cross Stitch Kit,DIY Needlepoint Craft Sewing Practice Supplies,Funny Cute Pattern,Perfect for Ages 8-12",
+      "price": 18.0719702,
+      "bsr_main": 14083,
+      "bsr_sub": 55,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 46,
+      "availability": true,
+      "brand": "Louise Maelys",
+      "categories": [
+        "embroidery-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DMHY2HF3": {
+      "asin": "B0DMHY2HF3",
+      "title": "CYANFOUR 5 Pack Beginner Embroidery Kit for Adults, Easy to Learn Floral Embroidery Patterns from Video & Instruction, Needlepoint Kits for Adults Include Embroidery Hoop, Colorful Threads, Tools",
+      "price": 14.6280502,
+      "bsr_main": 1416,
+      "bsr_sub": 3,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.4,
+      "reviews_count": 323,
+      "availability": true,
+      "brand": "CYANFOUR",
+      "categories": [
+        "embroidery-adults"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B091GXM2Y6": {
+      "asin": "B091GXM2Y6",
+      "title": "KRAFUN My First Sewing Kit for Beginner Kids Arts & Crafts, 7 Easy DIY Projects of Stuffed Animal Dolls and Plush Pillow Craft, Instructions & Felt, Gift for Girls, Boys, Learn to Sew, Embroidery",
+      "price": 18.9329502,
+      "bsr_main": 525,
+      "bsr_sub": 1,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.7,
+      "reviews_count": 3653,
+      "availability": true,
+      "brand": "KRAFUN",
+      "categories": [
+        "sewing-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CM9JKNCC": {
+      "asin": "B0CM9JKNCC",
+      "title": "Caydo 5 PCS Cross Stitch Kits for Kids with Cats and Dogs Patterns Stamped Cross Stitch Kits for Beginners DIY Key Chain, Backpack Charms, Craft Ornaments",
+      "price": 19.7939302,
+      "bsr_main": 80932,
+      "bsr_sub": 334,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 3.9,
+      "reviews_count": 55,
+      "availability": true,
+      "brand": "Caydo",
+      "categories": [
+        "cross-stitch-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B08TC7423N": {
+      "asin": "B08TC7423N",
+      "title": "Pllieay 10 PCS Cross Stitch Kits for Beginners, Embroidery Beginner Kits for Kids 7-13, Include Instructions, Cross Stitch Kits with Pattern, Needlepoint Kits for Embroidery Projects",
+      "price": 21.5158902,
+      "bsr_main": 79371,
+      "bsr_sub": 325,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 443,
+      "availability": true,
+      "brand": "Pllieay",
+      "categories": [
+        "embroidery-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0B762JW55": {
+      "asin": "B0B762JW55",
+      "title": "Bradove Classic Embroidery Stitches Practice Kit, Embroidery Kit for Beginners, Beginner Embroidery Kit for Adults, Hand Embroidery Kit for Kids, Stitches Kit",
+      "price": 21.5072804,
+      "bsr_main": 2291,
+      "bsr_sub": 4,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 1986,
+      "availability": true,
+      "brand": "Bradove",
+      "categories": [
+        "embroidery-adults"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0BB9N74SG": {
+      "asin": "B0BB9N74SG",
+      "title": "Santune 3 Sets Embroidery Kit,Cross Stitch Kits for Beginners,Needlepoint Kits for Adults with Easy Floral Pattern Hand Crafts,Hoop,Needle,Mothers Day Gifts",
+      "price": 20.6549102,
+      "bsr_main": 3191,
+      "bsr_sub": 5,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 2850,
+      "availability": true,
+      "brand": "Santune",
+      "categories": [
+        "embroidery-adults"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B08T5QC9FS": {
+      "asin": "B08T5QC9FS",
+      "title": "Pllieay Cross Stitch Beginner Kit for Kids 7-13, Includes 6pcs Project Cross Stitch Pattern and 2pcs Hoops, 12 Skeins, Needle Point Starter Kit Sewing Set with Instructions for Christmas Gift",
+      "price": 10.3231502,
+      "bsr_main": 30766,
+      "bsr_sub": 119,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.2,
+      "reviews_count": 1355,
+      "availability": true,
+      "brand": "Pllieay",
+      "categories": [
+        "cross-stitch-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DFHN42QB": {
+      "asin": "B0DFHN42QB",
+      "title": "EZCRA Beginner Needlepoint Cross Stitch Kit for Kids Ages 5-8 \u2013 Easy Embroidery Starter Set with Jumbo Plastic Needles, Pre-Printed Patterns, Instructions \u2013 DIY Arts & Crafts Gift for Girls & Boys",
+      "price": 15.4890302,
+      "bsr_main": 12875,
+      "bsr_sub": 11,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 188,
+      "availability": true,
+      "brand": "EZCRA",
+      "categories": [
+        "cross-stitch-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0C3ZVKB46": {
+      "asin": "B0C3ZVKB46",
+      "title": "ETSPIL Embroidery Kit for Adult Beginners, 3-Pack 33-Stitch Practice Samplers, Pre-Stamped Patterns, 7.8-Inch Hoop, Threads & Needles, Step-by-Step Guide & Video, DIY Needlework Craft Gift for Women",
+      "price": 16.3414004,
+      "bsr_main": 912,
+      "bsr_sub": 2,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.4,
+      "reviews_count": 2057,
+      "availability": true,
+      "brand": "ETSPIL",
+      "categories": [
+        "embroidery-adults"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0FN4CT867": {
+      "asin": "B0FN4CT867",
+      "title": "ARTKAL Fuse Beads Kit 36 Colors 11,000pcs 5mm Melty Beads Kit with 5 Pegboards 2 Tweezers 48 Patterns 2 Ironing Paper",
+      "price": 23.2378502,
+      "bsr_main": 81474,
+      "bsr_sub": 139,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 11,
+      "availability": true,
+      "brand": "ARTKAL",
+      "categories": [
+        "mini-fuse-beads"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B08QV9CMFQ": {
+      "asin": "B08QV9CMFQ",
+      "title": "LIHAO 2.6mm Mini Fuse Beads Kit for Crafts, 24000 pcs 48 Colors Fuse Beading Kit Multicolored Iron, Great Supplies for Fuse Beads Artist",
+      "price": 17.2109902,
+      "bsr_main": 10510,
+      "bsr_sub": 53,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.3,
+      "reviews_count": 1083,
+      "availability": true,
+      "brand": "LIHAO",
+      "categories": [
+        "mini-fuse-beads"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CYNNT2ZT": {
+      "asin": "B0CYNNT2ZT",
+      "title": "EZCRA Unicorn Sewing Kit for Kids Ages 4-8, 4 Easy Projects, No-Mess Learn-to-Sew Arts & Crafts with Felt Stickers for Beginners",
+      "price": 14.6280502,
+      "bsr_main": 4243,
+      "bsr_sub": 3,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.8,
+      "reviews_count": 423,
+      "availability": true,
+      "brand": "EZCRA",
+      "categories": [
+        "sewing-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CXY8JMTK": {
+      "asin": "B0CXY8JMTK",
+      "title": "EZCRA Unicorn Sewing Kit for Kids - 8-in-1 Kids Sewing Kit - Easy to Do Craft Kits for Ages 4-8 - Sewing Crafts - Extra Felt Stickers for Decoration - No Mess with Full Instructions",
+      "price": 18.9329502,
+      "bsr_main": 4916,
+      "bsr_sub": 4,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.7,
+      "reviews_count": 272,
+      "availability": true,
+      "brand": "EZCRA",
+      "categories": [
+        "sewing-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0D5LF666P": {
+      "asin": "B0D5LF666P",
+      "title": "FUNZBO 28000 2.6mm Mini Size Fuse Beads Set - 48 Colors, Easter Toys, Arts and Crafts, Kids Room Decorations, Gifts for Girls, Boys, Kids and Teens (Non Standard Size)",
+      "price": 23.2292404,
+      "bsr_main": 22438,
+      "bsr_sub": 41,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 172,
+      "availability": true,
+      "brand": "FUNZBO",
+      "categories": [
+        "mini-fuse-beads"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CX9H8YGR": {
+      "asin": "B0CX9H8YGR",
+      "title": "LatchKits Strawberry Pillow - Latch Hook Kits for Kids, Arts and Crafts, Yarn Art, Kids Crafts, Toys for Girls, Birthday Gift for Girls, Easy to Follow Pattern, Hook Included, Craft Kits, Ages 6+",
+      "price": 21.5158902,
+      "bsr_main": 10207,
+      "bsr_sub": 2,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.4,
+      "reviews_count": 1114,
+      "availability": true,
+      "brand": "LatchKits (PlayMonster)",
+      "categories": [
+        "latch-hook"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0B8W4FK4Q": {
+      "asin": "B0B8W4FK4Q",
+      "title": "Hapinest Learn to Knit Hat and Scarf Knitting Loom Kit for Kids Ages 8-12",
+      "price": 17.2109902,
+      "bsr_main": 21013,
+      "bsr_sub": 13,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 431,
+      "availability": true,
+      "brand": "Hapinest",
+      "categories": [
+        "loom-knitting"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B004JIFCXO": {
+      "asin": "B004JIFCXO",
+      "title": "Creativity for Kids Quick Knit Loom Kit | Learn to Knit a Colorful Hat or Cozy with an Easy Loom | Relaxing DIY Craft & Mindful Activity for Kids and Beginners Everywhere (Ages 7+)",
+      "price": 17.2109902,
+      "bsr_main": null,
+      "bsr_sub": null,
+      "bsr_categories": [],
+      "rating": 4.5,
+      "reviews_count": 3349,
+      "availability": true,
+      "brand": "Creativity for Kids",
+      "categories": [
+        "loom-knitting"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0BRYRD91V": {
+      "asin": "B0BRYRD91V",
+      "title": "KRAFUN Beginner Unicorn My First Lacing Card Kit for Kids Arts & Crafts, 10 Easy Princess, Mermaid, Lacing Projects, Toddlers Lace Project, Fine Motor Preschool Skills Toys",
+      "price": 17.2109902,
+      "bsr_main": 3461,
+      "bsr_sub": 22,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.7,
+      "reviews_count": 971,
+      "availability": true,
+      "brand": "KRAFUN",
+      "categories": [
+        "lacing-cards"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0C5WQD914": {
+      "asin": "B0C5WQD914",
+      "title": "INSCRAFT 28,000 Mini Fuse Beads, 2.6mm 48 Colors Melty Beads with 7 Pegboards 15 Ironing Sheets 2 Tweezers 2 Ironing Papers & 6 Chain Accessories",
+      "price": 25.8207902,
+      "bsr_main": 11182,
+      "bsr_sub": 18,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 392,
+      "availability": true,
+      "brand": "INSCRAFT",
+      "categories": [
+        "mini-fuse-beads"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0D178S25M": {
+      "asin": "B0D178S25M",
+      "title": "Serabeena Lacing Cards for Kids Ages 3-5 - Safari Animal Sewing Cards | Screen-Free Toddler Lace-Up Toy & Activity with 5 Laces & Storage Box for Hand-Eye Coordination and Fine Motor Skills",
+      "price": 12.9060902,
+      "bsr_main": 157358,
+      "bsr_sub": 98,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.7,
+      "reviews_count": 23,
+      "availability": true,
+      "brand": "Serabeena",
+      "categories": [
+        "lacing-cards"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B06XRRN4VL": {
+      "asin": "B06XRRN4VL",
+      "title": "LatchKits Latch Hook Kits for Kids \u2013 Kids Crafts, Arts and Crafts, Yarn Art, Wall Hanging & Mini-Rugs, Craft Supplies, Pre-Cut Yarn, Easy Pattern, Hook Included, Arts & Craft, Ages 6+, Unicorn",
+      "price": 14.6280502,
+      "bsr_main": 10793,
+      "bsr_sub": 4,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 7198,
+      "availability": true,
+      "brand": "LatchKits (PlayMonster)",
+      "categories": [
+        "latch-hook"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B00JM5G05I": {
+      "asin": "B00JM5G05I",
+      "title": "Melissa & Doug Alphabet Wooden Lacing Cards With Double-Sided Panels and Matching Laces",
+      "price": 21.9463802,
+      "bsr_main": 18529,
+      "bsr_sub": 157,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.8,
+      "reviews_count": 1042,
+      "availability": true,
+      "brand": "Melissa and Doug",
+      "categories": [
+        "lacing-cards"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CTTMWXYP": {
+      "asin": "B0CTTMWXYP",
+      "title": "Klever Kits 7 Sewing Projects- My First Kids Sewing Kit- Easy DIY Arts and Crafts for Girls, Craft Kits, Birthday Gifts for Kids Aged 6+, Unicorn and Mermaid Pillow",
+      "price": 17.2109902,
+      "bsr_main": 12853,
+      "bsr_sub": 12,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 774,
+      "availability": true,
+      "brand": "Klever Kits",
+      "categories": [
+        "sewing-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CV1F5CFS": {
+      "asin": "B0CV1F5CFS",
+      "title": "KRAFUN My First Sewing Bag Kit Arts & Crafts for Beginner Kids, 6 Easy DIY Sewing Handbag Pouch Sleeve Projects of Animal Theme, Instructions Learn to Sew & Felt Embroidery, Gift for Girls & Boys",
+      "price": 18.9329502,
+      "bsr_main": 9904,
+      "bsr_sub": 10,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.7,
+      "reviews_count": 642,
+      "availability": true,
+      "brand": "KRAFUN",
+      "categories": [
+        "sewing-kids"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CWLTTZ2G": {
+      "asin": "B0CWLTTZ2G",
+      "title": "EZCRA Easy Arts and Crafts for Kids - Fun Gem Sticker Kit - 8 Unicorn Princess Themes, 990+ Stickers - Gem Art for Kids - Diamond Art Kits - Gifts for Girls Ages 3-8",
+      "price": 12.9060902,
+      "bsr_main": 2537,
+      "bsr_sub": 102,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.7,
+      "reviews_count": 267,
+      "availability": true,
+      "brand": "EZCRA",
+      "categories": [
+        "gem-art"
+      ],
+      "is_our_asin": false,
+      "is_competitor": true,
+      "is_uncategorized": false,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CCN877BL": {
+      "asin": "B0CCN877BL",
+      "title": "Crochet Kit for Beginners, Beginner Crochet Starter Kit w Step-by-Step Video Tutorials, Learn to Crochet Kits for Adults & Kids, DIY Knitting Supplies, 6-Pack Donut Family(40%+ Yarn Content)",
+      "price": 22.3768702,
+      "bsr_main": 11552,
+      "bsr_sub": 39,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.2,
+      "reviews_count": 897,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B07PPD8Q8V": {
+      "asin": "B07PPD8Q8V",
+      "title": "Made By Me Ultimate Weaving Loom, Includes 378 Craft Loops & 1 Weaving Loom with Tool, Makes 25 Projects, 9 Rainbow Colors of Weaving Loops, Hook & Loop Potholder Kit, DIY Weaving Kit",
+      "price": 12.0451102,
+      "bsr_main": 1169,
+      "bsr_sub": 1,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 11887,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B08YS42GPG": {
+      "asin": "B08YS42GPG",
+      "title": "The Woobles Crochet Kit for Beginners - Easy Arts and Crafts Knitting & Crochet Animals Kit As Seen On Shark Tank - Pierre The Penguin",
+      "price": 25.7949608,
+      "bsr_main": 48,
+      "bsr_sub": 1,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 8320,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0D9NSPBSS": {
+      "asin": "B0D9NSPBSS",
+      "title": "Weaving Loom Kit Toys Crafts - Arts and Crafts for Kids and Adults - Great Birthday Gifts for Girls Ages 6 7 8-12 13 Years Old - Sturdy Frame Potholder Loom Making Kits Portable Box and Craft Loops",
+      "price": 29.7640786,
+      "bsr_main": 11060,
+      "bsr_sub": 9,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 319,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B09C1KQG2J": {
+      "asin": "B09C1KQG2J",
+      "title": "Friendship Bracelet Making Kit Toys, Ages 7 8 9 10 11 12 Year Old Girls Gifts Ideas, Birthday Present for Teen Girl, Arts and Crafts String Maker Tool, Bracelet DIY, Kids Travel Activity Set",
+      "price": 21.5158902,
+      "bsr_main": 3766,
+      "bsr_sub": 23,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 3304,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0BMFV811F": {
+      "asin": "B0BMFV811F",
+      "title": "Piccassio Crochet Kit for Beginners \u2013 Complete Starter Set for Adults & Teens with 20 Yarn Colors, Hooks, Book & Organizer Bag \u2013 Learn to Make Amigurumi, Plushies & Handmade Gifts",
+      "price": 43.0403902,
+      "bsr_main": 36198,
+      "bsr_sub": 109,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.7,
+      "reviews_count": 1237,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DF7Q6P5J": {
+      "asin": "B0DF7Q6P5J",
+      "title": "WaldyWop Crochet Kit for Beginners - 8 Flower Bookmarks Knitting Kit w/Step-by-Step Video Tutorials & Soft Yarn, Hook - Wobbles DIY Art Craft Kit for Adults, Birthday Gifts for Women Teen",
+      "price": 11.6146202,
+      "bsr_main": 2233,
+      "bsr_sub": 2,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.4,
+      "reviews_count": 663,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CN8Z1XKM": {
+      "asin": "B0CN8Z1XKM",
+      "title": "Klever Kits Marbling Paint for Kids, Metallic Gold Water Marble Paint Art, Arts and Crafts for Girls & Boys 6-12 Years Old, Craft Kits, Birthday Gifts Ideas Activities Toys",
+      "price": 12.0451102,
+      "bsr_main": 35325,
+      "bsr_sub": 118,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.4,
+      "reviews_count": 702,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CZF266QH": {
+      "asin": "B0CZF266QH",
+      "title": "IQKidz Weaving Loom Kit Toys, DIY Arts and Crafts for Kids and Adults, Ideal Gifts for Girls Ages 5 6 7 8-12 13, Easy Potholder Loom Knitting Activity for Beginners, 224 Craft Loops",
+      "price": null,
+      "bsr_main": 1831,
+      "bsr_sub": 2,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 514,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0D4V9B9SH": {
+      "asin": "B0D4V9B9SH",
+      "title": "Eelexa Crochet Kit for Beginners, Amigurumi Crocheting Animal Kits, with Step-by-Step Video Tutorials for Kids Adults Beginner - 2 Pack Turtles",
+      "price": 17.2109902,
+      "bsr_main": 8309,
+      "bsr_sub": 29,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.3,
+      "reviews_count": 293,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CL22LLSY": {
+      "asin": "B0CL22LLSY",
+      "title": "JUCPASH Yarn Holder for Crocheting and Knitting, Wooden Yarn Spinner with Magnetic Rotating Mechanism and Anti-Slip Pads, Crochet Accessories Birthday Gifts for Women Mom Wife Grandma Mother (Brown)",
+      "price": 19.7939302,
+      "bsr_main": 1318,
+      "bsr_sub": 1,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 1238,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B08CVSB189": {
+      "asin": "B08CVSB189",
+      "title": "PREBOX Weaving Loom Kit Toys for Kids and Adults, Potholder Loops Crafts for Girls Ages 6 7 8 9 10 11 12, 7\" Pot Holder Loom Knitting Kits and Gifts for Kids and Beginners, Make 6 Masterpieces",
+      "price": 29.6779806,
+      "bsr_main": 9421,
+      "bsr_sub": 6,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 1011,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DG7VK3HX": {
+      "asin": "B0DG7VK3HX",
+      "title": "DDAI Bracelet Making Kit for Girls Ages 6-12 \u2013 Arts and Crafts for Kids Weaving Loom Bracelets Kits -1000+ Colorful Elastic Cloth Loom Bands \u2013 Great Birthday Gift for Girls Boys 7 8-12 Years Old",
+      "price": 30.9694506,
+      "bsr_main": 1779,
+      "bsr_sub": 11,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 2815,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0B5RBBGC9": {
+      "asin": "B0B5RBBGC9",
+      "title": "Aeelike Crochet Kit for Beginners Adults, Crochet Kits Include Yarn, 59pcs Crochet Starter Kit for Beginners,Ergonomic Crochet Hooks 2.0-6.0 mm, Lace Steel Needles 0.6-1.9 mm",
+      "price": 15.4890302,
+      "bsr_main": 473,
+      "bsr_sub": 2,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 4182,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0B7JF9FW2": {
+      "asin": "B0B7JF9FW2",
+      "title": "Coopay Crochet Kit for Beginners: 4 in 1 Crochet Animal Kit - Penguin, Chick, Rabbit & Fox, Crochet Set Beginner Crochet Starter Kit for Adults, Learn to Crocheting Knitting Kit Includes Instructions",
+      "price": 15.99,
+      "bsr_main": 1812,
+      "bsr_sub": 7,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 3537,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B08BC56MQ8": {
+      "asin": "B08BC56MQ8",
+      "title": "CiyvoLyeen Woodland Animals Craft Kit Kids DIY Crafting and Sewing Set Woodland Animals Felt Plushie for Girls and Boys Educational Beginners Sewing Set Sewing Kits for Kids Age 8 9 10 11 12",
+      "price": 21.5158902,
+      "bsr_main": 6250,
+      "bsr_sub": 3,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.7,
+      "reviews_count": 3861,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B096Z5MCHJ": {
+      "asin": "B096Z5MCHJ",
+      "title": "Clay Beads Arts and Crafts Kit for Jewelry Making, With Smiley Letter Beads, Gifts for Girls Age 6-12",
+      "price": null,
+      "bsr_main": 75065,
+      "bsr_sub": 212,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 2641,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B09GK6WQQ1": {
+      "asin": "B09GK6WQQ1",
+      "title": "KRAFUN My First Sewing Animal for Kids, Beginner Art & Craft, 5 Easy Activities Stuffed Animal Dolls, Keyring Charms, Instructions & Felt Materials for Learn to Sew, Embroidery",
+      "price": 14.6280502,
+      "bsr_main": 12647,
+      "bsr_sub": 11,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 1015,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0D5QZ5CZF": {
+      "asin": "B0D5QZ5CZF",
+      "title": "Christmas Gift for Girl 7 8 9 11 12 Year Old, Friendship Bracelet Making Kit Toys, Arts and Crafts for Kids Age 8-12,Thanksgiving Day Birthday Present Top Popular DIY Jewelry Bracelet String Maker",
+      "price": 15.99,
+      "bsr_main": 223060,
+      "bsr_sub": 441,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 162,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CKQZ3BRV": {
+      "asin": "B0CKQZ3BRV",
+      "title": "Aeelike Knitting Kit for Beginners, Complete Beginner Knitting Kit Easy Knitting Set Including Knitting Needles Set Cotton Yarn, Learn to Knit Dishcloth with Step-by-Step Instructions, Colorful",
+      "price": 15.4890302,
+      "bsr_main": 4941,
+      "bsr_sub": 3,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.4,
+      "reviews_count": 409,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CND45Y4Z": {
+      "asin": "B0CND45Y4Z",
+      "title": "Yarnvibe Easy Crochet Kit for Beginners Adults 80 pcs with Video Course, Includes 15 Yarns, 21 Crochet Hooks & More, Learn to Crochet Gifts for Crochet Lovers, Beginner Crochet Kit for Kids & Adult",
+      "price": 29.230271,
+      "bsr_main": 118087,
+      "bsr_sub": 287,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 234,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0BPJBTXN7": {
+      "asin": "B0BPJBTXN7",
+      "title": "HEJIN Beginner Crochet Kit, Crochet Kits for Kids and Adults, 3PCS Crochet Animal Kit for Beginners Include Videos Tutorials, Yarn, Eyes, Stuffing, Crochet Hook - Boys and Girls Birthdays Gift",
+      "price": null,
+      "bsr_main": 93835,
+      "bsr_sub": 232,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.2,
+      "reviews_count": 595,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B00ZSE93LA": {
+      "asin": "B00ZSE93LA",
+      "title": "Woodland Animals Kids Sewing Kit, Educational Beginner Arts & Crafts Gift for Boys and Girls Ages 7 to 13 DIY Learn to Sew Embroidery",
+      "price": 25.8035706,
+      "bsr_main": 27613,
+      "bsr_sub": 26,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.7,
+      "reviews_count": 1904,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B08C7SWHY7": {
+      "asin": "B08C7SWHY7",
+      "title": "KRAFUN Sewing Kit for Kids Age 7 8 9 10 11 12 Beginner My First Art & Craft, Includes 3 Stuffed Animal Dolls Teddy, Raccoon and Owl, Instructions & Plush Felt Materials for Learn to Sew, Embroidery",
+      "price": 18.9329502,
+      "bsr_main": 19932,
+      "bsr_sub": 17,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.5,
+      "reviews_count": 1253,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CHVF4VFX": {
+      "asin": "B0CHVF4VFX",
+      "title": "XSEINO Crochet Kit for Beginners - Crochet Start Kit with Step-by-Step Video Tutorials - Learn to Crochet Kits for Adults - Alpaca, Hamster, Chubby Chicken",
+      "price": 8.54,
+      "bsr_main": 11551,
+      "bsr_sub": 38,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.3,
+      "reviews_count": 1833,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CB6WDB7S": {
+      "asin": "B0CB6WDB7S",
+      "title": "Light-up Unicorn Fairy & Mermaid Lanterns Craft Kit \u2013 Christmas Gifts for 8 9 10 11 12 Year Old Girls - Creative Art Girl Toys 8-10 Years Old and Up - Craft Kits for Girls Ages 8-12 - Tween Gift Ideas",
+      "price": 23.2378502,
+      "bsr_main": 26936,
+      "bsr_sub": 91,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 305,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DP5N76G4": {
+      "asin": "B0DP5N76G4",
+      "title": "JOYBERRI Crochet Kit for Beginners - Beginner Crochet Kit for Adults - Learn to Make Amigurumi Animals with Step by Step Videos - All Materials Included (Plat Kit)",
+      "price": null,
+      "bsr_main": 172529,
+      "bsr_sub": 404,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.0,
+      "reviews_count": 12,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0D26CVQSH": {
+      "asin": "B0D26CVQSH",
+      "title": "Crochet Kit for Beginners Adults - Learn to Crochet Animal, 3 Cute Animals Patterns with Step-by-Step Video Tutorials, Beginners Crocheting Kits, DIY Art Craft Knitting Set, Gifts for Woman Teen Girls",
+      "price": 12.0451102,
+      "bsr_main": 67708,
+      "bsr_sub": 178,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.1,
+      "reviews_count": 253,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0D9WH15DW": {
+      "asin": "B0D9WH15DW",
+      "title": "OLHKYN 6Pcs Crochet Kit for Beginners, 2026 DIY Craft for Adults, Great Gift for Crochet Lovers, Crocheting Animal Kits with Step by Step Videos,Yarn,Crochet Hook,Birthday Holiday Gift",
+      "price": 19.7939302,
+      "bsr_main": 19787,
+      "bsr_sub": 62,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.2,
+      "reviews_count": 174,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0D45DCDWJ": {
+      "asin": "B0D45DCDWJ",
+      "title": "Mewaii Crochet Kit for Beginners Level 1 with 40% Extra Eco-Friendly Pre-Started Easy Yarn, Step-by-Step Video Tutorials for Adults and Kids (Toast Coaster)",
+      "price": 17.2109902,
+      "bsr_main": 5483,
+      "bsr_sub": 19,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.3,
+      "reviews_count": 922,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B07HBGHS5W": {
+      "asin": "B07HBGHS5W",
+      "title": "Melissa & Doug Fleece Quilt No-Sew Craft Kit, Multi",
+      "price": 24.7876142,
+      "bsr_main": 67362,
+      "bsr_sub": 53,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.7,
+      "reviews_count": 2462,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CYG4676W": {
+      "asin": "B0CYG4676W",
+      "title": "Katech Crochet Kit for Beginners Adults & Kids-Learn to Crochet Granny Square Kit with Step-by-Step Video-Enough Yarn for Crocheting-Crochet Blocking Mat and All Accessories You Need",
+      "price": 11.1841302,
+      "bsr_main": 64641,
+      "bsr_sub": 79,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.2,
+      "reviews_count": 280,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0BZP4FRMR": {
+      "asin": "B0BZP4FRMR",
+      "title": "Crochet Kit for Beginners, 3 Pattern Animals-Owl, Penguin, Frog, Knitting Kit for Adult Kids with Step-by-Step Video Tutorials and Yarns, Hook, Accessories",
+      "price": null,
+      "bsr_main": 33797,
+      "bsr_sub": 103,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.2,
+      "reviews_count": 635,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0C689CVY4": {
+      "asin": "B0C689CVY4",
+      "title": "PREBOX Beginner Hat Scarf Loom Kits for Kids - Knitting DIY Craft for Girls Teens Adults, Birthday Christmas Gifts with Storage Bags Yarns Hook Needle",
+      "price": null,
+      "bsr_main": 271249,
+      "bsr_sub": 269,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.2,
+      "reviews_count": 121,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B001TC0UGC": {
+      "asin": "B001TC0UGC",
+      "title": "Easy to do Crochet",
+      "price": null,
+      "bsr_main": 25659,
+      "bsr_sub": 76,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.3,
+      "reviews_count": 4776,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B096N2Q2YV": {
+      "asin": "B096N2Q2YV",
+      "title": "CraftLab Knitting Kit for Beginners, Kids Adults Seniors Includes All Knitting Supplies: Wool Yarn, Knitting Needles, Yarn Needle and Instructions \u2013 Fantastic DIY Gift Learn to Knit Arts & Crafts Kit",
+      "price": 25.8035706,
+      "bsr_main": 43161,
+      "bsr_sub": 53,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.1,
+      "reviews_count": 482,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CJXQTM35": {
+      "asin": "B0CJXQTM35",
+      "title": "INSCRAFT Crochet Kit for Beginners Adults- Great Knitting Starter Kit for Colorful Craft for Professionals, Make Amigurumi Projects Includes 24 Colors Yarn, Hooks, Instructions, a Durable Bag",
+      "price": 33.5696102,
+      "bsr_main": 136258,
+      "bsr_sub": 321,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.7,
+      "reviews_count": 231,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DMSQQSPY": {
+      "asin": "B0DMSQQSPY",
+      "title": "KIMOCHIII 6Pcs Crochet Kit for Beginners, Upgraded Crochet Animal Kit, Crochet Kit for Adults and Kids, All in One Crochet Knitting Kit, Comes with Step-by-Step Video Tutorials(A)",
+      "price": 11.1841302,
+      "bsr_main": 169077,
+      "bsr_sub": 408,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.4,
+      "reviews_count": 103,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0C74JCL87": {
+      "asin": "B0C74JCL87",
+      "title": "AHCo. Knitting Loom Kit for Beginners, Creative Craft Toy for Girls Ages 7 8 9 10 11 12 with Storage Bags Yarns Knitting Tools, Fantastic DIY Gifts Knit Hat Scarf Coaster (Pink)",
+      "price": 34.9299586,
+      "bsr_main": 87001,
+      "bsr_sub": 141,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.4,
+      "reviews_count": 179,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DHH1QBYN": {
+      "asin": "B0DHH1QBYN",
+      "title": "BOLDNOVA 6PCS Crochet Kit for Beginners, Knitting Kit with Step-by-Step Video Tutorials, Beginner Crochet Kit for Adults, Crochet Animal Kit for Beginners Kids, Complete Kit Included 6 Cute Animals",
+      "price": null,
+      "bsr_main": 190652,
+      "bsr_sub": 223,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.4,
+      "reviews_count": 84,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DN1ZG6Q7": {
+      "asin": "B0DN1ZG6Q7",
+      "title": "QYGYMXC 6PCS Crochet Kit for Beginners, Knitting Kit with Step-by-Step Video Tutorials, Beginner Crochet Kit for Adults, Crochet Animal Kit for Beginners Kids, Complete Kit Included 6 Cute Animals",
+      "price": 17.2109902,
+      "bsr_main": 125066,
+      "bsr_sub": 304,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.2,
+      "reviews_count": 115,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DJFZLJFL": {
+      "asin": "B0DJFZLJFL",
+      "title": "A-URA Learn to Crochet Kit for Beginners Kids and Adults, Premium 4 Animal Pattern Beginner Crochet Kits with Easy Tube Yarn & Step-by-Step Video Tutorials (Forest Friends\u2013Standard Size)",
+      "price": 13.7670702,
+      "bsr_main": 6132,
+      "bsr_sub": 24,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.2,
+      "reviews_count": 273,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DPLZWBZL": {
+      "asin": "B0DPLZWBZL",
+      "title": "Wunila 6Pcs Crochet Kit for Beginners, DIY Craft for Adults, Great Gifts for Crochet Lovers, Crocheting Animals Kits with Step by Step Videos,Yarn,Crochet Hook,Birthday Gift, Holiday Gift",
+      "price": 17.2109902,
+      "bsr_main": 97268,
+      "bsr_sub": 242,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.0,
+      "reviews_count": 151,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0D9XZGP79": {
+      "asin": "B0D9XZGP79",
+      "title": "Katech Beginner Knitting Kit - Learn to Knit Kit for Adults & Kids - Complete Hat, Scarf, Gloves Starter Kit with Step-by-Step Instructions",
+      "price": 20.6549102,
+      "bsr_main": 14691,
+      "bsr_sub": 11,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.0,
+      "reviews_count": 156,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0BNH7FLJC": {
+      "asin": "B0BNH7FLJC",
+      "title": "Coopay Crochet Kit for Beginners - Crochet Animals for Adults with Step-by-Step Video Tutorials & Instruction, 4 Different Crochet Animal Patterns with Cute Penguin, Chicken, Rabbit & Fox",
+      "price": 8.6011902,
+      "bsr_main": 89582,
+      "bsr_sub": 275,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.2,
+      "reviews_count": 414,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DFPYD2RW": {
+      "asin": "B0DFPYD2RW",
+      "title": "",
+      "price": null,
+      "bsr_main": null,
+      "bsr_sub": null,
+      "bsr_categories": [],
+      "rating": null,
+      "reviews_count": null,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CZ9MDYQ3": {
+      "asin": "B0CZ9MDYQ3",
+      "title": "",
+      "price": null,
+      "bsr_main": null,
+      "bsr_sub": null,
+      "bsr_categories": [],
+      "rating": null,
+      "reviews_count": null,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DJRLQDHH": {
+      "asin": "B0DJRLQDHH",
+      "title": "",
+      "price": null,
+      "bsr_main": null,
+      "bsr_sub": null,
+      "bsr_categories": [],
+      "rating": null,
+      "reviews_count": null,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B08Y1W2JMJ": {
+      "asin": "B08Y1W2JMJ",
+      "title": "Shimmer 'n Sparkle 5-in-1 Ultimate Knitting Station",
+      "price": null,
+      "bsr_main": 319196,
+      "bsr_sub": 364,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.4,
+      "reviews_count": 185,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B00JYGPLUK": {
+      "asin": "B00JYGPLUK",
+      "title": "ALEX Toys Simply Needlepoint Butterfly Kids Art and Craft Activity",
+      "price": null,
+      "bsr_main": 161553,
+      "bsr_sub": 3951,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.4,
+      "reviews_count": 2257,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B09Q63J9RV": {
+      "asin": "B09Q63J9RV",
+      "title": "Boye 3616400000M Learn to Knit Kit for Beginners, Makes 18 Projects, 21pcs",
+      "price": 21.5158902,
+      "bsr_main": 264182,
+      "bsr_sub": 303,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.3,
+      "reviews_count": 90,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B08CZQ3ZMY": {
+      "asin": "B08CZQ3ZMY",
+      "title": "Coopay 14PCS Plastic Knitting Needles for Beginner, 10 inch Long Straight Knitting Needles Single Pointed Needles Colorful Knit Needle Set Knitting Kit DIY Craft Yarn Weaving Tool,4mm to 10mm",
+      "price": 14.6280502,
+      "bsr_main": 85821,
+      "bsr_sub": 611,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.3,
+      "reviews_count": 705,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0D9L9XWGV": {
+      "asin": "B0D9L9XWGV",
+      "title": "Kaaper Knitting Kit for Beginners Adults, Crochet Kit for Beginners Knitting Starter Kit, Learn to Knit Starter Bundle for Scarves, Hats & Gloves Includes Wool Yarn, Needles & Accessories (Gray)",
+      "price": 17.2109902,
+      "bsr_main": 47868,
+      "bsr_sub": 58,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.2,
+      "reviews_count": 122,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CHBF4RR3": {
+      "asin": "B0CHBF4RR3",
+      "title": "Katech Knitting Kit for Beginners-Learn to Knit Dishcloth-Beginner Knitting Kit for Adults with Knitting Book, Knitting Needles,Beginner Yarn, Yarn Needle, Craft Kits Gift (Beginner to Expert)",
+      "price": 12.9060902,
+      "bsr_main": 64922,
+      "bsr_sub": 80,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.0,
+      "reviews_count": 86,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CZDGNM8L": {
+      "asin": "B0CZDGNM8L",
+      "title": "TAKADODO Crochet Kit for Beginners - Learn to Crochet Kits for Adults Beginner with Step-by-Step Video Tutorials - Crochet Kits for Adults and Kids (Orange)",
+      "price": 7.7402102,
+      "bsr_main": 56656,
+      "bsr_sub": 150,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.1,
+      "reviews_count": 92,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DKX5G74Q": {
+      "asin": "B0DKX5G74Q",
+      "title": "",
+      "price": null,
+      "bsr_main": null,
+      "bsr_sub": null,
+      "bsr_categories": [],
+      "rating": null,
+      "reviews_count": null,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CKGYD2ZF": {
+      "asin": "B0CKGYD2ZF",
+      "title": "",
+      "price": null,
+      "bsr_main": null,
+      "bsr_sub": null,
+      "bsr_categories": [],
+      "rating": null,
+      "reviews_count": null,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0CQHL4R7X": {
+      "asin": "B0CQHL4R7X",
+      "title": "Two Needles, Many Knits: The New Knitter's Guide with Easy Patterns",
+      "price": 7.3527692,
+      "bsr_main": 13822,
+      "bsr_sub": 10,
+      "bsr_categories": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "rating": 4.6,
+      "reviews_count": 242,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DS7TGGC2": {
+      "asin": "B0DS7TGGC2",
+      "title": "",
+      "price": null,
+      "bsr_main": null,
+      "bsr_sub": null,
+      "bsr_categories": [],
+      "rating": null,
+      "reviews_count": null,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DCHB6CLJ": {
+      "asin": "B0DCHB6CLJ",
+      "title": "Stitchers Crochet Kit for Beginners Kids and Adults - Learn to Crochet Amigurumi Kit for Starters with Beginner Friendly Yarn and Step by Step Videos",
+      "price": 13.7670702,
+      "bsr_main": 69277,
+      "bsr_sub": 175,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.4,
+      "reviews_count": 83,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DT72GZXP": {
+      "asin": "B0DT72GZXP",
+      "title": "",
+      "price": null,
+      "bsr_main": null,
+      "bsr_sub": null,
+      "bsr_categories": [],
+      "rating": null,
+      "reviews_count": null,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DK2V2D83": {
+      "asin": "B0DK2V2D83",
+      "title": "Disracker 7 Inch Potholder Weaving Loom Kit for Kids& Adults - Arts and Crafts DIY Weaving Set with 12 Colors Loops & Hook - Screen-Free Educational Birthday Gifts for Girls & Boys Ages 6-8-12+",
+      "price": 21.5158902,
+      "bsr_main": 64708,
+      "bsr_sub": 129,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 4.2,
+      "reviews_count": 49,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0F1MFR5KN": {
+      "asin": "B0F1MFR5KN",
+      "title": "",
+      "price": null,
+      "bsr_main": null,
+      "bsr_sub": null,
+      "bsr_categories": [],
+      "rating": null,
+      "reviews_count": null,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B09DTHQH3Q": {
+      "asin": "B09DTHQH3Q",
+      "title": "Creativity for Kids Learn to Knit Pocket Scarf Kit | Learn to Knit a Cozy, Functional Scarf with a Handy Pocket | Relaxing DIY Craft & Mindful Activity for Kids (Ages 9+)",
+      "price": 16.1347652,
+      "bsr_main": null,
+      "bsr_sub": null,
+      "bsr_categories": [],
+      "rating": 4.5,
+      "reviews_count": 3349,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0BNK1HSXL": {
+      "asin": "B0BNK1HSXL",
+      "title": "BeKnitting Knitting Kit for Beginners Adults & Kids - Learn to Knit - Yarn, Pompom Makers, Needles & Other Supplies | Holiday Gifts, Gift-Ready Box",
+      "price": 17.2109902,
+      "bsr_main": 282065,
+      "bsr_sub": 318,
+      "bsr_categories": [
+        "",
+        ""
+      ],
+      "rating": 3.7,
+      "reviews_count": 99,
+      "availability": true,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    },
+    "B0DBZHG3KD": {
+      "asin": "B0DBZHG3KD",
+      "title": "",
+      "price": null,
+      "bsr_main": null,
+      "bsr_sub": null,
+      "bsr_categories": [],
+      "rating": null,
+      "reviews_count": null,
+      "availability": false,
+      "brand": "Unknown",
+      "categories": [
+        "uncategorized"
+      ],
+      "is_our_asin": false,
+      "is_competitor": false,
+      "is_uncategorized": true,
+      "deal_badge": false,
+      "image_url": ""
+    }
+  },
+  "wow_deltas": {},
+  "alerts": [],
+  "new_asins_detected": {
+    "B09M8DKHH6": {
+      "keywords": [
+        "beginner cross stitch kits for kids",
+        "cross stitch kits for beginners kids",
+        "cross stitch for kids 8-12",
+        "kids cross stitch kits age 5-8"
+      ],
+      "positions": [
+        2,
+        9,
+        1,
+        3
+      ],
+      "title": "Chuangdi 6 Sets Cross Stitch Kits for Beginners Embroidery Kit Cross Stitch for Beginner Embroidery Stitches Practice Needlepoint for Starters",
+      "price": 14.99
+    },
+    "B09QLWG6Z4": {
+      "keywords": [
+        "beginner cross stitch kits for kids"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "ZOCONE 12 PCS Cross Stitch Kits for Kids 7-13, Beginner Kits with Instructions, Keychains, Embroidery Hoops and Tools, Backpack Charms, Cross Stitch Ornaments",
+      "price": 19.99
+    },
+    "B0CG9FN2CH": {
+      "keywords": [
+        "beginner cross stitch kits for kids",
+        "cross stitch for kids",
+        "cross stitch kits for kids",
+        "kids cross stitch kit",
+        "cross stitch kits for beginners kids",
+        "kids cross stitch kits ages 8-12",
+        "kids embroidery kits age 5-8",
+        "kids embroidery",
+        "beginner embroidery kit for kids",
+        "kids cross stitch kits age 5-8",
+        "needlepoint kits for kids"
+      ],
+      "positions": [
+        6,
+        2,
+        4,
+        4,
+        7,
+        5,
+        7,
+        7,
+        5,
+        5,
+        4
+      ],
+      "title": "Pllieay 10-in-1 Cross Stitch Beginner Kit for Kids, Embroidery Kit Includes 10pcs Plastic Mesh Canvas with Pattern, 15 Yarns, 5 Weaving Needles, Needle Points Starter Sewing Set with Instructions",
+      "price": 19.99
+    },
+    "B0CJM57VWY": {
+      "keywords": [
+        "beginner cross stitch kits for kids",
+        "cross stitch for kids",
+        "cross stitch kits for kids",
+        "kids cross stitch kit",
+        "cross stitch kits for beginners kids",
+        "kids cross stitch kits ages 8-12",
+        "cross stitch for kids 8-12"
+      ],
+      "positions": [
+        7,
+        4,
+        3,
+        3,
+        8,
+        2,
+        6
+      ],
+      "title": "Caydo 6 Pieces Cross Stitch Kit for Kids Embroidery Kits with Woodland Animal Patterns Needlepoint Kit Kids with Instructions for DIY Key Chain, Backpack Charms, Ornaments and Needle Craft",
+      "price": 19.99
+    },
+    "B0C8V5R2FQ": {
+      "keywords": [
+        "beginner cross stitch kits for kids",
+        "cross stitch for kids 8-12"
+      ],
+      "positions": [
+        8,
+        5
+      ],
+      "title": "Kraftex Floral Stamped Cross Stitch Kits for Beginners - 3 Pack. DIY Embroidery Needlepoint Patterns for Adults. Easy Cross Stitch Kits for Beginners (Garden Creatures)",
+      "price": 16.99
+    },
+    "B0B97Q1Q4T": {
+      "keywords": [
+        "beginner cross stitch kits for kids",
+        "cross stitch for kids",
+        "cross stitch kits for kids",
+        "kids cross stitch kit",
+        "kids cross stitch kits age 5-8"
+      ],
+      "positions": [
+        9,
+        5,
+        6,
+        8,
+        2
+      ],
+      "title": "KRAFUN Beginner My First Cross Stitch Kit for Kids Arts & Crafts, 6 Easy Projects of Felt Keyring, Bag, Pillow Craft, Instructions, Gift for Girls and Boys, Learn DIY Crafting, Embroidery",
+      "price": 21.99
+    },
+    "B0BSL1MN94": {
+      "keywords": [
+        "embroidery kit kids",
+        "embroidery kit for kids",
+        "embroidery for kids",
+        "kids embroidery kits ages 8-12",
+        "kids embroidery kit",
+        "embroidery kit for kids ages 8-12",
+        "girls embroidery kit",
+        "kids embroidery",
+        "kid embroidery kit"
+      ],
+      "positions": [
+        2,
+        4,
+        6,
+        4,
+        5,
+        3,
+        6,
+        6,
+        4
+      ],
+      "title": "Yinder 5 Set Starter Embroidery Kit for Beginners Boho Rainbow Cross Stitch with Patterns Embroidery Hoops Instructions Floss Punch Needlepoint Kits Crafts DIY Adult Beginner Cross Stitch",
+      "price": 18.99
+    },
+    "B0FR7Y8VHB": {
+      "keywords": [
+        "embroidery kit kids",
+        "embroidery kit for kids",
+        "embroidery for kids",
+        "kids cross stitch kits ages 8-12",
+        "embroidery kit for beginners kids",
+        "kids embroidery kits ages 8-12",
+        "kids embroidery kit",
+        "embroidery kits for kids",
+        "kids embroidery kits age 5-8",
+        "embroidery kit for kids ages 8-12",
+        "girls embroidery kit",
+        "kids embroidery",
+        "kid embroidery kit",
+        "beginner embroidery kit for kids"
+      ],
+      "positions": [
+        4,
+        2,
+        2,
+        3,
+        5,
+        1,
+        1,
+        3,
+        4,
+        0,
+        1,
+        0,
+        0,
+        7
+      ],
+      "title": "Louise Maelys 12 Pre-Stamped Embroidery Kits for Beginners, Kids Girls Cross Stitch Kit,DIY Needlepoint Craft Sewing Practice Supplies,Funny Cute Pattern,Perfect for Ages 8-12",
+      "price": 20.99
+    },
+    "B0C8F87C6Y": {
+      "keywords": [
+        "embroidery kit kids",
+        "embroidery kit for beginners kids",
+        "kids embroidery kit",
+        "girls embroidery kit",
+        "embroidery for beginners",
+        "beginner embroidery kit",
+        "beginners embroidery kits for adults"
+      ],
+      "positions": [
+        6,
+        3,
+        9,
+        4,
+        7,
+        6,
+        2
+      ],
+      "title": "Craftwiz 4-Piece Starter Embroidery Kit for Beginners and Expert with Simple Patterns, Learn 29 Stitches with Hand Embroidery Kit",
+      "price": 24.99
+    },
+    "B0C13JY5R1": {
+      "keywords": [
+        "cross stitch for kids",
+        "cross stitch kits for kids",
+        "kids cross stitch kits age 5-8"
+      ],
+      "positions": [
+        6,
+        9,
+        6
+      ],
+      "title": "VKPI Wooden Cross Stitch Kits for Kids, Make Your Own 6 Cross Stitching Keyrings, Wood Sewing Kit, Arts & Crafts Stars, Hearts Ornaments, Plastic Needle Embroidery Kit for Beginners, Girls, 6-13",
+      "price": 6.99
+    },
+    "B0B5XQRT6L": {
+      "keywords": [
+        "cross stitch for kids"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "Pllieay Kids 10-in-1 Cross Stitch Beginner Kit for Kids, Includes Instruction of 10 Different Patterns, 10 Blank Plastic Canvas for Needlework, and 14 Colored Threads, Needlepoint Starter Sewing Set",
+      "price": 13.99
+    },
+    "B0977NTKHY": {
+      "keywords": [
+        "embroidery kit for kids",
+        "embroidery kits for kids",
+        "sewing kit for kids",
+        "kids sewing kit",
+        "sewing for kids",
+        "kids sewing kits ages 8-12",
+        "sewing kits for kids 8-12",
+        "girls sewing kits ages 8-10",
+        "sewing kits for kids",
+        "kids sewing crafts",
+        "beginner sewing kit for kids"
+      ],
+      "positions": [
+        5,
+        8,
+        5,
+        5,
+        5,
+        0,
+        0,
+        2,
+        3,
+        6,
+        1
+      ],
+      "title": "Craft-Tastic Let\u2019s Learn to Sew \u2013 Mini Sewing Kit, Arts and Crafts, Art Supplies, Embroidery Kit for Beginners, Includes Sewing Supplies, Easy-to-Follow Instructions, Arts & Crafts, Ages 7+",
+      "price": 18.74
+    },
+    "B0B6TN19LG": {
+      "keywords": [
+        "embroidery kit for kids",
+        "cross stitch kits for kids",
+        "kids embroidery kits ages 8-12",
+        "embroidery kits for kids"
+      ],
+      "positions": [
+        8,
+        5,
+        9,
+        9
+      ],
+      "title": "WATINC 5Pcs Embroidery Kit for Kids Stamped Cross Stitch DIY Key Chain with Woodland Animal Patterns Needlepoint Starter Kits Craft Supplies for Beginners Adults Schoolbag",
+      "price": 17.99
+    },
+    "B0FK57P8PV": {
+      "keywords": [
+        "embroidery kit for kids",
+        "embroidery kit for beginners kids",
+        "kids embroidery kit",
+        "embroidery kits for kids",
+        "kids embroidery kits age 5-8",
+        "kid embroidery kit"
+      ],
+      "positions": [
+        9,
+        1,
+        8,
+        7,
+        2,
+        8
+      ],
+      "title": "Pllieay 6PCS Embroidery Kit for Beginners, Needlepoint Kits for Beginners with Patterns, 6.5\" Embroidery Hoop, Threads, Needles, Instructions, Kids Cross Stitch Kits Supplies for Girls Boys Ages 6+",
+      "price": 18.99
+    },
+    "B0F8QZZQQM": {
+      "keywords": [
+        "embroidery for kids",
+        "kid embroidery kit"
+      ],
+      "positions": [
+        8,
+        6
+      ],
+      "title": "CRAFTILOO 2 in1 Cross Stitch & Embroidery Kit for Kids Ages 6+ Make 8 Projects Backpack Charms, Keyring, Doll, Wall Art, Unicorn Pillow & Card Holder Beginner Needlepoint & Creative Gift Set",
+      "price": 21.98
+    },
+    "B0FN4MTBZ1": {
+      "keywords": [
+        "embroidery for kids"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "Pllieay 6PCS Embroidery Kit for Kids, Needlepoint Kits for Beginners with Pre-Printed Pattern, 6Pcs Hoop, Threads, Keychains and Instructions, Kids Cross Stitch Kits Supplies for Crafting",
+      "price": 19.99
+    },
+    "B08QCX1Z5V": {
+      "keywords": [
+        "cross stitch kits for kids",
+        "kids cross stitch kit"
+      ],
+      "positions": [
+        2,
+        2
+      ],
+      "title": "",
+      "price": 15.99
+    },
+    "B0CH7QF4SB": {
+      "keywords": [
+        "cross stitch kits for kids",
+        "kids cross stitch kits ages 8-12"
+      ],
+      "positions": [
+        8,
+        4
+      ],
+      "title": "",
+      "price": 14.99
+    },
+    "B0922W3GXK": {
+      "keywords": [
+        "kids cross stitch kit"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "Pllieay 5PCS Cross Stitch Kits for Beginners for Kids 7-13, Includes 5 Project Patterned and 5pcs Square Embroidery Hoops, 11 Skeins, Needle Point Starter Kit Sewing Set with Instructions",
+      "price": 15.99
+    },
+    "B0D75S8P78": {
+      "keywords": [
+        "kids cross stitch kits ages 8-12",
+        "cross stitch for kids 8-12",
+        "girls embroidery kit"
+      ],
+      "positions": [
+        7,
+        8,
+        9
+      ],
+      "title": "",
+      "price": 19.95
+    },
+    "B0G6Z3R5DZ": {
+      "keywords": [
+        "kids cross stitch kits ages 8-12",
+        "cross stitch for kids 8-12"
+      ],
+      "positions": [
+        9,
+        4
+      ],
+      "title": "",
+      "price": 12.99
+    },
+    "1338826166": {
+      "keywords": [
+        "kids embroidery kits ages 8-12",
+        "kids embroidery kit",
+        "embroidery kit for kids ages 8-12",
+        "girls embroidery kit"
+      ],
+      "positions": [
+        7,
+        7,
+        6,
+        8
+      ],
+      "title": "Super Cute Embroidery",
+      "price": 20.22
+    },
+    "B0DDPFNTFW": {
+      "keywords": [
+        "kids embroidery kits age 5-8",
+        "sewing cards for kids",
+        "toddler sewing kits ages 2-4"
+      ],
+      "positions": [
+        6,
+        9,
+        0
+      ],
+      "title": "Montessori Wooden Lacing Toys for Toddlers and Kids Ages 2-4 5-7, Sewing Kit Fine Motor Skill Busy Board, Education Sensory Preschool Toy for 1 2 3 4 Year Olds, Birthday Gift for Boys and Girls",
+      "price": 9.98
+    },
+    "B0F2S99MGL": {
+      "keywords": [
+        "embroidery kit for kids ages 8-12"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "Louise Maelys Sea Turtles Embroidery Kits for Beginners, DIY Cross Stitch Starter Craft Kit for Adults Including Cloth with Pattern, Hoop, Needles Instruction and Threads",
+      "price": 8.99
+    },
+    "B09MJXZBB2": {
+      "keywords": [
+        "embroidery kit for kids ages 8-12",
+        "embroidery set"
+      ],
+      "positions": [
+        8,
+        8
+      ],
+      "title": "Bonroy 4 Sets Embroidery Set for Beginners Art Crafts Easy Sewing Includes Embroidery Clothes with Pattern, Hoop, Instruction Manual, Color Stitch Set (Assorted 1)",
+      "price": 22.99
+    },
+    "B0DJ8843B7": {
+      "keywords": [
+        "girls embroidery kit"
+      ],
+      "positions": [
+        3
+      ],
+      "title": "Bradove Beginner Embroidery Kit for Adults Kids, Learn to Embroider 37 Stitches and 13 Cute Patterns, Stitches Kit, Bead Embroidery Kit, Beginner Embroidery Practice",
+      "price": 24.98
+    },
+    "B08JQ47WV1": {
+      "keywords": [
+        "beginner embroidery kit for kids",
+        "easy embroidery kits for beginners"
+      ],
+      "positions": [
+        8,
+        7
+      ],
+      "title": "Uphome 3 Pack Embroidery Starter Kit for Beginners Stamped Cross Stitch Kits with Cute Flowers and Plants Patterns with 1 Embroidery Hoop and Color Threads for Adults Kids",
+      "price": 15.19
+    },
+    "B00VLNPSBQ": {
+      "keywords": [
+        "beginner needlepoint kits for adults",
+        "needlepoint kits for adults beginners",
+        "needlepoint kits for kids"
+      ],
+      "positions": [
+        4,
+        2,
+        9
+      ],
+      "title": "Love Needlepoint Kit",
+      "price": 10
+    },
+    "B0D944GMKK": {
+      "keywords": [
+        "beginner needlepoint kits for adults",
+        "needlepoint kits for adults beginners",
+        "needlepoint keychain kit"
+      ],
+      "positions": [
+        5,
+        7,
+        6
+      ],
+      "title": "Yushen 4Pcs Flower Coaster Needlepoint Kit for Adult Cross Stitch Kits DIY Adults Needlepoint Embroidery Starter Set with Patterns Embroidery Needles Threads Crafts (Flower)",
+      "price": 23.99
+    },
+    "B0DN69YJGP": {
+      "keywords": [
+        "beginner needlepoint kits for adults",
+        "needlepoint kits for adults beginners"
+      ],
+      "positions": [
+        7,
+        9
+      ],
+      "title": "DIY Punch Needle Kits for Beginners Cute Cartoon Highland Cow with Daisy Flower with Hoop Embroidery Punch Needle Starter Craft Set Easy for Adults and Children Festival Gift and Decoration 20x20cm-1",
+      "price": 13.96
+    },
+    "B0D1Y28SQB": {
+      "keywords": [
+        "beginner needlepoint kits for adults",
+        "needle point kits adults"
+      ],
+      "positions": [
+        8,
+        2
+      ],
+      "title": "4 Pack Embroidery kit for Beginners Adults DIY Starter Kit, Cross Stitch Kits with Flower Stamped Patterns, Embroidery Hoop, Tools,Colorful Threads,Step by Step Instructions,Hand Craft Lover Gift",
+      "price": 19.99
+    },
+    "B09F9YBHRN": {
+      "keywords": [
+        "beginner needlepoint kits for adults"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "Kraftex Stamped Cross Stitch Kits for Beginners (Flower Theme - 6.75 Inch - 4 Pack 1 x Embroidery Hoop) Embroidery Needlepoint Patterns for Adults, Includes Poppy, Rose, Sunflower and Pansy",
+      "price": 16.99
+    },
+    "B016QNCCU0": {
+      "keywords": [
+        "needle point kits adults"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "Dimensions Needlepoint Kit, Dramatic Sunflower, 14'' x 14''",
+      "price": 15.99
+    },
+    "B00VLNPSGG": {
+      "keywords": [
+        "needle point kits adults",
+        "needlepoint kits for adults beginners"
+      ],
+      "positions": [
+        6,
+        8
+      ],
+      "title": "Design Works Crafts Butterflies Galore Needlepoint Kit",
+      "price": 9.99
+    },
+    "B00J3YTLAY": {
+      "keywords": [
+        "needle point kits adults",
+        "needlepoint kits for adults beginners"
+      ],
+      "positions": [
+        7,
+        6
+      ],
+      "title": "Design Works Crafts 2523 Needlepoint Kit, Pansies, 10\" X 10\" Needlepoint Kit, Pansies",
+      "price": 24.99
+    },
+    "B0CMTLXTJS": {
+      "keywords": [
+        "needle point kits adults"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "Louise Maelys Cute Cat Embroidery Kits for Beginners,Adults Starter Cross Stitch Kit with Funny Animal Pattern,DIY Needlepoint Everything is Fine",
+      "price": 7.99
+    },
+    "B0CSDCHJ3C": {
+      "keywords": [
+        "needle point kits adults"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "Maydear 4 Pack Embroidery Starter Kit with Pattern, Stamped Cross Stitch Kits for Beginners Adults with Embroidery Hoop and Instructions, Hand Embroidery Kit (Embroidery kit flower2)",
+      "price": 22.99
+    },
+    "B005IDB6ZM": {
+      "keywords": [
+        "embroidery kits for adults"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "Janlynn 50222 Counted Cross Stitch Kit 7.75\"X11.25\", Joy in The Journey (14 Count), Blue",
+      "price": 15.61
+    },
+    "B0FBM8SPF4": {
+      "keywords": [
+        "embroidery kits for adults",
+        "embroidery for beginners",
+        "embroidery kit for beginners"
+      ],
+      "positions": [
+        9,
+        8,
+        8
+      ],
+      "title": "JOZYSH 8'' Flowers Embroidery Kit for Beginners Stamped Books and Flowers Pattern Embroidery Kit Cross Stitch Kit Embroidery Starter Kit with Instructions, Embroidery Hoops for Home Ofiice Decor",
+      "price": 10.99
+    },
+    "B0031LZZEQ": {
+      "keywords": [
+        "needlepoint kits for adults beginners"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "Dimensions 07232 Butterfly and Zinnias Nature Needlepoint Kit, 5\" W x 5\" H",
+      "price": 16.95
+    },
+    "1935726595": {
+      "keywords": [
+        "embroidery for beginners"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "Hand Embroidery Stitches At-A-Glance: Carry-Along Reference Guide (Landauer) Pocket-Size Step-by-Step Illustrated How-To for 30 Favorite Stitches, plus Tips & Techniques and Needle & Thread Charts",
+      "price": 8.5
+    },
+    "B0D7M6X59P": {
+      "keywords": [
+        "embroidery for beginners",
+        "beginner embroidery kit"
+      ],
+      "positions": [
+        5,
+        8
+      ],
+      "title": "Sutesloly Hand Embroidery Kit for Beginners, 4 Sets Learn to Floral Patterns Simple Beginner Starter kit for Adults, 33 Stitches Easy Embroidery Practice Kit, 7.8inch Hoop, DIY Craft Gift for Women",
+      "price": 9.97
+    },
+    "B0DDY5XX72": {
+      "keywords": [
+        "embroidery for beginners",
+        "easy embroidery kits for beginners",
+        "beginner embroidery kit",
+        "beginners embroidery kits for adults"
+      ],
+      "positions": [
+        6,
+        9,
+        4,
+        3
+      ],
+      "title": "Craftwiz 4-Piece Starter Embroidery Kit for Beginners with Simple Patterns, Learn to Embroider 31 Stitches with Hand Embroidery Kit",
+      "price": 24.99
+    },
+    "B0FD8YGD5Z": {
+      "keywords": [
+        "embroidery for beginners",
+        "beginners embroidery kits for adults"
+      ],
+      "positions": [
+        9,
+        9
+      ],
+      "title": "Meyocky Embroidery Kit for Beginners, 4 Pack Starter Embroidery Kits for Adults Learn 31 Stitches, Beginner Embroider Practice Stitches Kit,DIY Hand Craft Needlework Gift for Women",
+      "price": 19.49
+    },
+    "B0FB88NX1K": {
+      "keywords": [
+        "easy embroidery kits for beginners"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "Easy Flower Embroidery Kits for Beginners Adults, Minimalism Embroidery Starter Kits, Counted Cross Stitch Kits for Beginners Adults Hobbies Set for Women, Embroidery Hoops, Thread and Video Tutorial",
+      "price": 7.99
+    },
+    "B0DP5YZ518": {
+      "keywords": [
+        "easy embroidery kits for beginners"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "Louise Maelys Daisy Flower Beginners Embroidery Kits,Cross Stitch Kit for Adults,DIY Needlepoint with Floral Pattern,Including Hoop,Threads and Instruction",
+      "price": 7.99
+    },
+    "B0F37ZBMV8": {
+      "keywords": [
+        "easy embroidery kits for beginners"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "Louise Maelys Funny Animal Embroidery Kits for Beginners,Cross Stitch Kit for Adults,DIY Needlepoint with Rooster and Flower Pattern",
+      "price": 8.99
+    },
+    "B0CJZ3JV3K": {
+      "keywords": [
+        "sewing kit for kids",
+        "kids sewing kit",
+        "sewing for kids",
+        "sewing kits for kids"
+      ],
+      "positions": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "title": "kullaloo - Sewing Kit for Kids & Beginners - Cut & Sew Fabric Panel \u2013 Sewing Patterns Pre-Printed on The Fabric - DIY Rag Doll Kit with Clothes - Betsy Bear Sewing Project - Incl. Video Instructions",
+      "price": 32.9
+    },
+    "B08PKFHCMS": {
+      "keywords": [
+        "sewing kit for kids",
+        "kids sewing kit",
+        "kids sewing kits ages 8-12",
+        "sewing kits for kids 8-12",
+        "girls sewing kits ages 8-10",
+        "sewing kits for kids"
+      ],
+      "positions": [
+        7,
+        7,
+        1,
+        1,
+        3,
+        4
+      ],
+      "title": "KRAFUN Unicorn Sewing Keyring Kit for Kids Age 7 8 9 10 11 12 Learn Art & Craft, Includes 6 Stuffed Animal Bear, Dog, Rabbit, Raccoon, Owl Dolls, Instruction & Felt Materials",
+      "price": 17.99
+    },
+    "B08JYF1Z9F": {
+      "keywords": [
+        "sewing kit for kids",
+        "kids sewing kits ages 8-12",
+        "sewing kits for kids 8-12"
+      ],
+      "positions": [
+        8,
+        5,
+        6
+      ],
+      "title": "CiyvoLyeen Puppy Sewing Kit for Kids \u2013Fun Plush Toy Sewing for Girls & Boys \u2013 DIY Felt Craft Gift Set Ages 7 8 9 10 11 12",
+      "price": 19.99
+    },
+    "B0D1VFG2VR": {
+      "keywords": [
+        "sewing kit for kids",
+        "beginner sewing kit for kids"
+      ],
+      "positions": [
+        9,
+        9
+      ],
+      "title": "Crafts For Kids Ages 4-8 My First Sewing Kit, 6 Pcs DIY Projects Of Stuffed Animals And Pillows Craft For Kids Toys For 6-10 Year Old Girl Birthday Giftt, Kindergarten Graduation Gifts Embroidery Kit",
+      "price": 9.99
+    },
+    "B0DCNX1LX5": {
+      "keywords": [
+        "beginner embroidery kit",
+        "beginners embroidery kits for adults"
+      ],
+      "positions": [
+        5,
+        8
+      ],
+      "title": "JOINRUN Beginner Embroidery Kit for Adults, 3 Pack Cross Stitch Kits with Pre-Printed Patterns, Threads, Needles, Learn Stitches with 7.8\" Hoop, Video Tutorial, DIY Needlework Craft Gift for Women",
+      "price": 13.99
+    },
+    "B0D9D4CJDH": {
+      "keywords": [
+        "beginner embroidery kit",
+        "beginners embroidery kits for adults"
+      ],
+      "positions": [
+        7,
+        6
+      ],
+      "title": "CYANFOUR 6 Stage Embroidery Kit for Beginners Adults, Easy to Learn 38 Different Stitches from Instruction & Video, Needlepoint Kits for Adults with Stamped Embroidery Patterns.",
+      "price": 24.99
+    },
+    "B07WD3VTTD": {
+      "keywords": [
+        "embroidery set"
+      ],
+      "positions": [
+        0
+      ],
+      "title": "BYMORE 262 Pack Embroidery Thread Floss Kit Including 200 Colors 8 M/Pcs Cross Stitch Sewing Thread with Floss Bins and 62 Pcs Cross Stitch Tool,4-Tier Transparent Storage Box",
+      "price": 29.99
+    },
+    "B087RB2K2B": {
+      "keywords": [
+        "embroidery set"
+      ],
+      "positions": [
+        3
+      ],
+      "title": "INSCRAFT 304 Pack Embroidery Kit, 200 Colors Threads, 5 Pcs Bamboo Embroidery Hoops, 2 Pcs Aida Cloth, Instructions, Bag and Cross Stitch Tools Set, Hand Embroidery Starter Kit for Beginners Adults",
+      "price": 24.99
+    },
+    "B07ZVL2FFK": {
+      "keywords": [
+        "embroidery set"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "200pcs+ Embroidery Floss kit, Friendship Bracelet String Kit with Organizer Box-Included 100pcs Friendship Bracelet Floss Thread,Cross Stitch Kits Xmas Gifts",
+      "price": 19.99
+    },
+    "B07YH9P9R8": {
+      "keywords": [
+        "embroidery set"
+      ],
+      "positions": [
+        6
+      ],
+      "title": "188 Embroidery Floss Set Including Cross Stitch Threads Friendship Bracelet String with 2-Tier Transparent Box, Floss Bobbins and Cross Stitch Kits",
+      "price": 19.99
+    },
+    "B0DYDMTW42": {
+      "keywords": [
+        "embroidery set"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "PAXCOO 276 Pack Embroidery Floss Thread Kit Including 210 Colors Cross Stitch Sewing Thread with 66 Pcs Embroidery Accessories and 4-Tier Transparent Embroidery Thread Storage Organizer Box",
+      "price": 29.99
+    },
+    "B0BXDFNQGT": {
+      "keywords": [
+        "embroidery set"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "6 Pcs Embroidery Hoop 6 Size, Round Plastic Cross Stitch Hoop with 16 Needles (3.6In to 10.7 in), Small Embroidery Hoop, Cross Stitch Hoops and Frames, Suitable for Embroidery, Craft Sewing",
+      "price": 6.99
+    },
+    "1641526645": {
+      "keywords": [
+        "sewing for kids"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "Sewing For Kids: 30 Fun Projects to Hand and Machine Sew",
+      "price": 11.88
+    },
+    "1338106449": {
+      "keywords": [
+        "sewing for kids",
+        "felt sewing kit for kids",
+        "girls sewing kits ages 8-10",
+        "kids sewing crafts",
+        "beginner sewing kit for kids"
+      ],
+      "positions": [
+        7,
+        3,
+        1,
+        7,
+        4
+      ],
+      "title": "Sew Mini Animals",
+      "price": 20.11
+    },
+    "0545906520": {
+      "keywords": [
+        "sewing for kids",
+        "kids sewing kits ages 8-12",
+        "girls sewing kits ages 8-10",
+        "kids sewing crafts"
+      ],
+      "positions": [
+        9,
+        8,
+        6,
+        3
+      ],
+      "title": "Sew Mini Treats",
+      "price": 11.85
+    },
+    "B08BC56MQ8": {
+      "keywords": [
+        "felt sewing kit for kids",
+        "sewing kits for kids"
+      ],
+      "positions": [
+        0,
+        8
+      ],
+      "title": "CiyvoLyeen Woodland Animals Craft Kit Kids DIY Crafting and Sewing Set Woodland Animals Felt Plushie for Girls and Boys Educational Beginners Sewing Set Sewing Kits for Kids Age 8 9 10 11 12",
+      "price": 19.99
+    },
+    "B0CTMF673R": {
+      "keywords": [
+        "felt sewing kit for kids"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "Cymbana Kid Sewing Craft Kit to Make a Friend for Beginner Felt Craft Learn to Sew, Panda Fox Bunny Raccoon Bear 5 Animals",
+      "price": 22.79
+    },
+    "B0FSWFJF3C": {
+      "keywords": [
+        "felt sewing kit for kids"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "CiyvoLyeen Highland Cow Sewing Kit for Kids - Age 5 6 7 8 9 10 11 12, Beginners First Sewing Arts & Crafts with 6 PCS Stuffed Animal, All-in-One Kit, Learn to Sew Gifts Stuff for Girls Boys, Felt",
+      "price": 9.99
+    },
+    "B0DS543DG6": {
+      "keywords": [
+        "felt sewing kit for kids"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "OZENT 8 Set Sewing Handbag Kit, Sew Your Own Purses and Handbags, Felt Sewing Kit with Stickers DIY Sewing Felt Craft for Girls",
+      "price": 15.99
+    },
+    "B09JXTWHFY": {
+      "keywords": [
+        "kids sewing kits ages 8-12",
+        "sewing kits for kids 8-12",
+        "girls sewing kits ages 8-10",
+        "beginner sewing kit for kids"
+      ],
+      "positions": [
+        2,
+        7,
+        5,
+        6
+      ],
+      "title": "Mini Sewing Machine for Beginners, 122-Piece Portable Sewing Machine, Dual Speed Small Sewing Machine, Adults and Kids Sewing Machine, Travel Beginner Sewing Machines with Sewing Kit and Book, Blue",
+      "price": 44.99
+    },
+    "B09NBF3ZPJ": {
+      "keywords": [
+        "kids sewing kits ages 8-12",
+        "girls sewing kits ages 8-10"
+      ],
+      "positions": [
+        6,
+        7
+      ],
+      "title": "ONE TO FOUR 800+Pcs Fashion Designer Kits for Girls with 6 Mannequins - Girls Fashion Design Craft Kit, Sewing Kit for Kid 8-12, Birthday Easter Gifts for Teens Girl 6 7 8 9 10 11 12",
+      "price": 32.89
+    },
+    "B0BXKB7QF6": {
+      "keywords": [
+        "kids sewing kits ages 8-12",
+        "sewing kits for kids 8-12",
+        "girls sewing kits ages 8-10",
+        "beginner sewing kit for kids"
+      ],
+      "positions": [
+        7,
+        3,
+        9,
+        8
+      ],
+      "title": "Coquimbo Sewing Kit Gifts for Mom Grandma Women Men Teen Girls Boys Beginner Traveler, Portable Sewing Supplies Accessories Contains Thread, Needles, Scissors, Dorm Room Essentials (Black, M)",
+      "price": 6.99
+    },
+    "B00ZSE93LA": {
+      "keywords": [
+        "sewing kits for kids 8-12"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "Woodland Animals Kids Sewing Kit, Educational Beginner Arts & Crafts Gift for Boys and Girls Ages 7 to 13 DIY Learn to Sew Embroidery",
+      "price": 29.97
+    },
+    "B09DTHQH3Q": {
+      "keywords": [
+        "sewing kits for kids 8-12",
+        "knitting kit for kids",
+        "kids knitting kit",
+        "learn to knit kit",
+        "kids knitting kits for beginners",
+        "knitting kit for kids ages 8-12",
+        "finger knitting kit"
+      ],
+      "positions": [
+        8,
+        4,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "title": "Creativity for Kids Learn to Knit Pocket Scarf Kit | Learn to Knit a Cozy, Functional Scarf with a Handy Pocket | Relaxing DIY Craft & Mindful Activity for Kids (Ages 9+)",
+      "price": 18.74
+    },
+    "B0CN6YKH9R": {
+      "keywords": [
+        "sewing kits for kids 8-12"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "Klever Kits 400+PCS Fashion Design Crafts for Kids, Art and Crafts, DIY Sewing Kits with 3 Mannequins for Girls Aged 8-12, Birthday Presents, Toys for Kids",
+      "price": 25.99
+    },
+    "B0FG2VRY65": {
+      "keywords": [
+        "sewing kits for kids"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "TUZT My First Sewing Kit for Kids - Monster Sewing Craft Kit for Beginners with 12 Pre-Cut Monster Plush Toys, Scissor, Plastic Needles & Thread, DIY Felt Crafts Project for Girls & Boys Ages 4-12",
+      "price": 19.99
+    },
+    "B0CYPGB3D1": {
+      "keywords": [
+        "kids sewing crafts"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "EZCRA Bear & Animal Sewing Kit for Kids Ages 4-8, No-Mess Felt Craft Projects, 4 Easy Beginner Learn-to-Sew Arts & Crafts for Boys and Girls",
+      "price": 16.99
+    },
+    "B0D6SM3QWM": {
+      "keywords": [
+        "latch hook kit",
+        "latch hook kits"
+      ],
+      "positions": [
+        0,
+        1
+      ],
+      "title": "Bernat Latch It Boho Collection Cosmic Collision 1 Pack of 12X20 Kit, Great for Pillows, Wall Hangings and More!",
+      "price": 12.89
+    },
+    "B09X9LDHKJ": {
+      "keywords": [
+        "latch hook kit",
+        "latch hook kits",
+        "latch hook for kids"
+      ],
+      "positions": [
+        1,
+        3,
+        5
+      ],
+      "title": "HSYMQ Latch Hook Tools, 3Pack Wooden Bent Latch Hooks",
+      "price": 5.99
+    },
+    "B0BPJJ9P4J": {
+      "keywords": [
+        "latch hook kit",
+        "latch hook kits",
+        "latch hook kits for beginners"
+      ],
+      "positions": [
+        2,
+        0,
+        3
+      ],
+      "title": "Latch Hook Kits Pillow Plant Flower Leaves Printed Canvas Cushion Crochet Yarn Needlework Hook Latch DIY Kit Embroidery Pillowcase Rug Cover Home Sofa Christmas Decoration 43x43cm",
+      "price": 22.98
+    },
+    "B0DSQ5G8Y2": {
+      "keywords": [
+        "latch hook kit",
+        "latch hook kits for beginners"
+      ],
+      "positions": [
+        3,
+        9
+      ],
+      "title": "Latch Hook Rug Kit Abstract Cute Wild Flower Easy for Beginners Round Shape Carpet Crochet Yarn Craft Mini Rug DIY Hook and Latch Little Tapestry for Home Decor 30x30cm",
+      "price": 17.98
+    },
+    "B0D7CQM2FY": {
+      "keywords": [
+        "latch hook kit",
+        "latch hook kits"
+      ],
+      "positions": [
+        4,
+        6
+      ],
+      "title": "Landscape of Sunset Mountain Tree Latch Hook Rug Kit for Adults DIY Carpet Cushion with Printed Canvas Crochet Yarn Craft Hook and Latch Tapestry for Home Decor Pets Warm Pads 60x40cm(2)",
+      "price": 25.86
+    },
+    "B0D49D1DZR": {
+      "keywords": [
+        "latch hook kit",
+        "latch hook kits"
+      ],
+      "positions": [
+        6,
+        7
+      ],
+      "title": "EsLuker.ly Latch Hook Rug Kit DIY Crochet Carpet for Beginners, Starry Sky Patterns Pre-Printed Canvas Yarn Rug Hooking Kits, Creative Craft Home Decor Ideal for Learning Rug Making",
+      "price": 20.89
+    },
+    "B0DJHVTRG8": {
+      "keywords": [
+        "latch hook kit"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "Latch Hook Pillow Kits for Adults Cute Baby Highland Cow DIY Pillow Cover Printed Pillowcase Crochet Hooking Yarns Handmade Cushion for Home Sofa Decoration 17x17inch(8)",
+      "price": 23.99
+    },
+    "B0FKMM78Y3": {
+      "keywords": [
+        "latch hook kit",
+        "latch hook kits"
+      ],
+      "positions": [
+        9,
+        4
+      ],
+      "title": "YOOLOOKY Latch Hook Kits for Adults/Beginners Printed Canvas Embroidery Tapestry Handmade Rug Home Sofa Decoration 20.5 X 15inch (Snowman)",
+      "price": 11.99
+    },
+    "B086XBRHK6": {
+      "keywords": [
+        "hook rug kits for kids",
+        "latch hook kits",
+        "latch hook rug kits for kids",
+        "latch hook kits for kids",
+        "beginner latch hook kits for kids",
+        "latch kits",
+        "latch hook for kids"
+      ],
+      "positions": [
+        1,
+        9,
+        3,
+        3,
+        5,
+        8,
+        8
+      ],
+      "title": "GREBSTK Latch Hook Kit DIY Throw Pillow Cover Sofa Cushion Cover Sun & Rainbow Pattern Paint Cross Stitch 16X16 inch",
+      "price": 19.99
+    },
+    "B0C55911VG": {
+      "keywords": [
+        "hook rug kits for kids",
+        "latch hook rug kits for kids",
+        "latch hook kits for beginners"
+      ],
+      "positions": [
+        2,
+        2,
+        6
+      ],
+      "title": "Numptain Latch Hook Kits for Adults,DIY Rug Crafts Butterfly Pattern Color Printed Canvas,Latch Hook Kits for Beginners Handmade Needlework Crafts Home Decoration,12\"x12\"",
+      "price": 16.99
+    },
+    "B0C5LT6YHW": {
+      "keywords": [
+        "hook rug kits for kids",
+        "latch hook rug kits for kids",
+        "latch hook kits for beginners",
+        "latch hook kits for kids",
+        "beginner latch hook kits for kids"
+      ],
+      "positions": [
+        4,
+        1,
+        5,
+        8,
+        4
+      ],
+      "title": "Numptain Latch Hook Kits for Adults,DIY Rug Crafts Love Rainbow Pattern Color Printed Canvas,Latch Hook Kits for Beginners Handmade Needlework Crafts Home Decoration,12\"x12\" NT1",
+      "price": 16.99
+    },
+    "B09ZX67HHP": {
+      "keywords": [
+        "hook rug kits for kids",
+        "latch hook rug kits for kids"
+      ],
+      "positions": [
+        5,
+        4
+      ],
+      "title": "YOOLOOKY Latch Hook Rug Kits Printed Canvas DIY Rug Making Kits Home Decoration Needlework for Adults Beginners 20.5\" X 15\"(Sloth)",
+      "price": 23.99
+    },
+    "B0D53JF7HX": {
+      "keywords": [
+        "hook rug kits for kids",
+        "latch hook kits for kids",
+        "beginner latch hook kits for kids",
+        "latch hook for kids"
+      ],
+      "positions": [
+        7,
+        7,
+        6,
+        7
+      ],
+      "title": "Generic Cartoon White Baseball Latch Hook Rug Kit for Beginner Kids Easy Little Mat with Printed Canvas DIY Hook Making Crochet Yarn Craft Tapestry for Decoration and Gift 12x12inch, As Main Picture",
+      "price": 13.86
+    },
+    "B0CHMZT4W4": {
+      "keywords": [
+        "hook rug kits for kids"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "Puzamen Latch Hook Rugs Kits for Adults Beginners, 13inch Small Latch Hook Rug Making Kit with Precut Yarns Coded Canvas",
+      "price": 14.98
+    },
+    "B09DL546TY": {
+      "keywords": [
+        "hook rug kits for kids",
+        "latch hook rug kits for kids",
+        "beginner latch hook kits for kids"
+      ],
+      "positions": [
+        9,
+        7,
+        7
+      ],
+      "title": "Butterfly Latch Hook Rug Kits for Adults and Kids Beginner Handmade Needle Crochet Yarn Kits Embroidery Carpet Hook and Latch Kit Pre-Printed with Printed Canvas Home Decoration 30x30cm, XZD025",
+      "price": 12.95
+    },
+    "B0CNBP99WF": {
+      "keywords": [
+        "latch hook kits"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "Black Raven Moon Latch Hook Rectangle Rug Kits for Adults Needle Crochet Yarn Embroidery Carpet Hook and Latch Kit Floor Mat Tapestry Christmas Home Decoration 52x38cm(9)",
+      "price": 22.98
+    },
+    "B0CBVSQS8L": {
+      "keywords": [
+        "latch hook rug kits for kids",
+        "latch kits",
+        "latch hook for kids"
+      ],
+      "positions": [
+        5,
+        6,
+        9
+      ],
+      "title": "YP Latch Hook Kits for Kids Adults DIY Rug Tapestry Kits with Printed Canvas Embroidery Kits Festival Gifts Home Decoration (Fox,11.8inch X 11.8inch)",
+      "price": 16.99
+    },
+    "B0D626GNJS": {
+      "keywords": [
+        "latch hook rug kits for kids"
+      ],
+      "positions": [
+        6
+      ],
+      "title": "Generic Cartoon White Cat Latch Hook Rug Kit for Beginner Easy Little Mat with Printed Canvas DIY Hook Making Crochet Yarn Craft Tapestry for Decoration and Gift 12x12inch, As Main Picture",
+      "price": 13.86
+    },
+    "B0CBVSCS3N": {
+      "keywords": [
+        "latch hook rug kits for kids",
+        "beginner latch hook kits for kids"
+      ],
+      "positions": [
+        8,
+        8
+      ],
+      "title": "YP Latch Hook Kits for Kids Adults DIY Rug Tapestry Kits with Printed Canvas Embroidery Kits Festival Gifts Home Decoration (Penguin,11.8inch X 11.8inch)",
+      "price": 16.99
+    },
+    "B0CHMXQCSD": {
+      "keywords": [
+        "latch hook rug kits for kids",
+        "latch hook kits for beginners"
+      ],
+      "positions": [
+        9,
+        2
+      ],
+      "title": "Puzamen Latch Hook Kits for Adults Beginners, 12x12inch Small Latch Hook Rug Kit with Precur Yarns Crochet Tools and Coded Canvas",
+      "price": 14.98
+    },
+    "B0C4TRLHG8": {
+      "keywords": [
+        "latch hook kits for beginners"
+      ],
+      "positions": [
+        1
+      ],
+      "title": "Numptain Latch Hook Kits for Adults,DIY Rug Crafts Love Pattern Color Printed Canvas,Latch Hook Kits for Beginners Handmade Needlework Crafts Home Decoration,12\"x12\"",
+      "price": 16.99
+    },
+    "B0DS4GHZTT": {
+      "keywords": [
+        "latch hook kits for beginners",
+        "latch hook kits for kids"
+      ],
+      "positions": [
+        4,
+        4
+      ],
+      "title": "Numptain Latch Hook Kits for Adults,DIY Rug Crafts Colorful Smiley Face Pattern Color Printed Canvas,Latch Hook Kits for Beginners Handmade Needlework Crafts Home Decoration,12\"x12\"",
+      "price": 16.99
+    },
+    "B0G1KDQYNG": {
+      "keywords": [
+        "latch hook kits for beginners"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "Manzapu Latch Hook Kits for Adults Beginner, 12x12 inch - 30x30 cm Cute Small Shaggy Rug Making Kits with Pre-Cut Yarn, Coded Canvas \uff06 Crochet Hook Tool - Relaxing DIY Craft Gift",
+      "price": 14.98
+    },
+    "B07PPD8Q8V": {
+      "keywords": [
+        "latch hook kits for kids",
+        "knitting kit for kids",
+        "loom knitting kit",
+        "loom kit for kids",
+        "kids knitting kit",
+        "knitting kit for kids ages 8-12",
+        "finger knitting kit"
+      ],
+      "positions": [
+        0,
+        7,
+        2,
+        0,
+        4,
+        9,
+        3
+      ],
+      "title": "Made By Me Ultimate Weaving Loom, Includes 378 Craft Loops & 1 Weaving Loom with Tool, Makes 25 Projects, 9 Rainbow Colors of Weaving Loops, Hook & Loop Potholder Kit, DIY Weaving Kit",
+      "price": 13.99
+    },
+    "B0DF55L12J": {
+      "keywords": [
+        "latch hook kits for kids",
+        "latch kits"
+      ],
+      "positions": [
+        6,
+        3
+      ],
+      "title": "Generic Cute Cartoon Sea Turtle Latch Hook Kits Mini Rug DIY Handmade Crochet Yarn Needlework Hook and Latch Kit Printed Canvas Carpet Cushion Cover Home Christmas Decoration 30x30cm(3)",
+      "price": 14.98
+    },
+    "B0D62FD78J": {
+      "keywords": [
+        "beginner latch hook kits for kids"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "Generic Cartoon Sea Turtle Latch Hook Rug Kit for Beginner Easy Little Mat with Printed Canvas DIY Hook Making Crochet Yarn Craft Tapestry for Decoration and Gift 12x12inch, As Main Picture",
+      "price": 14.98
+    },
+    "B0F9XG7FKH": {
+      "keywords": [
+        "latch kits"
+      ],
+      "positions": [
+        2
+      ],
+      "title": "LatchKits Avocado Pillow - Latch Hook Kits for Kids, Arts and Crafts, Yarn Art, Kids Crafts, Toys for Girls, Birthday Gift for Girls, Easy to Follow Pattern, Hook Included, Craft Kits, Ages 6+",
+      "price": 23.95
+    },
+    "B0C7RPHCHM": {
+      "keywords": [
+        "latch kits"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "LatchKits Latch Hook Kits for Kids \u2013 Kids Crafts, Arts and Crafts, Yarn Art, Wall Hanging & Mini-Rugs, Craft Supplies, Pre-Cut Yarn, Easy to Follow Pattern, Hook Included, Arts & Craft, Ages 6+",
+      "price": 19.15
+    },
+    "B0FMNS87YQ": {
+      "keywords": [
+        "latch kits"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "LUDOTEK Colorful Axolotl Latch Hook Kits for Adults Beginners Cute Animals Latch Hook Pillow Kit Pre-Printed Latch Hook Rug Kits Cross-Stitch Embroidery Cushion for Home Sofa Decoration 17x17 in.",
+      "price": 25.99
+    },
+    "B0F6V7P7D3": {
+      "keywords": [
+        "latch kits"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "LatchKits Mini Donut - Latch Hook Kits for Kids, Arts and Crafts, Yarn Art, Kids Crafts, Toys for Girls, Birthday Gift for Girls, Easy to Follow Patten, Hook Included, Craft Kits, Ages 6+",
+      "price": 14.62
+    },
+    "B0DJQPGDMQ": {
+      "keywords": [
+        "latch kits"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "veirousa Colorful Cat Latch Hook Kits for Adults Beginners, Cute Animals Latch Hook Pillow Kit Pre-Printed Latch Hook Rug Kits Cross-Stitch Embroidery Cushion for Home Sofa Decoration 17x17 in.",
+      "price": 24.99
+    },
+    "B0DS23C1YX": {
+      "keywords": [
+        "knitting loom kit",
+        "loom knitting kit",
+        "knitting looms for beginners"
+      ],
+      "positions": [
+        0,
+        0,
+        0
+      ],
+      "title": "READAEER Knitting Loom Kit with Pompom Maker, Round Knitting Loom for Hat, Rectangular for Blanket Scarf Shawl, Knitting Loom Kit for Beginner",
+      "price": 24.99
+    },
+    "B0182IQHYE": {
+      "keywords": [
+        "knitting loom kit",
+        "loom knitting kit",
+        "knitting looms for beginners"
+      ],
+      "positions": [
+        1,
+        1,
+        1
+      ],
+      "title": "READAEER Round Knitting Looms Set Craft Kit Tool with Hook Needle and Pompom Maker",
+      "price": 18.99
+    },
+    "B0B4SH82CQ": {
+      "keywords": [
+        "knitting loom kit",
+        "knitting looms for beginners"
+      ],
+      "positions": [
+        2,
+        4
+      ],
+      "title": "VGOODALL Round Knitting Looms Set, Set of 18PCS Supplies with Hook Needle, Pompom Maker and Yarn, for Knitting Beginners",
+      "price": 24.99
+    },
+    "B0DWTB6CLH": {
+      "keywords": [
+        "knitting loom kit",
+        "loom knitting kit",
+        "knitting looms for beginners"
+      ],
+      "positions": [
+        3,
+        5,
+        6
+      ],
+      "title": "UCDRMA Knitting Looms for Beginners, Crochet Loom Knitting Kit with Step-by-Step Instructions, Cost-Effective 3 Size Round Knitting Loom, Easy & Quick Hat Knitting Loom Set/Scarf Loom Knitting Set",
+      "price": 14.39
+    },
+    "B07H89TC2C": {
+      "keywords": [
+        "knitting loom kit"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "novelinks Round Knitting Looms Set - Set of 5 Plastic Looms Knitting with 1 Knitting Yarn Loom Needle and 1 Plastic Loom Pick",
+      "price": 16.99
+    },
+    "B0FQTB3MGW": {
+      "keywords": [
+        "knitting loom kit"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "Knitting Loom Kit with Storage Bag, 2 Looms, Yarn, Pom Pom Maker & Crochet Hook, Beginner-Friendly Complete DIY Blanket Scarf Shawl, Christmas Birthday Gifts for Craft Lovers & Beginner, Pink",
+      "price": 21.97
+    },
+    "B07H4JWK17": {
+      "keywords": [
+        "knitting loom kit"
+      ],
+      "positions": [
+        6
+      ],
+      "title": "Knitting Loom Craft Kit - 6 Round Knitting and 4 Long Knitting Include Hook Needle, Pompom Maker for Crochet, Hat, Scarf",
+      "price": 32.99
+    },
+    "B0C7G9FRYN": {
+      "keywords": [
+        "knitting loom kit"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "VGOODALL 27PCS Round Knitting Loom Kit, Circular Loom Set with Hook Needles 20 Colorful Yarns Knitting Supplies for Hat Scarf Shawl Sweater Sock, DIY Craft Gifts for Beginners and Seasoned Knitters",
+      "price": 18.99
+    },
+    "B07G8GH263": {
+      "keywords": [
+        "knitting loom kit",
+        "loom knitting kit"
+      ],
+      "positions": [
+        8,
+        3
+      ],
+      "title": "ALIMELT Round Knitting Loom Set Long Knitting Board Weave Loom Craft Yarn Kit DIY Tool Crochet Hooks Knitting Needles Hat Scarf Shawl Sweater Sock Blankets Knitter",
+      "price": 18.99
+    },
+    "B0CJ3S36VT": {
+      "keywords": [
+        "knitting loom kit",
+        "knitting looms for beginners"
+      ],
+      "positions": [
+        9,
+        5
+      ],
+      "title": "UCDRMA Loom Knitting Kit with Yarn, 23PCS Round Knitting Loom Kit for Beginners Including Instructions and Pom Pom Maker, Easy & Quick Hat Knitting Loom Set/Scarf Loom Knitting Set for Family",
+      "price": 21.59
+    },
+    "B0B5RBBGC9": {
+      "keywords": [
+        "knitting kit for kids",
+        "kids knitting kit",
+        "kids knitting kits for beginners",
+        "knitting kit for kids ages 8-12"
+      ],
+      "positions": [
+        6,
+        8,
+        5,
+        7
+      ],
+      "title": "Aeelike Crochet Kit for Beginners Adults, Crochet Kits Include Yarn, 59pcs Crochet Starter Kit for Beginners,Ergonomic Crochet Hooks 2.0-6.0 mm, Lace Steel Needles 0.6-1.9 mm",
+      "price": 17.99
+    },
+    "B0FK4FZLTS": {
+      "keywords": [
+        "knitting kit for kids",
+        "kids knitting kit",
+        "kids knitting kits for beginners"
+      ],
+      "positions": [
+        8,
+        2,
+        4
+      ],
+      "title": "PREBOX Knitting Loom Craft Kit for Kids & Beginners - Create Hat & Scraf with Yarn, Hook Needle, Ideal Birthday Christmas Gifts for Teens Girls Age 6-8 8-12 14+, Rose Loom",
+      "price": 39.89
+    },
+    "B09Y9CWQ8L": {
+      "keywords": [
+        "loom knitting kit",
+        "knitting looms for beginners"
+      ],
+      "positions": [
+        4,
+        7
+      ],
+      "title": "Olikraft Knitting Loom Kit - 4 Round, 2 Rectangular Yarn Looms - Chunky Blanket Loom - for Crochet, Hat, Scarf",
+      "price": 28.98
+    },
+    "B00DRP6CKC": {
+      "keywords": [
+        "loom knitting kit"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "Authentic Knitting Board Afghan Knitting Loom for Blankets, Loom Knitting Blankets, S Shaped Loom",
+      "price": 49.99
+    },
+    "B09K3S15V5": {
+      "keywords": [
+        "loom knitting kit",
+        "knitting looms for beginners"
+      ],
+      "positions": [
+        8,
+        8
+      ],
+      "title": "Katech Adjustable Knitting Looms Set -Customized Sizes for Your Project-Afghan Loom-Blanket Loom-Sock Scarf Loom-Hat Loom for Crocheting-Crochet Loom with Loom Knitting Book Hook Needle (All-in-one)",
+      "price": 19.89
+    },
+    "B085WNTJT1": {
+      "keywords": [
+        "loom kit for kids"
+      ],
+      "positions": [
+        1
+      ],
+      "title": "Rainbow Loom MEGA Combo Set, Features 7000+ Colorful Rubber Bands, 2 Step-by-Step Bracelet Instructions, Organizer Case, Great Gift for Kids 7+ DIY Craft, STEAM",
+      "price": 24.99
+    },
+    "B0D9NSPBSS": {
+      "keywords": [
+        "loom kit for kids"
+      ],
+      "positions": [
+        2
+      ],
+      "title": "Weaving Loom Kit Toys Crafts - Arts and Crafts for Kids and Adults - Great Birthday Gifts for Girls Ages 6 7 8-12 13 Years Old - Sturdy Frame Potholder Loom Making Kits Portable Box and Craft Loops",
+      "price": 34.57
+    },
+    "B0CZF266QH": {
+      "keywords": [
+        "loom kit for kids"
+      ],
+      "positions": [
+        3
+      ],
+      "title": "IQKidz Weaving Loom Kit Toys, DIY Arts and Crafts for Kids and Adults, Ideal Gifts for Girls Ages 5 6 7 8-12 13, Easy Potholder Loom Knitting Activity for Beginners, 224 Craft Loops",
+      "price": 34.75
+    },
+    "B08CVSB189": {
+      "keywords": [
+        "loom kit for kids"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "PREBOX Weaving Loom Kit Toys for Kids and Adults, Potholder Loops Crafts for Girls Ages 6 7 8 9 10 11 12, 7\" Pot Holder Loom Knitting Kits and Gifts for Kids and Beginners, Make 6 Masterpieces",
+      "price": 32.74
+    },
+    "B08L6T5BJ6": {
+      "keywords": [
+        "loom kit for kids"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "Hapinest Make Your Own Potholders Weaving Loom for Kids, Weaving Loom Kit, Pot Holder Loom Kit for Beginners, Potholder Loops Arts and Crafts Kit for Kids Girls Boys Ages 6 7 8 9 10-12 Years Old & Up",
+      "price": 12.49
+    },
+    "B0FL7RN4S6": {
+      "keywords": [
+        "loom kit for kids"
+      ],
+      "positions": [
+        6
+      ],
+      "title": "Weaving Loom Kit Toys Gift for Kids and Adults\u2013DIY Arts and Crafts Beginner-Friendly Potholder Loom Kit with Loops Tools Funny Birthday Christmas Gifts Toys for Girls Ages 5 6 7 8-12 13 Years Old",
+      "price": 31.99
+    },
+    "B00000IV3U": {
+      "keywords": [
+        "loom kit for kids"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "Friendly Loom 7\u201d Traditional Potholder Weaving Kit | Sturdy Metal Loom and Quality Cotton Weaving Loops in Rainbow Colors | Complete Kit to Weave 2 Functional Potholders | Made in the USA",
+      "price": 19.99
+    },
+    "B07SQ43JT2": {
+      "keywords": [
+        "loom kit for kids"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "Melissa & Doug Wooden Multi-Craft Weaving Loom: Extra-Large Frame (22.75 x 16.5 inches)",
+      "price": 46.99
+    },
+    "B0D1QV84VN": {
+      "keywords": [
+        "unicorn latch hook kit"
+      ],
+      "positions": [
+        1
+      ],
+      "title": "Unicorn Princess Latch Hook Kits for Adults Kids, Beginners DIY Throw Pillow Kit Pre-printed Pillowcase Hook and Latch Rug Kits Cross-stitch Cushion Cover for Home Sofa Decor Gift Idea 17x17 inch",
+      "price": 24.99
+    },
+    "B0C2CVM2WY": {
+      "keywords": [
+        "unicorn latch hook kit"
+      ],
+      "positions": [
+        2
+      ],
+      "title": "YOOTOM Latch Hook Kits for Adult Beginners, DIY Latch Hook Rug Hanging Embroidery Tapestry Crafts, Pre-Cut Yarns, Easy Pre-Pattern 20x15in",
+      "price": 19.99
+    },
+    "B0FZS1R8BQ": {
+      "keywords": [
+        "unicorn latch hook kit"
+      ],
+      "positions": [
+        3
+      ],
+      "title": "Cozykeke Unicorn Latch Hook Kit for Adults Beginners,DIY Latch Hook Pillow Kit Cover Cushion Craft Kits with Pre-Printed Canvas, Suitable for Home Decor and Festival Gift 17 * 17in (BX814)",
+      "price": 22.99
+    },
+    "B0D1QVYR8F": {
+      "keywords": [
+        "unicorn latch hook kit"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "Fantasy Unicorn Latch Hook Kits for Adults Kids, Beginners DIY Throw Pillow Kit Pre-printed Pillowcase Hook and Latch Rug Kits Cross-stitch Cushion Cover for Home Sofa Decor Gift Idea 17x17 inch",
+      "price": 23.99
+    },
+    "B08JCKW4F8": {
+      "keywords": [
+        "unicorn latch hook kit"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "DL-YTG Latch Hook Kits Pillow Unicorn Crochet Yarn Cushion Colour Pre-Printed Canvas Rug Needlework DIY Pillowcase Hook and Latch Kit Home Arts Crafts Sofa Decoration 42x42cm/16X16inch",
+      "price": 20.98
+    },
+    "B0DFXQSP16": {
+      "keywords": [
+        "unicorn latch hook kit"
+      ],
+      "positions": [
+        6
+      ],
+      "title": "Numptain Latch Hook Kits for Adults,DIY Rug Crafts Unicorn Pattern Color Printed Canvas,Latch Hook Kits for Beginners Handmade Needlework Crafts Home Decoration,12\"x12\" NT23",
+      "price": 16.99
+    },
+    "B09338YDG1": {
+      "keywords": [
+        "unicorn latch hook kit"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "LAPATAIN Latch Hook Kits DIY Crochet Yarn Kits,Unicorn Carpet Embroidery Hook Rug Kit Needlework Sets Cushion for Adults Home Decor 20x15inch",
+      "price": 21.99
+    },
+    "B096Y6JJL7": {
+      "keywords": [
+        "unicorn latch hook kit"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "Latch Hook Kits for Adults/Kids Pattern Printed Rug Making Kit Everything Included Gift for Family Friends Latch Hook Rugs DIY Needlework Crafts for Home Sofa Lighthouse 20 X 15 Inches Unicorn",
+      "price": 16.99
+    },
+    "B08JGCTQRG": {
+      "keywords": [
+        "unicorn latch hook kit"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "DL-YTG Latch Hook Kits Rug Unicorn Crochet Yarn Cushion Colour Pre-Printed Canvas Cover Rug Needlework DIY Hook and Latch Kit Home Decoration 52x38cm/20 X15inch",
+      "price": 21.98
+    },
+    "B09FC7V6CG": {
+      "keywords": [
+        "kids knitting kit",
+        "kids knitting kits for beginners",
+        "knitting kit for kids ages 8-12",
+        "finger knitting kit"
+      ],
+      "positions": [
+        5,
+        7,
+        5,
+        4
+      ],
+      "title": "Creativity for Kids Quick Knit Charm Bracelets - Create 10 DIY Friendship Bracelets, Kids Jewelry Making Kit",
+      "price": 19.99
+    },
+    "B0CKQZ3BRV": {
+      "keywords": [
+        "kids knitting kit",
+        "learn to knit kit",
+        "kids knitting kits for beginners"
+      ],
+      "positions": [
+        6,
+        3,
+        2
+      ],
+      "title": "Aeelike Knitting Kit for Beginners, Complete Beginner Knitting Kit Easy Knitting Set Including Knitting Needles Set Cotton Yarn, Learn to Knit Dishcloth with Step-by-Step Instructions, Colorful",
+      "price": 17.99
+    },
+    "B0CLTPPBSL": {
+      "keywords": [
+        "kids knitting kit"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "Crochet Kit for Beginner, Crochet Starter Kit w Step-by-Step Video Tutorials, Crochet Kit for Beginners, Beginner Crochet Kit for Adults Kids Women Men Complete Kit Included (Axolotl 2Pack)",
+      "price": 18.99
+    },
+    "B088STRDGZ": {
+      "keywords": [
+        "kids knitting kit"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "INSCRAFT 113 Piece Crochet Kit with Yarn Set\u2013 1600 Yards Assorted Yarn for Knitting and Crochet, 73PCS Crochet Accessories Set Including Ergonomic Hooks, Knitting Needles & More Ideal Beginner Kit",
+      "price": 28.79
+    },
+    "B0F2GVXBGH": {
+      "keywords": [
+        "learn to knit kit"
+      ],
+      "positions": [
+        1
+      ],
+      "title": "Complete Knitting Kit for Beginners - Learn to Knit Kit with Knitting Accessories Like Thick Beginner Yarn in Gray, Bamboo Needles for Beginners & More - Includes Video Tutorials & Written Guide",
+      "price": 33.99
+    },
+    "B0CWDZ3Y7T": {
+      "keywords": [
+        "learn to knit kit",
+        "kids knitting kits for beginners",
+        "knitting kit for kids ages 8-12"
+      ],
+      "positions": [
+        2,
+        6,
+        4
+      ],
+      "title": "Complete Knitting Kit for Beginners - Learn to Knit Kit with Knitting Accessories Like Thick Beginner Yarn, Bamboo Needles for Beginners & More - Includes Video Tutorials & Written Guide",
+      "price": 32.99
+    },
+    "B0F928243M": {
+      "keywords": [
+        "learn to knit kit"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "MaconGoods Grandma's Knitting Kit - Complete Knitting Kit for Beginners - Includes Beginner Yarn, Bamboo Needles, Video Tutorial, and Written Guide & More - Easy Learn to Knit Kit",
+      "price": 34.99
+    },
+    "B0F2GWTQ3F": {
+      "keywords": [
+        "learn to knit kit"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "Complete Knitting Kit for Beginners - Learn to Knit Kit with Knitting Accessories Like Thick Beginner Ivory Yarn, Bamboo Needles for Beginners & More - Includes Video Tutorials & Written Guide",
+      "price": 33.99
+    },
+    "B0CQ4P95HS": {
+      "keywords": [
+        "learn to knit kit",
+        "kids knitting kits for beginners"
+      ],
+      "positions": [
+        6,
+        8
+      ],
+      "title": "Aeelike Knitting Kit for Beginners, Complete Beginner Knitting Kit Easy Knitting Set Including Knitting Needles Set Cotton Yarn, Learn to Knit Dishcloth with Step-by-Step Instructions, Colorful",
+      "price": 19.99
+    },
+    "B0D9XZGP79": {
+      "keywords": [
+        "learn to knit kit"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "Katech Beginner Knitting Kit - Learn to Knit Kit for Adults & Kids - Complete Hat, Scarf, Gloves Starter Kit with Step-by-Step Instructions",
+      "price": 23.99
+    },
+    "1640210636": {
+      "keywords": [
+        "learn to knit kit"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "Vogue\u00ae Knitting The Learn-to-Knit Book",
+      "price": 17.95
+    },
+    "B0FW465MWW": {
+      "keywords": [
+        "learn to knit kit"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "Lewhoo Knitting Kit for Beginners,Learn to Knit Kit for 6 Patterns Dishcloth with Step-by-Step Instruction,Complete Knit Starter Kit -Including Yarn, Knitting Needle&Accessories",
+      "price": 20.79
+    },
+    "B0DKD2S3JT": {
+      "keywords": [
+        "kids knitting kits for beginners"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "",
+      "price": 22.98
+    },
+    "B09G9NFQ61": {
+      "keywords": [
+        "knitting kit for kids ages 8-12"
+      ],
+      "positions": [
+        1
+      ],
+      "title": "Coopay Crochet Kit Beginners Crochet Hook Set with Crochet Yarn,58PCS Portable Crochet Set Ergonomic Crochet Hooks Travel Knitting Crochet Supplies",
+      "price": 17.98
+    },
+    "B0F9KNND2J": {
+      "keywords": [
+        "knitting kit for kids ages 8-12"
+      ],
+      "positions": [
+        6
+      ],
+      "title": "Allaugh Crochet Kit for Beginners Kids: 6pcs Cute Animal Crochet Set Knitting Gift for 8-12 Year Old - Easy to Learn with Step-by-Step Video Tutorials Hook Yarn for Crocheting - DIY Birthday Presents",
+      "price": 29.99
+    },
+    "B08YS42GPG": {
+      "keywords": [
+        "knitting kit for kids ages 8-12"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "The Woobles Crochet Kit for Beginners - Easy Arts and Crafts Knitting & Crochet Animals Kit As Seen On Shark Tank - Pierre The Penguin",
+      "price": 29.96
+    },
+    "4805315334": {
+      "keywords": [
+        "finger knitting kit"
+      ],
+      "positions": [
+        0
+      ],
+      "title": "Finger Knitting for Kids: Super Cute & Easy Things to Make",
+      "price": 7.17
+    },
+    "B084D28CRD": {
+      "keywords": [
+        "finger knitting kit"
+      ],
+      "positions": [
+        2
+      ],
+      "title": "JubileeYarn Fun Finger Loops Yarn - 100g/Skein Jumbo Polyester - Pegasus - 4 Skeins",
+      "price": 23.95
+    },
+    "B0CPLTSSR8": {
+      "keywords": [
+        "finger knitting kit"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "MABOZOO Assorted Chunky Yarn for Crocheting 8 Pack,Fluffy Jumbo Chenille Yarn,Soft Plush Yarn Bulky,Giant Thick Fuzzy Yarn for Hand or Arm Knitting,Cream & Khaki&Sage&Grey(31.7 yds,8 oz Each Skein)",
+      "price": 39.99
+    },
+    "0764370448": {
+      "keywords": [
+        "finger knitting kit"
+      ],
+      "positions": [
+        6
+      ],
+      "title": "Super Simple Finger Knitting Kit Jiggle the Jellyfish: Everything You Need Is Included: Chunky Yarn, Fiberfill, Instruction Booklet, Exclusive ... and Collectible Sticker; Beginner Friendly!",
+      "price": 29.99
+    },
+    "B0BN8GZJF2": {
+      "keywords": [
+        "finger knitting kit"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "kgxulr Crochet Kit for Beginners, Sunflower Crochet Kit Beginner Crochet Starter Kit for Complete Beginners Adults, Crocheting Knitting Kit with Step-by-Step Video Tutorials (Sunflower)",
+      "price": 9.99
+    },
+    "076437043X": {
+      "keywords": [
+        "finger knitting kit"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "Super Simple Finger Knitting Kit Sugarplum Christmas Tree: Everything You Need Is Included: Chunky Yarn, Fiberfill, Instruction Booklet, Exclusive ... and Collectible Sticker; Beginner Friendly!",
+      "price": 29.39
+    },
+    "B0FS6LF2G9": {
+      "keywords": [
+        "finger knitting kit"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "ZMJY 46\" Adjustable Chunky Yarn Loom Kit for DIY Blankets | Beginner-Friendly Hand Knitting Loom with Modular Wooden Frame | No Needles Required for Family Craft, Home Decor & Stress Relief",
+      "price": 49.99
+    },
+    "B09MVTPCVH": {
+      "keywords": [
+        "knitting looms for beginners"
+      ],
+      "positions": [
+        3
+      ],
+      "title": "JCBIZ Rectangle Knitting Looms Plastic Weaving Looms Set Scarf Hats DIY Crocheting Handmade Craft Kit with a Crochet Hook and Needle for Knitting Lovers, 26 cm (Red)",
+      "price": 9.99
+    },
+    "B0FQ2YBX9W": {
+      "keywords": [
+        "mini fuse beads",
+        "2.6mm fuse beads",
+        "mini perler beads",
+        "perler beads mini",
+        "mini perler beads kit"
+      ],
+      "positions": [
+        4,
+        4,
+        8,
+        5,
+        5
+      ],
+      "title": "Psykade Fuse Beads Kit-Easy DIY-96 Colors 53000 2.6mm, 200+ Patterns, Built-in Iron | DIY Crafts Supplies for Women, Art Decorations for Room, Ideal Gift,Pixel Art\uff0cAll-in-One",
+      "price": 63.49
+    },
+    "B0CBTKKTF9": {
+      "keywords": [
+        "mini fuse beads",
+        "2.6mm fuse beads"
+      ],
+      "positions": [
+        5,
+        2
+      ],
+      "title": "Lenwen 52000 Pcs Fuse Beads 96 Colors 2.6 mm Tiny Mini Fuse Beading Melty Beads with Pegboards Creative Refill Set Art Crafts for Girls Kids Beginners DIY Art Beading Party",
+      "price": 36.99
+    },
+    "B0C39Q2QZJ": {
+      "keywords": [
+        "mini fuse beads",
+        "2.6mm fuse beads",
+        "mini perler beads",
+        "perler beads mini"
+      ],
+      "positions": [
+        6,
+        1,
+        5,
+        9
+      ],
+      "title": "Lenwen 72000 Pcs Assorted Mini Fuse Beads 2.6 mm 72 Colors Fuse Beads Craft Set Bulk for Crafts Kids Christmas Birthday Gift Arts Supplies, Multicolor",
+      "price": 44.99
+    },
+    "B0GGJ2NCQH": {
+      "keywords": [
+        "mini fuse beads",
+        "perler beads mini"
+      ],
+      "positions": [
+        7,
+        7
+      ],
+      "title": "Fuse Beads Kit-120 Colors 62000 2.6mm-Easy DIY, Built-in Iron | DIY Crafts Supplies for Women, Great Supplies for Fuse Beads Artist, Art Decorations for Room, Ideal Gift,Pixel Art\uff0cAll-in-One (A Set)",
+      "price": 59.99
+    },
+    "B09SHZ1FT1": {
+      "keywords": [
+        "mini fuse beads",
+        "2.6mm fuse beads",
+        "mini perler beads",
+        "perler beads mini",
+        "mini perler beads kit",
+        "fuse beads bulk"
+      ],
+      "positions": [
+        8,
+        7,
+        6,
+        4,
+        6,
+        7
+      ],
+      "title": "ZLLBTMO 39000 Pcs Fuse Beads Kit for Craft Making 72 Colors 2.6mm Mini Small Iron Beads Set for Aduld, with Box, 4 Pegboards, 1 Drawing, 1 Tweezers, 5 Ironing Paper",
+      "price": 20.9
+    },
+    "B0G46TMKVC": {
+      "keywords": [
+        "mini fuse beads"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "10000Pcs Loose Mini Fuse Beads 2.6mm Bulk Refill Kit Stress Relief Pixel Art 3D Craft Melting Beads for DIY Decor Crafts Creative Handmade Projects (Black)",
+      "price": 9.99
+    },
+    "B09YQG4RVV": {
+      "keywords": [
+        "2.6mm fuse beads",
+        "mini perler beads",
+        "perler beads mini"
+      ],
+      "positions": [
+        6,
+        7,
+        6
+      ],
+      "title": "Fuse Beads 2.6MM Mini Iron Beads White 10000pcs and Black 10000pcs for Crafts, Handmade Decor DIY Make, with 1 Ironing Paper",
+      "price": 9.99
+    },
+    "B0FX3LDCQ1": {
+      "keywords": [
+        "2.6mm fuse beads"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "ARTKAL Mini Fuse Beads 7500 Melty Beads Compatible 2.6 mm Perler and Hama Bead (Black)",
+      "price": 12.99
+    },
+    "B01AMXHEKI": {
+      "keywords": [
+        "mini perler beads",
+        "mini perler beads kit"
+      ],
+      "positions": [
+        4,
+        3
+      ],
+      "title": "Mini Beads Square Mini Pegboard Set, 4 pcs",
+      "price": 9.94
+    },
+    "B01AMXJA9Q": {
+      "keywords": [
+        "mini perler beads"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "Black Perler Mini Beads for Kids Crafts, 2000 pcs",
+      "price": 5.7
+    },
+    "B0CRZ8M2G1": {
+      "keywords": [
+        "perler beads mini",
+        "mini perler beads kit"
+      ],
+      "positions": [
+        8,
+        8
+      ],
+      "title": "24,000 Mini 2.6mm Fuse Beads Kit for Adults - 48 Vivid Pastel Colors, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty Beads, Iron Beads Craft - Bulk Storage",
+      "price": 34.98
+    },
+    "B0F6T8GV96": {
+      "keywords": [
+        "mini perler beads kit"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "15000 2.6mm Mini Size Fuse Beads Set - 24 Colors, Christmas Toys and Crafts, Arts and Crafts, Kids Room Decorations, Christmas Gifts for Girls, Boys, Kids and Teens (Non Standard Size)",
+      "price": 22.98
+    },
+    "B0FVKJB5XF": {
+      "keywords": [
+        "mini perler beads kit"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "2.6mm Fuse Bead Single Needle Tweezer & Aligner Tray Kit, Efficient Iron Bead Sorting Tools with Effortless Beads Recovery, Birthday Easter Gifts for Women",
+      "price": 15.99
+    },
+    "B0FF3CX4LT": {
+      "keywords": [
+        "mini beads"
+      ],
+      "positions": [
+        0
+      ],
+      "title": "28 Colors 3mm Seed Beads, 7200PCS Glass Seed Beads Kit for Jewelry Making, Craft and Bracelet Making",
+      "price": 5.99
+    },
+    "B0C5JBWBXB": {
+      "keywords": [
+        "mini beads"
+      ],
+      "positions": [
+        1
+      ],
+      "title": "Redtwo 4mm Glass Seed Beads for Jewelry Bracelet Making Kit, Small Beads Friendship Bracelet Kit, Tiny Waist Beads with Letter Beads and Elastic String, DIY Art Craft Girls Gifts",
+      "price": 6.64
+    },
+    "B0CDLBWD7R": {
+      "keywords": [
+        "mini beads"
+      ],
+      "positions": [
+        2
+      ],
+      "title": "Funtopia 3mm 37000pcs+ Seed Beads for Jewelry Making, 120 Colors Small Glass Beads for Bracelets, Friendship Bracelet Kit with Alphabet Letter Beads Smile Face Beads for DIY, Art and Craft",
+      "price": 23.99
+    },
+    "B0F18W2NNX": {
+      "keywords": [
+        "mini beads"
+      ],
+      "positions": [
+        3
+      ],
+      "title": "Redtwo 3mm 45000pcs Glass Seed Beads Kit, 7 Boxes 144 Colors Small Beads for Bracelets, Friendship Bracelet Kit with Charms and Letters",
+      "price": 20.99
+    },
+    "B0FNLFZQZ8": {
+      "keywords": [
+        "mini beads"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "14000Pcs 2.5mm Glass Seed Beads Kit with Large Hole, 28 Colors Uniform Beads for Jewelry Making Supplies, DIY Crafts Bracelets Necklaces Earrings Jewelry Making Kit",
+      "price": 8.99
+    },
+    "B0CM679SYQ": {
+      "keywords": [
+        "mini beads"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "Funtopia 39 Colors 3mm Seed Beads, 9600pcs Small Beads for Jewelry Making, Tiny Craft Beads for Bracelet Making",
+      "price": 11.39
+    },
+    "B0FF4FW3HW": {
+      "keywords": [
+        "mini beads"
+      ],
+      "positions": [
+        6
+      ],
+      "title": "Tube Seed Beads Crafts Glass Bugle Beads Small Craft 3mm with for Jewelry Making Embroidery Decoration (28 Colors, 16800pcs)",
+      "price": 12.99
+    },
+    "B0DQ82Z23F": {
+      "keywords": [
+        "mini beads"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "3mm Seed Beads, 39 Colors Glass Seed Beads for Jewelry Making, 9600pcs 5 Types Small Beads for Bracelets, Friendship Bracelet Beads for Girls Adults",
+      "price": 11.39
+    },
+    "B0C6498D9M": {
+      "keywords": [
+        "mini beads"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "QUEFE 62000pcs 120 Colors Glass Seed Beads for Jewelry Making, 2mm Mini Beads with Accessories Friendship Bracelet Kit Charms and Pendants Kit for Bracelets Rings Necklaces Making, DIY, Gift, Craft",
+      "price": 21.99
+    },
+    "B0CY456BNL": {
+      "keywords": [
+        "mini beads"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "3mm Glass Seed Beads for Bracelet Jewelry Making 24 Colors Bracelet Making Kit for Girls Adults DIY Friendship Bracelets Kits with Letter Beads",
+      "price": 9.99
+    },
+    "B0BZRXFC7Y": {
+      "keywords": [
+        "fuse beads",
+        "melty beads",
+        "fuse bead kit",
+        "iron beads for kids",
+        "melting beads for kids crafts",
+        "fuse beads kit",
+        "melty beads kit",
+        "hama beads",
+        "iron beads",
+        "melt beads",
+        "bead melting craft kit"
+      ],
+      "positions": [
+        0,
+        0,
+        2,
+        7,
+        4,
+        1,
+        8,
+        3,
+        5,
+        0,
+        4
+      ],
+      "title": "QUEFE Fuse Beads Kit 15000 Pcs 72 Colors 5mm Beads Craft Kit Including Pegboard, Melting Beads, Ironing Paper, Tweezers & Colorful Hooks, Christmas Home School Arts and Crafts Supplies for Girls",
+      "price": 24.99
+    },
+    "B07VLVMY3C": {
+      "keywords": [
+        "fuse beads",
+        "fuse beads bulk",
+        "fuse beads for kids",
+        "melty beads",
+        "fuse bead kit",
+        "iron beads for kids",
+        "melting beads for kids crafts",
+        "fuse beads kit",
+        "melty beads kit",
+        "hama beads",
+        "iron beads",
+        "melt beads",
+        "bead melting craft kit"
+      ],
+      "positions": [
+        1,
+        9,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        4,
+        2,
+        0
+      ],
+      "title": "FUNZBO 23000 5mm Fuse Beads Kit - 22 Colors | 106 Patterns, Easter School Arts and Crafts Supplies for Kids, Toys Set, Art Decorations for Room, Birthday Easter Gifts for Girls and Boys Age 5+",
+      "price": 35.98
+    },
+    "B0C4PMSXNR": {
+      "keywords": [
+        "fuse beads",
+        "fuse beads bulk",
+        "fuse beads for kids",
+        "melty beads",
+        "iron beads for kids",
+        "melting beads for kids crafts",
+        "hama beads",
+        "melt beads"
+      ],
+      "positions": [
+        2,
+        4,
+        4,
+        4,
+        5,
+        5,
+        7,
+        1
+      ],
+      "title": "Sukh 5400+Pcs Fuse Beads - Fuse Beads Kit Melty Beads Kit Melting Beads Fuse Beads Bulk Iron Beads for Kids Crafts, Ideal for Boys and Girls Christmas Birthday Gifts Mix 24 Colors 5mm",
+      "price": 7.99
+    },
+    "B0BZRXF1NJ": {
+      "keywords": [
+        "fuse beads",
+        "fuse beads for kids",
+        "melty beads",
+        "fuse bead kit",
+        "iron beads for kids",
+        "melting beads for kids crafts",
+        "fuse beads kit",
+        "melty beads kit",
+        "hama beads",
+        "iron beads",
+        "melt beads",
+        "bead melting craft kit"
+      ],
+      "positions": [
+        3,
+        2,
+        6,
+        1,
+        0,
+        2,
+        2,
+        1,
+        1,
+        6,
+        6,
+        3
+      ],
+      "title": "QUEFE 5200pcs Fuse Beads Kit for Boys and Girls, 24 Colors 5mm Melting Beads Set Including Pegboards, Ironing Paper, Tweezers, Colorful Hooks for Birthday and Christmas Gift",
+      "price": 16.99
+    },
+    "B0DHKJ41NH": {
+      "keywords": [
+        "fuse beads",
+        "fuse beads bulk",
+        "melty beads",
+        "fuse bead kit",
+        "melt beads",
+        "bead melting craft kit"
+      ],
+      "positions": [
+        4,
+        6,
+        7,
+        9,
+        5,
+        9
+      ],
+      "title": "FUNZBO 31000 5mm Fuse Beads Kit - 48 Colors, Easter Homeschool Arts and Crafts Supplies for Kids, Toys Set, Art Decorations for Room, Birthday Toys Gifts for Girls and Boys Age 5+",
+      "price": 47.98
+    },
+    "B07QWCDWBH": {
+      "keywords": [
+        "fuse beads",
+        "fuse beads bulk",
+        "fuse beads for kids",
+        "melty beads",
+        "iron beads for kids",
+        "melting beads for kids crafts",
+        "melty beads kit",
+        "hama beads",
+        "melt beads"
+      ],
+      "positions": [
+        5,
+        2,
+        5,
+        2,
+        4,
+        8,
+        9,
+        8,
+        4
+      ],
+      "title": "23,000 pcs Fuse Beads Kit for Kids Crafts, 30 Colors Iron Beads Set with 3 Pegboards, 5 Ironing Paper, 10 Patterns, Gifts for Birthday Christmas, Multicolor 5mm Melty Beads Bulk Refill Kit by Inscraft",
+      "price": 25.98
+    },
+    "B0C1BTRBD5": {
+      "keywords": [
+        "fuse beads",
+        "fuse beads bulk",
+        "melty beads"
+      ],
+      "positions": [
+        6,
+        0,
+        3
+      ],
+      "title": "INSCRAFT 2 Buckets of Fuse Beads, 46,000 pcs 5mm Iron Beads for Kids Crafts, 30 Colors with 6 Pegboards, 10 Ironing Paper, 20 Patterns, Gifts for Birthday Christmas, Multicolor Refill Kit",
+      "price": 40.99
+    },
+    "B07YDDPPWX": {
+      "keywords": [
+        "fuse beads",
+        "fuse beads for kids",
+        "melty beads",
+        "fuse bead kit",
+        "iron beads for kids",
+        "melting beads for kids crafts",
+        "fuse beads kit",
+        "melty beads kit",
+        "hama beads",
+        "melt beads",
+        "bead melting craft kit"
+      ],
+      "positions": [
+        8,
+        3,
+        5,
+        3,
+        2,
+        3,
+        5,
+        2,
+        6,
+        3,
+        2
+      ],
+      "title": "Meland Fuse Beads Kit - 11,000 pcs 36 Color Beads for Craft for Girls Age 5-12 Year Old,5MM Melty Beads Set Including 5 Pegboards, Ironing Paper & Chain Accessories Iron Beads Christmas Birthday Gift",
+      "price": 25.99
+    },
+    "B07VNPWVZJ": {
+      "keywords": [
+        "fuse beads",
+        "fuse beads for kids",
+        "fuse bead kit",
+        "iron beads for kids",
+        "melting beads for kids crafts",
+        "fuse beads kit",
+        "melty beads kit",
+        "melt beads",
+        "bead melting craft kit"
+      ],
+      "positions": [
+        9,
+        1,
+        4,
+        3,
+        1,
+        4,
+        4,
+        8,
+        1
+      ],
+      "title": "FUNZBO 5500 5mm Fuse Beads Kit - 24 Colors | 111 Patterns, Arts and Crafts for Girls and Boys, Kids Toys Set, Gifts for Kids, Teens and Adults Age 5+ Years Old",
+      "price": 22.98
+    },
+    "B0FJDW2DN7": {
+      "keywords": [
+        "fuse beads bulk",
+        "melty beads"
+      ],
+      "positions": [
+        1,
+        8
+      ],
+      "title": "Fuse Beads, 21000 Pcs 30 Colors 5mm Fuse Bead Kit for DIY Projects - Individually Wrapped",
+      "price": 19.99
+    },
+    "B0CDBVBXMK": {
+      "keywords": [
+        "fuse beads bulk"
+      ],
+      "positions": [
+        3
+      ],
+      "title": "Libima 56000 Pcs 56 Colors Fuse Beads Bulk for Kids Art and Crafts Assorted Iron Beads Set Multicolored for Birthday Gift Bracelet Making Accessories (5mm)",
+      "price": 56.99
+    },
+    "B083SF7SQ3": {
+      "keywords": [
+        "fuse beads bulk"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "36000 Pcs Value Pack Fuse Beads 45 Colors, Bulk Assorted Multicolor Fuse Beads for Kids and Chilren Crafts with Ironing Papaer",
+      "price": 41.99
+    },
+    "B0C1BXWMRP": {
+      "keywords": [
+        "fuse beads bulk"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "INSCRAFT 27,500 pcs Fuse Beads Kit for Kids Crafts, 30 Colors Iron Beads Set with 3 Pegboards, 5 Ironing Paper, 10 Patterns, Gifts for Birthday Christmas, Multicolor 5mm Melty Beads Bulk Refill Kit",
+      "price": 28.99
+    },
+    "B082WJSSK2": {
+      "keywords": [
+        "fuse beads for kids",
+        "fuse bead kit"
+      ],
+      "positions": [
+        6,
+        8
+      ],
+      "title": "Goody King Arts and Crafts Fuse Beads Kit for Kids with Instruction - 5mm Pixel Art Melty Plastic Beads Set with 111 Patterns, 21 Assorted Colors Plus - School Teens Kids Age 4 5 6 7 8 and up",
+      "price": 18.03
+    },
+    "B0DQG43QYX": {
+      "keywords": [
+        "fuse beads for kids",
+        "iron beads for kids",
+        "melting beads for kids crafts",
+        "fuse beads kit",
+        "melty beads kit"
+      ],
+      "positions": [
+        7,
+        6,
+        6,
+        6,
+        3
+      ],
+      "title": "Fuse Beads Kit for Kids: 10000PC Melty Beads Set, 5MM Iron Melting Beads Craft Kit with 8 Pegboards,5 Ironing Paper and Accessories, Arts and Crafts Set Toys Gifts for Boys Girls Christmas Birthday",
+      "price": 24.99
+    },
+    "B0D2WYL51Z": {
+      "keywords": [
+        "fuse beads for kids"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "FUNZBO 5200 5mm Fuse Beads Kit with Mini Iron - 24 Colors | 111 Patterns, Easter Arts and Crafts for Girls and Boys, Kids Toys Set, Art Decorations, Easter Birhtday Gifts for Age 5+ Years Old Kids",
+      "price": 25.98
+    },
+    "B07WFN5WSM": {
+      "keywords": [
+        "fuse beads for kids"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "20 Pieces 5mm Fuse Beads Pegboards Clear Animal Shape Plastic Pegboards Craft Tray with 20 Pieces Colorful Cards for Kids DIY Craft Beads",
+      "price": 13.95
+    },
+    "B0CDFSQ7WM": {
+      "keywords": [
+        "fuse bead kit",
+        "melting beads for kids crafts",
+        "fuse beads kit",
+        "melty beads kit",
+        "bead melting craft kit"
+      ],
+      "positions": [
+        5,
+        9,
+        3,
+        5,
+        6
+      ],
+      "title": "Goody King Board Fuse Beads Iron Set - Fuse Bead Kit for Kids Crafts with Bead Pegboard and Aqua Pony Beads, Pixel Art and Craft Kit (Large Set with Iron)",
+      "price": 35.98
+    },
+    "B0D5BCWD4D": {
+      "keywords": [
+        "fuse bead kit",
+        "fuse beads kit",
+        "melt beads",
+        "bead melting craft kit"
+      ],
+      "positions": [
+        7,
+        7,
+        9,
+        5
+      ],
+      "title": "FUNZBO 12000 5mm Fuse Beads Kit Iron Set - Easter Toys for Kids Crafts for Girls Ages 8-12, Arts and Crafts for Kids Ages 6-8, Easter Birthday Gifts for Girls Boys Age 5 6 7 8 9 10 11 12 Year Old",
+      "price": 29.98
+    },
+    "B0C7N8JDHK": {
+      "keywords": [
+        "iron beads for kids",
+        "melty beads kit"
+      ],
+      "positions": [
+        8,
+        6
+      ],
+      "title": "LULUETPUE Fuse Beads Kit,10000PC 5MM Melty Beads Set, Iron Melting Beads Craft Kit with Pegboards,Ironing Paper and Chain Accessories, Arts and Crafts Set for Kids Boys Girls Christmas Birthday Gift",
+      "price": 23.99
+    },
+    "B09SHSRWZK": {
+      "keywords": [
+        "iron beads for kids"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "Honoson Mini Craft Iron Mini Heat Press Small Iron 3.93 x 2.36 x 2.76 in Portable Handy Tiny Flatiron with Charging Base Accessory for Fuse Bead Patch DIY Heat Transfer Vinyl(Mint Green)",
+      "price": 9.99
+    },
+    "B0CL9T3BM5": {
+      "keywords": [
+        "melting beads for kids crafts"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "FUNZBO 5200 5mm Fuse Beads Kit - 24 Colors | 66 Patterns, School Crafts Toys for Girls Ages 8-12, Arts and Crafts for Kids Ages 6-8, Birthday Gifts for Girls Boys Age 5 6 7 8 9 10 11 12 Year Old",
+      "price": 19.98
+    },
+    "B0G1X5HWB2": {
+      "keywords": [
+        "fuse beads kit",
+        "iron beads"
+      ],
+      "positions": [
+        8,
+        9
+      ],
+      "title": "Zefy Fuse Beads Kit 92 Colors 19200 Pcs Melting Beads 5mm, Including 124 Patterns, 6 Pegboards, Ironing Paper, Tweezers & Hooks, Home School Arts and Crafts for Kids, Toys Gifts for Girls and Boys",
+      "price": 31.99
+    },
+    "B0DHKC221Q": {
+      "keywords": [
+        "fuse beads kit"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "FUNZBO 32000 5mm Fuse Beads Kit - 32 Colors, Easter Homeschool Arts and Crafts Supplies for Kids, Toys Set, Art Decorations for Room, Easter Birthday Gifts for Girls and Boys Age 5+",
+      "price": 46.98
+    },
+    "B000ZDME7Y": {
+      "keywords": [
+        "hama beads"
+      ],
+      "positions": [
+        2
+      ],
+      "title": "Multi-Mix Fuse Beads Jar, Assorted Colors, Pack of 22000 (PER17000)",
+      "price": 32.9
+    },
+    "B0DCDBTMXJ": {
+      "keywords": [
+        "hama beads"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "80-57182 Bluey Fused Bead Deluxe Box Kit, 10 Unique Patterns, Multicolor, 4473 Pieces",
+      "price": 20.96
+    },
+    "B0FH9QNTPV": {
+      "keywords": [
+        "bead melting craft kit"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "Caydo Fuse Beads Iron Kit with Design App & 200+ Patterns for Beginners, 10500pcs 36 Colors 5mm Iron Beads for Kids Kit, Customizable Melting Bead Kit for 5-12 Girls DIY Craft Gift",
+      "price": 35.99
+    },
+    "B0FMF73MNJ": {
+      "keywords": [
+        "bead melting craft kit"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "QUEFE Fuse Beads Kit - 21000 pcs 5mm in 24 Colors Melting Beads with Over 80 Accessories and Storage Box, DIY Arts & Crafts for Kids, Creative Toy and Gift Idea for Birthday, Party and Classes",
+      "price": 26.99
+    },
+    "B000O7ISY4": {
+      "keywords": [
+        "lacing cards",
+        "toddler lacing cards",
+        "lacing cards for kids ages 3-5",
+        "sewing cards",
+        "toddler sewing cards",
+        "lacing cards for toddlers 2-4"
+      ],
+      "positions": [
+        1,
+        2,
+        1,
+        4,
+        3,
+        1
+      ],
+      "title": "Melissa & Doug Lace and Trace Activity Set: Pets - 5 Wooden Panels and 5 Matching Laces",
+      "price": 7.7
+    },
+    "B000O7ITZM": {
+      "keywords": [
+        "lacing cards",
+        "toddler lacing cards",
+        "lacing cards for kids ages 3-5",
+        "sewing cards for kids ages 3-5",
+        "lacing cards for toddlers 2-4"
+      ],
+      "positions": [
+        2,
+        1,
+        4,
+        3,
+        4
+      ],
+      "title": "Melissa & Doug Lace and Trace Activity Set: 5 Wooden Panels and 5 Matching Laces - Farm",
+      "price": 11.16
+    },
+    "B0CRKWKWRT": {
+      "keywords": [
+        "lacing cards",
+        "lacing cards for kids ages 4-8",
+        "sewing cards",
+        "sewing cards for kids",
+        "sewing cards for kids ages 3-5"
+      ],
+      "positions": [
+        3,
+        2,
+        3,
+        2,
+        6
+      ],
+      "title": "Springtime Lacing Cards for Kids 12 Packs Sewing Kits Rainbow Flower Butterfly Cardboard Sewing Cards Lacing Games for Developing Imagination School Learning Activity Supplies Spring Decorations",
+      "price": 9.59
+    },
+    "1452108196": {
+      "keywords": [
+        "lacing cards",
+        "toddler lacing cards",
+        "lacing cards for kids ages 3-5",
+        "lacing cards for kids ages 4-8",
+        "sewing cards",
+        "toddler sewing cards",
+        "sewing cards for kids",
+        "sewing cards for kids ages 3-5",
+        "lacing cards for toddlers 2-4"
+      ],
+      "positions": [
+        4,
+        3,
+        5,
+        1,
+        2,
+        2,
+        3,
+        4,
+        2
+      ],
+      "title": "The World of Eric Carle(TM) The Very Hungry Caterpillar(TM) Lacing Cards: (Occupational Therapy Toys for Toddlers, Fine Motor Skills Toys for Kids)",
+      "price": 18.99
+    },
+    "B0CYBXGHBN": {
+      "keywords": [
+        "lacing cards",
+        "lacing cards for kids ages 3-5",
+        "toddler sewing cards",
+        "lacing cards for toddlers 2-4"
+      ],
+      "positions": [
+        5,
+        9,
+        5,
+        9
+      ],
+      "title": "5 Pcs Double-Sided Shape Panels Wooden Threading Toy Lacing Cards for Toddlers, Lacing Shapes, Educational and Learning Montessori Activity for Kids (Triangle)",
+      "price": 11.99
+    },
+    "B0DR3NGBX6": {
+      "keywords": [
+        "lacing cards",
+        "toddler lacing cards",
+        "sewing cards",
+        "toddler sewing cards",
+        "lacing cards for toddlers 2-4"
+      ],
+      "positions": [
+        6,
+        4,
+        5,
+        7,
+        5
+      ],
+      "title": "Fisher-Price Wood Preschool Toy Lacing Activity Cards, Tiny Garden 10-Piece Set for Fine Motor Skill Development Kids Ages 3+ Years",
+      "price": 9.89
+    },
+    "B0C4KXB7NJ": {
+      "keywords": [
+        "lacing cards",
+        "lacing cards for kids ages 3-5",
+        "lacing cards for kids ages 4-8",
+        "sewing cards for kids ages 3-5"
+      ],
+      "positions": [
+        7,
+        8,
+        3,
+        5
+      ],
+      "title": "SpriteGru 26PCS Kids Lacing Cards, 26 Double Sided Uppercase Sewing Cards with 26 Colorful Laces, Imagination Development Lacing Toys Games for Children Educational and Learning Activity",
+      "price": 14.99
+    },
+    "B0F3XG9W7B": {
+      "keywords": [
+        "lacing cards",
+        "toddler lacing cards"
+      ],
+      "positions": [
+        8,
+        9
+      ],
+      "title": "SpriteGru 9 Pieces Kids Lacing Cards, Double Sided Vehicle Sewing Cards with 9 Colorful Laces, Imagination Development Lacing Toys Games for Children Educational and Learning Activity",
+      "price": 8.99
+    },
+    "B0CP8VJ56S": {
+      "keywords": [
+        "lacing cards",
+        "toddler lacing cards",
+        "lacing cards for kids ages 3-5",
+        "lacing cards for kids ages 4-8",
+        "sewing cards",
+        "toddler sewing cards",
+        "sewing cards for kids",
+        "sewing cards for kids ages 3-5",
+        "lacing cards for toddlers 2-4",
+        "toddler sewing kits ages 2-4"
+      ],
+      "positions": [
+        9,
+        6,
+        3,
+        7,
+        1,
+        1,
+        0,
+        1,
+        3,
+        1
+      ],
+      "title": "SpriteGru 9 PCS Kids Lacing Cards, 9 Double Sided Farm Animals Sewing Cards with 9 Colorful Laces, Educational & Learning Toys for Preschoolers, Kids Ages 3+",
+      "price": 9.99
+    },
+    "B0DNTWJ4K4": {
+      "keywords": [
+        "toddler lacing cards",
+        "sewing cards for kids ages 3-5"
+      ],
+      "positions": [
+        5,
+        8
+      ],
+      "title": "Dotimo Lacing Cards - 26PCS Double - Sided Uppercase Sewing Cards, 26 Animal Alphabet Games, for Kids Ages 3-5, Preschool Learning & Quiet Time Activities",
+      "price": 14.99
+    },
+    "B0D3LVN8JW": {
+      "keywords": [
+        "toddler lacing cards",
+        "lacing cards for kids ages 3-5",
+        "sewing cards for kids"
+      ],
+      "positions": [
+        7,
+        6,
+        8
+      ],
+      "title": "Quilinz Lacing Cards,Sewing Kit for Kids,Fine Motor Toys,Shoe Tying Practice,Classroom Must Haves,Manipulatives for Preschoolers,Homeschool Supplies,Preschool Learning Activities,Toddler Crafts",
+      "price": 13.59
+    },
+    "B0B58BZ5KV": {
+      "keywords": [
+        "toddler lacing cards",
+        "lacing cards for kids ages 3-5",
+        "lacing cards for kids ages 4-8",
+        "toddler sewing cards",
+        "sewing cards for kids",
+        "sewing cards for kids ages 3-5",
+        "lacing cards for toddlers 2-4",
+        "toddler sewing kits ages 2-4"
+      ],
+      "positions": [
+        8,
+        7,
+        5,
+        4,
+        4,
+        2,
+        6,
+        4
+      ],
+      "title": "KRAFUN Beginner Unicorn My First Lacing Card Kit for Kids Arts & Crafts, 5 Easy Princess Lacing Projects, Paper Art Craft Cards for Toddlers, Fine Motor Preschool Skills Toys",
+      "price": 13.99
+    },
+    "B0BRKPZCJV": {
+      "keywords": [
+        "lacing cards for kids ages 3-5",
+        "lacing cards for kids ages 4-8",
+        "toddler sewing cards",
+        "sewing cards for kids",
+        "sewing cards for kids ages 3-5"
+      ],
+      "positions": [
+        2,
+        8,
+        8,
+        7,
+        7
+      ],
+      "title": "Jungle Animal Lacing Cards 12 Pack Sewing Kits for Kids Lion Wild Animal Cardboard Double Side Kids Sewing Cards Lacing Playing Games for Developing Imagination Preschool Educational Learning Activity",
+      "price": 9.99
+    },
+    "B0C1HSFB4R": {
+      "keywords": [
+        "lacing cards for kids ages 4-8"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "SPARK & WOW Calm Down Threading Boards | Set of 2 | Sensory Activity Board | Autism Toys for Play Therapy | ADHD Toys for Sensory Play",
+      "price": 8.15
+    },
+    "B0BP6WM5RG": {
+      "keywords": [
+        "lacing cards for kids ages 4-8"
+      ],
+      "positions": [
+        6
+      ],
+      "title": "Funrous 10 Pieces Kids Recognition Lacing Cards Thick Cardboard Educational Sewing Cards Double Sided Lacing Playing Games for Children Toddler Preschool Developing Imagination Supplies (Shape)",
+      "price": 8.99
+    },
+    "B09JK61LCP": {
+      "keywords": [
+        "lacing cards for kids ages 4-8",
+        "sewing cards",
+        "sewing cards for kids"
+      ],
+      "positions": [
+        9,
+        6,
+        6
+      ],
+      "title": "Zonon 8 Pieces Kids Lacing Cards Sewing Cards in 8 Patterns Lacing Games for Developing Imagination Education Supplies Children Sewing Game Favors (Princess, Castle Style)",
+      "price": 7.99
+    },
+    "B0B2Z5P5VN": {
+      "keywords": [
+        "sewing cards",
+        "toddler sewing cards",
+        "sewing cards for kids",
+        "lacing cards for toddlers 2-4"
+      ],
+      "positions": [
+        7,
+        6,
+        5,
+        8
+      ],
+      "title": "Pajean 10 Pcs Kids Lacing Cards Animal Sewing Cards Kits Double Sided Toddler Lacing Toys Crafts Developing Imagination Preschool Educational Learning Activity Supplies(Farm Style)",
+      "price": 9.99
+    },
+    "B0BY8BS2MJ": {
+      "keywords": [
+        "sewing cards"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "Pajean 10 Pcs Kids Lacing Cards Animal Sewing Cards Kits Double Sided Toddler Lacing Toys Crafts Developing Imagination Preschool Educational Learning Activity Supplies(Forest Animals Style)",
+      "price": 9.99
+    },
+    "B08L8BHD4Z": {
+      "keywords": [
+        "kids cross stitch kits age 5-8"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "5 Stamped Superhero Cross Stitch Beginner Projects for Kids Needlepoint Starter kit Sewing Set for Backpack Charms\u2026",
+      "price": 21.98
+    },
+    "B0DS59RSHP": {
+      "keywords": [
+        "lacing cards for toddlers 2-4",
+        "toddler sewing kits ages 2-4"
+      ],
+      "positions": [
+        7,
+        6
+      ],
+      "title": "4 Pack Wooden Lacing Threading Toys, Fine Motor Skills Educational Puzzles, Wooden Fruit Threading Set Sorting & Stacking Toy for Toddlers Kids Ages 3\u20135",
+      "price": 7.99
+    },
+    "B079CB9QVW": {
+      "keywords": [
+        "needlepoint kits for kids",
+        "kids needlepoint kit"
+      ],
+      "positions": [
+        6,
+        7
+      ],
+      "title": "ColorBok 73428 Sew Cute Needlepoint Paul Panda",
+      "price": 10.12
+    },
+    "B003LH16ZW": {
+      "keywords": [
+        "needlepoint kits for kids",
+        "kids needlepoint kit"
+      ],
+      "positions": [
+        7,
+        6
+      ],
+      "title": "Colorbok 59338 Cat Learn to Sew Needlepoint Kit, 6-Inch by 6-Inch Pink Frame",
+      "price": 10.77
+    },
+    "B000ZKOTDE": {
+      "keywords": [
+        "kids needlepoint kit"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "Colorbok Q2342A Horse Learn to Stitch Needlepoint Kit, 6-Inch by 6-Inch, Blue Frame",
+      "price": 8.71
+    },
+    "B0BS8QW629": {
+      "keywords": [
+        "gem art for kids",
+        "gem sticker kit for kids",
+        "gem art kit",
+        "gem sticker craft kit",
+        "gem painting kit for kids",
+        "gem art kit for kids"
+      ],
+      "positions": [
+        0,
+        5,
+        4,
+        1,
+        0,
+        1
+      ],
+      "title": "Klever Kits 16 Projects Gem Painting, Kids Diamond Art Kit for Kids with 5D Diamond, Arts and Crafts for Girls Ages 6-12, Gem Craft Activities Kits, Premium Art Gift Ideas for Girls Ages 6, 7, 8+",
+      "price": 12.99
+    },
+    "B08GKZX76K": {
+      "keywords": [
+        "gem art for kids",
+        "gem art kit",
+        "gem sticker craft kit",
+        "gem painting kit for kids",
+        "gem art kit for kids"
+      ],
+      "positions": [
+        1,
+        6,
+        5,
+        4,
+        7
+      ],
+      "title": "Dan&Darci Diamond Art Kit for Kids - Gem Painting - Easter Arts & Crafts Kits for Ages 6-12 - Gifts for 6, 7, 8, 9, 10, 11, 12 Year Old Boy & Girl - Girls Birthday Toys Gift Ideas - Craft Activities",
+      "price": 12.99
+    },
+    "B07YVV1D7F": {
+      "keywords": [
+        "gem art for kids",
+        "gem sticker kit for kids",
+        "gem art kit",
+        "gem sticker craft kit",
+        "diamond art for kids",
+        "gem painting kit for kids",
+        "gem art kit for kids"
+      ],
+      "positions": [
+        2,
+        1,
+        1,
+        2,
+        0,
+        1,
+        3
+      ],
+      "title": "Creativity for Kids Big Gem Diamond Painting Kit: Sweets Stickers and Suncatchers - Diamond Art for Kids, DIY Stickers and Suncatcher Kit for Girls (Ages 6+)",
+      "price": 15.99
+    },
+    "B0BXDG49LX": {
+      "keywords": [
+        "gem art for kids",
+        "diamond art for kids",
+        "gem painting kit for kids",
+        "diamond art kits for kids",
+        "gem art kit for kids"
+      ],
+      "positions": [
+        3,
+        6,
+        6,
+        7,
+        0
+      ],
+      "title": "CHWGLFGG 6 Pack 5D Diamond Painting Kits for Kids Beginners, Full Drill Cute Animals Diamond Art Kits, DIY Big Gem Art for Children Ages 6-7-8-9-12, Home Wall Decor 6x6 Inch",
+      "price": 10.55
+    },
+    "B08RNDPC81": {
+      "keywords": [
+        "gem art for kids",
+        "diamond art for kids",
+        "gem painting kit for kids",
+        "gem art kit for kids"
+      ],
+      "positions": [
+        4,
+        1,
+        2,
+        2
+      ],
+      "title": "Labeol Diamond Art Kits for Kids Boys and Girls Ages 6-8-10-12 Easy to DIY Creative Diamond Art Sticker Craft by Numbers Kits for Kids and Adult Beginners (Animal)",
+      "price": 8.99
+    },
+    "B0DGQ1R33P": {
+      "keywords": [
+        "gem art for kids",
+        "diamond art for kids",
+        "gem painting kit for kids",
+        "diamond art kits for kids",
+        "gem art kit for kids"
+      ],
+      "positions": [
+        5,
+        2,
+        8,
+        4,
+        6
+      ],
+      "title": "Acelii 6 Pack 5D Cartoon Diamond Painting Kits for Kids Beginners,Cute Animals DIY Diamond Art Kit for Kids,Full Round Drill Big Gem Art for Kid,Home Wall Decoration 6X6 inch",
+      "price": 15.99
+    },
+    "B089PZD8LZ": {
+      "keywords": [
+        "gem art for kids",
+        "gem painting kit for kids"
+      ],
+      "positions": [
+        6,
+        5
+      ],
+      "title": "Arts and Crafts for Kids Ages 8-12 - Make Your Own GEM Keychains - 5D Diamond Art Painting by Numbers Kits Girls Kids Ages 3-5 4-6 6-8 Toys Birthday Easter Basket Stuffers Christmas Stocking Gifts",
+      "price": 9.99
+    },
+    "B0D2RK2DSH": {
+      "keywords": [
+        "gem art for kids"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "BANBBUR Arts and Crafts for Kids Ages 8-12,5PCS Double Sided Diamond Art Keychains,5D Gem Art for Kids Ages 4-8 Girls Birthday Gifts, BAKY5",
+      "price": 9.39
+    },
+    "B0DXQ5Q8BD": {
+      "keywords": [
+        "gem art for kids",
+        "gem art kit",
+        "gem art kit for kids"
+      ],
+      "positions": [
+        8,
+        8,
+        8
+      ],
+      "title": "Crafts for Girls - 6Pcs Make Your Own GEM Art Keychains - Arts and Crafts for Adults - Diamond Art Kits - 5D Dimond Art Paintings by Numbers - Art & Craft Gifts",
+      "price": 12.99
+    },
+    "B0CNG47XMD": {
+      "keywords": [
+        "gem art for kids",
+        "gem sticker craft kit",
+        "gem painting kit for kids"
+      ],
+      "positions": [
+        9,
+        7,
+        9
+      ],
+      "title": "Klever Kits 4PCS Window Art Suncatcher Kits, Fun Gem Painting Kits, Diamond Art and Crafts for Boys Girls, Great Crafts Gift for Kids Birthdays Christmas Ages 6+",
+      "price": 12.99
+    },
+    "B0F93PS5HG": {
+      "keywords": [
+        "gem sticker kit for kids"
+      ],
+      "positions": [
+        2
+      ],
+      "title": "Gem Art Sticker Kit, Easter Arts and Crafts for Kids Age 4-12, 8 Unicorn Princess Themes Diamond Art Kit, Gemstone Sticker Crafts Christmas Birthday Gifts for Girls Ages 4,5,6,7,8 Year Old",
+      "price": 16.99
+    },
+    "B0CDPN48T9": {
+      "keywords": [
+        "gem sticker kit for kids",
+        "gem sticker craft kit",
+        "diamond art for kids",
+        "diamond art kits for kids",
+        "gem art kit for kids"
+      ],
+      "positions": [
+        3,
+        3,
+        8,
+        9,
+        4
+      ],
+      "title": "GWAHSA 60pcs 5D Diamond Art Stickers Arts and Crafts Creative Gem Art Paint by Number Kits for Kids Ages 4-6 6-8 8-12 Boys Girls DIY Mosaic Stickers Toys for Birthday Party Halloween Christmas Gifts",
+      "price": 8.99
+    },
+    "B0FZ8GKDDL": {
+      "keywords": [
+        "gem sticker kit for kids",
+        "gem sticker craft kit"
+      ],
+      "positions": [
+        4,
+        8
+      ],
+      "title": "MDCGFOD DIY Arts and Crafts Sets for Kids Easy Diamond Art Kits for Kids Small Hands 12 Mermaid Princess Themes 1800+ Stickers Gem Art for Kids Birthday Gifts for Girls Ages 3 4 5 6 7 8",
+      "price": 13.99
+    },
+    "B0DGLZ9GF7": {
+      "keywords": [
+        "gem sticker kit for kids",
+        "gem art kit",
+        "gem sticker craft kit"
+      ],
+      "positions": [
+        6,
+        7,
+        6
+      ],
+      "title": "Educational Insights Jumbo Gem Kit - DIY Arts and Crafts Sets for Kids, Easy & Fun Diamond Painting Activity for Small Hands, Crafting & Art Supplies, Jewel Stickers, Creative Gifts, Ages 5+",
+      "price": 13.99
+    },
+    "B0D7P5Q651": {
+      "keywords": [
+        "gem sticker kit for kids"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "WAHFNG Gem Art, Diamond Art Kids Painting Kit -Make Your Own Stickers,Keychains & Suncatchers - Arts and Crafts for Girls and Boys Ages 6-12 - Best Gift Ideas for Age 6, 7, 8, 9, 10,11,12 Years Old",
+      "price": 9.99
+    },
+    "B0DBRZQ3XW": {
+      "keywords": [
+        "gem sticker kit for kids",
+        "diamond art for kids",
+        "gem painting kit for kids",
+        "gem art kit for kids"
+      ],
+      "positions": [
+        8,
+        4,
+        3,
+        5
+      ],
+      "title": "Creativity for Kids Big Gem Diamond Painting Kit: Axolotl Stickers & Suncatcher Kit - Boys and Girls Art & Craft, Axolotl Toys and Gifts for Kids (Ages 6+)",
+      "price": 14.97
+    },
+    "B091JRX4XJ": {
+      "keywords": [
+        "gem sticker kit for kids"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "BEARUN Gem Art, Kids Diamond Painting Kit-Big 5D Gem, Arts and Crafts for Girls Ages 6-12, Create Your Own Magical Stickers and Suncatchers - Diamond Art Gift for Girls Ages 6, 7, 8, 9, 10-12, 6-8",
+      "price": 9.99
+    },
+    "B09WY3Z6C8": {
+      "keywords": [
+        "gem art kit"
+      ],
+      "positions": [
+        0
+      ],
+      "title": "TINY FUN 12 Pack Diamond Painting Kits for Adults 5D Diamond Art Kit Paint by Number for Beginners, DIY Paint with Round Full Drill Diamonds Paintings Gem Art for Home Wall Decor Gift (12X16 Inch",
+      "price": 27.99
+    },
+    "B0D5TQJXRN": {
+      "keywords": [
+        "gem art kit"
+      ],
+      "positions": [
+        2
+      ],
+      "title": "32000Pcs Resin Jelly Rhinestones for Bedazzling, Multicolor 3mm Flatback Gems for Diamond Art, Bedazzler Kit with 3Pcs 10ml B7000 Jewelry Glue for Nail Art Crafting Book Makeup",
+      "price": 18.99
+    },
+    "B088K3FQ7W": {
+      "keywords": [
+        "gem art kit"
+      ],
+      "positions": [
+        3
+      ],
+      "title": "ARTDOT 60 Slots Storage Container for Diamond Art Kits for Adults, Portable Bead Storage Boxes for Diamond Painting Accessories and Tools",
+      "price": 16.98
+    },
+    "B07QZK4PF4": {
+      "keywords": [
+        "gem art kit"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "Hulameda 56ps- 5D Diamond Painting Accessories & Tools Kits for Kids or Adults to Make Diamond Painting Art",
+      "price": 9.99
+    },
+    "B0D5TYC73V": {
+      "keywords": [
+        "gem art kit"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "16000Pcs Resin Jelly Rhinestones for Bedazzling, Mixed-Color 4mm Flatback Gems for Diamond Art, Bedazzler Kit with 3Pcs 10ml B7000 Jewelry Glue for DIY Crafting Crafts Book Shoes Nail Art",
+      "price": 19.99
+    },
+    "B0F9W6H3P4": {
+      "keywords": [
+        "gem sticker craft kit"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "Gem Art Sticker Kit, Easter Arts and Crafts for Kids Age 4-12, 8 Unicorn Princess Themes Diamond Art Kit, Gemstone Sticker Crafts Christmas Birthday Gifts for Girls Ages 4,5,6,7,8 Year Old (Cat)",
+      "price": 18.99
+    },
+    "B0CS6KPD1M": {
+      "keywords": [
+        "gem sticker craft kit",
+        "gem painting kit for kids",
+        "gem art kit for kids"
+      ],
+      "positions": [
+        9,
+        7,
+        9
+      ],
+      "title": "BANBBUR 16 Pcs Gem Art for Kids Age 4-8 8-12,Kids Crafts 5D Gem Diamond Art Kit with 5 Suncatchers/5 Keychains/6 Magical Stickers,Painting Art Crafts for Christmas",
+      "price": 11.99
+    },
+    "B0F62QH9LF": {
+      "keywords": [
+        "diamond art for kids",
+        "diamond art kits for kids"
+      ],
+      "positions": [
+        3,
+        5
+      ],
+      "title": "6 Pack 5D Diamond Painting Kits for Kids Beginners,Full Drill Cute Animals Diamond Art Kits,Diamond Art Arts and Crafts for Kids Ages 4-8-12,Home Wall Decor 6x6 Inch",
+      "price": 9.43
+    },
+    "B0GJ44L5XT": {
+      "keywords": [
+        "diamond art for kids"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "LWZAYS Diamond Painting Kits for Kids Diamond Art Gem by Number Kits Arts and Crafts for Kids, Mosaic Kits DIY Full Drill Painting Kit for Home Wall Decor 4 Pieces 6\" X 6\"",
+      "price": 15.98
+    },
+    "B0FZTFKBX7": {
+      "keywords": [
+        "diamond art for kids"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "VANKUTL 4PCS Animal Diamond Painting Kit for Beginners, 5D Cartoon Diamond Painting Kit for Kids, DIY Diamond Art Full Drill Rhinestone Diamond Paintings for Home Decor 5.9x5.9 Inch",
+      "price": 6.99
+    },
+    "B0DS1DD87P": {
+      "keywords": [
+        "diamond art for kids"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "KOJEFCV 48 Pcs Cartoon Diamond Art Painting Sticker Kits for Kids-Cartoon Diamond Gem Stickers Kit,5D Gem Art Stickers Mosaic for Kids Gift for Boys Girls 4-8-10-12 Years Old",
+      "price": 13.99
+    },
+    "B07GWJ8D9F": {
+      "keywords": [
+        "needlepoint keychain kit"
+      ],
+      "positions": [
+        0
+      ],
+      "title": "42Sets 1\" Key Fob Hardware - 3 Colors 25mm Key Fob Key-chain Perfect with 1Pcs Key Fob Glass Running Pliers for Key Fob Wristlets Install",
+      "price": 17.98
+    },
+    "B0D7YYDLWF": {
+      "keywords": [
+        "needlepoint keychain kit"
+      ],
+      "positions": [
+        1
+      ],
+      "title": "ORIGACH 6 Pcs Flower Cross Stitch Bookmark Kit for Beginner with Backing Felt Floss Instruction Sunflowers Tulip DIY Stamped Embroidery Bookmark Kit for Starter Adults Book Lovers",
+      "price": 13.99
+    },
+    "B0DLQN7W3J": {
+      "keywords": [
+        "needlepoint keychain kit"
+      ],
+      "positions": [
+        2
+      ],
+      "title": "Happy Stitching Moon Face Key Fob Needlepoint Kit All-in-One, Self-Finishing Needlepoint Kit",
+      "price": 65
+    },
+    "B0BBV7TGTN": {
+      "keywords": [
+        "needlepoint keychain kit"
+      ],
+      "positions": [
+        3
+      ],
+      "title": "Key Fob Hardware, 40Pcs 1 Inch Keychain Hardware Set with Split Ring for Wristlet, Key Lanyard, Keychain Making Kit Crafts DIY Supplies for Gifts (4 Colors)",
+      "price": 13.91
+    },
+    "B0DLQSVY31": {
+      "keywords": [
+        "needlepoint keychain kit"
+      ],
+      "positions": [
+        4
+      ],
+      "title": "Plaid Circle Key Fob Needlepoint Kit - Happy Stitching All-in-One, Self-Finishing Needlepoint Kit",
+      "price": 65
+    },
+    "B06WCZ3S63": {
+      "keywords": [
+        "needlepoint keychain kit"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "Stitch & Zip Eyeglass Case Needlepoint Kit- Blue Fishes",
+      "price": 24.5
+    },
+    "B0FJ5Y3YJ6": {
+      "keywords": [
+        "needlepoint keychain kit"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "FREEBLOSS 5 Set Embroidery Keychain Kit with Mini Embroidery Hoops Stamped Mini Needlepoint Kit with Instruction Cross Stitch Kits for Beginners DIY Jewelry Pendant",
+      "price": 15.89
+    },
+    "B081LVL65Z": {
+      "keywords": [
+        "needlepoint keychain kit"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "50 Sets Key Fob Hardware Key Fob Keychain Wristlet with Split Ring 1 Inch",
+      "price": 9.99
+    },
+    "B07HLHPGVJ": {
+      "keywords": [
+        "needlepoint keychain kit"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "Life's a Beach Needlepoint Coin Purse Kit - Stitch & Zip",
+      "price": 21
+    },
+    "B08VMGKXPK": {
+      "keywords": [
+        "barbie craft kit",
+        "barbie arts and crafts"
+      ],
+      "positions": [
+        0,
+        2
+      ],
+      "title": "Barbie Tie-Dye Fashion Designer Kit \u2013 DIY Design Set for Girls with Dresses, Markers, Stickers & Tools \u2013 Create Real Barbie Outfits, Craft Activity for Kids Ages 6+",
+      "price": 23.8
+    },
+    "B09JBNHVFZ": {
+      "keywords": [
+        "barbie craft kit",
+        "barbie arts and crafts"
+      ],
+      "positions": [
+        1,
+        1
+      ],
+      "title": "Barbie Magazine - Create Hair & Makeup Looks with 130+ Stencils, 180+ Stickers, Crayons & Pretend Makeup",
+      "price": 13.31
+    },
+    "B0FKHHS6TV": {
+      "keywords": [
+        "barbie craft kit",
+        "barbie arts and crafts"
+      ],
+      "positions": [
+        2,
+        3
+      ],
+      "title": "Barbie Sparkle Bracelet Making Kit, 4 Reversible Shimmery Bracelets, 100+ Traditional and Puffy Resin Stickers, DIY Friendship Jewelry, Girls Toys, Arts and Crafts for Kids Age 8-12, Gifts for Girls",
+      "price": 8.19
+    },
+    "B09GPYFHY7": {
+      "keywords": [
+        "barbie craft kit",
+        "barbie arts and crafts"
+      ],
+      "positions": [
+        3,
+        0
+      ],
+      "title": "Barbie Paint Your Own Jewelry Box, Customize A Heart-Shaped Vanity & Jewelry Box with Acrylic Paints, Create 5 Pieces of Jewelry, 100+ Charms & Beads, Bead Kit for Kids Ages 5, 6, 7, 8",
+      "price": 21.99
+    },
+    "B0F2JFRNJ7": {
+      "keywords": [
+        "barbie craft kit",
+        "barbie arts and crafts"
+      ],
+      "positions": [
+        4,
+        7
+      ],
+      "title": "Barbie D.I.Y. Magnetic Play Set, 75 Pieces, 3 Magnetic Dolls, Crafts for Kids Ages 4-8, 4 Year Old Girl Birthday Gifts, Girl Toys, Cute Travel Toy, Fun Airplane Activities, Pretend Play for Girls",
+      "price": 12.39
+    },
+    "B077B8DC2W": {
+      "keywords": [
+        "barbie craft kit",
+        "barbie arts and crafts"
+      ],
+      "positions": [
+        5,
+        4
+      ],
+      "title": "Fashion Plates All in One Studio Sketch Design Activity Set \u2013 Fashion Design Kit for Kids Ages 6 and Up",
+      "price": 18.99
+    },
+    "B0037UP9N8": {
+      "keywords": [
+        "barbie craft kit"
+      ],
+      "positions": [
+        6
+      ],
+      "title": "Tara Toys - Barbie: Be a Real Fashion Designer",
+      "price": 27.99
+    },
+    "B078TSRN4X": {
+      "keywords": [
+        "barbie craft kit"
+      ],
+      "positions": [
+        7
+      ],
+      "title": "Make Your Own Lip Gloss Kit",
+      "price": 14.04
+    },
+    "B0DCF4MND7": {
+      "keywords": [
+        "barbie craft kit"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "80-57199 Mattel Barbie Fused Bead Deluxe Activity Kit, 9 Unique Patterns, Multicolor, 4011 Pieces",
+      "price": 14.29
+    },
+    "B077B919QT": {
+      "keywords": [
+        "barbie craft kit"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "Barbie Make Your Own Bath Bomb Kit by Horizon Group USA, DIY Four Custom Colorful & Sweet-Smelling Bath Bombs, Includes Stencil, Glitter, Molds, Fragrances & More, Pink, Yellow, Teal & Purple",
+      "price": 15.3
+    },
+    "B09JWYRM68": {
+      "keywords": [
+        "barbie arts and crafts"
+      ],
+      "positions": [
+        5
+      ],
+      "title": "Colored Pencils Art Supplies Kids Set Coloring Markers Girls Painting Kit Drawing Pencils Supplies Travel Case with Crayons Felt Tips Arts and Crafts for Kids 4-12",
+      "price": 21.94
+    },
+    "B0DK7VX73Y": {
+      "keywords": [
+        "barbie arts and crafts"
+      ],
+      "positions": [
+        6
+      ],
+      "title": "Barbie Puffy Sticker Playset, 75 Reusable Stickers, 2-Sided Beach Play Scene, Travel-Friendly, Ages 3+",
+      "price": 6.39
+    },
+    "B0CK4Z6VTK": {
+      "keywords": [
+        "barbie arts and crafts"
+      ],
+      "positions": [
+        8
+      ],
+      "title": "Barbie Color Wonder Coloring Set, Mess Free Coloring Book Pages for Toddlers, Travel Activity, Barbie Gift & Toys for Kids",
+      "price": 8.99
+    },
+    "B09J5DTWC1": {
+      "keywords": [
+        "barbie arts and crafts"
+      ],
+      "positions": [
+        9
+      ],
+      "title": "Barbie Necklace Activity Set \u2013 160-Piece DIY Jewelry & Bead Kit with 5 Silicone Necklaces, 150+ Beads & Character Charms, Creative Craft Toy for Kids Ages 3+",
+      "price": 14.99
+    }
+  }
+}

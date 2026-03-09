@@ -89,6 +89,54 @@
   },
   "metric_history": [
     {
+      "date": "2026-02-20",
+      "source": "timeseries-backfill",
+      "acos": 81.26,
+      "spend_7d": 130.61,
+      "sales_7d": 160.74,
+      "orders_7d": 9,
+      "cvr": 4.0,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-01",
+      "source": "timeseries-backfill",
+      "acos": 56.8,
+      "spend_7d": 142.34,
+      "sales_7d": 250.73,
+      "orders_7d": 13,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-02",
+      "source": "timeseries-backfill",
+      "acos": 56.8,
+      "spend_7d": 142.34,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 0,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-03",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 0,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
       "date": "2026-03-05",
       "acos": 56.7,
       "spend_30d": 557.54,
@@ -106,6 +154,18 @@
       "organic_momentum": 50,
       "profit_health": "PROFITABLE",
       "margin_pct": 23.7
+    },
+    {
+      "date": "2026-03-08",
+      "source": "timeseries-backfill-corrected",
+      "acos": 68.7,
+      "spend_7d": 140.02,
+      "sales_7d": 203.78,
+      "orders_7d": 11,
+      "cvr": 4.5,
+      "rank_top10": 0,
+      "health_status": null,
+      "note": "Corrected 2026-03-09: original backfill showed 92% ACoS from bad aggregation in weekly summary. Raw campaign report data shows 68.7% ($140/$204). Verified against Seller Central."
     }
   ],
   "change_log": [
@@ -246,6 +306,15 @@
       "created": "2026-03-05",
       "status": "pending",
       "due": "2026-03-19"
+    },
+    {
+      "id": "np-007",
+      "priority": "P1",
+      "category": "DEEP_DIVE",
+      "action": "Full portfolio deep dive — LISTING AUDIT focus. 30d ACoS 57.4%, 4.1% CVR across all campaigns. Mar 5 bid cuts worsened ACoS (56.8%→92%). Problem is CVR/listing, not bids. Check: listing quality, images, reviews, product-market fit.",
+      "created": "2026-03-08",
+      "status": "pending",
+      "source": "weekly-ppc-analysis-30d"
     }
   ],
   "scheduled_reviews": [
@@ -292,6 +361,16 @@
         "profit_health": "PROFITABLE"
       },
       "output_ref": "tacos-optimizer/2026-03-06-tacos-scorecard.md"
+    },
+    {
+      "skill": "ppc-timeseries-dashboard",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "data_points": 6,
+        "inflections_detected": 0,
+        "trajectory_30d_acos": "declining"
+      }
     }
   ],
   "improvement_assessment": {

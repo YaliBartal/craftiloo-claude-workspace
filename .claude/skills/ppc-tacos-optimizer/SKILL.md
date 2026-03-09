@@ -734,7 +734,15 @@ For each portfolio analyzed, update `outputs/research/ppc-agent/state/{slug}.jso
 
 ---
 
-## Step 11: Update Lessons (MANDATORY)
+## Step 11: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: ppc-tacos-optimizer".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
+
+---
+
+## Step 12: Update Lessons (MANDATORY)
 
 **Before presenting final results, update `.claude/skills/ppc-tacos-optimizer/LESSONS.md`.**
 
@@ -768,7 +776,7 @@ Add at the **TOP** of the Run Log section:
 
 ---
 
-## Step 12: Present Results to User
+## Step 13: Present Results to User
 
 After all state updates are complete, present to the user:
 

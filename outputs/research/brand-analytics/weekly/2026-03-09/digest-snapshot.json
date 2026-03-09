@@ -1,0 +1,1228 @@
+{
+  "run_date": "2026-03-09",
+  "period": {
+    "start": "2026-02-22",
+    "end": "2026-02-28"
+  },
+  "previous_week": null,
+  "first_run": true,
+  "reports_available": [
+    "scp",
+    "sqp",
+    "market_basket",
+    "repeat_purchase"
+  ],
+  "reports_failed": [
+    "search_terms"
+  ],
+  "click_share_movers": {
+    "gaining": [],
+    "losing": [],
+    "note": "First run - no WoW comparison available"
+  },
+  "funnel_alerts": [],
+  "new_keywords": [],
+  "competitor_movements": [],
+  "bundle_opportunities": [
+    {
+      "our_asin": "B09THLVFZK",
+      "our_product": "Fuse Beads 24000",
+      "co_purchased_asin": "B0CRZ8M2G1",
+      "frequency_pct": 5.26,
+      "is_new": true
+    },
+    {
+      "our_asin": "B09THLVFZK",
+      "our_product": "Fuse Beads 24000",
+      "co_purchased_asin": "B09CPF1R18",
+      "frequency_pct": 4.21,
+      "is_new": true
+    },
+    {
+      "our_asin": "B09THLVFZK",
+      "our_product": "Fuse Beads 24000",
+      "co_purchased_asin": "B09YQG4RVV",
+      "frequency_pct": 4.21,
+      "is_new": true
+    },
+    {
+      "our_asin": "B08DDJCQKF",
+      "our_product": "Fuse Beads 10000",
+      "co_purchased_asin": "B0DFHN42QB",
+      "frequency_pct": 2.99,
+      "is_new": true
+    },
+    {
+      "our_asin": "B08DDJCQKF",
+      "our_product": "Fuse Beads 10000",
+      "co_purchased_asin": "B08L8BHD4Z",
+      "frequency_pct": 1.49,
+      "is_new": true
+    },
+    {
+      "our_asin": "B09WQSBZY7",
+      "our_product": "Fairy Sewing Kit",
+      "co_purchased_asin": "B0BP8GCK1G",
+      "frequency_pct": 4.17,
+      "is_new": true
+    },
+    {
+      "our_asin": "B09WQSBZY7",
+      "our_product": "Fairy Sewing Kit",
+      "co_purchased_asin": "B075DCH5T4",
+      "frequency_pct": 2.08,
+      "is_new": true
+    },
+    {
+      "our_asin": "B07D6D95NG",
+      "our_product": "Biggie Beads 1500",
+      "co_purchased_asin": "B0DCFPTLLF",
+      "frequency_pct": 8.57,
+      "is_new": true
+    },
+    {
+      "our_asin": "B07D6D95NG",
+      "our_product": "Biggie Beads 1500",
+      "co_purchased_asin": "B079KL4C91",
+      "frequency_pct": 5.71,
+      "is_new": true
+    },
+    {
+      "our_asin": "B0F8R652FX",
+      "our_product": "Latch Hook Pillow Kit",
+      "co_purchased_asin": "B086XBRHK6",
+      "frequency_pct": 5.56,
+      "is_new": true
+    },
+    {
+      "our_asin": "B0FQC7YFX6",
+      "our_product": "Princess Lacing Cards",
+      "co_purchased_asin": "B0CXY8JMTK",
+      "frequency_pct": 10.0,
+      "is_new": true
+    },
+    {
+      "our_asin": "B0F8DG32H5",
+      "our_product": "Cat Hat Knitting Kit",
+      "co_purchased_asin": "B09DTHQH3Q",
+      "frequency_pct": 8.0,
+      "is_new": true
+    },
+    {
+      "our_asin": "B0F8DG32H5",
+      "our_product": "Cat Hat Knitting Kit",
+      "co_purchased_asin": "B0DKD2S3JT",
+      "frequency_pct": 8.0,
+      "is_new": true
+    }
+  ],
+  "loyalty_trends": [
+    {
+      "asin": "B09THLVFZK",
+      "product": "Fuse Beads 24000",
+      "portfolio": "fuse-beads",
+      "orders": 157,
+      "unique_customers": 155,
+      "repeat_rate": 1.29,
+      "repeat_revenue": 65.96
+    },
+    {
+      "asin": "B08DDJCQKF",
+      "product": "Fuse Beads 10000",
+      "portfolio": "fuse-beads",
+      "orders": 202,
+      "unique_customers": 202,
+      "repeat_rate": 0.0,
+      "repeat_revenue": 0
+    },
+    {
+      "asin": "B09WQSBZY7",
+      "product": "Fairy Sewing Kit",
+      "portfolio": "fairy-family",
+      "orders": 128,
+      "unique_customers": 127,
+      "repeat_rate": 0.79,
+      "repeat_revenue": 0
+    },
+    {
+      "asin": "B09X55KL2C",
+      "product": "Unknown B09X55KL2C",
+      "portfolio": "unknown",
+      "orders": 63,
+      "unique_customers": 63,
+      "repeat_rate": 0.0,
+      "repeat_revenue": 0
+    },
+    {
+      "asin": "B0F8R652FX",
+      "product": "Latch Hook Pillow Kit",
+      "portfolio": "latch-hook-pillow",
+      "orders": 50,
+      "unique_customers": 50,
+      "repeat_rate": 0.0,
+      "repeat_revenue": 0
+    },
+    {
+      "asin": "B07D6D95NG",
+      "product": "Biggie Beads 1500",
+      "portfolio": "biggie-beads",
+      "orders": 49,
+      "unique_customers": 48,
+      "repeat_rate": 2.08,
+      "repeat_revenue": 24.98
+    },
+    {
+      "asin": "B0DKD2S3JT",
+      "product": "Unknown B0DKD2S3JT",
+      "portfolio": "unknown",
+      "orders": 36,
+      "unique_customers": 34,
+      "repeat_rate": 5.88,
+      "repeat_revenue": 45.96
+    },
+    {
+      "asin": "B0F8DG32H5",
+      "product": "Cat Hat Knitting Kit",
+      "portfolio": "cat-and-hat-knitting",
+      "orders": 33,
+      "unique_customers": 33,
+      "repeat_rate": 0.0,
+      "repeat_revenue": 0
+    },
+    {
+      "asin": "B08FYH13CL",
+      "product": "Unknown B08FYH13CL",
+      "portfolio": "unknown",
+      "orders": 31,
+      "unique_customers": 31,
+      "repeat_rate": 0.0,
+      "repeat_revenue": 0
+    },
+    {
+      "asin": "B0BNDVTTSH",
+      "product": "Unknown B0BNDVTTSH",
+      "portfolio": "unknown",
+      "orders": 31,
+      "unique_customers": 31,
+      "repeat_rate": 0.0,
+      "repeat_revenue": 0
+    },
+    {
+      "asin": "B0FQC7YFX6",
+      "product": "Princess Lacing Cards",
+      "portfolio": "unassigned",
+      "orders": 26,
+      "unique_customers": 26,
+      "repeat_rate": 0.0,
+      "repeat_revenue": 0
+    },
+    {
+      "asin": "B0CRZ8M2G1",
+      "product": "Unknown B0CRZ8M2G1",
+      "portfolio": "unknown",
+      "orders": 23,
+      "unique_customers": 23,
+      "repeat_rate": 0.0,
+      "repeat_revenue": 0
+    },
+    {
+      "asin": "B0DC69M3YD",
+      "product": "Unknown B0DC69M3YD",
+      "portfolio": "unknown",
+      "orders": 22,
+      "unique_customers": 22,
+      "repeat_rate": 0.0,
+      "repeat_revenue": 0
+    },
+    {
+      "asin": "B07PXN4K8N",
+      "product": "Unknown B07PXN4K8N",
+      "portfolio": "unknown",
+      "orders": 20,
+      "unique_customers": 18,
+      "repeat_rate": 11.11,
+      "repeat_revenue": 69.92
+    },
+    {
+      "asin": "B0F6YTG1CH",
+      "product": "Unknown B0F6YTG1CH",
+      "portfolio": "unknown",
+      "orders": 19,
+      "unique_customers": 19,
+      "repeat_rate": 0.0,
+      "repeat_revenue": 0
+    },
+    {
+      "asin": "B0FHMRQWRX",
+      "product": "Unknown B0FHMRQWRX",
+      "portfolio": "unknown",
+      "orders": 17,
+      "unique_customers": 17,
+      "repeat_rate": 0.0,
+      "repeat_revenue": 0
+    },
+    {
+      "asin": "B0BP8GCK1G",
+      "product": "Unknown B0BP8GCK1G",
+      "portfolio": "unknown",
+      "orders": 15,
+      "unique_customers": 15,
+      "repeat_rate": 0.0,
+      "repeat_revenue": 0
+    }
+  ],
+  "portfolio_organic_health": [
+    {
+      "asin": "B08DDJCQKF",
+      "product_name": "Fuse Beads 10000",
+      "portfolio": "fuse-beads",
+      "impressions": 74959,
+      "clicks": 1271,
+      "click_rate": 1.7,
+      "cart_adds": 372,
+      "purchases": 118,
+      "search_traffic_sales": 2394.0,
+      "conversion_rate": 9.28
+    },
+    {
+      "asin": "B09WQSBZY7",
+      "product_name": "Fairy Sewing Kit",
+      "portfolio": "fairy-family",
+      "impressions": 43104,
+      "clicks": 741,
+      "click_rate": 1.72,
+      "cart_adds": 221,
+      "purchases": 50,
+      "search_traffic_sales": 1308.82,
+      "conversion_rate": 6.75
+    },
+    {
+      "asin": "B0DC69M3YD",
+      "product_name": "Unknown B0DC69M3YD",
+      "portfolio": "unknown",
+      "impressions": 27644,
+      "clicks": 303,
+      "click_rate": 1.1,
+      "cart_adds": 49,
+      "purchases": 11,
+      "search_traffic_sales": 274.78,
+      "conversion_rate": 3.63
+    },
+    {
+      "asin": "B09X55KL2C",
+      "product_name": "Unknown B09X55KL2C",
+      "portfolio": "unknown",
+      "impressions": 26558,
+      "clicks": 607,
+      "click_rate": 2.29,
+      "cart_adds": 137,
+      "purchases": 25,
+      "search_traffic_sales": 609.1,
+      "conversion_rate": 4.12
+    },
+    {
+      "asin": "B09HVDNFMR",
+      "product_name": "B09HVDNFMR",
+      "portfolio": "unknown",
+      "impressions": 16663,
+      "clicks": 332,
+      "click_rate": 1.99,
+      "cart_adds": 68,
+      "purchases": 8,
+      "search_traffic_sales": 143.84,
+      "conversion_rate": 2.41
+    },
+    {
+      "asin": "B0DKD2S3JT",
+      "product_name": "Unknown B0DKD2S3JT",
+      "portfolio": "unknown",
+      "impressions": 15282,
+      "clicks": 195,
+      "click_rate": 1.28,
+      "cart_adds": 57,
+      "purchases": 15,
+      "search_traffic_sales": 371.68,
+      "conversion_rate": 7.69
+    },
+    {
+      "asin": "B08FYH13CL",
+      "product_name": "Unknown B08FYH13CL",
+      "portfolio": "unknown",
+      "impressions": 13001,
+      "clicks": 223,
+      "click_rate": 1.72,
+      "cart_adds": 54,
+      "purchases": 13,
+      "search_traffic_sales": 259.74,
+      "conversion_rate": 5.83
+    },
+    {
+      "asin": "B08L8BHD4Z",
+      "product_name": "B08L8BHD4Z",
+      "portfolio": "unknown",
+      "impressions": 10429,
+      "clicks": 142,
+      "click_rate": 1.36,
+      "cart_adds": 47,
+      "purchases": 9,
+      "search_traffic_sales": 197.82,
+      "conversion_rate": 6.34
+    },
+    {
+      "asin": "B09HVCCNM2",
+      "product_name": "B09HVCCNM2",
+      "portfolio": "unknown",
+      "impressions": 8385,
+      "clicks": 126,
+      "click_rate": 1.5,
+      "cart_adds": 17,
+      "purchases": 4,
+      "search_traffic_sales": 71.92,
+      "conversion_rate": 3.17
+    },
+    {
+      "asin": "B092SW839H",
+      "product_name": "B092SW839H",
+      "portfolio": "unknown",
+      "impressions": 6765,
+      "clicks": 93,
+      "click_rate": 1.37,
+      "cart_adds": 22,
+      "purchases": 1,
+      "search_traffic_sales": 19.98,
+      "conversion_rate": 1.08
+    },
+    {
+      "asin": "B096MYBLS1",
+      "product_name": "B096MYBLS1",
+      "portfolio": "unknown",
+      "impressions": 5218,
+      "clicks": 83,
+      "click_rate": 1.59,
+      "cart_adds": 27,
+      "purchases": 7,
+      "search_traffic_sales": 198.02,
+      "conversion_rate": 8.43
+    },
+    {
+      "asin": "B0BNDVTTSH",
+      "product_name": "Unknown B0BNDVTTSH",
+      "portfolio": "unknown",
+      "impressions": 4655,
+      "clicks": 72,
+      "click_rate": 1.55,
+      "cart_adds": 15,
+      "purchases": 2,
+      "search_traffic_sales": 43.96,
+      "conversion_rate": 2.78
+    },
+    {
+      "asin": "B0BP8GCK1G",
+      "product_name": "Unknown B0BP8GCK1G",
+      "portfolio": "unknown",
+      "impressions": 3732,
+      "clicks": 42,
+      "click_rate": 1.13,
+      "cart_adds": 10,
+      "purchases": 3,
+      "search_traffic_sales": 80.94,
+      "conversion_rate": 7.14
+    },
+    {
+      "asin": "B0BXHJJMX1",
+      "product_name": "B0BXHJJMX1",
+      "portfolio": "unknown",
+      "impressions": 3525,
+      "clicks": 38,
+      "click_rate": 1.08,
+      "cart_adds": 5,
+      "purchases": 2,
+      "search_traffic_sales": 49.96,
+      "conversion_rate": 5.26
+    },
+    {
+      "asin": "B0B18ZRRCQ",
+      "product_name": "B0B18ZRRCQ",
+      "portfolio": "unknown",
+      "impressions": 2982,
+      "clicks": 50,
+      "click_rate": 1.68,
+      "cart_adds": 14,
+      "purchases": 2,
+      "search_traffic_sales": 53.96,
+      "conversion_rate": 4.0
+    },
+    {
+      "asin": "B09HVSLBS6",
+      "product_name": "B09HVSLBS6",
+      "portfolio": "unknown",
+      "impressions": 2045,
+      "clicks": 26,
+      "click_rate": 1.27,
+      "cart_adds": 6,
+      "purchases": 1,
+      "search_traffic_sales": 35.96,
+      "conversion_rate": 3.85
+    },
+    {
+      "asin": "B09HVDYMDK",
+      "product_name": "B09HVDYMDK",
+      "portfolio": "unknown",
+      "impressions": 2041,
+      "clicks": 22,
+      "click_rate": 1.08,
+      "cart_adds": 2,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0CP2KCF9R",
+      "product_name": "B0CP2KCF9R",
+      "portfolio": "unknown",
+      "impressions": 1535,
+      "clicks": 26,
+      "click_rate": 1.69,
+      "cart_adds": 5,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B08DJYBH4D",
+      "product_name": "B08DJYBH4D",
+      "portfolio": "unknown",
+      "impressions": 1415,
+      "clicks": 8,
+      "click_rate": 0.57,
+      "cart_adds": 3,
+      "purchases": 2,
+      "search_traffic_sales": 39.96,
+      "conversion_rate": 25.0
+    },
+    {
+      "asin": "B0B18ZHYKR",
+      "product_name": "B0B18ZHYKR",
+      "portfolio": "unknown",
+      "impressions": 1166,
+      "clicks": 5,
+      "click_rate": 0.43,
+      "cart_adds": 0,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0B2XL9D8D",
+      "product_name": "B0B2XL9D8D",
+      "portfolio": "unknown",
+      "impressions": 1122,
+      "clicks": 13,
+      "click_rate": 1.16,
+      "cart_adds": 3,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0B3PGPVV5",
+      "product_name": "B0B3PGPVV5",
+      "portfolio": "unknown",
+      "impressions": 1077,
+      "clicks": 16,
+      "click_rate": 1.49,
+      "cart_adds": 2,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0CT962TMN",
+      "product_name": "B0CT962TMN",
+      "portfolio": "unknown",
+      "impressions": 977,
+      "clicks": 28,
+      "click_rate": 2.87,
+      "cart_adds": 5,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0B8TFW4MN",
+      "product_name": "B0B8TFW4MN",
+      "portfolio": "unknown",
+      "impressions": 957,
+      "clicks": 20,
+      "click_rate": 2.09,
+      "cart_adds": 5,
+      "purchases": 2,
+      "search_traffic_sales": 95.92,
+      "conversion_rate": 10.0
+    },
+    {
+      "asin": "B0CDH84QDP",
+      "product_name": "B0CDH84QDP",
+      "portfolio": "unknown",
+      "impressions": 855,
+      "clicks": 5,
+      "click_rate": 0.58,
+      "cart_adds": 2,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0BPDCDXNK",
+      "product_name": "B0BPDCDXNK",
+      "portfolio": "unknown",
+      "impressions": 742,
+      "clicks": 17,
+      "click_rate": 2.29,
+      "cart_adds": 1,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0BWSGRTB1",
+      "product_name": "B0BWSGRTB1",
+      "portfolio": "unknown",
+      "impressions": 664,
+      "clicks": 11,
+      "click_rate": 1.66,
+      "cart_adds": 1,
+      "purchases": 1,
+      "search_traffic_sales": 27.98,
+      "conversion_rate": 9.09
+    },
+    {
+      "asin": "B0CQHMJWR9",
+      "product_name": "B0CQHMJWR9",
+      "portfolio": "unknown",
+      "impressions": 450,
+      "clicks": 8,
+      "click_rate": 1.78,
+      "cart_adds": 1,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0C3YQ5RG1",
+      "product_name": "B0C3YQ5RG1",
+      "portfolio": "unknown",
+      "impressions": 411,
+      "clicks": 5,
+      "click_rate": 1.22,
+      "cart_adds": 1,
+      "purchases": 1,
+      "search_traffic_sales": 22.98,
+      "conversion_rate": 20.0
+    },
+    {
+      "asin": "B0CRHX8G72",
+      "product_name": "B0CRHX8G72",
+      "portfolio": "unknown",
+      "impressions": 246,
+      "clicks": 8,
+      "click_rate": 3.25,
+      "cart_adds": 1,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B09BRC2VYV",
+      "product_name": "B09BRC2VYV",
+      "portfolio": "unknown",
+      "impressions": 179,
+      "clicks": 3,
+      "click_rate": 1.68,
+      "cart_adds": 0,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0CKTS6ZFZ",
+      "product_name": "B0CKTS6ZFZ",
+      "portfolio": "unknown",
+      "impressions": 119,
+      "clicks": 2,
+      "click_rate": 1.68,
+      "cart_adds": 0,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0DGVDD5B1",
+      "product_name": "B0DGVDD5B1",
+      "portfolio": "unknown",
+      "impressions": 38,
+      "clicks": 0,
+      "click_rate": 0,
+      "cart_adds": 0,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0DGVP19RR",
+      "product_name": "B0DGVP19RR",
+      "portfolio": "unknown",
+      "impressions": 26,
+      "clicks": 0,
+      "click_rate": 0,
+      "cart_adds": 0,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0DGVB7JWD",
+      "product_name": "B0DGVB7JWD",
+      "portfolio": "unknown",
+      "impressions": 22,
+      "clicks": 0,
+      "click_rate": 0,
+      "cart_adds": 0,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0CSPRD746",
+      "product_name": "B0CSPRD746",
+      "portfolio": "unknown",
+      "impressions": 7,
+      "clicks": 0,
+      "click_rate": 0,
+      "cart_adds": 0,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    },
+    {
+      "asin": "B0CY2SXF6P",
+      "product_name": "B0CY2SXF6P",
+      "portfolio": "unknown",
+      "impressions": 3,
+      "clicks": 0,
+      "click_rate": 0,
+      "cart_adds": 0,
+      "purchases": 0,
+      "search_traffic_sales": 0,
+      "conversion_rate": 0
+    }
+  ],
+  "top_sqp_keywords": [
+    {
+      "keyword": "fuse beads",
+      "total_impressions": 150722,
+      "total_clicks": 2791,
+      "total_purchases": 218,
+      "our_clicks": 118,
+      "our_click_share": 4.23,
+      "our_cart_adds": 27,
+      "our_cart_share": 2.97,
+      "our_purchases": 5,
+      "our_purchase_share": 2.29,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 3.13,
+          "click_share": 4.23,
+          "cart_share": 2.97,
+          "purchase_share": 2.29
+        }
+      ]
+    },
+    {
+      "keyword": "perler bead kit",
+      "total_impressions": 96319,
+      "total_clicks": 1964,
+      "total_purchases": 118,
+      "our_clicks": 40,
+      "our_click_share": 2.04,
+      "our_cart_adds": 14,
+      "our_cart_share": 2.34,
+      "our_purchases": 1,
+      "our_purchase_share": 0.85,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 2.87,
+          "click_share": 2.04,
+          "cart_share": 2.34,
+          "purchase_share": 0.85
+        }
+      ]
+    },
+    {
+      "keyword": "mini beads",
+      "total_impressions": 13912,
+      "total_clicks": 274,
+      "total_purchases": 5,
+      "our_clicks": 7,
+      "our_click_share": 2.55,
+      "our_cart_adds": 0,
+      "our_cart_share": 0.0,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 1.8,
+          "click_share": 2.55,
+          "cart_share": 0.0,
+          "purchase_share": 0.0
+        }
+      ]
+    },
+    {
+      "keyword": "pixie beads",
+      "total_impressions": 10334,
+      "total_clicks": 152,
+      "total_purchases": 1,
+      "our_clicks": 14,
+      "our_click_share": 9.21,
+      "our_cart_adds": 2,
+      "our_cart_share": 4.08,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 3.64,
+          "click_share": 9.21,
+          "cart_share": 4.08,
+          "purchase_share": 0.0
+        }
+      ]
+    },
+    {
+      "keyword": "fuse beads bulk",
+      "total_impressions": 7007,
+      "total_clicks": 120,
+      "total_purchases": 10,
+      "our_clicks": 2,
+      "our_click_share": 1.67,
+      "our_cart_adds": 1,
+      "our_cart_share": 2.38,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 1.16,
+          "click_share": 1.67,
+          "cart_share": 2.38,
+          "purchase_share": 0.0
+        }
+      ]
+    },
+    {
+      "keyword": "2.6 mm perler beads",
+      "total_impressions": 2755,
+      "total_clicks": 81,
+      "total_purchases": 6,
+      "our_clicks": 6,
+      "our_click_share": 7.41,
+      "our_cart_adds": 2,
+      "our_cart_share": 7.14,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 6.72,
+          "click_share": 7.41,
+          "cart_share": 7.14,
+          "purchase_share": 0.0
+        }
+      ]
+    },
+    {
+      "keyword": "fuse bead kits",
+      "total_impressions": 2692,
+      "total_clicks": 52,
+      "total_purchases": 2,
+      "our_clicks": 1,
+      "our_click_share": 1.92,
+      "our_cart_adds": 1,
+      "our_cart_share": 5.0,
+      "our_purchases": 1,
+      "our_purchase_share": 50.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 3.05,
+          "click_share": 1.92,
+          "cart_share": 5.0,
+          "purchase_share": 50.0
+        }
+      ]
+    },
+    {
+      "keyword": "mini perler beads kit",
+      "total_impressions": 2478,
+      "total_clicks": 61,
+      "total_purchases": 3,
+      "our_clicks": 13,
+      "our_click_share": 21.31,
+      "our_cart_adds": 4,
+      "our_cart_share": 20.0,
+      "our_purchases": 1,
+      "our_purchase_share": 33.33,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 7.91,
+          "click_share": 21.31,
+          "cart_share": 20.0,
+          "purchase_share": 33.33
+        }
+      ]
+    },
+    {
+      "keyword": "2.6mm fuse beads pegboard",
+      "total_impressions": 2047,
+      "total_clicks": 53,
+      "total_purchases": 6,
+      "our_clicks": 4,
+      "our_click_share": 7.55,
+      "our_cart_adds": 1,
+      "our_cart_share": 4.55,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 5.13,
+          "click_share": 7.55,
+          "cart_share": 4.55,
+          "purchase_share": 0.0
+        }
+      ]
+    },
+    {
+      "keyword": "perler beads mini",
+      "total_impressions": 1925,
+      "total_clicks": 59,
+      "total_purchases": 3,
+      "our_clicks": 15,
+      "our_click_share": 25.42,
+      "our_cart_adds": 8,
+      "our_cart_share": 26.67,
+      "our_purchases": 1,
+      "our_purchase_share": 33.33,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 4.83,
+          "click_share": 25.42,
+          "cart_share": 26.67,
+          "purchase_share": 33.33
+        }
+      ]
+    },
+    {
+      "keyword": "pearlers",
+      "total_impressions": 1920,
+      "total_clicks": 40,
+      "total_purchases": 2,
+      "our_clicks": 1,
+      "our_click_share": 2.5,
+      "our_cart_adds": 1,
+      "our_cart_share": 11.11,
+      "our_purchases": 1,
+      "our_purchase_share": 50.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 3.02,
+          "click_share": 2.5,
+          "cart_share": 11.11,
+          "purchase_share": 50.0
+        }
+      ]
+    },
+    {
+      "keyword": "pixel beads kit",
+      "total_impressions": 1171,
+      "total_clicks": 24,
+      "total_purchases": 3,
+      "our_clicks": 1,
+      "our_click_share": 4.17,
+      "our_cart_adds": 1,
+      "our_cart_share": 11.11,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 3.33,
+          "click_share": 4.17,
+          "cart_share": 11.11,
+          "purchase_share": 0.0
+        }
+      ]
+    },
+    {
+      "keyword": "small fuse beads",
+      "total_impressions": 943,
+      "total_clicks": 29,
+      "total_purchases": 0,
+      "our_clicks": 3,
+      "our_click_share": 10.34,
+      "our_cart_adds": 1,
+      "our_cart_share": 14.29,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 5.73,
+          "click_share": 10.34,
+          "cart_share": 14.29,
+          "purchase_share": null
+        }
+      ]
+    },
+    {
+      "keyword": "perler bead stuff",
+      "total_impressions": 775,
+      "total_clicks": 17,
+      "total_purchases": 0,
+      "our_clicks": 2,
+      "our_click_share": 11.76,
+      "our_cart_adds": 1,
+      "our_cart_share": 9.09,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 2.71,
+          "click_share": 11.76,
+          "cart_share": 9.09,
+          "purchase_share": null
+        }
+      ]
+    },
+    {
+      "keyword": "iron bead",
+      "total_impressions": 714,
+      "total_clicks": 15,
+      "total_purchases": 0,
+      "our_clicks": 1,
+      "our_click_share": 6.67,
+      "our_cart_adds": 1,
+      "our_cart_share": 16.67,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 2.52,
+          "click_share": 6.67,
+          "cart_share": 16.67,
+          "purchase_share": null
+        }
+      ]
+    },
+    {
+      "keyword": "fuse beads kit for adults",
+      "total_impressions": 637,
+      "total_clicks": 4,
+      "total_purchases": 0,
+      "our_clicks": 2,
+      "our_click_share": 50.0,
+      "our_cart_adds": 1,
+      "our_cart_share": 33.33,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 3.45,
+          "click_share": 50.0,
+          "cart_share": 33.33,
+          "purchase_share": null
+        }
+      ]
+    },
+    {
+      "keyword": "tiny perler beads",
+      "total_impressions": 632,
+      "total_clicks": 10,
+      "total_purchases": 1,
+      "our_clicks": 2,
+      "our_click_share": 20.0,
+      "our_cart_adds": 1,
+      "our_cart_share": 14.29,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 5.06,
+          "click_share": 20.0,
+          "cart_share": 14.29,
+          "purchase_share": 0.0
+        }
+      ]
+    },
+    {
+      "keyword": "mini fuse beads 2.6mm",
+      "total_impressions": 480,
+      "total_clicks": 11,
+      "total_purchases": 1,
+      "our_clicks": 3,
+      "our_click_share": 27.27,
+      "our_cart_adds": 2,
+      "our_cart_share": 33.33,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 6.04,
+          "click_share": 27.27,
+          "cart_share": 33.33,
+          "purchase_share": 0.0
+        }
+      ]
+    },
+    {
+      "keyword": "perler beads assorted",
+      "total_impressions": 357,
+      "total_clicks": 6,
+      "total_purchases": 2,
+      "our_clicks": 1,
+      "our_click_share": 16.67,
+      "our_cart_adds": 1,
+      "our_cart_share": 25.0,
+      "our_purchases": 1,
+      "our_purchase_share": 50.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 3.64,
+          "click_share": 16.67,
+          "cart_share": 25.0,
+          "purchase_share": 50.0
+        }
+      ]
+    },
+    {
+      "keyword": "tiny perler beads kit",
+      "total_impressions": 193,
+      "total_clicks": 2,
+      "total_purchases": 0,
+      "our_clicks": 1,
+      "our_click_share": 50.0,
+      "our_cart_adds": 1,
+      "our_cart_share": 100.0,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 7.25,
+          "click_share": 50.0,
+          "cart_share": 100.0,
+          "purchase_share": null
+        }
+      ]
+    },
+    {
+      "keyword": "fuse bead starter kit",
+      "total_impressions": 183,
+      "total_clicks": 3,
+      "total_purchases": 0,
+      "our_clicks": 2,
+      "our_click_share": 66.67,
+      "our_cart_adds": 1,
+      "our_cart_share": 50.0,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 6.01,
+          "click_share": 66.67,
+          "cart_share": 50.0,
+          "purchase_share": null
+        }
+      ]
+    },
+    {
+      "keyword": "perler bead making kit",
+      "total_impressions": 176,
+      "total_clicks": 7,
+      "total_purchases": 0,
+      "our_clicks": 2,
+      "our_click_share": 28.57,
+      "our_cart_adds": 1,
+      "our_cart_share": 100.0,
+      "our_purchases": 0,
+      "our_purchase_share": 0.0,
+      "asins": [
+        {
+          "asin": "B09THLVFZK",
+          "name": "Fuse Beads 24000",
+          "impression_share": 9.09,
+          "click_share": 28.57,
+          "cart_share": 100.0,
+          "purchase_share": null
+        }
+      ]
+    }
+  ],
+  "ppc_efficiency": [],
+  "summary": {
+    "total_impressions": 278999,
+    "total_clicks": 4541,
+    "total_cart_adds": 1153,
+    "total_purchases": 277,
+    "total_search_traffic_sales": 6301.32,
+    "avg_ctr_pct": 1.63,
+    "avg_conv_rate_pct": 6.1,
+    "impressions_wow_pct": null,
+    "clicks_wow_pct": null,
+    "purchases_wow_pct": null,
+    "keywords_gaining_share": 0,
+    "keywords_losing_share": 0,
+    "funnel_alerts_count": 0,
+    "new_keywords_count": 27,
+    "competitor_alerts_count": 0,
+    "reports_succeeded": 4,
+    "reports_failed": 1,
+    "unique_sqp_keywords": 27,
+    "scp_asin_count": 37
+  }
+}

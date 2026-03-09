@@ -1251,6 +1251,14 @@ For P3 items, a shorter format is acceptable but still include the "why":
 
 ---
 
+## Step 9: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: ppc-portfolio-action-plan".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
+
+---
+
 ## AFTER EVERY RUN -- Update Lessons (MANDATORY)
 
 **Before presenting final results, update `.claude/skills/ppc-portfolio-action-plan/LESSONS.md`.**

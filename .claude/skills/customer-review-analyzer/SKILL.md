@@ -910,6 +910,14 @@ Before delivering the report, verify:
 
 ---
 
+### Step 12: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: customer-review-analyzer".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
+
+---
+
 ## ⚠️ AFTER EVERY RUN — Update Lessons (MANDATORY)
 
 **Before presenting final results, update `.claude/skills/customer-review-analyzer/LESSONS.md`.**

@@ -44,11 +44,12 @@ Cross-references **PPC spend per keyword** with **organic rank movement** to ans
 
 ## Efficiency Standards
 
-- **<60K tokens** per run
+- **<65K tokens** per run
 - **<6 minutes** execution time
 - **Read existing weekly snapshots first** — only pull fresh PPC data if >7 days old
 - **Always fetch fresh rank data** (rank is the core purpose of this skill)
 - **No Apify calls** — DataDive + Ads API + context files only
+- **Brand Analytics (SQP/SCP) optional** — ~5K tokens, adds conversion funnel context to classifications
 
 ---
 
@@ -88,6 +89,7 @@ Read in parallel:
 | Most recent `outputs/research/ppc-agent/rank-optimizer/snapshots/*/rank-radar-snapshot.json` | Previous rank data for cross-week trending | If exists |
 | `outputs/research/ppc-agent/state/agent-state.json` | Last run dates | Always |
 | `outputs/research/ppc-agent/bids/*-bid-changes-applied.json` | Recent bid changes (correlation: did changes move rank?) | Last 30 days |
+| `context/sku-asin-mapping.json` | ASIN list for Brand Analytics SQP queries | Always |
 
 **If targeting report is >7 days old or missing:** Pull a fresh keyword report:
 ```
@@ -126,6 +128,44 @@ Rank data MUST be fresh — this is the core purpose of the skill.
    | `rank_stability` | Standard deviation of daily organicRank (lower = more stable) |
    | `impression_rank_current` | `ranks[-1].impressionRank` |
    | `rank_trend` | IMPROVING (change ≥+3), STABLE (-2 to +2), DECLINING (change ≤-3) |
+
+### Step 4b: Fetch Brand Analytics Funnel Data (Optional)
+
+**Purpose:** Adds "why" context to rank-spend classifications. Rank + spend tells you IF there's a problem; SQP/SCP tells you WHERE in the funnel the problem is.
+
+**Skip this step if:**
+- No ASINs exist in `context/sku-asin-mapping.json` for the portfolio(s) in scope
+- User explicitly asks for a fast/minimal run
+
+**Fetch in parallel:**
+
+1. **SCP Report** (per-ASIN funnel, no asins param needed):
+   ```
+   create_brand_analytics_report(report_name="scp", period="WEEK", periods_back=2)
+   ```
+   Poll → download. Extract per ASIN: `impressions`, `clicks`, `cartAdds`, `purchases`, `clickShare`, `conversionShare`.
+
+2. **SQP Report** (per-keyword funnel, requires asins param):
+   - Get hero ASINs for the portfolio(s) in scope from `context/sku-asin-mapping.json`
+   - Group into batches of max 200 chars (space-separated)
+   ```
+   create_brand_analytics_report(report_name="sqp", period="WEEK", periods_back=2, asins="{space-separated ASINs}")
+   ```
+   Poll → download. Extract per keyword: `searchQuery`, `impressions`, `clicks`, `cartAdds`, `purchases`, `clickShare`, `conversionShare`.
+
+3. **Compute derived metrics per keyword from SQP:**
+
+   | Metric | Calculation | Meaning |
+   |--------|-------------|---------|
+   | `sqp_ctr` | clicks / impressions × 100 | Organic click-through rate |
+   | `sqp_cart_rate` | cartAdds / clicks × 100 | Cart add rate after clicking |
+   | `sqp_purchase_rate` | purchases / cartAdds × 100 | Purchase rate after cart add |
+   | `sqp_conv_click_ratio` | conversionShare / clickShare | >1.0 = converts above avg, <1.0 = attracts but doesn't convert |
+   | `sqp_funnel_bottleneck` | Lowest stage in the funnel | Where the listing loses customers for this keyword |
+
+4. **Match SQP keywords to PPC keywords** (case-insensitive, trimmed). SQP data enriches the rank-spend matrix with actual conversion funnel context.
+
+**If BA reports fail:** Continue without them. Add note: "Brand Analytics data unavailable — classifications based on PPC + rank data only."
 
 ### Step 5: Fetch Keyword Universe (Conditional)
 
@@ -230,7 +270,14 @@ All conditions must be true:
 
 **TOS context:** If `tos_impression_share` is very low on a WASTING keyword, the campaign may not be reaching TOS at all. Sub-flag: "Low TOS IS — check if TOS modifier is set on this campaign. The spend may be going to low-converting ROS/PP placements."
 
-**Action:** Decrease bids -22-31%, or redirect budget to higher-priority keywords. If low TOS IS is the issue, the problem may be a missing/low TOS modifier rather than the bid itself — recommend checking placement health.
+**SQP context (if available):** Add funnel diagnosis to WASTING keywords:
+- `sqp_conv_click_ratio` < 0.5 → "Listing fails to convert for this keyword — possible relevance mismatch or listing issue"
+- `sqp_ctr` < 2% but impressions high → "Getting impressions but no clicks — title/image not compelling for this search"
+- `sqp_cart_rate` < 15% → "Clicks happen but no cart adds — bullet points/price may be the issue"
+- `sqp_purchase_rate` < 30% → "Cart adds but no purchases — checkout friction or competitor undercut"
+This helps distinguish between **targeting waste** (wrong keyword) and **conversion waste** (right keyword, bad listing) — the fix is very different.
+
+**Action:** Decrease bids -22-31%, or redirect budget to higher-priority keywords. If low TOS IS is the issue, the problem may be a missing/low TOS modifier rather than the bid itself — recommend checking placement health. **If SQP shows conversion waste** (conv_click_ratio <0.5), flag for listing optimization rather than just bid reduction — reducing bids won't fix a listing problem.
 
 #### Category 2: REDUCE SPEND
 
@@ -250,6 +297,11 @@ Conditions:
 | 1-5 | Declining | DON'T REDUCE — investigate why rank is slipping despite top position |
 
 **TOS context:** If `tos_impression_share` is very high AND organic rank is strong (1-5), the keyword is dominating both organic and paid TOS. This is a stronger signal for reduction — we're paying for visibility we already have organically.
+
+**SQP context (if available):** Validate the REDUCE recommendation:
+- `sqp_conv_click_ratio` > 1.2 → **Strong REDUCE** — we convert above average organically, PPC adds little value
+- `sqp_conv_click_ratio` 0.8-1.2 → **Normal REDUCE** — standard recommendation applies
+- `sqp_conv_click_ratio` < 0.8 → **Caution** — despite ranking well, we convert below average. Reducing PPC may expose a conversion weakness. Flag: "High rank but below-average conversion — investigate listing quality before reducing PPC"
 
 **Action:** Lower TOS modifier per SOP. Redirect savings to PROTECT/REDIRECT keywords.
 
@@ -366,12 +418,19 @@ If a previous `rank-spend-matrix.json` exists:
 
 Keywords with high spend but stagnant or declining rank. Redirect this budget.
 
-| # | Keyword | Portfolio | Stage | SV | Spend/wk | ACoS | Rank Now | Rank 28d Ago | 28d Change | Campaign | Action |
-|---|---------|-----------|-------|-----|----------|------|----------|-------------|-----------|----------|--------|
-| 1 | {kw} | {port} | Scaling | {vol} | ${X} | X% | #{N} | #{N} | 0 | SK exact | Decrease -27% |
+| # | Keyword | Portfolio | Stage | SV | Spend/wk | ACoS | Rank Now | Rank 28d Ago | 28d Change | SQP Funnel | Campaign | Action |
+|---|---------|-----------|-------|-----|----------|------|----------|-------------|-----------|------------|----------|--------|
+| 1 | {kw} | {port} | Scaling | {vol} | ${X} | X% | #{N} | #{N} | 0 | Conv waste (0.3x) | SK exact | Decrease -27% |
+
+**SQP Funnel column:** Shows `sqp_conv_click_ratio` if BA data available. Values <0.8 = "Conv waste ({X}x)", >1.2 = "Converts well ({X}x)", or "N/A" if no BA data.
 
 **Total wasted:** ${X}/week
 **Root cause patterns:** {e.g., "3 of 5 are in the same portfolio — possible listing issue" or "All are high-competition >50K SV keywords — consider refocusing on medium-volume alternatives"}
+
+**SQP diagnostic (if available):** Classify WASTING keywords by funnel bottleneck:
+- **Targeting waste** ({N} keywords): conv_click_ratio < 0.5 → wrong keyword, reduce/negate
+- **Conversion waste** ({N} keywords): conv_click_ratio 0.5-0.8 → right keyword, listing needs work → flag for Listing Optimizer
+- **No BA data** ({N} keywords): classification based on PPC + rank only
 
 ---
 
@@ -379,9 +438,11 @@ Keywords with high spend but stagnant or declining rank. Redirect this budget.
 
 Already ranking top 10 organically — PPC spend is largely redundant.
 
-| # | Keyword | Portfolio | SV | Organic Rank | Rank Trend | Spend/wk | ACoS | TOS IS | Action |
-|---|---------|-----------|-----|-------------|------------|----------|------|--------|--------|
-| 1 | {kw} | {port} | {vol} | #{N} | Stable | ${X} | X% | X% | Lower TOS -17% |
+| # | Keyword | Portfolio | SV | Organic Rank | Rank Trend | Spend/wk | ACoS | TOS IS | SQP Conv Ratio | Action |
+|---|---------|-----------|-----|-------------|------------|----------|------|--------|----------------|--------|
+| 1 | {kw} | {port} | {vol} | #{N} | Stable | ${X} | X% | X% | 1.3x (strong) | Lower TOS -17% |
+
+**SQP Conv Ratio column:** `sqp_conv_click_ratio`. >1.0 = converts above average (safe to reduce), <0.8 = caution (may need listing fix first).
 
 **Rationale:** Strong organic positions mean most clicks come free. Reduce PPC to a maintenance level.
 
@@ -533,6 +594,11 @@ Present findings and ask:
       "acos": 72.3,
       "cvr": 5.6,
       "tos_impression_share": 12.3,
+      "sqp_ctr": 3.2,
+      "sqp_cart_rate": 18.5,
+      "sqp_purchase_rate": 42.0,
+      "sqp_conv_click_ratio": 0.31,
+      "sqp_funnel_bottleneck": "clicks",
       "organic_rank_current": 28,
       "organic_rank_7d_ago": 22,
       "organic_rank_28d_ago": 18,
@@ -608,7 +674,13 @@ Update `outputs/research/ppc-agent/state/agent-state.json` with:
 "last_rank_optimizer": "YYYY-MM-DD"
 ```
 
-### Step 14: Update Lessons (Mandatory)
+### Step 14: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: keyword-rank-optimizer".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
+
+### Step 15: Update Lessons (Mandatory)
 
 **Before presenting final results, update `.claude/skills/keyword-rank-optimizer/LESSONS.md`.**
 
@@ -665,3 +737,6 @@ Add a new entry at the **TOP** of the Run Log section:
 | `context/search-terms.md` missing | Skip relevance enrichment, note: "Keyword relevance scores unavailable" |
 | Niche keywords API fails | Skip REDIRECT analysis, note: "Could not fetch full keyword universe" |
 | `list_portfolios` truncated at 50 | Known issue — note some campaigns may be unmapped to portfolios |
+| BA SQP/SCP report fails | Continue without BA data. Note: "Brand Analytics unavailable — classifications based on PPC + rank data only" |
+| No ASINs in sku-asin-mapping for portfolio | Skip SQP (requires asins param). SCP still works without it |
+| SQP returns 0 keywords matching PPC keywords | Note: "SQP data available but no keyword matches found — search terms may differ from PPC targeting" |

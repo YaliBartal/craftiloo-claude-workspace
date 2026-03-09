@@ -1,7 +1,6 @@
 {
   "$schema_version": "1.0",
   "last_updated": "2026-03-05",
-
   "portfolio": {
     "name": "Dessert Family",
     "id": "254077831589383",
@@ -15,7 +14,6 @@
     "campaigns_enabled": 0,
     "campaigns_paused": 4
   },
-
   "goals": {
     "acos_target": 30,
     "acos_red_flag": 50,
@@ -31,13 +29,82 @@
     ],
     "updated": "2026-03-02"
   },
-
   "baseline": null,
-
   "latest_metrics": null,
-
-  "metric_history": [],
-
+  "metric_history": [
+    {
+      "date": "2026-02-20",
+      "source": "timeseries-backfill",
+      "acos": 64.38,
+      "spend_7d": 102.91,
+      "sales_7d": 159.86,
+      "orders_7d": 7,
+      "cvr": 7.07,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-01",
+      "source": "timeseries-backfill",
+      "acos": 72.3,
+      "spend_7d": 96.35,
+      "sales_7d": 133.28,
+      "orders_7d": 6,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-02",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 0,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-03",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 1,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-05",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 0,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-08",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 0,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    }
+  ],
   "change_log": [
     {
       "date": "2026-03-02",
@@ -48,32 +115,48 @@
           "category": "CAMPAIGN_PAUSE",
           "description": "PAUSED SK ages 8-12 (561798860977632)",
           "campaign_id": "561798860977632",
-          "old_value": {"state": "ENABLED"},
-          "new_value": {"state": "PAUSED"},
+          "old_value": {
+            "state": "ENABLED"
+          },
+          "new_value": {
+            "state": "PAUSED"
+          },
           "status": "success"
         },
         {
           "category": "CAMPAIGN_PAUSE",
           "description": "PAUSED SK beginner (538519825019289)",
           "campaign_id": "538519825019289",
-          "old_value": {"state": "ENABLED"},
-          "new_value": {"state": "PAUSED"},
+          "old_value": {
+            "state": "ENABLED"
+          },
+          "new_value": {
+            "state": "PAUSED"
+          },
           "status": "success"
         },
         {
           "category": "CAMPAIGN_PAUSE",
           "description": "PAUSED SK sewing for kids (429281836821251)",
           "campaign_id": "429281836821251",
-          "old_value": {"state": "ENABLED"},
-          "new_value": {"state": "PAUSED"},
+          "old_value": {
+            "state": "ENABLED"
+          },
+          "new_value": {
+            "state": "PAUSED"
+          },
           "status": "success"
         },
         {
           "category": "CAMPAIGN_PAUSE",
           "description": "PAUSED MK broad (352020912218313)",
           "campaign_id": "352020912218313",
-          "old_value": {"state": "ENABLED"},
-          "new_value": {"state": "PAUSED"},
+          "old_value": {
+            "state": "ENABLED"
+          },
+          "new_value": {
+            "state": "PAUSED"
+          },
           "status": "success"
         }
       ],
@@ -94,7 +177,10 @@
           "description": "NEGATED 'no sew kits for kids' in MK broad",
           "campaign_id": "352020912218313",
           "old_value": null,
-          "new_value": {"negative": "no sew kits for kids", "match_type": "NEGATIVE_EXACT"},
+          "new_value": {
+            "negative": "no sew kits for kids",
+            "match_type": "NEGATIVE_EXACT"
+          },
           "status": "success"
         },
         {
@@ -102,7 +188,10 @@
           "description": "NEGATED 'sewing kit for kids sewing machine' in MK broad",
           "campaign_id": "352020912218313",
           "old_value": null,
-          "new_value": {"negative": "sewing kit for kids sewing machine", "match_type": "NEGATIVE_EXACT"},
+          "new_value": {
+            "negative": "sewing kit for kids sewing machine",
+            "match_type": "NEGATIVE_EXACT"
+          },
           "status": "success"
         },
         {
@@ -110,7 +199,10 @@
           "description": "NEGATED 'wuyosin sewing kits for kids' in MK broad",
           "campaign_id": "352020912218313",
           "old_value": null,
-          "new_value": {"negative": "wuyosin sewing kits for kids", "match_type": "NEGATIVE_EXACT"},
+          "new_value": {
+            "negative": "wuyosin sewing kits for kids",
+            "match_type": "NEGATIVE_EXACT"
+          },
           "status": "success"
         },
         {
@@ -118,23 +210,34 @@
           "description": "NEGATED 'felt crafts' in MK broad",
           "campaign_id": "352020912218313",
           "old_value": null,
-          "new_value": {"negative": "felt crafts", "match_type": "NEGATIVE_EXACT"},
+          "new_value": {
+            "negative": "felt crafts",
+            "match_type": "NEGATIVE_EXACT"
+          },
           "status": "success"
         },
         {
           "category": "BID_DECREASE",
           "description": "BID DOWN 'sewing kit for kids ages 8-12': $0.74->$0.61 (-17.6%)",
           "campaign_id": "561798860977632",
-          "old_value": {"bid": 0.74},
-          "new_value": {"bid": 0.61},
+          "old_value": {
+            "bid": 0.74
+          },
+          "new_value": {
+            "bid": 0.61
+          },
           "status": "success"
         },
         {
           "category": "BID_DECREASE",
           "description": "BID DOWN 'beginner sewing kit for kids': $0.92->$0.73 (-20.7%)",
           "campaign_id": "538519825019289",
-          "old_value": {"bid": 0.92},
-          "new_value": {"bid": 0.73},
+          "old_value": {
+            "bid": 0.92
+          },
+          "new_value": {
+            "bid": 0.73
+          },
           "status": "success"
         }
       ],
@@ -144,19 +247,20 @@
       ]
     }
   ],
-
   "pending_actions": [],
-
   "scheduled_reviews": [
     {
       "date": "2026-03-16",
       "type": "Restock check",
-      "verify": ["Is restock received?", "Re-enable SK ages 8-12 + SK beginner with lower bids", "Keep MK broad paused until negatives applied"],
+      "verify": [
+        "Is restock received?",
+        "Re-enable SK ages 8-12 + SK beginner with lower bids",
+        "Keep MK broad paused until negatives applied"
+      ],
       "source": "dessert-family-pause-2026-03-02",
       "status": "pending"
     }
   ],
-
   "skills_run": [
     {
       "date": "2026-03-02",
@@ -171,9 +275,18 @@
       "result": "success",
       "key_output": "4 negatives applied, 2 bids lowered. Stock problem, not keyword problem.",
       "output_ref": null
+    },
+    {
+      "skill": "ppc-timeseries-dashboard",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "data_points": 6,
+        "inflections_detected": 0,
+        "trajectory_30d_acos": "declining"
+      }
     }
   ],
-
   "improvement_assessment": {
     "last_assessed": "2026-03-05",
     "overall_trend": "paused",

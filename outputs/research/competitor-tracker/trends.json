@@ -1,0 +1,832 @@
+{
+  "last_updated": "2026-03-08",
+  "weeks_tracked": 1,
+  "category_summaries": {
+    "2026-03-08": {
+      "cross-stitch-kids": {
+        "display_name": "Cross Stitch Kids",
+        "week": "2026-03-08",
+        "competitor_count": 4,
+        "our_asin_count": 7,
+        "price": {
+          "our_avg": null,
+          "our_min": null,
+          "our_max": null,
+          "comp_avg": 14.63,
+          "comp_min": 10.3231502,
+          "comp_max": 19.7939302
+        },
+        "bsr": {
+          "our_avg": null,
+          "comp_avg": 36174
+        },
+        "serp": {
+          "our_avg_position": 10.2,
+          "comp_avg_position": 19.1,
+          "keywords_tracked": 10,
+          "keywords_with_our_presence": 10
+        }
+      },
+      "embroidery-kids": {
+        "display_name": "Embroidery Kids",
+        "week": "2026-03-08",
+        "competitor_count": 4,
+        "our_asin_count": 4,
+        "price": {
+          "our_avg": null,
+          "our_min": null,
+          "our_max": null,
+          "comp_avg": 21.08,
+          "comp_min": 18.0719702,
+          "comp_max": 25.8035706
+        },
+        "bsr": {
+          "our_avg": null,
+          "comp_avg": 39264
+        },
+        "serp": {
+          "our_avg_position": 9.2,
+          "comp_avg_position": 16.4,
+          "keywords_tracked": 10,
+          "keywords_with_our_presence": 10
+        }
+      },
+      "embroidery-adults": {
+        "display_name": "Embroidery Adults/Beginners",
+        "week": "2026-03-08",
+        "competitor_count": 5,
+        "our_asin_count": 2,
+        "price": {
+          "our_avg": null,
+          "our_min": null,
+          "our_max": null,
+          "comp_avg": 17.21,
+          "comp_min": 12.9060902,
+          "comp_max": 21.5072804
+        },
+        "bsr": {
+          "our_avg": null,
+          "comp_avg": 1631
+        },
+        "serp": {
+          "our_avg_position": 34.8,
+          "comp_avg_position": 6.1,
+          "keywords_tracked": 10,
+          "keywords_with_our_presence": 8
+        }
+      },
+      "sewing-kids": {
+        "display_name": "Sewing Kids",
+        "week": "2026-03-08",
+        "competitor_count": 6,
+        "our_asin_count": 4,
+        "price": {
+          "our_avg": null,
+          "our_min": null,
+          "our_max": null,
+          "comp_avg": 17.35,
+          "comp_min": 14.6280502,
+          "comp_max": 18.9329502
+        },
+        "bsr": {
+          "our_avg": null,
+          "comp_avg": 5821
+        },
+        "serp": {
+          "our_avg_position": 10.5,
+          "comp_avg_position": 11.8,
+          "keywords_tracked": 10,
+          "keywords_with_our_presence": 10
+        }
+      },
+      "latch-hook": {
+        "display_name": "Latch Hook Kits",
+        "week": "2026-03-08",
+        "competitor_count": 2,
+        "our_asin_count": 7,
+        "price": {
+          "our_avg": null,
+          "our_min": null,
+          "our_max": null,
+          "comp_avg": 18.07,
+          "comp_min": 14.6280502,
+          "comp_max": 21.5158902
+        },
+        "bsr": {
+          "our_avg": null,
+          "comp_avg": 10500
+        },
+        "serp": {
+          "our_avg_position": 8.6,
+          "comp_avg_position": 5.1,
+          "keywords_tracked": 10,
+          "keywords_with_our_presence": 8
+        }
+      },
+      "loom-knitting": {
+        "display_name": "Loom Knitting",
+        "week": "2026-03-08",
+        "competitor_count": 2,
+        "our_asin_count": 2,
+        "price": {
+          "our_avg": null,
+          "our_min": null,
+          "our_max": null,
+          "comp_avg": 17.21,
+          "comp_min": 17.2109902,
+          "comp_max": 17.2109902
+        },
+        "bsr": {
+          "our_avg": null,
+          "comp_avg": 21013
+        },
+        "serp": {
+          "our_avg_position": 18.0,
+          "comp_avg_position": 13.3,
+          "keywords_tracked": 10,
+          "keywords_with_our_presence": 7
+        }
+      },
+      "mini-fuse-beads": {
+        "display_name": "Mini Fuse Beads (2.6mm)",
+        "week": "2026-03-08",
+        "competitor_count": 4,
+        "our_asin_count": 2,
+        "price": {
+          "our_avg": null,
+          "our_min": null,
+          "our_max": null,
+          "comp_avg": 22.37,
+          "comp_min": 17.2109902,
+          "comp_max": 25.8207902
+        },
+        "bsr": {
+          "our_avg": null,
+          "comp_avg": 31401
+        },
+        "serp": {
+          "our_avg_position": 10.1,
+          "comp_avg_position": 15.9,
+          "keywords_tracked": 10,
+          "keywords_with_our_presence": 10
+        }
+      },
+      "biggie-fuse-beads": {
+        "display_name": "Biggie Fuse Beads (10mm)",
+        "week": "2026-03-08",
+        "competitor_count": 0,
+        "our_asin_count": 2,
+        "price": {
+          "our_avg": null,
+          "our_min": null,
+          "our_max": null,
+          "comp_avg": null,
+          "comp_min": null,
+          "comp_max": null
+        },
+        "bsr": {
+          "our_avg": null,
+          "comp_avg": null
+        },
+        "serp": {
+          "our_avg_position": 22.1,
+          "comp_avg_position": 26.1,
+          "keywords_tracked": 10,
+          "keywords_with_our_presence": 10
+        }
+      },
+      "lacing-cards": {
+        "display_name": "Lacing Cards",
+        "week": "2026-03-08",
+        "competitor_count": 3,
+        "our_asin_count": 3,
+        "price": {
+          "our_avg": null,
+          "our_min": null,
+          "our_max": null,
+          "comp_avg": 17.35,
+          "comp_min": 12.9060902,
+          "comp_max": 21.9463802
+        },
+        "bsr": {
+          "our_avg": null,
+          "comp_avg": 59783
+        },
+        "serp": {
+          "our_avg_position": 15.0,
+          "comp_avg_position": 14.1,
+          "keywords_tracked": 10,
+          "keywords_with_our_presence": 10
+        }
+      },
+      "needlepoint-kids": {
+        "display_name": "Needlepoint Kids",
+        "week": "2026-03-08",
+        "competitor_count": 0,
+        "our_asin_count": 3,
+        "price": {
+          "our_avg": null,
+          "our_min": null,
+          "our_max": null,
+          "comp_avg": null,
+          "comp_min": null,
+          "comp_max": null
+        },
+        "bsr": {
+          "our_avg": null,
+          "comp_avg": null
+        },
+        "serp": {
+          "our_avg_position": 14.9,
+          "comp_avg_position": 23.2,
+          "keywords_tracked": 10,
+          "keywords_with_our_presence": 10
+        }
+      },
+      "gem-art": {
+        "display_name": "Gem Art Kids",
+        "week": "2026-03-08",
+        "competitor_count": 1,
+        "our_asin_count": 0,
+        "price": {
+          "our_avg": null,
+          "our_min": null,
+          "our_max": null,
+          "comp_avg": 12.91,
+          "comp_min": 12.9060902,
+          "comp_max": 12.9060902
+        },
+        "bsr": {
+          "our_avg": null,
+          "comp_avg": 2537
+        },
+        "serp": {
+          "our_avg_position": null,
+          "comp_avg_position": 14.5,
+          "keywords_tracked": 10,
+          "keywords_with_our_presence": 0
+        }
+      }
+    }
+  },
+  "asin_timeseries": {
+    "B087DYHMZ2": {
+      "brand": "CraftLab",
+      "categories": [
+        "embroidery-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 25.8035706,
+          "bsr_main": 40194,
+          "reviews": 619,
+          "rating": 4.5,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0CZHKSSL4": {
+      "brand": "CYANFOUR",
+      "categories": [
+        "embroidery-adults"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 12.9060902,
+          "bsr_main": 346,
+          "reviews": 1326,
+          "rating": 4.4,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0D8171TF1": {
+      "brand": "KRAFUN",
+      "categories": [
+        "embroidery-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 18.9329502,
+          "bsr_main": 23409,
+          "reviews": 171,
+          "rating": 4.5,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0B7JHN4F1": {
+      "brand": "KRAFUN",
+      "categories": [
+        "cross-stitch-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 12.9060902,
+          "bsr_main": 20122,
+          "reviews": 294,
+          "rating": 4.6,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0C2XYP6L3": {
+      "brand": "KRAFUN",
+      "categories": [
+        "sewing-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 15.4890302,
+          "bsr_main": 2486,
+          "reviews": 1937,
+          "rating": 4.6,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0DP654CSV": {
+      "brand": "Louise Maelys",
+      "categories": [
+        "embroidery-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 18.0719702,
+          "bsr_main": 14083,
+          "reviews": 46,
+          "rating": 4.5,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0DMHY2HF3": {
+      "brand": "CYANFOUR",
+      "categories": [
+        "embroidery-adults"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 14.6280502,
+          "bsr_main": 1416,
+          "reviews": 323,
+          "rating": 4.4,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B091GXM2Y6": {
+      "brand": "KRAFUN",
+      "categories": [
+        "sewing-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 18.9329502,
+          "bsr_main": 525,
+          "reviews": 3653,
+          "rating": 4.7,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0CM9JKNCC": {
+      "brand": "Caydo",
+      "categories": [
+        "cross-stitch-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 19.7939302,
+          "bsr_main": 80932,
+          "reviews": 55,
+          "rating": 3.9,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B08TC7423N": {
+      "brand": "Pllieay",
+      "categories": [
+        "embroidery-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 21.5158902,
+          "bsr_main": 79371,
+          "reviews": 443,
+          "rating": 4.5,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0B762JW55": {
+      "brand": "Bradove",
+      "categories": [
+        "embroidery-adults"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 21.5072804,
+          "bsr_main": 2291,
+          "reviews": 1986,
+          "rating": 4.6,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0BB9N74SG": {
+      "brand": "Santune",
+      "categories": [
+        "embroidery-adults"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 20.6549102,
+          "bsr_main": 3191,
+          "reviews": 2850,
+          "rating": 4.6,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B08T5QC9FS": {
+      "brand": "Pllieay",
+      "categories": [
+        "cross-stitch-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 10.3231502,
+          "bsr_main": 30766,
+          "reviews": 1355,
+          "rating": 4.2,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0DFHN42QB": {
+      "brand": "EZCRA",
+      "categories": [
+        "cross-stitch-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 15.4890302,
+          "bsr_main": 12875,
+          "reviews": 188,
+          "rating": 4.6,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0C3ZVKB46": {
+      "brand": "ETSPIL",
+      "categories": [
+        "embroidery-adults"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 16.3414004,
+          "bsr_main": 912,
+          "reviews": 2057,
+          "rating": 4.4,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0FN4CT867": {
+      "brand": "ARTKAL",
+      "categories": [
+        "mini-fuse-beads"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 23.2378502,
+          "bsr_main": 81474,
+          "reviews": 11,
+          "rating": 4.6,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B08QV9CMFQ": {
+      "brand": "LIHAO",
+      "categories": [
+        "mini-fuse-beads"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 17.2109902,
+          "bsr_main": 10510,
+          "reviews": 1083,
+          "rating": 4.3,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0CYNNT2ZT": {
+      "brand": "EZCRA",
+      "categories": [
+        "sewing-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 14.6280502,
+          "bsr_main": 4243,
+          "reviews": 423,
+          "rating": 4.8,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0CXY8JMTK": {
+      "brand": "EZCRA",
+      "categories": [
+        "sewing-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 18.9329502,
+          "bsr_main": 4916,
+          "reviews": 272,
+          "rating": 4.7,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0D5LF666P": {
+      "brand": "FUNZBO",
+      "categories": [
+        "mini-fuse-beads"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 23.2292404,
+          "bsr_main": 22438,
+          "reviews": 172,
+          "rating": 4.6,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0CX9H8YGR": {
+      "brand": "LatchKits (PlayMonster)",
+      "categories": [
+        "latch-hook"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 21.5158902,
+          "bsr_main": 10207,
+          "reviews": 1114,
+          "rating": 4.4,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0B8W4FK4Q": {
+      "brand": "Hapinest",
+      "categories": [
+        "loom-knitting"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 17.2109902,
+          "bsr_main": 21013,
+          "reviews": 431,
+          "rating": 4.5,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B004JIFCXO": {
+      "brand": "Creativity for Kids",
+      "categories": [
+        "loom-knitting"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 17.2109902,
+          "bsr_main": null,
+          "reviews": 3349,
+          "rating": 4.5,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0BRYRD91V": {
+      "brand": "KRAFUN",
+      "categories": [
+        "lacing-cards"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 17.2109902,
+          "bsr_main": 3461,
+          "reviews": 971,
+          "rating": 4.7,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0C5WQD914": {
+      "brand": "INSCRAFT",
+      "categories": [
+        "mini-fuse-beads"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 25.8207902,
+          "bsr_main": 11182,
+          "reviews": 392,
+          "rating": 4.5,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0D178S25M": {
+      "brand": "Serabeena",
+      "categories": [
+        "lacing-cards"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 12.9060902,
+          "bsr_main": 157358,
+          "reviews": 23,
+          "rating": 4.7,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B06XRRN4VL": {
+      "brand": "LatchKits (PlayMonster)",
+      "categories": [
+        "latch-hook"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 14.6280502,
+          "bsr_main": 10793,
+          "reviews": 7198,
+          "rating": 4.6,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B00JM5G05I": {
+      "brand": "Melissa and Doug",
+      "categories": [
+        "lacing-cards"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 21.9463802,
+          "bsr_main": 18529,
+          "reviews": 1042,
+          "rating": 4.8,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0CTTMWXYP": {
+      "brand": "Klever Kits",
+      "categories": [
+        "sewing-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 17.2109902,
+          "bsr_main": 12853,
+          "reviews": 774,
+          "rating": 4.5,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0CV1F5CFS": {
+      "brand": "KRAFUN",
+      "categories": [
+        "sewing-kids"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 18.9329502,
+          "bsr_main": 9904,
+          "reviews": 642,
+          "rating": 4.7,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    },
+    "B0CWLTTZ2G": {
+      "brand": "EZCRA",
+      "categories": [
+        "gem-art"
+      ],
+      "is_ours": false,
+      "weekly_data": [
+        {
+          "week": "2026-03-08",
+          "price": 12.9060902,
+          "bsr_main": 2537,
+          "reviews": 267,
+          "rating": 4.7,
+          "availability": true,
+          "deal_badge": false
+        }
+      ]
+    }
+  }
+}

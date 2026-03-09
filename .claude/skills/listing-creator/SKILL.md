@@ -195,6 +195,70 @@ These are NOT descriptive phrases. These ARE actual search queries with volume.
 5. **Brand/theme** (e.g., "Barbie")
 6. **Contents/benefit** (e.g., "8 Projects, Complete Set")
 
+### Phase 3b: Brand Analytics Keyword Validation (Optional)
+
+**PURPOSE:** Validate keyword choices with real Amazon conversion data before committing to the listing. Keywords that look good from competitor analysis may have terrible conversion rates — BA data catches this.
+
+**This step only works if we have existing ASINs in the same or adjacent category.** If this is an entirely new category with no existing Craftiloo products, skip this step.
+
+#### Check for Existing ASINs
+
+1. Read `context/sku-asin-mapping.json`
+2. Find Craftiloo ASINs in the same product category or adjacent niche
+3. If no existing ASINs in the category → skip this step, note: "No existing ASINs in this category — BA keyword validation skipped. Keyword prioritization based on competitor analysis only."
+4. If existing ASINs found → proceed with SQP + Search Terms pulls
+
+#### Pull SQP Report (Per-Keyword Conversion Data)
+
+**MCP Tool:** `create_brand_analytics_report(report_name="sqp", period="WEEK", periods_back=2, marketplace="US", asins="{space-separated ASINs from same category, max 200 chars}")`
+
+- Poll `get_report_status` every 30 seconds until DONE (~60s)
+- Download with `get_report_document`
+
+**SQP provides per-keyword:**
+- `searchQuery` — the exact search term
+- `searchQueryImpressions` — total search volume for this term
+- `brandImpressions` / `brandClicks` / `brandCartAdds` / `brandPurchases` — our performance
+- `brandClickShare` / `brandConversionShare` — our share vs competitors
+
+#### Pull Search Terms Report (Click Share Intelligence)
+
+**MCP Tool:** `create_brand_analytics_report(report_name="search_terms", period="WEEK", periods_back=2, marketplace="US")`
+
+- Poll and download same as SQP
+
+**Search Terms provides per-keyword:**
+- Top 3 most-clicked ASINs + their click share %
+- Conversion share per clicked ASIN
+- This shows who dominates each keyword and how hard it will be to compete
+
+#### Validate Keyword List
+
+Cross-reference the keyword list from Phase 3 against BA data:
+
+| Validation Signal | Action |
+|-------------------|--------|
+| Keyword has SQP purchases > 0 for our existing ASINs | **BA CONFIRMED** — highest priority, proven converter |
+| Keyword has high SQP impressions but 0 purchases | **BA CAUTION** — high search volume but doesn't convert for our products. Investigate why before prioritizing. |
+| Keyword has SQP conversion share > 5% | **BA STRONG** — upgrade to Primary keyword if not already |
+| Keyword has Search Terms data showing one competitor with >40% click share | **DOMINATED** — will be hard to compete. Consider as Secondary, not Primary. |
+| Keyword has Search Terms data showing fragmented click share (no one >25%) | **OPPORTUNITY** — no dominant player, easier to capture share |
+| Keyword from competitor analysis NOT found in BA data at all | **UNVALIDATED** — keep in list but note it's based on competitor analysis only |
+
+#### Update Keyword Priority Table
+
+Add a "BA Validation" column to the keyword list:
+
+| Keyword | Search Volume (est.) | BA Status | SQP Purchases | Click Share Leader | Priority Adjustment |
+|---------|---------------------|-----------|---------------|-------------------|---------------------|
+| {keyword} | {sv} | BA CONFIRMED | {X} | {brand} ({X%}) | Upgrade to Primary |
+| {keyword} | {sv} | BA CAUTION | 0 | {brand} ({X%}) | Downgrade to Secondary |
+| {keyword} | {sv} | UNVALIDATED | N/A | N/A | Keep as-is |
+
+**Key rule:** BA data SUPPLEMENTS competitor analysis — it doesn't replace it. Even if a keyword has 0 SQP purchases for our existing products, it might be highly relevant to the NEW product being listed (different product, different search intent). Use BA as a signal, not a veto.
+
+**Fallback if BA reports fail:** Note "Brand Analytics validation unavailable — keyword prioritization based on competitor analysis and search volume only." Continue with Phase 4.
+
 ### Phase 4: Competitor Q&A Scraping
 
 **CRITICAL: Scrape actual customer questions from competitor listings.**
@@ -328,6 +392,17 @@ Option 2: Dedicated Q&A scraper `epctex/amazon-questions-answers-scraper`
 - **Secondary:** {list}
 - **Long-tail:** {list}
 
+### Brand Analytics Validation (if available)
+
+| Keyword | BA Status | SQP Purchases | Conv Share | Click Share Leader | Notes |
+|---------|-----------|---------------|------------|-------------------|-------|
+| {keyword} | BA CONFIRMED | {X} | {X%} | {brand} ({X%}) | Proven converter — Primary |
+| {keyword} | BA CAUTION | 0 | 0% | {brand} ({X%}) | High SV but doesn't convert — investigate |
+| {keyword} | DOMINATED | N/A | N/A | {brand} (42%) | One competitor dominates — harder to crack |
+| {keyword} | UNVALIDATED | N/A | N/A | N/A | No BA data — competitor analysis only |
+
+> If BA data unavailable: "Brand Analytics validation not available (no existing ASINs in category or API unavailable). Keywords prioritized by competitor analysis and search volume."
+
 ### Customer Q&A Analysis (Scraped from Competitors)
 
 **Top Questions by Theme:**
@@ -411,6 +486,8 @@ Option 2: Dedicated Q&A scraper `epctex/amazon-questions-answers-scraper`
 | **Apify - Q&A Scraper** | Customer questions & answers from listings | `epctex/amazon-questions-answers-scraper` |
 | **Apify - Search Scraper** | Top competitors for keyword | `junglee/amazon-search-scraper` |
 | **Web Search** | Keyword trends, category patterns | WebSearch tool |
+| **Brand Analytics SQP** | Real conversion data per keyword — validates which keywords actually drive purchases (not just search volume) | `create_brand_analytics_report(report_name="sqp")` |
+| **Brand Analytics Search Terms** | Top 3 clicked ASINs per keyword + click share + conversion share — competitive intel | `create_brand_analytics_report(report_name="search_terms")` |
 
 ---
 
@@ -428,6 +505,13 @@ When user triggers this skill:
 - [ ] Scrape competitor titles, bullets, prices, rankings
 - [ ] **Scrape Q&A sections from top 3-5 competitors**
 - [ ] Analyze keyword patterns from competitor titles
+
+**Brand Analytics Validation (if existing ASINs in category):**
+- [ ] Check `context/sku-asin-mapping.json` for ASINs in same category
+- [ ] Pull SQP report for existing ASINs — or noted as skipped/failed
+- [ ] Pull Search Terms report — or noted as skipped/failed
+- [ ] Keywords validated: BA CONFIRMED / BA CAUTION / DOMINATED / UNVALIDATED
+- [ ] Keyword priority adjusted based on BA conversion data
 
 **Analysis:**
 - [ ] Categorize Q&A by theme (contents, age, safety, etc.)
@@ -502,6 +586,9 @@ When user triggers this skill:
 | **No Q&A found on listing** | Use generic category questions + review mining |
 | **Q&A scraper fails** | Fall back to web search for common questions |
 | Backend keywords > 249 bytes | Trim lowest-priority keywords |
+| No existing ASINs in category for BA validation | Skip Phase 3b. Note: "No existing Craftiloo ASINs in this category — BA keyword validation skipped." |
+| Brand Analytics SQP/Search Terms report fails | Note "BA validation unavailable." Continue with competitor-based keyword prioritization — BA is additive. |
+| BA shows 0 purchases for a keyword we want as Primary | Don't auto-demote — the new product may serve a different intent than our existing ASINs. Flag as "BA CAUTION" and note the discrepancy. |
 
 ---
 
@@ -632,6 +719,14 @@ This Notion structure is **compatible with the Product Listing Development skill
 - Database location (saved in `context/business.md`)
 
 If the parent skill runs, it handles Notion upload for both. If this skill runs standalone, it creates/updates the page with just the listing section.
+
+---
+
+### Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: listing-creator".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
 
 ---
 

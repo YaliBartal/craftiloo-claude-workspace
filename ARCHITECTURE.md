@@ -4,7 +4,7 @@
 > Every skill, every connection, every data flow - explained for someone seeing this
 > system for the first time.
 >
-> **Last updated:** 2026-03-06
+> **Last updated:** 2026-03-08
 
 ---
 
@@ -15,7 +15,7 @@
 3. [The Skill System](#3-the-skill-system)
 4. [MCP Servers - External Connections](#4-mcp-servers---external-connections)
 5. [Context Files - Living Memory](#5-context-files---living-memory)
-6. [The PPC Agent - The Core Engine](#6-the-ppc-agent---the-core-engine)
+6. [Business Operations Areas](#6-business-operations-areas)
 7. [State Management - How Decisions Persist](#7-state-management---how-decisions-persist)
 8. [Output Structure - Where Everything Goes](#8-output-structure---where-everything-goes)
 9. [Complete Skill Reference](#9-complete-skill-reference)
@@ -33,15 +33,35 @@ context files, and outputs that together form an **automated e-commerce operatio
 **Craftiloo**, a family-owned craft kit brand selling primarily on Amazon US.
 
 **Think of it as:** An AI-powered operations center where Claude acts as a virtual employee who can:
+- Monitor daily business health (sales, BSR, competitor moves, keyword ranks)
+- Create and optimize product listings (copy, images, backend keywords)
+- Analyze competitors, customer reviews, and new market niches
 - Manage PPC advertising campaigns (bids, keywords, negatives, new campaigns)
-- Create and optimize product listings
-- Analyze competitors and market niches
-- Track keyword rankings and organic growth
-- Monitor daily business health
-- Coordinate across Slack, Asana, Notion, and Amazon
+- Track keyword rankings and organic growth trends
+- Coordinate work across Slack, Asana, Notion, and Amazon
+
+**The workspace is designed to cover the entire business** - not just one department.
+PPC advertising happens to be the most developed area right now, but the architecture
+is the same for every business function: skills + APIs + context + state + outputs.
 
 **The key insight:** Claude does not remember between conversations. This workspace IS its memory.
 Every file here exists so Claude can pick up exactly where it left off.
+
+### System Layers
+
+The workspace is organized in 5 layers, from top (user-facing) to bottom (infrastructure):
+
+| Layer | What Lives Here | Purpose |
+|:---:|---|---|
+| **5. OUTPUTS** | outputs/research/*/ | Date-stamped deliverables the user reads |
+| **4. STATE** | outputs/research/*/state/ + snapshots/ | Persistent operational memory between sessions |
+| **3. SKILLS** | .claude/skills/*/SKILL.md + LESSONS.md | Reusable instruction sets + learning logs |
+| **2. CONTEXT** | context/*.md + context/*.json | Business facts, product data, portfolio maps |
+| **1. INFRA** | CLAUDE.md + .mcp.json + .env + mcp-servers/ | Master config, API connections, credentials |
+
+Data flows **upward**: Infrastructure enables Context, Context informs Skills, Skills produce State updates and Outputs.
+
+Instructions flow **downward**: CLAUDE.md loads first, tells Claude where to find Context, which triggers Skills, which read/write State and produce Outputs.
 
 ---
 
@@ -105,27 +125,105 @@ The user types a natural language phrase. Claude matches it against the routing 
 | "niche analysis" | Niche Category Analysis |
 | "full listing" | Product Listing Development (orchestrator) |
 
-### Skill Categories
+### Skill Categories by Business Function
 
-The 23 skills fall into four functional groups:
+The 23 skills cover 6 business areas:
 
-**ORCHESTRATORS** (Route to sub-skills, coordinate data sharing)
-- PPC Agent (routes to 10 PPC sub-skills)
-- Product Listing Development (routes to Listing Creator + Image Planner)
+**DAILY OPERATIONS** (Morning routine, task management)
+- Daily Prep - morning check-in: tasks, deadlines, business pulse
+- Daily Market Intel - BSR tracking, competitor monitoring, rank changes
 
-**PPC SUB-SKILLS** (Invoked through PPC Agent, not directly)
-- Daily Health Check, Bid Recommender, Search Term Harvester
-- Portfolio Summary, Portfolio Action Plan, Campaign Creator
-- Keyword Rank Optimizer, TACoS Optimizer, Monthly Review
-- Weekly Analysis (can also run standalone)
+**MARKET RESEARCH** (Competitor intelligence, new opportunities)
+- Customer Review Analyzer - review scraping + sentiment analysis
+- Niche Category Analysis - new market viability assessment
+- Competitor Price/SERP Tracker - weekly competitive intelligence
 
-**STANDALONE SKILLS** (Run independently)
-- Listing Creator, Listing Optimizer, Image Planner
-- Daily Market Intel, Customer Review Analyzer, Niche Category Analysis
-- Negative Keyword Generator, Daily Prep
+**PRODUCT LISTINGS** (Creation, optimization, image strategy)
+- Listing Creator - generate Amazon listings from scratch
+- Listing Optimizer - audit existing listings + rewrite recommendations
+- Image Planner - competitor image analysis + image strategy
+- Product Listing Development - orchestrator combining Listing + Image + Notion upload
 
-**UTILITY SKILLS** (Build/extend the workspace itself)
-- Skill Creator, MCP Builder
+**PPC ADVERTISING** (Campaign management via PPC Agent orchestrator)
+- PPC Agent orchestrates 10 sub-skills: Daily Health, Bid Recommender,
+  Search Term Harvester, Portfolio Summary, Portfolio Action Plan,
+  Campaign Creator, Keyword Rank Optimizer, TACoS Optimizer,
+  Monthly Review, Weekly Analysis
+- Negative Keyword Generator (standalone, proactive)
+- Weekly PPC Analysis (standalone, can run outside PPC Agent)
+
+**WORKSPACE MANAGEMENT** (Build and extend the system itself)
+- Skill Creator - create new skills
+- MCP Builder - connect new APIs
+
+**WORKFLOW DISCOVERY**
+- Automation Discovery Interview - map workflows, find automation opportunities
+
+### Skill Hierarchy Map
+
+```
+USER INPUT
+    |
+    v
++--CLAUDE.md ROUTING TABLE--+
+|                            |
+|   Direct Match?            |
+|   Yes --> Run Skill        |
+|   No  --> PPC Agent?       |
+|           Yes --> Route     |
+|           No  --> Ask user  |
++----------------------------+
+    |                   |
+    v                   v
+ORCHESTRATORS        STANDALONE SKILLS
+    |                   |
+    |                   +-- Daily Prep ............... Seller Board, Asana
+    |                   +-- Daily Market Intel ....... Seller Board, DataDive, Apify
+    |                   +-- Listing Creator .......... DataDive, Apify, Notion
+    |                   +-- Listing Optimizer ........ SP-API, DataDive
+    |                   +-- Image Planner ............ Apify, Notion
+    |                   +-- Customer Review Analyzer . Apify
+    |                   +-- Niche Category Analysis .. DataDive, Apify
+    |                   +-- Negative Keyword Gen ..... DataDive, Ads API
+    |                   +-- Weekly PPC Analysis ...... Ads API, DataDive
+    |
+    +-- PPC AGENT (orchestrator)
+    |       |
+    |       +-- Daily Health ............. Ads API (live), DataDive
+    |       +-- Bid Recommender .......... Ads API (reports + write), DataDive
+    |       +-- Search Term Harvester .... Ads API (reports + write)
+    |       +-- Portfolio Summary ........ Ads API (reports)
+    |       +-- Portfolio Action Plan .... Ads API (all), DataDive
+    |       +-- Campaign Creator ......... Ads API (create)
+    |       +-- Keyword Rank Optimizer ... DataDive, reads files
+    |       +-- TACoS Optimizer .......... Seller Board, DataDive
+    |       +-- Monthly Review ........... reads files only
+    |
+    +-- PRODUCT LISTING DEV (orchestrator)
+            |
+            +-- Listing Creator (shared research)
+            +-- Image Planner (shared research)
+            +-- Notion Upload (combined page)
+```
+
+### Read vs Write: What Each Skill Does
+
+| Skill | Reads from APIs | Writes to APIs | Analysis Only |
+|:---:|:---:|:---:|:---:|
+| Daily Health | YES | - | YES |
+| Bid Recommender | YES | YES (bids) | - |
+| Search Term Harvester | YES | YES (negatives, keywords) | - |
+| Portfolio Summary | YES | - | YES |
+| Portfolio Action Plan | YES | YES (bids, negatives, campaigns) | - |
+| Campaign Creator | YES | YES (campaigns, ad groups, keywords) | - |
+| Keyword Rank Optimizer | YES | - | YES |
+| TACoS Optimizer | YES | - | YES |
+| Weekly Analysis | YES | - | YES |
+| Monthly Review | - (reads files) | - | YES |
+| Listing Creator | YES | - | YES (generates copy) |
+| Listing Optimizer | YES | - | YES (generates rewrites) |
+
+**4 skills write to Amazon Ads API** (modify live campaigns). The rest are analysis-only.
 
 ---
 
@@ -198,6 +296,24 @@ All credentials in .env (git-ignored, never committed):
 | Slack | 1.0s | Slack Tier 2 |
 | Asana | 0.2s | Asana rate limit |
 
+### API Usage Intensity Map
+
+How heavily each MCP server is used across all skills:
+
+| MCP Server | Skills Using It | Heaviest User | Read/Write |
+|:---:|:---:|---|:---:|
+| **Amazon Ads API** | 11 skills | Portfolio Action Plan (5 report types + writes) | READ + WRITE |
+| **DataDive** | 9 skills | Listing Optimizer (4 tools + AI Copywriter) | READ only |
+| **Seller Board** | 5 skills | TACoS Optimizer (3 report types) | READ only |
+| **Apify** | 5 skills | Daily Market Intel (2 actor types) | READ only |
+| **Amazon SP-API** | 2 skills | Listing Optimizer (get_listing) | READ + WRITE |
+| **Notion** | 3 skills | Product Listing Dev (page creation) | WRITE only |
+| **Asana** | 1 skill | Daily Prep (task lists) | READ only |
+| **Slack** | 0 skills* | - | - |
+| **GitHub** | 0 skills* | - | - |
+
+*Slack and GitHub are available but not embedded in any skill workflow. Used ad-hoc by the user.
+
 ---
 
 ## 5. Context Files - Living Memory
@@ -237,12 +353,93 @@ Maps portfolio names to Amazon Ads portfolio IDs. Used by PPC skills.
 Maps SKUs to ASINs. Bridges Seller Board (SKUs) and Amazon Ads (ASINs).
 Used by TACoS Optimizer and Daily Market Intel.
 
+### Context File Dependency Map
+
+Which skills depend on which context files:
+
+```
+context/business.md  <---- EVERY PPC skill, Listing Creator, Listing Optimizer,
+  (MOST READ)              Niche Analysis, Neg Keyword Gen, Daily Prep, Market Intel
+       |
+       +-- Portfolio stages (Launch/Scaling/General)
+       +-- Competitor ASINs (72 tracked)
+       +-- Customer avatar (buyer vs user)
+       +-- Product lines (Craftiloo + Shinshin)
+
+context/profile.md   <---- Daily Prep, strategic planning sessions
+       |
+       +-- User preferences, 2026 priorities
+
+context/projects.md  <---- Daily Prep, project status checks
+       |
+       +-- Active projects, pipeline, statuses
+
+context/portfolio-name-map.json  <---- ALL PPC skills
+       |
+       +-- Portfolio name <-> API ID resolution
+       +-- Portfolio stage lookup
+
+context/sku-asin-mapping.json    <---- TACoS Optimizer, Market Intel
+       |
+       +-- SKU <-> ASIN bridge
+       +-- Seller Board <-> Ads API data join
+```
+
 ---
 
-## 6. The PPC Agent - The Core Engine
+## 6. Business Operations Areas
 
-The most complex part of the workspace. An orchestrator routing to 10 sub-skills
-based on user intent + cadence tracking.
+The workspace covers multiple business functions. Each area has its own skills,
+data sources, and output folders. Here is how each operates.
+
+### Area 1: Daily Operations
+
+**Daily Prep** ("start my day") pulls Seller Board sales data + Asana tasks to
+brief the user on yesterday's results and today's priorities. Uses Seller Board
+and Asana APIs.
+
+**Daily Market Intel** ("market check") is a comprehensive daily intelligence
+system that runs 5 parallel data agents to track competitor BSR, pricing, reviews,
+keyword rankings, and own sales performance. Uses Seller Board, DataDive, Apify,
+and SP-API. Produces daily snapshots that build a historical comparison baseline.
+This is independent of PPC and serves the entire business - product development,
+pricing decisions, competitive strategy, and listing optimization all rely on
+this data.
+
+### Area 2: Market Research
+
+**Customer Review Analyzer** scrapes Amazon reviews for own products and competitors,
+producing sentiment analysis and competitive gap reports. Uses Apify.
+
+**Niche Category Analysis** evaluates whether to enter a new product category with
+a 6-phase viability assessment (market landscape, pricing, keywords, reviews,
+listing gaps, GO/NO-GO scorecard). Uses DataDive, SP-API, Seller Board, and Apify.
+
+**Competitor Price/SERP Tracker** runs weekly competitive intelligence, scraping
+competitor ASINs for price/BSR/review changes and tracking SERP positions for
+category keywords. Uses Apify.
+
+### Area 3: Product Listings
+
+**Listing Creator** generates complete Amazon listings (title, bullets, description,
+backend keywords) from competitor analysis and keyword research. Uses DataDive,
+Apify, and Notion.
+
+**Listing Optimizer** audits existing listings using Ranking Juice scores, keyword
+gap analysis, and AI-generated rewrites in 4 modes. Uses SP-API and DataDive.
+
+**Image Planner** analyzes competitor images and creates image-by-image strategy
+plans. Uses Apify and Notion.
+
+**Product Listing Development** is an orchestrator that combines Listing Creator +
+Image Planner with shared research (saving ~50% API cost) and uploads everything
+to a single Notion page.
+
+### Area 4: PPC Advertising (via PPC Agent)
+
+The PPC Agent is an orchestrator that routes to 10 sub-skills based on user intent
+and cadence tracking. It is the most developed area currently, but architecturally
+it follows the same pattern as every other skill area.
 
 ### Architecture
 
@@ -270,6 +467,48 @@ The PPC Agent sits at the center, routing user intent to specialized sub-skills:
 - Pulls data from APIs or reads from files left by other skills
 - Writes outputs to its designated folder
 - Updates portfolio trackers and agent-state.json
+
+### PPC Agent Decision Flowchart
+
+```
+User says something PPC-related
+            |
+            v
+  +---Read agent-state.json---+
+  |   (cadence timestamps,    |
+  |    portfolio index,       |
+  |    pending actions)       |
+  +---------------------------+
+            |
+            v
+  Is this a specific request?
+  (e.g., "bid review", "harvest")
+     |                |
+    YES              NO --> "PPC catch-up" or "PPC status"
+     |                |
+     v                v
+  Route directly    Check cadence: what is overdue?
+  to that skill        |
+     |                 +-- Daily Health overdue? --> Run it
+     |                 +-- Search Harvest overdue? --> Run it
+     |                 +-- Bid Review overdue? --> Run it
+     |                 +-- Weekly Analysis overdue? --> Run it
+     |                 +-- Nothing overdue? --> "All caught up!"
+     |                 |
+     v                 v
+  +----Execute Sub-Skill----+
+  | 1. Read LESSONS.md      |
+  | 2. Read portfolio state |
+  | 3. Pull API data        |
+  | 4. Analyze              |
+  | 5. Present to user      |
+  | 6. [If writes needed]   |
+  |    User approval gate   |
+  | 7. Apply changes        |
+  | 8. Update state (BOTH!) |
+  | 9. Write LESSONS.md     |
+  +-------------------------+
+```
 
 ### The Cadence System
 
@@ -315,6 +554,10 @@ Skills share data by reading files other skills wrote to disk. No skill re-fetch
 
 ## 7. State Management - How Decisions Persist
 
+**Note:** The state management system described below is currently used by the PPC Agent.
+The same pattern could be applied to any business area that needs cross-session
+decision tracking (e.g., listing optimization campaigns, competitor monitoring).
+
 Two-tier state system for cross-session decision-making:
 
 ### Tier 1: Global Agent State
@@ -351,6 +594,74 @@ After ANY API change, update BOTH:
 2. Agent state (state/agent-state.json) - portfolio_index, all_pending_actions
 
 Updated IMMEDIATELY after API calls succeed, BEFORE presenting results to user.
+
+### State Lifecycle Diagram
+
+How a portfolio tracker evolves through skill runs:
+
+```
+DAY 1: Portfolio Action Plan runs
+  |
+  +-- Sets baseline (write-once snapshot)
+  +-- Sets goals (ACoS target, rank targets)
+  +-- Creates pending_actions (P1-P4 priority queue)
+  +-- Schedules reviews (7-day, 14-day re-checks)
+  +-- Logs to change_log + skills_run
+  |
+DAY 2: Daily Health reads tracker
+  |
+  +-- Reads latest_metrics for comparison
+  +-- Updates latest_metrics with today's data
+  +-- Appends to metric_history (trend line)
+  +-- Updates health_status (GREEN/YELLOW/RED)
+  |
+DAY 3: Bid Recommender runs
+  |
+  +-- Reads pending_actions (finds bid-related P1s)
+  +-- Makes API changes (bid adjustments)
+  +-- Logs changes to change_log (before/after)
+  +-- Marks pending_actions as completed
+  +-- Adds new scheduled_reviews (re-check in 7 days)
+  +-- Updates improvement_assessment (trend direction)
+  |
+DAY 7: Scheduled review comes due
+  |
+  +-- Daily Health flags it in the morning brief
+  +-- User triggers the appropriate skill
+  +-- Cycle repeats with fresh data
+```
+
+### Portfolio Health Status Flow
+
+```
+              NEW PORTFOLIO
+                   |
+                   v
+            [No data yet]
+              status: null
+                   |
+     First skill run (Deep Dive or Summary)
+                   |
+                   v
+    +----Classify Health----+
+    |                       |
+    v          v            v
+  GREEN     YELLOW         RED
+  ACoS OK   ACoS warning   ACoS critical
+  Spend OK   Spend high     Spend blowout
+  Ranks OK   Ranks slipping  Ranks dropping
+    |          |              |
+    |          |              v
+    |          |        Flag for immediate
+    |          |        attention in Daily
+    |          |        Health brief
+    |          |              |
+    v          v              v
+  Monitor    Watch closely   Run Bid Recommender
+  (next       (next 1-2      or Portfolio Action
+   scheduled   days)          Plan urgently
+   review)
+```
 
 ---
 
@@ -396,50 +707,128 @@ All outputs live under the outputs/ folder, organized by function:
 
 ## 9. Complete Skill Reference
 
-### PPC Skills (via PPC Agent)
+### Daily Operations & Intelligence
 
 | Skill | Purpose | Key APIs | Budget |
 |---|---|---|---|
-| **Daily Health** | 5-min GREEN/YELLOW/RED scan | Ads (campaigns, portfolios), DataDive (radars) | <30K, <3min |
-| **Bid Recommender** | SOP-based bid matrix + apply | Ads (reports, updates), DataDive (ranks) | <60K, <5min |
+| **Daily Prep** | Morning briefing: tasks + sales + stock alerts | Seller Board, Asana | <30K, <3min |
+| **Daily Market Intel** | BSR + rank + competitor tracking vs baseline | Seller Board, DataDive, Apify | <50K, <5min |
+
+### Market Research & Competitive Intelligence
+
+| Skill | Purpose | Key APIs | Budget |
+|---|---|---|---|
+| **Customer Review Analyzer** | Amazon review scraping + sentiment analysis | Apify | <40K, <10min |
+| **Niche Category Analysis** | New niche viability (GO/NO-GO scorecard) | DataDive, SP-API, Apify | <60K, <15min |
+| **Competitor Price/SERP Tracker** | Weekly price/BSR/SERP position tracking | Apify | <50K, <10min |
+
+### Product Listings
+
+| Skill | Purpose | Key APIs | Budget |
+|---|---|---|---|
+| **Listing Creator** | Generate Amazon listings from scratch | DataDive, Apify, Notion | <60K, <10min |
+| **Listing Optimizer** | Audit + Ranking Juice scores + rewrite recs | SP-API, DataDive (4 tools) | <60K, <8min |
+| **Image Planner** | Competitor image analysis + image strategy | Apify, Notion | <40K, <8min |
+| **Product Listing Dev** | Orchestrator: Listing + Image + Notion upload | All from sub-skills | <100K, <15min |
+
+### PPC Advertising (via PPC Agent)
+
+| Skill | Purpose | Key APIs | Budget |
+|---|---|---|---|
+| **Daily Health** | 5-min GREEN/YELLOW/RED scan | Ads (campaigns, portfolios), DataDive | <30K, <3min |
+| **Bid Recommender** | SOP-based bid matrix + apply | Ads (reports, updates), DataDive | <60K, <5min |
 | **Search Term Harvester** | NEGATE/PROMOTE/DISCOVER + apply | Ads (reports, negatives, keywords) | <60K, <8min |
 | **Portfolio Summary** | Health scan + structure audit | Ads (campaign report) | <40K, <4min |
-| **Portfolio Action Plan** | Deep dive + impact-ranked fixes + execute | Ads (5 reports + modify tools), DataDive | <120K, <15min |
+| **Portfolio Action Plan** | Deep dive + impact-ranked fixes + execute | Ads (5 reports + modify), DataDive | <120K, <15min |
 | **Campaign Creator** | New campaigns from upstream signals | Ads (create all) | <70K, <10min |
-| **Keyword Rank Optimizer** | PPC spend vs organic rank | DataDive (rank data), reads weekly | <60K, <6min |
-| **TACoS Optimizer** | TACoS scoring + profit reality | Seller Board, DataDive, reads weekly | <60K, <5min |
-| **Weekly Analysis** | THE data producer: 4 reports + WoW | Ads (4 reports), DataDive | <80K, <10min |
-| **Monthly Review** | 4-week trends, stage transitions | Seller Board, DataDive, reads weekly | <100K, <10min |
+| **Keyword Rank Optimizer** | PPC spend vs organic rank | DataDive, reads weekly | <60K, <6min |
+| **TACoS Optimizer** | TACoS scoring + profit reality | Seller Board, DataDive | <60K, <5min |
+| **Weekly Analysis** | 4-report deep dive + WoW comparison | Ads (4 reports), DataDive | <80K, <10min |
+| **Monthly Review** | 4-week trends, stage transitions | Seller Board, DataDive | <100K, <10min |
+| **Negative Keyword Gen** | Proactive negatives from product knowledge | DataDive, Ads | <40K, <5min |
 
-### Standalone Skills
+### Workspace Management
 
-| Skill | Purpose | Key APIs |
-|---|---|---|
-| **Daily Market Intel** | BSR + rank tracking vs competitors | Seller Board, DataDive, Apify |
-| **Listing Creator** | Complete Amazon listings from scratch | DataDive, Apify, Notion |
-| **Listing Optimizer** | Audit + score vs competitors + rewrite recs | SP-API, DataDive (4 tools) |
-| **Image Planner** | Competitor image analysis + strategy | Apify, Notion |
-| **Product Listing Dev** | Orchestrator: Listing + Image (~50% API savings) | All from sub-skills |
-| **Customer Review Analyzer** | Amazon review scraping + sentiment | Apify |
-| **Niche Category Analysis** | New niche viability assessment | DataDive (3), Apify |
-| **Negative Keyword Gen** | Proactive negatives from product knowledge | DataDive, Ads |
-| **Daily Prep** | Morning check-in: yesterday + today | Seller Board, Asana |
+| Skill | Purpose | Key APIs | Budget |
+|---|---|---|---|
+| **Skill Creator** | Create new skills with SKILL.md + LESSONS.md | None | <20K, <3min |
+| **MCP Builder** | Connect new external APIs | None | <30K, <10min |
+| **Automation Discovery** | Map workflows + find automation opportunities | None | <50K, <40min |
 
 ### Key Distinctions
 
+- **Daily Market Intel** (company-wide intelligence) vs **Daily Health** (PPC-specific check)
 - **Neg Keyword Gen** (PROACTIVE: product knowledge) vs **Search Term Harvester** (REACTIVE: spend data)
 - **Listing Creator** (generate new) vs **Listing Optimizer** (audit existing)
 - **Portfolio Summary** (quick scan) vs **Portfolio Action Plan** (deep dive + fix)
 - **Daily Health** (5-min, no reports) vs **Weekly Analysis** (4-report deep dive)
+- **Customer Review Analyzer** (sentiment mining) vs **Competitor Tracker** (price/BSR tracking)
 
 ---
 
 ## 10. Data Flow Diagrams
 
-### How Weekly Analysis Feeds Everything
+### Company-Wide Data Sources
 
-The Weekly PPC Analysis is THE data producer for the entire PPC system.
-It generates 4 reports via Amazon Ads API:
+```
+SELLER BOARD -----> Daily Prep (sales pulse)
+                    Daily Market Intel (own product performance)
+                    TACoS Optimizer (profit reality)
+                    Monthly Review (account trends)
+
+DATADIVE ---------> Daily Market Intel (rank tracking, competitor estimates)
+                    Listing Optimizer (Ranking Juice scores, keyword gaps)
+                    Listing Creator (keyword research, optimization scores)
+                    Niche Category Analysis (competitor discovery, keyword data)
+                    PPC skills (rank-aware bid decisions)
+
+APIFY ------------> Daily Market Intel (competitor BSR/price scraping)
+                    Customer Review Analyzer (review scraping)
+                    Niche Category Analysis (product discovery)
+                    Listing Creator (competitor product scraping)
+                    Competitor Tracker (SERP position scraping)
+
+SP-API -----------> Listing Optimizer (current listing content)
+                    Niche Category Analysis (catalog search, pricing)
+                    Daily Market Intel (orders, inventory)
+
+AMAZON ADS API ---> PPC skills (campaign data, reports, bid/keyword changes)
+
+NOTION -----------> Listing Creator (uploads listings)
+                    Image Planner (uploads image plans)
+                    Product Listing Dev (combined pages)
+
+ASANA ------------> Daily Prep (tasks, deadlines)
+
+SLACK ------------> Ad-hoc messaging (not embedded in skills)
+```
+
+### Market Intel Data Flow
+
+Daily Market Intel feeds intelligence across the entire business:
+
+```
+Daily Market Intel
+     |
+     +---> Seller Board (own sales, 7d) ---> Revenue trends
+     +---> DataDive (rank radars) ---------> Keyword position changes
+     +---> DataDive (competitors) ---------> Competitor sales estimates
+     +---> Apify (product scraper) --------> Competitor BSR/price/reviews
+     +---> Apify (search scraper) ---------> SERP position tracking
+     |
+     v
+  Market Intel Snapshot (outputs/research/market-intel/snapshots/)
+     |
+     +---> Informs listing decisions (is our listing underperforming?)
+     +---> Informs pricing decisions (are competitors undercutting?)
+     +---> Informs PPC decisions (are we losing rank despite spend?)
+     +---> Informs product decisions (is the market growing/shrinking?)
+     +---> Baseline comparison (track changes over time)
+```
+
+### PPC Data Pipeline
+
+How Weekly Analysis feeds PPC-specific downstream skills:
 
 - **campaign-report.json** --> Bid Recommender, Portfolio Summary, TACoS Optimizer, Monthly Review
 - **search-term-report.json** --> Search Term Harvester
@@ -449,13 +838,85 @@ It generates 4 reports via Amazon Ads API:
 
 ### Listing Creation Flow
 
-Product Listing Development (orchestrator) runs 4 phases:
+```
+Product Listing Development (orchestrator)
+    |
+    v
+PHASE 1: Shared Research (runs ONCE, saves ~50% API cost)
+    +-- Apify: scrape competitor products (BSR, price, reviews)
+    +-- Apify: scrape competitor images (all 7+ slots)
+    +-- DataDive: get_niche_keywords (search volumes)
+    +-- DataDive: get_niche_ranking_juices (optimization scores)
+    |
+    |   [Research data saved to disk]
+    |
+    v
+PHASE 2: Listing Creator
+    +-- Reads shared research (no re-fetching!)
+    +-- Analyzes competitor titles, bullets, descriptions
+    +-- Generates: title, 5 bullets, description, backend keywords
+    +-- Output: {product}-listing-{date}.md
+    |
+    v
+PHASE 3: Image Planner
+    +-- Reads shared research (no re-fetching!)
+    +-- Analyzes competitor image strategies (7+ slots)
+    +-- Creates: image-by-image plan with 4 copy alternatives each
+    +-- Output: {product}-image-plan-{date}.md
+    |
+    v
+PHASE 4: Notion Upload
+    +-- Combines listing + image plan on one Notion page
+    +-- Parent page: Product Listing Development database
+    +-- Output: Notion page (linked in brief)
+```
 
-1. **Shared Research** (runs ONCE) - Apify scrapers + DataDive keywords/ranking_juices
-2. **Listing Creator** - Analyzes competitors, generates title, bullets, backend keywords
-3. **Image Planner** - Analyzes competitor images, creates image-by-image strategy
-4. **Notion Upload** - Combines listing + images on one Notion page
+### PPC Data Pipeline
 
+How data flows through the PPC system from raw API to actionable decisions:
+
+```
+EXTERNAL APIS                    FILES ON DISK                    DECISIONS
+=============                    =============                    =========
+
+Amazon Ads API                   Weekly Snapshots
+  |                                |
+  +--create_ads_report----+       |
+  |  (4 report types)     |       |
+  |                       v       |
+  |                  campaign-report -------> Bid Recommender ----> Adjust bids
+  |                  search-term-report ----> Search Term Harvest -> Negate/Promote
+  |                  placement-report ------> Daily Health -------> TOS health check
+  |                  targeting-report ------> Keyword Rank Opt ---> Spend reallocation
+  |                  summary ---------------> Monthly Review -----> Strategy shifts
+  |
+  +--list_sp_campaigns-----> Daily Health ------> Traffic light status
+  +--list_portfolios-------> All PPC skills ----> Portfolio grouping
+  +--get_sp_bid_recs-------> Bid Recommender ---> Amazon suggested bids
+
+Seller Board
+  +--get_sales_detailed----> TACoS Optimizer ---> Profit reality check
+  +--get_ppc_marketing-----> Monthly Review ----> Account-level trends
+
+DataDive
+  +--get_rank_radar_data---> Bid Recommender ---> Rank-aware bid decisions
+  |                          Keyword Rank Opt --> Spend vs rank matrix
+  +--list_rank_radars------> Daily Health ------> Quick rank summary
+```
+
+### Cross-Skill Signal Flow
+
+Skills produce **signals** that trigger other skills:
+
+| Producing Skill | Signal | Consuming Skill | What Happens |
+|---|---|---|---|
+| Search Term Harvester | DISCOVER terms | Campaign Creator | New SK campaigns for high-potential terms |
+| Portfolio Summary | Structure gaps found | Campaign Creator | Fill missing campaign types |
+| Keyword Rank Optimizer | WASTING MONEY keywords | Bid Recommender | Reduce bids on rank-stalled keywords |
+| Keyword Rank Optimizer | REDIRECT keywords | Campaign Creator | New campaigns for better targets |
+| Daily Health | RED flag portfolio | Portfolio Action Plan | Deep dive for urgent attention |
+| TACoS Optimizer | LOSS-MAKING portfolio | Bid Recommender | Aggressive cost reduction |
+| Weekly Analysis | All 4 reports | 5+ downstream skills | Fresh data for the week |
 
 
 ---
@@ -477,7 +938,16 @@ Every skill has a LESSONS.md with:
 
 ## 12. Operating Rules and Safety Rails
 
-### Global PPC Rules
+### Global Workspace Rules
+
+1. **Check skills before creating anything new.** Always look in .claude/skills/ first
+2. **Update context files when you learn new info.** Business changes go in context/business.md
+3. **Read LESSONS.md before every skill run.** Surface repeat errors to the user
+4. **Write to LESSONS.md after every skill run.** Log results, issues, and learnings
+5. **Follow naming conventions.** YYYY-MM-DD-descriptor.ext or subject-YYYY-MM-DD.ext
+6. **Never dump files in root folders.** Everything goes in organized output subfolders
+
+### PPC-Specific Rules
 
 1. **Never pause on single-week zero conversions.** Check 30+ days first
 2. **Never use round bid amounts.** Use -31%, -48%, not -30%, -50%
@@ -498,6 +968,52 @@ Every skill has a LESSONS.md with:
 
 After ANY API change: update BOTH portfolio tracker AND agent-state.json
 IMMEDIATELY, BEFORE presenting results. This is the #1 most enforced rule.
+
+### Portfolio Stage Transitions
+
+```
+                     LAUNCH
+                   (Stage 1-2)
+                       |
+                       | ACoS target: flexible (up to 60%)
+                       | Priority: rank velocity > efficiency
+                       | Typical duration: 2-8 weeks
+                       |
+                       v
+          +----- CRITERIA MET? -----+
+          |                         |
+         YES                       NO
+          |                         |
+          v                         v
+       SCALING                  Stay in LAUNCH
+     (Stage 3)                  (extend timeline)
+          |
+          | ACoS target: 30% (goal, not hard line)
+          | CVR target: 10%
+          | Priority: efficiency + defend ranks
+          |
+          v
+    [Ongoing optimization cycle]
+
+    GENERAL portfolios (Catch All, Shield)
+    operate outside this lifecycle:
+    - Catch All Auto: discovery + catch unassigned traffic
+    - Shield All: brand defense + competitor blocking
+    - Stitch Dictionary: cross-product visibility
+```
+
+### Bid Decision Matrix (Simplified)
+
+The Bid Recommender uses placement health + performance to decide what lever to pull:
+
+| Placement Health | ACoS | Action | Which Lever |
+|:---:|:---:|---|:---:|
+| TOS Dominant + Efficient | Low | Protect: maintain current | None |
+| TOS Dominant + Efficient | High | Reduce default bid | Default bid DOWN |
+| TOS Efficient, ROS/PP Bleeding | Any | Cut waste placements | Default bid DOWN |
+| TOS Bleeding | Any | Reduce TOS modifier | TOS modifier DOWN |
+| All Bleeding | Any | NOT a bid problem! | Check listing/targeting |
+| No TOS Modifier Set | Any | Missing strategy | Add TOS modifier |
 
 ### Efficiency Guardrails
 

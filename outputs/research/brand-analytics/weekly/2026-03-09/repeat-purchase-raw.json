@@ -1,0 +1,138 @@
+[
+  {
+    "asin": "B09THLVFZK",
+    "product": "Fuse Beads 24000",
+    "orders": 157,
+    "unique_customers": 155,
+    "repeat_rate": 1.29,
+    "repeat_revenue": 65.96
+  },
+  {
+    "asin": "B08DDJCQKF",
+    "product": "Fuse Beads 10000",
+    "orders": 202,
+    "unique_customers": 202,
+    "repeat_rate": 0.0,
+    "repeat_revenue": 0
+  },
+  {
+    "asin": "B09WQSBZY7",
+    "product": "Fairy Sewing Kit",
+    "orders": 128,
+    "unique_customers": 127,
+    "repeat_rate": 0.79,
+    "repeat_revenue": 0
+  },
+  {
+    "asin": "B09X55KL2C",
+    "product": "Unknown B09X55KL2C",
+    "orders": 63,
+    "unique_customers": 63,
+    "repeat_rate": 0.0,
+    "repeat_revenue": 0
+  },
+  {
+    "asin": "B0F8R652FX",
+    "product": "Latch Hook Pillow Kit",
+    "orders": 50,
+    "unique_customers": 50,
+    "repeat_rate": 0.0,
+    "repeat_revenue": 0
+  },
+  {
+    "asin": "B07D6D95NG",
+    "product": "Biggie Beads 1500",
+    "orders": 49,
+    "unique_customers": 48,
+    "repeat_rate": 2.08,
+    "repeat_revenue": 24.98
+  },
+  {
+    "asin": "B0DKD2S3JT",
+    "product": "Unknown B0DKD2S3JT",
+    "orders": 36,
+    "unique_customers": 34,
+    "repeat_rate": 5.88,
+    "repeat_revenue": 45.96
+  },
+  {
+    "asin": "B0F8DG32H5",
+    "product": "Cat Hat Knitting Kit",
+    "orders": 33,
+    "unique_customers": 33,
+    "repeat_rate": 0.0,
+    "repeat_revenue": 0
+  },
+  {
+    "asin": "B08FYH13CL",
+    "product": "Unknown B08FYH13CL",
+    "orders": 31,
+    "unique_customers": 31,
+    "repeat_rate": 0.0,
+    "repeat_revenue": 0
+  },
+  {
+    "asin": "B0BNDVTTSH",
+    "product": "Unknown B0BNDVTTSH",
+    "orders": 31,
+    "unique_customers": 31,
+    "repeat_rate": 0.0,
+    "repeat_revenue": 0
+  },
+  {
+    "asin": "B0FQC7YFX6",
+    "product": "Princess Lacing Cards",
+    "orders": 26,
+    "unique_customers": 26,
+    "repeat_rate": 0.0,
+    "repeat_revenue": 0
+  },
+  {
+    "asin": "B0CRZ8M2G1",
+    "product": "Unknown B0CRZ8M2G1",
+    "orders": 23,
+    "unique_customers": 23,
+    "repeat_rate": 0.0,
+    "repeat_revenue": 0
+  },
+  {
+    "asin": "B0DC69M3YD",
+    "product": "Unknown B0DC69M3YD",
+    "orders": 22,
+    "unique_customers": 22,
+    "repeat_rate": 0.0,
+    "repeat_revenue": 0
+  },
+  {
+    "asin": "B07PXN4K8N",
+    "product": "Unknown B07PXN4K8N",
+    "orders": 20,
+    "unique_customers": 18,
+    "repeat_rate": 11.11,
+    "repeat_revenue": 69.92
+  },
+  {
+    "asin": "B0F6YTG1CH",
+    "product": "Unknown B0F6YTG1CH",
+    "orders": 19,
+    "unique_customers": 19,
+    "repeat_rate": 0.0,
+    "repeat_revenue": 0
+  },
+  {
+    "asin": "B0FHMRQWRX",
+    "product": "Unknown B0FHMRQWRX",
+    "orders": 17,
+    "unique_customers": 17,
+    "repeat_rate": 0.0,
+    "repeat_revenue": 0
+  },
+  {
+    "asin": "B0BP8GCK1G",
+    "product": "Unknown B0BP8GCK1G",
+    "orders": 15,
+    "unique_customers": 15,
+    "repeat_rate": 0.0,
+    "repeat_revenue": 0
+  }
+]

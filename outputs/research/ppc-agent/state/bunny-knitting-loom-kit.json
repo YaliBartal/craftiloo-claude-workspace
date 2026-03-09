@@ -25,7 +25,68 @@
   },
   "baseline": null,
   "latest_metrics": null,
-  "metric_history": [],
+  "metric_history": [
+    {
+      "date": "2026-03-01",
+      "source": "timeseries-backfill",
+      "acos": 61.2,
+      "spend_7d": 56.3,
+      "sales_7d": 91.92,
+      "orders_7d": 4,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-02",
+      "source": "timeseries-backfill",
+      "acos": 61.2,
+      "spend_7d": 56.3,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 19,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-03",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 21,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-05",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 19,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-08",
+      "source": "timeseries-backfill",
+      "acos": 37.3,
+      "spend_7d": 35.74,
+      "sales_7d": 95.92,
+      "orders_7d": 4,
+      "cvr": 10.3,
+      "rank_top10": 21,
+      "health_status": null,
+      "note": "Backfilled from weekly+daily-health by timeseries-dashboard"
+    }
+  ],
   "change_log": [
     {
       "date": "2026-03-05",
@@ -50,7 +111,7 @@
       "id": "bk-001",
       "priority": "P2",
       "category": "DEEP_DIVE",
-      "action": "Portfolio needs a full deep dive \u2014 never been analyzed. $158/30d at 84% ACoS, 8 orders. Possible listing/targeting issue.",
+      "action": "Portfolio needs a full deep dive — never been analyzed. $158/30d at 84% ACoS, 8 orders. Possible listing/targeting issue.",
       "created": "2026-03-05",
       "status": "pending"
     }
@@ -71,6 +132,16 @@
       "key_metrics": {
         "changes_applied": 1,
         "net_weekly_impact": "-$9/week est."
+      }
+    },
+    {
+      "skill": "ppc-timeseries-dashboard",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "data_points": 5,
+        "inflections_detected": 0,
+        "trajectory_30d_acos": "improving"
       }
     }
   ],

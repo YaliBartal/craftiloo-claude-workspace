@@ -88,12 +88,84 @@
   },
   "metric_history": [
     {
+      "date": "2026-02-20",
+      "source": "timeseries-backfill",
+      "acos": 30.07,
+      "spend_7d": 247.27,
+      "sales_7d": 822.36,
+      "orders_7d": 26,
+      "cvr": 8.23,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-01",
+      "source": "timeseries-backfill",
+      "acos": 51.7,
+      "spend_7d": 276.48,
+      "sales_7d": 534.58,
+      "orders_7d": 21,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-02",
+      "source": "timeseries-backfill",
+      "acos": 51.7,
+      "spend_7d": 276.48,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 19,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-03",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 18,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-05",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 16,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
       "date": "2026-03-06",
       "source": "tacos-optimizer",
       "tacos": 19.8,
       "organic_momentum": 55,
       "profit_health": "LOSS-MAKING",
       "margin_pct": -13.0
+    },
+    {
+      "date": "2026-03-08",
+      "source": "timeseries-backfill",
+      "acos": 38.6,
+      "spend_7d": 258.5,
+      "sales_7d": 669.52,
+      "orders_7d": 26,
+      "cvr": 5.9,
+      "rank_top10": 16,
+      "health_status": null,
+      "note": "Backfilled from weekly+daily-health by timeseries-dashboard"
     }
   ],
   "change_log": [
@@ -345,6 +417,16 @@
         "profit_health": "LOSS-MAKING"
       },
       "output_ref": "tacos-optimizer/2026-03-06-tacos-scorecard.md"
+    },
+    {
+      "skill": "ppc-timeseries-dashboard",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "data_points": 6,
+        "inflections_detected": 0,
+        "trajectory_30d_acos": "declining"
+      }
     }
   ],
   "improvement_assessment": {

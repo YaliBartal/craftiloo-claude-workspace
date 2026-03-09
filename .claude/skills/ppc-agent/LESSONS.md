@@ -4,6 +4,24 @@
 
 *(New entries go at the TOP)*
 
+### Run: 2026-03-08
+**Task routed:** Daily PPC Health Check (ppc-daily-health) + Listing Verification (5 pushes) + Princess Lacing Listing Push
+**Result:** Success
+
+**What happened:**
+- Ambiguous "let's do ppc" → cadence check → listing verification → daily health check.
+- 5 listing pushes verified live (Fairy Family, Cross Stitch Backpack Charms, Biggie Beads, Fuse Beads, Princess Lacing).
+- Princess Lacing listing NOT yet pushed (P1 plc-005 pending) — user thought it was done. Pushed via SP-API: title + 5 bullets + backend KW (247/249 bytes). ACCEPTED.
+- Daily health: 173 ENABLED campaigns (+17 vs Mar 5). Net +10 top-10 keywords account-wide.
+- **Fairy Sewing +9 top-10** — listing push + PPC deep dive combo producing best rank surge in account history.
+- Biggie Beads flagged: toy safety docs (ps_toys_dv_us) due May 13.
+
+**Lesson learned:**
+- Always use `context/sku-asin-mapping.json` for SKU lookups. User explicitly instructed never to hunt for SKUs via inventory API again.
+- Listing + PPC restructuring combo validated: Fairy Family went from YELLOW to GREEN in 5 days.
+
+**Tokens/cost:** ~40K tokens
+
 ### Run: 2026-03-05 (14)
 **Task routed:** Latch Hook Kits Portfolio Deep Dive (ppc-portfolio-action-plan)
 **Result:** Success

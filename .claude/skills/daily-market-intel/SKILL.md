@@ -133,6 +133,8 @@ market-intel/
 | Badge tracking | **Apify keyword scan** | — |
 | **Competitor real-time BSR** | **Apify competitor BSR scan** (34 ASINs via saswave) | DataDive competitor BSR (directional) |
 | **7-day profit, margin, ad spend, TACoS** | **Seller Board dashboard** (7-day avg only) | — |
+| **Search funnel data (impressions → clicks → carts → purchases)** | **Brand Analytics SCP** (weekly, free) | Not available elsewhere |
+| **Click share / conversion share per ASIN** | **Brand Analytics SCP** | Not available elsewhere |
 
 ### ⚠️ Agent Output Compression Rules
 
@@ -158,7 +160,7 @@ market-intel/
 | Apify (Keywords + Competitor BSR) | ~40-60s | 20 keyword scans + 1 BSR batch, all async. **axesso_data ~7.5s/keyword**, saswave ~40s for BSR batch |
 | SP-API (Catalog + Pricing + Inventory + Orders) | ~125s | 28 calls × 0.5s rate limit, serial pricing |
 
-**Launch all 5 agents in parallel.** Wall-clock bottleneck is SP-API (~2 min). Apify now does more work but it's all async so wall-clock is ~60s.
+**Launch all 6 agents in parallel** (5 existing + Brand Analytics SCP). Wall-clock bottleneck is SP-API (~2 min). SCP takes ~60s and runs concurrently. Apify now does more work but it's all async so wall-clock is ~60s.
 
 ### Performance Targets
 
@@ -630,6 +632,72 @@ Flag an ASIN as a new competitor if:
 
 ---
 
+## 📊 Step 4C: Brand Analytics SCP — Search Funnel Data (Optional Enrichment)
+
+**PURPOSE:** Adds Amazon's own impression → click → cart → purchase funnel data per ASIN. This is first-party data (not estimates) and provides click share and conversion share that no other source can give. **Free** — included with Brand Registry.
+
+**Cost:** $0 (Brand Analytics is free)
+**Time:** ~60 seconds (report creation + download)
+**Tool:** `create_brand_analytics_report` (SP-API MCP)
+
+**When to include:** Run this step when time/tokens allow. It adds ~5K tokens but provides unique funnel metrics. Skip if the run is already near the 110K token ceiling.
+
+### How to Fetch
+
+1. **Create the SCP report:**
+   ```
+   create_brand_analytics_report(
+       report_name="scp",
+       period="WEEK",
+       periods_back=2,
+       marketplace="US"
+   )
+   ```
+   **Note:** Use `periods_back=2` on Sunday/Monday (48h SLA). Use `periods_back=1` Tuesday-Saturday.
+
+2. **Poll for completion:**
+   ```
+   get_report_status(report_id="{reportId}", marketplace="US")
+   ```
+   Wait for `DONE`. Poll every 15 seconds, max 8 times (~60s total).
+
+3. **Download the report:**
+   ```
+   get_report_document(report_id="{reportId}", marketplace="US")
+   ```
+
+### What SCP Provides (per ASIN, weekly)
+
+| Metric | What It Means | Use In Report |
+|--------|---------------|---------------|
+| `searchFunnelImpressions` | Times our ASIN appeared in search results | Visibility trend |
+| `searchFunnelClicks` | Clicks from search results | Demand signal |
+| `searchFunnelCartAdds` | Add-to-cart from search | Purchase intent |
+| `searchFunnelPurchases` | Purchases from search | Actual conversion |
+| `searchFunnelClickShare` | Our % of total clicks in category | Competitive position |
+| `searchFunnelConversionShare` | Our % of total conversions | Market share signal |
+
+### How to Use in the Report
+
+**Add a "Search Funnel" column group to the Our Products table** (if SCP data was fetched):
+
+| Product | ASIN | ... existing cols ... | Impressions | Clicks | Carts | Purchases | Click Share | Conv Share |
+|---------|------|-----------------------|-------------|--------|-------|-----------|-------------|------------|
+
+**Key signals to highlight:**
+- **Click share declining** while BSR stable → losing visibility, may need PPC boost
+- **Conversion share > click share** → product converts well, invest in more traffic
+- **High impressions, low clicks** → listing image/title may need optimization
+- **High clicks, low carts** → price or content issue on detail page
+
+### If SCP Fails
+
+Continue without it — all other data sources still provide a complete report. Note: "Brand Analytics SCP unavailable — funnel data not included."
+
+**This step runs in parallel with the other 5 agents.** It adds ~60s but doesn't block any other step.
+
+---
+
 ## 💰 Step 5: Seller Board — 7-Day Aggregates + Per-ASIN Actuals
 
 **PURPOSE:** Two reports from Seller Board:
@@ -992,6 +1060,14 @@ All steps should run in **parallel where possible** to minimize wall-clock time.
 12. **Lower BSR = Better** — we want numbers to go DOWN
 13. **Run phases in parallel** — launch all data fetches simultaneously to hit ~10 min target
 14. **If SP-API fails** — fall back to DataDive competitor BSR, don't block the report
+
+---
+
+## Step 7: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: daily-market-intel".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
 
 ---
 

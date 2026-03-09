@@ -68,15 +68,98 @@
   },
   "metric_history": [
     {
+      "date": "2026-02-20",
+      "source": "timeseries-backfill",
+      "acos": 67.88,
+      "spend_7d": 366.26,
+      "sales_7d": 539.57,
+      "orders_7d": 22,
+      "cvr": 4.37,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-01",
+      "source": "timeseries-backfill",
+      "acos": 67.3,
+      "spend_7d": 230.09,
+      "sales_7d": 341.72,
+      "orders_7d": 14,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-02",
+      "source": "timeseries-backfill",
+      "acos": 67.3,
+      "spend_7d": 230.09,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 0,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-03",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 1,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-05",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 1,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
       "date": "2026-03-06",
       "source": "tacos-optimizer",
       "tacos": 27.5,
       "organic_momentum": 20,
       "profit_health": "BREAK-EVEN",
       "margin_pct": 1.1
+    },
+    {
+      "date": "2026-03-08",
+      "source": "timeseries-backfill",
+      "acos": 48.0,
+      "spend_7d": 185.47,
+      "sales_7d": 386.62,
+      "orders_7d": 14,
+      "cvr": 5.3,
+      "rank_top10": 0,
+      "health_status": null,
+      "note": "Backfilled from weekly+daily-health by timeseries-dashboard"
     }
   ],
   "change_log": [
+    {
+      "date": "2026-03-08",
+      "skill": "weekly-ppc-analysis",
+      "summary": "Scheduled deep dive — no PPC changes yet",
+      "changes": [
+        {
+          "category": "DEEP_DIVE_SCHEDULED",
+          "reason": "30d ACoS 66.3% ($1,240 spend / $1,869 sales). Multiple campaigns bleeding. No prior optimization done. Need structural deep dive."
+        }
+      ]
+    },
     {
       "date": "2026-03-02",
       "skill": "ppc-portfolio-action-plan",
@@ -218,6 +301,15 @@
   ],
   "pending_actions": [
     {
+      "id": "4f-deepdive",
+      "priority": "P1",
+      "category": "DEEP_DIVE",
+      "action": "Full portfolio deep dive — structural optimization needed. 30d ACoS 66.3% ($1,240 spend / $1,869 sales). Multiple campaigns bleeding (MK broad TOS $32/0 orders, SK starter 251% ACoS, Auto 119%). No prior optimization done. Needs: campaign pauses, negation of needlepoint terms, restructure around converting terms.",
+      "created": "2026-03-08",
+      "status": "pending",
+      "source": "weekly-ppc-analysis-30d"
+    },
+    {
       "id": "4f-001",
       "source": "listing-update-2026-03-03",
       "category": "AUDIT",
@@ -263,6 +355,19 @@
       ],
       "source": "listing-update-2026-03-03",
       "status": "pending"
+    },
+    {
+      "date": "2026-03-23",
+      "type": "listing-ab-analyzer",
+      "skill": "listing-ab-analyzer",
+      "asin": "B0DC69M3YD",
+      "change_date": "2026-03-03",
+      "what_changed": ["title", "bullets", "description", "backend_keywords"],
+      "before_weeks": ["2026-02-15 to 2026-02-21", "2026-02-22 to 2026-02-28"],
+      "transition_week": "2026-03-01 to 2026-03-07",
+      "after_weeks": ["2026-03-08 to 2026-03-14", "2026-03-15 to 2026-03-21"],
+      "source": "listing-update-2026-03-03",
+      "status": "pending"
     }
   ],
   "skills_run": [
@@ -291,6 +396,16 @@
         "profit_health": "BREAK-EVEN"
       },
       "output_ref": "tacos-optimizer/2026-03-06-tacos-scorecard.md"
+    },
+    {
+      "skill": "ppc-timeseries-dashboard",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "data_points": 6,
+        "inflections_detected": 0,
+        "trajectory_30d_acos": "improving"
+      }
     }
   ],
   "improvement_assessment": {

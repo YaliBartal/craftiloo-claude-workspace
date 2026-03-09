@@ -1,6 +1,6 @@
 ---
 name: weekly-ppc-analysis
-description: Comprehensive weekly PPC analysis via Amazon Ads API with week-over-week comparison
+description: Comprehensive weekly PPC analysis via Amazon Ads API with WoW comparison, 30-day trajectories, and inflection detection
 triggers:
   - weekly ppc
   - ppc analysis
@@ -10,12 +10,20 @@ triggers:
   - analyze ppc
   - campaign analysis
   - ppc review
+  - ppc trends
+  - ppc dashboard
+  - trend check
+  - trajectory
+  - time series
+  - 30 day trend
+  - inflection points
+  - ppc timeline
 output_location: outputs/research/ppc-weekly/
 ---
 
 # Weekly PPC Analysis
 
-**USE WHEN** user says: "weekly ppc", "ppc analysis", "weekly review", "ppc report", "campaign analysis", "ppc review", "analyze ppc", "search term analysis", "negate terms", "keyword mining"
+**USE WHEN** user says: "weekly ppc", "ppc analysis", "weekly review", "ppc report", "campaign analysis", "ppc review", "analyze ppc", "search term analysis", "negate terms", "keyword mining", "ppc trends", "ppc dashboard", "trend check", "trajectory", "time series", "30 day trend", "inflection points"
 
 ---
 
@@ -42,6 +50,8 @@ Pulls 4 reports via the **Amazon Ads API** (Campaign, Search Term, Placement, Ta
 4. **Targeting insights** — keyword vs ASIN effectiveness, target-level performance
 5. **Search term actions** — Negate, Promote, Discover classifications
 6. **Week-over-week comparison** — deltas against previous week's snapshot
+7. **30-day trajectories** — trend direction per portfolio from weekly snapshot history
+8. **Inflection point detection** — statistically significant metric shifts correlated with change_log events
 
 Replaces the separate PPC Portfolio Review and Search Term Analysis skills. **No manual CSV exports needed** — all data is pulled programmatically via the Amazon Ads API MCP server.
 
@@ -1510,6 +1520,100 @@ Before delivering the report, verify:
 | Very large search term report (5000+ terms) | Focus on terms with $5+ spend for detailed analysis. Summarize remainder. |
 | Duplicate campaign names across portfolios | Always show portfolio name alongside campaign name to disambiguate. |
 | Zero-spend report (all campaigns paused) | Report that all campaigns are paused. No analysis needed. |
+
+---
+
+### Step 13b: Calculate 30-Day Trajectories & Detect Inflections
+
+**After saving this week's snapshot, calculate trajectories from snapshot history.**
+
+This replaces the standalone ppc-timeseries-dashboard skill — trajectory analysis is now part of the weekly analysis.
+
+#### 13b-1: Load Snapshot History
+
+Glob for `outputs/research/ppc-weekly/snapshots/*/summary.json`. Load all summaries from the last 90 days. Each contains per-portfolio metrics (spend, sales, acos, orders, cvr, status).
+
+#### 13b-2: Build Per-Portfolio Trajectory
+
+For each portfolio present in 2+ snapshots within the last 30 days:
+
+1. Extract the metric values across snapshot dates
+2. Calculate trajectory:
+   - `start` = earliest value in 30d window
+   - `end` = latest value (this week)
+   - `delta` = end - start
+   - `trend` = classify using thresholds:
+
+| Metric | Improving | Declining | Stable |
+|--------|-----------|-----------|--------|
+| ACoS | delta < -2pp | delta > +2pp | abs(delta) <= 2pp |
+| Rank_top10 | delta > +2 | delta < -2 | abs(delta) <= 2 |
+| Spend, Sales | delta_pct > +10% | delta_pct < -10% | abs(delta_pct) <= 10% |
+| CVR | delta > +1pp | delta < -1pp | abs(delta) <= 1pp |
+
+3. Confidence: `high` (4+ snapshots), `medium` (3), `low` (2)
+
+#### 13b-3: Detect Inflection Points
+
+**Only for metrics with 3+ data points.**
+
+For each portfolio metric at this week's value:
+1. Compute mean and stdev of prior values
+2. z-score = (current - mean) / stdev
+3. If `abs(z) > 1.5` → inflection detected
+4. If stdev = 0, use absolute thresholds: ACoS >5pp, Rank >3, Spend >25%, CVR >2pp
+
+**Correlate with changes:** For each inflection, check the portfolio's tracker `change_log[]` for events within 7 days prior. Link as correlated events.
+
+#### 13b-4: Add to Report
+
+Add a **Trajectories & Inflections** section to the weekly brief (after WoW Summary, before Account Overview):
+
+```markdown
+## 30-Day Trajectories
+
+| Portfolio | ACoS Trend | Rank Trend | Spend Trend | Confidence | Inflections |
+|-----------|------------|------------|-------------|------------|-------------|
+| Fairy Family | Improving (-6pp) | Surging (+17) | Stable | Low (2 pts) | 2 |
+
+## Inflection Points Detected
+
+### {Portfolio} — {Metric} {Direction}
+- **Change:** {prior_avg} → {current} (z={z_score})
+- **Correlated actions:** {change_log events within 7d prior}
+- **Verdict:** {one-sentence interpretation}
+```
+
+If no snapshots exist for trajectory (first run), skip this section with: "Trajectories available after 2+ weekly runs."
+
+#### 13b-5: Update Portfolio Tracker metric_history
+
+For each portfolio, append this week's metrics to `outputs/research/ppc-agent/state/{slug}.json → metric_history[]`:
+
+```json
+{
+  "date": "YYYY-MM-DD",
+  "source": "weekly-analysis",
+  "acos": X,
+  "spend_7d": X,
+  "sales_7d": X,
+  "orders_7d": X,
+  "cvr": X,
+  "rank_top10": X,
+  "health_status": "GREEN/YELLOW/RED",
+  "note": "Weekly analysis snapshot"
+}
+```
+
+**Dedup:** Skip if date already exists. Cap at 90 entries.
+
+---
+
+### Step 14: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: weekly-ppc-analysis".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
 
 ---
 

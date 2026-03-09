@@ -186,6 +186,7 @@ When routing to a sub-skill, pass the portfolio tracker path so the sub-skill ca
 | "portfolio deep dive" / "deep dive {name}" / "portfolio action plan" / "fix {portfolio}" / "work on {portfolio}" | **Portfolio Action Plan** | `.claude/skills/ppc-portfolio-action-plan/SKILL.md` |
 | "deal prep" / "deal ppc" / "prep for deal" | **Deal Coordination** (Bid Recommender — deal mode) | `.claude/skills/ppc-bid-recommender/SKILL.md` |
 | "tacos check" / "tacos optimizer" / "profit check" / "tacos scorecard" / "profit reality" | **TACoS & Profit Optimizer** | `.claude/skills/ppc-tacos-optimizer/SKILL.md` |
+| "ppc trends" / "ppc dashboard" / "trend check" / "trajectory" / "time series" / "30 day trend" / "inflection points" | **Weekly PPC Analysis** (includes trajectories) | `.claude/skills/weekly-ppc-analysis/SKILL.md` |
 | "post deal" / "deal ended" / "deal cleanup" | **Deal Cleanup** (Bid Recommender — post-deal mode) | `.claude/skills/ppc-bid-recommender/SKILL.md` |
 | "ppc" / "ppc check" / "ppc status" (ambiguous) | **Cadence Checker** (Step 3) | This skill |
 | "ppc catch-up" / "ppc everything" | **Run All Overdue** (Step 4) | This skill |
@@ -214,6 +215,7 @@ When routing to a sub-skill, check if upstream data already exists to avoid redu
 | Rank-spend matrix | `outputs/research/ppc-agent/rank-optimizer/snapshots/{recent}/rank-spend-matrix.json` | Bid recommender for keyword waste signals |
 | TACoS snapshot | `outputs/research/ppc-agent/tacos-optimizer/snapshots/{recent}/*-tacos-snapshot.json` | Bid recommender for profit-aware bid decisions; monthly review for TACoS trends |
 | Campaign creation log | `outputs/research/ppc-agent/campaign-creator/{recent}/*-creation-log.json` | Avoids re-reading upstream sources for campaign creator |
+| Trajectory data | Weekly snapshot history at `outputs/research/ppc-weekly/snapshots/*/summary.json` | Monthly review + any skill needing trajectory context (calculated in weekly analysis Step 13b) |
 
 **Key principle:** Never re-fetch data that a recent skill run already has on disk.
 
@@ -256,6 +258,8 @@ When the user says just "ppc" or "ppc check" without a specific task:
 | Monthly Review | {date or "Never"} | OK / OVERDUE |
 
 **Recommendation:** {most overdue task} is {N} days overdue. Run it now?
+
+**Overdue alerts:** If any skill is >3 days overdue, also read `.claude/skills/notification-hub/SKILL.md` → "Recipe: ppc-agent-cadence" and post an overdue alert to Slack.
 ```
 
 4. **Show portfolio health from `portfolio_index`:**

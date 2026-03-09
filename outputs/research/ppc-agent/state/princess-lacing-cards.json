@@ -11,7 +11,7 @@
     "niche_id": "Aw4EQhG6bP"
   },
   "goals": {
-    "acos_target": "60% flexible (Launch \u2014 rank velocity is primary KPI)",
+    "acos_target": "60% flexible (Launch — rank velocity is primary KPI)",
     "cvr_target": "10%+",
     "rank_targets": {
       "lacing cards": "top 15 (currently 34, was 22)",
@@ -105,6 +105,54 @@
   },
   "metric_history": [
     {
+      "date": "2026-02-20",
+      "source": "timeseries-backfill",
+      "acos": 53.77,
+      "spend_7d": 408.22,
+      "sales_7d": 759.24,
+      "orders_7d": 38,
+      "cvr": 11.21,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-01",
+      "source": "timeseries-backfill",
+      "acos": 67.9,
+      "spend_7d": 351.35,
+      "sales_7d": 517.46,
+      "orders_7d": 24,
+      "cvr": null,
+      "rank_top10": null,
+      "health_status": null,
+      "note": "Backfilled from weekly by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-02",
+      "source": "timeseries-backfill",
+      "acos": 67.9,
+      "spend_7d": 351.35,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 9,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
+      "date": "2026-03-03",
+      "source": "timeseries-backfill",
+      "acos": null,
+      "spend_7d": null,
+      "sales_7d": null,
+      "orders_7d": null,
+      "cvr": null,
+      "rank_top10": 7,
+      "health_status": null,
+      "note": "Backfilled from daily-health by timeseries-dashboard"
+    },
+    {
       "date": "2026-03-05",
       "acos": 62.4,
       "spend_30d": 1458.5,
@@ -112,9 +160,28 @@
       "orders_30d": 113,
       "cvr": 10.0,
       "source": "baseline"
+    },
+    {
+      "date": "2026-03-08",
+      "source": "timeseries-backfill",
+      "acos": 59.0,
+      "spend_7d": 243.51,
+      "sales_7d": 412.56,
+      "orders_7d": 24,
+      "cvr": 8.1,
+      "rank_top10": 6,
+      "health_status": null,
+      "note": "Backfilled from weekly+daily-health by timeseries-dashboard"
     }
   ],
   "change_log": [
+    {
+      "date": "2026-03-08",
+      "source": "weekly-ppc-analysis (30d verified)",
+      "changes": [
+        "B0CP8VJ56S bid $0.57 → $0.53 in PT campaign (114445931131831). 30d: $385 spend, 22 orders, 77% ACoS. Third bid action on this target."
+      ]
+    },
     {
       "date": "2026-03-03",
       "source": "ppc-search-term-harvester",
@@ -128,16 +195,16 @@
       "date": "2026-03-05",
       "source": "ppc-portfolio-action-plan (first deep dive)",
       "changes": [
-        "MK broad TOS 262% \u2192 148%",
-        "MK broad budget $20 \u2192 $16",
+        "MK broad TOS 262% → 148%",
+        "MK broad budget $20 → $16",
         "MK broad: added 6 campaign negatives (sewing cards for kids PHRASE, childrens sewing PHRASE, sewing activities PHRASE, kids sewing PHRASE, sewing kit for toddlers PHRASE, lacing cards for kids ages 4-8 EXACT)",
         "MK broad: added 2 campaign negatives for hero SK isolation (lacing cards EXACT, lacing cards for kids ages 3-5 EXACT)",
-        "MK broad: paused dead keywords (toddler sewing BROAD+PHRASE \u2014 blocked by own negatives)",
-        "PT TOS 132% \u2192 78%",
-        "PT bid B0CP8VJ56S $0.85 \u2192 $0.57",
-        "SK sewing cards 4-8 TOS 337% \u2192 182%",
-        "RE-ENABLED SK lacing cards (534155725258823): budget $18/day, TOS 312%, bid $0.35\u2192$0.68",
-        "RE-ENABLED SK lacing cards 3-5 (353388205196087): budget $15/day, TOS 287%, bid $0.35\u2192$0.54"
+        "MK broad: paused dead keywords (toddler sewing BROAD+PHRASE — blocked by own negatives)",
+        "PT TOS 132% → 78%",
+        "PT bid B0CP8VJ56S $0.85 → $0.57",
+        "SK sewing cards 4-8 TOS 337% → 182%",
+        "RE-ENABLED SK lacing cards (534155725258823): budget $18/day, TOS 312%, bid $0.35→$0.68",
+        "RE-ENABLED SK lacing cards 3-5 (353388205196087): budget $15/day, TOS 287%, bid $0.35→$0.54"
       ]
     },
     {
@@ -146,8 +213,22 @@
       "changes": [
         "Listing audit completed: bullets have 0% Ranking Juice, title missing brand + 3 high-BSV roots (sewing/toy/threading)",
         "Listing rewrite options generated: 3 title options, 5 keyword-indexed bullets, backend KW expanded to 247/249 bytes",
-        "NOT YET PUSHED \u2014 user reviewing options before push"
+        "NOT YET PUSHED — user reviewing options before push"
       ]
+    },
+    {
+      "date": "2026-03-08",
+      "skill": "listing-creator",
+      "type": "LISTING_PUSH",
+      "details": "Pushed optimized listing via SP-API update_listing",
+      "fields": [
+        "title",
+        "bullets",
+        "backend_keywords"
+      ],
+      "submission_id": "0bf278feda4e4f568f39be5b0713321e",
+      "status": "ACCEPTED",
+      "notes": "Title: added CRAFTILOO brand + lacing/sewing/threading keywords. Bullets: keyword-indexed, lacing-focused. Backend KW: 247/249 bytes."
     }
   ],
   "pending_actions": [
@@ -155,7 +236,7 @@
       "id": "plc-001",
       "priority": "P3",
       "category": "INVESTIGATE",
-      "action": "Investigate SK gem art sticker (0 impressions/30d) \u2014 check if keyword has search volume",
+      "action": "Investigate SK gem art sticker (0 impressions/30d) — check if keyword has search volume",
       "created": "2026-03-05",
       "source": "portfolio-action-plan"
     },
@@ -171,7 +252,7 @@
       "id": "plc-003",
       "priority": "P4",
       "category": "BUDGET_REALLOC",
-      "action": "Consider increasing Auto budget $8\u2192$15 once hero SK campaigns prove out",
+      "action": "Consider increasing Auto budget $8→$15 once hero SK campaigns prove out",
       "created": "2026-03-05",
       "source": "portfolio-action-plan"
     },
@@ -179,7 +260,7 @@
       "id": "plc-004",
       "priority": "P4",
       "category": "MONITOR",
-      "action": "Pull placement data when reports resolve \u2014 validate TOS decisions",
+      "action": "Pull placement data when reports resolve — validate TOS decisions",
       "created": "2026-03-05",
       "source": "portfolio-action-plan"
     },
@@ -189,7 +270,9 @@
       "category": "LISTING_PUSH",
       "action": "Push approved listing rewrite to Amazon via SP-API (title + 5 bullets + backend KW). Audit + options at outputs/research/listings/briefs/princess-lacing-card-listing-2026-03-06.md",
       "created": "2026-03-06",
-      "source": "listing-optimizer + listing-creator"
+      "source": "listing-optimizer + listing-creator",
+      "status": "completed",
+      "completed": "2026-03-08"
     }
   ],
   "scheduled_reviews": [
@@ -210,6 +293,29 @@
       "type": "Post-listing-push re-audit",
       "focus": "Check Ranking Juice improvement, rank recovery on lacing/sewing keywords, CVR impact after listing rewrite",
       "source": "2026-03-06 listing audit"
+    },
+    {
+      "date": "2026-03-10",
+      "type": "Verify listing push live (B0FQC7YFX6)",
+      "source": "listing-push-2026-03-08"
+    },
+    {
+      "date": "2026-03-15",
+      "type": "Post-listing-update re-audit - rank recovery + CVR impact",
+      "source": "listing-push-2026-03-08"
+    },
+    {
+      "date": "2026-03-30",
+      "type": "listing-ab-analyzer",
+      "skill": "listing-ab-analyzer",
+      "asin": "B0FQC7YFX6",
+      "change_date": "2026-03-08",
+      "what_changed": ["title", "bullets", "backend_keywords"],
+      "before_weeks": ["2026-02-22 to 2026-02-28", "2026-03-01 to 2026-03-07"],
+      "transition_week": "2026-03-08 to 2026-03-14",
+      "after_weeks": ["2026-03-15 to 2026-03-21", "2026-03-22 to 2026-03-28"],
+      "source": "listing-push-2026-03-08",
+      "status": "pending"
     }
   ],
   "skills_run": [
@@ -223,7 +329,7 @@
         "actions_executed": 15,
         "api_errors": 0
       },
-      "notes": "First-ever deep dive. Restructured from MK-broad-led to SK-exact-led. Re-enabled 2 paused hero SK campaigns. Launch portfolio \u2014 rank velocity is primary KPI."
+      "notes": "First-ever deep dive. Restructured from MK-broad-led to SK-exact-led. Re-enabled 2 paused hero SK campaigns. Launch portfolio — rank velocity is primary KPI."
     },
     {
       "skill": "listing-optimizer + listing-creator",
@@ -238,10 +344,30 @@
         "bullet_options": 5
       },
       "notes": "Bullets had ZERO Ranking Juice. Three missing high-BSV roots: sewing (7130), toy (4098), threading (2267). Options generated, awaiting user approval before push."
+    },
+    {
+      "skill": "listing-creator",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "submission_id": "0bf278feda4e4f568f39be5b0713321e",
+        "fields_pushed": 3,
+        "backend_kw_bytes": "247/249"
+      }
+    },
+    {
+      "skill": "ppc-timeseries-dashboard",
+      "date": "2026-03-08",
+      "result": "success",
+      "key_metrics": {
+        "data_points": 6,
+        "inflections_detected": 0,
+        "trajectory_30d_acos": "declining"
+      }
     }
   ],
   "improvement_assessment": {
     "overall_trend": "restructuring",
-    "notes": "First deep dive \u2014 baseline established. Cannot assess improvement yet. Major structural changes applied (MK broad demoted, hero SKs enabled, traffic isolation via negatives). Re-check at 7d and 14d."
+    "notes": "First deep dive — baseline established. Cannot assess improvement yet. Major structural changes applied (MK broad demoted, hero SKs enabled, traffic isolation via negatives). Re-check at 7d and 14d."
   }
 }

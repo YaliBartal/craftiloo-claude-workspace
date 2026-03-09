@@ -1,0 +1,22 @@
+{
+  "run_date": "2026-03-09",
+  "period": "WEEK",
+  "period_dates": {
+    "start": "2026-02-22",
+    "end": "2026-02-28"
+  },
+  "reports_pulled": [
+    "scp",
+    "sqp",
+    "market_basket",
+    "repeat_purchase"
+  ],
+  "reports_failed": [
+    "search_terms"
+  ],
+  "asin_batches": 1,
+  "previous_week_available": false,
+  "scp_asin_count": 37,
+  "sqp_keyword_count": 27,
+  "sqp_row_count": 27
+}

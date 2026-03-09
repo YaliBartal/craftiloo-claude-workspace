@@ -4,6 +4,29 @@
 
 *(New entries go at the TOP)*
 
+### Run: 2026-03-08
+**Result:** Success
+
+**What happened:**
+- Fourth daily health check. 173 ENABLED campaigns (up from 156 on Mar 5 — Shield All re-enables + new campaigns).
+- 3-day gap since last check (Mar 5).
+- **Fairy Sewing +9 top-10 keywords** — biggest rank surge in account history. Listing push (Mar 6) + PPC deep dive (Mar 3) combined effect.
+- Net +10 top-10 account-wide (222→232). Best 3-day performance since tracking started.
+- 5 listing pushes verified live (4 from Mar 6 + Princess Lacing pushed today).
+- Fairy Family upgraded YELLOW→GREEN. Latch Hook Pillow -2 concerning but PP/ROS only 3 days old.
+- 6 GREEN, 7 YELLOW, 4 RED, 1 PAUSED portfolios.
+
+**What didn't work:**
+- Campaign API result was JSON code blocks (not markdown table) — needed regex parsing instead of table parsing.
+- No fresh weekly or market intel data — account-level financials unavailable. Weekly analysis 7 days overdue.
+
+**Lesson learned:**
+- Listing push + PPC restructuring is a 1-2 punch that can produce dramatic rank gains within 2-5 days. Fairy Family is proof of concept.
+- Campaign data from list_sp_campaigns is returned as individual JSON code blocks, not a markdown table. Use regex `json\n(.*?)\n` to extract.
+- 3-day gaps are acceptable for health checks but miss the day-to-day volatility. Aim for daily when possible.
+
+**Tokens/cost:** ~30K tokens, 0 API cost
+
 ### Run: 2026-03-05
 **Result:** Success
 

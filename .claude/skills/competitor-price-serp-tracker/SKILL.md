@@ -195,7 +195,13 @@ Write `outputs/research/competitor-tracker/briefs/YYYY-MM-DD-weekly-brief.md`
 7. **PPC Flags Written** -- summary of flags pushed to agent state
 8. **Footer** -- data sources, Apify cost, runtime
 
-### Step 8: Update LESSONS.md
+### Step 8: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: competitor-price-serp-tracker".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
+
+### Step 9: Update LESSONS.md
 
 Standard post-run logging:
 - Run date, goals, result (success/partial/fail)

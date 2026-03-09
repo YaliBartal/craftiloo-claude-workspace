@@ -678,6 +678,121 @@ async def create_report(
     return f"## Report Requested\n\n- **Report Type:** {report_type}\n- **Report ID:** {report_id}\n- **Period:** last {days_back} days\n\nUse `get_report_status(report_id='{report_id}')` to check when it's ready."
 
 
+
+@mcp.tool()
+async def create_brand_analytics_report(
+    report_name: str,
+    period: str = "WEEK",
+    periods_back: int = 1,
+    marketplace: str = "US",
+    asins: str = "",
+) -> str:
+    """Request a Brand Analytics report with proper calendar-aligned dates.
+
+    report_name options:
+    - search_terms: Top search keywords + most-clicked ASINs + click/conversion share
+    - market_basket: Items frequently bought together with your products
+    - repeat_purchase: Repeat vs one-time purchase quantities per ASIN
+    - sqp: Search Query Performance -- impressions, clicks, cart adds, purchases by query (REQUIRES asins)
+    - scp: Search Catalog Performance -- same metrics organized by ASIN
+
+    period: WEEK, MONTH, or QUARTER (default WEEK)
+    periods_back: How many periods back (default 1 = last completed period)
+    asins: Space-separated ASINs (REQUIRED for sqp, max 200 chars). Example: "B08DDJCQKF B09WQSBZY7"
+    """
+    report_map = {
+        "search_terms": "GET_BRAND_ANALYTICS_SEARCH_TERMS_REPORT",
+        "market_basket": "GET_BRAND_ANALYTICS_MARKET_BASKET_REPORT",
+        "repeat_purchase": "GET_BRAND_ANALYTICS_REPEAT_PURCHASE_REPORT",
+        "sqp": "GET_BRAND_ANALYTICS_SEARCH_QUERY_PERFORMANCE_REPORT",
+        "scp": "GET_BRAND_ANALYTICS_SEARCH_CATALOG_PERFORMANCE_REPORT",
+    }
+
+    report_type = report_map.get(report_name.lower())
+    if not report_type:
+        opts = ', '.join(report_map.keys())
+        return f"Error: Unknown report_name '{report_name}'. Options: {opts}"
+
+    now = datetime.utcnow()
+    period = period.upper()
+
+    if period == "WEEK":
+        # Find last COMPLETED week (Sun-Sat).
+        # Saturday=7 (go to prev Sat), Sun=1, Mon=2, Tue=3, etc.
+        days_back_to_sat = (now.weekday() - 5) % 7 or 7
+        last_saturday = now - timedelta(days=days_back_to_sat)
+        last_saturday = last_saturday.replace(hour=0, minute=0, second=0, microsecond=0)
+        end = last_saturday - timedelta(weeks=periods_back - 1)
+        start = end - timedelta(days=6)
+        end_str = end.strftime("%Y-%m-%dT23:59:59Z")
+        start_str = start.strftime("%Y-%m-%dT00:00:00Z")
+    elif period == "MONTH":
+        first_of_current = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+        for _ in range(periods_back):
+            first_of_current = (first_of_current - timedelta(days=1)).replace(day=1)
+        start = first_of_current
+        if start.month == 12:
+            end = start.replace(year=start.year + 1, month=1, day=1) - timedelta(days=1)
+        else:
+            end = start.replace(month=start.month + 1, day=1) - timedelta(days=1)
+        start_str = start.strftime("%Y-%m-%dT00:00:00Z")
+        end_str = end.strftime("%Y-%m-%dT23:59:59Z")
+    elif period == "QUARTER":
+        current_q = (now.month - 1) // 3
+        for _ in range(periods_back):
+            current_q -= 1
+        year = now.year + (current_q // 4)
+        q = current_q % 4
+        start_month = q * 3 + 1
+        start = datetime(year, start_month, 1)
+        end_month = start_month + 2
+        if end_month == 12:
+            end = datetime(year + 1, 1, 1) - timedelta(days=1)
+        else:
+            end = datetime(year, end_month + 1, 1) - timedelta(days=1)
+        start_str = start.strftime("%Y-%m-%dT00:00:00Z")
+        end_str = end.strftime("%Y-%m-%dT23:59:59Z")
+    else:
+        return f"Error: period must be WEEK, MONTH, or QUARTER (got '{period}')"
+
+    report_options = {"reportPeriod": period}
+
+    # SQP requires asin parameter
+    if report_name.lower() == "sqp":
+        if not asins:
+            return "Error: SQP report requires 'asins' parameter (space-separated, max 200 chars). Example: asins='B08DDJCQKF B09WQSBZY7'"
+        if len(asins) > 200:
+            return f"Error: asins string is {len(asins)} chars (max 200). Reduce the number of ASINs."
+        report_options["asin"] = asins
+
+    body = {
+        "reportType": report_type,
+        "marketplaceIds": [_marketplace_id(marketplace)],
+        "dataStartTime": start_str,
+        "dataEndTime": end_str,
+        "reportOptions": report_options,
+    }
+    data = await api_post("/reports/2021-06-30/reports", body=body)
+    if isinstance(data, str):
+        return data
+
+    report_id = data.get("reportId", "")
+    parts = [
+        "## Brand Analytics Report Requested",
+        "",
+        f"- **Report:** {report_name} ({report_type})",
+        f"- **Report ID:** {report_id}",
+        f"- **Period:** {period} ({start_str[:10]} to {end_str[:10]})",
+        f"- **Marketplace:** {marketplace}",
+    ]
+    if asins:
+        asin_count = len(asins.split())
+        parts.append(f"- **ASINs:** {asin_count} provided")
+    parts.append("")
+    parts.append(f"Use `get_report_status(report_id='{report_id}')` to check when it's ready.")
+    return chr(10).join(parts)
+
+
 @mcp.tool()
 async def get_report_status(report_id: str) -> str:
     """Check the status of a requested report.

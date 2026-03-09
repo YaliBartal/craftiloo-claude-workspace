@@ -116,6 +116,36 @@ list_portfolios(marketplace="US")
 
 Build portfolio-to-campaign mapping so every search term can be attributed to a portfolio.
 
+### Step 3b: Brand Analytics SQP — Search Funnel Cross-Reference (Optional)
+
+**PURPOSE:** Enrich search term classification with Amazon's own impression/click/conversion data. SQP shows real shopper behavior — not just our PPC spend data. This validates PROMOTE candidates (do they have real organic search volume?) and strengthens NEGATE decisions (does Amazon confirm zero conversions?).
+
+**Cost:** $0 (Brand Analytics is free with Brand Registry)
+**Time:** ~60 seconds
+**Tool:** `create_brand_analytics_report` (SP-API MCP)
+
+**How to fetch:**
+
+1. **Get top ASINs from the search term report** — identify the 5-10 ASINs with the most search term activity (most rows in the report)
+
+2. **Create SQP report:**
+   ```
+   create_brand_analytics_report(
+       report_name="sqp",
+       period="WEEK",
+       periods_back=2,
+       marketplace="US",
+       asins="B09WQSBZY7 B096MYBLS1 B08FYH13CL ..."
+   )
+   ```
+   Use `periods_back=2` on Sunday/Monday (48h SLA). ASINs space-separated, max 200 chars.
+
+3. **Poll + download** (poll every 15s, max 8 times)
+
+4. **Build SQP lookup** — create a map of `search_term → {impressions, clicks, cart_adds, purchases}` for use in Step 4.
+
+**If SQP fails:** Continue without it — classification still works from PPC data alone. Note: "Brand Analytics SQP unavailable — using PPC data only."
+
 ### Step 4: Classify Search Terms
 
 For each search term in the report, apply these SOP-based classification rules:
@@ -141,6 +171,22 @@ For each search term in the report, apply these SOP-based classification rules:
 
 **Buying intent indicators:** Specific product terms (not generic), long-tail (3+ words), contains product type + modifier
 
+**SQP enrichment for PROMOTE (if Step 3b data available):**
+
+| SQP Signal | Effect on PROMOTE Decision |
+|------------|---------------------------|
+| SQP impressions > 500/week + purchases > 0 | **Upgrade to P1** — confirmed high-volume converting term |
+| SQP impressions > 200/week + 0 purchases in SQP | **Downgrade to DISCOVER** — PPC converts but organic doesn't, may be PPC-dependent |
+| SQP impressions < 50/week | **Flag as [LOW VOLUME]** — term may not sustain a dedicated campaign |
+| SQP conversion share > 10% for this term | **Upgrade to P1** — we own significant share of this search |
+
+**SQP enrichment for NEGATE (if Step 3b data available):**
+
+| SQP Signal | Effect on NEGATE Decision |
+|------------|--------------------------|
+| SQP purchases > 0 for this term | **Remove from NEGATE** — flag as [BA PROTECTED]. Term converts organically even if PPC shows 0 orders |
+| SQP impressions > 100 + 0 clicks + 0 purchases | **Confirm NEGATE** — Amazon shows us but shoppers ignore. High confidence irrelevant |
+
 #### DISCOVER — Monitor, don't act yet
 
 | Condition | Action |
@@ -162,6 +208,8 @@ For each search term in the report, apply these SOP-based classification rules:
 4. **Product title check:** Do not negate terms that contain words from our own product titles.
 
 5. **Cross-portfolio check:** Flag if a NEGATE term is a valuable keyword for a DIFFERENT portfolio (cannibalization signal).
+
+6. **Brand Analytics conversion check (if Step 3b data available):** Check if any NEGATE candidate has `purchases > 0` in SQP data. If so, **remove from NEGATE** and flag as **[BA PROTECTED]** — Amazon's own data confirms this term converts organically. This overrides PPC spend-based signals.
 
 ### Step 6: Identify Target Campaigns for Negatives
 
@@ -350,6 +398,14 @@ After user approval:
 | API throttled during application | Wait 5 seconds, retry. If persistent, save remaining for next run |
 | Partial application failure | Report what succeeded, provide copy-paste for failures |
 | list_portfolios truncated at 50 | Known issue — note some campaigns may be unmapped |
+
+---
+
+### Step 11: Post Notifications
+
+Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: ppc-search-term-harvester".
+Follow those instructions to post a summary to Slack.
+If Slack MCP is unavailable, skip and note in run log.
 
 ---
 
