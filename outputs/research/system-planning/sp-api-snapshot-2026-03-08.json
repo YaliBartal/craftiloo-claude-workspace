@@ -1,0 +1,121 @@
+{
+  "hero_products": {
+    "B08DDJCQKF": {
+      "bsr": 5286,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 4,
+      "subcategory": "Cross-Stitch Stamped Kits",
+      "price": 19.98,
+      "stock": 73
+    },
+    "B0F6YTG1CH": {
+      "bsr": 50832,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 27,
+      "subcategory": "Cross-Stitch Counted Kits",
+      "price": 16.98,
+      "stock": 195
+    },
+    "B09X55KL2C": {
+      "bsr": 11623,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 37,
+      "subcategory": "Embroidery Kits",
+      "price": 21.58,
+      "stock": 1550,
+      "stock_note": "fulfillable=1550; total incl. inbound/reserved=1696"
+    },
+    "B0DC69M3YD": {
+      "bsr": 30580,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 122,
+      "subcategory": "Embroidery Kits",
+      "price": 24.98,
+      "stock": 588
+    },
+    "B09WQSBZY7": {
+      "bsr": 4941,
+      "bsr_category": "Toys & Games",
+      "subcategory_rank": 5,
+      "subcategory": "Kids' Sewing Kits",
+      "price": 17.98,
+      "stock": 818
+    },
+    "B096MYBLS1": {
+      "bsr": 162399,
+      "bsr_category": "Toys & Games",
+      "subcategory_rank": 161,
+      "subcategory": "Kids' Felt Craft Kits",
+      "stock": 0,
+      "stock_note": "no active FBA stock; no active offers returned by pricing API"
+    },
+    "B08FYH13CL": {
+      "bsr": 26831,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 17,
+      "subcategory": "Latch Hook Kits",
+      "price": 19.98,
+      "stock": 735
+    },
+    "B0F8R652FX": {
+      "bsr": 12454,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 4,
+      "subcategory": "Latch Hook Kits",
+      "price": 24.98,
+      "stock": 392
+    },
+    "B0F8DG32H5": {
+      "bsr": 24706,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 30,
+      "subcategory": "Knitting Kits",
+      "price": 26.98,
+      "stock": 382
+    },
+    "B09THLVFZK": {
+      "bsr": 6269,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 10,
+      "subcategory": "Fuse & Perler Beads",
+      "price": 32.98,
+      "stock": 441
+    },
+    "B07D6D95NG": {
+      "bsr": 22142,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 44,
+      "subcategory": "Fuse & Perler Beads",
+      "price": 24.98,
+      "stock": 261
+    },
+    "B0FQC7YFX6": {
+      "bsr": 27806,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 4,
+      "subcategory": "Card Making Kits",
+      "price": 19.98,
+      "stock": 274
+    },
+    "B09HVSLBS6": {
+      "bsr": 26621,
+      "bsr_category": "Arts, Crafts & Sewing",
+      "subcategory_rank": 80,
+      "subcategory": "Sewing Project Kits",
+      "price": 17.98,
+      "stock": 0,
+      "stock_note": "fulfillableQuantity=0 but totalQuantity=124 (units in transit/reserved) — possible fulfillable stock incoming"
+    }
+  },
+  "orders_yesterday": {
+    "date": "2026-03-08",
+    "total_orders": 100,
+    "total_units": 103,
+    "shipped_revenue_incl_tax": 2028.49,
+    "shipped_orders": 76,
+    "pending_orders": 23,
+    "canceled_orders": 1,
+    "note": "100 orders fetched (1 page, no valid NextToken). Units counted from NumberOfItemsShipped + NumberOfItemsUnshipped fields. Revenue from Shipped orders only."
+  },
+  "sp_api_notes": "B096MYBLS1: zero FBA stock, zero active offers in pricing API — listing may be suppressed or OOS. B09HVSLBS6: fulfillable=0 but 124 units in inbound/reserved — not yet available. B09X55KL2C pricing: two New offers found ($21.58 and $23.98); $21.58 used as the lower/Buy Box price. BSR values sourced from catalog API (2022-04-01) at time of call (~2026-03-09 morning). Inventory uses fulfillableQuantity (FBA on-hand, excludable of inbound/reserved)."
+}

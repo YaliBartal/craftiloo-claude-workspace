@@ -24,6 +24,44 @@
 
 <!-- Add new entries at the TOP (newest first). Use this exact format: -->
 
+### Run: 2026-03-09
+**Goals:**
+- [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
+- [x] Fetch SP-API Orders for yesterday's revenue/units (2026-03-08)
+- [x] Fetch DataDive Rank Radar data for 9 hero radars (B08DDJCQKF no radar)
+- [x] Fetch DataDive competitor data for 11 niches
+- [x] Run Apify keyword scan (20 keywords) with axesso_data actor
+- [x] Run Apify competitor BSR scan (34 ASINs — saswave actor — BSR FIXED: bestsellerRanks[0].rank)
+- [ ] Fetch Seller Board 7-day dashboard + per-ASIN detailed — ❌ FAILED 401 (×4 consecutive)
+
+**Result:** ⚠️ Partial — 5/5 non-SB data sources succeeded. SB 401 again (fourth consecutive run).
+
+**What happened:**
+- SP-API: 100 orders, 103 units, $2,028.49 shipped revenue for Mar 8 (Sunday low-volume day — normal). B08DDJCQKF stock at 73 — CRITICAL (only ~2-3 days at current velocity). B09X55KL2C Buy Box at $21.58 (3rd party) vs our $23.98. B09HVSLBS6: 0 fulfillable, 124 inbound.
+- DataDive Rank Radar: 9/9 radars. B09WQSBZY7 hit new record 37 top-10 keywords (+3 today). B0F8DG32H5 +3 top-10 (now 19) despite BSR worsening — lag expected. B0DC69M3YD losing on "embroidery kit" (218K SV, 77→92). B08FYH13CL recovering: "latch hook" (10K SV) returned to rank 49 from 101.
+- DataDive Competitors: 11/11 niches. B09THLVFZK leads mini perler beads at 2,044 sales/mo (DD), 2x INSCRAFT. B09WQSBZY7 #3 in sewing niche at 1,333 sales/mo. New DD niche leader in lacing cards: B0B58BZ5KV (2,434 sales/mo — not previously tracked).
+- Apify keyword scan: 20/20 perfect. BIG WIN: B0F8R652FX #1 + B08FYH13CL #2 on "latch hook kits for kids" (was #5+#17 yesterday). B09THLVFZK reclaimed #1 on "mini perler beads" (was #2 yesterday). kullaloo confirmed #1 on "sewing kit for kids" again.
+- Apify saswave: 34/34 BSR FIXED — field is `bestsellerRanks[0].rank` (comma-formatted string e.g. "29,277"). B004JIFCXO BSR still null (product-level anomaly, not field issue). Prices still in EUR — continue to ignore price field from saswave.
+- Seller Board: 401 again (fourth consecutive run). Also discovered SELLERBOARD_SALES_DETAILED_7D was never added to .env.
+
+**What didn't work:**
+- Seller Board 401 — tokens still expired. Additional issue: SELLERBOARD_SALES_DETAILED_7D env var is missing entirely from .env.
+- B08DDJCQKF stock at 73 units is a genuine concern — likely NOT an API anomaly this time (was 82 yesterday which was flagged as anomaly vs 1,386 two days prior; consecutive low readings suggest real stock drop or FBA counting issue).
+
+**Is this a repeat error?** Seller Board 401 = Repeat Error ×4 (escalating — must fix). saswave BSR null = RESOLVED (field confirmed as bestsellerRanks[0].rank). B0DC69M3YD rank crisis ongoing (day 27+). B08FYH13CL instability continuing. B08DDJCQKF no Rank Radar = still not configured.
+
+**Lesson learned:**
+- **saswave BSR field CONFIRMED**: `bestsellerRanks` is an array, `bestsellerRanks[0].rank` is a comma-formatted string (e.g., "29,277" = 29277). Update agent prompts to strip commas before parsing. B004JIFCXO consistently has no bestsellerRanks — product-level issue, not field mapping.
+- **B08DDJCQKF stock alert**: 73 units at BSR 5,286 with ~30 units/day velocity = ~2-3 days. This is a critical inventory risk. May explain BSR decline (+865 today). If stock runs out, BSR will crash rapidly.
+- **B09X55KL2C Buy Box lost to 3rd party at $21.58 vs our $23.98** — first time flagged. Needs investigation. Could be causing hidden revenue loss.
+- **B0B58BZ5KV in lacing cards niche** (2,434 sales/mo) — new competitor not previously tracked. Should be investigated and potentially added to competitor tracking.
+- **kullaloo and Louise Maelys** have been flagged for 7+ and 10+ days — both should be urgently added to context/competitors.md and competitor BSR scan list.
+- **Seller Board fix steps**: (1) SB → Settings → Automation → Reports → regenerate all URLs, (2) update all 5 .env entries, (3) ADD new `SELLERBOARD_SALES_DETAILED_7D` entry that was never configured.
+
+**Tokens/cost:** ~95K tokens, ~$0.95 Apify cost (20 keywords + 1 BSR scan)
+
+---
+
 ### Run: 2026-03-08
 **Goals:**
 - [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs

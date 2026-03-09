@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Craftiloo AI System — Visual Skill Map</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #0b0d14;
+    color: #e2e8f0;
+    padding: 28px 24px 48px;
+    min-width: 1280px;
+  }
+
+  /* ── HEADER ── */
+  .header { text-align: center; margin-bottom: 32px; }
+  .header h1 { font-size: 24px; font-weight: 700; color: #f8fafc; letter-spacing: -0.5px; }
+  .header p  { font-size: 13px; color: #64748b; margin-top: 6px; }
+  .legend {
+    display: flex; gap: 20px; justify-content: center; margin-top: 14px; flex-wrap: wrap;
+  }
+  .legend-item { display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: #94a3b8; }
+  .badge { padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+  .b-built  { background: #14532d; color: #86efac; }
+  .b-build  { background: #431407; color: #fdba74; }
+  .b-p0     { background: #3b0764; color: #e9d5ff; }
+  .b-wflow  { background: #1e3a5f; color: #93c5fd; }
+
+  /* ── DOTS ── */
+  .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; display: inline-block; }
+  .dot-g { background: #22c55e; }
+  .dot-o { background: #f97316; }
+  .dot-p { background: #a855f7; }
+  .dot-b { background: #3b82f6; }
+
+  /* ── MASTER ORCHESTRATOR ── */
+  .master-wrap { display: flex; flex-direction: column; align-items: center; }
+  .master {
+    background: linear-gradient(135deg, #1a0d30 0%, #2e1065 100%);
+    border: 2px solid #7c3aed;
+    border-radius: 16px;
+    padding: 20px 28px;
+    width: 100%;
+    max-width: 960px;
+    box-shadow: 0 0 50px #7c3aed22;
+    position: relative;
+  }
+  .master-top { display: flex; align-items: flex-start; gap: 16px; }
+  .master-icon { font-size: 30px; }
+  .master-text { flex: 1; }
+  .master-text h2 { font-size: 18px; font-weight: 700; color: #ddd6fe; }
+  .master-text .sub { font-size: 12px; color: #a78bfa; margin-top: 3px; }
+  .master-badge { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .master-feature {
+    background: #2e1065; border: 1px solid #5b21b6;
+    border-radius: 8px; padding: 5px 12px; font-size: 11.5px; color: #c4b5fd;
+  }
+
+  /* ── WORKFLOW RIBBON ── */
+  .workflow-ribbon {
+    margin-top: 8px; border-top: 1px solid #3b1d6e; padding-top: 10px;
+  }
+  .workflow-ribbon .wlabel { font-size: 10px; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .workflows { display: flex; gap: 8px; flex-wrap: wrap; }
+  .wf-pill {
+    background: #1e1040; border: 1px dashed #5b21b6;
+    border-radius: 20px; padding: 4px 12px; font-size: 11px; color: #a78bfa;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .wf-arrow { color: #7c3aed; font-size: 10px; }
+
+  /* ── CONNECTOR ── */
+  .v-line { width: 2px; height: 24px; background: linear-gradient(#7c3aed88, #7c3aed33); margin: 0 auto; }
+  .h-bar {
+    width: calc(100% - 80px); height: 2px;
+    background: linear-gradient(to right, transparent, #7c3aed55, #7c3aed55, transparent);
+    margin: 0 auto;
+  }
+  .branch-row { display: flex; justify-content: space-around; width: 100%; }
+  .branch-tick { width: 2px; height: 18px; background: #7c3aed44; }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+    color: #334155; margin: 20px 0 10px; padding-left: 4px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: #1e293b; }
+
+  /* ── DOMAIN GRID ── */
+  .row1 { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; }
+  .row2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 14px; }
+
+  /* ── DOMAIN CARD ── */
+  .domain {
+    border-radius: 13px; padding: 16px 16px 14px; border: 1.5px solid;
+    position: relative;
+  }
+  .domain-hdr {
+    display: flex; align-items: center; gap: 9px;
+    padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid;
+  }
+  .domain-em  { font-size: 20px; }
+  .domain-ttl { font-size: 14px; font-weight: 700; }
+  .domain-sub { font-size: 11px; margin-top: 2px; opacity: 0.65; }
+  .new-badge {
+    position: absolute; top: 10px; right: 10px;
+    font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 20px;
+    letter-spacing: 0.8px;
+  }
+
+  /* ── SKILL ROWS ── */
+  .skills { list-style: none; }
+  .sk {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 6px;
+    padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 12px;
+  }
+  .sk:last-child { border-bottom: none; }
+  .sk-left { display: flex; align-items: flex-start; gap: 7px; flex: 1; min-width: 0; }
+  .sk-info { min-width: 0; }
+  .sk-name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sk-desc { font-size: 10.5px; opacity: 0.5; margin-top: 1px; }
+  .orch { font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 4px; background: rgba(255,255,255,0.08); letter-spacing: 0.5px; margin-left: 4px; vertical-align: middle; }
+
+  /* status badges inline */
+  .bk-built  { background: #14532d; color: #86efac; padding: 1px 7px; border-radius: 10px; font-size: 10px; font-weight: 600; white-space: nowrap; }
+  .bk-build  { background: #431407; color: #fdba74; padding: 1px 7px; border-radius: 10px; font-size: 10px; font-weight: 600; white-space: nowrap; }
+
+  /* data sources footer */
+  .ds { margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .ds-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 3px; }
+  .ds-val   { font-size: 10.5px; color: #94a3b8; }
+
+  /* ── DOMAIN COLOUR THEMES ── */
+  /* PPC — violet */
+  .d-ppc { background: #100820; border-color: #7c3aed; }
+  .d-ppc .domain-hdr { border-color: #7c3aed33; }
+  .d-ppc .domain-ttl { color: #c4b5fd; }
+  .d-ppc .domain-sub { color: #a78bfa; }
+  .d-ppc .ds-label   { color: #7c3aed; }
+
+  /* Content — rose */
+  .d-content { background: #18060f; border-color: #be185d; }
+  .d-content .domain-hdr { border-color: #be185d33; }
+  .d-content .domain-ttl { color: #fda4af; }
+  .d-content .domain-sub { color: #fb7185; }
+  .d-content .ds-label   { color: #be185d; }
+
+  /* Market — amber */
+  .d-market { background: #130c00; border-color: #b45309; }
+  .d-market .domain-hdr { border-color: #b4530933; }
+  .d-market .domain-ttl { color: #fcd34d; }
+  .d-market .domain-sub { color: #f59e0b; }
+  .d-market .ds-label   { color: #b45309; }
+
+  /* Inventory — emerald */
+  .d-inv { background: #030f08; border-color: #15803d; box-shadow: 0 0 18px #15803d1a; }
+  .d-inv .domain-hdr { border-color: #15803d33; }
+  .d-inv .domain-ttl { color: #86efac; }
+  .d-inv .domain-sub { color: #4ade80; }
+  .d-inv .ds-label   { color: #15803d; }
+  .d-inv .new-badge  { background: #15803d; color: #f0fdf4; }
+
+  /* Fees — orange */
+  .d-fees { background: #120500; border-color: #c2410c; box-shadow: 0 0 18px #c2410c1a; }
+  .d-fees .domain-hdr { border-color: #c2410c33; }
+  .d-fees .domain-ttl { color: #fdba74; }
+  .d-fees .domain-sub { color: #fb923c; }
+  .d-fees .ds-label   { color: #c2410c; }
+  .d-fees .new-badge  { background: #c2410c; color: #fff7ed; }
+
+  /* Finance — sky */
+  .d-fin { background: #020c18; border-color: #0369a1; box-shadow: 0 0 18px #0369a11a; }
+  .d-fin .domain-hdr { border-color: #0369a133; }
+  .d-fin .domain-ttl { color: #7dd3fc; }
+  .d-fin .domain-sub { color: #38bdf8; }
+  .d-fin .ds-label   { color: #0369a1; }
+  .d-fin .new-badge  { background: #0369a1; color: #e0f2fe; }
+
+  /* Account Health — red */
+  .d-health { background: #130003; border-color: #b91c1c; box-shadow: 0 0 18px #b91c1c1a; }
+  .d-health .domain-hdr { border-color: #b91c1c33; }
+  .d-health .domain-ttl { color: #fca5a5; }
+  .d-health .domain-sub { color: #f87171; }
+  .d-health .ds-label   { color: #b91c1c; }
+  .d-health .new-badge  { background: #b91c1c; color: #fff1f2; }
+
+  /* ── INFRASTRUCTURE ── */
+  .infra {
+    margin-top: 14px; background: #0d1117; border: 1px solid #1e293b;
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .infra-label { font-size: 10px; font-weight: 700; color: #334155; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+  .infra-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .ip { background: #161b22; border: 1px solid #30363d; border-radius: 7px; padding: 5px 12px; font-size: 11.5px; color: #8b949e; }
+  .ip span { color: #c9d1d9; font-weight: 600; }
+
+  /* ── ROADMAP ── */
+  .roadmap { margin-top: 36px; }
+  .roadmap h2 { font-size: 17px; font-weight: 700; color: #f1f5f9; margin-bottom: 4px; }
+  .roadmap > p { font-size: 12.5px; color: #475569; margin-bottom: 18px; }
+
+  .phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .phase { background: #0d1117; border: 1px solid #1e293b; border-radius: 12px; padding: 14px 14px 12px; }
+  .ph-hdr { display: flex; align-items: center; gap: 9px; margin-bottom: 10px; }
+  .ph-num {
+    width: 26px; height: 26px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800; flex-shrink: 0;
+  }
+  .ph-title { font-size: 12.5px; font-weight: 700; }
+  .ph-sub   { font-size: 10.5px; color: #475569; margin-top: 1px; }
+  .ph-items { list-style: none; }
+  .ph-item {
+    display: flex; align-items: flex-start; gap: 7px;
+    padding: 5px 0; border-bottom: 1px solid #161b22; font-size: 11.5px;
+  }
+  .ph-item:last-child { border-bottom: none; }
+  .ph-item-name { font-weight: 600; color: #e2e8f0; }
+  .ph-item-desc { font-size: 10.5px; color: #475569; margin-top: 1px; }
+
+  .ph0 .ph-num { background: #3b0764; color: #e9d5ff; }
+  .ph0 { border-color: #3b076433; }
+  .ph0 .ph-title { color: #d8b4fe; }
+  .ph1 .ph-num { background: #14532d; color: #bbf7d0; }
+  .ph1 { border-color: #14532d44; }
+  .ph1 .ph-title { color: #86efac; }
+  .ph2 .ph-num { background: #431407; color: #fed7aa; }
+  .ph2 { border-color: #43140744; }
+  .ph2 .ph-title { color: #fdba74; }
+  .ph3 .ph-num { background: #0c3058; color: #bae6fd; }
+  .ph3 { border-color: #0c305844; }
+  .ph3 .ph-title { color: #7dd3fc; }
+  .ph4 .ph-num { background: #1e0a0a; color: #fecaca; }
+  .ph4 { border-color: #7f1d1d44; }
+  .ph4 .ph-title { color: #fca5a5; }
+
+  /* ── CROSS-DOMAIN ── */
+  .cross { margin-top: 28px; background: #0d1117; border: 1px solid #1e293b; border-radius: 14px; padding: 18px 20px; }
+  .cross h2 { font-size: 15px; font-weight: 700; color: #f1f5f9; margin-bottom: 3px; }
+  .cross > p { font-size: 12px; color: #475569; margin-bottom: 14px; }
+  .cross-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .cx { background: #0b0f1a; border-radius: 9px; padding: 11px 13px; }
+  .cx-sig { font-size: 11.5px; color: #94a3b8; margin-bottom: 5px; }
+  .cx-sig strong { color: #e2e8f0; }
+  .cx-act { font-size: 11px; color: #818cf8; font-weight: 600; }
+  .cx-domain { font-size: 10px; color: #334155; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Craftiloo AI System — Skill Map</h1>
+  <p>2026-03-08 &nbsp;·&nbsp; 7 Domains &nbsp;·&nbsp; 24 Built &nbsp;·&nbsp; 20 To Build &nbsp;·&nbsp; 1 Master Orchestrator</p>
+  <div class="legend">
+    <div class="legend-item"><span class="dot dot-g"></span><span class="badge b-built">BUILT</span> Live skill</div>
+    <div class="legend-item"><span class="dot dot-o"></span><span class="badge b-build">TO BUILD</span> Proposed</div>
+    <div class="legend-item"><span class="dot dot-p"></span><span class="badge b-p0">P0</span> Build first</div>
+    <div class="legend-item"><span class="dot dot-b"></span><span class="badge b-wflow">WORKFLOW</span> Cross-domain sequence</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- MASTER ORCHESTRATOR                                    -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="master-wrap">
+<div class="master">
+  <div class="master-top">
+    <div class="master-icon">🎛️</div>
+    <div class="master-text">
+      <h2>CRAFTILOO COMMAND CENTER &nbsp;<span class="badge b-p0">P0 — Build First</span></h2>
+      <div class="sub">Master Orchestrator &nbsp;·&nbsp; Reads ALL domain state files &nbsp;·&nbsp; Surfaces top priorities across the whole business &nbsp;·&nbsp; Routes to right agent</div>
+      <div class="master-badge">
+        <span class="master-feature">📊 Business Pulse (revenue · profit · TACoS)</span>
+        <span class="master-feature">🚦 Domain Health Dashboard</span>
+        <span class="master-feature">🎯 Top 5 Cross-Domain Priorities</span>
+        <span class="master-feature">⚠️ Cross-Domain Alerts</span>
+        <span class="master-feature">📅 Overdue Cadences</span>
+        <span class="master-feature">☀️ Morning Briefing (absorbs daily-prep)</span>
+      </div>
+    </div>
+  </div>
+  <!-- Cross-domain workflows live here -->
+  <div class="workflow-ribbon">
+    <div class="wlabel">Cross-Domain Workflows (orchestrated from here)</div>
+    <div class="workflows">
+      <div class="wf-pill"><span class="badge b-wflow" style="font-size:9px">WORKFLOW</span> 🚀 Product Launch <span class="wf-arrow">Market Intel → Content → Inventory → Finance → PPC</span></div>
+      <div class="wf-pill"><span class="badge b-wflow" style="font-size:9px">WORKFLOW</span> 🎯 Deal Prep <span class="wf-arrow">Finance → PPC → Inventory</span></div>
+      <div class="wf-pill"><span class="badge b-wflow" style="font-size:9px">WORKFLOW</span> 🌍 Market Expansion <span class="wf-arrow">Market Intel → Content → PPC → Finance</span></div>
+      <div class="wf-pill"><span class="badge b-wflow" style="font-size:9px">WORKFLOW</span> 📉 Declining Product <span class="wf-arrow">Reviews → Listing → PPC → Pricing</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- connector -->
+<div class="v-line"></div>
+<div style="width:85%;height:2px;background:linear-gradient(to right,transparent,#7c3aed33,#7c3aed44,#7c3aed33,transparent);margin:0 auto;"></div>
+<div style="display:flex;justify-content:space-between;width:83%;margin:0 auto;">
+  <div class="branch-tick"></div><div class="branch-tick"></div><div class="branch-tick"></div>
+  <div class="branch-tick"></div><div class="branch-tick"></div><div class="branch-tick"></div><div class="branch-tick"></div>
+</div>
+</div><!-- /master-wrap -->
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- ROW 1 — EXISTING DOMAINS                               -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-label">Existing Domains &nbsp;·&nbsp; 24 built skills</div>
+
+<div class="row1">
+
+  <!-- PPC — big card -->
+  <div class="domain d-ppc">
+    <div class="domain-hdr">
+      <span class="domain-em">📈</span>
+      <div>
+        <div class="domain-ttl">PPC / Advertising</div>
+        <div class="domain-sub">ppc-agent orchestrates 11 sub-skills</div>
+      </div>
+    </div>
+    <ul class="skills">
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">ppc-agent<span class="orch">ORCH</span></div><div class="sk-desc">Routes all PPC work · tracks cadences · maintains portfolio state</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">ppc-daily-health</div><div class="sk-desc">🟢🟡🔴 per portfolio — 5-min morning scan</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">ppc-bid-recommender</div><div class="sk-desc">TOS-first bid matrix + placement health + apply via API</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">ppc-search-term-harvester</div><div class="sk-desc">NEGATE / PROMOTE / DISCOVER from 30-day data</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">ppc-portfolio-summary</div><div class="sk-desc">Portfolio health scorecard + structure audit</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">ppc-portfolio-action-plan</div><div class="sk-desc">Deep dive on one portfolio + execute actions</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">ppc-campaign-creator</div><div class="sk-desc">Design and create new campaigns via API</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">weekly-ppc-analysis</div><div class="sk-desc">Full 4-report weekly analysis with WoW comparison</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">ppc-monthly-review</div><div class="sk-desc">Monthly strategic review · stage transitions · reallocation</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">keyword-rank-optimizer</div><div class="sk-desc">PPC spend vs organic rank — find waste + opportunity</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">ppc-tacos-optimizer</div><div class="sk-desc">TACoS scorecard + organic momentum + profit check</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">negative-keyword-generator</div><div class="sk-desc">Proactive negatives from product catalog knowledge</div></div></div><span class="bk-built">BUILT</span></li>
+    </ul>
+    <div class="ds">
+      <div class="ds-label" style="color:#7c3aed">Data Sources</div>
+      <div class="ds-val">Amazon Ads API (29 tools) · DataDive Rank Radar · Seller Board</div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="domain d-content">
+    <div class="domain-hdr">
+      <span class="domain-em">✍️</span>
+      <div>
+        <div class="domain-ttl">Content &amp; Listing</div>
+        <div class="domain-sub">Create · optimize · launch content</div>
+      </div>
+    </div>
+    <ul class="skills">
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">product-listing-dev<span class="orch">ORCH</span></div><div class="sk-desc">Full launch: research → listing → images in one run</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">listing-creator</div><div class="sk-desc">Title + 5 bullets + keywords from Q&amp;A research</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">listing-optimizer</div><div class="sk-desc">Audit vs competitors · Ranking Juice gap · rewrites</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">image-planner</div><div class="sk-desc">7-image strategy with exact copy text + 4 alternatives</div></div></div><span class="bk-built">BUILT</span></li>
+    </ul>
+    <div class="ds">
+      <div class="ds-label" style="color:#be185d">Data Sources</div>
+      <div class="ds-val">Apify (competitor scraping) · DataDive · SP-API · Notion</div>
+    </div>
+  </div>
+
+  <!-- MARKET INTEL -->
+  <div class="domain d-market">
+    <div class="domain-hdr">
+      <span class="domain-em">🔍</span>
+      <div>
+        <div class="domain-ttl">Market Intelligence</div>
+        <div class="domain-sub">Research · reviews · competitors · rank</div>
+      </div>
+    </div>
+    <ul class="skills">
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">daily-market-intel</div><div class="sk-desc">Daily BSR &amp; rank vs competitors (actual Seller Board data)</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">niche-category-analysis</div><div class="sk-desc">GO/NO-GO for new niches — 40-pt scorecard</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">customer-review-analyzer</div><div class="sk-desc">Sentiment themes · competitive gaps · trend tracking</div></div></div><span class="bk-built">BUILT</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-g" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">competitor-price-serp-tracker</div><div class="sk-desc">Weekly competitor BSR + SERP position changes</div></div></div><span class="bk-built">BUILT</span></li>
+    </ul>
+    <div class="ds">
+      <div class="ds-label" style="color:#b45309">Data Sources</div>
+      <div class="ds-val">DataDive · SP-API · Apify (reviews, SERP) · Seller Board</div>
+    </div>
+  </div>
+
+</div><!-- /row1 -->
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- ROW 2 — NEW DOMAINS                                    -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="section-label" style="margin-top:20px">New Domains &nbsp;·&nbsp; 20 skills to build</div>
+
+<div class="row2">
+
+  <!-- INVENTORY -->
+  <div class="domain d-inv">
+    <span class="new-badge">NEW</span>
+    <div class="domain-hdr">
+      <span class="domain-em">📦</span>
+      <div>
+        <div class="domain-ttl">Inventory</div>
+        <div class="domain-sub">Stockouts · restock · storage fees</div>
+      </div>
+    </div>
+    <ul class="skills">
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">inventory-agent<span class="orch">ORCH</span></div><div class="sk-desc">Routes work · maintains inventory state</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">inventory-health</div><div class="sk-desc">🟢🟡🔴🚨 per SKU — days of cover daily</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">restock-planner</div><div class="sk-desc">What to order · how much · when (lead times + Q4)</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">storage-optimizer</div><div class="sk-desc">LTSF risk · slow movers · stranded inventory</div></div></div><span class="bk-build">BUILD</span></li>
+    </ul>
+    <div class="ds">
+      <div class="ds-label" style="color:#15803d">✅ All data connected</div>
+      <div class="ds-val">Seller Board inventory · SP-API FBA · SP-API inbound</div>
+    </div>
+  </div>
+
+  <!-- FEES -->
+  <div class="domain d-fees">
+    <span class="new-badge">NEW</span>
+    <div class="domain-hdr">
+      <span class="domain-em">💰</span>
+      <div>
+        <div class="domain-ttl">Fees &amp; Reimbursement</div>
+        <div class="domain-sub">Pick &amp; pack · lost stock · overcharges</div>
+      </div>
+    </div>
+    <ul class="skills">
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">fees-agent<span class="orch">ORCH</span></div><div class="sk-desc">Routes work · tracks recovery totals</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">fba-fee-analyzer</div><div class="sk-desc">Fee burden per ASIN · overcharge detection by size tier</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">reimbursement-tracker</div><div class="sk-desc">Lost / damaged / discrepancy → claim $ from Amazon</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">storage-fee-optimizer</div><div class="sk-desc">Sept: clear excess before Oct Q4 2.4× fee spike</div></div></div><span class="bk-build">BUILD</span></li>
+    </ul>
+    <div class="ds">
+      <div class="ds-label" style="color:#c2410c">⚠️ 3 new SP-API reports needed</div>
+      <div class="ds-val">SP-API (most connected) + inventory adj. / reimbursements / returns</div>
+    </div>
+  </div>
+
+  <!-- FINANCE -->
+  <div class="domain d-fin">
+    <span class="new-badge">NEW</span>
+    <div class="domain-hdr">
+      <span class="domain-em">📊</span>
+      <div>
+        <div class="domain-ttl">Finance</div>
+        <div class="domain-sub">P&amp;L · cash flow · pricing · COGS</div>
+      </div>
+    </div>
+    <ul class="skills">
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">finance-agent<span class="orch">ORCH</span></div><div class="sk-desc">Routes financial work · maintains finance state</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">p-l-dashboard</div><div class="sk-desc">Revenue − COGS − fees − ads = true profit per ASIN</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">cash-flow-planner</div><div class="sk-desc">When cash comes in vs inventory investment timing</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">pricing-strategy</div><div class="sk-desc">Price vs profit model · CVR impact · Profasee analogy</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">cogs-tracker</div><div class="sk-desc">COGS per SKU · break-even price · margin alerts</div></div></div><span class="bk-build">BUILD</span></li>
+    </ul>
+    <div class="ds">
+      <div class="ds-label" style="color:#0369a1">✅ All data connected</div>
+      <div class="ds-val">Seller Board (all reports) · SP-API pricing · Ads API spend</div>
+    </div>
+  </div>
+
+  <!-- ACCOUNT HEALTH -->
+  <div class="domain d-health">
+    <span class="new-badge">NEW</span>
+    <div class="domain-hdr">
+      <span class="domain-em">🛡️</span>
+      <div>
+        <div class="domain-ttl">Account Health</div>
+        <div class="domain-sub">Performance · listings · policy · brand</div>
+      </div>
+    </div>
+    <ul class="skills">
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">account-health-agent<span class="orch">ORCH</span></div><div class="sk-desc">Routes health alerts · maintains health state</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">performance-monitor</div><div class="sk-desc">ODR · cancellation rate · A-to-Z claims · chargebacks</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">listing-health-checker</div><div class="sk-desc">Suppressed listings · quality alerts · policy flags</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">ipi-score-tracker</div><div class="sk-desc">Inventory Performance Index — affects FBA storage limits</div></div></div><span class="bk-build">BUILD</span></li>
+      <li class="sk"><div class="sk-left"><span class="dot dot-o" style="margin-top:4px"></span><div class="sk-info"><div class="sk-name">brand-protection</div><div class="sk-desc">Unauthorized sellers · counterfeit · IP monitoring</div></div></div><span class="bk-build">BUILD</span></li>
+    </ul>
+    <div class="ds">
+      <div class="ds-label" style="color:#b91c1c">⚠️ SP-API notifications needed</div>
+      <div class="ds-val">SP-API notifications + listings API (most connected) · SP-API orders</div>
+    </div>
+  </div>
+
+</div><!-- /row2 -->
+
+<!-- INFRASTRUCTURE -->
+<div class="infra">
+  <div class="infra-label">⚙️ Infrastructure</div>
+  <div class="infra-pills">
+    <div class="ip"><span>skill-creator</span> — Build new skills</div>
+    <div class="ip"><span>mcp-builder</span> — Connect new APIs</div>
+    <div class="ip"><span>automation-discovery-interview</span> — 30-min workflow audit</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PRODUCT LAUNCH — WORKFLOW EXPLAINER                    -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div style="margin-top:28px;background:#0a0e1a;border:1px dashed #1e3a5f;border-radius:14px;padding:18px 22px;">
+  <div style="display:flex;align-items:flex-start;gap:14px;">
+    <div style="font-size:24px">🚀</div>
+    <div style="flex:1">
+      <div style="font-size:14px;font-weight:700;color:#7dd3fc;margin-bottom:4px">Product Launch — Why It's a Workflow, Not a Domain</div>
+      <div style="font-size:12.5px;color:#475569;margin-bottom:12px">A product launch isn't one department's job — it's a sequence that crosses every domain in order. It lives inside the Master Orchestrator as a "launch mode".</div>
+      <div style="display:flex;align-items:center;gap:0;flex-wrap:wrap;">
+        <div style="background:#0d1117;border:1px solid #1e293b;border-radius:9px;padding:8px 14px;font-size:11.5px;">
+          <div style="color:#fcd34d;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px">① Market Intel</div>
+          <div style="color:#94a3b8">niche-category-analysis<br>GO/NO-GO verdict</div>
+        </div>
+        <div style="color:#7c3aed;font-size:18px;padding:0 8px">→</div>
+        <div style="background:#0d1117;border:1px solid #1e293b;border-radius:9px;padding:8px 14px;font-size:11.5px;">
+          <div style="color:#fda4af;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px">② Content</div>
+          <div style="color:#94a3b8">listing-creator<br>image-planner</div>
+        </div>
+        <div style="color:#7c3aed;font-size:18px;padding:0 8px">→</div>
+        <div style="background:#0d1117;border:1px solid #1e293b;border-radius:9px;padding:8px 14px;font-size:11.5px;">
+          <div style="color:#7dd3fc;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px">③ Finance</div>
+          <div style="color:#94a3b8">pricing-strategy<br>p-l-dashboard</div>
+        </div>
+        <div style="color:#7c3aed;font-size:18px;padding:0 8px">→</div>
+        <div style="background:#0d1117;border:1px solid #1e293b;border-radius:9px;padding:8px 14px;font-size:11.5px;">
+          <div style="color:#86efac;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px">④ Inventory</div>
+          <div style="color:#94a3b8">restock-planner<br>initial order</div>
+        </div>
+        <div style="color:#7c3aed;font-size:18px;padding:0 8px">→</div>
+        <div style="background:#0d1117;border:1px solid #1e293b;border-radius:9px;padding:8px 14px;font-size:11.5px;">
+          <div style="color:#c4b5fd;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px">⑤ PPC</div>
+          <div style="color:#94a3b8">ppc-campaign-creator<br>launch bids</div>
+        </div>
+        <div style="color:#7c3aed;font-size:18px;padding:0 8px">→</div>
+        <div style="background:#0d1117;border:1px solid #1e293b;border-radius:9px;padding:8px 14px;font-size:11.5px;">
+          <div style="color:#fca5a5;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:3px">⑥ Account Health</div>
+          <div style="color:#94a3b8">listing-health-checker<br>go-live check</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- ROADMAP                                                 -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="roadmap">
+  <h2>📋 Development Roadmap</h2>
+  <p>Phase 0–2 needs almost no new infrastructure. Only 3 new SP-API report types + SP-API notifications for Account Health.</p>
+  <div class="phases">
+
+    <div class="phase ph0">
+      <div class="ph-hdr"><div class="ph-num">0</div><div><div class="ph-title">Foundation</div><div class="ph-sub">Enables everything else</div></div></div>
+      <ul class="ph-items">
+        <li class="ph-item"><span class="dot dot-p" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">craftiloo-command</div><div class="ph-item-desc">Master Orchestrator — reads all domain states, cross-domain alerts, morning briefing</div></div></li>
+      </ul>
+    </div>
+
+    <div class="phase ph1">
+      <div class="ph-hdr"><div class="ph-num">1</div><div><div class="ph-title">Inventory Domain</div><div class="ph-sub">All data already connected</div></div></div>
+      <ul class="ph-items">
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">inventory-health</div><div class="ph-item-desc">Daily 🟢🟡🔴🚨 per SKU</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">restock-planner</div><div class="ph-item-desc">What to order · when · how much</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">storage-optimizer</div><div class="ph-item-desc">LTSF risk + slow-mover flags</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">inventory-agent</div><div class="ph-item-desc">Wrap with orchestrator</div></div></li>
+      </ul>
+    </div>
+
+    <div class="phase ph2">
+      <div class="ph-hdr"><div class="ph-num">2</div><div><div class="ph-title">Fees &amp; Reimbursement</div><div class="ph-sub">Recover money Amazon owes</div></div></div>
+      <ul class="ph-items">
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">Add 3 SP-API report types</div><div class="ph-item-desc">Adjustments + reimbursements + returns</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">fba-fee-analyzer</div><div class="ph-item-desc">Fee burden + overcharge detection</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">reimbursement-tracker</div><div class="ph-item-desc">Claim lost/damaged money</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">fees-agent</div><div class="ph-item-desc">Orchestrator wrap</div></div></li>
+      </ul>
+    </div>
+
+    <div class="phase ph3">
+      <div class="ph-hdr"><div class="ph-num">3</div><div><div class="ph-title">Finance Domain</div><div class="ph-sub">True profit clarity + pricing</div></div></div>
+      <ul class="ph-items">
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">p-l-dashboard</div><div class="ph-item-desc">Revenue − COGS − fees − ads = real profit per ASIN</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">cash-flow-planner</div><div class="ph-item-desc">Inventory investment timing vs cash in</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">pricing-strategy</div><div class="ph-item-desc">Price-profit model (Profasee analogy)</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">cogs-tracker</div><div class="ph-item-desc">COGS per SKU · break-even · margin alerts</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">finance-agent</div><div class="ph-item-desc">Orchestrator wrap</div></div></li>
+      </ul>
+    </div>
+
+    <div class="phase ph4">
+      <div class="ph-hdr"><div class="ph-num">4</div><div><div class="ph-title">Account Health Domain</div><div class="ph-sub">Protect your selling account</div></div></div>
+      <ul class="ph-items">
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">Add SP-API notifications</div><div class="ph-item-desc">Performance alerts, policy violations feed</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">performance-monitor</div><div class="ph-item-desc">ODR · cancellations · A-to-Z · chargebacks</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">listing-health-checker</div><div class="ph-item-desc">Suppressed listings · quality alerts · policy</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">ipi-score-tracker</div><div class="ph-item-desc">IPI score → FBA storage limits protection</div></div></li>
+        <li class="ph-item"><span class="dot dot-o" style="margin-top:3px;flex-shrink:0"></span><div><div class="ph-item-name">account-health-agent</div><div class="ph-item-desc">Orchestrator wrap</div></div></li>
+      </ul>
+    </div>
+
+  </div><!-- /phases -->
+</div>
+
+<!-- CROSS-DOMAIN INTELLIGENCE -->
+<div class="cross">
+  <h2>⚡ Cross-Domain Intelligence — Signals Only the Master Orchestrator Sees</h2>
+  <p>No single domain agent would catch these patterns. Only the layer that reads all state files simultaneously can connect them.</p>
+  <div class="cross-grid">
+    <div class="cx">
+      <div class="cx-sig"><strong>CVR drop + BSR drop</strong>, but PPC is normal</div>
+      <div class="cx-act">→ Listing/product issue. Run Review Analyzer before touching bids.</div>
+      <div class="cx-domain">Market Intel + PPC + Content</div>
+    </div>
+    <div class="cx">
+      <div class="cx-sig"><strong>Stockout risk &lt;14 days</strong> + PPC spend scaling</div>
+      <div class="cx-act">→ Pause PPC on that ASIN NOW — ads for stock that can't fulfil.</div>
+      <div class="cx-domain">Inventory + PPC</div>
+    </div>
+    <div class="cx">
+      <div class="cx-sig"><strong>Listing suppressed</strong> + PPC still spending</div>
+      <div class="cx-act">→ Pause campaigns immediately, fix suppression first.</div>
+      <div class="cx-domain">Account Health + PPC</div>
+    </div>
+    <div class="cx">
+      <div class="cx-sig"><strong>High ACoS</strong> + high FBA fee burden per unit</div>
+      <div class="cx-act">→ Product may never be profitable. Fix fees or price before more spend.</div>
+      <div class="cx-domain">Fees + PPC + Finance</div>
+    </div>
+    <div class="cx">
+      <div class="cx-sig"><strong>IPI score dropping</strong> + excess slow-moving inventory</div>
+      <div class="cx-act">→ Remove stranded/slow stock before FBA storage limit is cut.</div>
+      <div class="cx-domain">Account Health + Inventory</div>
+    </div>
+    <div class="cx">
+      <div class="cx-sig"><strong>Competitor BSR dropped 30%+</strong> + our BSR flat</div>
+      <div class="cx-act">→ Market share opening. Increase TOS bids to capture their traffic.</div>
+      <div class="cx-domain">Market Intel + PPC</div>
+    </div>
+    <div class="cx">
+      <div class="cx-sig"><strong>Cash flow tight</strong> (finance) + restock due in 2 weeks</div>
+      <div class="cx-act">→ Alert: reorder needs $X. PPC spend should be reduced to preserve cash.</div>
+      <div class="cx-domain">Finance + Inventory + PPC</div>
+    </div>
+    <div class="cx">
+      <div class="cx-sig"><strong>LTSF risk</strong> approaching + poor PPC on same ASIN</div>
+      <div class="cx-act">→ Remove from FBA and pause ads — storing a dead product at double cost.</div>
+      <div class="cx-domain">Fees + Inventory + PPC</div>
+    </div>
+    <div class="cx">
+      <div class="cx-sig"><strong>Reimbursement &gt;$500</strong> open + 30+ days unclaimed</div>
+      <div class="cx-act">→ Route to reimbursement-tracker immediately.</div>
+      <div class="cx-domain">Fees</div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;margin-top:32px;font-size:11px;color:#1e293b;">
+  Craftiloo AI System Skill Map &nbsp;·&nbsp; Shira (PM) + Claude &nbsp;·&nbsp; 2026-03-08
+</div>
+
+</body>
+</html>

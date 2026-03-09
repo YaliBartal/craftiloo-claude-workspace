@@ -1,0 +1,193 @@
+{
+  "date_range": "2026-03-08 to 2026-03-09",
+  "radars_fetched": 9,
+  "products": {
+    "B09X55KL2C": {
+      "name": "Embroidery Kids",
+      "top10": 25,
+      "top50": 52,
+      "total_keywords": 55,
+      "trend": "improving",
+      "improvements": 17,
+      "declines": 10,
+      "key_movements": [
+        {"keyword": "embroidery kit beginner", "search_vol": 2329, "yesterday": 30, "today": 42, "change": -12, "alert": "LOST"},
+        {"keyword": "kids cross stitch kit", "search_vol": 1680, "yesterday": 22, "today": 16, "change": 6, "alert": "WIN"},
+        {"keyword": "beginner cross stitch kits for kids", "search_vol": 1121, "yesterday": 18, "today": 12, "change": 6, "alert": "WIN"},
+        {"keyword": "embroidery kit for kids", "search_vol": 3150, "yesterday": 1, "today": 3, "change": -2, "alert": "LOST"},
+        {"keyword": "sewing kits for kids 8-12", "search_vol": 4002, "yesterday": 21, "today": 20, "change": 1, "alert": "WIN"},
+        {"keyword": "cross stitch patterns for beginners", "search_vol": 250, "yesterday": 4, "today": 20, "change": -16, "alert": "LOST"},
+        {"keyword": "beginner sewing kit for kids", "search_vol": 1292, "yesterday": 23, "today": 25, "change": -2, "alert": "LOST"},
+        {"keyword": "beginners embroidery kit", "search_vol": 666, "yesterday": 28, "today": 25, "change": 3, "alert": "WIN"},
+        {"keyword": "embroidery kit kids", "search_vol": 841, "yesterday": 3, "today": 1, "change": 2, "alert": "WIN"}
+      ]
+    },
+    "B0DC69M3YD": {
+      "name": "Embroidery Adults",
+      "top10": 0,
+      "top50": 36,
+      "total_keywords": 67,
+      "trend": "stable",
+      "improvements": 21,
+      "declines": 21,
+      "key_movements": [
+        {"keyword": "embroidery kit", "search_vol": 218402, "yesterday": 77, "today": 92, "change": -15, "alert": "LOST"},
+        {"keyword": "needlepoint kits for adults", "search_vol": 61222, "yesterday": 101, "today": 51, "change": 50, "alert": "WATCH"},
+        {"keyword": "needlepoint kit", "search_vol": 24095, "yesterday": 84, "today": 67, "change": 17, "alert": "WATCH"},
+        {"keyword": "needlepoint kits", "search_vol": 15617, "yesterday": 63, "today": 87, "change": -24, "alert": "LOST"},
+        {"keyword": "crossstitch kits adult", "search_vol": 6830, "yesterday": 101, "today": 49, "change": 52, "alert": "WATCH"},
+        {"keyword": "embroidery kit for beginners", "search_vol": 33441, "yesterday": 34, "today": 42, "change": -8, "alert": "LOST"},
+        {"keyword": "cross stitch for beginners", "search_vol": 1999, "yesterday": 37, "today": 101, "change": -64, "alert": "LOST"},
+        {"keyword": "easy cross stitch kits for beginners", "search_vol": 2111, "yesterday": 101, "today": 49, "change": 52, "alert": "WIN"},
+        {"keyword": "crewel embroidery kits for adults", "search_vol": 3444, "yesterday": 70, "today": 101, "change": -31, "alert": "LOST"},
+        {"keyword": "embroidery kits", "search_vol": 19694, "yesterday": 59, "today": 63, "change": -4, "alert": "LOST"}
+      ]
+    },
+    "B09WQSBZY7": {
+      "name": "Fairy Sewing Kit",
+      "top10": 37,
+      "top50": 70,
+      "total_keywords": 87,
+      "trend": "improving",
+      "improvements": 27,
+      "declines": 14,
+      "key_movements": [
+        {"keyword": "beginner sewing kit", "search_vol": 4353, "yesterday": 63, "today": 40, "change": 23, "alert": "WIN"},
+        {"keyword": "sewing kit for beginners", "search_vol": 6494, "yesterday": 70, "today": 76, "change": -6, "alert": "LOST"},
+        {"keyword": "kids sewing machine age 5-8", "search_vol": 996, "yesterday": 74, "today": 101, "change": -27, "alert": "LOST"},
+        {"keyword": "kids sewing kit", "search_vol": 10496, "yesterday": 8, "today": 10, "change": -2, "alert": "LOST"},
+        {"keyword": "sewing kit for kids", "search_vol": 18533, "yesterday": 5, "today": 4, "change": 1, "alert": "WIN"},
+        {"keyword": "kids sewing kits ages 8-12", "search_vol": 1489, "yesterday": 14, "today": 5, "change": 9, "alert": "WIN"},
+        {"keyword": "beginners sewing kit", "search_vol": 832, "yesterday": 40, "today": 28, "change": 12, "alert": "WIN"},
+        {"keyword": "kids sewing kits age 5-8", "search_vol": 4930, "yesterday": 6, "today": 4, "change": 2, "alert": "WIN"}
+      ]
+    },
+    "B096MYBLS1": {
+      "name": "Dessert Sewing Kit",
+      "top10": 0,
+      "top50": 0,
+      "total_keywords": 50,
+      "trend": "stable",
+      "improvements": 0,
+      "declines": 0,
+      "key_movements": [],
+      "note": "No rank data for 2026-03-08 or 2026-03-09 — radar may not have refreshed yet"
+    },
+    "B08FYH13CL": {
+      "name": "Latch Hook Pencil Cases",
+      "top10": 10,
+      "top50": 23,
+      "total_keywords": 53,
+      "trend": "declining",
+      "improvements": 5,
+      "declines": 14,
+      "key_movements": [
+        {"keyword": "latch hook", "search_vol": 10166, "yesterday": 101, "today": 49, "change": 52, "alert": "WATCH"},
+        {"keyword": "latch hook rug kit", "search_vol": 2992, "yesterday": 64, "today": 101, "change": -37, "alert": "LOST"},
+        {"keyword": "latch hook rug", "search_vol": 2176, "yesterday": 61, "today": 101, "change": -40, "alert": "LOST"},
+        {"keyword": "hook rug kits for kids", "search_vol": 1083, "yesterday": 87, "today": 12, "change": 75, "alert": "WIN"},
+        {"keyword": "latch hook rug kits", "search_vol": 1835, "yesterday": 66, "today": 101, "change": -35, "alert": "LOST"},
+        {"keyword": "rug kit", "search_vol": 1021, "yesterday": 66, "today": 101, "change": -35, "alert": "LOST"},
+        {"keyword": "latch hooks", "search_vol": 912, "yesterday": 76, "today": 101, "change": -25, "alert": "LOST"}
+      ]
+    },
+    "B0F8DG32H5": {
+      "name": "Knitting Cat & Hat",
+      "top10": 19,
+      "top50": 56,
+      "total_keywords": 81,
+      "trend": "stable",
+      "improvements": 27,
+      "declines": 30,
+      "key_movements": [
+        {"keyword": "knitting kits", "search_vol": 2580, "yesterday": 101, "today": 40, "change": 61, "alert": "WIN"},
+        {"keyword": "knitting for beginners kit", "search_vol": 3121, "yesterday": 101, "today": 61, "change": 40, "alert": "WIN"},
+        {"keyword": "learn to knit", "search_vol": 2219, "yesterday": 101, "today": 71, "change": 30, "alert": "WIN"},
+        {"keyword": "kids crochet kit", "search_vol": 5281, "yesterday": 75, "today": 81, "change": -6, "alert": "LOST"},
+        {"keyword": "knitting kit for beginners", "search_vol": 9224, "yesterday": 55, "today": 58, "change": -3, "alert": "LOST"},
+        {"keyword": "crochet kit for kids", "search_vol": 5534, "yesterday": 81, "today": 76, "change": 5, "alert": "WIN"},
+        {"keyword": "crochet loom", "search_vol": 2429, "yesterday": 22, "today": 33, "change": -11, "alert": "LOST"},
+        {"keyword": "loom knitting kit", "search_vol": 4122, "yesterday": 14, "today": 9, "change": 5, "alert": "WIN"}
+      ]
+    },
+    "B09THLVFZK": {
+      "name": "Mini Fuse Beads",
+      "top10": 9,
+      "top50": 16,
+      "total_keywords": 18,
+      "trend": "stable",
+      "improvements": 5,
+      "declines": 4,
+      "key_movements": [
+        {"keyword": "perler beads", "search_vol": 85816, "yesterday": 8, "today": 9, "change": -1, "alert": "LOST"},
+        {"keyword": "melting beads", "search_vol": 4112, "yesterday": 35, "today": 15, "change": 20, "alert": "WIN"},
+        {"keyword": "perler bead kit", "search_vol": 15472, "yesterday": 7, "today": 6, "change": 1, "alert": "WIN"},
+        {"keyword": "melty beads", "search_vol": 3575, "yesterday": 15, "today": 11, "change": 4, "alert": "WIN"},
+        {"keyword": "iron beads", "search_vol": 4389, "yesterday": 16, "today": 19, "change": -3, "alert": "LOST"},
+        {"keyword": "perler beads bulk", "search_vol": 5651, "yesterday": 43, "today": 42, "change": 1, "alert": "WIN"},
+        {"keyword": "pearler beads", "search_vol": 3611, "yesterday": 8, "today": 9, "change": -1, "alert": "LOST"},
+        {"keyword": "hama beads", "search_vol": 2135, "yesterday": 5, "today": 4, "change": 1, "alert": "WIN"}
+      ]
+    },
+    "B07D6D95NG": {
+      "name": "10mm Big Fuse Beads",
+      "top10": 13,
+      "top50": 24,
+      "total_keywords": 38,
+      "trend": "stable",
+      "improvements": 8,
+      "declines": 10,
+      "key_movements": [
+        {"keyword": "fuse beads kit", "search_vol": 8523, "yesterday": 101, "today": 58, "change": 43, "alert": "WATCH"},
+        {"keyword": "perler beads kit", "search_vol": 5413, "yesterday": 64, "today": 101, "change": -37, "alert": "LOST"},
+        {"keyword": "fuse beads", "search_vol": 36523, "yesterday": 76, "today": 81, "change": -5, "alert": "LOST"},
+        {"keyword": "iron beads", "search_vol": 4389, "yesterday": 59, "today": 52, "change": 7, "alert": "WIN"},
+        {"keyword": "fuse bead", "search_vol": 1354, "yesterday": 67, "today": 78, "change": -11, "alert": "LOST"},
+        {"keyword": "melty beads", "search_vol": 3575, "yesterday": 24, "today": 28, "change": -4, "alert": "LOST"},
+        {"keyword": "iron beads for kids kit", "search_vol": 2873, "yesterday": 38, "today": 42, "change": -4, "alert": "LOST"},
+        {"keyword": "hama beads", "search_vol": 2135, "yesterday": 41, "today": 40, "change": 1, "alert": "WIN"}
+      ]
+    },
+    "B0FQC7YFX6": {
+      "name": "Princess Lacing Card",
+      "top10": 6,
+      "top50": 30,
+      "total_keywords": 52,
+      "trend": "improving",
+      "improvements": 15,
+      "declines": 9,
+      "key_movements": [
+        {"keyword": "lacing cards", "search_vol": 6761, "yesterday": 28, "today": 34, "change": -6, "alert": "LOST"},
+        {"keyword": "lacing toys", "search_vol": 585, "yesterday": 101, "today": 72, "change": 29, "alert": "WIN"},
+        {"keyword": "toddler threading toys", "search_vol": 617, "yesterday": 101, "today": 76, "change": 25, "alert": "WIN"},
+        {"keyword": "lacing cards for kids ages 4-8", "search_vol": 2499, "yesterday": 10, "today": 5, "change": 5, "alert": "WIN"},
+        {"keyword": "sewing cards for kids ages 3-5", "search_vol": 1229, "yesterday": 13, "today": 3, "change": 10, "alert": "WIN"},
+        {"keyword": "lace and trace melissa and doug", "search_vol": 250, "yesterday": 55, "today": 101, "change": -46, "alert": "LOST"},
+        {"keyword": "sewing toy", "search_vol": 250, "yesterday": 101, "today": 69, "change": 32, "alert": "WIN"},
+        {"keyword": "melissa and doug lace and trace", "search_vol": 250, "yesterday": 50, "today": 23, "change": 27, "alert": "WIN"}
+      ]
+    }
+  },
+  "top_20_movements": [
+    {"keyword": "embroidery kit", "asin": "B0DC69M3YD", "name": "Embroidery Adults", "search_vol": 218402, "yesterday": 77, "today": 92, "change": -15, "alert": "LOST"},
+    {"keyword": "needlepoint kits for adults", "asin": "B0DC69M3YD", "name": "Embroidery Adults", "search_vol": 61222, "yesterday": 101, "today": 51, "change": 50, "alert": "WATCH"},
+    {"keyword": "fuse beads", "asin": "B07D6D95NG", "name": "10mm Big Fuse Beads", "search_vol": 36523, "yesterday": 76, "today": 81, "change": -5, "alert": "LOST"},
+    {"keyword": "embroidery kit for beginners", "asin": "B0DC69M3YD", "name": "Embroidery Adults", "search_vol": 33441, "yesterday": 34, "today": 42, "change": -8, "alert": "LOST"},
+    {"keyword": "perler beads", "asin": "B09THLVFZK", "name": "Mini Fuse Beads", "search_vol": 85816, "yesterday": 8, "today": 9, "change": -1, "alert": "LOST"},
+    {"keyword": "needlepoint kit", "asin": "B0DC69M3YD", "name": "Embroidery Adults", "search_vol": 24095, "yesterday": 84, "today": 67, "change": 17, "alert": "WATCH"},
+    {"keyword": "needlepoint kits", "asin": "B0DC69M3YD", "name": "Embroidery Adults", "search_vol": 15617, "yesterday": 63, "today": 87, "change": -24, "alert": "LOST"},
+    {"keyword": "perler bead kit", "asin": "B09THLVFZK", "name": "Mini Fuse Beads", "search_vol": 15472, "yesterday": 7, "today": 6, "change": 1, "alert": "WIN"},
+    {"keyword": "latch hook", "asin": "B08FYH13CL", "name": "Latch Hook Pencil Cases", "search_vol": 10166, "yesterday": 101, "today": 49, "change": 52, "alert": "WATCH"},
+    {"keyword": "kids sewing kit", "asin": "B09WQSBZY7", "name": "Fairy Sewing Kit", "search_vol": 10496, "yesterday": 8, "today": 10, "change": -2, "alert": "LOST"},
+    {"keyword": "knitting kit for beginners", "asin": "B0F8DG32H5", "name": "Knitting Cat & Hat", "search_vol": 9224, "yesterday": 55, "today": 58, "change": -3, "alert": "LOST"},
+    {"keyword": "fuse beads kit", "asin": "B07D6D95NG", "name": "10mm Big Fuse Beads", "search_vol": 8523, "yesterday": 101, "today": 58, "change": 43, "alert": "WATCH"},
+    {"keyword": "sewing kit for kids", "asin": "B09WQSBZY7", "name": "Fairy Sewing Kit", "search_vol": 18533, "yesterday": 5, "today": 4, "change": 1, "alert": "WIN"},
+    {"keyword": "crossstitch kits adult", "asin": "B0DC69M3YD", "name": "Embroidery Adults", "search_vol": 6830, "yesterday": 101, "today": 49, "change": 52, "alert": "WATCH"},
+    {"keyword": "lacing cards", "asin": "B0FQC7YFX6", "name": "Princess Lacing Card", "search_vol": 6761, "yesterday": 28, "today": 34, "change": -6, "alert": "LOST"},
+    {"keyword": "sewing kit for beginners", "asin": "B09WQSBZY7", "name": "Fairy Sewing Kit", "search_vol": 6494, "yesterday": 70, "today": 76, "change": -6, "alert": "LOST"},
+    {"keyword": "crochet kit for kids", "asin": "B0F8DG32H5", "name": "Knitting Cat & Hat", "search_vol": 5534, "yesterday": 81, "today": 76, "change": 5, "alert": "WIN"},
+    {"keyword": "kids crochet kit", "asin": "B0F8DG32H5", "name": "Knitting Cat & Hat", "search_vol": 5281, "yesterday": 75, "today": 81, "change": -6, "alert": "LOST"},
+    {"keyword": "perler beads kit", "asin": "B07D6D95NG", "name": "10mm Big Fuse Beads", "search_vol": 5413, "yesterday": 64, "today": 101, "change": -37, "alert": "LOST"},
+    {"keyword": "iron beads", "asin": "B09THLVFZK", "name": "Mini Fuse Beads", "search_vol": 4389, "yesterday": 16, "today": 19, "change": -3, "alert": "LOST"}
+  ]
+}
