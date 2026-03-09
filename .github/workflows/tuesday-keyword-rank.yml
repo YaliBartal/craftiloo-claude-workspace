@@ -38,7 +38,6 @@ jobs:
           claude_args: |
             --max-turns 30
             --model claude-sonnet-4-6
-            --mcp-config ./.mcp.json
         env:
           ADS_API_CLIENT_ID: ${{ secrets.ADS_API_CLIENT_ID }}
           ADS_API_CLIENT_SECRET: ${{ secrets.ADS_API_CLIENT_SECRET }}

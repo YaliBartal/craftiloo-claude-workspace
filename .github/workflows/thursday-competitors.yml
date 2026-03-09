@@ -38,7 +38,6 @@ jobs:
           claude_args: |
             --max-turns 30
             --model claude-sonnet-4-6
-            --mcp-config ./.mcp.json
         env:
           APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
           DATADIVE_API_KEY: ${{ secrets.DATADIVE_API_KEY }}
