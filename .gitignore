@@ -1,5 +1,6 @@
 # API keys (contains secrets)
 .env
+env
 # Note: .mcp.json is committed — it only has ${ENV_VAR} placeholders, no actual secrets
 
 # OS files
