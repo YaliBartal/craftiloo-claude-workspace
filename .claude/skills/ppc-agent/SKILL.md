@@ -1,95 +1,89 @@
 ---
 name: ppc-agent
-description: PPC Agent — orchestrates all PPC skills based on user intent and cadence tracking
+description: PPC Agent v2 — active orchestrator that assesses context, chains skills intelligently, and proposes session plans
 triggers:
   - ppc
   - ppc check
   - ppc agent
-  - ppc catch-up
-  - ppc status
   - ppc morning
   - daily ppc
   - ppc health
   - adjust bids
-  - bid recommendations
   - bid review
   - portfolio check
-  - portfolio health
-  - portfolio flags
   - harvest search terms
-  - negate and promote
-  - search term review
   - monthly ppc
-  - monthly review
-  - ppc month
   - deal prep
-  - deal ppc
-  - prep for deal
   - post deal
-  - deal ended
-  - deal cleanup
   - rank optimizer
   - rank vs spend
-  - keyword rank analysis
-  - ppc rank check
-  - rank spend analysis
-  - rank investment
   - create campaigns
-  - campaign creator
-  - build campaigns
-  - new campaigns
-  - propose campaigns
   - tacos check
-  - tacos optimizer
-  - tacos scorecard
   - profit check
-  - profit reality
-  - tacos
-  - profit
-  - portfolio deep dive
   - deep dive
   - portfolio action plan
-  - fix portfolio
-  - work on portfolio
+  - portfolio review
+  - review all
+  - audit mode
 output_location: outputs/research/ppc-agent/
 ---
 
-# PPC Agent
+# PPC Agent v2
 
-**USE WHEN** user says anything PPC-related: "ppc", "ppc check", "ppc morning", "adjust bids", "portfolio check", "harvest search terms", "monthly ppc", "ppc catch-up", or similar.
+**USE WHEN** user says anything PPC-related: "ppc", "ppc check", "ppc morning", "adjust bids", "portfolio check", "harvest search terms", "monthly ppc", "ppc catch-up", "portfolio review", "audit mode", or similar.
 
 ---
 
 ## What This Is
 
-The PPC Agent is an **orchestrator** — it does not perform PPC analysis itself. It routes to the right sub-skill based on user intent and cadence status, coordinates data sharing between skills, and tracks when each task was last run.
+The PPC Agent is an **active orchestrator** — it assesses what needs to happen based on cadence, portfolio health, and pending work, then builds a session plan, chains skills intelligently, and tracks everything.
 
-**Think of it as:** A PPC manager who delegates tasks to specialists and keeps the operating rhythm on track.
+**v2 changes from v1:**
+- **Smart Catch-Up** as default entry point (not passive cadence table)
+- **Skill Chaining** — skills auto-trigger follow-up skills based on findings
+- **Audit Mode** — permanent toggle for analysis-only runs (no API mutations)
+- **Portfolio Review Mode** — urgency-scored pick-list + per-portfolio deep dive sequence
+- **Portfolio Action Plan as anchor skill** — the go-to for any deep problem
+- **Revenue-Weighted Rotation** — ALL portfolios get regular optimization scans (Tier 1 weekly, Tier 2 biweekly, Tier 3 monthly)
+- **Optimization Scan Protocol** — 5-7 min focused checkup for healthy portfolios (budget, trends, search terms, rank momentum)
+- **Session tracking** — prevents duplicate work, enables context recovery
+- **Action Validator** — validates prior changes against fresh API data (WORKED/PARTIAL/NEUTRAL/FAILED)
+- **Campaign Lifecycle Tracker** — tracks new campaigns through AWAITING_ENABLE → RAMPING → EARLY → ESTABLISHED → GRADUATED
+- **Stale Action Hygiene** — auto-expires old pending actions and reviews, prevents unbounded growth
+- **Competitive Response Integration** — surfaces competitor alerts into PPC decisions (price drops, new entrants, BSR shifts)
+- **Budget Intelligence Layer** — cross-campaign and cross-portfolio budget awareness during scans and reviews
+- **Pattern Learning Engine** — derives actionable insights from accumulated validation data (4+ weeks)
 
 ---
 
-## BEFORE YOU START — Read Lessons
+## Step 0: Read Lessons (MANDATORY)
 
-**MANDATORY FIRST STEP:** Read `LESSONS.md` in this skill's folder before doing anything else.
+**FIRST STEP — NO EXCEPTIONS:**
 
 1. Read `.claude/skills/ppc-agent/LESSONS.md`
 2. Check **Known Issues** — plan around these
-3. Check **Repeat Errors** — if you encounter one during this run, tell the user immediately: _"Repeat issue (xN): [description]"_
+3. Check **Repeat Errors** — if you encounter one, tell user: _"Repeat issue (xN): [description]"_
 4. Apply all past lessons to this run
-
-**Do NOT skip this step.**
 
 ---
 
-## Step 1: Read Agent State + Portfolio Trackers
+## Step 1: Load State + Determine Mode
 
-Read `outputs/research/ppc-agent/state/agent-state.json` to understand what has been run recently.
+1. Read `outputs/research/ppc-agent/state/agent-state.json`
+2. Check `audit_mode` flag — display badge: **`[AUDIT MODE]`** or **`[LIVE MODE]`**
+3. Check `session` object:
+   - If exists and age < 24 hours: "Found in-progress session from {time}. Skills done: {list}. Remaining: {list}. Resume?"
+   - If exists and age > 24 hours: auto-clear stale session, start fresh
+   - If null: fresh session
 
-If the file doesn't exist, create it with empty dates (everything is "never run" — first-time setup).
+**If agent-state.json doesn't exist:** Create it with all null dates (first-time setup).
 
-**State file structure:**
+### State File Structure
+
 ```json
 {
+  "audit_mode": false,
+  "session": null,
   "last_daily_health": null,
   "last_search_harvest": null,
   "last_bid_review": null,
@@ -99,76 +93,458 @@ If the file doesn't exist, create it with empty dates (everything is "never run"
   "last_rank_optimizer": null,
   "last_tacos_optimizer": null,
   "last_negative_generation": {},
+  "revenue_tiers_updated": null,
+  "campaign_watchlist": [
+    {
+      "campaign_id": "123456",
+      "campaign_name": "SK example keyword",
+      "portfolio": "portfolio-slug",
+      "type": "SP",
+      "match_type": "exact",
+      "created_date": "2026-03-10",
+      "created_by": "ppc-campaign-creator",
+      "phase": "AWAITING_ENABLE",
+      "phase_entered": "2026-03-10",
+      "daily_budget": 15.00,
+      "initial_bid": 0.75,
+      "notes": "From STH PROMOTE signal"
+    }
+  ],
+  "expired_actions": [],
   "portfolio_index": {
-    "{portfolio-slug}": {
-      "name": "Portfolio Name",
-      "id": "portfolio_id",
-      "tracker": "state/{slug}.json",
-      "stage": "Scaling/Launch/General",
-      "last_deep_dive": "YYYY-MM-DD",
-      "last_updated": "YYYY-MM-DD",
-      "health_status": "GREEN/YELLOW/RED",
-      "trend": "improving/stable/declining/unknown",
-      "acos": 30.0,
-      "pending_count": 0,
-      "top_action": "[P1] Brief description of most urgent pending action",
-      "next_review": "YYYY-MM-DD"
+    "{slug}": {
+      "revenue_tier": 1,
+      "review_cadence_days": 7,
+      "last_optimization_scan": null,
+      "monthly_revenue": 3200,
+      "last_validation": null,
+      "validation_history": [],
+      "...": "other existing fields"
     }
   },
-  "all_pending_actions": [
-    {"portfolio": "Name", "id": "ff-001", "priority": "P1", "category": "BID_DECREASE", "action": "Brief description", "created": "YYYY-MM-DD"}
-  ],
-  "upcoming_reviews": [
-    {"date": "YYYY-MM-DD", "portfolio": "Name", "type": "7-day re-check", "source": "skill-run-date"}
-  ],
-  "global_pending_actions": [],
-  "applied_changes": []
+  "all_pending_actions": [ ... ],
+  "upcoming_reviews": [ ... ],
+  "pending_summary": {
+    "total": 38, "p1": 4, "p2": 11, "p3": 16, "p4": 7,
+    "aging_5d": 8, "oldest_p1_days": 8,
+    "portfolios_with_p1": ["portfolio-a", "portfolio-b"],
+    "last_computed": "2026-03-10"
+  },
+  "review_summary": {
+    "total_tracked": 29, "in_global_state": 24,
+    "overdue": 4, "due_today": 4, "due_this_week": 16,
+    "future_in_trackers_only": 5, "last_computed": "2026-03-10"
+  }
 }
 ```
 
-**The state file is the single source of truth for quick decisions.** Any skill can read agent-state.json and immediately know:
-- Which portfolios need attention (`health_status`, `top_action`)
-- What's overdue (`upcoming_reviews`, cadence timestamps)
-- All pending work across all portfolios (`all_pending_actions`)
-- Portfolio trends (`trend`, `acos`)
+### Session Object Structure (when active)
 
-**No skill should need to read all 15 tracker files for routing or overview purposes.** Only open a specific tracker when working on that portfolio.
+```json
+{
+  "started": "ISO timestamp",
+  "skills_run": [{"skill": "name", "completed": "ISO", "result": "success|partial|failed"}],
+  "data_fetched": [{"type": "campaign_report", "date": "...", "path": "..."}],
+  "findings": [{"skill": "...", "finding": "...", "triggers": ["skill-name"]}],
+  "queued_actions": [{"skill": "...", "reason": "...", "approved": null}],
+  "chain_depth": 0
+}
+```
 
 ### Surfaced Data (maintained by every sub-skill)
 
 | Field | What it surfaces | Updated by |
 |-------|-----------------|------------|
-| `portfolio_index.{slug}.acos` | Latest ACoS from tracker's `latest_metrics` | Daily health, portfolio summary, deep dive |
-| `portfolio_index.{slug}.tacos` | Latest TACoS from TACoS optimizer | TACoS optimizer |
+| `portfolio_index.{slug}.acos` | Latest ACoS from tracker | Daily health, portfolio summary, deep dive |
+| `portfolio_index.{slug}.tacos` | Latest TACoS | TACoS optimizer |
 | `portfolio_index.{slug}.tacos_target` | Portfolio TACoS goal | TACoS optimizer |
 | `portfolio_index.{slug}.tacos_grade` | TACoS grade (A-F) | TACoS optimizer |
 | `portfolio_index.{slug}.organic_momentum` | Organic momentum score (0-100) | TACoS optimizer |
-| `portfolio_index.{slug}.trend` | From tracker's `improvement_assessment.overall_trend` | Deep dive, significant metric shifts |
-| `portfolio_index.{slug}.top_action` | Highest-priority pending action description | Any skill that adds/completes pending actions |
-| `portfolio_index.{slug}.health_status` | Traffic light from last health check | Daily health, deep dive |
-| `all_pending_actions` | **All** pending actions from all portfolio trackers, sorted by priority | Any skill that adds/completes pending actions |
-| `upcoming_reviews` | **All** scheduled reviews from all portfolio trackers, sorted by date | Deep dive, bid recommender, search term harvester |
+| `portfolio_index.{slug}.trend` | From tracker's improvement_assessment | Deep dive, significant metric shifts |
+| `portfolio_index.{slug}.top_action` | Highest-priority pending action | Any skill that adds/completes actions |
+| `portfolio_index.{slug}.health_status` | Traffic light | Daily health, deep dive |
+| `portfolio_index.{slug}.revenue_tier` | 1/2/3 (high/mid/low) | Revenue tier setup (from Seller Board) |
+| `portfolio_index.{slug}.review_cadence_days` | 7/14/30 | Based on revenue tier |
+| `portfolio_index.{slug}.last_optimization_scan` | Date of last scan | Optimization scan |
+| `portfolio_index.{slug}.monthly_revenue` | Revenue from Seller Board | Revenue tier setup |
+| `portfolio_index.{slug}.last_validation` | Date of last action validation | Action Validator (3d) |
+| `portfolio_index.{slug}.validation_history` | Array of validation scorecards | Action Validator (3d) |
+| `campaign_watchlist` | New campaigns being tracked through lifecycle | Campaign Creator, deep dive, manual |
+| `expired_actions` | Archive of stale actions removed by hygiene | Stale Action Hygiene (3f) |
+| `competitive_flags` | Active competitor alerts by portfolio | Competitor Price SERP Tracker |
+| `all_pending_actions` | Active pending actions P1-P4 (completed auto-cleaned by Step 3f) | Any skill that adds/completes actions |
+| `upcoming_reviews` | Near-term reviews only (date <= today + 7 days). Future reviews live in portfolio tracker `scheduled_reviews` | Deep dive, bid recommender, harvester |
+| `pending_summary` | Quick counts: total, by priority, aging, portfolios with P1 | Step 8a (recomputed after every skill run) |
+| `review_summary` | Quick counts: total tracked, overdue, due today/this week | Step 8a (recomputed after every skill run) |
 
-**When a sub-skill modifies a portfolio tracker's `pending_actions` or `scheduled_reviews`, it MUST also update `all_pending_actions` and `upcoming_reviews` in agent-state.json to keep them in sync.**
+### Portfolio Tracker System
 
-### Portfolio Tracker System (deep context)
-
-Each portfolio has a dedicated tracker file at `outputs/research/ppc-agent/state/{slug}.json` containing full detail:
+Each portfolio has a tracker at `outputs/research/ppc-agent/state/{slug}.json` containing:
 - **goals** — ACoS/CVR targets, rank targets, strategic notes
-- **baseline** — write-once metrics snapshot from before agent started changes
+- **baseline** — write-once snapshot from before agent changes
 - **latest_metrics** — most recent snapshot + delta vs baseline
 - **metric_history** — time-series for trend tracking (max 90 entries)
-- **change_log** — every API change made to this portfolio
-- **pending_actions** — queued work with priority and due dates (source of truth, surfaced to agent-state)
-- **scheduled_reviews** — upcoming re-check dates (source of truth, surfaced to agent-state)
+- **change_log** — every API change made
+- **pending_actions** — queued work with priority and due dates
+- **scheduled_reviews** — upcoming re-check dates
 - **skills_run** — log of skill executions
 - **improvement_assessment** — is this portfolio improving?
 
-When routing to a sub-skill, pass the portfolio tracker path so the sub-skill can read/write it directly.
+---
+
+## Step 2: Classify User Intent
+
+Check user intent in this order:
+
+| User says | Entry mode | Go to |
+|-----------|------------|-------|
+| "audit mode on/off" / "live mode" | **Toggle Audit Mode** | Step 7 |
+| "portfolio review" / "full review" / "review all" | **Portfolio Review** | Step 6 |
+| Specific skill trigger (see routing table below) | **Direct Route** | Step 5 |
+| "ppc" / "ppc agent" / "ppc check" / "ppc catch-up" / anything ambiguous | **Smart Catch-Up** (DEFAULT) | Step 3 |
 
 ---
 
-## Step 2: Route Based on User Intent
+## Step 3: Smart Catch-Up (DEFAULT Entry Point)
+
+This is the heart of the agent. Every ambiguous PPC invocation runs this.
+
+### 3a. Calculate Overdue Skills
+
+For each skill, compute `days_since = today - last_run`. Compare against cadence:
+
+| Skill | Cadence | Overdue if | Priority | Type |
+|-------|---------|-----------|----------|------|
+| Daily Health | Daily | >1 day | P1 | READ-ONLY |
+| Search Term Harvest | 2-3 days | >3 days | P2 | HYBRID |
+| Bid Review | 2-3 days | >3 days | P2 | ACTION |
+| Portfolio Summary | 2-3 days | >3 days | P3 | READ-ONLY |
+| Weekly Analysis | Weekly | >7 days | P4 | READ-ONLY |
+| Keyword Rank Optimizer | Weekly (after weekly) | >7 days | P4 | READ-ONLY |
+| TACoS Optimizer | Weekly (after weekly) | >7 days | P4 | READ-ONLY |
+| Negative Keyword Gen | Per-portfolio first + quarterly | Never or >90d | P5 | HYBRID |
+| Campaign Creator | On demand | Pending PROMOTE/REDIRECT exist | P5 | ACTION |
+| Monthly Review | Monthly | Month boundary crossed | P3 (elevated 1st of month) | READ-ONLY |
+
+### 3b. Scan Portfolio Flags
+
+From `portfolio_index`, collect:
+- **RED** portfolios (urgent)
+- Portfolios with **P1 pending actions**
+- Portfolios with **`next_review` <= today** (scheduled reviews due)
+- Portfolios with **`last_deep_dive` = null** (never analyzed)
+- Portfolios with **no negative gen ever** (check `last_negative_generation` dict)
+
+### 3c. Scan Pending Actions
+
+Use `pending_summary` for quick counts (P1/P2/P3/P4 totals, aging count, portfolios with P1). Only scan the full `all_pending_actions` array if you need to identify specific actions for display or hygiene (Step 3f).
+
+### 3d. Validate Due Reviews (Action Validator)
+
+**Purpose:** Before making new changes, check if previous changes actually worked. This closes the feedback loop — without it, the agent optimizes blind.
+
+**When this runs:** Every Smart Catch-Up. Scan `upcoming_reviews` for entries where `date <= today`. Use `review_summary` for quick counts. Note: `upcoming_reviews` only contains near-term items (date <= today + 7 days). Future reviews live exclusively in portfolio tracker `scheduled_reviews` and get promoted to global state as they come within the 7-day window (Step 8a).
+
+**For each due review:**
+
+1. **Locate the source changes** — read the portfolio tracker's `change_log` entries matching the review's `source` field
+2. **Pull fresh campaign data** for each changed campaign:
+   - `list_sp_campaigns` filtered by campaign ID → current state, budget, bidding
+   - If recent campaign report exists (<3 days old), use cached data
+   - Otherwise, `create_ads_report` (sp_campaigns, LAST_7_DAYS) → filter by campaign IDs
+3. **Compare before vs after** for each change:
+
+| Change Type | "Before" (from change_log `old`) | "After" (from fresh data) | Success Criteria |
+|-------------|----------------------------------|---------------------------|-----------------|
+| BID_DECREASE / TOS reduction | Old ACoS / old TOS-IS% | New ACoS / new TOS-IS% | ACoS improved AND rank didn't drop >3 positions |
+| NEGATE_SEARCH_TERM | Spend on negated term (from old data) | $0 on that term (verify via search term report) | Spend eliminated, no false positive |
+| CAMPAIGN_CREATE | null (didn't exist) | Impressions, clicks, orders, ACoS | Getting impressions? If ENABLED >7d: any orders? |
+| BUDGET_DECREASE | Old budget utilization | New utilization + ACoS | ACoS improved, didn't starve campaign |
+| BUDGET_INCREASE | Old budget, was constrained | New spend, new orders | More orders without ACoS blowout |
+| KEYWORD_PAUSE | Was spending with poor ACoS | $0 spend on keyword | Spend eliminated, overall portfolio ACoS improved |
+| CAMPAIGN_PAUSE | Was bleeding | $0 spend | Confirmed waste stopped |
+
+4. **Classify each change outcome:**
+   - **WORKED** — metric improved in intended direction
+   - **PARTIAL** — some improvement but less than expected, or side effects
+   - **NEUTRAL** — no significant change (<5% delta)
+   - **FAILED** — metric worsened or change had negative side effects
+   - **INSUFFICIENT_DATA** — too early to tell (<100 impressions or <7 days)
+
+5. **Produce validation scorecard:** Table with `| # | Change | Before | After {N}d | Verdict | Next Step |`, followed by summary counts (WORKED/PARTIAL/NEUTRAL/FAILED) and aggregate ACoS impact.
+
+6. **Act on results:**
+   - **WORKED** → log pattern to portfolio tracker `validation_history` + LESSONS.md if novel
+   - **PARTIAL** → keep monitoring, schedule follow-up in 7 more days
+   - **NEUTRAL** → close review, note "no significant impact"
+   - **FAILED** → auto-queue corrective action as P2 pending action: "Revert {change} — validation showed {outcome}"
+   - **INSUFFICIENT_DATA** → extend review by 7 days, add new `upcoming_review` entry
+
+7. **Update portfolio tracker:**
+   - `validation_history` → append: `{"date": "today", "source": "{review source}", "score": "4/7 WORKED", "details": [{change, verdict, impact}]}`
+   - `improvement_assessment` → update based on validation trend
+
+**Priority in session plan:** Validations appear BEFORE new work — must validate old changes before making new ones. If no due reviews exist, skip silently.
+
+### 3e. Scan Campaign Watchlist (Campaign Lifecycle)
+
+**Purpose:** Track new campaigns from creation through graduation. Prevents "create and forget."
+
+**When this runs:** Every Smart Catch-Up. Read `campaign_watchlist` from agent-state.json.
+
+**For each watched campaign:**
+
+1. **Check current status** via `list_sp_campaigns` (filter by campaign ID):
+   - Is it still PAUSED? ENABLED? How long since creation?
+2. **Classify lifecycle phase:**
+
+| Phase | Criteria | What to check | Alert if |
+|-------|----------|---------------|----------|
+| **AWAITING_ENABLE** | Created PAUSED, still PAUSED | Days since creation | PAUSED >3 days → flag for user |
+| **RAMPING** | ENABLED, age 1-7 days | Impressions, clicks | 0 impressions after 3 days → "not serving" |
+| **EARLY** | ENABLED, age 8-14 days | Orders, ACoS | >100 clicks + 0 orders → "failing to convert" |
+| **ESTABLISHED** | ENABLED, age 15-30 days | ACoS vs target, rank | ACoS >2x target → "underperforming" |
+| **GRADUATED** | ENABLED, age >30 days, ACoS within target | Stable performance | Remove from watchlist → normal tracking |
+
+3. **Update watchlist entry:**
+   - `current_state` → from API
+   - `last_checked` → today
+   - `ramp_phase` → current phase
+   - `metrics_7d` → `{impressions, clicks, orders, spend, acos}` from campaign data
+   - `alerts` → any new alerts
+
+4. **Graduation:** When a campaign reaches 30+ days ENABLED with ACoS within 1.5x of portfolio target, remove from watchlist. Log in portfolio tracker: `{"skill": "campaign-graduated", "date": "today", "campaign": "...", "final_acos": "...", "orders_30d": N}`
+
+**Watchlist alerts in session plan:** Table with `| # | Campaign | Portfolio | Phase | Age | Alert |`. Skip section silently if watchlist is empty.
+
+### 3f. Clean Stale Items (Action Hygiene)
+
+**Purpose:** Prevent the pending action queue and review list from growing unbounded with stale, irrelevant items. Keeps signal-to-noise ratio high.
+
+**When this runs:** Every Smart Catch-Up. Scan `all_pending_actions` and `upcoming_reviews`.
+
+**Staleness rules for pending actions:**
+
+| Priority | Stale after | Action |
+|----------|------------|--------|
+| P1 | >7 days, not completed | **Re-validate:** pull fresh campaign data for the specific action. If issue still exists → keep + escalate. If issue resolved → auto-expire. |
+| P2 | >14 days, not completed | **Re-validate:** same check. Still valid → keep. Resolved → expire. |
+| P3 | >21 days, not completed | **Auto-expire:** move to `expired_actions` with reason "Data likely stale after 21d — re-assess if still needed" |
+| P4 | >30 days, not completed | **Auto-expire:** same. |
+| Any | `status: completed` | **Clean:** remove from `all_pending_actions` (already preserved in portfolio tracker change_log) |
+
+**Re-validation for P1/P2 actions:** Identify campaign → pull current metrics → if issue persists: keep + re-date + escalate. If resolved (ACoS improved, campaign paused): auto-expire with reason. If can't identify: expire.
+
+**Staleness rules for upcoming_reviews:** >5 days past due → escalate to Due Validations (3d). >14 days past due → auto-expire ("data too stale"). Completed → remove.
+
+**After cleanup, report in session plan:** Bullet list summarizing: re-validated P1/P2 counts, expired P3/P4 counts, cleaned completed counts, escalated/expired review counts.
+
+**Move expired items to `expired_actions`** in agent-state.json with fields: `id`, `original_action`, `portfolio`, `priority`, `created`, `expired`, `reason`. **Cap at 50 entries** (oldest auto-removed).
+
+### 3g. Check Month Boundary
+
+If `last_monthly_review` is null OR the month of `last_monthly_review` < current month - 1, flag Monthly Review.
+
+On the 1st-3rd of any month, elevate Monthly Review to top of session plan with note: "Month boundary crossed — monthly review recommended before other work."
+
+### 3h. Check Portfolio Rotation
+
+**Every portfolio deserves regular attention, not just broken ones.** Use revenue-weighted rotation to ensure healthy portfolios get systematic optimization.
+
+**Revenue Tiers and Cadences:**
+
+| Tier | Revenue Range | Review Cadence | Portfolios |
+|------|--------------|----------------|------------|
+| **Tier 1** (High) | >$2,000/mo | Every 7 days | Top ~5 by revenue |
+| **Tier 2** (Mid) | $500-$2,000/mo | Every 14 days | Middle ~8 by revenue |
+| **Tier 3** (Low) | <$500/mo | Every 30 days | Bottom ~5 by revenue |
+
+**First-time tier setup:** If `revenue_tiers_updated` is null or >30 days old, pull 30d revenue from Seller Board (`get_sales_detailed_report`, save full CSV) → sort portfolios by PPC+organic revenue → assign tiers → store `monthly_revenue`, `revenue_tier`, `review_cadence_days` per portfolio in `portfolio_index` → set `revenue_tiers_updated` to today.
+
+**Rotation check:** For each portfolio, compute `days_since_scan = today - last_optimization_scan`. If `days_since_scan >= review_cadence_days`, the portfolio is **due for optimization scan**.
+
+Collect all due portfolios, sorted by:
+1. Revenue tier (Tier 1 first)
+2. Days overdue (most overdue first)
+3. Health status (GREEN last — they're stable but still need attention)
+
+### 3i. Build Session Plan
+
+Present a prioritized plan combining all findings. Use `pending_summary` and `review_summary` for quick counts.
+
+**Session plan sections (in order, skip if empty):**
+
+1. **Due Validations** (from 3d) — `| # | Portfolio | Source | Changes | Est. time |`
+2. **Campaign Watchlist Alerts** (from 3e) — `| # | Campaign | Portfolio | Phase | Age | Alert |`
+3. **Housekeeping** (from 3f) — bullet list of cleanup actions taken
+4. **Overdue Skills** (from 3a) — `| # | Skill | Last run | Days overdue | Est. time | Type |`
+5. **Flagged Portfolios** (from 3b) — `| # | Portfolio | Health | ACoS | Trend | Deep Dive | Pending | Top Concern |`
+6. **Rotation Queue** (from 3h) — `| # | Portfolio | Tier | Health | Last Scan | Days Overdue | Revenue |`
+7. **Pending Work** — P1 count + review count from summaries
+8. **Recommended Session** — numbered sequence with time estimates + `Approve all / Pick items / Modify?`
+
+**Session priority order:** Validations first → Overdue skills → Flagged portfolios → Rotation scans. Fill remaining time with optimization scans (2-4 per session).
+
+### 3j. Execute Approved Plan
+
+Run each approved item sequentially:
+1. Create session object in agent-state.json (if not resuming)
+2. For each skill in the plan:
+   a. Route to the sub-skill (Step 5 routing)
+   b. For rotation portfolios: run **Optimization Scan Protocol** (Step 3k) instead of full PAP
+   c. After completion: run **Step 4 (Skill Chaining Protocol)**
+   d. Update session object with skill result + findings
+3. After all planned items: run Step 9 (Session Wrap-Up)
+
+### 3k. Optimization Scan Protocol (5-7 min per portfolio)
+
+**Purpose:** Systematic review of healthy/stable portfolios to find scaling opportunities, efficiency gains, and emerging issues BEFORE they become problems. This is NOT a deep dive — it's a focused checkup.
+
+**When to use:** For rotation-queue portfolios (GREEN/YELLOW, not flagged as urgent). If the scan reveals a serious problem, escalate to full PAP.
+
+**Scan Checklist (in order):**
+
+| # | Check | Data Source | Looking For | Time |
+|---|-------|------------|-------------|------|
+| 1 | **Budget utilization** | `get_sp_campaign_budget_usage` for top campaigns | Utilization >85% = starved (scale up). <40% = over-allocated (redistribute). | 1 min |
+| 2 | **ACoS trend** | Portfolio tracker `metric_history` (last 3-4 entries) | Drift >5pp from target = early warning. Improving = opportunity to scale. | 1 min |
+| 3 | **Search term quick-scan** | Most recent search term report (if <5d old) or quick `create_ads_report` (sp_search_terms, LAST_7_DAYS) | High-spend zero-conversion terms (>$15, 0 orders). New converting terms not yet in exact campaigns. | 2 min |
+| 4 | **Rank momentum** | DataDive `get_rank_radar_data` (if rank radar exists for this portfolio) | Rank gains to protect (increase bids). Rank drops to investigate. Keywords approaching page 1. | 1 min |
+| 5 | **Organic share trend** | Portfolio tracker `tacos` + `organic_momentum` history | Organic growing = can reduce PPC reliance. Organic declining = need to investigate listing/rank. | 30 sec |
+| 6 | **Pending action check** | Portfolio tracker `pending_actions` | Stale actions >7 days old. Completed actions not marked done. | 30 sec |
+| 7 | **Campaign watchlist** | `campaign_watchlist` entries for this portfolio | New campaigns stuck in AWAITING_ENABLE. RAMPING campaigns with zero impressions. EARLY campaigns underperforming expectations. | 30 sec |
+| 8 | **Competitor context** | `competitive_flags` in agent-state.json + portfolio tracker `competitor_alerts` | Competitor price drops >10%. New competitors on page 1. Competitor BSR gains. | 30 sec |
+
+**Scan Output:** Header line with tier/revenue/health/last-scan, then `| Check | Status | Finding |` table (one row per checklist item, status = OK/WATCH/ACTION), followed by numbered recommendations and next scan date.
+
+**Escalation triggers (scan → full PAP):**
+- ACoS >15pp above target
+- Budget utilization >95% on >50% of campaigns
+- Hero keyword dropped 5+ positions
+- CVR dropped below 5%
+- Any metric with "declining" trend for 3+ consecutive data points
+
+**After scan:** Update portfolio tracker:
+- `last_optimization_scan` → today
+- `pending_actions` → add any new recommendations
+- `scheduled_reviews` → add next scan date
+- `skills_run` → append `{"skill": "optimization-scan", "date": "today", "result": "ok/watch/escalate"}`
+
+### 3l. Budget Intelligence (when data available)
+
+**Purpose:** Cross-campaign and cross-portfolio budget awareness. Prevents local optimization that misses global inefficiency.
+
+**When this runs:** During Optimization Scan (check #1 already covers per-campaign budget), Portfolio Summary, and Portfolio Action Plan. NOT a standalone step — it enhances existing skills.
+
+**Budget checks to integrate:**
+
+| Check | Where it runs | What to flag |
+|-------|--------------|--------------|
+| Portfolio total utilization | Portfolio Summary, PAP | Total daily budget vs actual spend. If <50% across portfolio → over-allocated |
+| Budget-starved campaigns | Optimization Scan (#1), Daily Health | >90% utilization + impression share loss → recommend increase |
+| Budget-idle campaigns | Optimization Scan (#1), PAP | <30% utilization for 14+ days → recommend decrease or pause |
+| Cross-portfolio imbalance | Monthly Review | Portfolio A under-spending while Portfolio B starved → recommend reallocation |
+| Monthly spend forecast | Monthly Review | Current daily run rate × remaining days. Alert if >120% of historical monthly average |
+
+**Budget data sources:**
+- `get_sp_campaign_budget_usage` — per-campaign utilization (most accurate)
+- Campaign report `spend` vs `budget` — daily spend efficiency
+- Seller Board `get_ppc_marketing_report` — account-level PPC spend
+
+**No new state fields required** — budget data is ephemeral (pulled fresh each run, not stored). Findings surface through existing pending_actions and scan recommendations.
+
+---
+
+## Step 4: Skill Chaining Protocol (runs after EVERY sub-skill)
+
+After every sub-skill completes, evaluate these chaining triggers BEFORE proceeding to the next planned item.
+
+### Chain Constraints
+- **Max chain depth: 3** (prevent infinite loops)
+- **Never re-run a skill already completed this session** (check `session.skills_run`)
+- **Respect audit mode** — queued action skills become "recommendations" in audit mode
+- **Inform user of auto-chains:** "Daily Health found 2 RED portfolios. Auto-running Portfolio Action Plan for deeper context."
+
+### Skill Classification
+
+| Skill | Type | Auto-chain? | Audit mode behavior |
+|-------|------|-------------|-------------------|
+| Daily Health | READ-ONLY | Yes | No change |
+| Portfolio Summary | READ-ONLY | Yes | No change |
+| Weekly Analysis | READ-ONLY | Yes | No change |
+| Keyword Rank Optimizer | READ-ONLY | Yes | No change |
+| TACoS Optimizer | READ-ONLY | Yes | No change |
+| Monthly Review | READ-ONLY | Yes | No change |
+| Search Term Harvest | HYBRID | Analysis auto, actions pause | Skip negation step |
+| Bid Recommender | ACTION | No, always pause | Skip application step |
+| Campaign Creator | ACTION | No, always pause | Skip creation step |
+| Portfolio Action Plan | HYBRID | Analysis auto, actions pause | Skip execution step |
+| Negative Keyword Gen | HYBRID | Analysis auto, actions pause | Skip application step |
+
+### Auto-Chain Rules (read-only / analysis — no approval needed)
+
+These run automatically. Just inform the user:
+
+| After this skill... | If this condition is true... | Auto-run... |
+|---------------------|------------------------------|-------------|
+| Daily Health | RED portfolio found | **Portfolio Action Plan** for each RED portfolio (anchor skill — the go-to deep dive for any red flag) |
+| Daily Health | YELLOW with P1 pending actions | **Portfolio Summary** for context |
+| Weekly Analysis | Rank Optimizer >7d or never run | **Keyword Rank Optimizer** (uses fresh weekly targeting data) |
+| Weekly Analysis | TACoS Optimizer >7d or never run | **TACoS Optimizer** (uses fresh weekly data + Seller Board) |
+| TACoS Optimizer | LOSS-MAKING portfolios found (TACoS grade D/F) | **Portfolio Action Plan** (deep problems need the anchor skill) |
+| Portfolio Summary | ACoS >50% or CVR <5% on any portfolio | **Portfolio Action Plan** (deep problems need deep analysis) |
+| Competitor Tracker | competitor_alerts found for any portfolio | **Daily Health** with competitive context (or **Bid Recommender** for PROTECT alerts) |
+
+### Queue Rules (action skills — approval required)
+
+These get queued and presented to the user:
+
+| After this skill... | If this condition is true... | Queue... |
+|---------------------|------------------------------|----------|
+| Search Term Harvest | PROMOTE candidates found | **Campaign Creator** (present candidates, ask user) |
+| Rank Optimizer | PROTECT alerts (rank dropping) | **Bid Recommender** (pass PROTECT keywords) |
+| Portfolio Action Plan | No negatives ever generated for this portfolio | **Negative Keyword Gen** (proactive seeding) |
+| Campaign Creator | New campaigns created | **Negative Keyword Gen** (seed new campaigns with negatives) |
+| Portfolio Summary | Structure gaps found (missing campaign types) | **Campaign Creator** (present gaps) |
+| Rank Optimizer | WASTING MONEY keywords with conversion waste (conv_click_ratio <0.5) | **Listing Manager** (suggest: "Listing issue suspected for {ASIN} — conversion waste on {N} keywords. Run listing-manager to audit.") |
+| Portfolio Action Plan | CVR dropped >25% over 2+ weeks with stable bids/spend | **Listing Manager** (suggest: "CVR drop not explained by PPC changes — listing issue suspected for {ASIN}. Run listing-manager to audit.") |
+
+### Queue Presentation
+
+For queued action skills: state the finding + condition, name the suggested next skill, then ask Y/N (live mode) or note "adding to recommendations" (audit mode).
+
+### Portfolio Action Plan as Anchor Skill
+
+**PAP is the most powerful analysis skill.** It pulls all data sources, does campaign-by-campaign analysis, and produces impact-ranked action plans. Whenever a portfolio has a genuine problem (RED health, loss-making, high ACoS, structural issues), PAP should be the automatic response — not just a surface-level summary.
+
+PAP auto-chains from:
+- Daily Health → RED portfolio
+- TACoS Optimizer → LOSS-MAKING portfolio
+- Portfolio Summary → ACoS >50% or CVR <5%
+
+### Competitive Response Rules
+
+When `competitive_flags` in agent-state.json has active alerts for a portfolio:
+
+| Competitor Signal | PPC Response | Urgency |
+|-------------------|-------------|---------|
+| Price drop >10% on competing ASIN | Flag in Daily Health → consider defensive bid increase on hero KWs | P2 |
+| New competitor on page 1 for hero keyword | Flag in Rank Optimizer → recommend TOS boost | P2 |
+| Competitor BSR improving rapidly | Flag in TACoS Optimizer → evaluate compete vs pivot | P3 |
+| Competitor out-of-stock | Opportunity → consider temporary bid increase to capture share | P2 |
+
+**Data source:** `competitive_flags` in agent-state.json (populated by competitor-price-serp-tracker skill, weekly cadence). If `last_competitor_tracker` is >14 days old, note "competitive data stale" but don't block other work.
+
+---
+
+## Step 5: Direct Route (for specific skill triggers)
+
+### Status Bar (show before every route)
+
+Always show a 3-line status bar before routing:
+```
+**[{AUDIT MODE / LIVE MODE}]** | Overdue: {N} skills | RED portfolios: {N} | Pending P1: {N}
+```
 
 ### Routing Table
 
@@ -186,224 +562,186 @@ When routing to a sub-skill, pass the portfolio tracker path so the sub-skill ca
 | "portfolio deep dive" / "deep dive {name}" / "portfolio action plan" / "fix {portfolio}" / "work on {portfolio}" | **Portfolio Action Plan** | `.claude/skills/ppc-portfolio-action-plan/SKILL.md` |
 | "deal prep" / "deal ppc" / "prep for deal" | **Deal Coordination** (Bid Recommender — deal mode) | `.claude/skills/ppc-bid-recommender/SKILL.md` |
 | "tacos check" / "tacos optimizer" / "profit check" / "tacos scorecard" / "profit reality" | **TACoS & Profit Optimizer** | `.claude/skills/ppc-tacos-optimizer/SKILL.md` |
-| "ppc trends" / "ppc dashboard" / "trend check" / "trajectory" / "time series" / "30 day trend" / "inflection points" | **Weekly PPC Analysis** (includes trajectories) | `.claude/skills/weekly-ppc-analysis/SKILL.md` |
+| "ppc trends" / "ppc dashboard" / "trend check" / "trajectory" / "time series" / "30 day trend" | **Weekly PPC Analysis** (includes trajectories) | `.claude/skills/weekly-ppc-analysis/SKILL.md` |
 | "post deal" / "deal ended" / "deal cleanup" | **Deal Cleanup** (Bid Recommender — post-deal mode) | `.claude/skills/ppc-bid-recommender/SKILL.md` |
-| "ppc" / "ppc check" / "ppc status" (ambiguous) | **Cadence Checker** (Step 3) | This skill |
-| "ppc catch-up" / "ppc everything" | **Run All Overdue** (Step 4) | This skill |
 
 ### How to Route
 
-1. **Read the target skill's LESSONS.md** first (mandatory per operating principles)
+1. **Read the target skill's LESSONS.md** first (mandatory)
 2. **Read the target skill's SKILL.md** for instructions
-3. **Follow those instructions** step by step
-4. **After completion:** Update `agent-state.json` (Step 5)
-5. **After completion:** Update this skill's `LESSONS.md` (Step 6)
+3. **If audit mode is ON**, inject the audit mode instruction (see Step 7)
+4. **Follow those instructions** step by step
+5. **After completion:** Run Step 4 (Skill Chaining Protocol)
+6. **After completion:** Update state (Step 8)
+7. **After completion:** Update LESSONS.md (Step 9)
 
 ### Passing Shared Data
 
-When routing to a sub-skill, check if upstream data already exists to avoid redundant API calls:
+When routing, check if upstream data exists to avoid redundant API calls:
 
-| Sub-skill needs | Check for | If found, pass the file path |
-|----------------|-----------|------------------------------|
-| Seller Board data | `outputs/research/market-intel/snapshots/{today}*.json` | Daily health check reads this instead of re-fetching |
-| Campaign report | `outputs/research/ppc-weekly/snapshots/{recent}/campaign-report.json` | Bid recommender reads this if <3 days old |
-| Search term report | `outputs/research/ppc-weekly/snapshots/{recent}/search-term-report.json` | Search term harvester reads this if <3 days old |
-| Applied negatives | `outputs/research/negative-keywords/data/*-applied-*.json` | Search term harvester dedup check |
-| Weekly summary | `outputs/research/ppc-weekly/snapshots/{recent}/summary.json` | Portfolio summary + bid recommender + monthly review |
-| Targeting report | `outputs/research/ppc-weekly/snapshots/{recent}/targeting-report.json` | Keyword rank optimizer reads this instead of pulling fresh sp_keywords |
-| Rank radar snapshot | `outputs/research/ppc-agent/rank-optimizer/snapshots/{recent}/rank-radar-snapshot.json` | Bid recommender + search term harvester for rank context |
-| Rank-spend matrix | `outputs/research/ppc-agent/rank-optimizer/snapshots/{recent}/rank-spend-matrix.json` | Bid recommender for keyword waste signals |
-| TACoS snapshot | `outputs/research/ppc-agent/tacos-optimizer/snapshots/{recent}/*-tacos-snapshot.json` | Bid recommender for profit-aware bid decisions; monthly review for TACoS trends |
-| Campaign creation log | `outputs/research/ppc-agent/campaign-creator/{recent}/*-creation-log.json` | Avoids re-reading upstream sources for campaign creator |
-| Trajectory data | Weekly snapshot history at `outputs/research/ppc-weekly/snapshots/*/summary.json` | Monthly review + any skill needing trajectory context (calculated in weekly analysis Step 13b) |
+| Sub-skill needs | Check for | Pass if found |
+|----------------|-----------|---------------|
+| Seller Board data | `outputs/research/market-intel/snapshots/{today}*.json` | File path |
+| Campaign report | `outputs/research/ppc-weekly/snapshots/{recent}/campaign-report.json` | If <3 days old |
+| Search term report | `outputs/research/ppc-weekly/snapshots/{recent}/search-term-report.json` | If <3 days old |
+| Applied negatives | `outputs/research/negative-keywords/data/*-applied-*.json` | For dedup check |
+| Weekly summary | `outputs/research/ppc-weekly/snapshots/{recent}/summary.json` | For downstream skills |
+| Targeting report | `outputs/research/ppc-weekly/snapshots/{recent}/targeting-report.json` | For rank optimizer |
+| Rank radar snapshot | `outputs/research/ppc-agent/rank-optimizer/snapshots/{recent}/rank-radar-snapshot.json` | For bid recommender |
+| Rank-spend matrix | `outputs/research/ppc-agent/rank-optimizer/snapshots/{recent}/rank-spend-matrix.json` | For bid recommender |
+| TACoS snapshot | `outputs/research/ppc-agent/tacos-optimizer/snapshots/{recent}/*-tacos-snapshot.json` | For monthly review |
+| Trajectory data | `outputs/research/ppc-weekly/snapshots/*/summary.json` (history) | For monthly review |
 
 **Key principle:** Never re-fetch data that a recent skill run already has on disk.
 
 ---
 
-## Step 3: Cadence Checker (for ambiguous "ppc" requests)
+## Step 6: Portfolio Review Mode
 
-When the user says just "ppc" or "ppc check" without a specific task:
+Triggered by: "portfolio review", "full review", "review all portfolios"
 
-1. Read `agent-state.json`
-2. Calculate what's overdue based on these cadences:
+### 6a. Score All Portfolios
 
-| Task | Cadence | Overdue if last run was... |
-|------|---------|---------------------------|
-| Daily Health Check | Daily | >1 day ago |
-| Search Term Harvest | Every 2-3 days | >3 days ago |
-| Bid Review | Every 2-3 days | >3 days ago |
-| Portfolio Summary | Every 2-3 days | >3 days ago |
-| Weekly Analysis | Weekly | >7 days ago |
-| Keyword Rank Optimizer | Weekly (after weekly) | >7 days ago |
-| TACoS & Profit Optimizer | Weekly (after weekly) | >7 days ago |
-| Monthly Review | Monthly | >30 days ago |
+Compute a composite urgency score (0-100) for each portfolio using data in `portfolio_index`:
 
-**Non-cadence tasks (run on demand):**
-- Campaign Creator: triggered by pending PROMOTE/REDIRECT/structure-gap actions (not time-based)
+| Factor | Weight | Scoring |
+|--------|--------|---------|
+| Health status | 25 | RED=25, YELLOW=15, GREEN=0, null=20 |
+| ACoS vs target | 20 | (acos - target) / target * 20, capped at 20 |
+| Days since deep dive | 15 | min(days_since / 30 * 15, 15). Never=15 |
+| Pending P1 count | 15 | min(p1_count * 5, 15) |
+| Trend | 10 | declining=10, unknown=8, stable=3, improving=0, restructuring=5 |
+| TACoS grade | 10 | F=10, D=8, C=5, B=2, A=0, null=6 |
+| Scheduled review overdue | 5 | next_review < today? 5 : 0 |
 
-3. Present the cadence status to the user:
+### 6b. Present Ranked Pick-List
 
 ```
-**PPC Cadence Status**
+## Portfolio Review — Ranked by Urgency [{AUDIT MODE / LIVE MODE}]
 
-| Task | Last Run | Status |
-|------|----------|--------|
-| Daily Health Check | {date or "Never"} | OK / OVERDUE |
-| Search Term Harvest | {date or "Never"} | OK / OVERDUE |
-| Bid Review | {date or "Never"} | OK / OVERDUE |
-| Portfolio Summary | {date or "Never"} | OK / OVERDUE |
-| Weekly Analysis | {date or "Never"} | OK / OVERDUE |
-| Keyword Rank Optimizer | {date or "Never"} | OK / OVERDUE |
-| Monthly Review | {date or "Never"} | OK / OVERDUE |
+| # | Portfolio | Urgency | Health | ACoS | TACoS | Trend | Last Dive | Pending | Top Concern |
+|---|-----------|---------|--------|------|-------|-------|-----------|---------|-------------|
+| 1 | 4 Flowers | 85/100 | RED | — | D | unknown | never | 2 P1 | No deep dive, listing audit due |
+| 2 | Needlepoint | 72/100 | RED | 57% | B | stable | today | 7 | CVR 5%, listing needed |
+| 3 | Princess Lacing | 65/100 | RED | 62% | — | restruct | 4d | 4 | Launch, identity drift |
+| ... |
 
-**Recommendation:** {most overdue task} is {N} days overdue. Run it now?
-
-**Overdue alerts:** If any skill is >3 days overdue, also read `.claude/skills/notification-hub/SKILL.md` → "Recipe: ppc-agent-cadence" and post an overdue alert to Slack.
+**Pick portfolios:** "1, 2, 3" or "top 5" or "all RED" or "all"
 ```
 
-4. **Show portfolio health from `portfolio_index`:**
+### 6c. Per-Portfolio Analysis Sequence
 
-```
-**Portfolio Health Overview**
+For each picked portfolio, run this sequence. **Portfolio Action Plan is the anchor skill:**
 
-| Portfolio | Status | Pending | Next Review | Last Updated |
-|-----------|--------|---------|-------------|--------------|
-| {name} | GREEN/YELLOW/RED | {N} actions | {date or "—"} | {date} |
-```
+1. **Portfolio Summary** (4 min) — structure audit, quick metrics context
+2. **Keyword Rank Optimizer** (6 min, if rank radar exists for this portfolio) — rank vs spend context
+3. **TACoS check** (5 min, if not already run this session) — profit reality context
+4. **Portfolio Action Plan** (12 min) — **THE ANCHOR SKILL** — pulls ALL context from steps 1-3 + its own campaign-by-campaign analysis. Produces the impact-ranked action plan.
 
-For any portfolio with `pending_count > 0`, load its tracker file and list the top pending actions:
-```
-**Portfolios with Pending Work ({count})**
-- {Portfolio Name}: {pending_count} actions — top: "{highest priority action}" (P1, from {source})
-```
+In audit mode: PAP produces full brief with actions labeled "RECOMMENDED (not applied — audit mode)".
+In live mode: PAP pauses for approval before executing.
 
-5. **Also show global pending actions** if any exist from previous runs:
+**Cap: 3-5 portfolios per session.** If user picked more, offer: "Completed {N} portfolios. Continue with {remaining} in next session?"
 
-```
-**Global Pending Actions ({count})**
-- [P1] {action description} (from {source skill}, {date})
-- [P2] {action description}
-```
+Run Step 4 (chaining) after each skill within the sequence.
 
-6. Wait for user to choose which task to run, then route to that skill.
+### 6d. Executive Summary
+
+After all picked portfolios are reviewed, produce a summary with: Portfolio Scorecards table (`| Portfolio | Health | ACoS | Key Recommendation | Est. Impact |`), Cross-Portfolio Patterns (common issues), Aggregate Opportunity (total waste, action count, time estimate), and prioritized Next Steps.
 
 ---
 
-## Step 4: Run All Overdue (for "ppc catch-up")
+## Step 7: Toggle Audit Mode
 
-When the user says "ppc catch-up" or "ppc everything":
+- **"audit mode on" / "audit mode"** → set `audit_mode: true` in agent-state.json
+- **"audit mode off" / "live mode"** → set `audit_mode: false`
 
-1. Run the cadence checker (Step 3)
-2. List all overdue tasks in priority order:
-   - **P1:** Daily Health Check (fastest, sets context for everything else)
-   - **P2:** Search Term Harvest (biggest $ impact — zero-order spend)
-   - **P3:** Bid Adjustments (biggest time savings)
-   - **P4:** Portfolio Summary (monitoring)
-   - **P5:** Weekly Analysis (if overdue)
-   - **P5.5:** Keyword Rank Optimizer (after weekly provides fresh data)
-   - **P5.6:** TACoS & Profit Optimizer (after weekly, before bid recommender)
-   - **P5.7:** Campaign Creator (if pending PROMOTE/REDIRECT/structure-gap actions exist)
-   - **P6:** Monthly Review (if overdue)
-3. Ask the user: "These tasks are overdue: {list}. Run them all in order, or pick specific ones?"
-4. Execute in order, updating `agent-state.json` after each
+Confirm: "**Audit mode {ON/OFF}.** All skills will {produce analysis briefs only / operate normally with approval gates}."
 
-**Do NOT run all tasks silently.** Present the list, get confirmation, then run sequentially.
+### Audit Mode Injection
+
+When audit mode is ON, inject this instruction when routing to ANY sub-skill:
+
+```
+[AUDIT MODE ACTIVE]
+Skip all API mutation steps. Produce the full analysis brief with all recommendations,
+but label each action as "RECOMMENDED (not applied — audit mode)".
+Do NOT call: update_sp_campaigns, manage_sp_keywords, manage_sp_negative_keywords,
+create_sp_campaigns, create_sp_ad_groups, manage_sp_product_ads, manage_sp_targets,
+manage_sp_negative_targets, update_sp_ad_groups, create_sp_campaign_negative_keywords,
+update_sb_campaigns, update_sd_campaigns, manage_portfolios.
+```
+
+### Audit Mode + Chaining
+
+- Auto-chains still work (analysis skills run normally)
+- Queue-chains become recommendations: "Would normally trigger Campaign Creator. In audit mode, adding to recommendations brief."
+- All briefs get `[AUDIT MODE — Analysis Only]` header
 
 ---
 
-## Step 5: Update Agent State + Portfolio Trackers (after every sub-skill run)
+## Step 8: State Update (after every sub-skill run)
 
-**CRITICAL — DO NOT SKIP THIS STEP.** After ANY API change (bid, keyword, campaign, negative), you MUST update both agent-state.json AND the affected portfolio tracker JSON files BEFORE presenting results to the user. This is a hard requirement, not optional.
+**CRITICAL — DO NOT SKIP.** After ANY sub-skill completes, update both agent-state.json and affected portfolio trackers BEFORE presenting results.
 
-After any sub-skill completes, update **both** `agent-state.json` and affected portfolio tracker(s):
+### 8a. Update `agent-state.json`
 
-### 5a. Update `agent-state.json`
+1. **Update timestamp** for the skill that just ran
+2. **Add/remove pending actions** from `all_pending_actions` (remove completed items immediately)
+3. **Add/remove scheduled reviews** from `upcoming_reviews` — only add reviews where date <= today + 7 days. Future reviews go exclusively in portfolio tracker `scheduled_reviews`
+4. **Promote near-term reviews:** Scan portfolio tracker `scheduled_reviews` for any with date <= today + 7 days not already in `upcoming_reviews` — add them
+5. **Recompute `pending_summary`:** total, p1-p4 counts, aging_5d count, oldest_p1_days, portfolios_with_p1, last_computed
+6. **Recompute `review_summary`:** total_tracked, in_global_state, overdue, due_today, due_this_week, future_in_trackers_only, last_computed
 
-1. **Update the timestamp** for the task that just ran
-2. **Add any new global pending actions** from the sub-skill's output (cross-portfolio items only)
-3. **Remove any global pending actions** that were addressed during this run
-4. **Log applied changes** to `applied_changes` (only for multi-portfolio changes)
+### 8b. Update `portfolio_index` per portfolio touched
 
-### 5b. Update `portfolio_index` in `agent-state.json`
+1. `last_updated` → today
+2. `health_status` → from sub-skill output
+3. `trend` → from tracker's improvement_assessment
+4. `acos` → from tracker's latest_metrics
+5. `pending_count` → count of pending actions in tracker
+6. `top_action` → "[{priority}] {description}" of highest-priority action
+7. `next_review` → earliest pending review date
+8. `last_deep_dive` → if Portfolio Action Plan was run
+9. `last_optimization_scan` → if optimization scan was run
 
-For each portfolio touched by the sub-skill:
+### 8c. Update Portfolio Tracker Files
 
-1. **Update `last_updated`** to today's date
-2. **Update `health_status`** based on sub-skill output (GREEN/YELLOW/RED)
-3. **Update `trend`** — from tracker's `improvement_assessment.overall_trend`
-4. **Update `acos`** — from tracker's `latest_metrics.metrics.acos`
-5. **Update `pending_count`** — count of pending actions in the portfolio's tracker
-6. **Update `top_action`** — `"[{priority}] {description}"` of highest-priority pending action (null if none)
-7. **Update `next_review`** — earliest pending review from the portfolio's `scheduled_reviews`
-8. **Update `last_deep_dive`** — if the sub-skill was a portfolio action plan
+For each affected portfolio at `outputs/research/ppc-agent/state/{slug}.json`:
 
-### 5b-2. Sync `all_pending_actions` in `agent-state.json`
+1. `skills_run` → append: `{"skill": "{name}", "date": "{today}", "result": "success/partial/failed"}`
+2. `change_log` → append any API changes (bid, negative, campaign)
+3. `pending_actions` → add new, mark completed
+4. `latest_metrics` → update if fresh metrics produced
+5. `metric_history` → append if metrics updated (max 90)
+6. `scheduled_reviews` → add re-check dates
+7. `improvement_assessment` → update if enough history
 
-**Rebuild from portfolio trackers after any change to pending actions.** This is the aggregated view — every pending action from every portfolio, sorted by priority (P1 first), then by date:
+### 8d. Update Session Object
 
-```json
-{"portfolio": "Name", "id": "ff-001", "priority": "P1", "category": "BID_DECREASE", "action": "Brief description", "created": "YYYY-MM-DD"}
-```
-
-**When adding/completing pending actions in a tracker, also add/remove them from `all_pending_actions`.**
-
-### 5b-3. Sync `upcoming_reviews` in `agent-state.json`
-
-**Rebuild from portfolio trackers after any change to scheduled reviews.** Sorted by date (soonest first):
-
-```json
-{"date": "YYYY-MM-DD", "portfolio": "Name", "type": "7-day re-check", "source": "skill-run-date"}
-```
-
-### 5c. Update Portfolio Tracker Files
-
-For each affected portfolio, update its tracker at `outputs/research/ppc-agent/state/{slug}.json`:
-
-1. **`skills_run`** — append entry: `{"skill": "{skill-name}", "date": "{today}", "result": "success/partial/failed", "key_metrics": {}}`
-2. **`change_log`** — append any API changes made (bid changes, negatives, campaigns created)
-3. **`pending_actions`** — add new P1/P2 items, mark completed items
-4. **`latest_metrics`** — update if the sub-skill produced fresh metrics
-5. **`metric_history`** — append new entry if `latest_metrics` was updated (max 90 entries)
-6. **`scheduled_reviews`** — add if sub-skill recommends a re-check date
-7. **`improvement_assessment`** — update if enough history exists (compare `latest_metrics` vs `baseline`)
-
-**Key principle:** Portfolio-specific data goes in the portfolio tracker. Only global/cross-portfolio data stays in `agent-state.json`.
+If session is active, update:
+- `skills_run` → append completed skill
+- `data_fetched` → append any new data files
+- `findings` → append key findings with trigger suggestions
+- `chain_depth` → track for chain limit enforcement
 
 ---
 
-## Step 6: Update Lessons (MANDATORY — after every run)
+## Step 9: Session Wrap-Up (after all skills complete)
 
-**Before presenting final results, update `.claude/skills/ppc-agent/LESSONS.md`.**
+When all planned skills are done:
 
-### 1. Write a Run Log Entry
+### 9a. Present Session Summary
 
-Add a new entry at the **TOP** of the Run Log section:
+Include: Skills Run table (`| # | Skill | Result | Key Finding |`), Chained Actions bullet list, State Changes summary (trackers updated, pending action counts), and Next Session Priorities (top 3).
 
-```
-### Run: YYYY-MM-DD
-**Task routed:** {which sub-skill was executed}
-**Result:** Success / Partial / Failed
+### 9b. Clear Session Object
 
-**What happened:**
-- (What went according to plan)
+Set `session: null` in agent-state.json.
 
-**What didn't work:**
-- (Any issues)
+### 9c. Update LESSONS.md
 
-**Lesson learned:**
-- (What to do differently)
-
-**Tokens/cost:** ~XX K tokens
-```
-
-### 2. Update Issue Tracking
-
-| Situation | Action |
-|-----------|--------|
-| New problem | Add to **Known Issues** |
-| Known Issue happened again | Move to **Repeat Errors**, increment count, **tell the user** |
-| Fixed a Known Issue | Move to **Resolved Issues** |
+Add a run log entry at the TOP of the Run Log section with: date, mode, skills run, result, what happened, chains triggered, issues, lessons learned, token estimate. Update Known Issues / Repeat Errors / Resolved Issues as needed.
 
 ---
 
@@ -411,45 +749,86 @@ Add a new entry at the **TOP** of the Run Log section:
 
 **These rules apply to ALL PPC sub-skills and must NEVER be violated:**
 
-1. **Never pause a campaign based on a single week of zero conversions.** Always check a longer timeframe (minimum 30 days, ideally 60 days) before recommending a pause. A campaign with zero orders in one week might just be in a rough patch. Only recommend pausing if the campaign shows sustained poor performance over the longer timeframe.
-2. **Never use round/organized bid amounts.** When lowering or placing bids, never use clean percentages like -30%, -50%. Always use slightly irregular amounts like -31%, -48%, -52%, -27%. This avoids predictable bid patterns and helps stand out in Amazon's auction dynamics.
-3. **Never negate a search term based on a single week of zero conversions.** Always check a minimum 30-day window of data before recommending a search term for negation. A search term with zero orders in one week might convert in other weeks. Only recommend negating if the search term shows sustained zero conversions AND is clearly irrelevant to the product over the full 30-day window.
+1. **Never pause a campaign based on a single week of zero conversions.** Always check minimum 30 days (ideally 60) before recommending pause. Only pause for sustained poor performance.
 
-**Enforce these rules when routing to any sub-skill.** If a sub-skill output contains round bid amounts, single-week pause recommendations, or single-week negation recommendations, flag it before presenting to the user.
+2. **Never use round/organized bid amounts.** No clean -30%, -50%. Use irregular amounts: -31%, -48%, -52%, -27%. Avoid predictable bid patterns.
+
+3. **Never negate a search term based on a single week of zero conversions.** Minimum 30-day window required. Only negate for sustained zero conversions AND clearly irrelevant.
+
+4. **Always update portfolio tracker JSON files after any API change.** Update `change_log`, `pending_actions`, `scheduled_reviews`, `skills_run` immediately after API calls succeed, BEFORE presenting results.
+
+**Enforce these rules when routing to any sub-skill.** Flag violations before presenting to user.
 
 ---
 
-## SOP Reference (Quick Access)
+## Integrating Never-Run Skills
 
-The PPC Agent must know these SOP decision frameworks to properly route and contextualize:
+These skills are built but have never been used. The agent must actively trigger them:
 
-### Portfolio Stages (from `context/business.md`)
+| Skill | When to trigger | How |
+|-------|----------------|-----|
+| **Keyword Rank Optimizer** | Auto-chain after Weekly Analysis (weekly cadence) | Uses fresh weekly targeting data + DataDive rank radar |
+| **Negative Keyword Generator** | After first PAP per portfolio + quarterly refresh | Check `last_negative_generation[{slug}]` — null = first run needed |
+| **Monthly Review** | First PPC invocation after month boundary | Reads 4 weekly snapshots + Brand Analytics monthly. Also runs Pattern Learning analysis if data thresholds met. |
+
+### Checking for Never-Run Skills
+
+In Smart Catch-Up (Step 3a), always flag:
+- `last_rank_optimizer: null` → "Keyword Rank Optimizer has NEVER been run"
+- `last_monthly_review: null` → "Monthly Review has NEVER been run"
+- Any portfolio missing from `last_negative_generation` → "Negative Keyword Gen never run for {portfolio}"
+
+---
+
+## Pattern Learning (requires 4+ weeks of validation data)
+
+**Purpose:** After accumulating validation_history across portfolios, detect patterns in what types of changes work and what fails. This turns accumulated data into actionable intelligence.
+
+**When to run:** During Monthly Review, OR on-demand when user asks "what's working?"
+
+**Minimum data thresholds:** Do NOT run pattern analysis unless:
+- At least 30 validated changes exist across all `validation_history` arrays
+- At least 3 portfolios have validation data
+- Validation data spans at least 21 days
+
+### Pattern Analysis Checks
+
+| Analysis | Data Source | Output |
+|----------|-----------|--------|
+| **Success rate by change type** | All `validation_history` entries | "TOS reductions: 80% WORKED. Bid decreases >30%: 20% WORKED. Negations: 95% WORKED." |
+| **Portfolio response profiles** | Per-portfolio validation_history | "Needlepoint responds well to TOS cuts but poorly to bid reductions" |
+| **Optimal change magnitude** | change_log before/after values + validation outcomes | "TOS reductions of 30-50% work best. Reductions >60% tend to FAIL (starve campaigns)" |
+
+### How to use patterns
+
+- **Feed into Bid Recommender:** If pattern shows TOS cuts >50% fail, cap recommendations at -48%
+- **Feed into PAP:** Include portfolio response profile in analysis context
+- **Surface in Monthly Review:** "Top 3 insights from last month's changes"
+
+**Store patterns in:** LESSONS.md (account-wide insights) + portfolio tracker `improvement_assessment` (per-portfolio patterns). Do NOT create new state fields — patterns are derived, not stored.
+
+---
+
+## SOP Reference
+
+### Portfolio Stages
 
 | Phase | ACoS Target | Primary KPI | Bid Flexibility |
 |-------|------------|-------------|-----------------|
-| **Launch** | Flexible (up to 60%+) | Rank velocity | High — spending to gain position |
-| **Scaling** | 28-32% | ACoS + Rank retention | Medium — efficiency matters |
+| **Launch** | Flexible (up to 60%+) | Rank velocity | High |
+| **Scaling** | 28-32% | ACoS + Rank retention | Medium |
 | **General** | N/A | Account-wide utility | Varies |
 
 ### Red Flag Thresholds
 
 | Metric | Red Flag | Action |
 |--------|----------|--------|
-| ACoS >50% (Scaling portfolio) | Bleeding spend | Route to Bid Recommender |
-| CVR <5% | Listing or targeting issue | Flag — may need listing review, not PPC fix |
-| Hero keyword drops 5+ positions | Competitor attack or algo change | Route to Bid Recommender (increase TOS) |
-| 50+ clicks, 0 orders on a keyword | Dead weight | Route to Search Term Harvester |
-| Budget utilization >95% | Starved campaign | Flag in Daily Health Check |
-| BSR declining despite increased spend | Market saturation | Flag for strategic review |
-
-### Review Cadence Summary
-
-| Cadence | Time Investment | What Happens |
-|---------|----------------|--------------|
-| **Daily** | 5 min (automated) | Health check brief — traffic lights per portfolio |
-| **Every 2-3 days** | 15-20 min (review + approve) | Search term harvest + bid adjustments |
-| **Weekly** | 30-45 min (review) | Comprehensive 4-report analysis with WoW comparison |
-| **Monthly** | 60-90 min (strategic) | Trend analysis, stage transitions, budget reallocation |
+| ACoS >50% (Scaling) | Bleeding spend | Route to PAP (anchor skill) |
+| CVR <5% | Listing or targeting issue | Flag — may need listing review |
+| Hero keyword drops 5+ positions | Competitor attack | Route to Bid Recommender |
+| 50+ clicks, 0 orders on keyword | Dead weight | Route to Search Term Harvester |
+| Budget utilization >95% | Starved campaign | Flag in Daily Health |
+| BSR declining despite spend | Market saturation | Flag for strategic review |
 
 ---
 
@@ -457,9 +836,10 @@ The PPC Agent must know these SOP decision frameworks to properly route and cont
 
 | Issue | Response |
 |-------|----------|
-| `agent-state.json` missing | Create it with all null dates (first-time setup) |
-| Sub-skill's SKILL.md missing | Tell user: "Skill {name} has not been created yet. Build it first." |
-| Sub-skill fails mid-run | Log the failure in agent state, update LESSONS.md, tell user what happened |
-| Multiple tasks overdue | Present prioritized list, don't auto-run everything |
-| User asks for a PPC task not covered by any skill | Suggest the closest skill or offer to help ad-hoc |
-| Upstream snapshot data is stale (>7 days) | Warn user and suggest running the upstream skill first |
+| `agent-state.json` missing | Create with all null dates |
+| Sub-skill's SKILL.md missing | Tell user: "Skill {name} not created yet." |
+| Sub-skill fails mid-run | Log failure, update LESSONS.md, inform user |
+| Chain depth reaches 3 | Stop chaining, note in session summary |
+| Context window running out | Save session object, suggest "continue next session" |
+| Upstream data stale (>7 days) | Warn user, suggest running upstream skill first |
+| Reports stuck PENDING | Use cached data, note in findings |

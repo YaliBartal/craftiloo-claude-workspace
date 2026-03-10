@@ -429,7 +429,7 @@ Keywords with high spend but stagnant or declining rank. Redirect this budget.
 
 **SQP diagnostic (if available):** Classify WASTING keywords by funnel bottleneck:
 - **Targeting waste** ({N} keywords): conv_click_ratio < 0.5 → wrong keyword, reduce/negate
-- **Conversion waste** ({N} keywords): conv_click_ratio 0.5-0.8 → right keyword, listing needs work → flag for Listing Optimizer
+- **Conversion waste** ({N} keywords): conv_click_ratio 0.5-0.8 → right keyword, listing needs work → **flag for Listing Manager** (suggest: "Run listing-manager to audit {ASIN} — {N} keywords show conversion waste, indicating a listing problem rather than a PPC problem.")
 - **No BA data** ({N} keywords): classification based on PPC + rank only
 
 ---

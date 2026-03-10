@@ -9,12 +9,11 @@
   "reports_available": [
     "scp",
     "sqp",
+    "search_terms",
     "market_basket",
     "repeat_purchase"
   ],
-  "reports_failed": [
-    "search_terms"
-  ],
+  "reports_failed": [],
   "click_share_movers": {
     "gaining": [],
     "losing": [],
@@ -22,7 +21,18 @@
   },
   "funnel_alerts": [],
   "new_keywords": [],
-  "competitor_movements": [],
+  "competitor_movements": [
+    {"keyword": "embroidery kits for kids", "our_asin": "B09X55KL2C", "our_position": 1, "click_share": 41.18, "conv_share": 33.33, "top_competitor": "Pllieay"},
+    {"keyword": "kids embroidery kit", "our_asin": "B09X55KL2C", "our_position": 1, "click_share": 30.59, "conv_share": 8.33, "top_competitor": "Louise Maelys"},
+    {"keyword": "embroidery kit for kids", "our_asin": "B09X55KL2C", "our_position": 1, "click_share": 28.06, "conv_share": 11.11, "top_competitor": "Fuse Beads 10000"},
+    {"keyword": "cross stitch kits for kids", "our_asin": "B08DDJCQKF", "our_position": 1, "click_share": 19.42, "conv_share": 21.43, "top_competitor": "Cross Stitch 4 Unicorn"},
+    {"keyword": "mini perler beads", "our_asin": "B09THLVFZK", "our_position": 1, "click_share": 25.48, "conv_share": 22.73, "top_competitor": "LIHAO"},
+    {"keyword": "sewing for kids", "our_asin": "B09WQSBZY7", "our_position": 1, "click_share": 11.49, "conv_share": 5.56, "top_competitor": "KRAFUN"},
+    {"keyword": "latch hook kits for kids", "our_asin": "B0F8R652FX", "our_position": 2, "click_share": 10.54, "conv_share": 4.27, "top_competitor": "LatchKits"},
+    {"keyword": "knitting kit for kids", "our_asin": "B0F8DG32H5", "our_position": 3, "click_share": 5.43, "conv_share": 4.76, "top_competitor": "Creativity for Kids"},
+    {"keyword": "pixie beads", "our_asin": "B09THLVFZK", "our_position": 3, "click_share": 8.16, "conv_share": 0.0, "top_competitor": "Psykade (33.67%)"}
+  ],
+  "search_terms_total": 46,
   "bundle_opportunities": [
     {
       "our_asin": "B09THLVFZK",
@@ -146,8 +156,8 @@
     },
     {
       "asin": "B09X55KL2C",
-      "product": "Unknown B09X55KL2C",
-      "portfolio": "unknown",
+      "product": "10 Pre-Stamped Embroidery Kit",
+      "portfolio": "embroidery-for-kids",
       "orders": 63,
       "unique_customers": 63,
       "repeat_rate": 0.0,
@@ -173,8 +183,8 @@
     },
     {
       "asin": "B0DKD2S3JT",
-      "product": "Unknown B0DKD2S3JT",
-      "portfolio": "unknown",
+      "product": "Loom Knitting Bunny",
+      "portfolio": "bunny-knitting-loom-kit",
       "orders": 36,
       "unique_customers": 34,
       "repeat_rate": 5.88,
@@ -191,8 +201,8 @@
     },
     {
       "asin": "B08FYH13CL",
-      "product": "Unknown B08FYH13CL",
-      "portfolio": "unknown",
+      "product": "Latch Hook Pencil Cases Heart",
+      "portfolio": "latch-hook-kits",
       "orders": 31,
       "unique_customers": 31,
       "repeat_rate": 0.0,
@@ -200,8 +210,8 @@
     },
     {
       "asin": "B0BNDVTTSH",
-      "product": "Unknown B0BNDVTTSH",
-      "portfolio": "unknown",
+      "product": "Ballerina Dancers Sewing Kit",
+      "portfolio": "fairy-family",
       "orders": 31,
       "unique_customers": 31,
       "repeat_rate": 0.0,
@@ -218,8 +228,8 @@
     },
     {
       "asin": "B0CRZ8M2G1",
-      "product": "Unknown B0CRZ8M2G1",
-      "portfolio": "unknown",
+      "product": "Mini Fuse Beads 24000 48 Colors",
+      "portfolio": "fuse-beads",
       "orders": 23,
       "unique_customers": 23,
       "repeat_rate": 0.0,
@@ -227,8 +237,8 @@
     },
     {
       "asin": "B0DC69M3YD",
-      "product": "Unknown B0DC69M3YD",
-      "portfolio": "unknown",
+      "product": "Embroidery Kit Adults 4 Floral",
+      "portfolio": "4-flowers-embroidery",
       "orders": 22,
       "unique_customers": 22,
       "repeat_rate": 0.0,
@@ -236,8 +246,8 @@
     },
     {
       "asin": "B07PXN4K8N",
-      "product": "Unknown B07PXN4K8N",
-      "portfolio": "unknown",
+      "product": "XXL Fuse Beads 22000pcs",
+      "portfolio": "fuse-beads",
       "orders": 20,
       "unique_customers": 18,
       "repeat_rate": 11.11,
@@ -245,8 +255,8 @@
     },
     {
       "asin": "B0F6YTG1CH",
-      "product": "Unknown B0F6YTG1CH",
-      "portfolio": "unknown",
+      "product": "Cross Stitch Kit Kids 4 Unicorn",
+      "portfolio": "my-first-cross-stitch",
       "orders": 19,
       "unique_customers": 19,
       "repeat_rate": 0.0,
@@ -263,8 +273,8 @@
     },
     {
       "asin": "B0BP8GCK1G",
-      "product": "Unknown B0BP8GCK1G",
-      "portfolio": "unknown",
+      "product": "Fairy Elves Sewing Kit",
+      "portfolio": "fairy-family",
       "orders": 15,
       "unique_customers": 15,
       "repeat_rate": 0.0,
@@ -298,8 +308,8 @@
     },
     {
       "asin": "B0DC69M3YD",
-      "product_name": "Unknown B0DC69M3YD",
-      "portfolio": "unknown",
+      "product_name": "Embroidery Kit Adults 4 Floral",
+      "portfolio": "4-flowers-embroidery",
       "impressions": 27644,
       "clicks": 303,
       "click_rate": 1.1,
@@ -310,8 +320,8 @@
     },
     {
       "asin": "B09X55KL2C",
-      "product_name": "Unknown B09X55KL2C",
-      "portfolio": "unknown",
+      "product_name": "10 Pre-Stamped Embroidery Kit",
+      "portfolio": "embroidery-for-kids",
       "impressions": 26558,
       "clicks": 607,
       "click_rate": 2.29,
@@ -322,8 +332,8 @@
     },
     {
       "asin": "B09HVDNFMR",
-      "product_name": "B09HVDNFMR",
-      "portfolio": "unknown",
+      "product_name": "Needlepoint Wallet Cat",
+      "portfolio": "cross-stitch-backpack-charms",
       "impressions": 16663,
       "clicks": 332,
       "click_rate": 1.99,
@@ -334,8 +344,8 @@
     },
     {
       "asin": "B0DKD2S3JT",
-      "product_name": "Unknown B0DKD2S3JT",
-      "portfolio": "unknown",
+      "product_name": "Loom Knitting Bunny",
+      "portfolio": "bunny-knitting-loom-kit",
       "impressions": 15282,
       "clicks": 195,
       "click_rate": 1.28,
@@ -346,8 +356,8 @@
     },
     {
       "asin": "B08FYH13CL",
-      "product_name": "Unknown B08FYH13CL",
-      "portfolio": "unknown",
+      "product_name": "Latch Hook Pencil Cases Heart",
+      "portfolio": "latch-hook-kits",
       "impressions": 13001,
       "clicks": 223,
       "click_rate": 1.72,
@@ -358,8 +368,8 @@
     },
     {
       "asin": "B08L8BHD4Z",
-      "product_name": "B08L8BHD4Z",
-      "portfolio": "unknown",
+      "product_name": "5 Superhero Cross Stitch Charms",
+      "portfolio": "cross-stitch-backpack-charms",
       "impressions": 10429,
       "clicks": 142,
       "click_rate": 1.36,
@@ -370,8 +380,8 @@
     },
     {
       "asin": "B09HVCCNM2",
-      "product_name": "B09HVCCNM2",
-      "portfolio": "unknown",
+      "product_name": "Needlepoint Wallet Unicorn",
+      "portfolio": "cross-stitch-backpack-charms",
       "impressions": 8385,
       "clicks": 126,
       "click_rate": 1.5,
@@ -382,8 +392,8 @@
     },
     {
       "asin": "B092SW839H",
-      "product_name": "B092SW839H",
-      "portfolio": "unknown",
+      "product_name": "Punch Needle Mini Pillows",
+      "portfolio": "punch-needle",
       "impressions": 6765,
       "clicks": 93,
       "click_rate": 1.37,
@@ -394,8 +404,8 @@
     },
     {
       "asin": "B096MYBLS1",
-      "product_name": "B096MYBLS1",
-      "portfolio": "unknown",
+      "product_name": "12 Mini Treats Dessert Sewing",
+      "portfolio": "dessert-family",
       "impressions": 5218,
       "clicks": 83,
       "click_rate": 1.59,
@@ -406,8 +416,8 @@
     },
     {
       "asin": "B0BNDVTTSH",
-      "product_name": "Unknown B0BNDVTTSH",
-      "portfolio": "unknown",
+      "product_name": "Ballerina Dancers Sewing Kit",
+      "portfolio": "fairy-family",
       "impressions": 4655,
       "clicks": 72,
       "click_rate": 1.55,
@@ -418,8 +428,8 @@
     },
     {
       "asin": "B0BP8GCK1G",
-      "product_name": "Unknown B0BP8GCK1G",
-      "portfolio": "unknown",
+      "product_name": "Fairy Elves Sewing Kit",
+      "portfolio": "fairy-family",
       "impressions": 3732,
       "clicks": 42,
       "click_rate": 1.13,
@@ -1220,8 +1230,8 @@
     "funnel_alerts_count": 0,
     "new_keywords_count": 27,
     "competitor_alerts_count": 0,
-    "reports_succeeded": 4,
-    "reports_failed": 1,
+    "reports_succeeded": 5,
+    "reports_failed": 0,
     "unique_sqp_keywords": 27,
     "scp_asin_count": 37
   }

@@ -76,13 +76,20 @@ async def fetch_report(env_var: str) -> str:
         return response.text
 
 
-def csv_to_summary(csv_text: str, max_rows: int = 100) -> str:
-    """Parse CSV and return a formatted summary with headers and data."""
+def csv_to_summary(csv_text: str, max_rows: int = 100, save_path: str = None) -> str:
+    """Parse CSV and return a formatted summary with headers and data.
+    If save_path is provided, saves the full CSV to disk before truncating."""
     reader = csv.reader(io.StringIO(csv_text))
     rows = list(reader)
 
     if not rows:
         return "No data returned."
+
+    if save_path:
+        import os
+        os.makedirs(os.path.dirname(save_path) if os.path.dirname(save_path) else ".", exist_ok=True)
+        with open(save_path, "w", newline="", encoding="utf-8") as f:
+            f.write(csv_text)
 
     headers = rows[0]
     data_rows = rows[1:]
@@ -90,6 +97,9 @@ def csv_to_summary(csv_text: str, max_rows: int = 100) -> str:
 
     output = f"**Columns ({len(headers)}):** {', '.join(headers)}\n"
     output += f"**Total rows:** {total_rows}\n\n"
+
+    if save_path:
+        output += f"**Full CSV saved to:** {save_path}\n\n"
 
     # Return raw CSV (capped) for analysis
     displayed = data_rows[:max_rows]

@@ -21,7 +21,8 @@
     "niche_id": "5IGkCmOM0h",
     "rank_radar_id": null,
     "campaigns_enabled": 7,
-    "campaigns_paused": 6
+    "campaigns_paused": 8,
+    "note_2026_03_10": "Restructure: 2 SK paused (beginners, kids), 2 new SK created (PAUSED, awaiting user enable). Active: MK broad (kids KWs only), Auto ($3/d), SK pouch kit, PT ($5/d), SK kit for kids. New PAUSED: SK needlepoint for kids (241563077173400), SK needlepoint kits for kids (257183338184758)."
   },
   "goals": {
     "acos_target": 30,
@@ -252,6 +253,81 @@
           "status": "failed"
         }
       ]
+    },
+    {
+      "date": "2026-03-09",
+      "source": "ppc-portfolio-action-plan",
+      "summary": "7 actions executed (7 success, 0 failed) — Deep Dive #2",
+      "changes": [
+        {
+          "category": "BID_DECREASE",
+          "campaign": "needlepoint - SPM MK broad and phrase TOS",
+          "old": "TOS 78%",
+          "new": "TOS 33%",
+          "status": "success"
+        },
+        {
+          "category": "BID_DECREASE",
+          "campaign": "needlepoint - SPM MK broad and phrase TOS",
+          "old": "needlepoint kits BROAD bid $0.33",
+          "new": "$0.21",
+          "status": "success"
+        },
+        {
+          "category": "BID_INCREASE",
+          "campaign": "needlepoint - SPM SK needlepoint pouch kit TOS",
+          "old": "TOS 157%, default bid $0.47",
+          "new": "TOS 213%, default bid $0.57",
+          "status": "success",
+          "note": "User modified: chose bid increase over cross-negation to preserve converting traffic in MK broad"
+        },
+        {
+          "category": "BID_DECREASE",
+          "campaign": "needlepoint - SPM SK kids needlepoint kit TOS",
+          "old": "TOS 207%",
+          "new": "TOS 107%",
+          "status": "success"
+        },
+        {
+          "category": "NEGATE_SEARCH_TERM",
+          "campaign": "needlepoint - SPA auto TOS",
+          "old": "no negative for adults term",
+          "new": "NEGATIVE_EXACT 'needlepoint kits for adults'",
+          "status": "success"
+        },
+        {
+          "category": "BID_DECREASE",
+          "campaign": "needlepoint - SPM MP product targeting",
+          "old": "ROS 10%",
+          "new": "ROS 0%",
+          "status": "success"
+        },
+        {
+          "category": "BID_DECREASE",
+          "campaign": "needlepoint - SPM MK broad and phrase TOS",
+          "old": "needlepoint kit for kids BROAD bid $0.51",
+          "new": "$0.37",
+          "status": "success"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-10",
+      "source": "ppc-portfolio-action-plan (restructure)",
+      "summary": "Kids niche restructure — 15 actions (15 success). Paused generic KWs, paused 2 SK campaigns, reduced budgets, added kid-focused KWs, created 2 new SK campaigns with cross-negation.",
+      "changes": [
+        {"category": "KEYWORD_PAUSE", "campaign": "MK broad", "old": "needlepoint kit BROAD $0.33", "new": "PAUSED", "status": "success"},
+        {"category": "KEYWORD_PAUSE", "campaign": "MK broad", "old": "needlepoint kits BROAD $0.21", "new": "PAUSED", "status": "success"},
+        {"category": "KEYWORD_PAUSE", "campaign": "MK broad", "old": "needlepoint kit for kids BROAD $0.37", "new": "PAUSED", "status": "success"},
+        {"category": "CAMPAIGN_PAUSE", "campaign": "SK beginners (424611391216881)", "old": "ENABLED $15/d", "new": "PAUSED", "status": "success"},
+        {"category": "CAMPAIGN_PAUSE", "campaign": "SK kids needlepoint (408514915378721)", "old": "ENABLED $8/d", "new": "PAUSED", "status": "success"},
+        {"category": "BUDGET_DECREASE", "campaign": "Auto (372981829297208)", "old": "$5/d", "new": "$3/d", "status": "success"},
+        {"category": "BUDGET_DECREASE", "campaign": "PT (42122197345124)", "old": "$8/d", "new": "$5/d", "status": "success"},
+        {"category": "KEYWORD_ADD", "campaign": "MK broad", "old": "1 active KW", "new": "+needlepoint for kids BROAD $0.47 (466107823398032), +kids craft kit PHRASE $0.33 (384534599145590)", "status": "success"},
+        {"category": "CAMPAIGN_CREATE", "campaign": "SK needlepoint for kids (241563077173400)", "old": null, "new": "EXACT $0.51, TOS 113%, PP 10%, ROS 10%, $8/d, PAUSED", "status": "success"},
+        {"category": "CAMPAIGN_CREATE", "campaign": "SK needlepoint kits for kids (257183338184758)", "old": null, "new": "EXACT $0.43, TOS 97%, PP 10%, ROS 10%, $8/d, PAUSED", "status": "success"},
+        {"category": "NEGATE_SEARCH_TERM", "campaign": "MK broad + Auto", "old": "no negatives", "new": "NEGATIVE_EXACT needlepoint for kids + needlepoint kits for kids (4 total)", "status": "success"}
+      ]
     }
   ],
   "pending_actions": [
@@ -261,7 +337,8 @@
       "category": "NEGATE_SEARCH_TERM",
       "action": "Cross-negate 'needlepoint pouch kit' EXACT in MK broad + Auto (traffic isolation for new SK campaign)",
       "created": "2026-03-05",
-      "status": "pending"
+      "status": "superseded",
+      "note": "User chose bid increase on SK pouch kit (TOS 213%, bid $0.57) instead of negation — wants to preserve converting traffic in MK broad"
     },
     {
       "id": "np-002",
@@ -275,58 +352,67 @@
       "id": "np-003",
       "priority": "P4",
       "category": "MONITOR",
-      "action": "Monitor SK 'kids needlepoint kit' and SK 'needlepoint kit for kids' — at 64.6% and 85.7% ACoS. Check after negatives take effect.",
-      "created": "2026-03-05",
+      "action": "Monitor SK 'kids needlepoint kit' — TOS reduced 207%→107%. Check if Other on-Amazon spend increases and ACoS improves.",
+      "created": "2026-03-09",
       "status": "pending",
-      "due": "2026-03-19"
+      "due": "2026-03-16"
     },
     {
       "id": "np-004",
       "priority": "P4",
       "category": "MONITOR",
-      "action": "Monitor 'needlepoint kit' rank (declining 25→?). Bid recommender lowered MK broad TOS. Verify rank stabilizes.",
+      "action": "Monitor 'needlepoint kit' rank (declining 25→29). MK broad TOS reduced 78%→33%. Verify rank doesn't drop further.",
       "created": "2026-03-05",
       "status": "pending",
-      "due": "2026-03-19"
+      "due": "2026-03-16"
     },
     {
       "id": "np-005",
       "priority": "P4",
       "category": "MONITOR",
-      "action": "Monitor new PT campaign performance — check CTR, ACoS after 14d of data",
-      "created": "2026-03-05",
+      "action": "Monitor PT campaign — ROS removed (10%→0%). Check TOS-only performance.",
+      "created": "2026-03-09",
       "status": "pending",
-      "due": "2026-03-19"
+      "due": "2026-03-23"
     },
     {
       "id": "np-006",
       "priority": "P4",
       "category": "MONITOR",
-      "action": "Monitor new SK 'needlepoint pouch kit' campaign — user set TOS 157% (high). Verify ACoS within target.",
-      "created": "2026-03-05",
+      "action": "Monitor SK 'needlepoint pouch kit' — TOS boosted 157%→213%, bid $0.47→$0.57. Check if it wins traffic from MK broad.",
+      "created": "2026-03-09",
       "status": "pending",
-      "due": "2026-03-19"
+      "due": "2026-03-16"
     },
     {
       "id": "np-007",
       "priority": "P1",
-      "category": "DEEP_DIVE",
-      "action": "Full portfolio deep dive — LISTING AUDIT focus. 30d ACoS 57.4%, 4.1% CVR across all campaigns. Mar 5 bid cuts worsened ACoS (56.8%→92%). Problem is CVR/listing, not bids. Check: listing quality, images, reviews, product-market fit.",
-      "created": "2026-03-08",
+      "category": "LISTING_AUDIT",
+      "action": "Run listing-optimizer on B09HVDNFMR + B09HVSLBS6. CVR 5.0% (target 10%) is root cause of portfolio underperformance. No PPC fix can overcome this.",
+      "created": "2026-03-09",
       "status": "pending",
-      "source": "weekly-ppc-analysis-30d"
+      "source": "ppc-portfolio-action-plan-deep-dive-2"
+    },
+    {
+      "id": "np-008",
+      "priority": "P4",
+      "category": "MONITOR",
+      "action": "Rank collapse — 'needlepoint kits' (15.6K SV) crashed 19→101 over 28 days. 5 beginner keywords lost 9-33 positions. Monitor if listing improvements reverse this.",
+      "created": "2026-03-09",
+      "status": "pending",
+      "due": "2026-03-23"
     }
   ],
   "scheduled_reviews": [
     {
-      "date": "2026-03-12",
-      "type": "7-day post-deep-dive re-check",
-      "focus": "Verify negatives working (MK broad ACoS improving), new SK+PT campaigns getting impressions, dead ASIN removed from auction"
+      "date": "2026-03-16",
+      "type": "7-day post-deep-dive-2 re-check",
+      "focus": "Verify TOS cuts working (MK broad ACoS improving, SK pouch kit winning traffic, Auto waste reduced). Check rank stability on 'needlepoint kit'."
     },
     {
-      "date": "2026-03-19",
+      "date": "2026-03-23",
       "type": "14-day performance review",
-      "focus": "Full metrics check: SK campaign ACoS, PT campaign CTR, rank trends, overall portfolio health score improvement"
+      "focus": "Full metrics: portfolio ACoS trend, SK campaign utilization, rank trends, PT ROS removal impact. Listing audit should be complete by now."
     }
   ],
   "skills_run": [
@@ -371,11 +457,41 @@
         "inflections_detected": 0,
         "trajectory_30d_acos": "declining"
       }
+    },
+    {
+      "skill": "ppc-portfolio-action-plan",
+      "date": "2026-03-09",
+      "result": "success",
+      "key_metrics": {
+        "health_score": "3/10",
+        "actions_proposed": 10,
+        "actions_approved": 7,
+        "actions_executed": 7,
+        "actions_failed": 0,
+        "user_modifications": 1,
+        "note": "User modified item 3: chose bid increase on SK pouch kit over cross-negation. Corrected 92% ACoS error from weekly summary (actual: 68.7%)."
+      }
+    },
+    {
+      "skill": "ppc-portfolio-action-plan (restructure)",
+      "date": "2026-03-10",
+      "result": "success",
+      "key_metrics": {
+        "actions_executed": 15,
+        "actions_failed": 0,
+        "keywords_paused": 3,
+        "campaigns_paused": 2,
+        "campaigns_created": 2,
+        "keywords_added": 2,
+        "budgets_reduced": 2,
+        "negatives_added": 4,
+        "note": "Kids niche restructure. Paused generic adult KWs in MK broad. Added 'needlepoint for kids' BROAD + 'kids craft kit' PHRASE. Created 2 new SK campaigns (PAUSED). Reduced Auto $5→$3/d, PT $8→$5/d."
+      }
     }
   ],
   "improvement_assessment": {
-    "direction": "baseline_set",
-    "confidence": "low",
-    "note": "First deep dive — baseline established. Re-assess after 14d."
+    "direction": "stable",
+    "confidence": "medium",
+    "note": "30d ACoS 57.4% vs baseline 56.7% (+0.7pp). Weekly 68.7% is worsening trend. 2 rounds of structural fixes (Mar 5 + Mar 9) need time. Root issue is CVR 5% — listing audit is the real fix. Re-assess after Mar 16."
   }
 }

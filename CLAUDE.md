@@ -1,6 +1,20 @@
-# [Brand Name] E-Commerce Workspace
+# Craftiloo E-Commerce Workspace
 
 > **Living document** — Update as you learn. This is Claude's instruction set.
+
+---
+
+## Business Snapshot
+
+**Brand:** Craftiloo — family-owned craft kit e-commerce brand (est. 2017)
+**Sub-brand:** shinshin creation (fuse beads for adults)
+**Revenue:** ~$2M/year | **Primary channel:** Amazon US (FBA)
+**Products:** 76 SKUs across 8 categories (cross stitch, embroidery, sewing, latch hook, knitting, fuse beads, Barbie licensed, specialty)
+**Hero products:** 13 active (see `context/hero-products.md`)
+**PPC portfolios:** 17 active (see `context/portfolio-name-map.json`)
+**Competitive position:** #1 in kids' cross stitch, kids' embroidery, mini fuse beads. Mid-tier in sewing, latch hook, knitting.
+**Target customer:** Grandparents/parents buying gifts for girls aged 6-12
+**Key 2026 initiative:** 8 Barbie-licensed kits launching
 
 ---
 
@@ -70,9 +84,23 @@ When you learn something new about the user or business during ANY conversation,
 - Repeat Errors must be surfaced to the user with: _"⚠️ Repeat issue (×N): [description]"_
 - Be honest — log failures and partial results, not just successes
 
-| File | Location | Purpose |
-|------|----------|---------|
-| `LESSONS.md` | `.claude/skills/{skill-name}/LESSONS.md` | Per-skill learning log |
+---
+
+## Safety Rules (Money & Live Changes)
+
+**Always confirm with user before:**
+- Pausing or archiving any campaign or ad group
+- Increasing any single bid by more than 30%
+- Creating a new campaign (always propose first, wait for approval)
+- Changing daily budgets
+- Negating a keyword with >$5 total spend (might be valuable)
+
+**Never:**
+- Make changes to more than 3 campaigns in a single batch without user review
+- Apply bid changes to "Launch" stage portfolios without explicit approval (rank velocity matters more than efficiency)
+- Delete anything — always archive/pause instead
+
+**Audit mode** (toggled via PPC agent) disables all write operations. Default: audit mode ON for new conversations.
 
 ---
 
@@ -81,8 +109,6 @@ When you learn something new about the user or business during ANY conversation,
 **CRITICAL: Follow these standards for ALL work, ALL skills, ALL outputs.**
 
 ### File Organization Hierarchy
-
-**Every output must be organized into clear, logical folders:**
 
 ```
 outputs/
@@ -98,12 +124,10 @@ outputs/
 
 ### Naming Conventions (STRICT)
 
-**Use consistent, predictable naming:**
-
 | File Type | Format | Example |
 |-----------|--------|---------|
 | **Date-based outputs** | `YYYY-MM-DD-{descriptor}.ext` | `2026-02-09-morning-brief.md` |
-| **Subject-based outputs** | `{subject-slug}-YYYY-MM-DD.ext` | `cross-stitch-analysis-2026-02-09.md` |
+| **Subject-based outputs** | `{subject-slug}-YYYY-MM-DD.ext` | `cross-stitch-analysis-2026-02-09.ext` |
 | **Data files** | `{type}-{subject}-YYYY-MM-DD.json` | `product-data-cross-stitch-2026-02-09.json` |
 | **Scripts** | `{action}_{subject}.py` | `generate_report.py`, `process_data.py` |
 
@@ -115,30 +139,21 @@ outputs/
 
 ### Forbidden Practices
 
-**NEVER:**
-- ❌ Dump files in root folders
-- ❌ Mix scripts with output files in same folder
-- ❌ Create temp files without cleaning them up
-- ❌ Use ambiguous names like "output.json", "data.txt", "test.py"
-- ❌ Create 25+ files in one folder without subfolders
-- ❌ Use inconsistent naming (some with dates, some without)
+- Never dump files in root folders
+- Never mix scripts with output files in same folder
+- Never create temp files without cleaning them up
+- Never use ambiguous names like "output.json", "data.txt", "test.py"
+- Never create 25+ files in one folder without subfolders
+- Never use inconsistent naming (some with dates, some without)
 
-### Efficiency Targets
+### Efficiency Guidelines
 
-**For every task:**
-- ✅ <80K tokens per operation
-- ✅ <$0.20 cost per operation (if using paid APIs)
-- ✅ <5 minutes execution time
-- ✅ Minimal file count (only what's necessary)
-- ✅ Self-documenting structure (user can navigate without asking)
-
-### Readability & Communication
-
-**User must be able to:**
-1. **See what you're doing** by looking at folder structure
-2. **Find outputs easily** by following logical hierarchy
-3. **Understand file purpose** from name alone
-4. **Navigate without confusion** (clear README in each major folder)
+- Prefer the smallest API call that answers the question (7d report vs 30d when 7d suffices)
+- Batch related API calls in parallel where possible
+- Save large data to disk via `save_path` instead of passing through context
+- When a skill exceeds 100K tokens, note it in LESSONS.md with what drove the cost
+- Minimal file count (only what's necessary)
+- Self-documenting structure (user can navigate without asking)
 
 ### When Creating New Output Folders
 
@@ -147,7 +162,6 @@ outputs/
 - Folder structure diagram
 - File naming conventions used
 - What goes where (table format)
-- Daily workflow (if applicable)
 
 ---
 
@@ -156,69 +170,58 @@ outputs/
 ```
 Claude Code Workspace/
 ├── CLAUDE.md              # This file — Claude reads first
-├── .env                   # API keys (add as needed)
+├── .env                   # API keys (71 vars)
 ├── .mcp.json              # MCP server configurations
-├── .gitignore             # Protects sensitive files from Git*
+├── .gitignore             # Protects .env and .mcp.json from Git
+├── ARCHITECTURE.md        # System architecture overview
+├── WORKFLOW.md            # Workflow documentation
 │
 ├── .claude/
-│   └── skills/            # Project-specific skills (each has SKILL.md + LESSONS.md)
-│       ├── skill-creator/ # Create new skills
-│       ├── mcp-builder/   # Add/build MCP connections
-│       ├── daily-prep/    # Daily task analysis
-│       ├── daily-market-intel/  # Morning market intelligence
-│       ├── listing-creator/     # Amazon listing generator
-│       ├── image-planner/       # Product image strategy planner
-│       ├── product-listing-development/  # Parent orchestrator (listing + images)
-│       ├── automation-discovery-interview/  # 30-40 min workflow audit
-│       ├── weekly-ppc-analysis/  # Weekly PPC analysis (campaign + search term + placement + targeting)
-│       ├── ppc-agent/                # PPC Agent orchestrator (routes to all PPC sub-skills)
-│       ├── ppc-daily-health/         # Daily PPC health check (traffic-light status)
-│       ├── ppc-bid-recommender/      # SOP-based bid adjustment recommendations
-│       ├── ppc-search-term-harvester/ # Reactive search term harvesting (NEGATE/PROMOTE/DISCOVER)
-│       ├── ppc-portfolio-summary/    # Portfolio-level performance summary + structure audit
-│       ├── ppc-campaign-creator/        # Proposes + creates PPC campaigns from upstream signals
-│       ├── ppc-portfolio-action-plan/  # Single-portfolio deep dive + action plan + execution
-│       ├── keyword-rank-optimizer/   # PPC spend vs organic rank cross-reference
-│       ├── ppc-monthly-review/       # Monthly strategic PPC review
-│       ├── negative-keyword-generator/  # Proactive negative keyword generation from product knowledge
-│       ├── customer-review-analyzer/  # Amazon review analysis for our products + competitors
-│       ├── niche-category-analysis/  # New niche/category deep-dive research & viability
-│       ├── listing-optimizer/        # Listing audit & optimization (Ranking Juice + keywords + rank trends)
-│       ├── listing-ab-analyzer/     # Before/after listing change impact analysis (Brand Analytics)
-│       ├── competitor-price-serp-tracker/  # Weekly competitor price/BSR/SERP tracking
-│       ├── brand-analytics-weekly/  # Weekly Brand Analytics digest (all 5 BA reports + WoW trends)
-│       └── notification-hub/        # Utility: Slack notifications + threshold alerts after skill runs
-│       # Each skill folder contains:
-│       #   SKILL.md    — Instructions (reads LESSONS.md first, writes to it last)
-│       #   LESSONS.md  — Run log, known issues, repeat errors, resolved issues
+│   └── skills/            # 28 project-specific skills (see Skill Routing below)
 │
-├── mcp-servers/           # Custom MCP server implementations
-│   ├── sellerboard/       # Seller Board CSV report server
-│   │   └── server.py
-│   ├── datadive/          # DataDive API server (keywords, ranks, competitors)
-│   │   └── server.py
-│   ├── amazon-sp-api/     # Amazon SP-API (orders, catalog, inventory, pricing, listings, reports)
-│   │   └── server.py
-│   ├── amazon-ads-api/    # Amazon Ads API (campaigns, keywords, targeting, product ads, reports, 29 tools)
-│   │   └── server.py
-│   ├── notion/            # Notion API server (pages, blocks, databases, 28 tools)
-│   │   └── server.py
-│   ├── slack/             # Slack multi-workspace server (messages, channels, files, scheduling, 16 tools)
-│   │   └── server.py
-│   └── asana/             # Asana API server (projects, tasks, sections, comments, search, 26 tools)
-│       └── server.py
+├── .github/
+│   └── workflows/         # GitHub Actions for automated skills
+│
+├── automation/
+│   └── AUTOMATION-PLAN.md # Phase 1: GitHub Actions automation plan
+│
+├── mcp-servers/           # 8 custom Python MCP servers (see MCP Services below)
+│   ├── amazon-ads-api/    ├── amazon-sp-api/
+│   ├── apify/             ├── asana/
+│   ├── datadive/          ├── notion/
+│   ├── sellerboard/       └── slack/
+│
+├── scripts/               # Utility scripts (data fetching, uploads)
 │
 ├── context/               # Persistent context files
-│   ├── profile.md         # Your preferences and goals
-│   ├── projects.md        # Active projects tracker
-│   └── business.md        # Brand and market context
+│   ├── profile.md              # User preferences, goals, working style
+│   ├── projects.md             # Active projects tracker
+│   ├── business.md             # Brand, products, market, competitors overview
+│   ├── hero-products.md        # 13 hero products with ASINs, details, selling points
+│   ├── products.md             # Full 76-SKU product catalog (EXW prices, contents, dimensions)
+│   ├── competitors.md          # Competitor rankings by category, market share estimates
+│   ├── search-terms.md         # Target search terms by category
+│   ├── sku-asin-mapping.json   # SKU ↔ ASIN ↔ product name ↔ portfolio (ALWAYS check first)
+│   ├── portfolio-name-map.json # Portfolio names, IDs, slugs, stages (for API calls)
+│   ├── competitor-config.json  # Competitor ASIN tracking configuration
+│   ├── notification-config.json # Slack channel routing for notifications
+│   ├── mcp-reference.md        # Full MCP tool-by-tool documentation
+│   └── craftiloo-catalog.xlsx  # Original supplier catalog (Shantou Sorsa)
 │
 └── outputs/
-    ├── research/          # Market research, competitor analysis
-    └── data/              # Product data, scraped info, exports
+    ├── research/          # All skill outputs organized by area
+    │   ├── brand-analytics/
+    │   ├── competitor-analysis/
+    │   ├── competitor-tracker/
+    │   ├── market-intel/
+    │   ├── listing-manager/ # Listing state tracker, optimizations, new product research
+    │   ├── ppc-agent/     # PPC state, briefs, data (14 subdirs)
+    │   ├── ppc-weekly/
+    │   ├── product-launch/ # (legacy — new products now go through listing-manager)
+    │   ├── review-analysis/
+    │   └── system-planning/
+    └── data/              # Raw data exports
 ```
-
-**\*.gitignore** tells Git which files to NOT track. This protects API keys (`.env`, `.mcp.json`) from being accidentally pushed to GitHub.
 
 ---
 
@@ -231,30 +234,33 @@ Claude Code Workspace/
 | "Start my day" / "Daily prep" | → `.claude/skills/daily-prep/` |
 | "Automation audit" / "Map my workflows" | → `.claude/skills/automation-discovery-interview/` |
 | "Market check" / "Product pulse" | → `.claude/skills/daily-market-intel/` |
-| "Create a listing" / "Amazon listing" | → `.claude/skills/listing-creator/` |
-| "Image plan" / "Plan my images" | → `.claude/skills/image-planner/` |
-| "Full listing" / "Launch product" / "Listing + images" | → `.claude/skills/product-listing-development/` |
-| "PPC" / "PPC check" / "PPC agent" / "PPC catch-up" / "PPC status" | → `.claude/skills/ppc-agent/` (orchestrator) |
-| "PPC morning" / "Daily PPC" / "PPC health" | → `.claude/skills/ppc-agent/` (routes to ppc-daily-health) |
-| "Adjust bids" / "Bid recommendations" / "Bid review" | → `.claude/skills/ppc-agent/` (routes to ppc-bid-recommender) |
-| "Portfolio check" / "Portfolio health" / "Portfolio flags" | → `.claude/skills/ppc-agent/` (routes to ppc-portfolio-summary) |
-| "Harvest search terms" / "Negate and promote" / "Search term review" | → `.claude/skills/ppc-agent/` (routes to ppc-search-term-harvester) |
-| "Create campaigns" / "Campaign creator" / "Build campaigns" / "New campaigns" | → `.claude/skills/ppc-agent/` (routes to ppc-campaign-creator) |
-| "Portfolio deep dive" / "Deep dive" / "Portfolio action plan" / "Fix portfolio" / "Work on portfolio" | → `.claude/skills/ppc-agent/` (routes to ppc-portfolio-action-plan) |
-| "Rank optimizer" / "Rank vs spend" / "Keyword rank analysis" / "PPC rank check" | → `.claude/skills/ppc-agent/` (routes to keyword-rank-optimizer) |
-| "Monthly PPC" / "Monthly review" / "PPC month" | → `.claude/skills/ppc-agent/` (routes to ppc-monthly-review) |
-| "TACoS check" / "TACoS optimizer" / "Profit check" / "Profit reality" / "TACoS scorecard" | -> `.claude/skills/ppc-agent/` (routes to ppc-tacos-optimizer) |
-| "PPC trends" / "PPC dashboard" / "Trend check" / "Trajectory" / "Time series" / "30 day trend" | -> `.claude/skills/weekly-ppc-analysis/` (trajectories built into weekly) |
-| "Weekly PPC" / "PPC analysis" / "Campaign analysis" | → `.claude/skills/weekly-ppc-analysis/` (standalone) |
+| "Create a listing" / "New listing" / "Amazon listing" / "Listing for" | → `.claude/skills/listing-manager/` (NEW_PRODUCT mode) |
+| "Optimize listing" / "Fix listing" / "Listing needs work" | → `.claude/skills/listing-manager/` (OPTIMIZE mode) |
+| "Full listing" / "Launch product" / "Listing + images" | → `.claude/skills/listing-manager/` (NEW_PRODUCT + image plan) |
+| "Image plan" / "Plan my images" | → `.claude/skills/image-planner/` (standalone) or listing-manager IMAGE_ONLY |
+| "PPC" / "PPC check" / "PPC agent" / "PPC catch-up" / "PPC status" | → `.claude/skills/ppc-agent/` (Smart Catch-Up) |
+| "Portfolio review" / "Full review" / "Review all portfolios" | → `.claude/skills/ppc-agent/` (Portfolio Review) |
+| "Audit mode on" / "Audit mode off" / "Live mode" | → `.claude/skills/ppc-agent/` (toggles analysis-only mode) |
+| "PPC morning" / "Daily PPC" / "PPC health" | → `.claude/skills/ppc-agent/` → ppc-daily-health |
+| "Adjust bids" / "Bid recommendations" / "Bid review" | → `.claude/skills/ppc-agent/` → ppc-bid-recommender |
+| "Portfolio check" / "Portfolio health" / "Portfolio flags" | → `.claude/skills/ppc-agent/` → ppc-portfolio-summary |
+| "Harvest search terms" / "Negate and promote" / "Search term review" | → `.claude/skills/ppc-agent/` → ppc-search-term-harvester |
+| "Create campaigns" / "Campaign creator" / "Build campaigns" | → `.claude/skills/ppc-agent/` → ppc-campaign-creator |
+| "Portfolio deep dive" / "Deep dive" / "Portfolio action plan" / "Fix portfolio" | → `.claude/skills/ppc-agent/` → ppc-portfolio-action-plan |
+| "Rank optimizer" / "Rank vs spend" / "Keyword rank analysis" | → `.claude/skills/ppc-agent/` → keyword-rank-optimizer |
+| "Monthly PPC" / "Monthly review" / "PPC month" | → `.claude/skills/ppc-agent/` → ppc-monthly-review |
+| "TACoS check" / "TACoS optimizer" / "Profit check" / "Profit reality" | → `.claude/skills/ppc-agent/` → ppc-tacos-optimizer |
+| "PPC trends" / "PPC dashboard" / "30 day trend" | → `.claude/skills/weekly-ppc-analysis/` (trajectories built in) |
+| "Weekly PPC" / "PPC analysis" / "Campaign analysis" | → `.claude/skills/weekly-ppc-analysis/` |
 | "Search term analysis" / "Keyword mining" | → `.claude/skills/weekly-ppc-analysis/` |
-| "Generate negatives" / "Negative keywords" / "Negative keyword list" | → `.claude/skills/negative-keyword-generator/` (standalone) |
+| "Generate negatives" / "Negative keywords" | → `.claude/skills/negative-keyword-generator/` |
 | "Review analysis" / "Customer reviews" / "What are customers saying" | → `.claude/skills/customer-review-analyzer/` |
-| "Niche analysis" / "Category research" / "Explore a niche" / "New niche" | → `.claude/skills/niche-category-analysis/` |
-| "Listing audit" / "Audit listing" / "Listing optimizer" / "Listing score" / "Portfolio scan" / "Listing health" | → `.claude/skills/listing-optimizer/` |
-| "Listing AB" / "Before after listing" / "Measure listing change" / "Did that listing change work" / "Listing impact" | → `.claude/skills/listing-ab-analyzer/` |
-| "Competitor check" / "Competitor tracker" / "Weekly competitors" / "SERP tracker" / "Competitive intel" | → `.claude/skills/competitor-price-serp-tracker/` |
-| "Brand analytics" / "BA weekly" / "BA digest" / "Organic search report" | → `.claude/skills/brand-analytics-weekly/` |
-| "Test notifications" / "Notification test" / "Check notifications" | → `.claude/skills/notification-hub/` |
+| "Niche analysis" / "Category research" / "Explore a niche" | → `.claude/skills/niche-category-analysis/` |
+| "Listing audit" / "Listing optimizer" / "Listing score" / "Portfolio scan" | → `.claude/skills/listing-optimizer/` |
+| "Listing AB" / "Before after listing" / "Measure listing change" | → `.claude/skills/listing-ab-analyzer/` |
+| "Competitor check" / "Competitor tracker" / "SERP tracker" | → `.claude/skills/competitor-price-serp-tracker/` |
+| "Brand analytics" / "BA weekly" / "BA digest" | → `.claude/skills/brand-analytics-weekly/` |
+| "Test notifications" / "Check notifications" | → `.claude/skills/notification-hub/` |
 
 **New skills** → Always save to `.claude/skills/[skill-name]/SKILL.md` (project-local, not global)
 
@@ -262,350 +268,120 @@ Claude Code Workspace/
 
 ## MCP Services
 
-*Currently connected:*
+| Service | Tools | Purpose |
+|---------|-------|---------|
+| **Amazon Ads API** | 29 | Campaign management, keywords, targeting, product ads, negative keywords, bid recs, async reports |
+| **Amazon SP-API** | 15 | Orders, catalog, inventory, pricing, listings, Brand Analytics reports |
+| **Apify** | 7 | Web scraping — product data, search results, reviews |
+| **Asana** | 26 | Project/task management, sections, subtasks, comments, search, dependencies |
+| **DataDive** | 12 | Keyword rank tracking, competitor data, search volume, niche research |
+| **GitHub** | — | Repository access, code search, issues, PRs (official MCP) |
+| **Notion** | 28 | Pages, blocks, databases, comments, search, markdown import |
+| **Seller Board** | 7 | Sales, profit, inventory, PPC marketing, daily dashboard (CSV reports) |
+| **Slack** | 18 | Multi-workspace messaging, channels, search, scheduled messages, file upload |
 
-| Service | Purpose | Status |
-|---------|---------|--------|
-| **Apify** | Actor runner — run scrapers, check status, get results (custom Python MCP, 7 tools) | ⚙️ Configured |
-| **Notion** | Full workspace management — pages, blocks, databases, comments, search (28 tools) | ⚙️ Configured |
-| **Asana** | Project/task management — tasks, projects, sections, subtasks, comments, search, dependencies (custom Python MCP, 26 tools) | ⚙️ Configured |
-| **Slack** | Multi-workspace messaging, channels, search, scheduled messages, file upload (custom Python MCP, 16 tools) | ⚙️ Configured |
-| **GitHub** | Repository access, code search, issues, PRs | ⚙️ Configured |
-| **Seller Board** | Sales, profit, inventory, PPC, daily dashboard (6 CSV reports) | ⚙️ Configured |
-| **DataDive** | Keyword rank tracking, competitor data, search volume, niche research (12 tools) | ⚙️ Configured |
-| **Amazon SP-API** | Orders, catalog, inventory, pricing, reports — direct Amazon data (13 tools) | ⚙️ Configured |
-| **Amazon Ads API** | Campaign management, keywords, targeting, product ads, negative keywords, bid recs, async reports (29 tools) | ⚙️ Configured |
+**Full tool-by-tool reference:** `context/mcp-reference.md`
 
-**Apify MCP Server** (`mcp-servers/apify/server.py`):
+### Apify
 
-Custom Python MCP server for Apify Platform API. Auth: Bearer token. Rate limiting: 0.5s between requests.
+Auth: Bearer token. Rate limit: 0.5s. **Env:** `APIFY_API_TOKEN`
 
-| Tool | API | Key Data |
-|------|-----|----------|
-| `search_store_actors` | Store Search | Find actors by use case — name, stats, actorId |
-| `run_actor` | Run Actor (async) | Start actor, get run ID + dataset ID |
-| `run_actor_sync` | Run Actor (sync) | Run + wait + return results (max 300s) |
-| `get_run_status` | Run Details | Status, timing, compute units, dataset ID |
-| `get_run_dataset` | Dataset Items | Scraped data from completed runs |
-| `list_recent_runs` | List Runs | Recent runs with status, filterable by actor |
-| `abort_run` | Abort Run | Cancel a running/ready actor |
+**Gotchas:**
+- Commonly used: `saswave~amazon-product-scraper` (BSR/price/reviews), `axesso_data~amazon-search-scraper` (SERP position/prices)
+- axesso input format: `{"input": [{"keyword": "...", "country": "US"}]}`. Position field is `searchResultPosition` (0-indexed).
 
-**Env variable:** `APIFY_API_TOKEN` in `.env`
+**Used by:** Daily Market Intel, Customer Review Analyzer, Niche Category Analysis
+**If broken:** Check APIFY_API_TOKEN in .env. Get token from Apify Console → Settings → Integrations.
 
-**Commonly used actors:**
-- `saswave~amazon-product-scraper` — Product data (BSR, price, reviews, ratings)
-- `axesso_data~amazon-search-scraper` — Keyword search results (position, badges, prices). Input: `{"input": [{"keyword": "...", "country": "US"}]}`. Fields: `searchResultPosition` (0-indexed), `productDescription` (title), `price` (float), `productRating` (string), `countReview`, `salesVolume`, `sponsored` (bool).
+### Seller Board
 
-**Skills using Apify data:**
-- **Daily Market Intel** → Product scraping for BSR/price/review snapshots
-- **Customer Review Analyzer** → Review scraping for competitor analysis
-- **Niche Category Analysis** → Competitor product discovery
+Auth: Token embedded in report URLs. Rate limit: 0.5s. **Env:** `SELLERBOARD_INVENTORY_REPORT`, `SELLERBOARD_SALES_DETAILED`, `SELLERBOARD_SALES_DETAILED_7D`, `SELLERBOARD_SALES_SUMMARY`, `SELLERBOARD_DAILY_DASHBOARD`, `SELLERBOARD_PPC_MARKETING`
 
-**If API stops working** → check APIFY_API_TOKEN in .env. Get token from Apify Console → Settings → Integrations.
+**Gotchas:**
+- **CSV output capped at 100 rows by default.** Always use `save_path` parameter for 30d reports (~2000 rows). Without it you get ~5% of data.
+- Sanity check: Craftiloo US does ~$170K/month revenue. If SB 30d data shows <$10K total, data is truncated.
+- 7d report preferred for daily intel (~460 rows, manageable without save_path).
 
-**Seller Board MCP Server** (`mcp-servers/sellerboard/server.py`):
+**Used by:** Weekly PPC, Daily Market Intel, Daily Prep
+**If broken:** Tokens may have expired in Seller Board → Settings → Automation → Reports.
 
-Custom Python MCP server exposing 7 tools for all Seller Board CSV reports.
+### DataDive
 
-| Tool | Report | Key Data |
-|------|--------|----------|
-| `get_inventory_report` | FBA Inventory | Stock levels, ROI, margin, reorder recs, velocity |
-| `get_sales_detailed_report` | Sales Detailed 30d (59 cols) | Per-ASIN: organic/PPC sales, fees, COGS, profit, ACOS, sessions |
-| `get_sales_detailed_7d_report` | Sales Detailed 7d (41 cols) | Same as above but 7-day window (~460 rows). **Preferred for daily market intel.** |
-| `get_sales_summary_report` | Sales Summary (41 cols) | Daily financials, ad spend by channel, profit by ASIN |
-| `get_daily_dashboard_report` | Daily Dashboard (31 cols) | Daily aggregate: revenue, units, ad spend, profit, margin |
-| `get_ppc_marketing_report` | PPC Marketing (15 cols) | PPC sales, organic turnover, TACOS, ROAS, ACOS, CPC, conversion |
-| `get_all_reports_summary` | All 6 combined | Complete business snapshot |
+Auth: `x-api-key` header. Rate limit: 1 req/sec. **Env:** `DATADIVE_API_KEY`
 
-**Env variables** (6 report URLs in `.env`, auth token embedded):
-`SELLERBOARD_INVENTORY_REPORT`, `SELLERBOARD_SALES_DETAILED`, `SELLERBOARD_SALES_DETAILED_7D`, `SELLERBOARD_SALES_SUMMARY`, `SELLERBOARD_DAILY_DASHBOARD`, `SELLERBOARD_PPC_MARKETING`
+**Gotchas:**
+- `create_niche_dive` consumes tokens — confirm with user before running
+- 23 active niches, 15 active rank radars
 
-**Skills using Seller Board data:**
-- **Weekly PPC Analysis** → TACoS, profitability, organic vs PPC split
-- **Daily Market Intel** → Actual sales/profit alongside BSR estimates
-- **Daily Prep** → Yesterday's business pulse + stock alerts
+**Used by:** Weekly PPC, Daily Market Intel, Negative Keyword Generator, Niche Category Analysis, Listing Creator
+**If broken:** Check DATADIVE_API_KEY in .env.
 
-**If reports stop working** → tokens may have expired in Seller Board → Settings → Automation → Reports
+### Amazon SP-API
 
-**DataDive MCP Server** (`mcp-servers/datadive/server.py`):
+Auth: LWA OAuth2 (auto-refreshing, 1hr expiry). No AWS credentials needed. Rate limit: 0.5s.
+**Env:** `SP_API_CLIENT_ID`, `SP_API_CLIENT_SECRET`, `SP_API_REFRESH_TOKEN`, `SP_API_SELLER_ID`, `SP_API_MARKETPLACE_US`, `SP_API_MARKETPLACE_CA`, `SP_API_MARKETPLACE_MX`
 
-Custom Python MCP server exposing 12 tools for all DataDive API endpoints. Auth via `x-api-key` header. Built-in rate limiting (1 req/sec).
-
-| Tool | Endpoint | Key Data |
-|------|----------|----------|
-| `get_profile` | Account Profile | Token balance, account info |
-| `list_niches` | List Niches | nicheId, nicheLabel, heroKeyword (23 active) |
-| `get_niche_keywords` | Master Keyword List | keyword, searchVolume, relevancy, organic/sponsored ranks |
-| `get_niche_competitors` | Competitor Data | ASIN, BSR, sales, revenue, rating, reviews, P1 keywords |
-| `get_niche_ranking_juices` | Ranking Juice | Title/bullets/description optimization scores |
-| `get_niche_roots` | Keyword Roots | Root words, frequency, broadSearchVolume |
-| `run_ai_copywriter` | AI Copywriter | Optimized listing copy (4 modes: cosmo, ranking-juice, nlp, cosmo-rufus) |
-| `list_rank_radars` | List Rank Radars | 15 active radars, keyword counts, top10/50 stats |
-| `get_rank_radar_data` | Rank Radar Data | Daily organicRank + impressionRank per keyword |
-| `create_niche_dive` | Create Dive | Token-consuming niche discovery from seed ASIN |
-| `get_niche_dive_status` | Dive Status | in_progress/success/error + results |
-| `get_niche_overview` | Niche Overview | Combined competitors + keywords + roots snapshot |
-
-**Env variable:** `DATADIVE_API_KEY` in `.env`
-
-**Skills using DataDive data:**
-- **Weekly PPC Analysis** → Rank Radar data replaces "check Data Dive" callouts with automated rank-aware decisions
-- **Daily Market Intel** → Competitor sales/revenue estimates + keyword rank tracking
-- **Negative Keyword Generator** → Master Keyword List relevancy scores + outlier keyword identification
-
-**Other skills that benefit:**
-- **Niche Category Analysis** → `create_niche_dive` + `get_niche_competitors` for automated competitor discovery
-- **Listing Creator** → `get_niche_keywords` for search volume data; `get_niche_ranking_juices` for optimization gaps
-
-**If API stops working** → check DATADIVE_API_KEY in .env. Rate limit: 1 request/second (built into MCP server).
-
-**Amazon SP-API MCP Server** (`mcp-servers/amazon-sp-api/server.py`):
-
-Custom Python MCP server for direct Amazon Selling Partner API access. Auth: LWA OAuth2 (auto-refreshing access token). Rate limiting: 0.5s between requests.
-
-| Tool | API | Key Data |
-|------|-----|----------|
-| `get_marketplace_participations` | Sellers | Registered marketplaces (US, CA, MX) |
-| `get_orders` | Orders | Recent orders: ID, status, date, total, fulfillment |
-| `get_order_items` | Orders | Line items for an order: ASIN, SKU, qty, price |
-| `get_catalog_item` | Catalog 2022 | ASIN details: title, brand, images, dimensions, sales rank |
-| `search_catalog` | Catalog 2022 | Search by keywords: matching ASINs with titles, brands |
-| `get_competitive_pricing` | Pricing | Landed price, listing price, Buy Box data |
-| `get_item_offers` | Pricing | All active offers for an ASIN with prices, seller info |
-| `get_fba_inventory` | FBA Inventory | SKU/ASIN stock: fulfillable, inbound, reserved quantities |
-| `create_report` | Reports | Request any Amazon report (orders, traffic, inventory) |
-| `create_brand_analytics_report` | Brand Analytics | Calendar-aligned BA reports (see below) |
-| `get_report_status` | Reports | Check report progress (DONE/IN_PROGRESS/FATAL) |
-| `get_report_document` | Reports | Download completed report data (CSV/TSV/JSON) |
-| `get_my_listings` | Reports | Shortcut: request all-listings report |
-| `get_listing` | Listings | Current listing attributes: title, bullets, description, keywords, product type |
-| `update_listing` | Listings | PATCH listing text: title, bullets, description, backend keywords |
-
-**Brand Analytics Tool** (`create_brand_analytics_report`):
-
-Dedicated tool for Brand Analytics reports with auto-calculated calendar-aligned dates. Free with Brand Registry.
-
-| report_name | Data | Processing Time |
-|-------------|------|----------------|
-| `search_terms` | Top search keywords + top 3 clicked ASINs + click/conversion share | ~5 min |
-| `market_basket` | Products frequently bought together with yours | ~45s |
-| `repeat_purchase` | Repeat vs one-time purchase quantities per ASIN | ~60s |
-| `sqp` | Search Query Performance — per-query impressions, clicks, carts, purchases (**requires asins param**) | ~60s |
-| `scp` | Search Catalog Performance — same funnel metrics organized by ASIN | ~60s |
-
-**Key parameters:** `period` (WEEK/MONTH/QUARTER), `periods_back` (default 1), `asins` (space-separated, required for sqp, max 200 chars)
-
-**Important constraints:**
-- Weekly = Sun-Sat. Use `periods_back=2` on Sun/Mon (48h SLA means most recent week may not be ready)
-- SQP requires `asins` param — other reports don't
-- Demographics report exists in Seller Central console but is NOT API-accessible
+**Gotchas:**
+- Brand Analytics weekly = Sun-Sat. Use `periods_back=2` on Sun/Mon (48h SLA — most recent week may not be ready)
+- SQP report **requires `asins` param** (space-separated, max 200 chars) — all other BA reports don't
+- SCP ≈ SQP organized by ASIN — if SQP fails, SCP provides equivalent funnel data
+- Demographics report is console-only — NOT API-accessible
 - Reports are async: create → poll status → download when DONE
+- BA processing times: market_basket ~45s, sqp/scp/repeat ~60s, search_terms ~5min
 
-**Env variables:** `SP_API_CLIENT_ID`, `SP_API_CLIENT_SECRET`, `SP_API_REFRESH_TOKEN`, `SP_API_SELLER_ID`, `SP_API_MARKETPLACE_US`, `SP_API_MARKETPLACE_CA`, `SP_API_MARKETPLACE_MX`
+**Used by:** Weekly PPC, Brand Analytics Weekly, Listing Optimizer, Daily Market Intel
+**If broken:** Check app authorization in Seller Central → Apps & Services → Manage Your Apps. Refresh token is permanent unless de-authorized.
 
-**No AWS credentials required** — auth uses LWA token exchange only. Access token auto-refreshes (1hr expiry).
+### Amazon Ads API
 
-**Registered roles:** Product Listing, Pricing, Brand Analytics, Amazon Fulfillment
+Auth: LWA OAuth2 (auto-refreshing). Rate limit: 0.5s. v3 endpoints use versioned Content-Type headers.
+**Env:** `ADS_API_CLIENT_ID`, `ADS_API_CLIENT_SECRET`, `ADS_API_REFRESH_TOKEN`, `ADS_API_PROFILE_US`, `ADS_API_PROFILE_CA`
 
-**If API stops working** → Check if app is still authorized in Seller Central → Apps & Services → Manage Your Apps. Refresh token is permanent unless app is de-authorized.
+**Gotchas:**
+- Report presets: `sp_campaigns`, `sp_search_terms`, `sp_keywords`, `sp_targets`, `sp_placements`, `sp_purchased_products`
+- Reports are async: create → poll status → download + decompress
+- Always use calendar-aligned date ranges, NOT `LAST_7_DAYS` (rolling window causes WoW comparison drift)
 
-**Amazon Ads API MCP Server** (`mcp-servers/amazon-ads-api/server.py`):
+**Used by:** Weekly PPC, PPC Agent (all sub-skills), Negative Keyword Generator
+**If broken:** Check ADS_API credentials in .env. Verify app is authorized in Amazon Advertising console.
 
-Custom Python MCP server for Amazon Advertising API (SP/SB/SD campaigns). Auth: LWA OAuth2 (auto-refreshing). Rate limiting: 0.5s between requests. v3 endpoints use versioned Content-Type headers.
+### Notion
 
-| Tool | Group | Key Capability |
-|------|-------|----------------|
-| `list_profiles` | Profiles | List advertising profiles (account IDs) |
-| `list_sp_campaigns` | SP Campaigns | Filter by state/name/portfolio, paginated |
-| `create_sp_campaigns` | SP Campaigns | Batch create campaigns |
-| `update_sp_campaigns` | SP Campaigns | Batch update state/budget/bidding |
-| `list_sp_ad_groups` | SP Ad Groups | Filter by campaign/state |
-| `create_sp_ad_groups` | SP Ad Groups | Batch create ad groups |
-| `update_sp_ad_groups` | SP Ad Groups | Batch update bid/state |
-| `list_sp_keywords` | SP Keywords | Filter by campaign/ad group/state |
-| `manage_sp_keywords` | SP Keywords | Create or update keywords (action param) |
-| `list_sp_negative_keywords` | SP Negatives | Ad group level negatives |
-| `manage_sp_negative_keywords` | SP Negatives | Create or update ad group negatives |
-| `list_sp_campaign_negative_keywords` | SP Negatives | Campaign level negatives |
-| `create_sp_campaign_negative_keywords` | SP Negatives | Create campaign level negatives |
-| `list_sp_targets` | SP Targeting | ASIN/category targets |
-| `list_sp_product_ads` | SP Product Ads | List advertised ASINs in ad groups |
-| `manage_sp_product_ads` | SP Product Ads | Create or update product ads (ASIN associations) |
-| `manage_sp_targets` | SP Targeting | Create or update product targets |
-| `manage_sp_negative_targets` | SP Targeting | Create or list negative targets |
-| `get_sp_bid_recommendations` | SP Bids | Suggested bids by competitiveness |
-| `get_sp_campaign_budget_usage` | SP Budget | Budget utilization + constraint check |
-| `create_ads_report` | Reporting | Async report creation (6 presets) |
-| `get_ads_report_status` | Reporting | Poll report status |
-| `download_ads_report` | Reporting | Download + decompress + format |
-| `list_sb_campaigns` | SB Campaigns | Sponsored Brands campaigns |
-| `update_sb_campaigns` | SB Campaigns | Update SB state/budget |
-| `list_sd_campaigns` | SD Campaigns | Sponsored Display campaigns |
-| `update_sd_campaigns` | SD Campaigns | Update SD state/budget |
-| `list_portfolios` | Portfolios | List all portfolios with IDs |
-| `manage_portfolios` | Portfolios | Create or update portfolios |
+Auth: Bearer token. Rate limit: 0.33s (~3/sec). **Env:** `NOTION_API_KEY`
 
-**Env variables:** `ADS_API_CLIENT_ID`, `ADS_API_CLIENT_SECRET`, `ADS_API_REFRESH_TOKEN`, `ADS_API_PROFILE_US`, `ADS_API_PROFILE_CA`
+**Gotchas:**
+- Auto-pagination up to 1000 items, auto-chunking at 100-block limit
+- Use `append_markdown` or `create_page_with_content` for simplified markdown input
+- Use `find_or_create_page` for dedup pattern
+- Product Listing Development parent page: `30557318-d05c-806a-a94f-f5a439d94d10`
 
-**Report presets:** `sp_campaigns`, `sp_search_terms`, `sp_keywords`, `sp_targets`, `sp_placements`, `sp_purchased_products`
+**Used by:** Product Listing Development, Listing Creator, Image Planner
+**If broken:** Check NOTION_API_KEY in .env. Ensure pages/databases are shared with the integration.
 
-**Skills using Amazon Ads API:**
-- **Weekly PPC Analysis** → Direct campaign/keyword/search term data (replaces manual CSV exports)
-- **Negative Keyword Generator** → Programmatic negative keyword application via `manage_sp_negative_keywords`
+### Slack
 
-**If API stops working** → Check ADS_API credentials in .env. Verify app is still authorized in Amazon Advertising console. Access token auto-refreshes (1hr expiry).
+Auth: Bot token per workspace. Rate limit: 1 req/sec (Tier 2). **Env:** `SLACK_WORKSPACE_{N}_BOT_TOKEN`, `_TEAM_ID`, `_NAME`, `_ALIASES`
 
-**Notion MCP Server** (`mcp-servers/notion/server.py`):
+**Gotchas:**
+- Two workspaces: `craft`/`crafti` (T06KHD4CS6N) and `craftiloo` (T01Q3BTU0DA)
+- Auto channel name resolution — pass `general` not `C01ABC123`
+- `search_messages` requires user token (`xoxp-`) with `search:read` scope — bot tokens get `missing_scope` error
+- `create_channel` and `invite_to_channel` require `channels:manage` scope
+- Notification channels: `#claude-morning-brief`, `#claude-ppc-updates`, `#claude-product-updates`, `#claude-competitor-watch`, `#claude-alerts`
 
-Custom Python MCP server replacing the official `@notionhq/notion-mcp-server`. Full workspace access with 28 tools in 7 groups. Auth: Bearer token. Rate limiting: 0.33s between requests (~3/sec).
+**Used by:** Notification Hub (all 20+ skills post summaries)
+**If broken:** Check bot tokens in .env. Verify app installed in each workspace at https://api.slack.com/apps.
 
-| Tool | Group | Key Capability |
-|------|-------|----------------|
-| `search` | Search | Search pages/databases by title across workspace |
-| `get_self` | Search | Verify integration connection |
-| `get_page` | Pages | Page metadata + all properties |
-| `get_page_property` | Pages | Single property with pagination |
-| `create_page` | Pages | Create page (with optional initial content) |
-| `update_page` | Pages | Update properties / archive |
-| `move_page` | Pages | Move to new parent |
-| `archive_page` | Pages | Soft-delete convenience wrapper |
-| `get_blocks` | Blocks | Direct child blocks (auto-paginates) |
-| `get_block` | Blocks | Single block details |
-| `append_blocks` | Blocks | Raw JSON blocks (auto-chunks at 100) |
-| `append_markdown` | Blocks | **Simplified markdown → Notion blocks** |
-| `update_block` | Blocks | Update block content |
-| `delete_block` | Blocks | Delete block + children |
-| `get_page_tree` | Blocks | **Recursive full page content (max 3 levels)** |
-| `get_database` | Databases | Schema, properties, types |
-| `query_database` | Databases | Filter + sort + auto-paginate |
-| `update_database` | Databases | Update title/description/schema |
-| `create_database` | Databases | Create inline database with properties |
-| `get_comments` | Comments | All comments on page/block |
-| `add_comment` | Comments | Add discussion comment |
-| `get_user` | Users | User name, email, type |
-| `list_users` | Users | All workspace users |
-| `create_page_with_content` | Higher-level | **Page + full markdown content in one call** |
-| `replace_page_content` | Higher-level | **Delete all blocks + append new content** |
-| `find_or_create_page` | Higher-level | **Search → return if found, create if not** |
-| `delete_all_blocks` | Higher-level | Clear all blocks from a page |
-| `get_child_pages` | Higher-level | List child pages under a parent |
+### Asana
 
-**Env variable:** `NOTION_API_KEY` in `.env`
+Auth: Personal Access Token (Bearer). Rate limit: 0.2s (~5/sec). **Env:** `ASANA_PERSONAL_ACCESS_TOKEN`
 
-**Key features:**
-- Auto-pagination (up to 1000 items)
-- Auto-chunking (100-block limit handled transparently)
-- Simplified markdown input (`append_markdown`, `create_page_with_content`)
-- Recursive page reading (`get_page_tree`)
-- Dedup pattern (`find_or_create_page`)
+**Gotchas:**
+- Auto-pagination up to 1000 items across 10 pages
+- Task search supports text, assignee, project, date, completion filters
 
-**Skills using Notion:**
-- **Product Listing Development** → `find_or_create_page` + `append_markdown` for full product pages
-- **Listing Creator** → Listing content uploaded to Notion
-- **Image Planner** → Image plan content uploaded to Notion
-
-**If API stops working** → Check NOTION_API_KEY in .env. Ensure pages/databases are shared with the integration in Notion settings.
-
-**Slack MCP Server** (`mcp-servers/slack/server.py`):
-
-Custom Python MCP server replacing the official `@modelcontextprotocol/server-slack` NPM package. Single server handles both workspaces via a `workspace` parameter with alias support. Auth: Bot token per workspace. Rate limiting: 1 req/sec (Slack Tier 2).
-
-**Workspaces:**
-
-| Key | Aliases | Team ID | Description |
-|-----|---------|---------|-------------|
-| `craft` | `crafti` | T06KHD4CS6N | Workspace 1 (craft crafti craftiloo) |
-| `craftiloo` | — | T01Q3BTU0DA | Workspace 2 (craftiloo) |
-
-**Tools (18):**
-
-| Tool | Group | Slack API Method | Key Capability |
-|------|-------|------------------|----------------|
-| `list_workspaces` | Utility | — | Show configured workspaces + aliases |
-| `list_channels` | Channels | `conversations.list` | List channels with pagination |
-| `get_channel_info` | Channels | `conversations.info` | Channel details: topic, purpose, members |
-| `create_channel` | Channels | `conversations.create` | Create public/private channel (needs `channels:manage` scope) |
-| `invite_to_channel` | Channels | `conversations.invite` | Invite users to channel (needs `channels:manage` scope) |
-| `set_channel_topic` | Channels | `conversations.setTopic` | Update channel topic |
-| `post_message` | Messages | `chat.postMessage` | Post to channel |
-| `reply_to_thread` | Messages | `chat.postMessage` (threaded) | Reply in thread |
-| `add_reaction` | Messages | `reactions.add` | Add emoji reaction |
-| `get_channel_history` | Messages | `conversations.history` | Recent messages |
-| `get_thread_replies` | Messages | `conversations.replies` | Thread replies |
-| `search_messages` | Messages | `search.messages` | Search across channels (needs user token) |
-| `get_users` | Users | `users.list` | List workspace users |
-| `get_user_profile` | Users | `users.profile.get` | User details |
-| `upload_snippet` | Files | `files.upload` | Upload text/code snippet |
-| `schedule_message` | Scheduling | `chat.scheduleMessage` | Schedule future message |
-| `list_scheduled_messages` | Scheduling | `chat.scheduledMessages.list` | View pending messages |
-| `delete_scheduled_message` | Scheduling | `chat.deleteScheduledMessage` | Cancel scheduled message |
-
-**Env variables:** `SLACK_WORKSPACE_{N}_BOT_TOKEN`, `_TEAM_ID`, `_NAME`, `_ALIASES`
-
-**Key features:**
-- Multi-workspace with aliases (`craft`/`crafti` → WS1, `craftiloo` → WS2)
-- Auto channel name resolution (pass `general` instead of `C01ABC123`)
-- Channel cache (populated on first use per workspace)
-- Scope-aware error messages (shows needed vs provided scopes)
-
-**Note:** `search_messages` requires a user token (`xoxp-`) with `search:read` scope. Bot tokens (`xoxb-`) will get a `missing_scope` error.
-
-**Note:** `create_channel` and `invite_to_channel` require `channels:manage` scope. Add in Slack App Settings → OAuth & Permissions if missing.
-
-**Skills using Slack:**
-- **Notification Hub** → All 20+ skills post summaries via `post_message` to 5 channels: `#claude-morning-brief`, `#claude-ppc-updates`, `#claude-product-updates`, `#claude-competitor-watch`, `#claude-alerts`. Config: `context/notification-config.json`.
-
-**If API stops working** → Check bot tokens in .env. Verify app is still installed in each workspace at https://api.slack.com/apps.
-
-**Asana MCP Server** (`mcp-servers/asana/server.py`):
-
-Custom Python MCP server replacing the NPM `@roychri/mcp-server-asana` package. Full project/task management with 26 tools in 8 groups. Auth: Personal Access Token (Bearer). Rate limiting: 0.2s between requests (~5/sec).
-
-**Tools (24):**
-
-| Tool | Group | Asana API | Key Capability |
-|------|-------|-----------|----------------|
-| `get_me` | User | `GET /users/me` | Current user info + workspace list |
-| `list_workspaces` | User | `GET /workspaces` | All workspaces/organizations |
-| `list_users` | User | `GET /workspaces/{gid}/users` | Users in a workspace |
-| `list_teams` | Teams | `GET /organizations/{gid}/teams` | Teams in an organization |
-| `list_projects` | Projects | `GET /workspaces/{gid}/projects` | Projects, filterable by team |
-| `get_project` | Projects | `GET /projects/{gid}` | Full project details + members + custom fields |
-| `create_project` | Projects | `POST /projects` | Create project with name, dates, team, color |
-| `list_sections` | Sections | `GET /projects/{gid}/sections` | Sections within a project |
-| `create_section` | Sections | `POST /projects/{gid}/sections` | Create section with ordering |
-| `move_task_to_section` | Sections | `POST /sections/{gid}/addTask` | Move task between sections |
-| `list_tasks` | Tasks | `GET /projects/{gid}/tasks` | Tasks by project, section, or assignee |
-| `get_task` | Tasks | `GET /tasks/{gid}` | Full task details + notes + custom fields |
-| `create_task` | Tasks | `POST /tasks` | Create task with assignee, dates, section |
-| `update_task` | Tasks | `PUT /tasks/{gid}` | Update name, notes, completed, dates, assignee |
-| `delete_task` | Tasks | `DELETE /tasks/{gid}` | Permanently delete a task |
-| `list_subtasks` | Subtasks | `GET /tasks/{gid}/subtasks` | Child tasks under a parent |
-| `create_subtask` | Subtasks | `POST /tasks/{gid}/subtasks` | Create subtask under parent |
-| `get_task_stories` | Comments | `GET /tasks/{gid}/stories` | Comments + activity history |
-| `add_comment` | Comments | `POST /tasks/{gid}/stories` | Add comment to a task |
-| `list_tags` | Tags | `GET /workspaces/{gid}/tags` | All tags in workspace |
-| `add_tag_to_task` | Tags | `POST /tasks/{gid}/addTag` | Tag a task |
-| `remove_tag_from_task` | Tags | `POST /tasks/{gid}/removeTag` | Remove tag from task |
-| `search_tasks` | Search | `GET /workspaces/{gid}/tasks/search` | Full-text search with filters |
-| `add_dependency` | Dependencies | `POST /tasks/{gid}/addDependencies` | Set task dependency |
-| `get_dependencies` | Dependencies | `GET /tasks/{gid}/dependencies` | Tasks this task depends on |
-| `get_dependents` | Dependencies | `GET /tasks/{gid}/dependents` | Tasks blocked by this task |
-
-**Env variable:** `ASANA_PERSONAL_ACCESS_TOKEN` in `.env`
-
-**Key features:**
-- Auto-pagination (up to 1000 items across 10 pages)
-- Full CRUD for tasks, projects, sections, subtasks
-- Task search with text, assignee, project, date, completion filters
-- Dependency management (blockers + dependents)
-- Comment/activity history on tasks
-- Section-based task organization
-
-**Skills using Asana:**
-- **Daily Prep** → Task lists, upcoming deadlines, assigned work
-
-**If API stops working** → Check ASANA_PERSONAL_ACCESS_TOKEN in .env. Get token from https://app.asana.com/0/my-apps → Create Personal Access Token.
+**Used by:** Daily Prep (task lists, upcoming deadlines)
+**If broken:** Check token in .env. Get new token from https://app.asana.com/0/my-apps.
 
 ---
 
@@ -613,7 +389,7 @@ Custom Python MCP server replacing the NPM `@roychri/mcp-server-asana` package. 
 
 **Update this document when:**
 - New skill is created → add to Skill Routing table
-- New MCP is connected → add to MCP Services table
+- New MCP is connected → add to MCP Services section
 - You discover a pattern worth documenting
 
 **Ask first before:**
@@ -626,7 +402,7 @@ Custom Python MCP server replacing the NPM `@roychri/mcp-server-asana` package. 
 ## Context
 
 - **Domain:** E-commerce brand operations
-- **Primary workflows:** Research, data collection, content creation
+- **Primary workflows:** Research, data collection, content creation, PPC management
 - **Output location:** Always use `outputs/` subfolders, never dump in root
 
 **Context files** → These are your **living memory**. Load them when you need background. Update them automatically when you learn new info (see Operating Principle #4).

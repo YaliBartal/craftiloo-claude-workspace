@@ -4,6 +4,112 @@
 
 *(New entries go at the TOP)*
 
+### Run: 2026-03-10 (v2.2 — Phases A+B: Token Optimization)
+**Task:** Reduce agent-state.json bloat + compress SKILL.md to cut per-invocation token cost
+**Result:** Success
+
+**Phase A — agent-state.json cleanup (Python script):**
+- Deleted `applied_changes` (17 entries) and `global_pending_actions` (4 entries) — redundant with portfolio trackers and `all_pending_actions`
+- Cleaned 6 completed items from `all_pending_actions`
+- Added `pending_summary` and `review_summary` objects for O(1) counts
+- Trimmed `upcoming_reviews` to near-term only (<=today+7d). Future reviews live in portfolio tracker `scheduled_reviews`
+- **File size: 60,238 → 38,582 bytes (36% reduction)**
+
+**Phase B — SKILL.md cleanup (15 sequential edits):**
+- Triggers: 58 → 23 (removed redundant synonyms)
+- State schema: removed deleted fields, added summary schemas
+- Surfaced Data table: added summary rows, updated descriptions
+- Steps 3c, 3d, 8a: reference summaries, review windowing, removed `applied_changes`
+- Templates: compressed 8 verbose example templates to format-only references
+- **SKILL.md: 1,083 → 845 lines (22% reduction)**
+
+**Lesson learned:**
+- Summary objects are the right pattern for large arrays — recompute in Step 8a after every skill run
+- Review windowing prevents unbounded growth. Portfolio trackers are the single source of truth
+- Templates compress well (agent knows table formatting from column headers alone)
+
+---
+
+### Run: 2026-03-10 (v2.2 — Phases 1-3)
+**Task:** Close 3 structural gaps: Action Validator, Campaign Lifecycle Tracker, Stale Action Hygiene
+**Result:** Success (architecture addition, no API calls)
+
+**What was added:**
+
+1. **Action Validator Protocol (Step 3d)** — Closes the feedback loop. When scheduled reviews come due, the agent now pulls fresh API data and compares against the before-values in `change_log`. Each change gets classified as WORKED (improved >10%), PARTIAL (improved 1-10%), NEUTRAL (no change), or FAILED (worsened). Produces a validation scorecard and acts on results (double down on WORKED, investigate FAILED, etc.). Stores `validation_history` per portfolio.
+
+2. **Campaign Lifecycle Tracker (Step 3e)** — New campaigns are now tracked through 5 phases: AWAITING_ENABLE (created PAUSED, needs user action) → RAMPING (first 3 days, checking impressions) → EARLY (days 4-14, first performance signals) → ESTABLISHED (days 15-30, enough data for optimization) → GRADUATED (>30 days, moves to standard management). The `campaign_watchlist` array in agent-state.json was populated with all 7 existing new campaigns (4 Needlepoint, 2 Biggie Beads, 1 Cross Stitch Charms).
+
+3. **Stale Action Hygiene (Step 3f)** — Prevents unbounded growth of `pending_actions` and `upcoming_reviews`. Priority-based staleness rules: P1 >7d (re-validate, may still be valid), P2 >14d (re-validate), P3 >21d (auto-expire), P4 >30d (auto-expire). Expired actions move to `expired_actions` archive (capped at 50). Reviews overdue >7d get escalated to validation.
+
+**State changes:**
+- Added `campaign_watchlist` (7 entries) and `expired_actions` (empty) to agent-state.json top level
+- Added `last_validation` and `validation_history` to all 17 portfolio entries
+- Added check #7 (Campaign Watchlist) to Optimization Scan Protocol
+- Session plan template now includes Due Validations, Campaign Watchlist Alerts, and Housekeeping sections
+- Step numbering fixed: 3a-3k sequential (was: 3g/3h duplicated, 3i/3j out of sequence)
+
+**Remaining gaps (saved to `outputs/research/ppc-agent/phases-4-6-plan.md`):**
+- Phase 4: Competitive Response Integration
+- Phase 5: Budget Intelligence Layer
+- Phase 6: Pattern Learning Engine
+
+**Lesson learned:**
+- The agent was "fire-and-forget" — making changes but never checking if they worked. Action validation is the most impactful gap closure because it turns the system from open-loop to closed-loop. Campaign lifecycle tracking prevents new campaigns from being forgotten.
+
+---
+
+### Run: 2026-03-09 (v2.1)
+**Task:** Revenue-weighted portfolio rotation + optimization scan
+**Result:** Success (architecture addition, no API calls)
+
+**What happened:**
+- Added revenue-weighted portfolio rotation to ensure ALL portfolios get regular attention, not just broken ones.
+- **3 tiers:** Tier 1 (>$2K/mo, weekly), Tier 2 ($500-$2K/mo, biweekly), Tier 3 (<$500/mo, monthly).
+- Revenue tiers populated on first run from Seller Board 30d data, cached for 30 days.
+- **Optimization Scan Protocol** (5-7 min): lightweight checkup for healthy/stable portfolios — budget utilization, ACoS trend, search term quick-scan, rank momentum, organic share, pending action cleanup.
+- Scans appear in Smart Catch-Up session plan as "Rotation Queue" alongside overdue skills and flagged portfolios.
+- Escalation triggers: if scan reveals serious problem (ACoS >15pp above target, budget starved, hero keyword dropped 5+, CVR <5%), escalates to full PAP.
+- Added per-portfolio fields: `revenue_tier`, `review_cadence_days`, `last_optimization_scan`, `monthly_revenue`.
+- Added top-level `revenue_tiers_updated` field to agent-state.json.
+
+**Why this matters:**
+- v2 was still firefighting-biased — GREEN portfolios never got reviewed. Every portfolio has optimization potential (scaling opportunities, search term mining, budget rebalancing).
+- User's key insight: "Every portfolio can always be improved, not just through search and harvesting and bid recommendations."
+
+**Lesson learned:**
+- Don't only react to problems. Proactive, systematic rotation ensures healthy portfolios stay healthy and surface growth opportunities before they become obvious.
+
+---
+
+### Run: 2026-03-09
+**Task:** PPC Agent v2 Redesign — Full SKILL.md rewrite
+**Result:** Success (architecture change, no API calls)
+
+**What happened:**
+- Complete redesign of PPC Agent from passive keyword-matching router to active orchestrator.
+- **5 core changes:** Smart Catch-Up (default entry), Skill Chaining Protocol, Audit Mode toggle, Portfolio Review Mode, Portfolio Action Plan as anchor skill.
+- Added `audit_mode: true` and `session: null` and `last_tacos_optimizer` fields to agent-state.json.
+- Audit mode set to ON by default for the current review phase.
+- 3 never-run skills (Monthly Review, Keyword Rank Optimizer, Negative Keyword Generator) now have explicit integration triggers in the orchestrator.
+- Skill chaining: Daily Health RED → auto-triggers PAP. Weekly Analysis → auto-triggers Rank Optimizer + TACoS Optimizer. TACoS LOSS-MAKING → auto-triggers PAP.
+- Portfolio Review Mode: urgency-scored pick-list (0-100 composite), per-portfolio 4-step sequence with PAP as anchor.
+
+**What changed (v1 → v2):**
+- Step 2 (intent routing): 2 entry modes → 4 entry modes (+ Portfolio Review, Audit Mode toggle)
+- Step 3 (cadence checker): passive status table → active session plan builder
+- Step 4 (catch-up): simple sequential run → skill chaining decision tree
+- NEW Step 6: Portfolio Review Mode with urgency scoring
+- NEW Step 7: Audit Mode toggle with API mutation blocklist
+- Steps 5+6 renumbered to Steps 8+9 (state update + session wrap-up)
+- Session tracking object for context recovery across breaks
+
+**Lesson learned:**
+- The v1 orchestrator was fundamentally passive — it waited for user keywords instead of thinking about what needs to happen. The core insight: the agent should always assess context and propose a plan, even for direct routes (status bar).
+- Portfolio Action Plan is the most powerful skill and should be the default response to any deep problem, not just an option in the routing table.
+
+**Tokens/cost:** ~0 tokens (architecture change only)
+
 ### Run: 2026-03-08
 **Task routed:** Daily PPC Health Check (ppc-daily-health) + Listing Verification (5 pushes) + Princess Lacing Listing Push
 **Result:** Success

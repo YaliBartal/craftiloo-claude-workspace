@@ -819,9 +819,17 @@ async def get_report_status(report_id: str) -> str:
 
 
 @mcp.tool()
-async def get_report_document(document_id: str) -> str:
+async def get_report_document(document_id: str, save_path: str = "") -> str:
     """Download a completed report document.
-    Returns the report data (CSV/TSV/JSON depending on report type)."""
+    Returns the report data (CSV/TSV/JSON depending on report type).
+
+    Args:
+        document_id: The document ID from get_report_status.
+        save_path: Optional file path to save the full report. When provided,
+                   the full content is saved to disk and only a summary is returned.
+                   Use this for large reports (Brand Analytics, search terms) that
+                   would otherwise be truncated at 50K chars.
+    """
     data = await api_get(f"/reports/2021-06-30/documents/{document_id}")
     if isinstance(data, str):
         return data
@@ -834,7 +842,7 @@ async def get_report_document(document_id: str) -> str:
 
     # Download the actual report content
     try:
-        async with httpx.AsyncClient(timeout=60.0) as client:
+        async with httpx.AsyncClient(timeout=120.0) as client:
             resp = await client.get(url)
             if resp.status_code != 200:
                 return f"Error: HTTP {resp.status_code} downloading report."
@@ -844,12 +852,28 @@ async def get_report_document(document_id: str) -> str:
             else:
                 content = resp.text
 
+            # If save_path provided, write full content to disk
+            if save_path:
+                import os
+                os.makedirs(os.path.dirname(save_path), exist_ok=True)
+                with open(save_path, "w", encoding="utf-8") as f:
+                    f.write(content)
+                return (
+                    f"## Report Document ({document_id})\n\n"
+                    f"**Saved to:** `{save_path}`\n"
+                    f"**Size:** {len(content):,} chars\n"
+                    f"**Format:** {'GZIP-compressed' if is_gzip else 'plain text'}\n\n"
+                    f"Preview (first 2000 chars):\n```\n{content[:2000]}\n```"
+                )
+
             # Cap output to avoid huge responses
             if len(content) > 50000:
                 content = content[:50000] + f"\n\n... truncated ({len(content)} total chars)"
             return f"## Report Document ({document_id})\n\n```\n{content}\n```"
+    except httpx.TimeoutException:
+        return f"Error downloading report: Request timed out after 120s. The report may be very large. Try using save_path parameter."
     except Exception as e:
-        return f"Error downloading report: {e}"
+        return f"Error downloading report: {type(e).__name__}: {e}"
 
 
 @mcp.tool()

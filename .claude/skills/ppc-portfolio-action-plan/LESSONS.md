@@ -22,6 +22,37 @@
 
 ## Run Log
 
+### Run: 2026-03-09 — Needlepoint Portfolio (Deep Dive #2)
+**Target:** Needlepoint (45080904945580) — 7 ENABLED campaigns, Scaling stage
+**Result:** Success (7/7 actions executed, 0 errors)
+
+**What happened:**
+- Second deep dive. Health still 3/10, 30d ACoS 57.4% (target 30%), CVR 5.0% (target 10%).
+- Full data collection: 30d campaigns (cached Mar 8), 30d search terms (364 rows), 30d placements (24 rows, fresh pull), rank radar (50 KW), niche keywords (130 KW). Seller Board skipped (MCP server error — known issue).
+- **Critical data quality issue discovered:** Weekly summary showed 92% ACoS for Needlepoint, but raw campaign report data showed 68.7% for the same period. Bad aggregation in weekly summary processing step — miscounted sales from SK beginners campaign. User caught this by checking Seller Central directly. Corrected in weekly summary, needlepoint tracker, and brief.
+- **User modified Item 3:** Instead of cross-negating "needlepoint pouch kit" from MK broad + Auto, user chose to boost SK pouch kit (TOS 157%→213%, bid $0.47→$0.57). Rationale: "I don't wanna negate the search term, even if it's cannibalising its own, if it's converting well." (29.3% ACoS in MK broad).
+- All 7 actions batched into 4 parallel API calls: campaign TOS updates (4), ad group bid (1), keyword bids (2), negative creation (1). Zero errors.
+- Root issue identified: **CVR 5% is a listing/product problem.** No PPC fix can make this portfolio profitable. Listing audit is the #1 pending action.
+
+**What didn't work:**
+- Seller Board MCP server error (`csv_to_summary() got unexpected keyword argument 'save_path'`). Known issue — server needs restart after code update. Used cached SB data from tracker instead.
+- Rank radar (165K chars) and niche keywords (59K chars) exceeded token limits. Required separate agent processing.
+- **92% ACoS figure was wrong** — propagated from bad weekly summary aggregation into the timeseries-backfill and then into the brief's executive summary. The user caught it by cross-checking in Seller Central. Root cause: weekly analysis aggregated portfolio data incorrectly (miscounted sales).
+
+**New issues identified:**
+- **Weekly summary portfolio aggregation can produce wrong ACoS.** The weekly-ppc-analysis skill needs a validation step: compare raw campaign report per-portfolio totals against the summary.json output. Discrepancy of 23pp (92% vs 68.7%) is unacceptable.
+- **Calendar-aligned weeks vs rolling windows.** User requires calendar-aligned weeks (Mar 1-7) for comparisons, not rolling 7d (Feb 27-Mar 5). Amazon Ads API LAST_7_DAYS returns rolling windows. Must label exact date ranges and prefer calendar alignment. Saved to MEMORY.md.
+
+**Is this a repeat error?** Yes — Seller Board MCP server error (known issue, needs restart). No — 92% aggregation error is new.
+
+**Lesson learned:**
+- **Always cross-validate aggregated portfolio totals against raw data.** Sum campaign-level spend/sales from the report file and compare to summary.json. Flag any discrepancy >2%.
+- **User preference: don't negate converting terms even if cannibalizing.** When a search term converts profitably in MK broad AND has a dedicated SK campaign, user prefers boosting the SK campaign rather than negating in MK broad. This preserves the converting traffic as a safety net while the SK campaign ramps.
+- **Label exact date ranges on every weekly metric.** Never say "this week's ACoS" — say "Feb 27-Mar 5 ACoS" or "Mar 1-7 ACoS."
+- **Seller Board data can be sourced from tracker** when MCP server is down. The tracker's latest_metrics and tacos_optimizer entries contain margin, organic ratio, TACoS.
+
+**Tokens/cost:** ~100K tokens across 2 sessions (context restart due to data quality investigation)
+
 ### Run: 2026-03-05 — Needlepoint Portfolio
 **Target:** Needlepoint (45080904945580) — 5 ENABLED + 6 PAUSED campaigns, Scaling stage, 3 hero ASINs + 1 dead ASIN
 **Result:** Success
@@ -403,6 +434,15 @@
 **Impact:** HIGH — Using ARCHIVED state causes 400 error from Amazon Ads API.
 **Workaround:** Use `"state": "PAUSED"` for campaign-level negatives. Only ad-group level negatives support ARCHIVED.
 **Valid states:** ENABLED, PROPOSED, PAUSED.
+
+### 3. Weekly summary portfolio aggregation can produce wrong ACoS
+**Impact:** HIGH — Needlepoint showed 92% ACoS in weekly summary but raw data showed 68.7%. 23pp discrepancy. Propagated into timeseries-backfill and deep dive brief.
+**Rule:** When using weekly summary data for portfolio-level metrics, cross-validate by summing campaign-level data from the raw report file. Flag any discrepancy >2%.
+**Root cause:** Weekly analysis summary.json aggregation step miscounted sales for Needlepoint portfolio. Discovered 2026-03-09 by user checking Seller Central.
+
+### 4. Always label exact date ranges on weekly metrics
+**Impact:** MEDIUM — "This week's ACoS" is ambiguous. Amazon Ads API `LAST_7_DAYS` returns rolling windows (e.g., Feb 27–Mar 5 when pulled Mar 8), not calendar weeks (Mar 1–7). User requires calendar-aligned weeks.
+**Rule:** Never say "this week" without the exact date range. Prefer calendar-aligned weeks (Mar 1–7, Mar 8–14). When using API rolling windows, always label: "Feb 27–Mar 5 (rolling 7d)."
 
 ---
 

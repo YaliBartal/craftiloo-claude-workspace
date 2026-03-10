@@ -102,6 +102,48 @@ outputs/research/listings/
 
 **Do NOT proceed without niche keywords.** These drive the entire listing strategy.
 
+### Phase 0b: Check for Audit Context (OPTIONAL — from listing-manager)
+
+**This phase only runs when listing-manager passes `audit_context` from a listing-optimizer audit.**
+
+If `audit_context` is provided (OPTIMIZE or ITERATE mode via listing-manager):
+
+1. **Load audit findings:**
+   - `keyword_gaps` — exact words missing from title/bullets (from Ranking Juice analysis)
+   - `ranking_juice_scores` — per-component scores: title, bullets, description (tells you which component is weakest)
+   - `root_coverage` — which broad search roots are missing from the listing
+   - `rank_trends` — which keywords are rising/falling (from DataDive Rank Radar)
+   - `competitor_strengths` — what top competitors do better, with specific copy examples
+   - `ai_copywriter_alternatives` — DataDive's generated options (cosmo, ranking-juice, nlp, cosmo-rufus modes)
+   - `current_listing` — the current title, bullets, backend keywords (from SP-API `get_listing`)
+   - `ab_findings` (optional) — if this is an ITERATE after a negative AB result, includes what went wrong and which metrics declined
+
+2. **Adjust research phases:**
+   - **Skip Phase 3** (keyword research) — the optimizer already identified keyword gaps with volume data
+   - **Skip Phase 3b** (BA validation) — the optimizer already checked conversion data
+   - **Still run Phase 1** (product specs) — need exact measurements and contents
+   - **Still run Phase 2** (competitor titles) — but can use competitors already identified by optimizer
+   - **Still run Phase 4-6** (Q&A, bullet mapping, generation) — these are always fresh
+
+3. **Title generation uses:**
+   - `keyword_gaps` — front-load the highest-volume missing keywords
+   - `ranking_juice_scores.title` — if title is the weakest component, prioritize keyword density
+   - `current_listing.title` — preserve what's working, fix what's not
+
+4. **Bullet generation uses:**
+   - `root_coverage` — weave missing root words into bullet copy
+   - `competitor_strengths` — specifically counter what competitors do better
+   - `ab_findings` (if ITERATE) — avoid repeating what didn't work last time
+
+5. **Backend keywords use:**
+   - Full gap list from optimizer (highest volume first)
+   - Exclude anything already in the new title (no duplicates)
+   - Fill up to 249 bytes
+
+**If `audit_context` is NOT provided:** Skip this phase entirely. Proceed with standard Phase 1 flow (full research from scratch).
+
+---
+
 ### Phase 1: Understand the Product
 
 **Required inputs from user:**

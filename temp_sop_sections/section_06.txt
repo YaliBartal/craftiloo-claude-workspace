@@ -1,9 +1,0 @@
-## 5. Mandatory Campaign Structure (Baseline)
-Each portfolio must contain, at minimum:
-- 1 Auto campaign
-- 1 Broad campaign
-- ~3 Single Keyword (SK) campaigns
-- ~2 Multi Keyword (same root) campaigns
-- 1 Product Targeting campaign
-- Shield campaign (Shield portfolio only)
-This structure ensures discovery, control, and defense at all times.

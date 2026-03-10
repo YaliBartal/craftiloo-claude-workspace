@@ -1,5 +1,5 @@
 {
-  "_description": "Maps SKUs to ASINs and product names. Source: SP-API GET_MERCHANT_LISTINGS_ALL_DATA. Updated 2026-03-06.",
+  "_description": "Maps SKUs to ASINs and product names. Source: SP-API GET_MERCHANT_LISTINGS_ALL_DATA. Updated 2026-03-09. Added 14 BA-discovered ASINs.",
   "_usage": "Look up by SKU or ASIN. Use _lookup_by_asin for reverse lookups.",
   "mappings": [
     {
@@ -281,6 +281,104 @@
       "product": "Transport Lacing Cards",
       "status": "Active",
       "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B0DC69M3YD",
+      "product": "Embroidery Kit Adults 4 Floral Patterns",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B09X55KL2C",
+      "product": "10 Pre-Stamped Embroidery Kit for Kids",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B09HVDNFMR",
+      "product": "Needlepoint Wallet Kit Cat",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B0DKD2S3JT",
+      "product": "Loom Knitting Crochet Kit Bunny",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B08FYH13CL",
+      "product": "Latch Hook Pencil Cases Heart",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B08L8BHD4Z",
+      "product": "5 Superhero Cross Stitch Backpack Charms",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B09HVCCNM2",
+      "product": "Needlepoint Wallet Kit Unicorn",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B092SW839H",
+      "product": "Punch Needle Kit Mini Pillows",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B096MYBLS1",
+      "product": "12 Mini Treats Dessert Sewing Kit",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B0BNDVTTSH",
+      "product": "Ballerina Dancers Sewing Kit",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B0BP8GCK1G",
+      "product": "Fairy Elves Sewing Kit Garden Rainbow",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B07PXN4K8N",
+      "product": "XXL Fuse Beads Kit 22000pcs 5mm",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B0CRZ8M2G1",
+      "product": "Mini Fuse Beads 24000 48 Colors",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
+    },
+    {
+      "sku": "SKU-UNKNOWN",
+      "asin": "B0F6YTG1CH",
+      "product": "Cross Stitch Kit Kids 4 Unicorn Projects",
+      "status": "Active",
+      "fulfillment": "AMAZON_NA"
     }
   ],
   "_lookup_by_asin": {
@@ -306,7 +404,7 @@
     },
     "B0FQC7YFX6": {
       "sku": "6P-KW6N-9F9J",
-      "portfolio": "unassigned"
+      "portfolio": "princess-lacing-cards"
     },
     "B08DDJCQKF": {
       "sku": "B08DDJCQKF-FBA-2026",
@@ -430,11 +528,69 @@
     },
     "B0FQC8WK5H": {
       "sku": "OA-28XS-TP9L",
-      "portfolio": "unassigned"
+      "portfolio": "INVALID-NOT-OUR-PRODUCT",
+      "_note": "Catalog shows AYziemezm Womens Sweatshirt — wrong ASIN, not Craftiloo"
     },
     "B0FQC9JM3T": {
       "sku": "FT-63NQ-VR4B",
-      "portfolio": "unassigned"
+      "portfolio": "INVALID-ASIN-NOT-FOUND",
+      "_note": "404 in Amazon catalog — ASIN does not exist"
+    },
+    "B0DC69M3YD": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "4-flowers-embroidery"
+    },
+    "B09X55KL2C": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "embroidery-for-kids"
+    },
+    "B09HVDNFMR": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "cross-stitch-backpack-charms"
+    },
+    "B0DKD2S3JT": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "bunny-knitting-loom-kit"
+    },
+    "B08FYH13CL": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "latch-hook-kits"
+    },
+    "B08L8BHD4Z": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "cross-stitch-backpack-charms"
+    },
+    "B09HVCCNM2": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "cross-stitch-backpack-charms"
+    },
+    "B092SW839H": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "punch-needle"
+    },
+    "B096MYBLS1": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "dessert-family"
+    },
+    "B0BNDVTTSH": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "fairy-family"
+    },
+    "B0BP8GCK1G": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "fairy-family"
+    },
+    "B07PXN4K8N": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "fuse-beads"
+    },
+    "B0CRZ8M2G1": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "fuse-beads"
+    },
+    "B0F6YTG1CH": {
+      "sku": "SKU-UNKNOWN",
+      "portfolio": "my-first-cross-stitch"
     }
   }
 }

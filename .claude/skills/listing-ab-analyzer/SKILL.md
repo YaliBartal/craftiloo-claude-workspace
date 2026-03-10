@@ -301,6 +301,9 @@ Based on the analysis, assign one of four verdicts:
 - If some metrics improved and others declined: **ITERATE** — "{area} improved but {other area} declined. Suggest: {next change to try}."
 - If the change was to title and CTR improved but cart rate dropped: the title is attracting a different audience. Consider whether the new audience is the right one.
 
+**Downstream suggestion for NEGATIVE/ITERATE verdicts:**
+When verdict is NEGATIVE or ITERATE, add to the report: "Suggest running listing-manager in ITERATE mode for {ASIN} to generate a targeted rewrite using both the original audit findings and these AB results."
+
 ### Step 10: Generate Report
 
 **Output file:** `outputs/research/listing-optimizer/ab-tests/{ASIN}-{YYYY-MM-DD}-ab-analysis.md`

@@ -36,14 +36,26 @@ jobs:
             After completing the skill, use the notification-hub skill to post
             the results summary to Slack channel #claude-ppc-updates.
             If the notification-hub fails, that's OK. Do not retry notifications.
+
+            EFFICIENCY RULES:
+            - Do NOT update individual portfolio tracker JSON files. Only update agent-state.json.
+            - Do NOT read or write LESSONS.md. Skip lessons entirely.
+            - Keep Slack messages under 2000 chars. One message to #claude-ppc-updates only.
+            - Do NOT post to #claude-alerts. The workflow YAML handles failure alerts.
+            - Target: complete in under 15 turns.
           claude_args: |
-            --max-turns 30
+            --max-turns 20
             --model claude-sonnet-4-6
         env:
           ADS_API_CLIENT_ID: ${{ secrets.ADS_API_CLIENT_ID }}
           ADS_API_CLIENT_SECRET: ${{ secrets.ADS_API_CLIENT_SECRET }}
           ADS_API_REFRESH_TOKEN: ${{ secrets.ADS_API_REFRESH_TOKEN }}
           ADS_API_PROFILE_US: ${{ secrets.ADS_API_PROFILE_US }}
+          DATADIVE_API_KEY: ${{ secrets.DATADIVE_API_KEY }}
+          SP_API_CLIENT_ID: ${{ secrets.SP_API_CLIENT_ID }}
+          SP_API_CLIENT_SECRET: ${{ secrets.SP_API_CLIENT_SECRET }}
+          SP_API_REFRESH_TOKEN: ${{ secrets.SP_API_REFRESH_TOKEN }}
+          SP_API_MARKETPLACE_US: ${{ secrets.SP_API_MARKETPLACE_US }}
           SLACK_WORKSPACE_1_BOT_TOKEN: ${{ secrets.SLACK_WORKSPACE_1_BOT_TOKEN }}
           SLACK_WORKSPACE_1_TEAM_ID: ${{ secrets.SLACK_WORKSPACE_1_TEAM_ID }}
           SLACK_WORKSPACE_1_NAME: ${{ secrets.SLACK_WORKSPACE_1_NAME }}

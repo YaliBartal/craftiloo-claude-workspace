@@ -8,13 +8,13 @@
   "reports_pulled": [
     "scp",
     "sqp",
+    "search_terms",
     "market_basket",
     "repeat_purchase"
   ],
-  "reports_failed": [
-    "search_terms"
-  ],
+  "reports_failed": [],
   "asin_batches": 1,
+  "search_terms_matches": 46,
   "previous_week_available": false,
   "scp_asin_count": 37,
   "sqp_keyword_count": 27,

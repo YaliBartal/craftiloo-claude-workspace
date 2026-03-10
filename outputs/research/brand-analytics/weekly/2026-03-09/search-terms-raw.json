@@ -1,0 +1,1478 @@
+{
+  "period": {
+    "start": "2026-02-22",
+    "end": "2026-02-28"
+  },
+  "filteredForAsins": [
+    "B07D6D95NG",
+    "B07D6F3HL5",
+    "B08DDJCQKF",
+    "B09THLVFZK",
+    "B09THP7JW8",
+    "B09WQH4Q52",
+    "B09WQJ8JG7",
+    "B09WQK7V2H",
+    "B09WQLM4T6",
+    "B09WQQPKZF",
+    "B09WQSBZY7",
+    "B0BMLXLP5S",
+    "B0BMLZ7MFL",
+    "B0BN2DP3ST",
+    "B0BN2F8JK4",
+    "B0CLL2XM9P",
+    "B0CLL3JFNK",
+    "B0CLL4PBX3",
+    "B0CLL5TN4K",
+    "B0D5KXLR7M",
+    "B0D5KY9N2J",
+    "B0D5L2WN8K",
+    "B0DCQWL8R3",
+    "B0DCQX7K5N",
+    "B0DT8HXWK4",
+    "B0DT8JRP6M",
+    "B0DT8K5N3Q",
+    "B0F4XNWK7R",
+    "B0F8DG32H5",
+    "B0F8DH5K9L",
+    "B0F8DJ2M7P",
+    "B0F8R652FX",
+    "B0F8RK3P7N",
+    "B0FHVNXK4R",
+    "B0FHVP3M8K",
+    "B0FQC7YFX6",
+    "B0FQC8WK5H",
+    "B0FQC9JM3T"
+  ],
+  "totalRowsScanned": 8291941,
+  "ourAsinAppearances": 46,
+  "totalMatchingTerms": 46,
+  "matches": [
+    {
+      "searchTerm": "latch hook kits for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 111808,
+      "topClickedAsins": [
+        {
+          "asin": "B06XRRN4VL",
+          "clickedItemName": "LatchKits Latch Hook Kits for Kids \u2013 Kids Crafts, Arts and Crafts, Yarn Art, Wall Hanging & Mini-Rugs, Craft Supplies, Pre-Cut Yarn, Easy Pattern, Hook Included, Arts & Craft, Ages 6+, Unicorn",
+          "clickShareRank": 1,
+          "clickShare": 0.1796,
+          "conversionShare": 0.1538
+        },
+        {
+          "asin": "B0F8R652FX",
+          "clickedItemName": "CRAFTILOO Latch Hook Kit for Kids Rug DIY Pillow Craft with Hook, Precut Yarn, Easy to Follow Pattern Cute Designs with Rainbow Heart Ages 6+",
+          "clickShareRank": 2,
+          "clickShare": 0.1054,
+          "conversionShare": 0.0427
+        },
+        {
+          "asin": "B08FYH13CL",
+          "clickedItemName": "CRAFTILOO DIY 2 Rug Pencil Cases Latch Hook Kits for Kids Sewing Set for Girls Beginners Latchkits Ages 8-12",
+          "clickShareRank": 3,
+          "clickShare": 0.0915,
+          "conversionShare": 0.0513
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B0F8R652FX"
+      ]
+    },
+    {
+      "searchTerm": "fuse beads kit",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 133998,
+      "topClickedAsins": [
+        {
+          "asin": "B07YDDPPWX",
+          "clickedItemName": "Meland Fuse Beads Kit - 11,000 pcs 36 Color Beads for Craft for Girls Age 5-12 Year Old,5MM Melty Beads Set Including 5 Pegboards, Ironing Paper & Chain Accessories Iron Beads Christmas Birthday Gift",
+          "clickShareRank": 1,
+          "clickShare": 0.1639,
+          "conversionShare": 0.1444
+        },
+        {
+          "asin": "B07VLVMY3C",
+          "clickedItemName": "FUNZBO 23000 5mm Fuse Beads Kit - 22 Colors | 106 Patterns, Easter School Arts and Crafts Supplies for Kids, Toys Set, Art Decorations for Room, Birthday Easter Gifts for Girls and Boys Age 5+",
+          "clickShareRank": 2,
+          "clickShare": 0.1434,
+          "conversionShare": 0.1
+        },
+        {
+          "asin": "B09THLVFZK",
+          "clickedItemName": "24,000 Mini Fuse Beads Kit for Adults - 48 Colors Tiny 2.6mm Beads, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty, Iron Craft - Bulk Storage",
+          "clickShareRank": 3,
+          "clickShare": 0.0758,
+          "conversionShare": 0.0222
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09THLVFZK"
+      ]
+    },
+    {
+      "searchTerm": "embroidery kit for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 345964,
+      "topClickedAsins": [
+        {
+          "asin": "B09X55KL2C",
+          "clickedItemName": "10 Pre-Stamped Embroidery Patterns for Beginners Embroidery Kit for Kids Girls Needlepoint Kits for Beginners Cross Stitch Craft Sewing Perfect for Ages 7-13",
+          "clickShareRank": 1,
+          "clickShare": 0.2806,
+          "conversionShare": 0.1111
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 2,
+          "clickShare": 0.0765,
+          "conversionShare": 0.0741
+        },
+        {
+          "asin": "B0FR7Y8VHB",
+          "clickedItemName": "Louise Maelys 12 Pre-Stamped Embroidery Kits for Beginners, Kids Girls Cross Stitch Kit,DIY Needlepoint Craft Sewing Practice Supplies,Funny Cute Pattern,Perfect for Ages 8-12",
+          "clickShareRank": 3,
+          "clickShare": 0.0663,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "mini perler beads",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 434303,
+      "topClickedAsins": [
+        {
+          "asin": "B09THLVFZK",
+          "clickedItemName": "24,000 Mini Fuse Beads Kit for Adults - 48 Colors Tiny 2.6mm Beads, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty, Iron Craft - Bulk Storage",
+          "clickShareRank": 1,
+          "clickShare": 0.2548,
+          "conversionShare": 0.2273
+        },
+        {
+          "asin": "B08QV9CMFQ",
+          "clickedItemName": "LIHAO 2.6mm Mini Fuse Beads Kit for Crafts, 24000 pcs 48 Colors Fuse Beading Kit Multicolored Iron, Great Supplies for Fuse Beads Artist",
+          "clickShareRank": 2,
+          "clickShare": 0.1529,
+          "conversionShare": 0.0455
+        },
+        {
+          "asin": "B0C5WQD914",
+          "clickedItemName": "INSCRAFT 28,000 Mini Fuse Beads, 2.6mm 48 Colors Melty Beads with 7 Pegboards 15 Ironing Sheets 2 Tweezers 2 Ironing Papers & 6 Chain Accessories",
+          "clickShareRank": 3,
+          "clickShare": 0.0892,
+          "conversionShare": 0.0909
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09THLVFZK"
+      ]
+    },
+    {
+      "searchTerm": "sewing for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 460970,
+      "topClickedAsins": [
+        {
+          "asin": "B09WQSBZY7",
+          "clickedItemName": "Fairy Sewing Kits for Little Girls 5 Easy Projects for Childrens Kid Crafts Make Your Own Felt Pillow Plush Craft Kit My First Sewing Kit Learn to Sew",
+          "clickShareRank": 1,
+          "clickShare": 0.1149,
+          "conversionShare": 0.0556
+        },
+        {
+          "asin": "B091GXM2Y6",
+          "clickedItemName": "KRAFUN My First Sewing Kit for Beginner Kids Arts & Crafts, 7 Easy DIY Projects of Stuffed Animal Dolls and Plush Pillow Craft, Instructions & Felt, Gift for Girls, Boys, Learn to Sew, Embroidery",
+          "clickShareRank": 2,
+          "clickShare": 0.1081,
+          "conversionShare": 0.1111
+        },
+        {
+          "asin": "1641526645",
+          "clickedItemName": "Sewing For Kids: 30 Fun Projects to Hand and Machine Sew",
+          "clickShareRank": 3,
+          "clickShare": 0.0878,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09WQSBZY7"
+      ]
+    },
+    {
+      "searchTerm": "cross stitch kits for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 491450,
+      "topClickedAsins": [
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 1,
+          "clickShare": 0.1942,
+          "conversionShare": 0.2143
+        },
+        {
+          "asin": "B0F6YTG1CH",
+          "clickedItemName": "CRAFTILOO My First Cross Stitch Kit for Kids Ages 6\u201312 \u2013 Beginner Needlepoint Set with Pre-Cut Felt, Thread & Keyrings \u2013 Makes 4 Colorful Designs: Unicorn, Rainbow, Winged Heart",
+          "clickShareRank": 2,
+          "clickShare": 0.1295,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0DFHN42QB",
+          "clickedItemName": "EZCRA Beginner Needlepoint Cross Stitch Kit for Kids Ages 5-8 \u2013 Easy Embroidery Starter Set with Jumbo Plastic Needles, Pre-Printed Patterns, Instructions \u2013 DIY Arts & Crafts Gift for Girls & Boys",
+          "clickShareRank": 3,
+          "clickShare": 0.0791,
+          "conversionShare": 0.0357
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "knitting kit for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 530284,
+      "topClickedAsins": [
+        {
+          "asin": "B09DTHQH3Q",
+          "clickedItemName": "Creativity for Kids Learn to Knit Pocket Scarf Kit | Learn to Knit a Cozy, Functional Scarf with a Handy Pocket | Relaxing DIY Craft & Mindful Activity for Kids (Ages 9+)",
+          "clickShareRank": 1,
+          "clickShare": 0.1628,
+          "conversionShare": 0.1905
+        },
+        {
+          "asin": "B0CLTPPBSL",
+          "clickedItemName": "Crochet Kit for Beginner, Crochet Starter Kit w Step-by-Step Video Tutorials, Crochet Kit for Beginners, Beginner Crochet Kit for Adults Kids Women Men Complete Kit Included (Axolotl 2Pack)",
+          "clickShareRank": 2,
+          "clickShare": 0.062,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0F8DG32H5",
+          "clickedItemName": "CRAFTILOO Knitting Kit for Kids \u2013 Beginner Knitting Kit to Make a Hat & Cat \u2013 Quick Knit Loom Kit with Yarn, Tools & Instructions",
+          "clickShareRank": 3,
+          "clickShare": 0.0543,
+          "conversionShare": 0.0476
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B0F8DG32H5"
+      ]
+    },
+    {
+      "searchTerm": "fuse bead kit",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 590458,
+      "topClickedAsins": [
+        {
+          "asin": "B07VLVMY3C",
+          "clickedItemName": "FUNZBO 23000 5mm Fuse Beads Kit - 22 Colors | 106 Patterns, Easter School Arts and Crafts Supplies for Kids, Toys Set, Art Decorations for Room, Birthday Easter Gifts for Girls and Boys Age 5+",
+          "clickShareRank": 1,
+          "clickShare": 0.1466,
+          "conversionShare": 0.0588
+        },
+        {
+          "asin": "B07YDDPPWX",
+          "clickedItemName": "Meland Fuse Beads Kit - 11,000 pcs 36 Color Beads for Craft for Girls Age 5-12 Year Old,5MM Melty Beads Set Including 5 Pegboards, Ironing Paper & Chain Accessories Iron Beads Christmas Birthday Gift",
+          "clickShareRank": 2,
+          "clickShare": 0.1034,
+          "conversionShare": 0.1176
+        },
+        {
+          "asin": "B09THLVFZK",
+          "clickedItemName": "24,000 Mini Fuse Beads Kit for Adults - 48 Colors Tiny 2.6mm Beads, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty, Iron Craft - Bulk Storage",
+          "clickShareRank": 3,
+          "clickShare": 0.0948,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09THLVFZK"
+      ]
+    },
+    {
+      "searchTerm": "lacing cards for kids ages 4-8",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 590458,
+      "topClickedAsins": [
+        {
+          "asin": "B0CRKWKWRT",
+          "clickedItemName": "Springtime Lacing Cards for Kids 12 Packs Sewing Kits Rainbow Flower Butterfly Cardboard Sewing Cards Lacing Games for Developing Imagination School Learning Activity Supplies Spring Decorations",
+          "clickShareRank": 1,
+          "clickShare": 0.0862,
+          "conversionShare": 0.1304
+        },
+        {
+          "asin": "B0C4KXB7NJ",
+          "clickedItemName": "SpriteGru 26PCS Kids Lacing Cards, 26 Double Sided Uppercase Sewing Cards with 26 Colorful Laces, Imagination Development Lacing Toys Games for Children Educational and Learning Activity",
+          "clickShareRank": 2,
+          "clickShare": 0.0862,
+          "conversionShare": 0.0435
+        },
+        {
+          "asin": "B0FQC7YFX6",
+          "clickedItemName": "Princess Lacing Card Kit for Kids Arts & Crafts, 8 Easy Lacing Projects with Gem Stickers, Paper Art Craft Cards for Toddlers, Fine Motor Preschool Skills, Mess-Free Travel Activity",
+          "clickShareRank": 3,
+          "clickShare": 0.0862,
+          "conversionShare": 0.0435
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B0FQC7YFX6"
+      ]
+    },
+    {
+      "searchTerm": "hama beads",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 606278,
+      "topClickedAsins": [
+        {
+          "asin": "B07VLVMY3C",
+          "clickedItemName": "FUNZBO 23000 5mm Fuse Beads Kit - 22 Colors | 106 Patterns, Easter School Arts and Crafts Supplies for Kids, Toys Set, Art Decorations for Room, Birthday Easter Gifts for Girls and Boys Age 5+",
+          "clickShareRank": 1,
+          "clickShare": 0.1858,
+          "conversionShare": 0.25
+        },
+        {
+          "asin": "B09THLVFZK",
+          "clickedItemName": "24,000 Mini Fuse Beads Kit for Adults - 48 Colors Tiny 2.6mm Beads, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty, Iron Craft - Bulk Storage",
+          "clickShareRank": 2,
+          "clickShare": 0.0973,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B07YDDPPWX",
+          "clickedItemName": "Meland Fuse Beads Kit - 11,000 pcs 36 Color Beads for Craft for Girls Age 5-12 Year Old,5MM Melty Beads Set Including 5 Pegboards, Ironing Paper & Chain Accessories Iron Beads Christmas Birthday Gift",
+          "clickShareRank": 3,
+          "clickShare": 0.0708,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09THLVFZK"
+      ]
+    },
+    {
+      "searchTerm": "kids cross stitch kit",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 646701,
+      "topClickedAsins": [
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 1,
+          "clickShare": 0.2547,
+          "conversionShare": 0.24
+        },
+        {
+          "asin": "B0F6YTG1CH",
+          "clickedItemName": "CRAFTILOO My First Cross Stitch Kit for Kids Ages 6\u201312 \u2013 Beginner Needlepoint Set with Pre-Cut Felt, Thread & Keyrings \u2013 Makes 4 Colorful Designs: Unicorn, Rainbow, Winged Heart",
+          "clickShareRank": 2,
+          "clickShare": 0.0943,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0DFHN42QB",
+          "clickedItemName": "EZCRA Beginner Needlepoint Cross Stitch Kit for Kids Ages 5-8 \u2013 Easy Embroidery Starter Set with Jumbo Plastic Needles, Pre-Printed Patterns, Instructions \u2013 DIY Arts & Crafts Gift for Girls & Boys",
+          "clickShareRank": 3,
+          "clickShare": 0.0849,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "pixie beads",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 700172,
+      "topClickedAsins": [
+        {
+          "asin": "B0FQ2YBX9W",
+          "clickedItemName": "Psykade Fuse Beads Kit-Easy DIY-96 Colors 53000 2.6mm, 200+ Patterns, Built-in Iron | DIY Crafts Supplies for Women, Art Decorations for Room, Ideal Gift,Pixel Art\uff0cAll-in-One",
+          "clickShareRank": 1,
+          "clickShare": 0.3367,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0C5WQD914",
+          "clickedItemName": "INSCRAFT 28,000 Mini Fuse Beads, 2.6mm 48 Colors Melty Beads with 7 Pegboards 15 Ironing Sheets 2 Tweezers 2 Ironing Papers & 6 Chain Accessories",
+          "clickShareRank": 2,
+          "clickShare": 0.1327,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B09THLVFZK",
+          "clickedItemName": "24,000 Mini Fuse Beads Kit for Adults - 48 Colors Tiny 2.6mm Beads, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty, Iron Craft - Bulk Storage",
+          "clickShareRank": 3,
+          "clickShare": 0.0816,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09THLVFZK"
+      ]
+    },
+    {
+      "searchTerm": "mini fuse beads",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 730354,
+      "topClickedAsins": [
+        {
+          "asin": "B09THLVFZK",
+          "clickedItemName": "24,000 Mini Fuse Beads Kit for Adults - 48 Colors Tiny 2.6mm Beads, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty, Iron Craft - Bulk Storage",
+          "clickShareRank": 1,
+          "clickShare": 0.2447,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B08QV9CMFQ",
+          "clickedItemName": "LIHAO 2.6mm Mini Fuse Beads Kit for Crafts, 24000 pcs 48 Colors Fuse Beading Kit Multicolored Iron, Great Supplies for Fuse Beads Artist",
+          "clickShareRank": 2,
+          "clickShare": 0.1064,
+          "conversionShare": 0.0714
+        },
+        {
+          "asin": "B0D5LF666P",
+          "clickedItemName": "FUNZBO 28000 2.6mm Mini Size Fuse Beads Set - 48 Colors, Easter Toys, Arts and Crafts, Kids Room Decorations, Gifts for Girls, Boys, Kids and Teens (Non Standard Size)",
+          "clickShareRank": 3,
+          "clickShare": 0.0745,
+          "conversionShare": 0.0714
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09THLVFZK"
+      ]
+    },
+    {
+      "searchTerm": "sewing kits for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 730354,
+      "topClickedAsins": [
+        {
+          "asin": "B0C2XYP6L3",
+          "clickedItemName": "KRAFUN Easy Sewing Kit for Beginner Kids Arts & Crafts, 8 Easy DIY Projects of Stuffed Animal Dolls of Puppies & Kittens, Dogs and Cats, Instructions & Felt, Gift for Girls, Boys, Learn to Sew",
+          "clickShareRank": 1,
+          "clickShare": 0.0638,
+          "conversionShare": 0.0526
+        },
+        {
+          "asin": "B091GXM2Y6",
+          "clickedItemName": "KRAFUN My First Sewing Kit for Beginner Kids Arts & Crafts, 7 Easy DIY Projects of Stuffed Animal Dolls and Plush Pillow Craft, Instructions & Felt, Gift for Girls, Boys, Learn to Sew, Embroidery",
+          "clickShareRank": 2,
+          "clickShare": 0.0638,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B09WQSBZY7",
+          "clickedItemName": "Fairy Sewing Kits for Little Girls 5 Easy Projects for Childrens Kid Crafts Make Your Own Felt Pillow Plush Craft Kit My First Sewing Kit Learn to Sew",
+          "clickShareRank": 3,
+          "clickShare": 0.0532,
+          "conversionShare": 0.0526
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09WQSBZY7"
+      ]
+    },
+    {
+      "searchTerm": "cross stitch kit beginners",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 746448,
+      "topClickedAsins": [
+        {
+          "asin": "B0CZHKSSL4",
+          "clickedItemName": "CYANFOUR Embroidery Kit for Beginners, 4 Stages to Learn 38 Stitches, with Step-by-Step Instructions and Clear Videos, Includes Multiple Accessories, Gift for Craft Lovers.",
+          "clickShareRank": 1,
+          "clickShare": 0.1196,
+          "conversionShare": 0.0909
+        },
+        {
+          "asin": "B0DCNX1LX5",
+          "clickedItemName": "JOINRUN Beginner Embroidery Kit for Adults, 3 Pack Cross Stitch Kits with Pre-Printed Patterns, Threads, Needles, Learn Stitches with 7.8\" Hoop, Video Tutorial, DIY Needlework Craft Gift for Women",
+          "clickShareRank": 2,
+          "clickShare": 0.1087,
+          "conversionShare": 0.0909
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 3,
+          "clickShare": 0.0543,
+          "conversionShare": 0.0909
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "kids embroidery kit",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 808864,
+      "topClickedAsins": [
+        {
+          "asin": "B09X55KL2C",
+          "clickedItemName": "10 Pre-Stamped Embroidery Patterns for Beginners Embroidery Kit for Kids Girls Needlepoint Kits for Beginners Cross Stitch Craft Sewing Perfect for Ages 7-13",
+          "clickShareRank": 1,
+          "clickShare": 0.3059,
+          "conversionShare": 0.0833
+        },
+        {
+          "asin": "B0DP654CSV",
+          "clickedItemName": "Louise Maelys 12 Pre-Stamped Embroidery Kits for Beginners, Cross Stitch for Kids Girls,DIY Needlepoint Craft Sewing,Practice Kit Supplies,Funny Cute Pattern,Perfect for Ages 8-12",
+          "clickShareRank": 2,
+          "clickShare": 0.0941,
+          "conversionShare": 0.0833
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 3,
+          "clickShare": 0.0941,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "2.6mm fuse beads",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 828410,
+      "topClickedAsins": [
+        {
+          "asin": "B09THLVFZK",
+          "clickedItemName": "24,000 Mini Fuse Beads Kit for Adults - 48 Colors Tiny 2.6mm Beads, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty, Iron Craft - Bulk Storage",
+          "clickShareRank": 1,
+          "clickShare": 0.1325,
+          "conversionShare": 0.0833
+        },
+        {
+          "asin": "B09YQG4RVV",
+          "clickedItemName": "Fuse Beads 2.6MM Mini Iron Beads White 10000pcs and Black 10000pcs for Crafts, Handmade Decor DIY Make, with 1 Ironing Paper",
+          "clickShareRank": 2,
+          "clickShare": 0.1205,
+          "conversionShare": 0.0833
+        },
+        {
+          "asin": "B0FQ2YBX9W",
+          "clickedItemName": "Psykade Fuse Beads Kit-Easy DIY-96 Colors 53000 2.6mm, 200+ Patterns, Built-in Iron | DIY Crafts Supplies for Women, Art Decorations for Room, Ideal Gift,Pixel Art\uff0cAll-in-One",
+          "clickShareRank": 3,
+          "clickShare": 0.0843,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09THLVFZK"
+      ]
+    },
+    {
+      "searchTerm": "easy cross stitch kits for beginners",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 828410,
+      "topClickedAsins": [
+        {
+          "asin": "B09F9YBHRN",
+          "clickedItemName": "Kraftex Stamped Cross Stitch Kits for Beginners (Flower Theme - 6.75 Inch - 4 Pack 1 x Embroidery Hoop) Embroidery Needlepoint Patterns for Adults, Includes Poppy, Rose, Sunflower and Pansy",
+          "clickShareRank": 1,
+          "clickShare": 0.0964,
+          "conversionShare": 0.1818
+        },
+        {
+          "asin": "B08JQ47WV1",
+          "clickedItemName": "Uphome 3 Pack Embroidery Starter Kit for Beginners Stamped Cross Stitch Kits with Cute Flowers and Plants Patterns with 1 Embroidery Hoop and Color Threads for Adults Kids",
+          "clickShareRank": 2,
+          "clickShare": 0.0843,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 3,
+          "clickShare": 0.0482,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "sewing kit kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 905452,
+      "topClickedAsins": [
+        {
+          "asin": "B09WQSBZY7",
+          "clickedItemName": "Fairy Sewing Kits for Little Girls 5 Easy Projects for Childrens Kid Crafts Make Your Own Felt Pillow Plush Craft Kit My First Sewing Kit Learn to Sew",
+          "clickShareRank": 1,
+          "clickShare": 0.0789,
+          "conversionShare": 0.0625
+        },
+        {
+          "asin": "B0977NTKHY",
+          "clickedItemName": "Craft-Tastic Let\u2019s Learn to Sew \u2013 Mini Sewing Kit, Arts and Crafts, Art Supplies, Embroidery Kit for Beginners, Includes Sewing Supplies, Easy-to-Follow Instructions, Arts & Crafts, Ages 7+",
+          "clickShareRank": 2,
+          "clickShare": 0.0789,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B091GXM2Y6",
+          "clickedItemName": "KRAFUN My First Sewing Kit for Beginner Kids Arts & Crafts, 7 Easy DIY Projects of Stuffed Animal Dolls and Plush Pillow Craft, Instructions & Felt, Gift for Girls, Boys, Learn to Sew, Embroidery",
+          "clickShareRank": 3,
+          "clickShare": 0.0658,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09WQSBZY7"
+      ]
+    },
+    {
+      "searchTerm": "cross stitch for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 997786,
+      "topClickedAsins": [
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 1,
+          "clickShare": 0.1739,
+          "conversionShare": 0.25
+        },
+        {
+          "asin": "B0B97Q1Q4T",
+          "clickedItemName": "KRAFUN Beginner My First Cross Stitch Kit for Kids Arts & Crafts, 6 Easy Projects of Felt Keyring, Bag, Pillow Craft, Instructions, Gift for Girls and Boys, Learn DIY Crafting, Embroidery",
+          "clickShareRank": 2,
+          "clickShare": 0.087,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0CG9FN2CH",
+          "clickedItemName": "Pllieay 10-in-1 Cross Stitch Beginner Kit for Kids, Embroidery Kit Includes 10pcs Plastic Mesh Canvas with Pattern, 15 Yarns, 5 Weaving Needles, Needle Points Starter Sewing Set with Instructions",
+          "clickShareRank": 3,
+          "clickShare": 0.087,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "perler kit",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 997786,
+      "topClickedAsins": [
+        {
+          "asin": "B07VLVMY3C",
+          "clickedItemName": "FUNZBO 23000 5mm Fuse Beads Kit - 22 Colors | 106 Patterns, Easter School Arts and Crafts Supplies for Kids, Toys Set, Art Decorations for Room, Birthday Easter Gifts for Girls and Boys Age 5+",
+          "clickShareRank": 1,
+          "clickShare": 0.1739,
+          "conversionShare": 0.1
+        },
+        {
+          "asin": "B0BZRXFC7Y",
+          "clickedItemName": "QUEFE Fuse Beads Kit 15000 Pcs 72 Colors 5mm Beads Craft Kit Including Pegboard, Melting Beads, Ironing Paper, Tweezers & Colorful Hooks, Christmas Home School Arts and Crafts Supplies for Girls",
+          "clickShareRank": 2,
+          "clickShare": 0.1594,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B09THLVFZK",
+          "clickedItemName": "24,000 Mini Fuse Beads Kit for Adults - 48 Colors Tiny 2.6mm Beads, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty, Iron Craft - Bulk Storage",
+          "clickShareRank": 3,
+          "clickShare": 0.087,
+          "conversionShare": 0.1
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09THLVFZK"
+      ]
+    },
+    {
+      "searchTerm": "felt sewing kit for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1027621,
+      "topClickedAsins": [
+        {
+          "asin": "B08BC56MQ8",
+          "clickedItemName": "CiyvoLyeen Woodland Animals Craft Kit Kids DIY Crafting and Sewing Set Woodland Animals Felt Plushie for Girls and Boys Educational Beginners Sewing Set Sewing Kits for Kids Age 8 9 10 11 12",
+          "clickShareRank": 1,
+          "clickShare": 0.0746,
+          "conversionShare": 0.0714
+        },
+        {
+          "asin": "B09WQSBZY7",
+          "clickedItemName": "Fairy Sewing Kits for Little Girls 5 Easy Projects for Childrens Kid Crafts Make Your Own Felt Pillow Plush Craft Kit My First Sewing Kit Learn to Sew",
+          "clickShareRank": 2,
+          "clickShare": 0.0597,
+          "conversionShare": 0.1429
+        },
+        {
+          "asin": "B08P4RWH6L",
+          "clickedItemName": "CiyvoLyeen Polar Animals Sewing Kit for Kids Make Your Own Winter Polar Animals Felt Plush Craft Kit Includes 14 Creative Projects to Sewing Beginners Fun DIY Educational Gift for Boys and Girls",
+          "clickShareRank": 3,
+          "clickShare": 0.0448,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09WQSBZY7"
+      ]
+    },
+    {
+      "searchTerm": "needlepoint kits for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1059415,
+      "topClickedAsins": [
+        {
+          "asin": "B00JYGPLUK",
+          "clickedItemName": "ALEX Toys Simply Needlepoint Butterfly Kids Art and Craft Activity",
+          "clickShareRank": 1,
+          "clickShare": 0.1692,
+          "conversionShare": 0.4286
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 2,
+          "clickShare": 0.1385,
+          "conversionShare": 0.1429
+        },
+        {
+          "asin": "B079CB9QVW",
+          "clickedItemName": "ColorBok 73428 Sew Cute Needlepoint Paul Panda",
+          "clickShareRank": 3,
+          "clickShare": 0.0923,
+          "conversionShare": 0.1429
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "beginner cross stitch kits for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1093121,
+      "topClickedAsins": [
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 1,
+          "clickShare": 0.1746,
+          "conversionShare": 0.2857
+        },
+        {
+          "asin": "B08T5QC9FS",
+          "clickedItemName": "Pllieay Cross Stitch Beginner Kit for Kids 7-13, Includes 6pcs Project Cross Stitch Pattern and 2pcs Hoops, 12 Skeins, Needle Point Starter Kit Sewing Set with Instructions for Christmas Gift",
+          "clickShareRank": 2,
+          "clickShare": 0.127,
+          "conversionShare": 0.1429
+        },
+        {
+          "asin": "B09M8DKHH6",
+          "clickedItemName": "Chuangdi 6 Sets Cross Stitch Kits for Beginners Embroidery Kit Cross Stitch for Beginner Embroidery Stitches Practice Needlepoint for Starters",
+          "clickShareRank": 3,
+          "clickShare": 0.0952,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "sewing cards for kids ages 3-5",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1093121,
+      "topClickedAsins": [
+        {
+          "asin": "B0CP8VJ56S",
+          "clickedItemName": "SpriteGru 9 PCS Kids Lacing Cards, 9 Double Sided Farm Animals Sewing Cards with 9 Colorful Laces, Educational & Learning Toys for Preschoolers, Kids Ages 3+",
+          "clickShareRank": 1,
+          "clickShare": 0.1587,
+          "conversionShare": 0.1111
+        },
+        {
+          "asin": "B0FQC7YFX6",
+          "clickedItemName": "Princess Lacing Card Kit for Kids Arts & Crafts, 8 Easy Lacing Projects with Gem Stickers, Paper Art Craft Cards for Toddlers, Fine Motor Preschool Skills, Mess-Free Travel Activity",
+          "clickShareRank": 2,
+          "clickShare": 0.127,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0B2Z5P5VN",
+          "clickedItemName": "Pajean 10 Pieces Kids Animal Lacing Cards Cardboard Sewing Cards Sturdy Double Sided Lacing Playing Games for Children Developing Imagination Education Supplies(Farm Style)",
+          "clickShareRank": 3,
+          "clickShare": 0.0794,
+          "conversionShare": 0.0556
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B0FQC7YFX6"
+      ]
+    },
+    {
+      "searchTerm": "fuse bead",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1148226,
+      "topClickedAsins": [
+        {
+          "asin": "B07YDDPPWX",
+          "clickedItemName": "Meland Fuse Beads Kit - 11,000 pcs 36 Color Beads for Craft for Girls Age 5-12 Year Old,5MM Melty Beads Set Including 5 Pegboards, Ironing Paper & Chain Accessories Iron Beads Christmas Birthday Gift",
+          "clickShareRank": 1,
+          "clickShare": 0.1333,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B09THLVFZK",
+          "clickedItemName": "24,000 Mini Fuse Beads Kit for Adults - 48 Colors Tiny 2.6mm Beads, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty, Iron Craft - Bulk Storage",
+          "clickShareRank": 2,
+          "clickShare": 0.0833,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B07VLVMY3C",
+          "clickedItemName": "FUNZBO 23000 5mm Fuse Beads Kit - 22 Colors | 106 Patterns, Easter School Arts and Crafts Supplies for Kids, Toys Set, Art Decorations for Room, Birthday Easter Gifts for Girls and Boys Age 5+",
+          "clickShareRank": 3,
+          "clickShare": 0.0667,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09THLVFZK"
+      ]
+    },
+    {
+      "searchTerm": "kids needlepoint kits age 5-8",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1230531,
+      "topClickedAsins": [
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 1,
+          "clickShare": 0.3214,
+          "conversionShare": 0.3125
+        },
+        {
+          "asin": "B0CG9FN2CH",
+          "clickedItemName": "Pllieay 10-in-1 Cross Stitch Beginner Kit for Kids, Embroidery Kit Includes 10pcs Plastic Mesh Canvas with Pattern, 15 Yarns, 5 Weaving Needles, Needle Points Starter Sewing Set with Instructions",
+          "clickShareRank": 2,
+          "clickShare": 0.125,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0DFHN42QB",
+          "clickedItemName": "EZCRA Beginner Needlepoint Cross Stitch Kit for Kids Ages 5-8 \u2013 Easy Embroidery Starter Set with Jumbo Plastic Needles, Pre-Printed Patterns, Instructions \u2013 DIY Arts & Crafts Gift for Girls & Boys",
+          "clickShareRank": 3,
+          "clickShare": 0.0714,
+          "conversionShare": 0.125
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "kids needlepoint kit",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1253001,
+      "topClickedAsins": [
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 1,
+          "clickShare": 0.1636,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B00JYGPLUK",
+          "clickedItemName": "ALEX Toys Simply Needlepoint Butterfly Kids Art and Craft Activity",
+          "clickShareRank": 2,
+          "clickShare": 0.1455,
+          "conversionShare": 0.1429
+        },
+        {
+          "asin": "B09HVCCNM2",
+          "clickedItemName": "Pre Printed Needlepoint Wallet Kit for Kids Embroidery Arts and Crafts Set Cross Stitch Sewing Latch Hook Kit (Unicorn)",
+          "clickShareRank": 3,
+          "clickShare": 0.1091,
+          "conversionShare": 0.1429
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "twigglestuff sewing kit for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1253001,
+      "topClickedAsins": [
+        {
+          "asin": "B0D5HLV2GX",
+          "clickedItemName": "Garma Animal Sewing Kit for Kids - 14 in 1 Kids Sewing Crafts Kit for Beginners - Mini Sewing Kits for Kid 5-8 8-12 - Easy Sew Your Own Felt Animals DIY Craft Set for Boys & Girls Birthday",
+          "clickShareRank": 1,
+          "clickShare": 0.1818,
+          "conversionShare": 0.1
+        },
+        {
+          "asin": "B0DT6Q6YRH",
+          "clickedItemName": "LURVUO DIY Doll Sewing Toys, Animal Sewing Kit for Kids Beginner Arts & Crafts Felt Sewing Craft Kits Educational Toys Sewing Kit for Kids Boys Girls Childrens DIY Crafting and Sewing",
+          "clickShareRank": 2,
+          "clickShare": 0.1273,
+          "conversionShare": 0.2
+        },
+        {
+          "asin": "B09WQSBZY7",
+          "clickedItemName": "Fairy Sewing Kits for Little Girls 5 Easy Projects for Childrens Kid Crafts Make Your Own Felt Pillow Plush Craft Kit My First Sewing Kit Learn to Sew",
+          "clickShareRank": 3,
+          "clickShare": 0.1273,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09WQSBZY7"
+      ]
+    },
+    {
+      "searchTerm": "kids embroidery kits age 5-8",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1300170,
+      "topClickedAsins": [
+        {
+          "asin": "B09X55KL2C",
+          "clickedItemName": "10 Pre-Stamped Embroidery Patterns for Beginners Embroidery Kit for Kids Girls Needlepoint Kits for Beginners Cross Stitch Craft Sewing Perfect for Ages 7-13",
+          "clickShareRank": 1,
+          "clickShare": 0.2075,
+          "conversionShare": 0.125
+        },
+        {
+          "asin": "B0DP654CSV",
+          "clickedItemName": "Louise Maelys 12 Pre-Stamped Embroidery Kits for Beginners, Cross Stitch for Kids Girls,DIY Needlepoint Craft Sewing,Practice Kit Supplies,Funny Cute Pattern,Perfect for Ages 8-12",
+          "clickShareRank": 2,
+          "clickShare": 0.1509,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 3,
+          "clickShare": 0.0755,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "embroidery kit kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1378118,
+      "topClickedAsins": [
+        {
+          "asin": "B09X55KL2C",
+          "clickedItemName": "10 Pre-Stamped Embroidery Patterns for Beginners Embroidery Kit for Kids Girls Needlepoint Kits for Beginners Cross Stitch Craft Sewing Perfect for Ages 7-13",
+          "clickShareRank": 1,
+          "clickShare": 0.26,
+          "conversionShare": 0.125
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 2,
+          "clickShare": 0.12,
+          "conversionShare": 0.125
+        },
+        {
+          "asin": "B0DP654CSV",
+          "clickedItemName": "Louise Maelys 12 Pre-Stamped Embroidery Kits for Beginners, Cross Stitch for Kids Girls,DIY Needlepoint Craft Sewing,Practice Kit Supplies,Funny Cute Pattern,Perfect for Ages 8-12",
+          "clickShareRank": 3,
+          "clickShare": 0.08,
+          "conversionShare": 0.125
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "embroidery for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1497142,
+      "topClickedAsins": [
+        {
+          "asin": "B09X55KL2C",
+          "clickedItemName": "10 Pre-Stamped Embroidery Patterns for Beginners Embroidery Kit for Kids Girls Needlepoint Kits for Beginners Cross Stitch Craft Sewing Perfect for Ages 7-13",
+          "clickShareRank": 1,
+          "clickShare": 0.2609,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0DP654CSV",
+          "clickedItemName": "Louise Maelys 12 Pre-Stamped Embroidery Kits for Beginners, Cross Stitch for Kids Girls,DIY Needlepoint Craft Sewing,Practice Kit Supplies,Funny Cute Pattern,Perfect for Ages 8-12",
+          "clickShareRank": 2,
+          "clickShare": 0.087,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 3,
+          "clickShare": 0.0652,
+          "conversionShare": 0.2
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "sewing cards for kids ages 4-8",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1497142,
+      "topClickedAsins": [
+        {
+          "asin": "B0CP8VJ56S",
+          "clickedItemName": "SpriteGru 9 PCS Kids Lacing Cards, 9 Double Sided Farm Animals Sewing Cards with 9 Colorful Laces, Educational & Learning Toys for Preschoolers, Kids Ages 3+",
+          "clickShareRank": 1,
+          "clickShare": 0.1957,
+          "conversionShare": 0.0714
+        },
+        {
+          "asin": "B0FQC7YFX6",
+          "clickedItemName": "Princess Lacing Card Kit for Kids Arts & Crafts, 8 Easy Lacing Projects with Gem Stickers, Paper Art Craft Cards for Toddlers, Fine Motor Preschool Skills, Mess-Free Travel Activity",
+          "clickShareRank": 2,
+          "clickShare": 0.1522,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B075DCH5T4",
+          "clickedItemName": "Serabeena Sew Your Own Purses - Sewing Kit for Kids - Felt Crafts for Kids - Sewing Ages 4-8 Plus - Felt Kit - Helps Develop Fine Motor Skills - DIY Kits with 6 Purses & Accessories",
+          "clickShareRank": 3,
+          "clickShare": 0.1304,
+          "conversionShare": 0.1429
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B0FQC7YFX6"
+      ]
+    },
+    {
+      "searchTerm": "needlepoint for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1564191,
+      "topClickedAsins": [
+        {
+          "asin": "B0F6YTG1CH",
+          "clickedItemName": "CRAFTILOO My First Cross Stitch Kit for Kids Ages 6\u201312 \u2013 Beginner Needlepoint Set with Pre-Cut Felt, Thread & Keyrings \u2013 Makes 4 Colorful Designs: Unicorn, Rainbow, Winged Heart",
+          "clickShareRank": 1,
+          "clickShare": 0.2045,
+          "conversionShare": 0.1429
+        },
+        {
+          "asin": "B00JYGPLUK",
+          "clickedItemName": "ALEX Toys Simply Needlepoint Butterfly Kids Art and Craft Activity",
+          "clickShareRank": 2,
+          "clickShare": 0.0909,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 3,
+          "clickShare": 0.0682,
+          "conversionShare": 0.2857
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "cross stitch kits for beginners kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1599813,
+      "topClickedAsins": [
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 1,
+          "clickShare": 0.2093,
+          "conversionShare": 0.3636
+        },
+        {
+          "asin": "B08T5QC9FS",
+          "clickedItemName": "Pllieay Cross Stitch Beginner Kit for Kids 7-13, Includes 6pcs Project Cross Stitch Pattern and 2pcs Hoops, 12 Skeins, Needle Point Starter Kit Sewing Set with Instructions for Christmas Gift",
+          "clickShareRank": 2,
+          "clickShare": 0.0698,
+          "conversionShare": 0.1818
+        },
+        {
+          "asin": "B09M8DKHH6",
+          "clickedItemName": "Chuangdi 6 Sets Cross Stitch Kits for Beginners Embroidery Kit Cross Stitch for Beginner Embroidery Stitches Practice Needlepoint for Starters",
+          "clickShareRank": 3,
+          "clickShare": 0.0465,
+          "conversionShare": 0.0909
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "beginner cross stitch",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1676259,
+      "topClickedAsins": [
+        {
+          "asin": "B0CZHKSSL4",
+          "clickedItemName": "CYANFOUR Embroidery Kit for Beginners, 4 Stages to Learn 38 Stitches, with Step-by-Step Instructions and Clear Videos, Includes Multiple Accessories, Gift for Craft Lovers.",
+          "clickShareRank": 1,
+          "clickShare": 0.0976,
+          "conversionShare": 0.1429
+        },
+        {
+          "asin": "B09F9YBHRN",
+          "clickedItemName": "Kraftex Stamped Cross Stitch Kits for Beginners (Flower Theme - 6.75 Inch - 4 Pack 1 x Embroidery Hoop) Embroidery Needlepoint Patterns for Adults, Includes Poppy, Rose, Sunflower and Pansy",
+          "clickShareRank": 2,
+          "clickShare": 0.0732,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 3,
+          "clickShare": 0.0488,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "pixel art beads",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1804297,
+      "topClickedAsins": [
+        {
+          "asin": "B07VLVMY3C",
+          "clickedItemName": "FUNZBO 23000 5mm Fuse Beads Kit - 22 Colors | 106 Patterns, Easter School Arts and Crafts Supplies for Kids, Toys Set, Art Decorations for Room, Birthday Easter Gifts for Girls and Boys Age 5+",
+          "clickShareRank": 1,
+          "clickShare": 0.1316,
+          "conversionShare": 0.25
+        },
+        {
+          "asin": "B07YDDPPWX",
+          "clickedItemName": "Meland Fuse Beads Kit - 11,000 pcs 36 Color Beads for Craft for Girls Age 5-12 Year Old,5MM Melty Beads Set Including 5 Pegboards, Ironing Paper & Chain Accessories Iron Beads Christmas Birthday Gift",
+          "clickShareRank": 2,
+          "clickShare": 0.1316,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B09THLVFZK",
+          "clickedItemName": "24,000 Mini Fuse Beads Kit for Adults - 48 Colors Tiny 2.6mm Beads, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty, Iron Craft - Bulk Storage",
+          "clickShareRank": 3,
+          "clickShare": 0.1316,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09THLVFZK"
+      ]
+    },
+    {
+      "searchTerm": "mini perler beads kit",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 1851159,
+      "topClickedAsins": [
+        {
+          "asin": "B0C5WQD914",
+          "clickedItemName": "INSCRAFT 28,000 Mini Fuse Beads, 2.6mm 48 Colors Melty Beads with 7 Pegboards 15 Ironing Sheets 2 Tweezers 2 Ironing Papers & 6 Chain Accessories",
+          "clickShareRank": 1,
+          "clickShare": 0.3514,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B09THLVFZK",
+          "clickedItemName": "24,000 Mini Fuse Beads Kit for Adults - 48 Colors Tiny 2.6mm Beads, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty, Iron Craft - Bulk Storage",
+          "clickShareRank": 2,
+          "clickShare": 0.2162,
+          "conversionShare": 0.3333
+        },
+        {
+          "asin": "B0D5LF666P",
+          "clickedItemName": "FUNZBO 28000 2.6mm Mini Size Fuse Beads Set - 48 Colors, Easter Toys, Arts and Crafts, Kids Room Decorations, Gifts for Girls, Boys, Kids and Teens (Non Standard Size)",
+          "clickShareRank": 3,
+          "clickShare": 0.0811,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09THLVFZK"
+      ]
+    },
+    {
+      "searchTerm": "embroidery kits for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 2007961,
+      "topClickedAsins": [
+        {
+          "asin": "B09X55KL2C",
+          "clickedItemName": "10 Pre-Stamped Embroidery Patterns for Beginners Embroidery Kit for Kids Girls Needlepoint Kits for Beginners Cross Stitch Craft Sewing Perfect for Ages 7-13",
+          "clickShareRank": 1,
+          "clickShare": 0.4118,
+          "conversionShare": 0.3333
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 2,
+          "clickShare": 0.0588,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B08TC7423N",
+          "clickedItemName": "Pllieay 10 PCS Cross Stitch Kits for Beginners, Embroidery Beginner Kits for Kids 7-13, Include Instructions, Cross Stitch Kits with Pattern, Needlepoint Kits for Embroidery Projects",
+          "clickShareRank": 3,
+          "clickShare": 0.0588,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "kids cross stitch",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 2126963,
+      "topClickedAsins": [
+        {
+          "asin": "B0DFHN42QB",
+          "clickedItemName": "EZCRA Beginner Needlepoint Cross Stitch Kit for Kids Ages 5-8 \u2013 Easy Embroidery Starter Set with Jumbo Plastic Needles, Pre-Printed Patterns, Instructions \u2013 DIY Arts & Crafts Gift for Girls & Boys",
+          "clickShareRank": 1,
+          "clickShare": 0.1875,
+          "conversionShare": 0.25
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 2,
+          "clickShare": 0.125,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0F6YTG1CH",
+          "clickedItemName": "CRAFTILOO My First Cross Stitch Kit for Kids Ages 6\u201312 \u2013 Beginner Needlepoint Set with Pre-Cut Felt, Thread & Keyrings \u2013 Makes 4 Colorful Designs: Unicorn, Rainbow, Winged Heart",
+          "clickShareRank": 3,
+          "clickShare": 0.125,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    },
+    {
+      "searchTerm": "2.6 mm fuse beads",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 2191686,
+      "topClickedAsins": [
+        {
+          "asin": "B09THLVFZK",
+          "clickedItemName": "24,000 Mini Fuse Beads Kit for Adults - 48 Colors Tiny 2.6mm Beads, 5 Pegboards, 2 Tweezers - Compatible with Hama, Melty, Iron Craft - Bulk Storage",
+          "clickShareRank": 1,
+          "clickShare": 0.1935,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0FQ2YBX9W",
+          "clickedItemName": "Psykade Fuse Beads Kit-Easy DIY-96 Colors 53000 2.6mm, 200+ Patterns, Built-in Iron | DIY Crafts Supplies for Women, Art Decorations for Room, Ideal Gift,Pixel Art\uff0cAll-in-One",
+          "clickShareRank": 2,
+          "clickShare": 0.129,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0C39Q2QZJ",
+          "clickedItemName": "Lenwen 72000 Pcs Assorted Mini Fuse Beads 2.6 mm 72 Colors Fuse Beads Craft Set Bulk for Crafts Kids Christmas Birthday Gift Arts Supplies, Multicolor",
+          "clickShareRank": 3,
+          "clickShare": 0.0968,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09THLVFZK"
+      ]
+    },
+    {
+      "searchTerm": "sewing cards",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 2260279,
+      "topClickedAsins": [
+        {
+          "asin": "1452108196",
+          "clickedItemName": "The World of Eric Carle(TM) The Very Hungry Caterpillar(TM) Lacing Cards: (Occupational Therapy Toys for Toddlers, Fine Motor Skills Toys for Kids)",
+          "clickShareRank": 1,
+          "clickShare": 0.1667,
+          "conversionShare": 0.25
+        },
+        {
+          "asin": "B0FQC7YFX6",
+          "clickedItemName": "Princess Lacing Card Kit for Kids Arts & Crafts, 8 Easy Lacing Projects with Gem Stickers, Paper Art Craft Cards for Toddlers, Fine Motor Preschool Skills, Mess-Free Travel Activity",
+          "clickShareRank": 2,
+          "clickShare": 0.1333,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0B2Z5P5VN",
+          "clickedItemName": "Pajean 10 Pieces Kids Animal Lacing Cards Cardboard Sewing Cards Sturdy Double Sided Lacing Playing Games for Children Developing Imagination Education Supplies(Farm Style)",
+          "clickShareRank": 3,
+          "clickShare": 0.1,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B0FQC7YFX6"
+      ]
+    },
+    {
+      "searchTerm": "toddler sewing",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 2332482,
+      "topClickedAsins": [
+        {
+          "asin": "B0DDPFNTFW",
+          "clickedItemName": "Montessori Wooden Lacing Toys for Toddlers and Kids Ages 2-4 5-7, Sewing Kit Fine Motor Skill Busy Board, Education Sensory Preschool Toy for 1 2 3 4 Year Olds, Birthday Gift for Boys and Girls",
+          "clickShareRank": 1,
+          "clickShare": 0.2069,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0DR3NGBX6",
+          "clickedItemName": "Fisher-Price Wood Preschool Toy Lacing Activity Cards, Tiny Garden 10-Piece Set for Fine Motor Skill Development Kids Ages 3+ Years (Amazon Exclusive)",
+          "clickShareRank": 2,
+          "clickShare": 0.1379,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B0FQC7YFX6",
+          "clickedItemName": "Princess Lacing Card Kit for Kids Arts & Crafts, 8 Easy Lacing Projects with Gem Stickers, Paper Art Craft Cards for Toddlers, Fine Motor Preschool Skills, Mess-Free Travel Activity",
+          "clickShareRank": 3,
+          "clickShare": 0.1034,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B0FQC7YFX6"
+      ]
+    },
+    {
+      "searchTerm": "yarn crafts for kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 2408891,
+      "topClickedAsins": [
+        {
+          "asin": "B0F8R652FX",
+          "clickedItemName": "CRAFTILOO Latch Hook Kit for Kids Rug DIY Pillow Craft with Hook, Precut Yarn, Easy to Follow Pattern Cute Designs with Rainbow Heart Ages 6+",
+          "clickShareRank": 1,
+          "clickShare": 0.1786,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B09VRYHMDT",
+          "clickedItemName": "Yinsun 12 Acrylic Yarn Skeins, 12 Colors Starter Mini Crochet Bulk Yarn for Child, Adult Knitting Crochet Crafts (12 x 15g)",
+          "clickShareRank": 2,
+          "clickShare": 0.0714,
+          "conversionShare": 0.3333
+        },
+        {
+          "asin": "B06XRRN4VL",
+          "clickedItemName": "LatchKits Latch Hook Kits for Kids \u2013 Kids Crafts, Arts and Crafts, Yarn Art, Wall Hanging & Mini-Rugs, Craft Supplies, Pre-Cut Yarn, Easy Pattern, Hook Included, Arts & Craft, Ages 6+, Unicorn",
+          "clickShareRank": 3,
+          "clickShare": 0.0714,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B0F8R652FX"
+      ]
+    },
+    {
+      "searchTerm": "sewing kids",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 2577486,
+      "topClickedAsins": [
+        {
+          "asin": "B09WQSBZY7",
+          "clickedItemName": "Fairy Sewing Kits for Little Girls 5 Easy Projects for Childrens Kid Crafts Make Your Own Felt Pillow Plush Craft Kit My First Sewing Kit Learn to Sew",
+          "clickShareRank": 1,
+          "clickShare": 0.1154,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "1338106449",
+          "clickedItemName": "Sew Mini Animals",
+          "clickShareRank": 2,
+          "clickShare": 0.0769,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B091GXM2Y6",
+          "clickedItemName": "KRAFUN My First Sewing Kit for Beginner Kids Arts & Crafts, 7 Easy DIY Projects of Stuffed Animal Dolls and Plush Pillow Craft, Instructions & Felt, Gift for Girls, Boys, Learn to Sew, Embroidery",
+          "clickShareRank": 3,
+          "clickShare": 0.0769,
+          "conversionShare": 0.0
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B09WQSBZY7"
+      ]
+    },
+    {
+      "searchTerm": "kids embroidery kits ages 8-12",
+      "department": "Amazon.com",
+      "searchFrequencyRank": 2670140,
+      "topClickedAsins": [
+        {
+          "asin": "B09X55KL2C",
+          "clickedItemName": "10 Pre-Stamped Embroidery Patterns for Beginners Embroidery Kit for Kids Girls Needlepoint Kits for Beginners Cross Stitch Craft Sewing Perfect for Ages 7-13",
+          "clickShareRank": 1,
+          "clickShare": 0.28,
+          "conversionShare": 0.2
+        },
+        {
+          "asin": "B0D8171TF1",
+          "clickedItemName": "KRAFUN Beginner Embroidery Kit for Kids & Adults - Learn to Stitch Starter Set with 7 Pre-Printed Patterns & Tote Bag - DIY Hand Sewing Practice Project with Hoop, Tool Box & Instructions",
+          "clickShareRank": 2,
+          "clickShare": 0.12,
+          "conversionShare": 0.0
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "clickedItemName": "Cross Stitch Kits For Beginners. 5 Stamped Cross Stitch Kits for Kids.Needlepoint Kits For Beginners. Embroidery Kit For Kids. Crossstitch Kit For Beginners. Girls cross stitch kit Backpack Charms",
+          "clickShareRank": 3,
+          "clickShare": 0.08,
+          "conversionShare": 0.2
+        }
+      ],
+      "ourAsinsInTop3": [
+        "B08DDJCQKF"
+      ]
+    }
+  ],
+  "competitorDataComplete": true
+}
