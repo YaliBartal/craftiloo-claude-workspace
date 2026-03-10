@@ -1,8 +1,8 @@
 name: Daily PPC Health
 
 on:
-  schedule:
-    - cron: '30 6 * * *'  # 8:30 AM Israel time (UTC+2)
+  # schedule:
+  #   - cron: '30 6 * * *'  # 8:30 AM Israel time (UTC+2) — disabled 2026-03-10
   workflow_dispatch:
 
 permissions:
