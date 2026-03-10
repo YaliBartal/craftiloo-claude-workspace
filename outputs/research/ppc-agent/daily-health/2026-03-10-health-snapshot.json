@@ -1,0 +1,283 @@
+{
+  "date": "2026-03-10",
+  "data_source": "Weekly PPC (Mar 8, data Feb 27-Mar 5) + Market Intel (Mar 9) + Health Snapshot (Mar 8)",
+  "api_status": {
+    "amazon_ads_api": "UNAVAILABLE — credentials not set",
+    "datadive_rank_radars": "UNAVAILABLE — 403 Forbidden",
+    "market_intel_snapshot": "OK — 2026-03-09",
+    "weekly_ppc_summary": "OK — 2026-03-08"
+  },
+  "account": {
+    "total_spend_7d": 5033,
+    "total_sales_7d": 14720,
+    "acos_7d": 34.2,
+    "tacos": 16.8,
+    "organic_ratio": 70.2,
+    "net_profit_7d": 7275,
+    "profit_margin": 23.1,
+    "active_campaigns": 173,
+    "total_daily_budget": 2722,
+    "net_top10_estimated": 235,
+    "net_top10_mar8": 232,
+    "net_top10_change": 3,
+    "note": "ACoS/TACoS/Organic from weekly PPC (Feb 27-Mar 5). Campaign count from Mar 8. Live data unavailable."
+  },
+  "portfolios": [
+    {
+      "name": "Catch All Auto",
+      "stage": "General",
+      "acos": 20.4,
+      "budget_daily": 355,
+      "campaigns": 6,
+      "status": "GREEN",
+      "tos_health": "No Live Data",
+      "note": "Top discovery engine"
+    },
+    {
+      "name": "Fuse Beads",
+      "stage": "Scaling",
+      "acos": 24.6,
+      "budget_daily": 258,
+      "campaigns": 16,
+      "status": "GREEN",
+      "tos_health": "No Live Data",
+      "rank_top10": 9,
+      "rank_change_vs_mar8": -1,
+      "note": "Reclaimed SERP #1 on mini perler beads despite -1 radar"
+    },
+    {
+      "name": "Fairy Family",
+      "stage": "Scaling",
+      "acos": 31.2,
+      "budget_daily": 297,
+      "campaigns": 20,
+      "status": "GREEN",
+      "tos_health": "No Live Data",
+      "rank_top10": 37,
+      "rank_change_vs_mar8": 3,
+      "note": "New account record 37 top-10 keywords. Re-audit DUE TODAY."
+    },
+    {
+      "name": "Embroidery for Kids",
+      "stage": "Scaling",
+      "acos": 33.6,
+      "budget_daily": 111,
+      "campaigns": 8,
+      "status": "GREEN",
+      "tos_health": "No Live Data",
+      "rank_top10": 25,
+      "rank_change_vs_mar8": -1,
+      "note": "Significant improvement (42.1% -> 33.6%). TOS reductions working."
+    },
+    {
+      "name": "Cross & Embroidery Kits",
+      "stage": "Launch",
+      "acos": 34.6,
+      "budget_daily": 155,
+      "campaigns": 9,
+      "status": "GREEN",
+      "tos_health": "No Live Data",
+      "rank_top10": 7,
+      "rank_change_vs_mar8": 0,
+      "note": "Healthy ACoS for Launch stage"
+    },
+    {
+      "name": "Biggie Beads",
+      "stage": "Scaling",
+      "acos": 36.1,
+      "budget_daily": 106,
+      "campaigns": 7,
+      "status": "YELLOW",
+      "tos_health": "No Live Data",
+      "rank_top10": 13,
+      "rank_change_vs_mar8": 0,
+      "note": "ACoS above 35% and rising trajectory (+13.8pp since Feb 20)"
+    },
+    {
+      "name": "Bunny Knitting",
+      "stage": "Scaling",
+      "acos": 37.3,
+      "budget_daily": 79,
+      "campaigns": 3,
+      "status": "YELLOW",
+      "tos_health": "No Live Data",
+      "rank_top10": 21,
+      "rank_change_vs_mar8": 0,
+      "note": "Slightly above 35% target; recovering (assumed flat, no Mar 9 radar)"
+    },
+    {
+      "name": "Cat & Hat Knitting",
+      "stage": "Late Launch",
+      "acos": 38.6,
+      "budget_daily": 172,
+      "campaigns": 13,
+      "status": "YELLOW",
+      "tos_health": "No Live Data",
+      "rank_top10": 19,
+      "rank_change_vs_mar8": 3,
+      "note": "+3 top-10 today; ACoS rising trajectory — monitor"
+    },
+    {
+      "name": "Latch Hook Kits",
+      "stage": "Scaling",
+      "acos": 41.5,
+      "budget_daily": 229,
+      "campaigns": 13,
+      "status": "YELLOW",
+      "tos_health": "No Live Data",
+      "rank_top10": 10,
+      "rank_change_vs_mar8": -1,
+      "note": "Elevated ACoS; Latch Hook heroes #1+#2 on main SERP today is very positive"
+    },
+    {
+      "name": "Shield All",
+      "stage": "General",
+      "acos": 34.2,
+      "budget_daily": 50,
+      "campaigns": 11,
+      "status": "YELLOW",
+      "tos_health": "No Live Data",
+      "note": "Review gate Mar 12"
+    },
+    {
+      "name": "Princess Lacing",
+      "stage": "Launch",
+      "acos": 59.0,
+      "budget_daily": 168,
+      "campaigns": 10,
+      "status": "YELLOW",
+      "tos_health": "No Live Data",
+      "rank_top10": 6,
+      "rank_change_vs_mar8": 0,
+      "note": "Listing pushed Mar 8 (2 days). ACoS at boundary. Monitor 5 more days."
+    },
+    {
+      "name": "Latch Hook Pillow",
+      "stage": "Late Launch",
+      "acos": 46.1,
+      "budget_daily": 95,
+      "campaigns": 10,
+      "status": "YELLOW",
+      "tos_health": "No Live Data",
+      "rank_top10": 12,
+      "rank_change_vs_mar8": -2,
+      "note": "PP/ROS activated Mar 8. Rank -2 top-10. Give 3 more days."
+    },
+    {
+      "name": "Stitch Dictionary",
+      "stage": "Scaling",
+      "acos": null,
+      "budget_daily": 135,
+      "campaigns": 14,
+      "status": "YELLOW",
+      "tos_health": "No Live Data",
+      "note": "13/14 dormant. $135/day unspent. Strategy review needed."
+    },
+    {
+      "name": "Punch Needle",
+      "stage": "Unknown",
+      "acos": null,
+      "budget_daily": 40,
+      "campaigns": 2,
+      "status": "YELLOW",
+      "tos_health": "No Live Data",
+      "rank_top10": 0,
+      "rank_change_vs_mar8": 0,
+      "note": "Near-dormant. Stage unknown. Low priority."
+    },
+    {
+      "name": "Cross Stitch Backpack Charms",
+      "stage": "Scaling",
+      "acos": 26.8,
+      "budget_daily": 271,
+      "campaigns": 16,
+      "status": "RED",
+      "tos_health": "No Live Data",
+      "rank_top10": 36,
+      "rank_change_vs_mar8": 0,
+      "note": "STOCK CRITICAL: B08DDJCQKF 73 units at BSR 5286 (~2-3 days). Reduce budget to ~$150/day NOW."
+    },
+    {
+      "name": "Needlepoint",
+      "stage": "Scaling",
+      "acos": 68.7,
+      "budget_daily": 59,
+      "campaigns": 7,
+      "status": "RED",
+      "tos_health": "No Live Data",
+      "rank_top10": 0,
+      "rank_change_vs_mar8": 0,
+      "note": "68.7% ACoS (>50% Scaling threshold). 0 fulfillable stock, 124 inbound. Lower bids -31%."
+    },
+    {
+      "name": "4 Flowers",
+      "stage": "Scaling",
+      "acos": 48.0,
+      "budget_daily": 124,
+      "campaigns": 9,
+      "status": "RED",
+      "tos_health": "No Live Data",
+      "rank_top10": 0,
+      "rank_change_vs_mar8": 0,
+      "note": "Rank crisis day 28+. 0 top-10 keywords. Re-audit DUE TODAY. Run ppc-portfolio-action-plan."
+    },
+    {
+      "name": "Dessert Family",
+      "stage": "Scaling",
+      "acos": null,
+      "budget_daily": 0,
+      "campaigns": 0,
+      "status": "PAUSED",
+      "tos_health": "N/A",
+      "rank_top10": 0,
+      "note": "OOS since Mar 2. BSR 162K. All keywords rank 101+."
+    }
+  ],
+  "rank_radar_summary": [
+    {"product": "Fairy Sewing", "asin": "B09WQSBZY7", "top10": 37, "top50": 70, "vs_mar8": 3, "trend": "surging"},
+    {"product": "Cat & Hat Knitting", "asin": "B0F8DG32H5", "top10": 19, "top50": 56, "vs_mar8": 3, "trend": "rising"},
+    {"product": "10 Embroidery", "asin": "B09X55KL2C", "top10": 25, "top50": 52, "vs_mar8": -1, "trend": "strong"},
+    {"product": "Biggie Beads", "asin": "B07D6D95NG", "top10": 13, "top50": 24, "vs_mar8": 0, "trend": "stable"},
+    {"product": "Latch Hook Pencil", "asin": "B08FYH13CL", "top10": 10, "top50": 23, "vs_mar8": -1, "trend": "recovering (SERP #2 win)"},
+    {"product": "Mini Fuse Beads", "asin": "B09THLVFZK", "top10": 9, "top50": 16, "vs_mar8": -1, "trend": "reclaimed SERP #1"},
+    {"product": "Princess Lacing", "asin": "B0FQC7YFX6", "top10": 6, "top50": 30, "vs_mar8": 0, "trend": "flat"},
+    {"product": "4 Flowers", "asin": "B0DC69M3YD", "top10": 0, "top50": 36, "vs_mar8": 0, "trend": "crisis"},
+    {"product": "Dessert Sewing", "asin": "B096MYBLS1", "top10": 0, "top50": 0, "vs_mar8": 0, "trend": "collapsed"},
+    {"product": "Cross Stitch Kits", "asin": "B0B1927HCG", "top10": 36, "top50": 38, "vs_mar8": null, "trend": "assumed flat (no Mar 9 data)"},
+    {"product": "Bunny Knitting", "asin": "B0DKD2S3JT", "top10": 21, "top50": 39, "vs_mar8": null, "trend": "assumed flat"},
+    {"product": "Cross & Emb Kit", "asin": "B0F8QZZQQM", "top10": 7, "top50": 19, "vs_mar8": null, "trend": "assumed flat"},
+    {"product": "Latch Hook Pillow", "asin": "B0FHMRQWRX", "top10": 12, "top50": 31, "vs_mar8": null, "trend": "assumed flat"},
+    {"product": "Punch Needle", "asin": "B092SW839H", "top10": 0, "top50": 3, "vs_mar8": null, "trend": "assumed flat"},
+    {"product": "Needlepoint", "asin": "B09HVDNFMR", "top10": 0, "top50": 9, "vs_mar8": null, "trend": "assumed flat"}
+  ],
+  "serp_wins_today": [
+    {"asin": "B0F8R652FX", "keyword": "latch hook kits for kids", "position": 1, "vs_yesterday": "was #5"},
+    {"asin": "B08FYH13CL", "keyword": "latch hook kits for kids", "position": 2, "vs_yesterday": "was #17"},
+    {"asin": "B09THLVFZK", "keyword": "mini perler beads", "position": 1, "vs_yesterday": "was #2"}
+  ],
+  "red_flags": [
+    "Cross Stitch Backpack Charms: STOCK CRITICAL — 73 units ~2-3 days at BSR 5286. Reduce PPC budget immediately.",
+    "4 Flowers: Rank crisis day 28+. 0 top-10 keywords. Re-audit overdue (due today). Run ppc-portfolio-action-plan.",
+    "Needlepoint: 68.7% ACoS (Scaling >50%). 0 fulfillable stock. Lower bids -31% on all TOS + auto TOS."
+  ],
+  "yellow_flags": [
+    "Biggie Beads: ACoS rising trajectory +13.8pp (22.3% -> 36.1%). Bid review needed.",
+    "Latch Hook Kits: ACoS rising trajectory +10pp (31.5% -> 41.5%). Tighten bids.",
+    "Shield All: Review gate Mar 12 (2 days).",
+    "Cat & Hat Knitting: ACoS rising despite keyword gains. Monitor.",
+    "Princess Lacing: 59% ACoS at Launch boundary. Listing push 2 days old — give it time."
+  ],
+  "overdue_reviews": [
+    {"portfolio": "4 Flowers", "review_type": "re-audit", "due": "2026-03-10", "days_overdue": 0},
+    {"portfolio": "Fairy Family", "review_type": "post-listing re-audit", "due": "2026-03-10", "days_overdue": 0},
+    {"skill": "ppc-search-term-harvester", "last_run": "2026-03-05", "days_since": 5},
+    {"skill": "ppc-bid-recommender", "last_run": "2026-03-05", "days_since": 5}
+  ],
+  "infrastructure_issues": [
+    "Amazon Ads API credentials not set in .env — verify ADS_API_CLIENT_ID, ADS_API_CLIENT_SECRET, ADS_API_REFRESH_TOKEN",
+    "DataDive API 403 Forbidden — verify DATADIVE_API_KEY in .env",
+    "B0F8R652FX (Latch Hook Rainbow Heart) has no DataDive rank radar — add ASAP, now SERP #1"
+  ],
+  "pending_actions_count": 55,
+  "p1_savings_weekly_est": 530
+}
