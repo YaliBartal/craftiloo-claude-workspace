@@ -1,0 +1,159 @@
+{
+  "name": "Git Auto-Sync",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "*/2 * * * *"
+            }
+          ]
+        }
+      },
+      "id": "trigger-poll",
+      "name": "Every 2 Minutes",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        300
+      ],
+      "notes": "Polls every 2 minutes. git pull --ff-only is a no-op if already up to date."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/pull",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "exec-pull",
+      "name": "Git Pull",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-pull",
+              "leftValue": "={{ $json.output }}",
+              "rightValue": "Already up to date.",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-changed",
+      "name": "New Changes?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        720,
+        300
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "no-changes",
+      "name": "No Changes",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        960,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "#claude-alerts",
+          "mode": "name"
+        },
+        "text": "=:arrows_counterclockwise: *Git synced* \u2014 new code pulled to server.\n{{ $json.output }}",
+        "otherOptions": {}
+      },
+      "id": "slack-synced",
+      "name": "Notify: Synced",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [
+        960,
+        200
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "70HStxb2Cc2FCmeX",
+          "name": "Slack account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Every 2 Minutes": {
+      "main": [
+        [
+          {
+            "node": "Git Pull",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Git Pull": {
+      "main": [
+        [
+          {
+            "node": "New Changes?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New Changes?": {
+      "main": [
+        [
+          {
+            "node": "Notify: Synced",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Changes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Jerusalem",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  }
+}

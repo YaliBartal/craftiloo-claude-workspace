@@ -196,11 +196,14 @@ Claude Code Workspace/
 ├── .claude/
 │   └── skills/            # 28 project-specific skills (see Skill Routing below)
 │
-├── .github/
-│   └── workflows/         # GitHub Actions for automated skills
-│
 ├── automation/
-│   └── AUTOMATION-PLAN.md # Phase 1: GitHub Actions automation plan
+│   ├── AUTOMATION-PLAN.md # n8n automation plan + architecture + testing guide
+│   ├── config.yaml        # Skill runner config (timeouts, prompts, channels)
+│   ├── skill-api.py       # HTTP API bridge for n8n → host (port 5680)
+│   ├── skill-runner.py    # Production runner (locking, logging, git, Claude)
+│   ├── n8n-workflows/     # n8n workflow JSONs (master + chains + git-sync)
+│   ├── health-check.sh    # Daily server health ping to Slack
+│   └── setup.sh           # One-time server setup
 │
 ├── mcp-servers/           # 8 custom Python MCP servers (see MCP Services below)
 │   ├── amazon-ads-api/    ├── amazon-sp-api/
