@@ -305,13 +305,5 @@
   "settings": {
     "executionOrder": "v1",
     "timezone": "Asia/Jerusalem"
-  },
-  "tags": [
-    {
-      "name": "automation"
-    },
-    {
-      "name": "tuesday"
-    }
-  ]
+  }
 }
