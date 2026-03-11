@@ -7,7 +7,7 @@ defaults:
   log_dir: /var/log/claude
   model: claude-sonnet-4-6
   max_turns: 30
-  timeout_minutes: 15
+  timeout_minutes: 25
   git_pull: true
   git_commit: true
   git_push: true
@@ -51,7 +51,6 @@ defaults:
     the results summary to Slack.
     If the notification-hub fails, that's OK — do not retry notifications.
     EFFICIENCY RULES:
-    - Do NOT read or write LESSONS.md. Skip lessons entirely.
     - Keep Slack messages under 2000 chars.
     - Do NOT post to #claude-alerts. The automation handles failure alerts.
     - Target: complete in the fewest turns possible.
@@ -68,26 +67,25 @@ skills:
   # === DAILY (every day) ===
 
   daily-market-intel:
-    timeout_minutes: 15
+    timeout_minutes: 25
     max_turns: 30
     slack_channel: "#claude-morning-brief"
     schedule: "Daily 8:00 AM IST"
 
   ppc-daily-health:
-    timeout_minutes: 12
-    max_turns: 20
+    timeout_minutes: 20
+    max_turns: 25
     prompt: |
       Run the ppc-daily-health skill.
       EFFICIENCY RULES:
       - Do NOT update individual portfolio tracker JSON files. Only update agent-state.json.
-      - Target: complete in under 15 turns.
     slack_channel: "#claude-ppc-updates"
     schedule: "Daily 8:30 AM IST"
 
   # === MONDAY ===
 
   weekly-ppc-analysis:
-    timeout_minutes: 20
+    timeout_minutes: 30
     max_turns: 80
     slack_channel: "#claude-ppc-updates"
     schedule: "Monday 9:00 AM IST"
@@ -95,25 +93,25 @@ skills:
   # === TUESDAY (chain: 5 skills sequential) ===
 
   ppc-tacos-optimizer:
-    timeout_minutes: 15
+    timeout_minutes: 25
     max_turns: 30
     slack_channel: "#claude-ppc-updates"
     schedule: "Tuesday 9:00 AM IST"
 
   ppc-portfolio-summary:
-    timeout_minutes: 15
+    timeout_minutes: 25
     max_turns: 30
     slack_channel: "#claude-ppc-updates"
     schedule: "Tuesday 9:30 AM IST / Friday 9:00 AM IST"
 
   keyword-rank-optimizer:
-    timeout_minutes: 15
+    timeout_minutes: 25
     max_turns: 30
     slack_channel: "#claude-ppc-updates"
     schedule: "Tuesday 10:00 AM IST"
 
   ppc-bid-recommender:
-    timeout_minutes: 15
+    timeout_minutes: 25
     max_turns: 30
     prompt: |
       Run the ppc-bid-recommender skill in REPORT ONLY mode.
@@ -122,7 +120,7 @@ skills:
     schedule: "Tuesday 10:30 AM IST / Friday 10:00 AM IST"
 
   ppc-search-term-harvester:
-    timeout_minutes: 15
+    timeout_minutes: 25
     max_turns: 30
     prompt: |
       Run the ppc-search-term-harvester skill in REPORT ONLY mode.
@@ -133,7 +131,7 @@ skills:
   # === THURSDAY ===
 
   competitor-price-serp-tracker:
-    timeout_minutes: 25
+    timeout_minutes: 35
     max_turns: 40
     slack_channel: "#claude-competitor-watch"
     schedule: "Thursday 9:00 AM IST"
@@ -141,7 +139,7 @@ skills:
   # === SUNDAY ===
 
   brand-analytics-weekly:
-    timeout_minutes: 20
+    timeout_minutes: 30
     max_turns: 40
     slack_channel: "#claude-product-updates"
     schedule: "Sunday 9:00 AM IST"
@@ -149,7 +147,7 @@ skills:
   # === MONTHLY (1st of month) ===
 
   ppc-monthly-review:
-    timeout_minutes: 25
+    timeout_minutes: 35
     max_turns: 50
     git_add_paths:
       - outputs/
