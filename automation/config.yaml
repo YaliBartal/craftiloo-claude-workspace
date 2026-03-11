@@ -1,0 +1,159 @@
+# Craftiloo Skill Runner Configuration
+# Central config for all automated skill runs on the mini PC.
+# Adding a new skill = adding a YAML block under `skills:`.
+
+defaults:
+  workspace: /home/yali/workspace
+  log_dir: /var/log/claude
+  model: claude-sonnet-4-6
+  max_turns: 30
+  timeout_minutes: 15
+  git_pull: true
+  git_commit: true
+  git_push: true
+  git_add_paths:
+    - outputs/
+    - .claude/skills/
+  commit_prefix: "auto"
+  env_file: /home/yali/workspace/.env
+  lockfile: /tmp/claude-skill.lock
+  min_gap_minutes: 2
+  allowed_tools:
+    - "Read"
+    - "Write"
+    - "Edit"
+    - "Glob"
+    - "Grep"
+    - "Bash(python3*)"
+    - "Bash(pip3*)"
+    - "Bash(git*)"
+    - "Bash(ls*)"
+    - "Bash(cat*)"
+    - "Bash(mkdir*)"
+    - "Bash(date*)"
+    - "Bash(cd*)"
+    - "Bash(cp*)"
+    - "Bash(head*)"
+    - "Bash(tail*)"
+    - "Bash(wc*)"
+    - "Bash(sort*)"
+    - "Bash(curl*)"
+    - "mcp__amazon-ads-api__*"
+    - "mcp__amazon-sp-api__*"
+    - "mcp__sellerboard__*"
+    - "mcp__slack__*"
+    - "mcp__datadive__*"
+    - "mcp__notion__*"
+    - "mcp__apify__*"
+    - "mcp__asana__*"
+  prompt_suffix: |
+    After completing the skill, use the notification-hub skill to post
+    the results summary to Slack.
+    If the notification-hub fails, that's OK — do not retry notifications.
+    EFFICIENCY RULES:
+    - Do NOT read or write LESSONS.md. Skip lessons entirely.
+    - Keep Slack messages under 2000 chars.
+    - Do NOT post to #claude-alerts. The automation handles failure alerts.
+    - Target: complete in the fewest turns possible.
+
+# ---------------------------------------------------------------------------
+# Skill definitions
+# Each skill inherits all defaults. Override only what differs.
+# The `prompt` field is optional — if omitted, defaults to:
+#   "Run the {skill-name} skill."
+# ---------------------------------------------------------------------------
+
+skills:
+
+  # === DAILY (every day) ===
+
+  daily-market-intel:
+    timeout_minutes: 15
+    max_turns: 30
+    slack_channel: "#claude-morning-brief"
+    schedule: "Daily 8:00 AM IST"
+
+  ppc-daily-health:
+    timeout_minutes: 12
+    max_turns: 20
+    prompt: |
+      Run the ppc-daily-health skill.
+      EFFICIENCY RULES:
+      - Do NOT update individual portfolio tracker JSON files. Only update agent-state.json.
+      - Target: complete in under 15 turns.
+    slack_channel: "#claude-ppc-updates"
+    schedule: "Daily 8:30 AM IST"
+
+  # === MONDAY ===
+
+  weekly-ppc-analysis:
+    timeout_minutes: 20
+    max_turns: 80
+    slack_channel: "#claude-ppc-updates"
+    schedule: "Monday 9:00 AM IST"
+
+  # === TUESDAY (chain: 5 skills sequential) ===
+
+  ppc-tacos-optimizer:
+    timeout_minutes: 15
+    max_turns: 30
+    slack_channel: "#claude-ppc-updates"
+    schedule: "Tuesday 9:00 AM IST"
+
+  ppc-portfolio-summary:
+    timeout_minutes: 15
+    max_turns: 30
+    slack_channel: "#claude-ppc-updates"
+    schedule: "Tuesday 9:30 AM IST / Friday 9:00 AM IST"
+
+  keyword-rank-optimizer:
+    timeout_minutes: 15
+    max_turns: 30
+    slack_channel: "#claude-ppc-updates"
+    schedule: "Tuesday 10:00 AM IST"
+
+  ppc-bid-recommender:
+    timeout_minutes: 15
+    max_turns: 30
+    prompt: |
+      Run the ppc-bid-recommender skill in REPORT ONLY mode.
+      Do NOT apply any bid changes. Generate recommendations only.
+    slack_channel: "#claude-ppc-updates"
+    schedule: "Tuesday 10:30 AM IST / Friday 10:00 AM IST"
+
+  ppc-search-term-harvester:
+    timeout_minutes: 15
+    max_turns: 30
+    prompt: |
+      Run the ppc-search-term-harvester skill in REPORT ONLY mode.
+      Do NOT apply any negations or promotions. Generate recommendations only.
+    slack_channel: "#claude-ppc-updates"
+    schedule: "Tuesday 11:00 AM IST / Friday 10:30 AM IST"
+
+  # === THURSDAY ===
+
+  competitor-price-serp-tracker:
+    timeout_minutes: 25
+    max_turns: 40
+    slack_channel: "#claude-competitor-watch"
+    schedule: "Thursday 9:00 AM IST"
+
+  # === SUNDAY ===
+
+  brand-analytics-weekly:
+    timeout_minutes: 20
+    max_turns: 40
+    slack_channel: "#claude-product-updates"
+    schedule: "Sunday 9:00 AM IST"
+
+  # === MONTHLY (1st of month) ===
+
+  ppc-monthly-review:
+    timeout_minutes: 25
+    max_turns: 50
+    git_add_paths:
+      - outputs/
+      - context/business.md
+      - .claude/skills/
+    slack_channel: "#claude-ppc-updates"
+    schedule: "1st of month 10:00 AM IST"

@@ -1,0 +1,11 @@
+/var/log/claude/*.json {
+    weekly
+    rotate 12
+    compress
+    delaycompress
+    missingok
+    notifempty
+    dateext
+    dateformat -%Y%m%d
+    maxsize 100M
+}

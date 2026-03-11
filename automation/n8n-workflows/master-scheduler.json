@@ -1,0 +1,508 @@
+{
+  "name": "Craftiloo Skill Scheduler",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 6 * * *"
+            }
+          ]
+        }
+      },
+      "id": "trigger-daily-market-intel",
+      "name": "Daily 8AM: Market Intel",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 100],
+      "notes": "6:00 UTC = 8:00 AM IST"
+    },
+    {
+      "parameters": {
+        "command": "python3 /home/yali/workspace/automation/skill-runner.py daily-market-intel",
+        "timeout": 1200000
+      },
+      "id": "exec-daily-market-intel",
+      "name": "Run: daily-market-intel",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [480, 100]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-exit-market-intel",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-market-intel",
+      "name": "Success?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 100]
+    },
+
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "30 6 * * *"
+            }
+          ]
+        }
+      },
+      "id": "trigger-daily-ppc-health",
+      "name": "Daily 8:30AM: PPC Health",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 340],
+      "notes": "6:30 UTC = 8:30 AM IST"
+    },
+    {
+      "parameters": {
+        "command": "python3 /home/yali/workspace/automation/skill-runner.py ppc-daily-health",
+        "timeout": 960000
+      },
+      "id": "exec-daily-ppc-health",
+      "name": "Run: ppc-daily-health",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [480, 340]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-exit-ppc-health",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-ppc-health",
+      "name": "Success?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 340]
+    },
+
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * 1"
+            }
+          ]
+        }
+      },
+      "id": "trigger-monday-weekly-ppc",
+      "name": "Mon 9AM: Weekly PPC",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 580],
+      "notes": "7:00 UTC Monday = 9:00 AM IST"
+    },
+    {
+      "parameters": {
+        "command": "python3 /home/yali/workspace/automation/skill-runner.py weekly-ppc-analysis",
+        "timeout": 1500000
+      },
+      "id": "exec-weekly-ppc",
+      "name": "Run: weekly-ppc-analysis",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [480, 580]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-exit-weekly-ppc",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-weekly-ppc",
+      "name": "Success?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 580]
+    },
+
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * 2"
+            }
+          ]
+        }
+      },
+      "id": "trigger-tuesday-chain",
+      "name": "Tue 9AM: Tuesday Suite",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 820],
+      "notes": "7:00 UTC Tuesday = 9:00 AM IST. Triggers tuesday-chain sub-workflow."
+    },
+    {
+      "parameters": {
+        "workflowId": "={{ $env.TUESDAY_CHAIN_WORKFLOW_ID }}",
+        "options": {}
+      },
+      "id": "subworkflow-tuesday",
+      "name": "Execute: Tuesday Chain",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [480, 820],
+      "notes": "Set TUESDAY_CHAIN_WORKFLOW_ID in n8n Settings > Variables after importing tuesday-chain.json"
+    },
+
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * 4"
+            }
+          ]
+        }
+      },
+      "id": "trigger-thursday-competitors",
+      "name": "Thu 9AM: Competitors",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 1060],
+      "notes": "7:00 UTC Thursday = 9:00 AM IST"
+    },
+    {
+      "parameters": {
+        "command": "python3 /home/yali/workspace/automation/skill-runner.py competitor-price-serp-tracker",
+        "timeout": 1800000
+      },
+      "id": "exec-competitors",
+      "name": "Run: competitor-tracker",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [480, 1060]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-exit-competitors",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-competitors",
+      "name": "Success?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 1060]
+    },
+
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * 5"
+            }
+          ]
+        }
+      },
+      "id": "trigger-friday-chain",
+      "name": "Fri 9AM: Friday Suite",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 1300],
+      "notes": "7:00 UTC Friday = 9:00 AM IST. Triggers friday-chain sub-workflow."
+    },
+    {
+      "parameters": {
+        "workflowId": "={{ $env.FRIDAY_CHAIN_WORKFLOW_ID }}",
+        "options": {}
+      },
+      "id": "subworkflow-friday",
+      "name": "Execute: Friday Chain",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [480, 1300],
+      "notes": "Set FRIDAY_CHAIN_WORKFLOW_ID in n8n Settings > Variables after importing friday-chain.json"
+    },
+
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7 * * 0"
+            }
+          ]
+        }
+      },
+      "id": "trigger-sunday-ba",
+      "name": "Sun 9AM: Brand Analytics",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 1540],
+      "notes": "7:00 UTC Sunday = 9:00 AM IST"
+    },
+    {
+      "parameters": {
+        "command": "python3 /home/yali/workspace/automation/skill-runner.py brand-analytics-weekly",
+        "timeout": 1500000
+      },
+      "id": "exec-ba-weekly",
+      "name": "Run: brand-analytics-weekly",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [480, 1540]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-exit-ba",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-ba-weekly",
+      "name": "Success?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 1540]
+    },
+
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 1 * *"
+            }
+          ]
+        }
+      },
+      "id": "trigger-monthly-review",
+      "name": "1st 10AM: Monthly Review",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 1780],
+      "notes": "8:00 UTC 1st of month = 10:00 AM IST"
+    },
+    {
+      "parameters": {
+        "command": "python3 /home/yali/workspace/automation/skill-runner.py ppc-monthly-review",
+        "timeout": 1800000
+      },
+      "id": "exec-monthly-review",
+      "name": "Run: ppc-monthly-review",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [480, 1780]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "check-exit-monthly",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-monthly",
+      "name": "Success?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 1780]
+    },
+
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *Skill Failed* — {{ $('Run: ' + $input.first().json.skill || 'unknown').params.command }}\\nExit code: {{ $json.exitCode }}\\nTime: {{ $now.toISO() }}\\nCheck n8n executions or server logs for details.\"\n}"
+      },
+      "id": "slack-alert-failure",
+      "name": "Slack: Alert Failure",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [960, 940],
+      "notes": "Shared failure alert node. All IF nodes route failures here. Set SLACK_BOT_TOKEN in n8n Settings > Variables."
+    },
+
+    {
+      "parameters": {},
+      "id": "done-success",
+      "name": "Done (Success)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [960, 100]
+    }
+  ],
+  "connections": {
+    "Daily 8AM: Market Intel": {
+      "main": [[{"node": "Run: daily-market-intel", "type": "main", "index": 0}]]
+    },
+    "Run: daily-market-intel": {
+      "main": [[{"node": "Success?", "type": "main", "index": 0}]]
+    },
+
+    "Daily 8:30AM: PPC Health": {
+      "main": [[{"node": "Run: ppc-daily-health", "type": "main", "index": 0}]]
+    },
+    "Run: ppc-daily-health": {
+      "main": [[{"node": "Success?", "type": "main", "index": 0}]]
+    },
+
+    "Mon 9AM: Weekly PPC": {
+      "main": [[{"node": "Run: weekly-ppc-analysis", "type": "main", "index": 0}]]
+    },
+    "Run: weekly-ppc-analysis": {
+      "main": [[{"node": "Success?", "type": "main", "index": 0}]]
+    },
+
+    "Tue 9AM: Tuesday Suite": {
+      "main": [[{"node": "Execute: Tuesday Chain", "type": "main", "index": 0}]]
+    },
+
+    "Thu 9AM: Competitors": {
+      "main": [[{"node": "Run: competitor-tracker", "type": "main", "index": 0}]]
+    },
+    "Run: competitor-tracker": {
+      "main": [[{"node": "Success?", "type": "main", "index": 0}]]
+    },
+
+    "Fri 9AM: Friday Suite": {
+      "main": [[{"node": "Execute: Friday Chain", "type": "main", "index": 0}]]
+    },
+
+    "Sun 9AM: Brand Analytics": {
+      "main": [[{"node": "Run: brand-analytics-weekly", "type": "main", "index": 0}]]
+    },
+    "Run: brand-analytics-weekly": {
+      "main": [[{"node": "Success?", "type": "main", "index": 0}]]
+    },
+
+    "1st 10AM: Monthly Review": {
+      "main": [[{"node": "Run: ppc-monthly-review", "type": "main", "index": 0}]]
+    },
+    "Run: ppc-monthly-review": {
+      "main": [[{"node": "Success?", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Jerusalem"
+  },
+  "tags": [
+    {
+      "name": "automation"
+    }
+  ]
+}

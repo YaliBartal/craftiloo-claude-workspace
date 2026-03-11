@@ -1,0 +1,317 @@
+{
+  "name": "Tuesday PPC Chain",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trigger-start",
+      "name": "Start",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "notes": "Called by master-scheduler on Tuesday at 7:00 UTC (9:00 AM IST)"
+    },
+
+    {
+      "parameters": {
+        "command": "python3 /home/yali/workspace/automation/skill-runner.py ppc-tacos-optimizer",
+        "timeout": 1200000
+      },
+      "id": "exec-tacos",
+      "name": "1. TACoS Optimizer",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [480, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c1", "leftValue": "={{ $json.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-tacos",
+      "name": "OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *ppc-tacos-optimizer* failed in Tuesday chain.\\nExit code: {{ $json.exitCode }}\\nContinuing with next skill...\"\n}"
+      },
+      "id": "alert-tacos",
+      "name": "Alert: TACoS",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [960, 420]
+    },
+
+    {
+      "parameters": {"value": 120, "unit": "seconds"},
+      "id": "wait-1",
+      "name": "Wait 2min",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [1140, 300]
+    },
+
+    {
+      "parameters": {
+        "command": "python3 /home/yali/workspace/automation/skill-runner.py ppc-portfolio-summary",
+        "timeout": 1200000
+      },
+      "id": "exec-portfolio",
+      "name": "2. Portfolio Summary",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1380, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c2", "leftValue": "={{ $json.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-portfolio",
+      "name": "OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1620, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *ppc-portfolio-summary* failed in Tuesday chain.\\nContinuing with next skill...\"\n}"
+      },
+      "id": "alert-portfolio",
+      "name": "Alert: Portfolio",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1860, 420]
+    },
+
+    {
+      "parameters": {"value": 120, "unit": "seconds"},
+      "id": "wait-2",
+      "name": "Wait 2min",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [2040, 300]
+    },
+
+    {
+      "parameters": {
+        "command": "python3 /home/yali/workspace/automation/skill-runner.py keyword-rank-optimizer",
+        "timeout": 1200000
+      },
+      "id": "exec-rank",
+      "name": "3. Keyword Rank",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [2280, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c3", "leftValue": "={{ $json.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-rank",
+      "name": "OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [2520, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *keyword-rank-optimizer* failed in Tuesday chain.\\nContinuing with next skill...\"\n}"
+      },
+      "id": "alert-rank",
+      "name": "Alert: Rank",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2760, 420]
+    },
+
+    {
+      "parameters": {"value": 120, "unit": "seconds"},
+      "id": "wait-3",
+      "name": "Wait 2min",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [2940, 300]
+    },
+
+    {
+      "parameters": {
+        "command": "python3 /home/yali/workspace/automation/skill-runner.py ppc-bid-recommender",
+        "timeout": 1200000
+      },
+      "id": "exec-bids",
+      "name": "4. Bid Recommender",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [3180, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c4", "leftValue": "={{ $json.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-bids",
+      "name": "OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [3420, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *ppc-bid-recommender* failed in Tuesday chain.\\nContinuing with next skill...\"\n}"
+      },
+      "id": "alert-bids",
+      "name": "Alert: Bids",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3660, 420]
+    },
+
+    {
+      "parameters": {"value": 120, "unit": "seconds"},
+      "id": "wait-4",
+      "name": "Wait 2min",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [3840, 300]
+    },
+
+    {
+      "parameters": {
+        "command": "python3 /home/yali/workspace/automation/skill-runner.py ppc-search-term-harvester",
+        "timeout": 1200000
+      },
+      "id": "exec-harvest",
+      "name": "5. Search Term Harvester",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [4080, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c5", "leftValue": "={{ $json.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-harvest",
+      "name": "OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [4320, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *ppc-search-term-harvester* failed in Tuesday chain.\\nThis was the last skill in the chain.\"\n}"
+      },
+      "id": "alert-harvest",
+      "name": "Alert: Harvest",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [4560, 420]
+    },
+
+    {
+      "parameters": {},
+      "id": "done",
+      "name": "Chain Complete",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [4560, 300]
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [[{"node": "1. TACoS Optimizer", "type": "main", "index": 0}]]
+    },
+    "1. TACoS Optimizer": {
+      "main": [[{"node": "OK?", "type": "main", "index": 0}]]
+    },
+    "OK?": {
+      "main": [
+        [{"node": "Wait 2min", "type": "main", "index": 0}],
+        [{"node": "Alert: TACoS", "type": "main", "index": 0}]
+      ]
+    },
+    "Alert: TACoS": {
+      "main": [[{"node": "Wait 2min", "type": "main", "index": 0}]]
+    },
+    "Wait 2min": {
+      "main": [[{"node": "2. Portfolio Summary", "type": "main", "index": 0}]]
+    },
+
+    "2. Portfolio Summary": {
+      "main": [[{"node": "OK?", "type": "main", "index": 0}]]
+    },
+
+    "3. Keyword Rank": {
+      "main": [[{"node": "OK?", "type": "main", "index": 0}]]
+    },
+
+    "4. Bid Recommender": {
+      "main": [[{"node": "OK?", "type": "main", "index": 0}]]
+    },
+
+    "5. Search Term Harvester": {
+      "main": [[{"node": "OK?", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Jerusalem"
+  },
+  "tags": [
+    {
+      "name": "automation"
+    },
+    {
+      "name": "tuesday"
+    }
+  ]
+}
