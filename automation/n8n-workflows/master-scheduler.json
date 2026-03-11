@@ -195,7 +195,7 @@
     },
     {
       "parameters": {
-        "workflowId": "={{ $env.TUESDAY_CHAIN_WORKFLOW_ID }}",
+        "workflowId": "yUafv7HE3fSAgliu",
         "options": {}
       },
       "id": "subworkflow-tuesday",
@@ -284,7 +284,7 @@
     },
     {
       "parameters": {
-        "workflowId": "={{ $env.FRIDAY_CHAIN_WORKFLOW_ID }}",
+        "workflowId": "vYM5hKbUd6p7GAQf",
         "options": {}
       },
       "id": "subworkflow-friday",
