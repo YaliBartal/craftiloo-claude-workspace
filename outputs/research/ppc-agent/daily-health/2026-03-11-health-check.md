@@ -1,7 +1,7 @@
-# PPC Morning Brief — 2026-03-11
+# PPC Morning Brief — 2026-03-11 (Refreshed)
 
-> **Data sources:** Weekly PPC (Mar 8, Feb 27–Mar 5 window) · Market Intel snapshot (Mar 9) · Live campaigns (Mar 11) · Live DataDive rank radars (Mar 11)
-> **Note:** No market intel snapshot for today. Seller Board data stale (Feb 21–27). Run `/daily-market-intel` for fresh financials.
+> **Data sources:** Weekly PPC (Mar 8, Feb 27–Mar 5 window) · Market Intel snapshot (Mar 9) · Live campaigns (Mar 11, 171 ENABLED) · Live DataDive rank radars (Mar 11, refreshed)
+> **Note:** Second run today. Rank radars flat (DataDive updates once/day). 4 Flowers status corrected to YELLOW per Mar 10 deep dive. No market intel snapshot for today — run `/daily-market-intel` for fresh financials.
 
 ---
 

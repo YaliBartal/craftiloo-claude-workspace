@@ -4,6 +4,27 @@
 
 *(New entries go at the TOP)*
 
+### Run: 2026-03-11 (Refresh)
+**Result:** Success
+
+**What happened:**
+- Second run today (refresh). 171 ENABLED campaigns — identical to morning run.
+- DataDive rank radars flat (updates once/day): net top10 = 191, unchanged.
+- Corrected 4 Flowers status: agent-state.json had duplicate key — first entry was stale RED, second entry (Mar 10 deep dive) was correct YELLOW. Fixed duplicate key, kept YELLOW.
+- RED flags: 2 (CS Backpack Charms stock crisis + Needlepoint high ACoS / PAUSED campaigns). Down from 3 in morning run after 4 Flowers correction.
+- 9 portfolios have 7-day reviews due TOMORROW (Mar 12) — big review day coming.
+
+**What didn't work:**
+- File write error on health-check.md (hadn't read it first) — used Edit instead after reading.
+
+**Lesson learned:**
+- If health check is re-run same day, DataDive rank radars will be identical (once-per-day update). Note this in the brief and skip surfacing false "flat" comparisons as significant news.
+- Duplicate keys in agent-state.json JSON are silently handled by Python (last key wins) but can cause confusion in editors. Always fix on discovery.
+
+**Tokens/cost:** ~20K tokens, 0 API cost
+
+---
+
 ### Run: 2026-03-11
 **Result:** Success
 

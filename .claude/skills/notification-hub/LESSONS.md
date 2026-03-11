@@ -22,6 +22,21 @@ _None yet._
 
 ## Recent Runs (last 3)
 
+### Run: 2026-03-11 (Refresh)
+**Result:** Success
+**Calling skill:** ppc-daily-health (2nd run today)
+
+**What happened:**
+- Posted ppc-daily-health refresh summary to `#claude-morning-brief` (workspace: craft)
+- 2 RED flags: CS Backpack Charms stock crisis + Needlepoint PAUSED campaigns
+- Skipped #claude-alerts per user efficiency instructions
+
+**What didn't work:**
+- Nothing
+
+**Lesson learned:**
+- On re-runs same day, label message as "(Refresh)" so it's clear it's a second post
+
 ### Run: 2026-03-11
 **Result:** Success
 **Calling skill:** ppc-daily-health
