@@ -1,0 +1,174 @@
+# Weekly PPC Analysis — Run Log Archive (March 2026)
+
+### Run: 2026-03-08 (Step 13b update)
+**Goals:**
+- [x] Add 30-day trajectory calculations to existing weekly report
+- [x] Detect inflection points with z-score algorithm
+- [x] Correlate inflections with change_log events from portfolio trackers
+- [x] Update summary.json with trajectory data for future runs
+
+**Result:** SUCCESS — Trajectories + inflections added to report and snapshot
+
+**What worked:**
+- 3 weekly snapshots + 4 daily health snapshots provided enough data for trajectory calculation
+- Z-score inflection detection identified 6 inflection points (3 positive, 3 negative)
+- Change_log correlation revealed clear pattern: listing push + PPC deep dive → rank surge → ACoS improvement 5-10 days later
+- Stored trajectory data in summary.json for future WoW trajectory comparison
+
+**Lessons learned:**
+1. **3 financial data points is barely enough** for trajectories — confidence is "low" across the board. Need 4+ weekly snapshots for "medium" confidence.
+2. **Daily health snapshots have stale financial data** — they reuse the latest weekly numbers. Only rank/campaign data is fresh. Don't count them as independent financial data points.
+3. **The temporal lag between intervention and data is critical** — portfolios restructured on Mar 5-6 show negative inflections because the data window (Feb 27–Mar 5) predates the changes. Must annotate this clearly.
+4. **Trajectory stored in summary.json** enables future runs to compare trajectories WoW, not just metrics WoW. This is the real value of Step 13b.
+
+**Tokens/cost:** ~30K tokens (read-only — no API calls, just analysis of existing data)
+
+### Run: 2026-03-08
+**Goals:**
+- [x] Pull all 4 PPC reports via Amazon Ads API (campaigns, search terms, placements, targeting)
+- [x] Download full data (184 campaigns, 3,907 search terms, 499 placements, 630 targeting)
+- [x] Fetch Seller Board daily dashboard (7 days)
+- [x] Fetch DataDive rank radar summary (15 radars)
+- [x] WoW comparison against Mar 1 snapshot
+- [x] Save snapshot + generate comprehensive report
+
+**Result:** SUCCESS — Full analysis with all 4 reports including placement (first time!)
+
+**What worked:**
+- **Placement report is WORKING!** — 499 rows with proper labels (Top of Search, Detail Page, Other, Off Amazon). Fix from Mar 5 confirmed.
+- **save_to_file on all 4 reports** — saved raw JSON to snapshot folder + returned summary. Efficient token usage.
+- **3 parallel analysis agents** — campaigns+placements, search terms, targeting processed simultaneously. Total ~300K agent tokens but main context stayed lean.
+- **Reports took ~5 minutes to generate** (all 4 stuck in PENDING for 4+ min, then all completed at once). 6 polls total.
+- **Account had best week ever:** ACoS 37.5%→34.2%, Net Profit +41.6%, zero-order waste -20.5%, orders +7.7%.
+
+**What didn't work:**
+1. **Reports PENDING for 4+ minutes** — all 4 reports stuck in PENDING through 6 polling cycles (~4.5 min). Eventually all completed at once. This is Amazon's queue, not our code.
+2. **No portfolioId in async reports** — still must map campaigns to portfolios by name prefix (Known Issue #3, cannot fix).
+3. **Agent campaign total discrepancy** — agent calculated $3,299 spend vs report total $5,033. Agent was filtering more aggressively (only campaigns it could map to portfolios). The report-level totals ($5,033/$14,720) are more accurate.
+
+**Lessons learned:**
+1. **5+ minute PENDING is normal for 4 simultaneous reports.** Don't panic — set expectations at 5 min, poll every 30-60s.
+2. **save_to_file for ALL reports** is the right pattern — even campaign report (184 rows) benefits from being saved to disk for later analysis.
+3. **3 parallel agents for data processing** is efficient — keeps main context clean while doing deep analysis.
+4. **Placement report data validates TOS strategy** — 58% of spend goes to TOS at 32.7% ACoS with 12.4% CVR. Detail Page and Other are lower CVR. Off-Amazon is pure waste ($99/wk, 0 sales).
+5. **Phrase match is underutilized** — 32.7% ACoS and 13.7% CVR vs exact's 41.2% ACoS and 9.4% CVR. Exact TOS pushes need review.
+
+**Tokens/cost:** ~80K main context + ~300K across 3 agents. 0 API cost.
+
+### Run: 2026-03-01 (post-restart — COMPLETE DATA)
+**Goals:**
+- [x] Re-create all PPC reports after server restart
+- [x] Download full campaign data (166/166)
+- [x] Download full search term data (4,001/4,001)
+- [x] Download full targeting data (566/566)
+- [x] Fetch portfolio list (70 portfolios)
+- [x] Aggregate campaigns by portfolio
+- [x] Write comprehensive report with all data
+- [ ] Placement report (still fails — different error)
+
+**Result:** SUCCESS (with one remaining issue)
+
+**What worked:**
+- **format_json fix is live** — all 166 campaigns, 4,001 search terms, 566 targeting entries fully visible
+- **list_portfolios works** — 70 portfolios returned (was 404 before restart)
+- **Background agents** for search terms + targeting processed large files efficiently (134s + 112s)
+- **Python aggregation script** for portfolio grouping from campaign data
+- Total execution: ~8 minutes including 60s report generation wait
+- **Critical insight found:** 53.5% of PPC spend ($2,786/week) goes to zero-order search terms
+
+**What didn't work:**
+1. **Placement report STILL fails** — New error: `"invalid groupBy values: (placementClassification). Allowed values: (campaign, adGroup, campaignPlacement)"`. The fix used wrong value. Applied correct fix (`campaignPlacement`) but needs yet another server restart.
+2. **list_portfolios truncated** — Shows 50 of 70 portfolios (list function truncation not yet fixed)
+3. **Python script quote escaping** — Bash heredoc failed with single quotes in campaign names. Fixed by writing to .py file.
+
+**Is this a repeat error?** YES — sp_placements error (x3, different cause), list function truncation (x3)
+
+**Lessons learned:**
+1. **Server restart unlocks everything.** Going from 50 to 166 campaigns changed the entire analysis quality.
+2. **Placement groupBy value is `campaignPlacement`**, not `placementClassification`. Amazon's error messages helpfully list allowed values.
+3. **Background agents for large file processing is the right pattern** — search terms (634K chars) and targeting (85K chars) processed cleanly.
+4. **53.5% zero-order spend is the #1 finding** — worth more than any campaign-level optimization.
+5. **Write Python scripts to files instead of inline bash** when dealing with complex data with special characters.
+6. **8 minutes for complete analysis** is acceptable efficiency — aim for 5 minutes next time by parallelizing more.
+7. **Portfolio grouping by campaign name prefix** works reliably since campaign naming is consistent.
+
+**Tokens/cost:** ~80K tokens for this run (much more efficient than the 250K previous runs).
+
+### Run: 2026-03-01 (continuation — report generation)
+**Goals:**
+- [x] Read existing partial report and overwrite with comprehensive version
+- [x] Incorporate DataDive rank data for all 6 products
+- [x] Incorporate Seller Board daily data (7 days)
+- [x] WoW comparison against Feb 8-14 snapshot
+- [x] Save updated snapshot summary.json
+- [x] Update LESSONS.md
+
+**Result:** Partial (same data limitations as initial run — server still not restarted)
+
+**What worked:**
+- Successfully wrote comprehensive report with all available data sources (Seller Board + DataDive + partial PPC)
+- Rank movement analysis across 6 products with actionable insights
+- Daily profit trend table from Seller Board adds real business context
+- Portfolio mapping via list_sp_campaigns workaround (17 portfolios mapped by portfolioId)
+- WoW comparison leveraging Feb 8-14 complete CSV snapshot
+- Clean P1/P2/P3 action prioritization with specific bid adjustment recommendations
+
+**What didn't work:**
+1. **Same truncation issue** — Still only 50 of 166 campaigns, 50 of 4,033 search terms, 50 of 566 targets visible
+2. **Placement report still fails** — Server not restarted
+3. **list_portfolios still 404** — Workaround with list_sp_campaigns works but is slower
+4. **Search term analysis impossible** — 50 alphabetically-sorted terms (all low-spend A/B terms) gives zero actionable negation data
+5. **Context compaction** — Session ran across context limit, required continuation from summary
+6. **Write tool requires Read first** — Existing file from previous session couldn't be overwritten without Read
+
+**Is this a repeat error?** YES — sp_placements 400 error (x2), format_json truncation (x2)
+
+**Lessons learned:**
+1. **Server restart is the #1 blocker.** Two runs now with partial data. Must be resolved before next analysis.
+2. **list_sp_campaigns name_filter is a viable portfolio mapping workaround** — but add `portfolioId` to the sp_campaigns report preset as a permanent fix.
+3. **Context management is critical** — This skill uses 150K+ tokens across compaction. Need to be more efficient: process data in agents, summarize before returning to main context.
+4. **Always Read a file before Write** — Even if you "know" the content, the tool requires it.
+5. **Seller Board daily data is the most reliable source** for account-level health. It gives complete coverage while PPC data is truncated.
+6. **DataDive rank data via background agent works well** — Good pattern for parallelizing data collection.
+7. **list function truncation is a SEPARATE bug** from download truncation — ALL list_sp_* functions call format_json without max_items. Need to fix these too.
+
+**Tokens/cost:** ~250K+ tokens total across both sessions (initial + continuation). Very high — need to optimize.
+
+### Run: 2026-03-01
+**Goals:**
+- [x] Pull 4 PPC reports via Amazon Ads API (first API-based run)
+- [x] Fetch DataDive Rank Radar data
+- [x] Fetch Seller Board data
+- [ ] Generate comprehensive weekly analysis
+- [ ] Full search term negation/promotion analysis
+
+**Result:** Partial
+
+**What worked:**
+- API report creation: 3 of 4 reports created successfully (campaigns, search terms, targeting)
+- Report downloads worked — got 166 campaigns, 4,033 search terms, 566 targeting rows
+- DataDive rank radar data fetched for 6 products (Cross Stitch + Fuse Beads inline, 4 others to files)
+- Seller Board daily dashboard returned 7 days of complete data
+- Previous snapshot loaded for WoW comparison
+- Rank movement analysis produced valuable insights (perler beads #6→#11, cross-stitch kits #9→#28)
+
+**What didn't work:**
+1. **format_json 50-row truncation** — The MCP server's `format_json()` defaults to `max_items=50`, so download_ads_report only shows 50 rows even when the report has 166/4033/566. This meant I could only see ~30% of campaign spend and ~1% of search terms. Fix applied (line 1334: pass `max_items=max_rows`) but server needs restart.
+2. **sp_placements report 400 error** — `placementClassification` was in `columns` instead of `groupBy`. Fix applied (line 119) but server needs restart.
+3. **Campaign data lacks portfolio field** — The `sp_campaigns` report preset doesn't include portfolio name/ID, making it impossible to group campaigns by portfolio without cross-referencing via `list_sp_campaigns` or `list_portfolios`.
+4. **Seller Board date range mismatch** — PPC data covers Feb 20-26, Seller Board covers Feb 22-28. Only 5 days overlap for TACoS calculation.
+5. **Large DataDive responses** — Fairy (87 kw), Cat&Hat (81 kw), Latch Hook (50 kw), 4 Flowers (67 kw) were saved to files but couldn't be processed inline.
+6. **Seller Board detailed report too large** — Saved to file, couldn't process inline for per-ASIN TACoS.
+
+**Is this a repeat error?** No — first run.
+
+**Lessons learned:**
+1. **CRITICAL: Fix format_json before next run.** The 50-row cap makes the analysis nearly useless for campaigns and completely useless for search terms. The fix is already applied — just needs server restart.
+2. **Add portfolioId to sp_campaigns preset.** Without portfolio data, campaign grouping is impossible. Need to add to the `groupBy` or `columns` in the report preset, or use `list_portfolios` + `list_sp_campaigns` for mapping.
+3. **Consider saving raw JSON to files** instead of just returning formatted tables. A `save_to_file` option on download_ads_report would let us process full data across multiple reads.
+4. **Align date ranges** — Calculate Seller Board date range to match PPC date range, or accept the mismatch and document it.
+5. **Process large DataDive responses via Agent** — Spawn agents to read and summarize the saved files for rank movement.
+6. **Campaign report max_rows should be 500** (not 5000) — 166 campaigns is well under 500. Search terms need 5000.
+7. **The Seller Board "Real ACOS" column is TACoS** — it already calculates total ad spend / total revenue. No need to compute manually.
+
+**Tokens/cost:** ~150K+ tokens (session ran across context compaction). High due to large data volumes and debugging.

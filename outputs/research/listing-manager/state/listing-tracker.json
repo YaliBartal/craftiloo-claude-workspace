@@ -411,14 +411,59 @@
     },
     "B09HVDNFMR": {
       "name": "Needlepoint Wallet Kit Cat",
-      "sku": "SKU-UNKNOWN",
-      "portfolio": "cross-stitch-backpack-charms",
+      "sku": "N7-TUSA-2329",
+      "portfolio": "needlepoint",
+      "status": "active",
+      "listing_created": null,
+      "audits": [
+        {
+          "date": "2026-03-10",
+          "score": 31,
+          "weakest": "backend_keywords",
+          "trigger": "user — post-PPC restructure, CVR improvement needed",
+          "brief_path": "outputs/research/listing-manager/optimizations/needlepoint-wallet-kit-cat/2026-03-10/audit.md"
+        }
+      ],
+      "changes": [
+        {
+          "date": "2026-03-10",
+          "type": "title + bullets + backend rewrite",
+          "trigger": "audit score 31/100 — user approved kids-niche rewrite",
+          "pushed_to_amazon": true,
+          "submission_id": "ae52f02381cb4aeca1edb75dd12b1c7d",
+          "ab_scheduled": "2026-03-31",
+          "ab_status": "pending",
+          "ab_verdict": null,
+          "before_summary": "Title: 'Pre Printed Needlepoint Wallet Kit for Kids...' | Backend: 82/249 bytes | Missing: beginner, boys, gift, ages",
+          "after_summary": "Title: 'Craftiloo Needlepoint Kit for Kids — Beginner Cross Stitch...' | Backend: 247/249 bytes | Added: beginner, boys, gift, ages, starter, educational + 20 more terms"
+        }
+      ],
+      "current_score": 31,
+      "next_action": "AB analysis due 2026-03-31"
+    },
+    "B09HVSLBS6": {
+      "name": "Needlepoint Wallet Kit Dog (Cat&Dog)",
+      "sku": "KM-QL7C-QZMZ",
+      "portfolio": "needlepoint",
       "status": "active",
       "listing_created": null,
       "audits": [],
-      "changes": [],
+      "changes": [
+        {
+          "date": "2026-03-10",
+          "type": "title + bullets + backend rewrite (variant alignment)",
+          "trigger": "Same fixes as Cat variant — kids-niche alignment + brand + beginner",
+          "pushed_to_amazon": true,
+          "submission_id": "a09a5da7a9b54cd3bf5942b8b8c7aaed",
+          "ab_scheduled": "2026-03-31",
+          "ab_status": "pending",
+          "ab_verdict": null,
+          "before_summary": "Title: 'Pre Printed Needlepoint wallet kit for Kids...(Cat&Dog)' | Backend: 87 bytes | Missing: beginner, boys, gift, ages, brand",
+          "after_summary": "Title: 'Craftiloo Needlepoint Kit for Kids — Beginner...(Cat & Dog)' | Backend: 247 bytes | +beginner, boys, gift, ages, starter, educational + 20 more terms"
+        }
+      ],
       "current_score": null,
-      "next_action": "No audit performed yet"
+      "next_action": "AB analysis due 2026-03-31"
     },
     "B08FYH13CL": {
       "name": "Latch Hook Pencil Cases Heart",
@@ -477,14 +522,27 @@
     },
     "B09HVCCNM2": {
       "name": "Needlepoint Wallet Kit Unicorn",
-      "sku": "SKU-UNKNOWN",
-      "portfolio": "cross-stitch-backpack-charms",
+      "sku": "KL-L7KN-R85L",
+      "portfolio": "needlepoint",
       "status": "active",
       "listing_created": null,
       "audits": [],
-      "changes": [],
+      "changes": [
+        {
+          "date": "2026-03-10",
+          "type": "title + bullets + backend rewrite (variant alignment)",
+          "trigger": "Same fixes as Cat variant — kids-niche alignment + brand + beginner + typo fix (needlepoind→needlepoint) + removed wrong 'Latch Hook Kit' from title",
+          "pushed_to_amazon": true,
+          "submission_id": "c10aaea80a744c8cae838866fa7c9d79",
+          "ab_scheduled": "2026-03-31",
+          "ab_status": "pending",
+          "ab_verdict": null,
+          "before_summary": "Title: 'Pre Printed...Latch Hook Kit (Unicorn)' | Backend: 96 bytes with typo 'needlepoind' + wrong 'Latch hook'",
+          "after_summary": "Title: 'Craftiloo Needlepoint Kit for Kids — Beginner...(Unicorn)' | Backend: 247 bytes | Typo fixed, wrong category removed"
+        }
+      ],
       "current_score": null,
-      "next_action": "No audit performed yet"
+      "next_action": "AB analysis due 2026-03-31"
     },
     "B092SW839H": {
       "name": "Punch Needle Kit Mini Pillows",

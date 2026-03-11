@@ -109,6 +109,9 @@
 - Makes wearable/usable items
 - Complete beginner-friendly
 
+### Strategic Priority
+- **BSR #1 Goal:** Only ~1,000 BSR behind the #1 Best Seller in niche. Achieving the Best Seller badge is a primary PPC goal — the organic sales uplift from the badge is massive. All PPC decisions for this portfolio should factor in BSR proximity to #1.
+
 ---
 
 ## 4. 10 Embroidery Patterns Kit

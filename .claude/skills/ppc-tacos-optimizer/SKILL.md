@@ -734,11 +734,9 @@ For each portfolio analyzed, update `outputs/research/ppc-agent/state/{slug}.jso
 
 ---
 
-## Step 11: Post Notifications
+## Step 11: Slack Notification
 
-Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: ppc-tacos-optimizer".
-Follow those instructions to post a summary to Slack.
-If Slack MCP is unavailable, skip and note in run log.
+**Skip this step.** The PPC Agent orchestrator handles Slack notifications via Step 8e after every sub-skill completes.
 
 ---
 

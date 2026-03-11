@@ -313,11 +313,9 @@ Check campaign creation dates from `list_sp_campaigns` results:
 
 ---
 
-### Step 10: Post Notifications
+### Step 10: Slack Notification
 
-Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: ppc-portfolio-summary".
-Follow those instructions to post a summary to Slack.
-If Slack MCP is unavailable, skip and note in run log.
+**Skip this step.** The PPC Agent orchestrator handles Slack notifications via Step 8e after every sub-skill completes.
 
 ---
 

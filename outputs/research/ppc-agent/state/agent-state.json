@@ -1,8 +1,7 @@
 {
-  "last_daily_health": "2026-03-10",
+  "last_daily_health": "2026-03-08",
   "audit_mode": true,
   "session": null,
-  "last_daily_health": "2026-03-08",
   "last_search_harvest": "2026-03-05",
   "last_bid_review": "2026-03-05",
   "last_portfolio_summary": "2026-03-02",
@@ -11,7 +10,7 @@
   "last_rank_optimizer": null,
   "last_tacos_optimizer": "2026-03-06",
   "last_negative_generation": {},
-  "revenue_tiers_updated": null,
+  "revenue_tiers_updated": "2026-03-10",
   "campaign_watchlist": [
     {
       "campaign_id": "73257765455257",
@@ -148,13 +147,14 @@
       "tacos": 13.4,
       "tacos_target": 16,
       "tacos_grade": "A",
-      "organic_momentum": 82,
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 1,
+      "review_cadence_days": 7,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 20789.33,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": "2026-03-06",
+      "listing_stage": "awaiting-ab"
     },
     "fuse-beads": {
       "name": "Fuse Beads",
@@ -191,13 +191,14 @@
       "tacos": 13.9,
       "tacos_target": 16,
       "tacos_grade": "A",
-      "organic_momentum": 78,
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 1,
+      "review_cadence_days": 7,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 43329.76,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": "2026-03-06",
+      "listing_stage": "awaiting-ab"
     },
     "cross-embroidery-kits": {
       "name": "Cross And Embroidery Kits",
@@ -230,63 +231,66 @@
       "tacos": 82.6,
       "tacos_target": 42,
       "tacos_grade": "F",
-      "organic_momentum": 10,
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 2,
+      "review_cadence_days": 14,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 1120.98,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": "2026-03-05",
+      "listing_stage": "awaiting-ab"
     },
-    “4-flowers-embroidery”: {
-      “name”: “4 Flowers Embroidery”,
-      “id”: “110971277744354”,
-      “tracker”: “state/4-flowers-embroidery.json”,
-      “stage”: “Scaling”,
-      “last_deep_dive”: null,
-      “needs_deep_dive”: true,
-      “deep_dive_reason”: “Rank crisis day 28+. 0 top-10 keywords. 48% ACoS Scaling. Re-audit overdue. Run ppc-portfolio-action-plan.”,
-      “last_updated”: “2026-03-10”,
-      “health_status”: “RED”,
-      “trend”: “declining”,
-      “acos”: 48.0,
-      “pending_count”: 2,
-      “top_action”: “[P1] Run ppc-portfolio-action-plan — rank crisis day 28+, re-audit overdue since Mar 10”,
-      “next_review”: “2026-03-10”,
+    "4-flowers-embroidery": {
+      "name": "4 Flowers Embroidery",
+      "id": "110971277744354",
+      "tracker": "state/4-flowers-embroidery.json",
+      "stage": "Scaling",
+      "last_deep_dive": "2026-03-10",
+      "needs_deep_dive": false,
+      "deep_dive_reason": null,
+      "last_updated": "2026-03-10",
+      "health_status": "YELLOW",
+      "trend": "restructuring",
+      "acos": 48.0,
+      "pending_count": 3,
+      "top_action": "[P2] Post-rebuild search term harvest due Mar 24",
+      "next_review": "2026-03-24",
       "tacos": 27.5,
       "tacos_target": 16,
       "tacos_grade": "D",
-      "organic_momentum": 20,
-      "revenue_tier": null,
-      "review_cadence_days": null,
-      "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "revenue_tier": 1,
+      "review_cadence_days": 14,
+      "last_optimization_scan": "2026-03-10",
+      "monthly_revenue": 2413.06,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": "2026-03-03",
+      "listing_stage": "post-rewrite-monitoring"
     },
     "catch-all-auto": {
       "name": "Catch All Auto",
-      "id": null,
+      "id": "4736998557724",
       "tracker": "state/catch-all-auto.json",
       "stage": "General",
       "last_deep_dive": null,
-      "last_updated": "2026-03-05",
+      "last_updated": "2026-03-10",
       "health_status": null,
       "trend": null,
-      "acos": null,
+      "acos": 25.9,
       "pending_count": 0,
       "top_action": null,
-      "next_review": "2026-03-08",
+      "next_review": "2026-03-17",
       "tacos": 0,
       "tacos_target": 22,
       "tacos_grade": null,
-      "organic_momentum": 12,
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 1,
+      "review_cadence_days": 7,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 14739,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": null,
+      "listing_stage": null
     },
     "dessert-family": {
       "name": "Dessert Family",
@@ -304,13 +308,14 @@
       "tacos": 0,
       "tacos_target": 16,
       "tacos_grade": null,
-      "organic_momentum": 5,
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 2,
+      "review_cadence_days": 14,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 1883.4,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": null,
+      "listing_stage": null
     },
     "embroidery-for-kids": {
       "name": "Embroidery for Kids",
@@ -328,13 +333,14 @@
       "tacos": 12.6,
       "tacos_target": 16,
       "tacos_grade": "A",
-      "organic_momentum": 75,
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 1,
+      "review_cadence_days": 7,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 8292.99,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": null,
+      "listing_stage": null
     },
     "cross-stitch-backpack-charms": {
       "name": "Cross Stitch Backpack Charms",
@@ -348,7 +354,7 @@
       "trend": "stable",
       "acos": 26.8,
       "pending_count": 4,
-      "top_action": "[P3] Investigate 6 dormant campaigns â€” reclaim $80/d budget",
+      "top_action": "[P3] Investigate 6 dormant campaigns  -  reclaim $80/d budget",
       "next_review": "2026-03-12",
       "last_skill": "listing-optimizer + listing-creator",
       "listing_push": {
@@ -371,13 +377,14 @@
       "tacos": 13.3,
       "tacos_target": 16,
       "tacos_grade": "A",
-      "organic_momentum": 90,
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 1,
+      "review_cadence_days": 7,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 5330.22,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": "2026-03-06",
+      "listing_stage": "awaiting-ab"
     },
     "shield-all": {
       "name": "Shield All",
@@ -385,7 +392,7 @@
       "tracker": "state/shield-all.json",
       "stage": "General",
       "last_deep_dive": "2026-03-05",
-      "last_updated": "2026-03-08",
+      "last_updated": "2026-03-10",
       "health_status": "GREEN",
       "trend": "restructuring",
       "acos": 27.7,
@@ -396,13 +403,14 @@
       "tacos": 0,
       "tacos_target": 22,
       "tacos_grade": null,
-      "organic_momentum": 12,
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 1,
+      "review_cadence_days": 7,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 3293,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": null,
+      "listing_stage": null
     },
     "cat-and-hat-knitting": {
       "name": "Cat and Hat Knitting",
@@ -415,19 +423,20 @@
       "trend": "restructuring",
       "acos": 45.1,
       "pending_count": 7,
-      "top_action": "[P2] PP/ROS test run on 5 dormant SK campaigns — user monitoring conversion closely",
+      "top_action": "[P2] PP/ROS test run on 5 dormant SK campaigns  -  user monitoring conversion closely",
       "next_review": "2026-03-12",
       "last_skill": "ppc-portfolio-action-plan",
       "tacos": 19.8,
       "tacos_target": 42,
       "tacos_grade": "A",
-      "organic_momentum": 55,
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 1,
+      "review_cadence_days": 7,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 3694.39,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": null,
+      "listing_stage": null
     },
     "latch-hook-pillow": {
       "name": "Latch Hook Pillow",
@@ -445,13 +454,14 @@
       "tacos": 17.5,
       "tacos_target": 42,
       "tacos_grade": "A",
-      "organic_momentum": 48,
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 1,
+      "review_cadence_days": 7,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 8593.12,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": null,
+      "listing_stage": null
     },
     "bunny-knitting-loom-kit": {
       "name": "Bunny Knitting Loom Kit",
@@ -470,13 +480,14 @@
       "tacos": 0,
       "tacos_target": 16,
       "tacos_grade": null,
-      "organic_momentum": 55,
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 1,
+      "review_cadence_days": 7,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 2656.48,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": null,
+      "listing_stage": null
     },
     "latch-hook-kits": {
       "name": "Latch Hook Kits",
@@ -495,7 +506,6 @@
       "tacos": 16.7,
       "tacos_target": 16,
       "tacos_grade": "B",
-      "organic_momentum": 52,
       "listing_push": {
         "date": "2026-03-06",
         "asin": "B08FYH13CL",
@@ -513,12 +523,14 @@
         "verify_by": "2026-03-07",
         "re_audit_due": "2026-03-13"
       },
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 1,
+      "review_cadence_days": 7,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 3848.15,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": "2026-03-06",
+      "listing_stage": "awaiting-ab"
     },
     "biggie-beads": {
       "name": "Biggie Beads",
@@ -531,13 +543,12 @@
       "trend": "stable",
       "acos": 31.9,
       "pending_count": 5,
-      "top_action": "[P2] Decision on MK root campaign — spending $1/month, hero keyword PAUSED",
+      "top_action": "[P2] Decision on MK root campaign  -  spending $1/month, hero keyword PAUSED",
       "next_review": "2026-03-12",
       "last_skill": "listing-creator",
       "tacos": 13.9,
       "tacos_target": 16,
       "tacos_grade": "A",
-      "organic_momentum": 65,
       "listing_push": {
         "date": "2026-03-06",
         "asin": "B07D6D95NG",
@@ -555,12 +566,14 @@
         "verify_by": "2026-03-08",
         "re_audit_due": "2026-03-13"
       },
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 1,
+      "review_cadence_days": 7,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 4896.08,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": "2026-03-06",
+      "listing_stage": "awaiting-ab"
     },
     "stitch-dictionary-all": {
       "name": "Stitch Dictionary All",
@@ -573,18 +586,19 @@
       "trend": null,
       "acos": null,
       "pending_count": 1,
-      "top_action": "[P2] Clean up LOW BIDs (13 dormant campaigns) â€” archive or reactivate",
+      "top_action": "[P2] Clean up LOW BIDs (13 dormant campaigns)  -  archive or reactivate",
       "next_review": null,
       "tacos": 0,
       "tacos_target": 16,
       "tacos_grade": null,
-      "organic_momentum": 12,
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 3,
+      "review_cadence_days": 30,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 0,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": null,
+      "listing_stage": null
     },
     "needlepoint": {
       "name": "Needlepoint",
@@ -605,13 +619,14 @@
       "tacos": 17.3,
       "tacos_target": 16,
       "tacos_grade": "B",
-      "organic_momentum": 50,
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 2,
+      "review_cadence_days": 14,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 1135,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": null,
+      "listing_stage": null
     },
     "princess-lacing-cards": {
       "name": "Princess Lacing Cards",
@@ -629,7 +644,6 @@
       "tacos": 0,
       "tacos_target": 42,
       "tacos_grade": null,
-      "organic_momentum": 35,
       "last_skill": "listing-creator",
       "listing_push": {
         "date": "2026-03-08",
@@ -648,12 +662,14 @@
         "verify_by": "2026-03-10",
         "re_audit_due": "2026-03-15"
       },
-      "revenue_tier": null,
-      "review_cadence_days": null,
+      "revenue_tier": 1,
+      "review_cadence_days": 7,
       "last_optimization_scan": null,
-      "monthly_revenue": null,
+      "monthly_revenue": 3268.68,
       "last_validation": null,
-      "validation_history": []
+      "validation_history": [],
+      "last_listing_change": "2026-03-08",
+      "listing_stage": "awaiting-ab"
     }
   },
   "all_pending_actions": [
@@ -662,7 +678,7 @@
       "id": "ff-001",
       "priority": "P1",
       "category": "BID_DECREASE",
-      "action": "SK sewing for kids bleeding at 65% ACoS â€” lower TOS 161%->108%",
+      "action": "SK sewing for kids bleeding at 65% ACoS  -  lower TOS 161%->108%",
       "created": "2026-03-03"
     },
     {
@@ -670,7 +686,7 @@
       "id": "4f-001",
       "priority": "P1",
       "category": "AUDIT",
-      "action": "Post-listing-update re-audit â€” check rank recovery, CVR change (due Mar 10)",
+      "action": "Post-listing-update re-audit  -  check rank recovery, CVR change (due Mar 10)",
       "created": "2026-03-03"
     },
     {
@@ -686,7 +702,7 @@
       "id": "ce-001",
       "priority": "P2",
       "category": "CAMPAIGN_PAUSE",
-      "action": "Decision on dead embroidery campaigns â€” PAUSED ad groups in ENABLED campaigns",
+      "action": "Decision on dead embroidery campaigns  -  PAUSED ad groups in ENABLED campaigns",
       "created": "2026-03-05"
     },
     {
@@ -694,7 +710,7 @@
       "id": "ce-002",
       "priority": "P2",
       "category": "CAMPAIGN_ENABLE",
-      "action": "Decision on large kit B0F8QZZQQM reactivation â€” losing rank (-60 positions/28d)",
+      "action": "Decision on large kit B0F8QZZQQM reactivation  -  losing rank (-60 positions/28d)",
       "created": "2026-03-05"
     },
     {
@@ -726,7 +742,7 @@
       "id": "ff-005",
       "priority": "P2",
       "category": "LISTING_REVIEW",
-      "action": "B0BP8GCK1G (Fairy Elves) zero sales with 26 sessions â€” investigate listing",
+      "action": "B0BP8GCK1G (Fairy Elves) zero sales with 26 sessions  -  investigate listing",
       "created": "2026-03-03"
     },
     {
@@ -734,7 +750,7 @@
       "id": "ff-002",
       "priority": "P3",
       "category": "STRUCTURAL",
-      "action": "900% TOS on 2 Auto TOS campaigns â€” structural cleanup (zero activity)",
+      "action": "900% TOS on 2 Auto TOS campaigns  -  structural cleanup (zero activity)",
       "created": "2026-03-03"
     },
     {
@@ -766,7 +782,7 @@
       "id": "bb-001",
       "priority": "P2",
       "category": "CAMPAIGN_PAUSE",
-      "action": "Decision on MK root campaign — spending $1/month, hero keyword PAUSED",
+      "action": "Decision on MK root campaign  -  spending $1/month, hero keyword PAUSED",
       "created": "2026-03-05"
     },
     {
@@ -798,7 +814,7 @@
       "id": "bb-005",
       "priority": "P3",
       "category": "NEGATE_SEARCH_TERM",
-      "action": "Deep clean Auto negatives — $327/30d waste across 160 zero-order terms",
+      "action": "Deep clean Auto negatives  -  $327/30d waste across 160 zero-order terms",
       "created": "2026-03-05"
     },
     {
@@ -806,7 +822,7 @@
       "id": "sd-001",
       "priority": "P2",
       "category": "STRUCTURAL",
-      "action": "Clean up LOW BIDs (13 dormant campaigns) â€” archive or reactivate",
+      "action": "Clean up LOW BIDs (13 dormant campaigns)  -  archive or reactivate",
       "created": "2026-03-02"
     },
     {
@@ -814,7 +830,7 @@
       "id": "csbc-001",
       "priority": "P3",
       "category": "INVESTIGATE",
-      "action": "Investigate 6 dormant campaigns â€” check ad group status, reclaim $80/d budget",
+      "action": "Investigate 6 dormant campaigns  -  check ad group status, reclaim $80/d budget",
       "created": "2026-03-05"
     },
     {
@@ -822,7 +838,7 @@
       "id": "csbc-002",
       "priority": "P3",
       "category": "INVESTIGATE",
-      "action": "MK exact all animals â€” ROS at 55.9% ACoS, investigate bid adjustment",
+      "action": "MK exact all animals  -  ROS at 55.9% ACoS, investigate bid adjustment",
       "created": "2026-03-05"
     },
     {
@@ -830,7 +846,7 @@
       "id": "plc-001",
       "priority": "P3",
       "category": "INVESTIGATE",
-      "action": "Investigate SK gem art sticker (0 impressions/30d) â€” check keyword search volume",
+      "action": "Investigate SK gem art sticker (0 impressions/30d)  -  check keyword search volume",
       "created": "2026-03-05"
     },
     {
@@ -846,7 +862,7 @@
       "id": "plc-003",
       "priority": "P4",
       "category": "BUDGET_REALLOC",
-      "action": "Consider increasing Auto budget $8â†’$15 once hero SK campaigns prove out",
+      "action": "Consider increasing Auto budget $8->$15 once hero SK campaigns prove out",
       "created": "2026-03-05"
     },
     {
@@ -854,7 +870,7 @@
       "id": "plc-004",
       "priority": "P4",
       "category": "MONITOR",
-      "action": "Pull placement data when reports resolve â€” validate TOS decisions",
+      "action": "Pull placement data when reports resolve  -  validate TOS decisions",
       "created": "2026-03-05"
     },
     {
@@ -889,7 +905,7 @@
       "id": "lhp-003",
       "priority": "P4",
       "category": "MONITOR",
-      "action": "Investigate Googley Eyes (B0F8R6J7JR) listing quality â€” 0.72% CVR needs fixing",
+      "action": "Investigate Googley Eyes (B0F8R6J7JR) listing quality  -  0.72% CVR needs fixing",
       "created": "2026-03-05",
       "due": "2026-03-19"
     },
@@ -898,7 +914,7 @@
       "id": "sa-001",
       "priority": "P1",
       "category": "MONITOR",
-      "action": "7-day review gate: check 7 re-enabled shield campaigns — ACoS >45% → flag for pause",
+      "action": "7-day review gate: check 7 re-enabled shield campaigns  -  ACoS >45% → flag for pause",
       "created": "2026-03-05",
       "due": "2026-03-12"
     },
@@ -916,7 +932,7 @@
       "id": "sa-003",
       "priority": "P3",
       "category": "MONITOR",
-      "action": "Check brand BROAD keyword performance — capturing additional brand searches?",
+      "action": "Check brand BROAD keyword performance  -  capturing additional brand searches?",
       "created": "2026-03-05",
       "due": "2026-03-12"
     },
@@ -1012,7 +1028,7 @@
     {
       "date": "2026-03-12",
       "portfolio": "Cross And Embroidery Kits",
-      "type": "Post-listing-update re-audit â€” check rank recovery, CVR change",
+      "type": "Post-listing-update re-audit  -  check rank recovery, CVR change",
       "source": "listing-push-2026-03-05"
     },
     {
@@ -1024,61 +1040,61 @@
     {
       "date": "2026-03-12",
       "portfolio": "Cross Stitch Backpack Charms",
-      "type": "7-day re-check â€” verify TOS changes + budget increases",
+      "type": "7-day re-check  -  verify TOS changes + budget increases",
       "source": "deep-dive-2026-03-05"
     },
     {
       "date": "2026-03-12",
       "portfolio": "Embroidery for Kids",
-      "type": "7-day re-check â€” verify TOS reductions + PT budget increase impact",
+      "type": "7-day re-check  -  verify TOS reductions + PT budget increase impact",
       "source": "embroidery-for-kids-deep-dive-2026-03-05"
     },
     {
       "date": "2026-03-12",
       "portfolio": "Cross Stitch Backpack Charms",
-      "type": "7-day check â€” new SK 'cross stitch for kids 8-12' + reactivated 'CS kits for beginners' SK",
+      "type": "7-day check  -  new SK 'cross stitch for kids 8-12' + reactivated 'CS kits for beginners' SK",
       "source": "promote-execution-2026-03-05"
     },
     {
       "date": "2026-03-12",
       "portfolio": "Embroidery for Kids",
-      "type": "7-day check â€” new 'embroidery for kids' EXACT keyword in MK",
+      "type": "7-day check  -  new 'embroidery for kids' EXACT keyword in MK",
       "source": "promote-execution-2026-03-05"
     },
     {
       "date": "2026-03-12",
       "portfolio": "Princess Lacing Cards",
-      "type": "7-day re-check â€” are SK lacing hero campaigns getting impressions? Rank stabilizing?",
+      "type": "7-day re-check  -  are SK lacing hero campaigns getting impressions? Rank stabilizing?",
       "source": "princess-lacing-deep-dive-2026-03-05"
     },
     {
       "date": "2026-03-12",
       "portfolio": "Latch Hook Pillow",
-      "type": "7-day post-action check â€” verify PP/ROS modifiers activated, Auto TOS reduction, PT restructure",
+      "type": "7-day post-action check  -  verify PP/ROS modifiers activated, Auto TOS reduction, PT restructure",
       "source": "latch-hook-pillow-deep-dive-2026-03-05"
     },
     {
       "date": "2026-03-12",
       "portfolio": "Biggie Beads",
-      "type": "7-day re-check — verify PP/ROS activation, SK biggie beads traffic isolation, Auto TOS reduction",
+      "type": "7-day re-check  -  verify PP/ROS activation, SK biggie beads traffic isolation, Auto TOS reduction",
       "source": "biggie-beads-deep-dive-2026-03-05"
     },
     {
       "date": "2026-03-12",
       "portfolio": "Biggie Beads",
-      "type": "7-day check — new MK large perler TOS + MK large fuse TOS campaigns getting impressions/clicks",
+      "type": "7-day check  -  new MK large perler TOS + MK large fuse TOS campaigns getting impressions/clicks",
       "source": "biggie-beads-campaign-creator-2026-03-05"
     },
     {
       "date": "2026-03-12",
       "portfolio": "Cat and Hat Knitting",
-      "type": "7-day post-deep-dive re-check — Auto budget impact, SK loom kit strategy switch, PP/ROS test run conversion, loom keyword rank",
+      "type": "7-day post-deep-dive re-check  -  Auto budget impact, SK loom kit strategy switch, PP/ROS test run conversion, loom keyword rank",
       "source": "cat-hat-deep-dive-2026-03-05"
     },
     {
       "date": "2026-03-16",
       "portfolio": "Needlepoint",
-      "type": "7-day post-deep-dive-2 re-check — TOS cuts working? SK pouch kit winning traffic? Auto waste reduced? Rank stable?",
+      "type": "7-day post-deep-dive-2 re-check  -  TOS cuts working? SK pouch kit winning traffic? Auto waste reduced? Rank stable?",
       "source": "needlepoint-deep-dive-2-2026-03-09"
     },
     {
@@ -1095,13 +1111,13 @@
     {
       "date": "2026-03-12",
       "portfolio": "Shield All",
-      "type": "7-day post-deep-dive re-check — verify 7 re-enabled campaigns, TOS changes, bid adjustments",
+      "type": "7-day post-deep-dive re-check  -  verify 7 re-enabled campaigns, TOS changes, bid adjustments",
       "source": "shield-all-deep-dive-2026-03-05"
     },
     {
       "date": "2026-03-12",
       "portfolio": "Latch Hook Kits",
-      "type": "7-day re-check — PP modifier impact, latch hook root bid boost results, new campaigns performance",
+      "type": "7-day re-check  -  PP modifier impact, latch hook root bid boost results, new campaigns performance",
       "source": "latch-hook-kits-deep-dive-2026-03-05"
     },
     {

@@ -328,6 +328,14 @@
         {"category": "CAMPAIGN_CREATE", "campaign": "SK needlepoint kits for kids (257183338184758)", "old": null, "new": "EXACT $0.43, TOS 97%, PP 10%, ROS 10%, $8/d, PAUSED", "status": "success"},
         {"category": "NEGATE_SEARCH_TERM", "campaign": "MK broad + Auto", "old": "no negatives", "new": "NEGATIVE_EXACT needlepoint for kids + needlepoint kits for kids (4 total)", "status": "success"}
       ]
+    },
+    {
+      "date": "2026-03-10",
+      "source": "listing-manager (optimize)",
+      "summary": "Listing rewrite pushed for B09HVDNFMR. Audit score 31/100. Title restructured with Craftiloo brand + kids/beginner. Backend expanded 82→247 bytes (+201%). Bullet 5 replaced (return policy → gift angle).",
+      "changes": [
+        {"category": "LISTING_REWRITE", "campaign": "N/A", "old": "Title: 'Pre Printed Needlepoint Wallet Kit...' | Backend: 82 bytes | No beginner/boys/gift", "new": "Title: 'Craftiloo Needlepoint Kit for Kids — Beginner...' | Backend: 247 bytes | +beginner, boys, gift, ages, 20+ new terms", "status": "success"}
+      ]
     }
   ],
   "pending_actions": [
@@ -390,7 +398,9 @@
       "category": "LISTING_AUDIT",
       "action": "Run listing-optimizer on B09HVDNFMR + B09HVSLBS6. CVR 5.0% (target 10%) is root cause of portfolio underperformance. No PPC fix can overcome this.",
       "created": "2026-03-09",
-      "status": "pending",
+      "status": "completed",
+      "completed_date": "2026-03-10",
+      "result": "B09HVDNFMR audit (31/100) + rewrite pushed live. Title restructured with Craftiloo brand + kids/beginner focus. Backend 82→247 bytes. Submission ae52f02381cb4aeca1edb75dd12b1c7d ACCEPTED. B09HVSLBS6 (Dog) still pending.",
       "source": "ppc-portfolio-action-plan-deep-dive-2"
     },
     {
@@ -413,6 +423,11 @@
       "date": "2026-03-23",
       "type": "14-day performance review",
       "focus": "Full metrics: portfolio ACoS trend, SK campaign utilization, rank trends, PT ROS removal impact. Listing audit should be complete by now."
+    },
+    {
+      "date": "2026-03-31",
+      "type": "listing-ab-analysis",
+      "focus": "Measure impact of B09HVDNFMR listing rewrite (pushed 2026-03-10). Check CVR change, rank recovery on beginner keywords, backend keyword indexing."
     }
   ],
   "skills_run": [
@@ -486,6 +501,20 @@
         "budgets_reduced": 2,
         "negatives_added": 4,
         "note": "Kids niche restructure. Paused generic adult KWs in MK broad. Added 'needlepoint for kids' BROAD + 'kids craft kit' PHRASE. Created 2 new SK campaigns (PAUSED). Reduced Auto $5→$3/d, PT $8→$5/d."
+      }
+    },
+    {
+      "skill": "listing-manager (optimize)",
+      "date": "2026-03-10",
+      "result": "success",
+      "key_metrics": {
+        "audit_score": 31,
+        "rewrite_pushed": true,
+        "submission_id": "ae52f02381cb4aeca1edb75dd12b1c7d",
+        "fields_updated": ["title", "bullet_points", "generic_keywords"],
+        "backend_bytes": "82→247",
+        "key_additions": ["beginner", "boys", "gift", "ages", "Craftiloo brand"],
+        "ab_check_due": "2026-03-31"
       }
     }
   ],

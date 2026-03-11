@@ -1,38 +1,23 @@
-# Lessons Learned -- Notification & Alerting Hub
+# Lessons & Issues
 
-> **Living document.** Claude MUST read this before every run and write to it after every run.
+> Cross-skill knowledge → `context/api-patterns.md`, `context/ppc-rules.md`, `context/tooling-workarounds.md`
 
-## How to Use This File
+## Skill-Specific Lessons
 
-**BEFORE every run:**
-1. Read this entire file
-2. Check Known Issues and plan around them
-3. Check Repeat Errors -- if you encounter one, tell the user: _"Repeat issue (xN): [description]"_
-
-**AFTER every run:**
-1. Add a Run Log entry at the TOP of the Run Log section
-2. Update Known Issues / Repeat Errors / Resolved Issues as appropriate
-
----
-
-## Run Log
-
-(Newest entries at TOP -- add your run entry here)
-
----
+_No runs yet._
 
 ## Known Issues
 
-(Active problems that need workarounds)
-
----
+_None yet._
 
 ## Repeat Errors
 
-(Issues that have occurred 2+ times -- MUST be surfaced to user with count)
-
----
+_None yet._
 
 ## Resolved Issues
 
-(Previously known issues that have been fixed)
+_None yet._
+
+## Recent Runs (last 3)
+
+_No runs yet._

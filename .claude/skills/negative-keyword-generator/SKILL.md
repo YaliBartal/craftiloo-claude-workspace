@@ -999,11 +999,9 @@ Before delivering the review list, verify:
 
 ---
 
-## Step 9: Post Notifications
+## Step 9: Slack Notification
 
-Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: negative-keyword-generator".
-Follow those instructions to post a summary to Slack.
-If Slack MCP is unavailable, skip and note in run log.
+**Skip this step.** The PPC Agent orchestrator handles Slack notifications via Step 8e after every sub-skill completes.
 
 ---
 

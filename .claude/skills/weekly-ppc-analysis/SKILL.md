@@ -1609,11 +1609,9 @@ For each portfolio, append this week's metrics to `outputs/research/ppc-agent/st
 
 ---
 
-### Step 14: Post Notifications
+### Step 14: Slack Notification
 
-Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: weekly-ppc-analysis".
-Follow those instructions to post a summary to Slack.
-If Slack MCP is unavailable, skip and note in run log.
+**Skip this step.** The PPC Agent orchestrator handles Slack notifications via Step 8e after every sub-skill completes.
 
 ---
 

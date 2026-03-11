@@ -279,6 +279,14 @@ Log to `listing-tracker.json`:
 - Update `current_score` from audit
 - Update `next_action` to "AB analysis due {date}" or "Audit complete — no changes made"
 
+#### Update PPC Portfolio Tracker (if push was made)
+
+After a successful listing push, update `outputs/research/ppc-agent/state/{portfolio-slug}.json` and `agent-state.json` portfolio_index:
+- `last_listing_change` → push date (today)
+- `listing_stage` → "awaiting-ab"
+
+This prevents the PPC agent from suggesting listing audits for products that were just optimized (14-day cooldown in Step 4 queue rules).
+
 ### Step 2c: CHECK_RESULTS Flow
 
 Route to listing-ab-analyzer.

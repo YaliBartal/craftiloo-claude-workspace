@@ -40,7 +40,7 @@
 | Catch All Auto | General |
 | Fuse Beads | Scaling |
 | Embroidery for Kids | Scaling |
-| Cross Stitch Backpack Charms | Scaling |
+| Cross Stitch Backpack Charms | Scaling (BSR #1 priority) |
 | Shield All | General |
 | 4 Flowers Embroidery | Scaling |
 | Cat and Hat Knitting | Launch |

@@ -1251,11 +1251,9 @@ For P3 items, a shorter format is acceptable but still include the "why":
 
 ---
 
-## Step 9: Post Notifications
+## Step 9: Slack Notification
 
-Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: ppc-portfolio-action-plan".
-Follow those instructions to post a summary to Slack.
-If Slack MCP is unavailable, skip and note in run log.
+**Skip this step.** The PPC Agent orchestrator handles Slack notifications via Step 8e after every sub-skill completes.
 
 ---
 

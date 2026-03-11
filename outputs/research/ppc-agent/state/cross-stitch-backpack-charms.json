@@ -47,7 +47,21 @@
         "current_rank": 4
       }
     ],
+    "bsr_goal": {
+      "target": "#1 Best Seller in niche",
+      "priority": "PRIMARY — always active",
+      "current_gap": "~1,000 BSR behind #1",
+      "rationale": "Best Seller badge drives massive organic sales uplift. We are close enough that sustained PPC + organic momentum can close the gap. This goal should guide all bid, budget, and campaign decisions for this portfolio.",
+      "tactics": [
+        "Maintain aggressive spend on high-converting keywords to sustain sales velocity",
+        "Prioritize sales volume over ACoS efficiency when BSR is within striking distance of #1",
+        "Monitor BSR daily — increase spend temporarily during dips to defend position",
+        "Leverage seasonal peaks (gifting holidays) to push for #1"
+      ],
+      "added": "2026-03-10"
+    },
     "strategic_notes": [
+      "PRIMARY GOAL: Achieve and maintain #1 Best Seller rank — only ~1,000 BSR behind. The BS badge organic sales boost is massive and justifies temporary ACoS flexibility.",
       "B08DDJCQKF ranks #1 organically on most core keywords — TOS spending has diminishing returns",
       "6 dormant campaigns with $80/day budget — investigate ad group status or archive",
       "Product pages placement shows exceptional CVR (30-50%) across campaigns"

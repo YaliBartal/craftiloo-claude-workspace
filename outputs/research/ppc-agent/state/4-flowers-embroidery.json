@@ -1,6 +1,6 @@
 {
   "$schema_version": "1.0",
-  "last_updated": "2026-03-05",
+  "last_updated": "2026-03-10",
   "portfolio": {
     "name": "4 Flowers Embroidery",
     "id": "110971277744354",
@@ -26,8 +26,9 @@
       }
     ],
     "niche_id": null,
-    "rank_radar_id": null,
-    "campaigns_enabled": null,
+    "rank_radar_id": "8858d8d2",
+    "campaigns_enabled": 7,
+    "campaigns_paused": 35,
     "campaigns_paused": null
   },
   "goals": {
@@ -149,6 +150,103 @@
     }
   ],
   "change_log": [
+    {
+      "date": "2026-03-10",
+      "skill": "ppc-portfolio-action-plan",
+      "summary": "Portfolio Rebuild — SK-dominant architecture. Paused 5 bleeders, re-enabled 3 SK campaigns, adjusted bids/TOS, added 34 negatives.",
+      "changes": [
+        {
+          "category": "CAMPAIGN_PAUSE",
+          "description": "PAUSED SK embroidery starter kit (310858826990920) — 250.9% ACoS, 1 order/30d",
+          "campaign_id": "310858826990920",
+          "status": "success"
+        },
+        {
+          "category": "CAMPAIGN_PAUSE",
+          "description": "PAUSED MK broad TOS (513250035569495) — $32 spend, $0 sales, redundant",
+          "campaign_id": "513250035569495",
+          "status": "success"
+        },
+        {
+          "category": "CAMPAIGN_PAUSE",
+          "description": "PAUSED Shield brand self target (328307551065979) — 82% ACoS",
+          "campaign_id": "328307551065979",
+          "status": "success"
+        },
+        {
+          "category": "CAMPAIGN_PAUSE",
+          "description": "PAUSED B0BWSGRTB1 brand ASINs (342533675718898) — wrong ASIN",
+          "campaign_id": "342533675718898",
+          "status": "success"
+        },
+        {
+          "category": "CAMPAIGN_PAUSE",
+          "description": "PAUSED B0C5S1FW5L CAT embroidery kits (432225410295477) — dormant",
+          "campaign_id": "432225410295477",
+          "status": "success"
+        },
+        {
+          "category": "BID_DECREASE",
+          "description": "SK beginners embroidery kit for adults TOS 181%->151%, budget $20->$15/d",
+          "campaign_id": "483417459201567",
+          "old_value": {"tos_pct": 181, "budget": 20},
+          "new_value": {"tos_pct": 151, "budget": 15},
+          "status": "success"
+        },
+        {
+          "category": "CAMPAIGN_ENABLE",
+          "description": "RE-ENABLED SK embroidery for beginners (145201311633066) — TOS 20%, budget $5/d, bid $0.43, strategy LEGACY_FOR_SALES",
+          "campaign_id": "145201311633066",
+          "old_value": {"state": "PAUSED", "tos_pct": 161, "budget": 11, "strategy": "AUTO_FOR_SALES"},
+          "new_value": {"state": "ENABLED", "tos_pct": 20, "budget": 5, "bid": 0.43, "strategy": "LEGACY_FOR_SALES"},
+          "status": "success"
+        },
+        {
+          "category": "CAMPAIGN_ENABLE",
+          "description": "RE-ENABLED SK easy embroidery kits for beginners (404885192371908) — TOS 41%, budget $7/d, bid $0.53, strategy LEGACY_FOR_SALES",
+          "campaign_id": "404885192371908",
+          "old_value": {"state": "PAUSED", "tos_pct": 94, "budget": 15, "strategy": "AUTO_FOR_SALES"},
+          "new_value": {"state": "ENABLED", "tos_pct": 41, "budget": 7, "bid": 0.53, "strategy": "LEGACY_FOR_SALES"},
+          "status": "success"
+        },
+        {
+          "category": "CAMPAIGN_ENABLE",
+          "description": "RE-ENABLED SK embroidery kits for adults (525516345508137) — TOS 47%, budget $8/d, bid $0.51 (promoted from search term 16% ACoS)",
+          "campaign_id": "525516345508137",
+          "old_value": {"state": "PAUSED", "tos_pct": 210, "budget": 30},
+          "new_value": {"state": "ENABLED", "tos_pct": 47, "budget": 8, "bid": 0.51},
+          "status": "success"
+        },
+        {
+          "category": "BUDGET_DECREASE",
+          "description": "MK broad ultra targeted budget $12->$5/d (SK campaigns now carry revenue)",
+          "campaign_id": "377667215373720",
+          "old_value": {"budget": 12},
+          "new_value": {"budget": 5},
+          "status": "success"
+        },
+        {
+          "category": "NEGATE_SEARCH_TERM",
+          "description": "Added 17 negatives to MK ultra targeted (12 irrelevant + 5 competitor brands)",
+          "campaign_id": "377667215373720",
+          "status": "success"
+        },
+        {
+          "category": "NEGATE_SEARCH_TERM",
+          "description": "Added 17 proactive negatives to Auto (cross-craft + irrelevant + competitor brands)",
+          "campaign_id": "315988388205283",
+          "status": "success"
+        }
+      ],
+      "budget_impact_daily": -6,
+      "estimated_weekly_impact": "Restructured from $41/d chaotic to $50/d SK-dominant. Expected ACoS trajectory: 70%->35% over 60 days.",
+      "key_findings": [
+        "35 paused campaigns found — graveyard of year-long enable/pause cycles",
+        "SK 'embroidery kits for adults' campaign already existed paused — re-enabled instead of creating new",
+        "Both re-enabled SK campaigns were on AUTO_FOR_SALES (up and down) — switched to LEGACY_FOR_SALES for cost control",
+        "Portfolio rebuild plan documented: outputs/research/ppc-agent/deep-dives/briefs/2026-03-10-4-flowers-portfolio-rebuild-plan.md"
+      ]
+    },
     {
       "date": "2026-03-08",
       "skill": "weekly-ppc-analysis",
@@ -304,56 +402,109 @@
       "id": "4f-deepdive",
       "priority": "P1",
       "category": "DEEP_DIVE",
-      "action": "Full portfolio deep dive — structural optimization needed. 30d ACoS 66.3% ($1,240 spend / $1,869 sales). Multiple campaigns bleeding (MK broad TOS $32/0 orders, SK starter 251% ACoS, Auto 119%). No prior optimization done. Needs: campaign pauses, negation of needlepoint terms, restructure around converting terms.",
+      "action": "Full portfolio deep dive — structural optimization needed.",
       "created": "2026-03-08",
-      "status": "pending",
-      "source": "weekly-ppc-analysis-30d"
+      "status": "completed",
+      "completed_date": "2026-03-10",
+      "resolution": "Portfolio rebuild executed — SK-dominant architecture, 5 campaigns paused, 3 re-enabled, negatives added."
     },
     {
       "id": "4f-001",
       "source": "listing-update-2026-03-03",
       "category": "AUDIT",
-      "action": "Post-listing-update re-audit — check rank recovery, CVR change, impression share after full listing rewrite",
+      "action": "Post-listing-update re-audit — check rank recovery, CVR change",
       "priority": "P1",
-      "status": "pending",
-      "created": "2026-03-03",
-      "due": "2026-03-10",
-      "notes": "Listing verified live Mar 5. Full re-audit needs 7 days of data."
+      "status": "partially-complete",
+      "completed_date": "2026-03-10",
+      "notes": "Rank data reviewed: hero KW at rank 42 (was 27), mixed signals. CVR at 5.3% (target 10%). Full assessment deferred to 60-day gate (May 5). Reports stuck PENDING prevented fresh 30d data."
     },
     {
       "id": "4f-002",
       "source": "portfolio-summary-2026-03-02",
       "category": "SEARCH_TERM_HARVEST",
-      "action": "7-day search term harvest from re-enabled Auto+Broad campaigns",
+      "action": "7-day search term harvest from Auto+Broad",
       "priority": "P1",
+      "status": "blocked",
+      "notes": "Reports stuck PENDING (repeat issue x9). Proactive negatives added to Auto instead. Broad paused in rebuild. Retry harvest in 7 days from Auto only."
+    },
+    {
+      "id": "4f-003",
+      "priority": "P2",
+      "category": "SEARCH_TERM_HARVEST",
+      "action": "First search term harvest post-rebuild — harvest Auto + MK ultra targeted + new SK campaigns",
+      "created": "2026-03-10",
       "status": "pending",
-      "created": "2026-03-02",
-      "due": "2026-03-09",
-      "notes": "Auto+Broad re-enabled Mar 2. First harvest after 7 days of data."
+      "due": "2026-03-24",
+      "notes": "Rebuild went live Mar 10. Need 14 days of data before first harvest."
+    },
+    {
+      "id": "4f-004",
+      "priority": "P2",
+      "category": "DECISION_GATE",
+      "action": "30-day SK performance check — evaluate re-enabled SK campaigns (embroidery for beginners, easy embroidery, embroidery kits for adults)",
+      "created": "2026-03-10",
+      "status": "pending",
+      "due": "2026-04-07",
+      "notes": "Decision gates per rebuild plan: SK for beginners 0 orders = lower bid; easy embroidery >50% ACoS = lower bid 15%."
+    },
+    {
+      "id": "4f-005",
+      "priority": "P2",
+      "category": "DECISION_GATE",
+      "action": "60-day full assessment — CVR trend, ACoS trajectory, seasonal strategy decision",
+      "created": "2026-03-10",
+      "status": "pending",
+      "due": "2026-05-05",
+      "notes": "If ACoS <35%: scale. If >40%: shift to seasonal strategy (minimal until Sep)."
     }
   ],
   "scheduled_reviews": [
     {
       "date": "2026-03-09",
       "type": "7-day search term harvest",
-      "verify": [
-        "Auto+Broad search term quality",
-        "New keyword discoveries",
-        "Negative keyword needs"
-      ],
-      "source": "4-flowers-phase-1-2026-03-02",
-      "status": "pending"
+      "status": "blocked",
+      "notes": "Reports PENDING. Proactive negatives added instead. Superseded by 4f-003 (Mar 24 harvest)."
     },
     {
       "date": "2026-03-10",
       "type": "Full re-audit",
+      "status": "completed",
+      "notes": "Portfolio rebuild executed. Deep dive + rebuild plan documented."
+    },
+    {
+      "date": "2026-03-24",
+      "type": "Post-rebuild search term harvest",
       "verify": [
-        "Rank recovery after listing rewrite",
-        "CVR improvement from 2.8%",
-        "Impression share changes",
-        "Ranking Juice improvement"
+        "Auto search term quality (now with negatives)",
+        "MK ultra targeted new terms",
+        "Re-enabled SK campaign performance",
+        "New keyword discoveries for SK promotion"
       ],
-      "source": "listing-update-2026-03-03",
+      "source": "portfolio-rebuild-2026-03-10",
+      "status": "pending"
+    },
+    {
+      "date": "2026-04-07",
+      "type": "30-day SK performance gate",
+      "verify": [
+        "SK embroidery for beginners: any orders? ACoS?",
+        "SK easy embroidery kits: ACoS <50%?",
+        "SK embroidery kits for adults: performing as expected?",
+        "Portfolio ACoS trend toward 35-42%?"
+      ],
+      "source": "portfolio-rebuild-2026-03-10",
+      "status": "pending"
+    },
+    {
+      "date": "2026-05-05",
+      "type": "60-day full assessment",
+      "verify": [
+        "CVR trend from listing rewrite (target 7-8%)",
+        "Portfolio ACoS (target <35%)",
+        "Organic rank recovery",
+        "Decide: scale or shift to seasonal strategy"
+      ],
+      "source": "portfolio-rebuild-2026-03-10",
       "status": "pending"
     },
     {
@@ -406,15 +557,42 @@
         "inflections_detected": 0,
         "trajectory_30d_acos": "improving"
       }
+    },
+    {
+      "skill": "ppc-portfolio-action-plan",
+      "date": "2026-03-10",
+      "result": "success",
+      "key_output": "Portfolio Rebuild: SK-dominant architecture. 5 campaigns paused, 3 SK re-enabled with adjusted settings, 34 negatives added. Plan doc saved.",
+      "key_metrics": {
+        "health_score": "3/10",
+        "actions_executed": 12,
+        "campaigns_paused": 5,
+        "campaigns_enabled": 3,
+        "negatives_added": 34,
+        "new_active_campaigns": 7,
+        "daily_budget_total": 50
+      },
+      "output_ref": "deep-dives/briefs/2026-03-10-4-flowers-portfolio-rebuild-plan.md"
     }
   ],
   "improvement_assessment": {
-    "last_assessed": "2026-03-05",
-    "overall_trend": "unknown",
-    "confidence": "low",
-    "summary": "Emergency intervention in progress. Phase 1 (PPC re-enable) done Mar 2, Phase 2 (listing rewrite) done Mar 3, listing verified live Mar 5. No post-change performance data yet. First real assessment on Mar 10.",
-    "metric_trends": {},
-    "verdict": "Intervention phase. Assessment deferred to Mar 10 re-audit.",
-    "history": []
+    "last_assessed": "2026-03-10",
+    "overall_trend": "restructuring",
+    "confidence": "medium",
+    "summary": "Portfolio rebuilt from chaotic 14-campaign structure to clean 7-campaign SK-dominant architecture. ACoS improved from 67.9% (Feb 20) to 48% (Mar 8) pre-rebuild. Post-rebuild expectation: 35-42% by Apr 7, 28-33% by May 5 if listing CVR improves. Phase 3 (structural rebuild) now complete. Next assessment at 30-day gate (Apr 7).",
+    "metric_trends": {
+      "acos": "improving (67.9% -> 48% -> expected 35%)",
+      "cvr": "stable at 5.3% (target 7-8%, depends on listing rewrite impact)",
+      "rank": "mixed (hero KW declining, needlepoint improving)"
+    },
+    "verdict": "Rebuild complete. Three phases done: (1) PPC re-enable Mar 2, (2) Listing rewrite Mar 3, (3) Portfolio restructure Mar 10. Now in monitoring phase. Decision gates at Mar 24, Apr 7, May 5.",
+    "history": [
+      {
+        "date": "2026-03-10",
+        "event": "Portfolio rebuild — SK-dominant architecture established",
+        "acos_at_time": 48,
+        "actions_taken": 12
+      }
+    ]
   }
 }
