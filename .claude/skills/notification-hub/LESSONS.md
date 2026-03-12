@@ -22,6 +22,21 @@ _None yet._
 
 ## Recent Runs (last 3)
 
+### Run: 2026-03-12
+**Result:** Success
+**Calling skill:** daily-market-intel
+
+**What happened:**
+- Posted daily-market-intel summary to `#claude-morning-brief` (workspace: craft)
+- Noted SB stale data + 5 alerts (OOS, crisis, low stock, SB 401)
+- Skipped #claude-alerts per user efficiency instructions
+
+**What didn't work:**
+- Nothing
+
+**Lesson learned:**
+- When SB data is stale, note it clearly inline rather than omitting the section
+
 ### Run: 2026-03-11 (Refresh)
 **Result:** Success
 **Calling skill:** ppc-daily-health (2nd run today)
