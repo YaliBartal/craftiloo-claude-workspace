@@ -22,6 +22,24 @@ _None yet._
 
 ## Recent Runs (last 3)
 
+### Run: 2026-03-12 (ppc-daily-health)
+**Result:** Success
+**Calling skill:** ppc-daily-health
+
+**What happened:**
+- Posted ppc-daily-health summary to `#claude-morning-brief` (workspace: craft)
+- 1 RED (Needlepoint), 11 YELLOW, 5 GREEN. CS Backpack Charms upgraded RED→GREEN (stock resolved)
+- Big review day flag: 9 portfolios due today
+- Skipped #claude-alerts per user efficiency instructions
+
+**What didn't work:**
+- Nothing
+
+**Lesson learned:**
+- User may specify wrong channel (ppc-updates) but recipe routing (morning-brief) is canonical — always follow LESSONS.md lesson #1
+
+---
+
 ### Run: 2026-03-12
 **Result:** Success
 **Calling skill:** daily-market-intel
@@ -52,17 +70,3 @@ _None yet._
 **Lesson learned:**
 - On re-runs same day, label message as "(Refresh)" so it's clear it's a second post
 
-### Run: 2026-03-11
-**Result:** Success
-**Calling skill:** ppc-daily-health
-
-**What happened:**
-- Posted ppc-daily-health summary to `#claude-morning-brief` (workspace: craft)
-- Message posted under 2000 chars using bullet format
-- Skipped #claude-alerts per user efficiency instructions
-
-**What didn't work:**
-- Nothing
-
-**Lesson learned:**
-- Recipe channel routing is canonical — ppc-daily-health → #claude-morning-brief, not #claude-ppc-updates
