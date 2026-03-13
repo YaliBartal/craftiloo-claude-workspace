@@ -1,0 +1,510 @@
+{
+  "generated": "2026-03-10",
+  "hero_asins": [
+    "B08DDJCQKF","B0F6YTG1CH","B09X55KL2C","B0DC69M3YD","B09WQSBZY7",
+    "B096MYBLS1","B08FYH13CL","B0F8R652FX","B0F8DG32H5","B09THLVFZK",
+    "B07D6D95NG","B0FQC7YFX6","B09HVSLBS6"
+  ],
+  "niches": {
+    "u1y83aQfmK": {
+      "label": "Kids Cross Stitch Kit",
+      "competitors": [
+        {
+          "asin": "B08DDJCQKF",
+          "is_hero": true,
+          "brand": "CRAFTILOO",
+          "sales": 1307,
+          "revenue": 26113.86,
+          "price": 19.98,
+          "rating": 4.5,
+          "reviewCount": 1297,
+          "kwRankedOnP1": 135
+        },
+        {
+          "asin": "B0DFHN42QB",
+          "brand": "EZCRA",
+          "sales": 776,
+          "revenue": 13960.24,
+          "price": 17.99,
+          "rating": 4.6,
+          "reviewCount": 177,
+          "kwRankedOnP1": 123
+        },
+        {
+          "asin": "B0B97Q1Q4T",
+          "brand": "KRAFUN",
+          "sales": 643,
+          "revenue": 14139.57,
+          "price": 21.99,
+          "rating": 4.6,
+          "reviewCount": 287,
+          "kwRankedOnP1": 76
+        },
+        {
+          "asin": "B0DP654CSV",
+          "brand": "Louise Maelys",
+          "sales": 510,
+          "revenue": 11724.9,
+          "price": 22.99,
+          "rating": 4.4,
+          "reviewCount": 42,
+          "kwRankedOnP1": 79
+        }
+      ]
+    },
+    "gfot2FZUBU": {
+      "label": "Embroidery Stitch Practice Kit",
+      "competitors": [
+        {
+          "asin": "B08DDJCQKF",
+          "is_hero": true,
+          "brand": "CRAFTILOO",
+          "sales": 1258,
+          "revenue": 25134.84,
+          "price": 19.98,
+          "rating": 4.5,
+          "reviewCount": 1278,
+          "kwRankedOnP1": 42
+        },
+        {
+          "asin": "B0DFHN42QB",
+          "brand": "EZCRA",
+          "sales": 670,
+          "revenue": 12053.3,
+          "price": 17.99,
+          "rating": 4.6,
+          "reviewCount": 164,
+          "kwRankedOnP1": 28
+        },
+        {
+          "asin": "B09X55KL2C",
+          "is_hero": true,
+          "brand": "CRAFTILOO",
+          "sales": 441,
+          "revenue": 11898.18,
+          "price": 26.98,
+          "rating": 4.5,
+          "reviewCount": 694,
+          "kwRankedOnP1": 29
+        },
+        {
+          "asin": "B0B7JHN4F1",
+          "brand": "KRAFUN",
+          "sales": 397,
+          "revenue": 5951.03,
+          "price": 14.99,
+          "rating": 4.6,
+          "reviewCount": 274,
+          "kwRankedOnP1": 18
+        }
+      ]
+    },
+    "Er21lin0KC": {
+      "label": "Beginners Embroidery Kit for Kids",
+      "competitors": [
+        {
+          "asin": "B0C3ZVKB46",
+          "brand": "ETSPIL",
+          "sales": 12319,
+          "revenue": 209176.62,
+          "price": 19.98,
+          "rating": 4.4,
+          "reviewCount": 1938,
+          "kwRankedOnP1": 264
+        },
+        {
+          "asin": "B0CZHKSSL4",
+          "brand": "CYANFOUR",
+          "sales": 6178,
+          "revenue": 104717.1,
+          "price": 16.95,
+          "rating": 4.5,
+          "reviewCount": 1187,
+          "kwRankedOnP1": 268
+        },
+        {
+          "asin": "B0B762JW55",
+          "brand": "Bradove",
+          "sales": 3343,
+          "revenue": 83508.14,
+          "price": 24.98,
+          "rating": 4.6,
+          "reviewCount": 1924,
+          "kwRankedOnP1": 238
+        },
+        {
+          "asin": "B0CH8VJ97G",
+          "brand": "ETSPIL",
+          "sales": 2322,
+          "revenue": 48715.56,
+          "price": 20.98,
+          "rating": 4.5,
+          "reviewCount": 755,
+          "kwRankedOnP1": 117
+        }
+      ]
+    },
+    "RmbSD3OH6t": {
+      "label": "Sewing Kit for Kids",
+      "competitors": [
+        {
+          "asin": "B091GXM2Y6",
+          "brand": "KRAFUN",
+          "sales": 5697,
+          "revenue": 125277.03,
+          "price": 21.99,
+          "rating": 4.8,
+          "reviewCount": 3488,
+          "kwRankedOnP1": 258
+        },
+        {
+          "asin": "B0C2XYP6L3",
+          "brand": "KRAFUN",
+          "sales": 1913,
+          "revenue": 42066.87,
+          "price": 21.99,
+          "rating": 4.6,
+          "reviewCount": 1865,
+          "kwRankedOnP1": 288
+        },
+        {
+          "asin": "B09WQSBZY7",
+          "is_hero": true,
+          "brand": "CRAFTILOO",
+          "sales": 1333,
+          "revenue": 29299.34,
+          "price": 17.98,
+          "rating": 4.6,
+          "reviewCount": 617,
+          "kwRankedOnP1": 251
+        },
+        {
+          "asin": "B08JYF1Z9F",
+          "brand": "CiyvoLyeen",
+          "sales": 1195,
+          "revenue": 23888.05,
+          "price": 20.99,
+          "rating": 4.7,
+          "reviewCount": 3968,
+          "kwRankedOnP1": 223
+        }
+      ]
+    },
+    "3qbggwOhO2": {
+      "label": "Latch Hook Kits for Kids",
+      "competitors": [
+        {
+          "asin": "B0DJQPGDMQ",
+          "brand": "veirousa",
+          "sales": 1271,
+          "revenue": 31762.29,
+          "price": 24.99,
+          "rating": 4.7,
+          "reviewCount": 419,
+          "kwRankedOnP1": 37
+        },
+        {
+          "asin": "B06XRRN4VL",
+          "brand": "LatchKits",
+          "sales": 709,
+          "revenue": 12024.64,
+          "price": 16.99,
+          "rating": 4.6,
+          "reviewCount": 7299,
+          "kwRankedOnP1": 24
+        },
+        {
+          "asin": "B0CX9H8YGR",
+          "brand": "LatchKits",
+          "sales": 477,
+          "revenue": 11920.23,
+          "price": 23.9,
+          "rating": 4.4,
+          "reviewCount": 1110,
+          "kwRankedOnP1": 14
+        },
+        {
+          "asin": "B0D1QV84VN",
+          "brand": "veirousa",
+          "sales": 392,
+          "revenue": 9796.08,
+          "price": 24.99,
+          "rating": 4.8,
+          "reviewCount": 206,
+          "kwRankedOnP1": 31
+        }
+      ]
+    },
+    "AY4AlnSj9g": {
+      "label": "Mini Perler Beads",
+      "competitors": [
+        {
+          "asin": "B09THLVFZK",
+          "is_hero": true,
+          "brand": "shinshin creation",
+          "sales": 2044,
+          "revenue": 59235.12,
+          "price": 28.98,
+          "rating": 4.6,
+          "reviewCount": 2922,
+          "kwRankedOnP1": 74
+        },
+        {
+          "asin": "B0C5WQD914",
+          "brand": "INSCRAFT",
+          "sales": 1018,
+          "revenue": 27465.64,
+          "price": 26.98,
+          "rating": 4.5,
+          "reviewCount": 321,
+          "kwRankedOnP1": 72
+        },
+        {
+          "asin": "B08QV9CMFQ",
+          "brand": "LIHAO",
+          "sales": 805,
+          "revenue": 15286.95,
+          "price": 18.99,
+          "rating": 4.2,
+          "reviewCount": 1064,
+          "kwRankedOnP1": 57
+        },
+        {
+          "asin": "B0D5LF666P",
+          "brand": "FUNZBO",
+          "sales": 764,
+          "revenue": 20612.72,
+          "price": 26.98,
+          "rating": 4.5,
+          "reviewCount": 125,
+          "kwRankedOnP1": 59
+        }
+      ]
+    },
+    "O6b4XATpTj": {
+      "label": "Loom Knitting",
+      "competitors": [
+        {
+          "asin": "B0B8W4FK4Q",
+          "brand": "Hapinest",
+          "sales": 814,
+          "revenue": 16271.86,
+          "price": 19.99,
+          "rating": 4.5,
+          "reviewCount": 391,
+          "kwRankedOnP1": 250
+        },
+        {
+          "asin": "B0F8DG32H5",
+          "is_hero": true,
+          "brand": "CRAFTILOO",
+          "sales": 258,
+          "revenue": 7476.84,
+          "price": 28.98,
+          "rating": 4.9,
+          "reviewCount": 31,
+          "kwRankedOnP1": 110
+        },
+        {
+          "asin": "B0DKD2S3JT",
+          "brand": "CRAFTILOO",
+          "sales": 133,
+          "revenue": 3854.34,
+          "price": 28.98,
+          "rating": 4.5,
+          "reviewCount": 55,
+          "kwRankedOnP1": 93
+        },
+        {
+          "asin": "B004JIFCXO",
+          "brand": "Creativity for Kids",
+          "rating": 4.5,
+          "reviewCount": 3280,
+          "kwRankedOnP1": 269
+        }
+      ]
+    },
+    "Aw4EQhG6bP": {
+      "label": "Lacing Cards for Kids",
+      "competitors": [
+        {
+          "asin": "B0B58BZ5KV",
+          "brand": "KRAFUN",
+          "sales": 2434,
+          "revenue": 34051.66,
+          "price": 13.99,
+          "rating": 4.7,
+          "reviewCount": 919,
+          "kwRankedOnP1": 36
+        },
+        {
+          "asin": "B0CP8VJ56S",
+          "brand": "SpriteGru",
+          "sales": 1504,
+          "revenue": 15025,
+          "price": 9.99,
+          "rating": 4.7,
+          "reviewCount": 1049,
+          "kwRankedOnP1": 41
+        },
+        {
+          "asin": "B00JM5G05I",
+          "brand": "Melissa & Doug",
+          "sales": 639,
+          "revenue": 14483,
+          "price": 25.49,
+          "rating": 4.8,
+          "reviewCount": 1030,
+          "kwRankedOnP1": 34
+        },
+        {
+          "asin": "B000O7ISY4",
+          "brand": "Melissa & Doug",
+          "sales": 630,
+          "revenue": 7049.7,
+          "price": 5,
+          "rating": 4.7,
+          "reviewCount": 7296,
+          "kwRankedOnP1": 37
+        }
+      ]
+    },
+    "5IGkCmOM0h": {
+      "label": "Needlepoint Pouch Kit",
+      "competitors": [
+        {
+          "asin": "B08DDJCQKF",
+          "is_hero": true,
+          "brand": "CRAFTILOO",
+          "sales": 1307,
+          "revenue": 26113.86,
+          "price": 19.98,
+          "rating": 4.5,
+          "reviewCount": 1297,
+          "kwRankedOnP1": 127
+        },
+        {
+          "asin": "B0DFHN42QB",
+          "brand": "EZCRA",
+          "sales": 776,
+          "revenue": 13960.24,
+          "price": 17.99,
+          "rating": 4.6,
+          "reviewCount": 177,
+          "kwRankedOnP1": 103
+        },
+        {
+          "asin": "B0B7JHN4F1",
+          "brand": "KRAFUN",
+          "sales": 545,
+          "revenue": 8169.55,
+          "price": 14.99,
+          "rating": 4.6,
+          "reviewCount": 287,
+          "kwRankedOnP1": 76
+        },
+        {
+          "asin": "B0DP654CSV",
+          "brand": "Louise Maelys",
+          "sales": 510,
+          "revenue": 11724.9,
+          "price": 22.99,
+          "rating": 4.4,
+          "reviewCount": 42,
+          "kwRankedOnP1": 85
+        }
+      ]
+    },
+    "kZRreyE7kJ": {
+      "label": "Cross Stitch Kits (broad)",
+      "competitors": [
+        {
+          "asin": "B0CZHKSSL4",
+          "brand": "CYANFOUR",
+          "sales": 10976,
+          "revenue": 164420.48,
+          "price": 14.98,
+          "rating": 4.4,
+          "reviewCount": 1277,
+          "kwRankedOnP1": 246
+        },
+        {
+          "asin": "B0C8V5R2FQ",
+          "brand": "Kraftex",
+          "sales": 1901,
+          "revenue": 18990.99,
+          "price": 9.99,
+          "rating": 4.4,
+          "reviewCount": 689,
+          "kwRankedOnP1": 195
+        },
+        {
+          "asin": "B08DDJCQKF",
+          "is_hero": true,
+          "brand": "CRAFTILOO",
+          "sales": 1307,
+          "revenue": 26113.86,
+          "price": 19.98,
+          "rating": 4.5,
+          "reviewCount": 1297,
+          "kwRankedOnP1": 211
+        },
+        {
+          "asin": "B0DFHN42QB",
+          "brand": "EZCRA",
+          "sales": 776,
+          "revenue": 13960.24,
+          "price": 17.99,
+          "rating": 4.6,
+          "reviewCount": 177,
+          "kwRankedOnP1": 139
+        }
+      ]
+    },
+    "WFV3TE3beK": {
+      "label": "Fuse Beads",
+      "competitors": [
+        {
+          "asin": "B07VLVMY3C",
+          "brand": "FUNZBO",
+          "sales": 3154,
+          "revenue": 113480.92,
+          "price": 35.98,
+          "rating": 4.7,
+          "reviewCount": 6185,
+          "kwRankedOnP1": 64
+        },
+        {
+          "asin": "B07VNPWVZJ",
+          "brand": "FUNZBO",
+          "sales": 3154,
+          "revenue": 72478.92,
+          "price": 22.98,
+          "rating": 4.7,
+          "reviewCount": 6185,
+          "kwRankedOnP1": 64
+        },
+        {
+          "asin": "B07YDDPPWX",
+          "brand": "Meland",
+          "sales": 1372,
+          "revenue": 34286.28,
+          "price": 24.99,
+          "rating": 4.6,
+          "reviewCount": 3398,
+          "kwRankedOnP1": 58
+        },
+        {
+          "asin": "B076N1Q31T",
+          "brand": "shinshin creation",
+          "sales": 809,
+          "revenue": 24789.72,
+          "price": 19.99,
+          "rating": 4.7,
+          "reviewCount": 2954,
+          "kwRankedOnP1": 55
+        }
+      ]
+    }
+  }
+}

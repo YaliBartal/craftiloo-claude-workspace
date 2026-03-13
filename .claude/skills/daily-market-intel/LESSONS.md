@@ -24,6 +24,76 @@
 
 <!-- Add new entries at the TOP (newest first). Use this exact format: -->
 
+### Run: 2026-03-12 (Hero Product BSR Scrape)
+**Goals:**
+- [x] Scrape BSR, price, rating, reviews for 13 hero ASINs via Apify saswave actor
+
+**Result:** Partial success — 12/13 ASINs returned full data. B0DFPQ5LGD returned empty (no title, no BSR, no price).
+
+**What worked:**
+- Direct curl to Apify API (no Python available on this machine)
+- saswave actor completed in ~30s for 13 ASINs
+- Input format: `{"asins": [...], "amazon_domain": "www.amazon.com"}`
+
+**What didn't:**
+- B0DFPQ5LGD returned no data — may be suppressed/unlisted or new listing not yet indexed
+- Prices returned in EUR currency despite scraping amazon.com — known saswave quirk
+- B096MYBLS1 and B09THLVFZK had empty price fields
+
+**Lessons:**
+- Python is NOT available on this Windows machine (Store stubs return exit code 49). Use curl for API calls.
+- saswave price field is unreliable — sometimes returns EUR, sometimes empty. SP-API `get_competitive_pricing` is more reliable for USD prices.
+
+### Run: 2026-03-10
+**Goals:**
+- [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
+- [x] Fetch SP-API Orders for yesterday's revenue/units (2026-03-09)
+- [x] Fetch DataDive Rank Radar data for 9 hero radars (B08DDJCQKF no radar)
+- [ ] Fetch DataDive competitor data for 11 niches — ❌ ALL EMPTY (parsing error)
+- [x] Run Apify keyword scan (20 keywords) with axesso_data actor — 20/20
+- [x] Run Apify competitor BSR scan (34 ASINs — saswave actor)
+- [ ] Fetch Seller Board 7-day dashboard + per-ASIN detailed — ❌ FAILED 401 (×5 consecutive)
+- [x] Compile full report with mandatory format
+- [x] Save snapshot
+
+**Result:** ⚠️ Partial — SP-API, Apify keyword + BSR scan, and Rank Radar (counts only) succeeded. SB 401 again (fifth consecutive run). DD competitors all empty. Rank Radar movements unavailable.
+
+**What happened:**
+- SP-API: 100 orders, 100 units, $2,073.56 shipped revenue for Mar 9 (Monday low-volume). B08DDJCQKF stock ALERT RESOLVED — 925 units (yesterday's 73 reading confirmed API anomaly). B09X55KL2C Buy Box still at $21.58 (3rd party vs our $23.98).
+- DataDive Rank Radar: 9/9 radars fetched. Movement data unavailable — script received list response from rank radar endpoint, crashed on `.get()` call. Only top10/top50 summary counts available (from list endpoint). B0FQC7YFX6 jumped +5 top-10 (6→11). B0DC69M3YD achieved 1 top-10 keyword for first time in 28+ days. B09WQSBZY7 declined -10 top10 (37→27).
+- DataDive Competitors: ALL 11 niches returned empty. The script received a list-format response from the competitors endpoint. `.get()` on a list throws TypeError. Same root cause as Rank Radar — API may return different JSON structures (list vs dict) in some conditions.
+- Apify keyword scan: 20/20 perfect. Fixed key bug from prior run: `(item.get("productDescription") or "")[:50]` — None value from API caused crash when using `.get("productDescription", "")[:50]`. axesso input confirmed: send `json=inp` directly (not wrapped), where `inp = {"input": [...]}`.
+- Apify saswave: 34/34 scans. BSR confirmed: `bestsellerRanks[0].rank` comma-formatted string. bsr_category field came back empty in this run — likely actor behavior inconsistency. Prices still EUR — continue ignoring.
+- Seller Board: 401 again (fifth consecutive run). Must fix TODAY.
+- B08DDJCQKF SERP on "cross stitch kits for kids": #5 in morning scan, #1 in afternoon scan — SERP volatile, not a sustained drop. Always note time of scan in alerts.
+- B09WQSBZY7 hit BSR 4,210 — new all-time best (baseline was 11,717 = -64% improvement).
+- LatchKits reclaimed SERP #1+#2 on "latch hook kits for kids" (we held #1+#2 yesterday). SERP still volatile.
+- Multiple new sewing kit competitors found on "kids sewing kit": GOASION (×2), Fairy Elves, unknown.
+
+**What didn't work:**
+- Seller Board 401 — tokens still expired. FIFTH consecutive failure.
+- DataDive competitors: all 11 returned empty. Root cause: API returns list, script expects dict. Fix: wrap in `if isinstance(data, list)` check or handle both formats.
+- Rank Radar movement data: same issue — list response, `.get()` crashes. Fix same way.
+- saswave bsr_category returned empty strings in this run (was working in prior runs). Inconsistent actor behavior.
+
+**Is this a repeat error?** Seller Board 401 = **Repeat Error ×5** (must fix TODAY — escalating). DataDive empty response = repeat error ×2 (occurs when API returns list instead of dict — need defensive parsing). Rank Radar movement failure = repeat error ×2.
+
+**Lesson learned:**
+- **DataDive API defensive parsing (CRITICAL)**: Both rank radar and competitors endpoints can return either a `dict` or a `list`. ALWAYS check: `if isinstance(data, list): data = {"items": data}` or similar before calling `.get()`. This has caused failures on multiple runs.
+- **axesso None productDescription**: Use `(item.get("productDescription") or "")[:50]` — NOT `item.get("productDescription", "")[:50]`. API can return `None` explicitly.
+- **B08DDJCQKF stock API anomaly confirmed**: Three consecutive low readings (82→73→925) prove the 82+73 values were FBA API anomalies. Rule: never alert on stock until 3+ consecutive readings confirm the trend.
+- **saswave bsr_category**: Field is unreliable (empty strings in some runs, populated in others). Use only `bsr` field. Category carry-forward from prior snapshots is fine.
+- **MUST FIX BEFORE NEXT RUN**: Seller Board tokens (×5 failures), DataDive parsing (dict vs list), Rank Radar movements (same fix), B08DDJCQKF Rank Radar creation.
+- **SERP alert timing matters**: B08DDJCQKF showed #5 in morning scan and #1 in afternoon scan on same day. Do NOT alert on a SERP drop without noting scan time. Require 2 consecutive same-time-of-day readings before treating a SERP shift as sustained.
+- **Background Agent with MCP tools succeeds where inline scripts fail for DataDive**: Background Agent using DataDive MCP tools directly got 11/11 niches; inline Python script got 0/11. Always use background Agent approach for DD competitors and rank radar. (Late-arriving agent from this run confirmed same: 11/11 via MCP tools.)
+- **B0BXKB7QF6 misranking in sewing**: "30K+ bought in past month" — this is an adult travel sewing kit (Coquimbo brand), not a craft competitor. Misranking on "kids sewing kit" keyword. DISMISS if seen again.
+- **saswave competitor_bsr with rating/reviews**: When running the full background agent approach (not inline script), the saswave output includes `rating` and `reviews` fields. The inline polling script got nulls. Prefer background agent for richer data.
+- **B0F8DG32H5 knitting SERP gap confirmed**: Absent from all 4 knitting keyword SERPs (loom knitting kit, loom knitting, knitting kit for kids, knitting kit for beginners). B0DKD2S3JT (non-hero) does appear at #18 and #13. B0F8DG32H5 needs listing audit or PPC investigation.
+
+**Tokens/cost:** ~110K tokens, ~$0.95 Apify cost (20 keywords + 1 BSR scan)
+
+---
+
 ### Run: 2026-03-09
 **Goals:**
 - [x] Fetch SP-API BSR, pricing, inventory for 13 hero ASINs
@@ -746,12 +816,10 @@
 - **Workaround:** Use `list_rank_radars` for headline top10/top50 counts (accurate). Accept that movement detail analysis covers only the first 50 keywords per radar. Radars affected: B09WQSBZY7 (87 kws), B0F8DG32H5 (81 kws), B0DC69M3YD (67 kws).
 - **Root cause:** DataDive API pagination limit. No known workaround — the API does not expose a pagination parameter for rank radar keyword data.
 
-### Issue: Apify saswave BSR Field Returns Null (2026-03-08)
-- **First seen:** 2026-03-08
-- **Description:** saswave/amazon-product-scraper returned rating data for all 34 ASINs but `bsr` field was null for every ASIN. The BSR data was accessible in Feb/Mar runs but field name may have changed in actor update.
-- **Workaround:** Fall back to previous snapshot's BSR data for competitor tables. Note "(prev snapshot)" in BSR source column.
-- **Fix:** Audit raw saswave actor output to find correct BSR field name. Try: `bsr`, `bestSellerRank`, `salesRank`, `rankingInCategory`, `rank`. Update agent prompt with correct field name once identified.
-- **Root cause:** Actor output format may have changed, or the field name was always different and the extraction code used an incorrect mapping.
+### Issue: Apify saswave BSR Field — RESOLVED (2026-03-09)
+- **First seen:** 2026-03-08 (null for all ASINs)
+- **Resolved:** 2026-03-09 — field confirmed as `bestsellerRanks[0].rank` (comma-formatted string e.g. "29,277"). Strip commas before parsing to int. B004JIFCXO has no bestsellerRanks array — product-level anomaly.
+- **Note:** bsr_category field (from same actor) returned empty strings on 2026-03-10 run — inconsistent. Use only `bsr` value, carry category forward from snapshots.
 
 ### Issue: Apify saswave/amazon-product-scraper Returns EUR Prices
 - **First seen:** 2026-03-01
@@ -793,12 +861,26 @@
 
 ## Repeat Errors
 
-### Seller Board 401 Unauthorized (×3) — ACTIVE
+### Seller Board 401 Unauthorized (×5) — CRITICAL / ACTIVE
 - **First seen:** 2026-03-02
-- **Repeated:** 2026-03-07, 2026-03-08
-- **Status:** ACTIVE — tokens expired for 6+ days now
-- **Fix:** Log into Sellerboard → Settings → Automation → Reports → regenerate all 5 URLs → update `.env`
+- **Repeated:** 2026-03-07, 2026-03-08, 2026-03-09, 2026-03-10
+- **Status:** CRITICAL ACTIVE — tokens expired for 8+ days. Data stale since Feb 21-27. Fix TODAY.
+- **Fix:** Log into Sellerboard → Settings → Automation → Reports → regenerate all 5 URLs → update `.env`. ALSO add missing `SELLERBOARD_SALES_DETAILED_7D` env var (was never configured).
 - **Impact:** All SB financials/per-ASIN data stale (carrying forward Feb 21–27). Cannot see profit, margin, TACoS, per-ASIN revenue until fixed.
+
+### DataDive Competitors Inline Script Fails — Use Background Agent Instead (RESOLVED for competitors)
+- **First seen:** 2026-03-09 (inline Python script)
+- **Resolved for competitors:** 2026-03-10 — A background Agent using DataDive MCP tools directly succeeded (11/11 niches). The inline Python script's dict/list parsing was the issue, not the API itself.
+- **Rank Radar movements still affected:** list response format crashes inline script `.get()` calls.
+- **Fix for inline script:** Add defensive parsing: `if isinstance(data, list): items = data` before calling `.get()`.
+- **Best practice going forward:** Use a background Agent with DataDive MCP for competitors (not inline Python). Rank Radar summary counts (from list endpoint) are still reliable inline.
+
+### Rank Radar Movement Data Unavailable (×2) — ACTIVE
+- **First seen:** 2026-03-09
+- **Repeated:** 2026-03-10
+- **Status:** ACTIVE — rank radar detail endpoint returns list, crashes on `.get()`
+- **Fix:** Same as DataDive dict/list fix above. Also check pagination for large radars (87-keyword radars may need multiple pages).
+- **Impact:** No keyword movement detail, no significant mover identification. Only headline top10/top50 counts available.
 
 ### FBA Inventory API Truncation (×2) — RESOLVED
 - **First seen:** 2026-02-24 (run 1)

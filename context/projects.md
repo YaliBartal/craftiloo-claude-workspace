@@ -21,6 +21,7 @@
 | Hobby Lobby Marketplace | Planning | Medium | Retail marketplace expansion |
 | Bed Bath & Beyond Marketplace | Planning | Medium | Retail marketplace expansion |
 | Physical Retail Placement | In Progress | High | Pursuing store placement deals |
+| **PSi Distribution Partnership** | **In Discussion** | **High** | PSi (Rachel Krause) — hybrid distributor/rep for US retail. Model: purchase at 35-38% MSRP (landed DDP), PSi becomes vendor of record. Channels: Mass (Target, Walmart), Mid-Tier (Kohl's), Book Trade (B&N), Independents. Timeline: Spring 2027 mass retail resets. Next: regroup week of Mar 16-18 to review materials. Craftiloo sending samples of top sellers + Barbie kits. Sales data & market context doc sent. |
 
 ### Product Development - Barbie Kits
 
@@ -114,4 +115,4 @@
 
 ---
 
-*Last updated: 2026-03-10*
+*Last updated: 2026-03-12*
