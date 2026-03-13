@@ -4,6 +4,28 @@
 
 *(New entries go at the TOP)*
 
+### Run: 2026-03-13
+**Result:** Success
+
+**What happened:**
+- 171 ENABLED campaigns — identical to Mar 12. Total daily budget $2,668.
+- Net top-10 improved 190→195 (+5). Cat & Hat leading with +6 (14→20). BSR also improved -11,383.
+- 4 Flowers crisis deepens: top-10 hit 0 (was 1). Crisis day 30. P1 audit 3d overdue.
+- 5 listing re-audits due today (Fairy Family, Fuse Beads, CS Backpack Charms, LH Kits, Biggie Beads) — 7d from Mar 6 listing push.
+- Needlepoint remains sole RED: 68.7% ACoS, 2 SK campaigns still AWAITING_ENABLE.
+- QUEFE competitive threat flagged: dominating #1-2 on 'perler beads'.
+
+**What didn't work:**
+- Campaign API returned 82K chars again — saved to file, parsed with Python JSON block extraction. Budget field confirmed as flat float.
+
+**Lesson learned:**
+- When 5+ portfolios have listing re-audits due on the same day, surface this as a consolidated action item (not buried in individual portfolio rows).
+- Cat & Hat BSR degradation from Mar 12 reversed in 1 day — avoid escalating single-day BSR spikes to RED. Flag as YELLOW + monitor.
+
+**Tokens/cost:** ~28K tokens, 0 API cost
+
+---
+
 ### Run: 2026-03-12
 **Result:** Success
 
@@ -43,35 +65,6 @@
 - Duplicate keys in agent-state.json JSON are silently handled by Python (last key wins) but can cause confusion in editors. Always fix on discovery.
 
 **Tokens/cost:** ~20K tokens, 0 API cost
-
----
-
-### Run: 2026-03-11
-**Result:** Success
-
-**What happened:**
-- Fifth daily health check. 171 ENABLED campaigns (down from 173 on Mar 10 — 2 Needlepoint SK campaigns still PAUSED, not reflected in live count).
-- 3-day gap since last check (Mar 8). Last daily_health run was Mar 10 (but Mar 10 was run from cached data — Ads API was unavailable then). Today: Ads API working, DataDive working.
-- Live DataDive rank radars returned all 15 radars with fresh Mar 11 data.
-- Net account-wide: -4 top-10 (195→191). Natural giveback after +10 on Mar 8.
-- **Princess Lacing +6** (6→12) — listing push from Mar 8 confirmed working. Fastest 3-day rank response on record.
-- **Fairy Sewing -5** (37→32) — pullback from record high. Natural post-listing volatility.
-- **Cat & Hat -4** (19→15) — notable decline; ACoS also rising. Monitor.
-- 4 GREEN, 10 YELLOW (including Punch Needle), 3 RED, 1 PAUSED.
-- No market intel snapshot for Mar 10 or Mar 11 — running on Mar 9 data.
-
-**What didn't work:**
-- Campaign API returned 82K chars — had to save to file and parse with Python. Used Python heredoc via Bash (not built-in tools).
-- Budget field in campaigns API is a scalar float (`"budget": 18.0`), not nested object. Previous parse attempt used `.get('budget', {}).get('budget', 0)` which failed.
-- Mar 10 health snapshot was flagged as run successfully but the Ads API had been unavailable — that data was from cached weekly PPC. Today's run is the first with live Ads API data since Mar 8.
-
-**Lesson learned:**
-- Campaign `budget` field is a flat float in the API response, NOT a nested `{budget: X}` object. Use `c.get('budget', 0)` directly.
-- When comparing rank radar counts day-over-day, always note whether the previous day had "assumed flat" values — these inflate apparent drops. Mar 10 snapshot had several "assumed flat" entries that made today's -4 look slightly worse than it is.
-- Princess Lacing +6 in 3 days from listing push = fastest response seen. This validates the listing → PPC flywheel approach.
-- Always check agent-state.json for `last_daily_health` duplicate keys — found two on Mar 10 (JSON duplicate key issue). Fixed during this run.
-
-**Tokens/cost:** ~35K tokens, 0 API cost (no Apify, no reports)
 
 ---
 

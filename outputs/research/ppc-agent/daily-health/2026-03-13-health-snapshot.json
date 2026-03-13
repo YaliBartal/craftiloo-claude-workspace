@@ -1,0 +1,85 @@
+{
+  "date": "2026-03-13",
+  "run": "morning",
+  "data_source": "Weekly PPC (Mar 8, data Feb 27-Mar 5) + Market Intel (Mar 13 live) + Live Campaigns (Mar 13, 171 ENABLED) + Live DataDive Rank Radars (15 radars, Mar 13)",
+  "api_status": {
+    "amazon_ads_api": "OK — 171 ENABLED campaigns fetched",
+    "datadive_rank_radars": "OK — 15 radars, live data Mar 13",
+    "market_intel_snapshot": "TODAY — Mar 13 snapshot exists (SB data still stale Feb 21-27, SB 401 x6)",
+    "weekly_ppc_summary": "OK — 2026-03-08 (data Feb 27-Mar 5)"
+  },
+  "account": {
+    "total_spend_7d": 5033,
+    "total_sales_7d": 14720,
+    "acos_7d": 34.2,
+    "tacos": 16.8,
+    "organic_ratio": 70.2,
+    "net_profit_7d": 7275,
+    "profit_margin": 23.1,
+    "active_campaigns": 171,
+    "total_daily_budget": 2668,
+    "net_top10": 195,
+    "net_top10_prev": 190,
+    "net_top10_change": 5,
+    "orders_yesterday": 190,
+    "revenue_yesterday": 2866.13,
+    "note": "ACoS/TACoS/Organic from weekly PPC (Feb 27-Mar 5). SB stale. Campaign count + rank radars live Mar 13."
+  },
+  "portfolios": [
+    {"name": ".Catch All Auto", "stage": "General", "acos": 20.4, "budget_daily": 355, "campaigns": 6, "rank_top10": null, "rank_change": null, "status": "GREEN", "note": "Top discovery engine"},
+    {"name": "Fairy Family", "stage": "Scaling", "acos": 31.2, "budget_daily": 297, "campaigns": 20, "rank_top10": 34, "rank_change": 2, "status": "GREEN", "note": "Re-audit DUE TODAY (listing push Mar 6). Fairy Sewing +2 top-10."},
+    {"name": "Fuse Beads", "stage": "Scaling", "acos": 24.6, "budget_daily": 270, "campaigns": 16, "rank_top10": 7, "rank_change": -1, "status": "GREEN", "note": "QUEFE #1-2 on perler beads. Mini Fuse Beads 8->7 top-10. Re-audit DUE TODAY."},
+    {"name": "Cross Stitch Backpack Charms", "stage": "Scaling", "acos": 26.8, "budget_daily": 265, "campaigns": 15, "rank_top10": 34, "rank_change": -1, "status": "GREEN", "note": "Re-audit DUE TODAY (listing push Mar 6). CS Kits 35->34 top-10."},
+    {"name": "Embroidery for Kids", "stage": "Scaling", "acos": 33.6, "budget_daily": 111, "campaigns": 8, "rank_top10": 22, "rank_change": -2, "status": "GREEN", "note": "10 Emb 24->22 top-10. Reviews 1d overdue."},
+    {"name": "Latch Hook Kits", "stage": "Scaling", "acos": 41.5, "budget_daily": 229, "campaigns": 13, "rank_top10": 13, "rank_change": 1, "status": "YELLOW", "note": "Re-audit DUE TODAY. LH Pencil Cases 12->13 top-10."},
+    {"name": "Cat And Hat Knitting", "stage": "Late Launch", "acos": 38.6, "budget_daily": 172, "campaigns": 12, "rank_top10": 20, "rank_change": 6, "status": "YELLOW", "note": "REBOUNDING: +6 top-10 today (14->20). BSR improved -11,383. 'knitting kit for beginners' fell 57->101."},
+    {"name": "Princess Lacing Cards", "stage": "Launch", "acos": 59.0, "budget_daily": 168, "campaigns": 10, "rank_top10": 10, "rank_change": -2, "status": "YELLOW", "note": "-2 top-10 today (12->10). Reviews 1d overdue."},
+    {"name": "Cross And Embroidery Kits", "stage": "Launch", "acos": 34.6, "budget_daily": 155, "campaigns": 9, "rank_top10": 6, "rank_change": 2, "status": "YELLOW", "note": "B0F6YTG1CH BSR spike +10,930. Cross & Emb Kit +2 top-10. Reviews 1d overdue."},
+    {"name": "Biggie Beads", "stage": "Scaling", "acos": 36.1, "budget_daily": 151, "campaigns": 8, "rank_top10": 13, "rank_change": 0, "status": "YELLOW", "note": "QUEFE threat on perler beads. Re-audit DUE TODAY. ACoS +13.8pp since Feb 20."},
+    {"name": "Stitch Dictionary All", "stage": "Scaling", "acos": null, "budget_daily": 135, "campaigns": 14, "rank_top10": null, "rank_change": null, "status": "YELLOW", "note": "13/14 campaigns dormant. $135/day mostly unspent."},
+    {"name": "Latch Hook Pillow", "stage": "Late Launch", "acos": 46.1, "budget_daily": 95, "campaigns": 10, "rank_top10": 16, "rank_change": 2, "status": "YELLOW", "note": "LH Pillow Owl +2 top-10 (14->16). PP/ROS verify 1d overdue."},
+    {"name": "4 Flowers Embroidery", "stage": "Scaling", "acos": 48.0, "budget_daily": 75, "campaigns": 7, "rank_top10": 0, "rank_change": -1, "status": "YELLOW", "note": "top-10 now 0 (crisis day 30). 'embroidery kit for beginners' rank 101. P1 audit 3d overdue."},
+    {"name": "Shield All", "stage": "General", "acos": 34.2, "budget_daily": 50, "campaigns": 11, "rank_top10": null, "rank_change": null, "status": "YELLOW", "note": "P1 review gate 1d overdue."},
+    {"name": "Punch Needle", "stage": "Unknown", "acos": null, "budget_daily": 40, "campaigns": 2, "rank_top10": 0, "rank_change": 0, "status": "YELLOW", "note": "Near-dormant."},
+    {"name": "Bunny Knitting Loom Kit", "stage": "Scaling", "acos": 37.3, "budget_daily": 34, "campaigns": 2, "rank_top10": 18, "rank_change": -2, "status": "YELLOW", "note": "Bunny Knitting -2 top-10 (20->18)."},
+    {"name": "Needlepoint", "stage": "Scaling", "acos": 68.7, "budget_daily": 47, "campaigns": 7, "rank_top10": 2, "rank_change": 1, "status": "RED", "note": "68.7% ACoS. 2 SK campaigns AWAITING_ENABLE. Low stock B09HVSLBS6 98 units / 0 inbound."},
+    {"name": "Dessert Family", "stage": "Scaling", "acos": null, "budget_daily": 0, "campaigns": 0, "rank_top10": 0, "rank_change": 0, "status": "PAUSED", "note": "OOS — stock=1. All 50 keywords rank 101."}
+  ],
+  "rank_radar_summary": [
+    {"product": "Cross Stitch Kits", "asin": "B0B1927HCG", "top10": 34, "top50": 37, "total_keywords": 38, "vs_prev_run": -1, "trend": "dominant"},
+    {"product": "Fairy Sewing", "asin": "B09WQSBZY7", "top10": 34, "top50": 65, "total_keywords": 87, "vs_prev_run": 2, "trend": "surging"},
+    {"product": "10 Embroidery", "asin": "B09X55KL2C", "top10": 22, "top50": 52, "total_keywords": 55, "vs_prev_run": -2, "trend": "strong"},
+    {"product": "Bunny Knitting", "asin": "B0DKD2S3JT", "top10": 18, "top50": 40, "total_keywords": 50, "vs_prev_run": -2, "trend": "stable"},
+    {"product": "LH Pillow Owl", "asin": "B0FHMRQWRX", "top10": 16, "top50": 30, "total_keywords": 50, "vs_prev_run": 2, "trend": "recovering"},
+    {"product": "Cat & Hat Knitting", "asin": "B0F8DG32H5", "top10": 20, "top50": 58, "total_keywords": 81, "vs_prev_run": 6, "trend": "rebounding"},
+    {"product": "Biggie Beads", "asin": "B07D6D95NG", "top10": 13, "top50": 23, "total_keywords": 38, "vs_prev_run": 0, "trend": "stable"},
+    {"product": "LH Pencil Cases", "asin": "B08FYH13CL", "top10": 13, "top50": 23, "total_keywords": 53, "vs_prev_run": 1, "trend": "improving"},
+    {"product": "Princess Lacing", "asin": "B0FQC7YFX6", "top10": 10, "top50": 31, "total_keywords": 52, "vs_prev_run": -2, "trend": "slipping"},
+    {"product": "Mini Fuse Beads", "asin": "B09THLVFZK", "top10": 7, "top50": 16, "total_keywords": 18, "vs_prev_run": -1, "trend": "soft"},
+    {"product": "Cross & Emb Kit", "asin": "B0F8QZZQQM", "top10": 6, "top50": 18, "total_keywords": 51, "vs_prev_run": 2, "trend": "mixed"},
+    {"product": "Needlepoint Cat", "asin": "B09HVDNFMR", "top10": 2, "top50": 10, "total_keywords": 50, "vs_prev_run": 1, "trend": "low"},
+    {"product": "Punch Needle", "asin": "B092SW839H", "top10": 0, "top50": 2, "total_keywords": 25, "vs_prev_run": 0, "trend": "dormant"},
+    {"product": "4 Flowers", "asin": "B0DC69M3YD", "top10": 0, "top50": 30, "total_keywords": 67, "vs_prev_run": -1, "trend": "crisis"},
+    {"product": "Dessert Sewing", "asin": "B096MYBLS1", "top10": 0, "top50": 0, "total_keywords": 50, "vs_prev_run": 0, "trend": "collapsed"}
+  ],
+  "red_flags": [
+    "Needlepoint: 68.7% ACoS (Scaling >50%). 2 PAUSED SK campaigns since Mar 10 — enable IDs 241563077173400 + 257183338184758. Low stock B09HVSLBS6 98 units / 0 inbound."
+  ],
+  "yellow_flags": [
+    "4 Flowers: Crisis day 30 — top-10 now 0 (was 1). 'embroidery kit for beginners' rank 101. P1 audit 3d overdue — escalate to ppc-portfolio-action-plan.",
+    "QUEFE threat: Dominating #1-2 on 'perler beads'. Mini Fuse Beads top-10 softening (8->7). Biggie Beads ACoS rising +13.8pp.",
+    "5 listing re-audits DUE TODAY: Fairy Family, Fuse Beads, CS Backpack Charms, LH Kits, Biggie Beads (7d from Mar 6 push).",
+    "Shield All P1: 7-day review gate 1d overdue — check 7 re-enabled campaigns.",
+    "Stitch Dictionary All: $135/day budget, 13/14 campaigns dormant. Cleanup needed."
+  ],
+  "positive_notes": [
+    "Cat & Hat Knitting REBOUNDING: +6 top-10 today (14->20). BSR improved -11,383. Mar 12 degradation concern easing.",
+    "Account net top-10 improved +5 (190->195) — broad-based organic health."
+  ],
+  "pending_actions_count": 38,
+  "p1_count": 5,
+  "red_count": 1,
+  "yellow_count": 11,
+  "green_count": 5,
+  "paused_count": 1
+}
