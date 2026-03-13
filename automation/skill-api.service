@@ -1,0 +1,20 @@
+# User-level systemd service — installed at ~/.config/systemd/user/skill-api.service
+# To install: cp this to ~/.config/systemd/user/ && systemctl --user enable --now skill-api
+# To check:  systemctl --user status skill-api
+# To logs:   journalctl --user -u skill-api -f
+
+[Unit]
+Description=Craftiloo Skill Runner API (for n8n)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/yali/workspace
+ExecStart=/usr/bin/python3 /home/yali/workspace/automation/skill-api.py --port 5680
+Restart=always
+RestartSec=5
+Environment=PATH=/home/yali/.npm-global/bin:/usr/local/bin:/usr/bin:/bin
+Environment=HOME=/home/yali
+
+[Install]
+WantedBy=default.target

@@ -77,8 +77,10 @@ Read `.claude/skills/listing-ab-analyzer/LESSONS.md` and apply all past lessons.
 
 1. Read `context/sku-asin-mapping.json` to resolve ASIN ↔ portfolio
 2. Read `outputs/research/ppc-agent/state/{portfolio-slug}.json`
-3. Search `change_log` for entries with type containing "listing" or "push"
-4. Extract: change date, what was modified, old vs new values (if logged)
+3. Check `last_listing_change` in `agent-state.json` portfolio_index — if set, use this as the primary change date
+4. Also search `change_log` for entries with type containing "listing" or "push" to get details of what was modified
+5. Extract: change date (prefer `last_listing_change`), what was modified, old vs new values (if logged)
+6. After analysis completes, update `listing_stage` to "measuring-impact" (or null if AB analysis is conclusive)
 
 **Option B — User provides:**
 

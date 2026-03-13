@@ -119,6 +119,8 @@ The PPC Agent is an **active orchestrator** — it assesses what needs to happen
       "monthly_revenue": 3200,
       "last_validation": null,
       "validation_history": [],
+      "last_listing_change": null,
+      "listing_stage": null,
       "...": "other existing fields"
     }
   },
@@ -159,7 +161,6 @@ The PPC Agent is an **active orchestrator** — it assesses what needs to happen
 | `portfolio_index.{slug}.tacos` | Latest TACoS | TACoS optimizer |
 | `portfolio_index.{slug}.tacos_target` | Portfolio TACoS goal | TACoS optimizer |
 | `portfolio_index.{slug}.tacos_grade` | TACoS grade (A-F) | TACoS optimizer |
-| `portfolio_index.{slug}.organic_momentum` | Organic momentum score (0-100) | TACoS optimizer |
 | `portfolio_index.{slug}.trend` | From tracker's improvement_assessment | Deep dive, significant metric shifts |
 | `portfolio_index.{slug}.top_action` | Highest-priority pending action | Any skill that adds/completes actions |
 | `portfolio_index.{slug}.health_status` | Traffic light | Daily health, deep dive |
@@ -167,6 +168,8 @@ The PPC Agent is an **active orchestrator** — it assesses what needs to happen
 | `portfolio_index.{slug}.review_cadence_days` | 7/14/30 | Based on revenue tier |
 | `portfolio_index.{slug}.last_optimization_scan` | Date of last scan | Optimization scan |
 | `portfolio_index.{slug}.monthly_revenue` | Revenue from Seller Board | Revenue tier setup |
+| `portfolio_index.{slug}.last_listing_change` | Date of most recent listing push | Listing Manager (after push) |
+| `portfolio_index.{slug}.listing_stage` | null / "awaiting-ab" / "measuring-impact" | Listing Manager, Listing AB Analyzer |
 | `portfolio_index.{slug}.last_validation` | Date of last action validation | Action Validator (3d) |
 | `portfolio_index.{slug}.validation_history` | Array of validation scorecards | Action Validator (3d) |
 | `campaign_watchlist` | New campaigns being tracked through lifecycle | Campaign Creator, deep dive, manual |
@@ -183,7 +186,7 @@ Each portfolio has a tracker at `outputs/research/ppc-agent/state/{slug}.json` c
 - **goals** — ACoS/CVR targets, rank targets, strategic notes
 - **baseline** — write-once snapshot from before agent changes
 - **latest_metrics** — most recent snapshot + delta vs baseline
-- **metric_history** — time-series for trend tracking (max 90 entries)
+- **metric_history** — time-series for trend tracking (max 30 entries)
 - **change_log** — every API change made
 - **pending_actions** — queued work with priority and due dates
 - **scheduled_reviews** — upcoming re-check dates
@@ -410,7 +413,7 @@ Run each approved item sequentially:
 | 2 | **ACoS trend** | Portfolio tracker `metric_history` (last 3-4 entries) | Drift >5pp from target = early warning. Improving = opportunity to scale. | 1 min |
 | 3 | **Search term quick-scan** | Most recent search term report (if <5d old) or quick `create_ads_report` (sp_search_terms, LAST_7_DAYS) | High-spend zero-conversion terms (>$15, 0 orders). New converting terms not yet in exact campaigns. | 2 min |
 | 4 | **Rank momentum** | DataDive `get_rank_radar_data` (if rank radar exists for this portfolio) | Rank gains to protect (increase bids). Rank drops to investigate. Keywords approaching page 1. | 1 min |
-| 5 | **Organic share trend** | Portfolio tracker `tacos` + `organic_momentum` history | Organic growing = can reduce PPC reliance. Organic declining = need to investigate listing/rank. | 30 sec |
+| 5 | **Organic share trend** | Portfolio tracker `tacos` + `tacos_grade` history | Organic growing (TACoS improving) = can reduce PPC reliance. TACoS worsening = investigate listing/rank. | 30 sec |
 | 6 | **Pending action check** | Portfolio tracker `pending_actions` | Stale actions >7 days old. Completed actions not marked done. | 30 sec |
 | 7 | **Campaign watchlist** | `campaign_watchlist` entries for this portfolio | New campaigns stuck in AWAITING_ENABLE. RAMPING campaigns with zero impressions. EARLY campaigns underperforming expectations. | 30 sec |
 | 8 | **Competitor context** | `competitive_flags` in agent-state.json + portfolio tracker `competitor_alerts` | Competitor price drops >10%. New competitors on page 1. Competitor BSR gains. | 30 sec |
@@ -506,8 +509,8 @@ These get queued and presented to the user:
 | Portfolio Action Plan | No negatives ever generated for this portfolio | **Negative Keyword Gen** (proactive seeding) |
 | Campaign Creator | New campaigns created | **Negative Keyword Gen** (seed new campaigns with negatives) |
 | Portfolio Summary | Structure gaps found (missing campaign types) | **Campaign Creator** (present gaps) |
-| Rank Optimizer | WASTING MONEY keywords with conversion waste (conv_click_ratio <0.5) | **Listing Manager** (suggest: "Listing issue suspected for {ASIN} — conversion waste on {N} keywords. Run listing-manager to audit.") |
-| Portfolio Action Plan | CVR dropped >25% over 2+ weeks with stable bids/spend | **Listing Manager** (suggest: "CVR drop not explained by PPC changes — listing issue suspected for {ASIN}. Run listing-manager to audit.") |
+| Rank Optimizer | WASTING MONEY keywords with conversion waste (conv_click_ratio <0.5) AND `last_listing_change` is null or >14 days ago | **Listing Manager** (suggest: "Listing issue suspected for {ASIN} — conversion waste on {N} keywords. Run listing-manager to audit.") |
+| Portfolio Action Plan | CVR dropped >25% over 2+ weeks with stable bids/spend AND `last_listing_change` is null or >14 days ago | **Listing Manager** (suggest: "CVR drop not explained by PPC changes — listing issue suspected for {ASIN}. Run listing-manager to audit.") |
 
 ### Queue Presentation
 
@@ -713,7 +716,7 @@ For each affected portfolio at `outputs/research/ppc-agent/state/{slug}.json`:
 2. `change_log` → append any API changes (bid, negative, campaign)
 3. `pending_actions` → add new, mark completed
 4. `latest_metrics` → update if fresh metrics produced
-5. `metric_history` → append if metrics updated (max 90)
+5. `metric_history` → append if metrics updated (max 30)
 6. `scheduled_reviews` → add re-check dates
 7. `improvement_assessment` → update if enough history
 
@@ -724,6 +727,53 @@ If session is active, update:
 - `data_fetched` → append any new data files
 - `findings` → append key findings with trigger suggestions
 - `chain_depth` → track for chain limit enforcement
+
+### 8e. Post Slack Notification (MANDATORY)
+
+**Every sub-skill completion MUST post to Slack.** This is how upper management tracks PPC activity.
+
+**DO NOT read notification-hub SKILL.md.** You already have the sub-skill results in context. Compose the message directly.
+
+**Channel routing:**
+- **Most PPC skills** → workspace `craft`, channel `claude-ppc-updates`
+- **Daily health** → workspace `craft`, channel `claude-morning-brief`
+- **Threshold breaches** → ALSO post to `claude-alerts` (in addition to the primary channel)
+
+**Message format rules:**
+- Max 2000 chars (truncate with "... _(see full report in outputs/)_" if longer)
+- Use Slack markdown: `*bold*` for headers, bullets for lists, `\n` for line breaks
+- Status emojis: :large_green_circle: :large_yellow_circle: :red_circle: :white_check_mark: :warning: :dart: :bar_chart: :ear_of_rice: :clipboard: :new: :calendar:
+- Lead with skill name + portfolio/date, then key metrics, then actions taken/recommended
+- No tables — they render poorly in Slack
+
+**Message structure (adapt per skill):**
+```
+:{emoji}: *{Skill Name}* — {Portfolio or Date}
+
+*Key metrics:* {2-3 most important numbers}
+
+*Actions:*
+- {What was done or recommended}
+- {What was done or recommended}
+
+{If applied:} :white_check_mark: Applied via API
+{If pending:} Awaiting approval
+```
+
+**Alert escalation — also post to `claude-alerts` if:**
+- Any RED portfolio status
+- ACoS > 50% (Scaling stage) or > 80% (Launch stage)
+- Revenue drop > 30% WoW
+- Hero keyword rank drop > 5 positions
+
+Alert format: `:warning: *ALERT* — {Skill}\n{One-line description}\n{Recommended action}`
+
+**Error handling:**
+- Slack MCP unavailable → skip, log "Slack notification skipped — MCP unavailable" in LESSONS.md
+- Channel doesn't exist → log warning, don't fail the skill
+- **NEVER let a notification failure cause the parent skill to fail**
+
+**DO NOT SKIP THIS STEP.** If you completed a sub-skill and didn't post to Slack, the run is incomplete.
 
 ---
 
@@ -739,9 +789,13 @@ Include: Skills Run table (`| # | Skill | Result | Key Finding |`), Chained Acti
 
 Set `session: null` in agent-state.json.
 
-### 9c. Update LESSONS.md
+### 9c. Verify Slack Notifications Were Posted
 
-Add a run log entry at the TOP of the Run Log section with: date, mode, skills run, result, what happened, chains triggered, issues, lessons learned, token estimate. Update Known Issues / Repeat Errors / Resolved Issues as needed.
+Before closing the session, verify that Step 8e ran for every sub-skill. If any were missed (e.g., due to errors or oversight), post them now. This is the final safety net — management relies on `#claude-ppc-updates` for visibility.
+
+### 9d. Update LESSONS.md
+
+Add a run log entry at the TOP of the Run Log section with: date, mode, skills run, result, what happened, chains triggered, issues, lessons learned, token estimate. Include "Slack: {N}/{N} notifications posted" in the entry. Update Known Issues / Repeat Errors / Resolved Issues as needed.
 
 ---
 
@@ -756,6 +810,10 @@ Add a run log entry at the TOP of the Run Log section with: date, mode, skills r
 3. **Never negate a search term based on a single week of zero conversions.** Minimum 30-day window required. Only negate for sustained zero conversions AND clearly irrelevant.
 
 4. **Always update portfolio tracker JSON files after any API change.** Update `change_log`, `pending_actions`, `scheduled_reviews`, `skills_run` immediately after API calls succeed, BEFORE presenting results.
+
+5. **Always post Slack notifications after every sub-skill completes (Step 8e).** Use the notification-hub recipe for the skill. Post to `#claude-ppc-updates` (or `#claude-morning-brief` for daily health). Escalate threshold breaches to `#claude-alerts`. Never skip this — management tracks PPC activity via these channels.
+
+6. **Check for `bsr_goal` in portfolio tracker before making efficiency-based cuts.** Some portfolios have a primary goal of achieving/maintaining #1 Best Seller rank. When `bsr_goal` exists, prioritize sales velocity over ACoS efficiency. Allow ACoS to run above target if it sustains the sales volume needed to close the BSR gap. Currently applies to: **Cross Stitch Backpack Charms** (~1,000 BSR behind #1).
 
 **Enforce these rules when routing to any sub-skill.** Flag violations before presenting to user.
 

@@ -63,26 +63,43 @@ When you learn something new about the user or business during ANY conversation,
 **Do this automatically** — don't ask permission for small additions. Just append new info.
 **Do ask first** — before removing or significantly changing existing info.
 
-### 5. Skill Lessons System (continuous improvement)
+### 5. Lessons System (two-tier continuous improvement)
 
-**Every skill has a `LESSONS.md` file** that tracks what worked, what failed, and what to avoid.
+Knowledge is split into **shared context files** (cross-skill) and **skill-specific LESSONS.md** (lean).
+
+**Shared knowledge files (loaded by relevant skills):**
+| File | Content | Loaded by |
+|------|---------|-----------|
+| `context/api-patterns.md` | API quirks, formats, auth, field names | All skills using APIs |
+| `context/ppc-rules.md` | PPC business rules, user preferences, structural patterns | PPC agent + sub-skills |
+| `context/tooling-workarounds.md` | OneDrive, MCP truncation, PENDING reports, context mgmt | All skills |
+
+**Skill-specific LESSONS.md** — lean format, no boilerplate, no duplicated rules:
+- **Skill-Specific Lessons** (distilled list, max ~15 items)
+- **Known Issues / Repeat Errors / Resolved Issues** (skill-specific only)
+- **Recent Runs** (last 3 only, 4-5 lines each)
+
+**Run log archives** → `outputs/research/{area}/run-logs/` (full narratives, never auto-loaded)
 
 **Before every skill run:**
-1. Read the skill's `LESSONS.md`
-2. Check Known Issues and Repeat Errors
+1. Read relevant shared knowledge files (api-patterns, ppc-rules, tooling-workarounds)
+2. Read the skill's `LESSONS.md`
 3. If a Repeat Error is encountered, **tell the user immediately** with occurrence count
 
 **After every skill run:**
-1. Log a Run Entry with: goals, result (success/partial/fail), what worked, what didn't, lessons learned
-2. Update Known Issues / Repeat Errors / Resolved Issues as appropriate
-3. End output with a brief **Lessons Update** note to the user
+1. Write a run log file to `outputs/research/{area}/run-logs/YYYY-MM-DD-{skill}-{subject}.md` (full narrative)
+2. Update LESSONS.md: add/update distilled lessons, update issues, replace oldest of 3 recent runs (4-5 lines)
+3. If lesson is cross-skill, add to the appropriate `context/` knowledge file instead
+4. End output with a brief **Lessons Update** note to the user
 
 **Rules:**
-- Never skip reading LESSONS.md — it's the first step of every skill
-- Never skip writing to LESSONS.md — it's the last step of every skill
-- If a Known Issue happens again, move it to Repeat Errors and increment the count
-- Repeat Errors must be surfaced to the user with: _"⚠️ Repeat issue (×N): [description]"_
-- Be honest — log failures and partial results, not just successes
+- Never skip reading lessons — shared files + skill LESSONS.md are the first step
+- Never skip writing — updating LESSONS.md is the last step
+- If a Known Issue happens again, move to Repeat Errors and increment count
+- Repeat Errors must be surfaced: _"⚠️ Repeat issue (×N): [description]"_
+- Max 3 recent runs in LESSONS.md — older entries live in run-logs archive
+- Don't create LESSONS.md for skills that haven't run yet — create on first run
+- Cross-skill lessons go in `context/` files, NOT duplicated across LESSONS.md files
 
 ---
 
@@ -179,11 +196,14 @@ Claude Code Workspace/
 ├── .claude/
 │   └── skills/            # 28 project-specific skills (see Skill Routing below)
 │
-├── .github/
-│   └── workflows/         # GitHub Actions for automated skills
-│
 ├── automation/
-│   └── AUTOMATION-PLAN.md # Phase 1: GitHub Actions automation plan
+│   ├── AUTOMATION-PLAN.md # n8n automation plan + architecture + testing guide
+│   ├── config.yaml        # Skill runner config (timeouts, prompts, channels)
+│   ├── skill-api.py       # HTTP API bridge for n8n → host (port 5680)
+│   ├── skill-runner.py    # Production runner (locking, logging, git, Claude)
+│   ├── n8n-workflows/     # n8n workflow JSONs (master + chains + git-sync)
+│   ├── health-check.sh    # Daily server health ping to Slack
+│   └── setup.sh           # One-time server setup
 │
 ├── mcp-servers/           # 8 custom Python MCP servers (see MCP Services below)
 │   ├── amazon-ads-api/    ├── amazon-sp-api/
@@ -206,6 +226,9 @@ Claude Code Workspace/
 │   ├── competitor-config.json  # Competitor ASIN tracking configuration
 │   ├── notification-config.json # Slack channel routing for notifications
 │   ├── mcp-reference.md        # Full MCP tool-by-tool documentation
+│   ├── api-patterns.md         # Shared API gotchas (Amazon Ads, SP-API, Apify, DataDive, SB)
+│   ├── ppc-rules.md            # PPC decision rules, user preferences, structural patterns
+│   ├── tooling-workarounds.md  # Cross-skill workarounds (OneDrive, MCP, PENDING, etc.)
 │   └── craftiloo-catalog.xlsx  # Original supplier catalog (Shantou Sorsa)
 │
 └── outputs/

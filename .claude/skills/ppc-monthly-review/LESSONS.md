@@ -1,23 +1,23 @@
-# Monthly PPC Review — Lessons Learned
+# Lessons & Issues
 
-## Run Log
+> Cross-skill knowledge → `context/api-patterns.md`, `context/ppc-rules.md`, `context/tooling-workarounds.md`
 
-*(New entries go at the TOP)*
+## Skill-Specific Lessons
 
----
+_No runs yet._
 
 ## Known Issues
 
-*(Issues discovered during runs — not yet repeated)*
-
----
+_None yet._
 
 ## Repeat Errors
 
-*(Issues that have occurred 2+ times — MUST be surfaced to user)*
-
----
+_None yet._
 
 ## Resolved Issues
 
-*(Previously known issues that have been fixed)*
+_None yet._
+
+## Recent Runs (last 3)
+
+_No runs yet._

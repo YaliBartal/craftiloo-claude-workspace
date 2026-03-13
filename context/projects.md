@@ -111,8 +111,9 @@
 ### API & Data Integration
 - **Amazon SP-API** — Fully integrated (2026-03). Custom MCP server with 15 tools: orders, catalog, inventory, pricing, listings, Brand Analytics reports. See `mcp-servers/amazon-sp-api/server.py`
 - **Amazon Advertising API** — Fully integrated (2026-03). Custom MCP server with 29 tools: SP/SB/SD campaign management, keywords, targeting, bid recs, async reports. See `mcp-servers/amazon-ads-api/server.py`
-- **GitHub Actions Automation** — Phase 1 in progress. Daily PPC health and daily market intel running on schedule. See `automation/AUTOMATION-PLAN.md` and `.github/workflows/`
+- **n8n Automation** — Live on GMKtec NucBox (10.0.0.22). Daily market intel (8:00 AM) + PPC health (8:30 AM) active. Weekly/monthly skills staged, not yet activated. GitHub Actions removed. See `automation/AUTOMATION-PLAN.md`
 
 ---
 
+*Last updated: 2026-03-11*
 *Last updated: 2026-03-12*

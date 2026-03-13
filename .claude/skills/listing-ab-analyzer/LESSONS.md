@@ -1,25 +1,23 @@
-# Listing AB Analyzer — Lessons Learned
+# Lessons & Issues
 
-## Run Log
+> Cross-skill knowledge → `context/api-patterns.md`, `context/ppc-rules.md`, `context/tooling-workarounds.md`
 
-*(New entries go at the TOP)*
+## Skill-Specific Lessons
 
-*(No runs yet)*
-
----
+_No runs yet._
 
 ## Known Issues
 
-*(None yet)*
-
----
+_None yet._
 
 ## Repeat Errors
 
-*(None yet)*
-
----
+_None yet._
 
 ## Resolved Issues
 
-*(None yet)*
+_None yet._
+
+## Recent Runs (last 3)
+
+_No runs yet._

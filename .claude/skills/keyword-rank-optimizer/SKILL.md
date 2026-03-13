@@ -674,11 +674,9 @@ Update `outputs/research/ppc-agent/state/agent-state.json` with:
 "last_rank_optimizer": "YYYY-MM-DD"
 ```
 
-### Step 14: Post Notifications
+### Step 14: Slack Notification
 
-Read `.claude/skills/notification-hub/SKILL.md` → "Recipe: keyword-rank-optimizer".
-Follow those instructions to post a summary to Slack.
-If Slack MCP is unavailable, skip and note in run log.
+**Skip this step.** The PPC Agent orchestrator handles Slack notifications via Step 8e after every sub-skill completes.
 
 ### Step 15: Update Lessons (Mandatory)
 
