@@ -189,15 +189,14 @@ class SkillAPIHandler(BaseHTTPRequestHandler):
         except Exception:
             result["n8n_status"] = "down"
 
-        # PostgreSQL (via docker ps)
+        # PostgreSQL (TCP connection check on localhost:5432)
         try:
-            docker_out = subprocess.check_output(
-                ["docker", "ps", "--filter", "name=postgres", "--format", "{{.Status}}"],
-                text=True, timeout=5
-            ).strip()
-            result["postgres_status"] = "up" if "Up" in docker_out else "down"
+            import socket as _socket
+            s = _socket.create_connection(("127.0.0.1", 5432), timeout=2)
+            s.close()
+            result["postgres_status"] = "up"
         except Exception:
-            result["postgres_status"] = "unknown"
+            result["postgres_status"] = "down"
 
         # Lock file staleness
         lockfile = "/tmp/claude-skill.lock"

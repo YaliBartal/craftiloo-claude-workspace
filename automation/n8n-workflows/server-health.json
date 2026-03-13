@@ -1,0 +1,124 @@
+{
+  "name": "Server Health",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "55 6 * * *"
+            }
+          ]
+        }
+      },
+      "id": "health-trigger",
+      "name": "Daily 6:55AM: Health Check",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        300
+      ],
+      "notes": "6:55 AM IST — fires before all skill runs"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://127.0.0.1:5680/syshealth",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "syshealth-request",
+      "name": "GET: /syshealth",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        300
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const rawData = $input.first().json;\n\nif (!rawData || rawData.error || typeof rawData.disk_pct === 'undefined') {\n  const ts = new Date().toLocaleString('en-IL', {timeZone: 'Asia/Jerusalem', hour12: false});\n  return [{json: {status: 'RED', message: '\\u{1F534} *Server CRITICAL* \\u2014 ' + ts + '\\n\\u26a0\\ufe0f skill-api not responding \\u2014 system metrics unavailable.\\n_Morning skills will likely fail._'}}];\n}\n\nconst d = rawData;\nconst issues = [];\nlet status = 'GREEN';\n\nfunction flag(cond, msg, sev) {\n  if (cond) {\n    issues.push(msg);\n    if (sev === 'RED') status = 'RED';\n    else if (sev === 'YELLOW' && status !== 'RED') status = 'YELLOW';\n  }\n}\n\nflag(d.disk_pct !== null && d.disk_pct > 85, 'Disk at ' + d.disk_pct + '% (critical: 85%)', 'RED');\nflag(d.disk_pct !== null && d.disk_pct > 70 && d.disk_pct <= 85, 'Disk at ' + d.disk_pct + '% (warn: 70%)', 'YELLOW');\nflag(d.memory_pct !== null && d.memory_pct > 90, 'Memory at ' + d.memory_pct + '% (critical: 90%)', 'RED');\nflag(d.memory_pct !== null && d.memory_pct > 80 && d.memory_pct <= 90, 'Memory at ' + d.memory_pct + '% (warn: 80%)', 'YELLOW');\nflag(d.load_1m !== null && d.load_1m > 4, 'Load avg ' + d.load_1m + ' (critical: 4.0)', 'RED');\nflag(d.load_1m !== null && d.load_1m > 2 && d.load_1m <= 4, 'Load avg ' + d.load_1m + ' (warn: 2.0)', 'YELLOW');\nflag(d.n8n_status === 'down', 'n8n not responding', 'RED');\nflag(d.postgres_status === 'down', 'PostgreSQL not responding', 'RED');\nflag((d.skill_failures_24h || 0) > 1, String(d.skill_failures_24h) + ' skill failures in last 24h', 'RED');\nflag((d.skill_failures_24h || 0) === 1, '1 skill failure in last 24h', 'YELLOW');\nflag((d.lock_file_stale_minutes || 0) > 60, 'Lock file stale ' + d.lock_file_stale_minutes + 'm (stuck run?)', 'RED');\nflag((d.lock_file_stale_minutes || 0) > 10 && (d.lock_file_stale_minutes || 0) <= 60, 'Lock file present ' + d.lock_file_stale_minutes + 'm', 'YELLOW');\n\nconst emoji = status === 'RED' ? '\\u{1F534}' : status === 'YELLOW' ? '\\u{1F7E1}' : '\\u{1F7E2}';\nconst label = status === 'RED' ? 'CRITICAL' : status === 'YELLOW' ? 'Warning' : 'OK';\nconst ts = new Date().toLocaleString('en-IL', {timeZone: 'Asia/Jerusalem', hour12: false, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit'});\n\nlet msg = emoji + ' *Server ' + label + '* \\u2014 ' + ts + '\\n';\nif (issues.length > 0) {\n  msg += issues.map(function(i) { return '\\u2022 ' + i; }).join('\\n') + '\\n';\n  if (status === 'RED') msg += '_\\u26a0\\ufe0f Morning skills may fail._\\n';\n  msg += '\\n';\n}\n\nconst dStr = d.disk_pct !== null ? d.disk_pct + '%' : 'n/a';\nconst mStr = d.memory_pct !== null ? d.memory_pct + '%' : 'n/a';\nconst lStr = d.load_1m !== null ? String(d.load_1m) : 'n/a';\nconst n8nIcon = d.n8n_status === 'up' ? '\\u2705' : (d.n8n_status === 'down' ? '\\u274c' : '\\u2753');\nconst pgIcon = d.postgres_status === 'up' ? '\\u2705' : (d.postgres_status === 'down' ? '\\u274c' : '\\u2753');\nconst runs = d.skill_runs_24h || 0;\nconst fails = d.skill_failures_24h || 0;\n\nmsg += '\\ud83d\\udcbe Disk: ' + dStr + ' \\u00b7 \\ud83e\\udde0 RAM: ' + mStr + ' \\u00b7 \\u26a1 Load: ' + lStr + '\\n';\nmsg += '\\ud83d\\udc33 n8n ' + n8nIcon + ' \\u00b7 skill-api \\u2705 \\u00b7 postgres ' + pgIcon + '\\n';\nmsg += '\\ud83d\\udcca 24h: ' + runs + ' run' + (runs !== 1 ? 's' : '') + (fails > 0 ? ', ' + fails + ' failed \\u274c' : ', all OK \\u2705');\n\nreturn [{json: {status: status, message: msg}}];"
+      },
+      "id": "compute-rag",
+      "name": "Compute Status",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "#claude-alerts",
+          "mode": "name"
+        },
+        "text": "={{ $json.message }}",
+        "otherOptions": {}
+      },
+      "id": "slack-health",
+      "name": "Slack: Health Status",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [
+        960,
+        300
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "70HStxb2Cc2FCmeX",
+          "name": "Slack account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Daily 6:55AM: Health Check": {
+      "main": [
+        [
+          {
+            "node": "GET: /syshealth",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET: /syshealth": {
+      "main": [
+        [
+          {
+            "node": "Compute Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compute Status": {
+      "main": [
+        [
+          {
+            "node": "Slack: Health Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Jerusalem",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  }
+}
