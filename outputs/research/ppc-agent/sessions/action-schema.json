@@ -1,0 +1,130 @@
+{
+  "_description": "Schema reference for PPC Agent autonomous session action items. The Tuesday agent uses this to produce consistent output.",
+  "_version": "1.0",
+  "_created": "2026-03-13",
+  "action_item_schema": {
+    "id": "ACT-{YYYY-MM-DD}-{NNN}",
+    "priority": "P1|P2|P3|P4",
+    "type": {
+      "enum": [
+        "NEGATE_SEARCH_TERM",
+        "TOS_DECREASE",
+        "TOS_INCREASE",
+        "DEFAULT_BID_DECREASE",
+        "DEFAULT_BID_INCREASE",
+        "BUDGET_INCREASE",
+        "BUDGET_DECREASE",
+        "KEYWORD_PAUSE",
+        "CAMPAIGN_CREATE",
+        "CAMPAIGN_ENABLE",
+        "CAMPAIGN_PAUSE",
+        "PP_ROS_CHANGE",
+        "TARGET_ADD",
+        "LISTING_FLAG",
+        "STRUCTURAL_CLEANUP"
+      ]
+    },
+    "portfolio": "string — portfolio display name",
+    "portfolio_slug": "string — kebab-case slug",
+    "portfolio_id": "string — Amazon portfolio ID",
+    "campaign_id": "string — Amazon campaign ID (null for CAMPAIGN_CREATE)",
+    "campaign_name": "string — campaign name",
+    "description": "string — human-readable action description",
+    "params": {
+      "_note": "Type-specific parameters for execution",
+      "NEGATE_SEARCH_TERM": {
+        "keyword_text": "string",
+        "match_type": "NEGATIVE_EXACT",
+        "target_campaign_id": "string"
+      },
+      "TOS_DECREASE": {
+        "current_tos_pct": "number",
+        "recommended_tos_pct": "number"
+      },
+      "TOS_INCREASE": {
+        "current_tos_pct": "number",
+        "recommended_tos_pct": "number"
+      },
+      "DEFAULT_BID_DECREASE": {
+        "ad_group_id": "string",
+        "current_bid": "number",
+        "recommended_bid": "number"
+      },
+      "DEFAULT_BID_INCREASE": {
+        "ad_group_id": "string",
+        "current_bid": "number",
+        "recommended_bid": "number"
+      },
+      "BUDGET_INCREASE": {
+        "current_budget": "number",
+        "recommended_budget": "number"
+      },
+      "BUDGET_DECREASE": {
+        "current_budget": "number",
+        "recommended_budget": "number"
+      },
+      "KEYWORD_PAUSE": {
+        "keyword_id": "string",
+        "keyword_text": "string"
+      },
+      "CAMPAIGN_CREATE": {
+        "campaign_name": "string",
+        "campaign_type": "SK|MK|AUTO|BROAD|PT",
+        "portfolio_id": "string",
+        "budget": "number",
+        "tos_modifier": "number",
+        "keywords": [{"text": "string", "match_type": "EXACT|BROAD", "bid": "number"}]
+      },
+      "CAMPAIGN_ENABLE": {
+        "campaign_id": "string"
+      },
+      "CAMPAIGN_PAUSE": {
+        "campaign_id": "string"
+      }
+    },
+    "evidence": {
+      "source_skill": "string — which Monday pipeline skill produced this finding",
+      "source_file": "string — path to the autonomous output JSON",
+      "period": "string — data window (30d, 14d, 7d)",
+      "metrics": "object — skill-specific evidence (spend, orders, acos, etc.)"
+    },
+    "expected_impact": "string — estimated weekly $ impact",
+    "risk": "low|medium|high",
+    "confidence": "high|medium|low",
+    "status": "pending_approval|approved|applied|validated|rejected|expired",
+    "applied_date": "string|null — YYYY-MM-DD when executed",
+    "applied_by": "string|null — interactive session or auto-execute",
+    "validated_date": "string|null — YYYY-MM-DD when before/after comparison done",
+    "validation_result": "WORKED|PARTIAL|FAILED|INCONCLUSIVE|null"
+  },
+  "validation_schema": {
+    "action_id": "string — references the action item ID",
+    "original_session": "string — YYYY-MM-DD of the session that created the action",
+    "applied_date": "string — YYYY-MM-DD",
+    "validation_date": "string — YYYY-MM-DD",
+    "review_period_days": "number — days between application and validation",
+    "before": {
+      "_note": "Metrics for the campaign/keyword BEFORE the change was applied",
+      "period": "string — e.g., 'Mar 3-9'",
+      "spend": "number",
+      "sales": "number",
+      "acos": "number",
+      "orders": "number",
+      "cvr": "number",
+      "rank": "number|null"
+    },
+    "after": {
+      "_note": "Same metrics for equivalent period AFTER the change",
+      "period": "string",
+      "spend": "number",
+      "sales": "number",
+      "acos": "number",
+      "orders": "number",
+      "cvr": "number",
+      "rank": "number|null"
+    },
+    "verdict": "WORKED|PARTIAL|FAILED|INCONCLUSIVE",
+    "verdict_rationale": "string — why this verdict",
+    "pattern_logged": "string|null — if WORKED, what pattern was identified for future reference"
+  }
+}

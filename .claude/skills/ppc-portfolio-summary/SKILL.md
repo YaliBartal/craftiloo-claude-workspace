@@ -61,6 +61,77 @@ A **focused portfolio-level scan** that classifies each portfolio's health, chec
 
 ---
 
+## AUTONOMOUS Mode
+
+**When the prompt contains "AUTONOMOUS":** This skill runs as part of the Monday data pipeline with no human interaction.
+
+### What Changes in Autonomous Mode
+
+| Aspect | Normal Mode | Autonomous Mode |
+|--------|-------------|-----------------|
+| Scope | All portfolios (same) | All portfolios (same) |
+| User interaction | Present findings, wait for questions | None — save and exit |
+| Slack notification | Skip (orchestrator handles) | Skip |
+| Lesson updates | Write run log + update issues | Write run log + update issues (same) |
+| Output | Brief MD + snapshot JSON | Brief MD + snapshot JSON + **autonomous summary JSON** |
+
+### Autonomous Output
+
+Save an additional file at: `outputs/research/ppc-agent/portfolio-summaries/{YYYY-MM-DD}-autonomous-summary.json`
+
+```json
+{
+  "skill": "ppc-portfolio-summary",
+  "run_date": "YYYY-MM-DD",
+  "mode": "autonomous",
+  "duration_min": 0,
+  "portfolios_processed": 17,
+  "portfolios_failed": 0,
+  "errors": [],
+  "data_quality_notes": [],
+  "findings": {
+    "portfolios": [
+      {
+        "name": "", "slug": "", "portfolio_id": "", "stage": "",
+        "health": "GREEN/YELLOW/RED",
+        "metrics_7d": {"spend": 0, "sales": 0, "acos": 0, "orders": 0, "cvr": 0, "cpc": 0, "roas": 0},
+        "anomalies": [],
+        "campaign_count": {"enabled": 0, "paused": 0},
+        "campaign_types": {"auto": 0, "broad": 0, "sk": 0, "mk": 0, "pt": 0, "other": 0},
+        "structure_complete": true,
+        "missing_types": [],
+        "top_campaign": {"name": "", "spend_pct": 0},
+        "budget_utilization": "healthy/starved/capped",
+        "avg_tos_modifier": 0,
+        "tos_health": "Strong/Bleeding/Mixed/No Data",
+        "vs_weekly": {"acos_delta": 0, "direction": "stable/improving/worsening"},
+        "idle_campaigns": 0
+      }
+    ],
+    "account_totals": {"spend_7d": 0, "sales_7d": 0, "acos": 0, "orders": 0},
+    "health_distribution": {"top_performer": 0, "healthy": 0, "needs_attention": 0, "red_flag": 0, "dormant": 0},
+    "structural_gaps": [{"portfolio": "", "missing": []}],
+    "top_3_needing_action": [{"portfolio": "", "health": "", "issue": "", "recommended_action": ""}]
+  }
+}
+```
+
+### Autonomous Flow
+
+1. Follow Steps 1-9 exactly as normal (load context, pull data, compute, classify, audit, compare, generate report, save)
+2. **Additionally** save the autonomous summary JSON above
+3. Skip presenting findings to user — just save files
+4. Update LESSONS.md as normal
+5. If any portfolio fails to process: log the error in `errors[]`, continue with remaining portfolios
+
+### Error Handling in Autonomous
+
+- If the campaign report fails entirely: save a partial output with `data_quality_notes: ["Campaign report unavailable — using weekly snapshot fallback"]`
+- If a specific portfolio can't be mapped: add to `errors[]`, continue with others
+- Always produce output even if partial — the Tuesday agent session can work with incomplete data
+
+---
+
 ## Process
 
 ### Step 1: Load Context

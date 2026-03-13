@@ -89,6 +89,89 @@ Codifies the PPC SOP's bid adjustment decision matrix into an automated recommen
 
 ---
 
+## AUTONOMOUS Mode
+
+**When the prompt contains "AUTONOMOUS":** This skill runs as part of the Monday data pipeline with no human interaction. It analyzes ALL campaigns across ALL portfolios and saves recommendations — but **never applies any changes**.
+
+### What Changes in Autonomous Mode
+
+| Aspect | Normal Mode | Autonomous Mode |
+|--------|-------------|-----------------|
+| Scope | All portfolios (same) | All portfolios, ALL campaigns |
+| User approval (Step 7) | **Required** before applying | **Skipped entirely** — REPORT ONLY |
+| Application (Step 8) | Apply bid changes via API | **Skipped entirely** — no API writes |
+| Deal mode | Asks user for portfolios/dates | **Skipped** — deal mode requires user input |
+| Slack notification | Skip (orchestrator handles) | Skip |
+| Output | Brief MD + applied-changes JSON | Brief MD + **autonomous recommendations JSON** |
+| Lesson updates | Write run log | Write run log (same) |
+
+### Autonomous Output
+
+Save at: `outputs/research/ppc-agent/bids/{YYYY-MM-DD}-autonomous-recommendations.json`
+
+```json
+{
+  "skill": "ppc-bid-recommender",
+  "run_date": "YYYY-MM-DD",
+  "mode": "autonomous",
+  "duration_min": 0,
+  "campaigns_analyzed": 0,
+  "portfolios_processed": 0,
+  "portfolios_failed": 0,
+  "errors": [],
+  "data_quality_notes": [],
+  "findings": {
+    "portfolios": [
+      {
+        "portfolio": "", "slug": "", "portfolio_id": "",
+        "campaigns_analyzed": 0,
+        "recommendations": [
+          {
+            "campaign": "", "campaign_id": "",
+            "type": "TOS_DECREASE/TOS_INCREASE/DEFAULT_BID_DECREASE/DEFAULT_BID_INCREASE/BUDGET_INCREASE/BUDGET_DECREASE/KEYWORD_PAUSE",
+            "priority": "P1/P2/P3",
+            "lever": "tos_modifier/default_bid/budget/keyword",
+            "placement_health": "TOS_DOMINANT/TOS_EFF_ROS_BLEED/TOS_BLEEDING/ALL_EFFICIENT/ALL_BLEEDING/INSUFFICIENT_DATA",
+            "current_value": 0,
+            "recommended_value": 0,
+            "metrics": {"spend_7d": 0, "sales_7d": 0, "acos": 0, "orders": 0, "cvr": 0, "cpc": 0},
+            "placement_metrics": {"tos_acos": 0, "ros_acos": 0, "pp_acos": 0, "tos_spend_pct": 0},
+            "rank_context": {"keyword": "", "current_rank": 0, "trend": ""},
+            "target_cpc_calculation": {"target_acos": 0, "aov": 0, "cvr": 0, "target_cpc": 0},
+            "confidence": "high/medium/low",
+            "rationale": ""
+          }
+        ],
+        "on_hold": [{"campaign": "", "reason": ""}]
+      }
+    ],
+    "summary": {
+      "total_recommendations": 0,
+      "by_type": {"tos_decrease": 0, "tos_increase": 0, "bid_decrease": 0, "bid_increase": 0, "budget_increase": 0, "budget_decrease": 0, "keyword_pause": 0},
+      "by_priority": {"p1": 0, "p2": 0, "p3": 0},
+      "estimated_weekly_impact": 0
+    }
+  }
+}
+```
+
+### Autonomous Flow
+
+1. Follow Steps 1-6 exactly as normal (load data, load placement data, load rank data, load budget utilization, apply SOP matrix, generate recommendations)
+2. **Stop before Step 7** — do NOT present approval gate, do NOT apply any changes
+3. Save the brief MD (same as normal)
+4. **Additionally** save the autonomous recommendations JSON above
+5. Update portfolio trackers with `skills_run` entry only (no `change_log` since nothing was applied)
+6. Update LESSONS.md as normal
+
+### Error Handling in Autonomous
+
+- If campaign/placement reports fail: save output with what data is available, note in `data_quality_notes`
+- If rank data unavailable: proceed without rank-aware decisions, note it
+- Always produce output even if partial
+
+---
+
 ## Process
 
 ### Step 1: Load Data Sources + Portfolio Trackers

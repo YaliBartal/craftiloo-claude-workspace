@@ -1143,6 +1143,24 @@
   "last_campaign_creator": "2026-03-05",
   "last_biggie_beads_campaigns": "2026-03-05",
   "_migration_note": "Migrated 2026-03-05. Portfolio-specific pending_actions and applied_changes moved to individual portfolio tracker files in state/. Only global/cross-portfolio items remain here. Completed items removed. Folder reorganized 2026-03-05: portfolios/ renamed to state/, agent-state.json moved into state/.",
+  "autonomous": {
+    "cadence_tracker": {
+      "portfolio_summary": {"last_run": null, "next_due": null, "frequency": "weekly"},
+      "search_term_harvester": {"last_run": null, "next_due": null, "frequency": "weekly"},
+      "bid_recommender": {"last_run": null, "next_due": null, "frequency": "weekly"},
+      "keyword_rank_optimizer": {"last_run": null, "next_due": null, "frequency": "biweekly"},
+      "tacos_optimizer": {"last_run": null, "next_due": null, "frequency": "biweekly"},
+      "weekly_ppc_analysis": {"last_run": "2026-03-08", "next_due": null, "frequency": "weekly"}
+    },
+    "rotation_tracker": {
+      "last_optimization_scan": {},
+      "max_days_between_scans": 14,
+      "_note": "Populated per-portfolio as sessions run. Format: {slug: 'YYYY-MM-DD'}"
+    },
+    "session_log": [],
+    "session_log_trim_rule": "Keep last 20 sessions. Older entries archived to outputs/research/ppc-agent/sessions/archive/",
+    "action_registry_trim_rule": "Keep last 60 days. Older items archived to outputs/research/ppc-agent/state/action-archive-YYYY.json"
+  },
   "last_competitor_tracker": "2026-03-08",
   "competitive_flags": {
     "last_updated": "2026-03-08",

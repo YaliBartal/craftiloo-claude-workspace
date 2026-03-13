@@ -61,6 +61,96 @@ Pulls the search term report from the Amazon Ads API and classifies every term i
 
 ---
 
+## AUTONOMOUS Mode
+
+**When the prompt contains "AUTONOMOUS":** This skill runs as part of the Monday data pipeline with no human interaction. It analyzes ALL portfolios at full depth and saves findings — but **never applies any changes**.
+
+### What Changes in Autonomous Mode
+
+| Aspect | Normal Mode | Autonomous Mode |
+|--------|-------------|-----------------|
+| Scope | Account-wide (same) | Account-wide, ALL portfolios at FULL depth |
+| User approval (Step 8) | **Required** before applying | **Skipped entirely** — REPORT ONLY |
+| Application (Step 9) | Apply negatives + PROMOTE prep | **Skipped entirely** — no API writes |
+| Slack notification | Skip (orchestrator handles) | Skip |
+| SQP enrichment (Step 3b) | Optional | **Skip** — saves time, PPC data is sufficient |
+| Output | Brief MD + applied-actions JSON | Brief MD + **autonomous harvest JSON** |
+| Lesson updates | Write run log | Write run log (same) |
+
+### Autonomous Output
+
+Save at: `outputs/research/ppc-agent/search-terms/{YYYY-MM-DD}-autonomous-harvest.json`
+
+```json
+{
+  "skill": "ppc-search-term-harvester",
+  "run_date": "YYYY-MM-DD",
+  "mode": "autonomous",
+  "duration_min": 0,
+  "portfolios_processed": 0,
+  "portfolios_failed": 0,
+  "errors": [],
+  "data_quality_notes": [],
+  "report_period": "LAST_14_DAYS",
+  "total_terms_analyzed": 0,
+  "findings": {
+    "portfolios": [
+      {
+        "portfolio": "", "slug": "", "portfolio_id": "",
+        "terms_analyzed": 0,
+        "negate_candidates": [
+          {
+            "term": "", "campaign": "", "campaign_id": "",
+            "priority": "P1/P2",
+            "spend": 0, "clicks": 0, "orders": 0, "acos": null,
+            "evidence": {
+              "weeks": [{"week": "", "impressions": 0, "clicks": 0, "spend": 0, "orders": 0}],
+              "total_spend": 0, "total_orders": 0, "total_clicks": 0
+            },
+            "reason": "",
+            "confidence": "high/medium/low",
+            "safety_checks": {"protected": false, "has_organic_rank": false, "previously_applied": false}
+          }
+        ],
+        "promote_candidates": [
+          {
+            "term": "", "source_campaign": "", "source_campaign_id": "",
+            "orders": 0, "spend": 0, "acos": 0, "cvr": 0,
+            "has_existing_sk": false,
+            "recommended_action": "SK_EXACT/MK_ROOT"
+          }
+        ],
+        "cannibalized_terms": [
+          {"term": "", "campaigns": [], "total_spend": 0}
+        ]
+      }
+    ],
+    "summary": {
+      "total_negate_p1": 0, "total_negate_p2": 0,
+      "total_promote": 0, "total_cannibalized": 0,
+      "total_estimated_waste": 0, "estimated_weekly_savings": 0
+    }
+  }
+}
+```
+
+### Autonomous Flow
+
+1. Follow Steps 1-7 exactly as normal (load context, pull report, map portfolios, classify, safety checks, identify target campaigns, generate brief)
+2. **Stop before Step 8** — do NOT present approval gate, do NOT apply any changes
+3. Save the brief MD (same as normal)
+4. **Additionally** save the autonomous harvest JSON above
+5. Update portfolio trackers with `skills_run` entry only (no `change_log` since nothing was applied)
+6. Update LESSONS.md as normal
+
+### Error Handling in Autonomous
+
+- If search term report fails: save output with `errors: ["Search term report unavailable"]` and empty findings
+- If a specific portfolio has no campaigns: skip it, add to `data_quality_notes`
+- Always produce output even if partial
+
+---
+
 ## Process
 
 ### Step 1: Load Context + Portfolio Trackers
