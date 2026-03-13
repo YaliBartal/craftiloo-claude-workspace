@@ -38,16 +38,16 @@
 | Stitch Dictionary All | Scaling | — | $135 | 14 | — | **YELLOW** | 13/14 dormant. $135/day mostly unspent |
 | Shield All | General | 34.2% | $50 | 11 | — | **YELLOW** | **P1 review gate DUE TODAY** (7 re-enabled campaigns) |
 | Punch Needle | Unknown | — | $40 | 2 | 0 | **YELLOW** | Near-dormant. Low priority |
-| Needlepoint | Scaling | 68.7% | $47 | 7 | 1 | **RED** | 68.7% ACoS. 2 SK campaigns PAUSED since Mar 10 — enable now |
+| Needlepoint | Scaling | 68.7% | $47 | 7 | 1 | **YELLOW** | 68.7% ACoS. 2 SK campaigns now ENABLED (confirmed Mar 12). Monitor performance |
 | Dessert Family | Scaling | — | $0 | 0 | 0 | **PAUSED** | OOS. BSR 222K |
 
-**Summary: 5 GREEN / 11 YELLOW / 1 RED / 1 PAUSED** (improved from yesterday: 4 GREEN / 11 YELLOW / 2 RED / 1 PAUSED)
+**Summary: 5 GREEN / 12 YELLOW / 0 RED / 1 PAUSED** (improved from yesterday: 4 GREEN / 11 YELLOW / 2 RED / 1 PAUSED)
 
 ---
 
-## Red Flags (1)
+## Red Flags (0)
 
-- **Needlepoint** [Scaling]: ACoS 68.7% (target <35%). 2 SK campaigns PAUSED since Mar 10 — campaign IDs `241563077173400` + `257183338184758` are built and ready, just need enabling. Low stock: B09HVSLBS6 104 units / 0 inbound. → **Run ppc-portfolio-action-plan on Needlepoint.**
+None — Needlepoint SK campaigns confirmed ENABLED as of Mar 12. ACoS still high (68.7%) but now a YELLOW flag. Low stock: B09HVSLBS6 104 units / 0 inbound.
 
 ## Yellow Flags (notable)
 
@@ -91,7 +91,7 @@
 
 | Priority | Action | Portfolio | Due | Aging |
 |----------|--------|-----------|-----|-------|
-| **P1** | Enable SK campaigns (IDs 241563077173400 + 257183338184758) | Needlepoint | ASAP | Mar 10 |
+| ~~P1~~ | ~~Enable SK campaigns~~ ✅ DONE (confirmed ENABLED Mar 12) | Needlepoint | DONE | Mar 10 |
 | **P1** | 7-day review gate: check 7 re-enabled campaigns | Shield All | TODAY | Mar 5 |
 | **P1** | TOS cut: SK sewing for kids 161%→108% | Fairy Family | Overdue | Mar 3 |
 | **P1** | Post-listing re-audit (rank recovery, CVR) | 4 Flowers | Overdue (Mar 10) | Mar 3 |
@@ -106,7 +106,7 @@
 
 **BIG REVIEW DAY** — 9 portfolios are due. Prioritize in this order:
 
-1. **Quick win (5 min):** Enable Needlepoint SK campaigns (`241563077173400` + `257183338184758`) — sitting PAUSED for 2 days.
+1. ~~Quick win: Enable Needlepoint SK campaigns~~ ✅ Already ENABLED.
 2. **Urgent:** Run `/ppc-portfolio-action-plan` on **Cat & Hat Knitting** — BSR degrading fast, 2 keywords fell off the map.
 3. **Shield All P1:** Review the 7 re-enabled campaigns — gate decision due today.
 4. **Batch reviews:** Run ppc-portfolio-action-plan on the remaining 7 overdue portfolios (Biggie Beads, Embroidery for Kids, etc.).

@@ -22,6 +22,25 @@ _None yet._
 
 ## Recent Runs (last 3)
 
+### Run: 2026-03-13
+**Result:** Success
+**Calling skill:** daily-market-intel
+
+**What happened:**
+- Posted daily-market-intel summary to `#claude-morning-brief` (workspace: craft)
+- 7 improving / 6 declining BSR. Big win: B0F8DG32H5 -11,383 BSR overnight
+- Stock alerts: B096MYBLS1 OOS (stock=1), B09HVSLBS6 98 units low
+- New threat: QUEFE brand #1-2 on "perler beads"
+- SB stale noted (×6 401). Skipped #claude-alerts per user instructions
+
+**What didn't work:**
+- Nothing
+
+**Lesson learned:**
+- No new lessons
+
+---
+
 ### Run: 2026-03-12 (ppc-daily-health)
 **Result:** Success
 **Calling skill:** ppc-daily-health
@@ -55,18 +74,18 @@ _None yet._
 **Lesson learned:**
 - When SB data is stale, note it clearly inline rather than omitting the section
 
-### Run: 2026-03-11 (Refresh)
+### Run: 2026-03-12
 **Result:** Success
-**Calling skill:** ppc-daily-health (2nd run today)
+**Calling skill:** daily-market-intel
 
 **What happened:**
-- Posted ppc-daily-health refresh summary to `#claude-morning-brief` (workspace: craft)
-- 2 RED flags: CS Backpack Charms stock crisis + Needlepoint PAUSED campaigns
+- Posted daily-market-intel summary to `#claude-morning-brief` (workspace: craft)
+- Noted SB stale data + 5 alerts (OOS, crisis, low stock, SB 401)
 - Skipped #claude-alerts per user efficiency instructions
 
 **What didn't work:**
 - Nothing
 
 **Lesson learned:**
-- On re-runs same day, label message as "(Refresh)" so it's clear it's a second post
+- When SB data is stale, note it clearly inline rather than omitting the section
 

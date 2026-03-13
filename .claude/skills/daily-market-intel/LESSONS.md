@@ -19,7 +19,7 @@
 
 ## Known Issues
 
-### 1. Seller Board 401 (x4+ consecutive)
+### 1. Seller Board 401 (x6+ consecutive)
 Tokens expired since 2026-03-02. Fix: SB → Settings → Automation → Reports → regenerate URLs, update .env.
 Also: `SELLERBOARD_SALES_DETAILED_7D` was never added to .env.
 
@@ -34,7 +34,7 @@ Fails every time as a single subagent (×2). Must batch into ≤5 keywords per s
 
 ## Repeat Errors
 
-### 1. Seller Board 401 (x5)
+### 1. Seller Board 401 (x6)
 See Known Issue #1. Escalating — must fix.
 
 ### 2. Apify axesso keyword scan context overflow (x2)
@@ -50,6 +50,10 @@ Was 73 units. Restocked to 2,059 by 2026-03-12. Resolved.
 
 ## Recent Runs (last 3)
 
+### Run: 2026-03-13
+**Result:** Partial — SP-API ✅, Rank Radar ✅ (9/10), DD Competitors ✅ (11/11), Apify BSR ✅, Keyword SERP ✅ (20/20 batched 4×5), SB ❌ (401 ×6)
+**Key outcome:** B0F8DG32H5 BSR -11,383 overnight 🟢. B0DC69M3YD crisis day 30: "emb kit beginners" 44→101 but "needlepoint adults" 101→45. QUEFE brand dominating "perler beads" #1-2. Mar 12 orders: 190/$2,866. B096MYBLS1 OOS (stock=1).
+
 ### Run: 2026-03-12
 **Result:** Partial — SP-API ✅, Rank Radar ✅, DD Competitors ✅, Apify BSR ✅. Keyword SERP ❌ (context overflow x2), SB ❌ (401 x5)
 **Key outcome:** B08DDJCQKF restocked (73→2,059) ✅. B0DC69M3YD crisis day 29+ deepening. B0F6YTG1CH BSR -23,809. 4/13 improving vs Mar 9. Mar 11 orders: 171/$2,383.
@@ -57,7 +61,3 @@ Was 73 units. Restocked to 2,059 by 2026-03-12. Resolved.
 ### Run: 2026-03-09
 **Result:** Partial — 5/5 non-SB sources succeeded, SB 401 again
 **Key outcome:** B08DDJCQKF stock at 73 (critical ~2-3 days). B0F8R652FX #1 + B08FYH13CL #2 on "latch hook kits for kids" (was #5+#17).
-
-### Run: 2026-03-08
-**Result:** Partial — 5/5 non-SB, SB 401. saswave BSR returned null (new field issue)
-**Key outcome:** B09X55KL2C reclaimed #1 on "kids embroidery kit". B0F8DG32H5 lost knitting keywords off page.
