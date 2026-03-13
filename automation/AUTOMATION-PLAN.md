@@ -48,23 +48,56 @@ Security: only listens on `0.0.0.0:5680` (local network only, NucBox is behind N
 
 ---
 
-## What's Active Now
+## What's Active Now (2026-03-13 — Full New Architecture Live)
 
 ### n8n Workflows
 
 | Workflow | Status | ID | Purpose |
 |---|---|---|---|
-| **Craftiloo Skill Scheduler** | ACTIVE | `PmTbyvW67XpVEv8b` | Daily skills (8:00 AM + 8:30 AM IST) |
+| **Craftiloo Skill Scheduler** | ACTIVE | `PmTbyvW67XpVEv8b` | Master scheduler — all 9 schedules |
+| **Monday PPC Pipeline** | ACTIVE | `yUafv7HE3fSAgliu` | Sub-workflow: 5 AUTONOMOUS data skills |
 | **Git Auto-Sync** | ACTIVE | `zHHmmLqDVqWLSaeg` | Polls git every 2 min, auto-pulls new code |
-| Tuesday PPC Chain | INACTIVE | `yUafv7HE3fSAgliu` | 5-skill Tuesday sequence (staged) |
-| Friday PPC Chain | INACTIVE | `vYM5hKbUd6p7GAQf` | 3-skill Friday sequence (staged) |
+| Friday PPC Chain | INACTIVE | `vYM5hKbUd6p7GAQf` | **DEPRECATED** (old 3-skill chain, replaced by Fri 12PM inline) |
 
-### Active Skills
+### Full Weekly Schedule
 
-| Skill | Schedule | Slack Channel | Timeout |
-|---|---|---|---|
-| **daily-market-intel** | Every day 8:00 AM IST | #claude-morning-brief | 25 min |
-| **ppc-daily-health** | Every day 8:30 AM IST | #claude-ppc-updates | 20 min |
+| Day | Time (IST) | Skill / Workflow | Mode | Timeout |
+|---|---|---|---|---|
+| **Every day** | 8:00 AM | daily-market-intel | Full | 25 min |
+| **Every day** | 8:30 AM | ppc-daily-health | Full | 20 min |
+| **Monday** | 9:00 AM | weekly-ppc-analysis | Full | 30 min |
+| **Monday** | 10:30 AM | Monday Pipeline (sub-workflow) | AUTONOMOUS × 5 | ~2 hrs total |
+| | ↳ 10:30 | ppc-tacos-optimizer | AUTONOMOUS | 25 min |
+| | ↳ 11:00 | ppc-portfolio-summary | AUTONOMOUS | 25 min |
+| | ↳ 11:30 | keyword-rank-optimizer | AUTONOMOUS | 25 min |
+| | ↳ 12:00 | ppc-bid-recommender | AUTONOMOUS | 25 min |
+| | ↳ 12:30 | ppc-search-term-harvester | AUTONOMOUS | 25 min |
+| **Tuesday** | 12:00 PM | ppc-agent-autonomous-tuesday | Deep-dive, report only | 55 min |
+| **Thursday** | 9:00 AM | competitor-price-serp-tracker | Full | 35 min |
+| **Friday** | 12:00 PM | ppc-agent-autonomous-friday | Validation only | 40 min |
+| **Sunday** | 9:00 AM | brand-analytics-weekly | Full | 30 min |
+| **1st of month** | 10:00 AM | ppc-monthly-review | Full | 35 min |
+
+### Two-Day PPC Autonomous Workflow
+
+```
+Monday 10:30 AM → 5 skills each save -autonomous-*.json files (no API writes)
+                  ├── ppc-tacos-optimizer → tacos-optimizer/{date}-autonomous-analysis.json
+                  ├── ppc-portfolio-summary → portfolio-summaries/{date}-autonomous-summary.json
+                  ├── keyword-rank-optimizer → rank-optimizer/{date}-autonomous-analysis.json
+                  ├── ppc-bid-recommender → bids/{date}-autonomous-recommendations.json
+                  └── ppc-search-term-harvester → search-terms/{date}-autonomous-harvest.json
+
+Tuesday 12:00 PM → ppc-agent reads all Monday files, cross-references, synthesizes
+                   └── Outputs: sessions/{date}-tuesday-brief.md + sessions/{date}-tuesday-actions.json
+                               + Notion page + Slack summary to #claude-ppc-updates
+
+User reviews brief → approves action items → applies interactively
+
+Friday 12:00 PM → ppc-agent validates applied actions (before/after comparison)
+                  └── Updates: sessions/{date}-tuesday-actions.json validation fields
+                              + Friday brief with WORKED/PARTIAL/FAILED verdicts
+```
 
 ### Services
 
@@ -74,24 +107,6 @@ Security: only listens on `0.0.0.0:5680` (local network only, NucBox is behind N
 | PostgreSQL | Docker (bridge network) | 5432 (localhost) | n8n database |
 | skill-api | systemd user service | 5680 | Bridge between n8n and host |
 | health-check | cron (7:00 AM daily) | — | Server health ping to Slack |
-
----
-
-## What's Staged (Activate When Ready)
-
-The full scheduler backup is at `n8n-workflows/master-scheduler-full.json`. When daily skills are proven stable, add more skills by adding HTTP Request nodes to the master scheduler.
-
-| Skill | Schedule | Mode |
-|---|---|---|
-| weekly-ppc-analysis | Mon 9:00 AM | Full |
-| ppc-tacos-optimizer | Tue 9:00 AM | Full |
-| ppc-portfolio-summary | Tue 9:30 AM / Fri 9:00 AM | Full |
-| keyword-rank-optimizer | Tue 10:00 AM | Full |
-| ppc-bid-recommender | Tue 10:30 AM / Fri 10:00 AM | **Report only** |
-| ppc-search-term-harvester | Tue 11:00 AM / Fri 10:30 AM | **Report only** |
-| competitor-price-serp-tracker | Thu 9:00 AM | Full |
-| brand-analytics-weekly | Sun 9:00 AM | Full |
-| ppc-monthly-review | 1st of month 10:00 AM | Full |
 
 ---
 
@@ -147,11 +162,12 @@ This means: push from your laptop → server has the code within 2 minutes.
 | `automation/skill-api.py` | HTTP API bridge between n8n (Docker) and host |
 | `automation/skill-api.service` | Systemd service definition for skill-api |
 | `automation/skill-runner.py` | Production runner — locking, logging, git, Claude execution |
-| `automation/n8n-workflows/master-scheduler.json` | Active n8n workflow (daily-only) |
-| `automation/n8n-workflows/master-scheduler-full.json` | Full scheduler backup (all 11 skills) |
+| `automation/n8n-workflows/master-scheduler-full.json` | **Authoritative master scheduler** (all 9 schedules, live in n8n as `PmTbyvW67XpVEv8b`) |
+| `automation/n8n-workflows/monday-pipeline-chain.json` | Monday 5-skill AUTONOMOUS pipeline (live in n8n as `yUafv7HE3fSAgliu`) |
 | `automation/n8n-workflows/git-sync.json` | Git auto-sync workflow |
-| `automation/n8n-workflows/tuesday-chain.json` | Tuesday 5-skill sequence (staged) |
-| `automation/n8n-workflows/friday-chain.json` | Friday 3-skill sequence (staged) |
+| `automation/n8n-workflows/master-scheduler.json` | SUPERSEDED — old daily-only scheduler, kept for reference |
+| `automation/n8n-workflows/tuesday-chain.json` | DEPRECATED — old Tuesday executeCommand chain (replaced by monday-pipeline-chain) |
+| `automation/n8n-workflows/friday-chain.json` | DEPRECATED — old Friday executeCommand chain (replaced by Fri 12PM inline in master) |
 | `automation/health-check.sh` | Daily 7:00 AM server health ping to Slack |
 | `automation/setup.sh` | One-time server setup (logs, cron, deps) |
 | `/home/yali/n8n/docker-compose.yml` | Docker Compose for n8n + postgres |

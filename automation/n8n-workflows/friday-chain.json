@@ -1,4 +1,5 @@
 {
+  "_DEPRECATED": "REPLACED by autonomous Friday validation session (2026-03-13). Old design ran 3 data-collection skills. New design: ppc-agent-autonomous-friday runs inline in master-scheduler at Fri 12PM. Workflow ID vYM5hKbUd6p7GAQf is now INACTIVE in n8n. DO NOT re-import.",
   "name": "Friday PPC Chain",
   "nodes": [
     {

@@ -1,4 +1,6 @@
 {
+  "_DEPRECATED": "REPLACED by monday-pipeline-chain.json (2026-03-13). This file remains for reference only. n8n workflow ID yUafv7HE3fSAgliu has been updated to monday-pipeline-chain content. DO NOT import this file into n8n.",
+  "_issues_fixed": ["executeCommand nodes replaced with HTTP skill-api calls", "All IF nodes renamed to unique names (was all named OK? causing connection map collision)", "All Wait nodes renamed to unique names (was all named Wait 2min)", "Rescheduled from Tuesday to Monday", "Prompts now include AUTONOMOUS mode trigger"],
   "name": "Tuesday PPC Chain",
   "nodes": [
     {

@@ -90,43 +90,79 @@ skills:
     slack_channel: "#claude-ppc-updates"
     schedule: "Monday 9:00 AM IST"
 
-  # === TUESDAY (chain: 5 skills sequential) ===
+  # === MONDAY (data collection pipeline — 5 skills sequential) ===
 
   ppc-tacos-optimizer:
     timeout_minutes: 25
     max_turns: 30
+    prompt: |
+      Run the ppc-tacos-optimizer skill. AUTONOMOUS
     slack_channel: "#claude-ppc-updates"
-    schedule: "Tuesday 9:00 AM IST"
+    schedule: "Monday 9:00 AM IST"
 
   ppc-portfolio-summary:
     timeout_minutes: 25
     max_turns: 30
+    prompt: |
+      Run the ppc-portfolio-summary skill. AUTONOMOUS
     slack_channel: "#claude-ppc-updates"
-    schedule: "Tuesday 9:30 AM IST / Friday 9:00 AM IST"
+    schedule: "Monday 9:30 AM IST"
 
   keyword-rank-optimizer:
     timeout_minutes: 25
     max_turns: 30
+    prompt: |
+      Run the keyword-rank-optimizer skill. AUTONOMOUS
     slack_channel: "#claude-ppc-updates"
-    schedule: "Tuesday 10:00 AM IST"
+    schedule: "Monday 10:00 AM IST"
 
   ppc-bid-recommender:
     timeout_minutes: 25
     max_turns: 30
     prompt: |
-      Run the ppc-bid-recommender skill in REPORT ONLY mode.
-      Do NOT apply any bid changes. Generate recommendations only.
+      Run the ppc-bid-recommender skill. AUTONOMOUS
     slack_channel: "#claude-ppc-updates"
-    schedule: "Tuesday 10:30 AM IST / Friday 10:00 AM IST"
+    schedule: "Monday 10:30 AM IST"
 
   ppc-search-term-harvester:
     timeout_minutes: 25
     max_turns: 30
     prompt: |
-      Run the ppc-search-term-harvester skill in REPORT ONLY mode.
-      Do NOT apply any negations or promotions. Generate recommendations only.
+      Run the ppc-search-term-harvester skill. AUTONOMOUS
     slack_channel: "#claude-ppc-updates"
-    schedule: "Tuesday 11:00 AM IST / Friday 10:30 AM IST"
+    schedule: "Monday 11:00 AM IST"
+
+  # === TUESDAY (autonomous deep-dive session — reads Monday pipeline files) ===
+
+  ppc-agent-autonomous-tuesday:
+    timeout_minutes: 55
+    max_turns: 80
+    prompt: |
+      Run the ppc-agent skill. AUTONOMOUS Tuesday session.
+      Read today's Monday pipeline files, cross-reference all data sources,
+      synthesize findings, and produce the weekly brief + actions.json.
+      Do NOT make any API write calls. Report only.
+    slack_channel: "#claude-ppc-updates"
+    git_add_paths:
+      - outputs/research/ppc-agent/sessions/
+      - outputs/research/ppc-agent/state/
+    schedule: "Tuesday 12:00 PM IST"
+
+  # === FRIDAY (autonomous validation session — validates applied actions) ===
+
+  ppc-agent-autonomous-friday:
+    timeout_minutes: 40
+    max_turns: 50
+    prompt: |
+      Run the ppc-agent skill. AUTONOMOUS Friday session.
+      Validate action items applied since Tuesday's session.
+      Compare before/after metrics, score each action, update validation records.
+      Do NOT make any bid/budget write calls. Validation only.
+    slack_channel: "#claude-ppc-updates"
+    git_add_paths:
+      - outputs/research/ppc-agent/sessions/
+      - outputs/research/ppc-agent/state/
+    schedule: "Friday 12:00 PM IST"
 
   # === THURSDAY ===
 
