@@ -22,6 +22,23 @@ _None yet._
 
 ## Recent Runs (last 3)
 
+### Run: 2026-03-14
+**Result:** Success
+**Calling skill:** daily-market-intel
+
+**What happened:**
+- Posted to `#claude-morning-brief` (workspace: craft)
+- Key items: SB restored, B0DC69M3YD crisis day 31, B09THLVFZK perler beads 8→23, B0F8DG32H5 knitting recovery
+- Skipped #claude-alerts per user efficiency instructions
+
+**What didn't work:**
+- Nothing
+
+**Lesson learned:**
+- No new lessons
+
+---
+
 ### Run: 2026-03-13
 **Result:** Success
 **Calling skill:** daily-market-intel

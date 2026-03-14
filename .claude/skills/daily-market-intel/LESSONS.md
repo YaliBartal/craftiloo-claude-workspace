@@ -11,11 +11,13 @@
 4. DataDive niche data can be weeks old — always note freshness in reports
 5. When user references a list they didn't send, proceed with DataDive data and note the gap
 6. Always flag IP/trademark issues prominently when product concept uses brand names (Barbie, Disney)
-7. kullaloo and Louise Maelys should be added to competitor tracking (flagged 7+ and 10+ days)
-8. Apify axesso keyword scan: 20 keywords per run works well. saswave BSR: 31-33 ASINs per run
-9. saswave BSR field confirmed: `bestsellerRanks[0].rank` (comma-formatted string). B004JIFCXO consistently has no BSR — product-level issue
+7. kullaloo and Louise Maelys should be added to competitor tracking (flagged 7+ and 10+ days). QUEFE and READAEER added 2026-03-14 (10+ days persistent).
+8. Apify axesso keyword scan: 20 keywords per run works well. saswave BSR: 28-33 ASINs per run
+9. saswave BSR field confirmed: `bestsellerRanks[0].rank` (comma-formatted string). B004JIFCXO consistently has no BSR — product-level issue. B0CX9H8YGR consistently null/suppressed.
 10. saswave prices are in EUR — ignore price field, use SP-API for USD pricing
-11. **Apify axesso 20-keyword scan WILL OVERFLOW the subagent context** — even with a simplified prompt, the agent hits "Prompt is too long" after accumulating 20 SERP result sets. Solution: either batch into ≤5 keywords per subagent (4 parallel agents) or process results inline within a single agent. Do NOT try to run all 20 in one subagent.
+11. **Apify axesso 20-keyword scan WILL OVERFLOW the subagent context** — batch into ≤5 keywords per subagent (4 parallel agents). Do NOT try to run all 20 in one subagent.
+12. **Axesso actor does NOT return badge data** (Overall Pick, Amazon's Choice). Carry forward badges from previous snapshot and note in report.
+13. Seller Board 401 issue: if SB returns 401, it can persist for days (12 days in Mar 2026). Tokens expire in SB → Settings → Automation → Reports. Always try on each run — issue may self-resolve.
 # Lessons Learned — Daily Market Intel
 
 > **Living document.** Claude MUST read this before every run and write to it after every run.
@@ -41,6 +43,11 @@
 ## Run Log
 
 <!-- Add new entries at the TOP (newest first). Use this exact format: -->
+
+### Run: 2026-03-14 (Full Daily Market Intel)
+**Result:** Full success. SB 401 resolved — first fresh SB data since Mar 2. B09WQSBZY7 top revenue at $4,977/7d. B0DC69M3YD crisis deepening (lost needlepoint kits for adults SV 55,787). B09X55KL2C lost embroidery kit for beginners 28→101. B09THLVFZK dropped on perler beads 8→23. B0F8DG32H5 recovering on multiple knitting terms. Axesso confirmed: no badge data — carry forward from snapshot.
+**Sources:** SP-API (13 catalog+pricing+inventory+1 orders) + DataDive (9 radars+11 niches) + Apify (20 SERP 4×5 batches + 28 BSR) + Seller Board ✅
+**Output:** `briefs/2026-03-14.md`, `snapshots/2026-03-14.json`
 
 ### Run: 2026-03-12 (Hero Product BSR Scrape)
 **Goals:**
