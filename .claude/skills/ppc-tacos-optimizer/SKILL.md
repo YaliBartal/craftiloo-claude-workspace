@@ -82,6 +82,84 @@ TACoS is the north star because it captures the full picture — not just ad eff
 
 ---
 
+## AUTONOMOUS Mode
+
+**When the prompt contains "AUTONOMOUS":** This skill runs as part of the Monday data pipeline (biweekly) with no human interaction. It analyzes ALL portfolios and saves the full TACoS scorecard.
+
+### What Changes in Autonomous Mode
+
+| Aspect | Normal Mode | Autonomous Mode |
+|--------|-------------|-----------------|
+| Scope | All portfolios (same) | All portfolios (same) |
+| User interaction | Present scorecard, answer questions | None — save and exit |
+| Slack notification | Skip (orchestrator handles) | Skip |
+| Output | Scorecard MD + snapshot JSON | Scorecard MD + snapshot JSON + **autonomous analysis JSON** |
+| Lesson updates | Write run log | Write run log (same) |
+
+### Autonomous Output
+
+Save at: `outputs/research/ppc-agent/tacos-optimizer/{YYYY-MM-DD}-autonomous-analysis.json`
+
+```json
+{
+  "skill": "ppc-tacos-optimizer",
+  "run_date": "YYYY-MM-DD",
+  "mode": "autonomous",
+  "duration_min": 0,
+  "portfolios_processed": 0,
+  "portfolios_failed": 0,
+  "errors": [],
+  "data_quality_notes": [],
+  "findings": {
+    "account_summary": {
+      "total_revenue_30d": 0, "organic_revenue_30d": 0, "ppc_revenue_30d": 0,
+      "ad_spend_30d": 0, "tacos_30d": 0, "tacos_7d": 0, "acos_30d": 0,
+      "net_profit_30d": 0, "margin_30d": 0, "organic_ratio_30d": 0
+    },
+    "portfolios": [
+      {
+        "portfolio": "", "slug": "", "portfolio_id": "",
+        "tacos_30d": 0, "tacos_7d": 0, "tacos_target": 0, "tacos_gap": 0,
+        "tacos_grade": "A/B/C/D/F",
+        "tacos_trajectory": "improving/flat/worsening",
+        "tacos_driver": "Organic Growth/Spend Reduction/PPC Efficiency/Organic Erosion/Spend Inflation/Mixed",
+        "organic_ratio_30d": 0,
+        "organic_momentum_score": 0,
+        "organic_momentum_class": "Strong/Building/Stalled/Eroding",
+        "profit_health": "PROFITABLE/MARGINAL/BREAK_EVEN/LOSS_MAKING/SUBSIDY",
+        "margin_pct": 0,
+        "break_even_acos": 0,
+        "ad_spend_30d": 0, "net_profit_30d": 0,
+        "recommendations": [{"priority": "P1/P2/P3/P4", "type": "", "description": ""}]
+      }
+    ],
+    "asin_flags": [
+      {"asin": "", "product": "", "portfolio": "", "margin": 0, "acos": 0, "status": "LOSS-MAKING", "monthly_impact": 0}
+    ],
+    "summary": {
+      "at_target": 0, "improving": 0, "flat": 0, "worsening": 0,
+      "total_profit_lost_to_inefficiency": 0,
+      "strong_momentum_count": 0, "eroding_count": 0
+    }
+  }
+}
+```
+
+### Autonomous Flow
+
+1. Follow Steps 1-10 exactly as normal (load data, build ASIN map, compute TACoS, determine goals, decompose, profit check, momentum score, recommendations, present, update state)
+2. Skip Step 13 (Present Results to User) — just save files
+3. **Additionally** save the autonomous analysis JSON above
+4. Update LESSONS.md as normal
+
+### Error Handling in Autonomous
+
+- If Seller Board reports fail: save output with `errors: ["Seller Board unavailable"]` — this skill cannot produce meaningful output without SB data
+- If a specific portfolio has no ASIN mapping: skip it, add to `data_quality_notes`
+- Always produce output even if partial
+
+---
+
 ## Step 1: Load Data Sources (parallel)
 
 Pull three data streams simultaneously:

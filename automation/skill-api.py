@@ -24,6 +24,7 @@ import os
 import subprocess
 import sys
 import time
+import urllib.request
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from threading import Lock
 
@@ -35,6 +36,7 @@ ALLOWED_SKILLS = {
     "ppc-tacos-optimizer", "ppc-portfolio-summary", "keyword-rank-optimizer",
     "ppc-bid-recommender", "ppc-search-term-harvester",
     "competitor-price-serp-tracker", "brand-analytics-weekly", "ppc-monthly-review",
+    "ppc-agent", "ppc-agent-autonomous-tuesday", "ppc-agent-autonomous-friday",
 }
 ALLOWED_FLAGS = {"--dry-run", "--verbose", "--no-git"}
 
@@ -65,8 +67,10 @@ class SkillAPIHandler(BaseHTTPRequestHandler):
                 "uptime_seconds": uptime,
                 "runner": RUNNER_PATH,
             })
+        elif self.path == "/syshealth":
+            self._handle_syshealth()
         else:
-            self._send_json(404, {"error": "Not found. Use GET /health, POST /run, or POST /pull"})
+            self._send_json(404, {"error": "Not found. Use GET /health, GET /syshealth, POST /run, or POST /pull"})
 
     def do_POST(self):
         try:
@@ -120,7 +124,7 @@ class SkillAPIHandler(BaseHTTPRequestHandler):
                 cmd,
                 capture_output=True,
                 text=True,
-                timeout=2400,  # 40 min hard limit
+                timeout=3600,  # 60 min hard limit (autonomous sessions need ~55 min)
                 cwd=WORKSPACE,
             )
 
@@ -149,6 +153,86 @@ class SkillAPIHandler(BaseHTTPRequestHandler):
             self._send_json(500, {"error": str(e), "skill": skill})
         finally:
             run_lock.release()
+
+    def _handle_syshealth(self):
+        result = {"uptime_seconds": int(time.time() - START_TIME)}
+
+        # Disk usage
+        try:
+            df_out = subprocess.check_output(
+                ["df", "/", "--output=pcent"], text=True, timeout=5
+            ).strip().split("\n")[-1].strip().rstrip("%")
+            result["disk_pct"] = int(df_out)
+        except Exception:
+            result["disk_pct"] = None
+
+        # Memory
+        try:
+            free_lines = subprocess.check_output(["free", "-m"], text=True, timeout=5).split("\n")
+            parts = free_lines[1].split()
+            total, used = int(parts[1]), int(parts[2])
+            result["memory_pct"] = round(used / total * 100) if total > 0 else None
+        except Exception:
+            result["memory_pct"] = None
+
+        # Load average
+        try:
+            with open("/proc/loadavg") as f:
+                result["load_1m"] = float(f.read().split()[0])
+        except Exception:
+            result["load_1m"] = None
+
+        # n8n health (HTTP)
+        try:
+            req = urllib.request.urlopen("http://localhost:5678/healthz", timeout=3)
+            result["n8n_status"] = "up" if req.status == 200 else "down"
+        except Exception:
+            result["n8n_status"] = "down"
+
+        # PostgreSQL (TCP connection check on localhost:5432)
+        try:
+            import socket as _socket
+            s = _socket.create_connection(("127.0.0.1", 5432), timeout=2)
+            s.close()
+            result["postgres_status"] = "up"
+        except Exception:
+            result["postgres_status"] = "down"
+
+        # Lock file staleness
+        lockfile = "/tmp/claude-skill.lock"
+        try:
+            if os.path.exists(lockfile):
+                age_min = round((time.time() - os.path.getmtime(lockfile)) / 60, 1)
+                result["lock_file_stale_minutes"] = age_min
+            else:
+                result["lock_file_stale_minutes"] = None
+        except Exception:
+            result["lock_file_stale_minutes"] = None
+
+        # Recent skill logs (last 24h)
+        log_dir = "/var/log/claude"
+        try:
+            cutoff = time.time() - 86400
+            logs = [
+                f for f in os.listdir(log_dir)
+                if f.endswith(".json") and os.path.getmtime(os.path.join(log_dir, f)) > cutoff
+            ]
+            result["skill_runs_24h"] = len(logs)
+            failures = 0
+            for log_file in logs[:50]:  # cap at 50 to avoid slowness
+                try:
+                    with open(os.path.join(log_dir, log_file)) as lf:
+                        log_data = json.load(lf)
+                        if log_data.get("exit_code", 0) != 0:
+                            failures += 1
+                except Exception:
+                    pass
+            result["skill_failures_24h"] = failures
+        except Exception:
+            result["skill_runs_24h"] = 0
+            result["skill_failures_24h"] = 0
+
+        self._send_json(200, result)
 
     def _handle_pull(self):
         try:

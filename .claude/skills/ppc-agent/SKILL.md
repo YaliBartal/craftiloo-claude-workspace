@@ -201,9 +201,11 @@ Check user intent in this order:
 
 | User says | Entry mode | Go to |
 |-----------|------------|-------|
+| Prompt contains "AUTONOMOUS" | **Autonomous Session** | Step 10 |
 | "audit mode on/off" / "live mode" | **Toggle Audit Mode** | Step 7 |
 | "portfolio review" / "full review" / "review all" | **Portfolio Review** | Step 6 |
 | Specific skill trigger (see routing table below) | **Direct Route** | Step 5 |
+| "apply items {N} from {day}" / "apply actions from Tuesday" | **Apply Session Actions** | Step 11 |
 | "ppc" / "ppc agent" / "ppc check" / "ppc catch-up" / anything ambiguous | **Smart Catch-Up** (DEFAULT) | Step 3 |
 
 ---
@@ -890,6 +892,376 @@ In Smart Catch-Up (Step 3a), always flag:
 
 ---
 
+## Step 10: Autonomous Session Mode
+
+**Triggered when:** Prompt contains "AUTONOMOUS" (from automation runner, not interactive use).
+
+**This is a fundamentally different operating mode.** The agent does NOT run sub-skills. It reads pre-computed data from the Monday pipeline and does the work that requires intelligence: validation, cross-referencing, synthesis, and action item generation.
+
+**Core rule: REPORT ONLY — no API writes, ever.** Action items are saved to disk for the user to approve and apply interactively via Step 11.
+
+---
+
+### 10a. Detect Session Type
+
+| Prompt contains | Session type | Scope | Time budget |
+|----------------|-------------|-------|-------------|
+| "Tuesday" or weekday is Tuesday | **Tuesday full session** | Full analysis + validation + action items | ~40 min |
+| "Friday" or weekday is Friday | **Friday check session** | Validation + anomaly scan + rotation | ~25 min |
+| "Monthly" or "1st of month" | **Monthly strategic review** | Full month comparison + budget reallocation | ~55 min |
+
+Default to Tuesday if ambiguous.
+
+---
+
+### 10b. Tuesday Full Session
+
+#### Phase 1: Load (5 min)
+
+**Load ALL of these in parallel. Do NOT pull fresh API data — read what the Monday pipeline saved.**
+
+| # | File | Purpose | Required? |
+|---|------|---------|-----------|
+| 1 | `outputs/research/ppc-agent/state/agent-state.json` | State, cadence, rotation, pending actions | Yes |
+| 2 | Most recent `outputs/research/ppc-agent/portfolio-summaries/*-autonomous-summary.json` | Monday's portfolio health scan | Yes |
+| 3 | Most recent `outputs/research/ppc-agent/search-terms/*-autonomous-harvest.json` | Monday's search term findings | Yes |
+| 4 | Most recent `outputs/research/ppc-agent/bids/*-autonomous-recommendations.json` | Monday's bid recommendations | Yes |
+| 5 | Most recent `outputs/research/ppc-agent/rank-optimizer/*-autonomous-analysis.json` | Biweekly rank-spend analysis | If exists and <14d old |
+| 6 | Most recent `outputs/research/ppc-agent/tacos-optimizer/*-autonomous-analysis.json` | Biweekly TACoS scorecard | If exists and <14d old |
+| 7 | `outputs/research/ppc-agent/daily-health/*-health-snapshot.json` (last 5 days) | Daily health trends since last session | Yes |
+| 8 | Most recent `outputs/research/ppc-agent/sessions/*-actions.json` | Previous session's action items (for validation) | If exists |
+| 9 | `context/business.md` | Portfolio stages, targets | Yes |
+| 10 | `outputs/research/ppc-agent/sessions/action-schema.json` | Schema reference for output | Yes |
+
+**If a Monday output is missing:** Note it in the brief (`"Portfolio summary unavailable this week — pipeline may have failed"`). Continue with available data. Never re-run the skill — that's the Monday pipeline's job.
+
+**Staleness check:** If the most recent Monday output is >3 days old, note: "Monday pipeline data is {N} days old — findings may not reflect current state."
+
+#### Phase 2: Validate Previous Changes (10 min)
+
+**This is the most valuable part of the system. Skip nothing.**
+
+1. **Find the previous session's action items** — read the most recent `*-actions.json` from the sessions folder
+2. **For each action with `status: "applied"`** (meaning the user approved and executed it since last session):
+   - **Pull targeted fresh data** — ONLY for the specific campaign(s) affected. Use `list_sp_campaigns` filtered by campaign ID + most recent daily health data. This is the ONE place where the autonomous session makes API calls.
+   - **Compare before vs after** using the `evidence.metrics` from the original action item as "before" and fresh data as "after"
+   - **Classify the outcome:**
+
+| Verdict | Criteria |
+|---------|---------|
+| **WORKED** | Primary metric improved in intended direction by >10% |
+| **PARTIAL** | Some improvement (<10%) or improvement with side effects (e.g., ACoS improved but rank dropped) |
+| **FAILED** | Primary metric worsened or no change after 7+ days |
+| **INCONCLUSIVE** | <7 days since application OR <100 impressions — too early to tell |
+
+3. **Produce validation scorecard** — one row per validated action
+4. **Act on results:**
+   - WORKED → log pattern (what type of change, what portfolio, what magnitude → what result)
+   - FAILED → auto-create a P2 corrective action item: "Revert {change} — validation showed {outcome}"
+   - INCONCLUSIVE → carry forward to Friday session
+
+**If no previous session exists or no actions were applied:** Skip Phase 2, note "No previous actions to validate — first session or no approvals since last session."
+
+#### Phase 3: Synthesize & Cross-Reference (15-20 min)
+
+**This is where the agent thinks. Read Monday's structured output and connect the dots.**
+
+##### 3A. Per-Portfolio Assessment (8-point checklist)
+
+For EVERY portfolio (all 17), produce a brief assessment using Monday's data. This guarantees full coverage.
+
+**The 8-Point Checklist:**
+
+| # | Check | Data Source | What to note |
+|---|-------|------------|-------------|
+| 1 | **Budget utilization** | Bid recommender autonomous output → `on_hold` entries with budget notes | Any campaign >80% or <10% utilization |
+| 2 | **ACoS trend** | Portfolio summary → `vs_weekly` + daily health trend over 5 days | Improving, stable, or worsening. Flag if worsening >5pp |
+| 3 | **Search term quality** | Search term harvest → per-portfolio `negate_candidates` count + `estimated_weekly_savings` | How much waste was found. Flag if >$20/week waste |
+| 4 | **Rank trajectory** | Rank optimizer → per-portfolio `rank_alerts` | Any hero keyword declining. Flag drops >5 positions |
+| 5 | **Organic share** | TACoS optimizer → `organic_ratio_30d` + `organic_momentum_class` | Is PPC dependency increasing? Flag if momentum is "Eroding" |
+| 6 | **Campaign structure balance** | Portfolio summary → `campaign_types` + bid recommender → per-portfolio recommendation count | Anything lopsided? Many bids flagged = structural issue |
+| 7 | **Pending actions** | Agent-state → `all_pending_actions` filtered by portfolio | Stale P1/P2 items. Overdue reviews. |
+| 8 | **Competitor signals** | Agent-state → `competitive_flags` | Active alerts for this portfolio |
+
+**Output:** 2-3 sentences per portfolio summarizing the 8 checks. Don't write a novel — flag what matters, skip what's fine.
+
+##### 3B. Cross-Reference Patterns
+
+**Look for these specific patterns across skill outputs. These are the connections individual skills can't see.**
+
+| Pattern | How to detect | What it means |
+|---------|--------------|---------------|
+| **Same campaign flagged by 2+ skills** | Search term harvest has negation candidates from Campaign X AND bid recommender recommends bid decrease on Campaign X | The campaign has multiple problems — combine into one action item, not two |
+| **Rank drop correlates with recent bid change** | Rank optimizer shows keyword declining AND previous session's action items include a bid decrease on that keyword's campaign | The bid cut may have caused the rank drop. Flag as "Possible bid-rank correlation" — recommend reverting or monitoring |
+| **Healthy ACoS but eroding organic** | Portfolio summary shows GREEN AND TACoS optimizer shows `organic_momentum_class: "Eroding"` | Portfolio looks fine by ACoS but is becoming PPC-dependent. Flag: "Hidden risk — organic share declining" |
+| **Search term waste concentrated in one campaign** | Search term harvest has 5+ negation candidates from the same campaign | That campaign's targeting is broken. Recommend structural review, not just individual negations |
+| **Bid recommendations all in same direction** | Bid recommender has 3+ decreases and 0 increases for a portfolio | Portfolio is systematically over-bidding. Note the pattern. |
+| **Promote candidate matches rank opportunity** | Search term harvest has a PROMOTE candidate AND rank optimizer shows that keyword as REDIRECT | Strong signal — the keyword converts AND we don't have dedicated targeting. Elevate to P1 action. |
+| **Budget-starved + efficient** | Bid recommender flags campaign as efficient (low ACoS) AND daily health shows that campaign as GREEN | Easy win — increase budget on a proven campaign. Elevate priority. |
+
+##### 3C. Generate Action Items
+
+From the combined analysis, produce action items using the schema at `outputs/research/ppc-agent/sessions/action-schema.json`.
+
+**Rules for action item generation:**
+
+| Recommendation type | Minimum evidence required |
+|---------------------|--------------------------|
+| Negate search term | 30 days data, zero conversions AND clearly irrelevant to product |
+| Reduce bid / TOS | 30 days performance + rank data + target CPC calculation |
+| Increase bid / TOS | Rank trend dropping + impression share data |
+| Pause keyword | 30 days zero conversions + minimum 200 impressions |
+| Pause campaign | 30 days sustained poor performance + comparison to portfolio average |
+| Budget change | 14 days utilization trend |
+| Campaign creation | Converting search term (PROMOTE) or REDIRECT keyword with SV >1,000 |
+
+**De-duplicate:** Check each proposed action against `all_pending_actions` in agent-state. If an equivalent action already exists, don't create a duplicate — instead, note "Reconfirmed: {existing action ID} — still valid per fresh data."
+
+**Priority assignment:**
+- **P1:** Score ≥70 OR emergency flag (rank drop >10, ACoS >3x target)
+- **P2:** Score 45-69, has 30d evidence
+- **P3:** Score 25-44
+- **P4:** Score <25 or insufficient evidence — monitor only, no API action
+
+**Never use round bid amounts.** Every bid recommendation must use irregular values ($0.73 not $0.70, -31% not -30%).
+
+#### Phase 4: Output (8-10 min)
+
+##### 4A. Save brief to disk (FIRST — before Notion)
+
+Save to: `outputs/research/ppc-agent/sessions/{YYYY-MM-DD}-tuesday-brief.md`
+
+**Brief structure:**
+
+```markdown
+# PPC Agent Session — {YYYY-MM-DD} (Tuesday Full)
+
+**Duration:** {X} min | **Monday data from:** {date}
+**Portfolios assessed:** 17/17 | **Action items:** {N} new | **Validations:** {N}
+
+---
+
+## Executive Summary
+{3-5 sentences. Lead with the single most important finding. Include overall account health.}
+
+## Validations (Previous Changes)
+{Validation scorecards from Phase 2. Table: | # | Action | Applied | Before | After | Verdict |}
+{Summary: N WORKED, N PARTIAL, N FAILED, N INCONCLUSIVE}
+
+## Portfolio Health Dashboard
+{All 17 portfolios — one row each}
+| Portfolio | Stage | Health | ACoS | TACoS | Trend | Organic | Top Finding | Actions |
+{GREEN rows at the bottom, RED/YELLOW at top}
+
+## Cross-Portfolio Patterns
+{Patterns detected in Phase 3, 3B}
+
+## Portfolio Assessments
+{Per-portfolio 2-3 sentence summaries from Phase 3, 3A. Group by health: RED first, then YELLOW, then GREEN.}
+
+## Action Items — {N} Total
+{Grouped by priority: P1, P2, P3, P4}
+
+### P1 — Critical ({N} items)
+| # | ID | Type | Portfolio | Description | Evidence | Expected Impact |
+
+### P2 — Optimization ({N} items)
+| # | ID | Type | Portfolio | Description | Evidence | Expected Impact |
+
+### P3 — Maintenance ({N} items)
+{Same format}
+
+### P4 — Monitor ({N} items)
+{Description-only list, no API actions}
+
+## Skills Data Quality
+| Skill | Status | Data Date | Notes |
+{Which Monday outputs were available, which were missing}
+
+## Agent Reasoning Log
+{What the agent looked at, what it decided, what it skipped and why}
+```
+
+##### 4B. Save action items JSON
+
+Save to: `outputs/research/ppc-agent/sessions/{YYYY-MM-DD}-tuesday-actions.json`
+
+Follow the schema at `outputs/research/ppc-agent/sessions/action-schema.json` exactly. Include the `validations` array from Phase 2 and the `actions` array from Phase 3.
+
+##### 4C. Push to Notion
+
+Create a child page under "PPC Agent Sessions" in Notion using the brief content. If Notion fails, log the error and continue — the disk brief is the source of truth.
+
+##### 4D. Post Slack notification
+
+Post to workspace `craft`, channel `claude-ppc-updates`:
+
+```
+:robot_face: *PPC Agent Session* — Tuesday {date}
+
+*Health:* {N} :large_green_circle: {N} :large_yellow_circle: {N} :red_circle:
+*Actions:* {N} new ({N} P1, {N} P2, {N} P3)
+*Validations:* {N} checked — {N} :white_check_mark: {N} :warning: {N} :x:
+*Top concern:* {one-line description}
+
+:page_facing_up: Full brief: {Notion link or "saved to disk"}
+```
+
+##### 4E. Update agent state
+
+1. Update `autonomous.cadence_tracker` — set `last_run` for each skill whose Monday output was read
+2. Update `autonomous.rotation_tracker.last_optimization_scan` for portfolios that got full checklist assessment
+3. Append to `autonomous.session_log`:
+   ```json
+   {
+     "date": "YYYY-MM-DD",
+     "type": "tuesday",
+     "duration_min": 0,
+     "monday_data_read": ["portfolio-summary", "search-term-harvester", "bid-recommender"],
+     "portfolios_assessed": 17,
+     "action_items_created": 0,
+     "validations_completed": 0,
+     "validation_results": {"worked": 0, "partial": 0, "failed": 0, "inconclusive": 0},
+     "cross_patterns_found": 0,
+     "notion_page_id": null,
+     "brief_file": "sessions/YYYY-MM-DD-tuesday-brief.md"
+   }
+   ```
+4. **Trim session_log** — if >20 entries, move oldest to `outputs/research/ppc-agent/sessions/archive/`
+
+##### 4F. Update LESSONS.md
+
+Write run log entry to `.claude/skills/ppc-agent/LESSONS.md` as normal (Step 9d format).
+
+---
+
+### 10c. Friday Check Session
+
+**Lighter version of Tuesday. Focus on validation and anomaly detection.**
+
+#### Phase 1: Load (3 min)
+
+Load:
+- Agent-state.json
+- Daily health outputs since Tuesday (3-4 files)
+- Tuesday's session actions JSON (for validation check)
+- Most recent Tuesday brief (for context on what was found)
+
+#### Phase 2: Validate (10 min)
+
+Same validation logic as Tuesday Phase 2. Focus on:
+- Actions applied since Tuesday
+- Tuesday's INCONCLUSIVE items — do they have enough data now?
+
+#### Phase 3: Quick Scan (8 min)
+
+- Read daily health snapshots — any new RED/YELLOW since Tuesday?
+- Check agent-state `all_pending_actions` — any P1 items >5 days old?
+- Check `upcoming_reviews` — any overdue?
+- If Tuesday found patterns, check: did anything change? (read relevant daily health for those portfolios)
+
+**Do NOT re-read Monday pipeline outputs.** Friday works from daily health + Tuesday's findings only. Monday's data is 5 days old by Friday — too stale for fresh analysis. If something urgent appears in daily health, flag it for next Monday's pipeline.
+
+#### Phase 4: Output (5 min)
+
+Same process as Tuesday but shorter brief:
+- Save to `{YYYY-MM-DD}-friday-brief.md` and `{YYYY-MM-DD}-friday-actions.json`
+- Push to Notion (shorter page)
+- Post Slack notification
+- Update agent state + session log
+
+---
+
+### 10d. Monthly Strategic Review
+
+**Deeper than Tuesday. The ONE session per month that pulls its own data for month-over-month comparison.**
+
+#### What's different from Tuesday:
+
+1. **Pulls fresh 30d data** — `create_ads_report(sp_campaigns, LAST_30_DAYS)` for current month + reads previous month's weekly snapshots for comparison
+2. **Pulls Seller Board 30d** — `get_sales_detailed_report()` for revenue and profit reality
+3. **Additional analysis sections:**
+   - Month-over-month comparison (spend, sales, ACoS, orders, TACoS across all portfolios)
+   - Budget reallocation recommendations across portfolios (shift spend from over-performing to under-invested)
+   - Stage transition assessments (should any portfolio move Launch → Scaling or Scaling → General?)
+   - Quarterly trend if 3+ months of session data exists
+   - Pattern Learning analysis if validation data thresholds are met (see Pattern Learning section above)
+4. **Longer brief** with strategic recommendations, not just tactical action items
+
+#### Output:
+
+- Save to `{YYYY-MM-DD}-monthly-brief.md` and `{YYYY-MM-DD}-monthly-actions.json`
+- Monthly actions tend to be strategic: budget reallocation, stage transitions, portfolio restructuring
+- Push to Notion
+- Post Slack notification (slightly more detailed than weekly)
+
+---
+
+### 10e. Housekeeping (runs at end of every autonomous session)
+
+1. **Trim action items** — any action in `all_pending_actions` older than 60 days → archive to `outputs/research/ppc-agent/state/action-archive-{YYYY}.json`
+2. **Trim upcoming_reviews** — any review >14 days overdue → auto-expire with reason
+3. **Trim session_log** — keep last 20, archive older
+4. **Recompute `pending_summary` and `review_summary`** in agent-state
+5. **Check cadence tracker** — set `next_due` dates based on today + frequency
+
+---
+
+## Step 11: Apply Session Actions (Interactive)
+
+**Triggered when user says:** "apply items 1 and 3 from Tuesday", "apply actions from last session", "execute action ACT-2026-03-10-001"
+
+This is an INTERACTIVE mode — the user is present and approving.
+
+### 11a. Find the session
+
+1. Parse the user's request for a date or day reference ("Tuesday" = most recent Tuesday, "last session" = most recent actions JSON)
+2. Load the matching `*-actions.json` from `outputs/research/ppc-agent/sessions/`
+3. If not found: "No session actions found for {date}. Available sessions: {list recent files}"
+
+### 11b. Parse which actions to apply
+
+- "all P1" → filter actions where priority = "P1"
+- "items 1, 3, 5" → match by item number from the brief
+- "apply all" → all actions
+- Specific ID: "ACT-2026-03-10-001" → match by ID
+
+### 11c. Present confirmation
+
+For each action to be applied, show:
+```
+### Item {N}: {type} — {description}
+**Portfolio:** {name} | **Campaign:** {campaign_name}
+**Current:** {current_value} → **Proposed:** {proposed_value}
+**Evidence:** {summary from evidence field}
+**Risk:** {risk level}
+
+Apply? (yes / skip / modify)
+```
+
+### 11d. Execute approved actions
+
+Follow the same API call patterns as the Portfolio Action Plan (Step 6 execution). For each action:
+1. Make the API call
+2. Log result (success/failed)
+3. Update the actions JSON: set `status: "applied"`, `applied_date: today`, `applied_by: "interactive"`
+4. Update portfolio tracker `change_log`
+5. Add to `upcoming_reviews` with validation date = today + 7 days
+
+### 11e. Report results
+
+```
+## Execution Complete
+
+| # | Action | Status | Details |
+|---|--------|--------|---------|
+| 1 | ... | SUCCESS | ... |
+
+**Next:** These changes will be validated in the Friday/Tuesday session.
+```
+
+---
+
 ## Error Handling
 
 | Issue | Response |
@@ -901,3 +1273,8 @@ In Smart Catch-Up (Step 3a), always flag:
 | Context window running out | Save session object, suggest "continue next session" |
 | Upstream data stale (>7 days) | Warn user, suggest running upstream skill first |
 | Reports stuck PENDING | Use cached data, note in findings |
+| Monday pipeline output missing | Note in brief, continue with available data. Never re-run skills. |
+| Notion push fails | Log error, continue. Disk brief is source of truth. |
+| Slack notification fails | Log error, continue. Never let notification failure break the session. |
+| No previous session to validate | Skip Phase 2, note "First session — no validation history yet" |
+| Action items JSON schema mismatch | Fall back to best-effort parsing, log warning |

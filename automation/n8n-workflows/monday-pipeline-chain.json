@@ -1,0 +1,388 @@
+{
+  "_comment": "Monday PPC Pipeline — Autonomous Data Collection. Called as sub-workflow by master-scheduler on Monday 10:30 AM IST. Runs 5 skills in AUTONOMOUS mode (saves -autonomous-*.json files, no API writes). Skills continue even if one fails. Fixed naming bug from old tuesday-chain.json (all IF nodes and Wait nodes now have unique names).",
+  "name": "Monday PPC Pipeline — Autonomous Data Collection",
+  "nodes": [
+
+    {
+      "parameters": {},
+      "id": "trigger-start",
+      "name": "Start",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "notes": "Called by master-scheduler on Monday 10:30 AM IST via executeWorkflow node"
+    },
+
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"ppc-tacos-optimizer\"}",
+        "options": {
+          "timeout": 1800000,
+          "response": {"response": {"fullResponse": true}}
+        }
+      },
+      "id": "exec-tacos",
+      "name": "Run: ppc-tacos-optimizer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c1", "leftValue": "={{ $json.body.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-tacos",
+      "name": "If: TACoS OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *ppc-tacos-optimizer* failed in Monday pipeline.\\nExit code: {{ $json.body.exitCode }}\\nContinuing with next skill...\"\n}"
+      },
+      "id": "alert-tacos",
+      "name": "Alert: TACoS Failed",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [960, 480]
+    },
+
+    {
+      "parameters": {"value": 120, "unit": "seconds"},
+      "id": "wait-1",
+      "name": "Wait 1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [1200, 300]
+    },
+
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"ppc-portfolio-summary\"}",
+        "options": {
+          "timeout": 1800000,
+          "response": {"response": {"fullResponse": true}}
+        }
+      },
+      "id": "exec-portfolio",
+      "name": "Run: ppc-portfolio-summary",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1440, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c2", "leftValue": "={{ $json.body.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-portfolio",
+      "name": "If: Portfolio OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1680, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *ppc-portfolio-summary* failed in Monday pipeline.\\nContinuing with next skill...\"\n}"
+      },
+      "id": "alert-portfolio",
+      "name": "Alert: Portfolio Failed",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1920, 480]
+    },
+
+    {
+      "parameters": {"value": 120, "unit": "seconds"},
+      "id": "wait-2",
+      "name": "Wait 2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [2160, 300]
+    },
+
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"keyword-rank-optimizer\"}",
+        "options": {
+          "timeout": 1800000,
+          "response": {"response": {"fullResponse": true}}
+        }
+      },
+      "id": "exec-rank",
+      "name": "Run: keyword-rank-optimizer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2400, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c3", "leftValue": "={{ $json.body.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-rank",
+      "name": "If: Rank OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [2640, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *keyword-rank-optimizer* failed in Monday pipeline.\\nContinuing with next skill...\"\n}"
+      },
+      "id": "alert-rank",
+      "name": "Alert: Rank Failed",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2880, 480]
+    },
+
+    {
+      "parameters": {"value": 120, "unit": "seconds"},
+      "id": "wait-3",
+      "name": "Wait 3",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [3120, 300]
+    },
+
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"ppc-bid-recommender\"}",
+        "options": {
+          "timeout": 1800000,
+          "response": {"response": {"fullResponse": true}}
+        }
+      },
+      "id": "exec-bids",
+      "name": "Run: ppc-bid-recommender",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3360, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c4", "leftValue": "={{ $json.body.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-bids",
+      "name": "If: Bids OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [3600, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *ppc-bid-recommender* failed in Monday pipeline.\\nContinuing with next skill...\"\n}"
+      },
+      "id": "alert-bids",
+      "name": "Alert: Bids Failed",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [3840, 480]
+    },
+
+    {
+      "parameters": {"value": 120, "unit": "seconds"},
+      "id": "wait-4",
+      "name": "Wait 4",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [4080, 300]
+    },
+
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"ppc-search-term-harvester\"}",
+        "options": {
+          "timeout": 1800000,
+          "response": {"response": {"fullResponse": true}}
+        }
+      },
+      "id": "exec-harvest",
+      "name": "Run: ppc-search-term-harvester",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [4320, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c5", "leftValue": "={{ $json.body.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-harvest",
+      "name": "If: Harvest OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [4560, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *ppc-search-term-harvester* failed. This was the last skill in the Monday pipeline.\"\n}"
+      },
+      "id": "alert-harvest",
+      "name": "Alert: Harvest Failed",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [4800, 480]
+    },
+
+    {
+      "parameters": {},
+      "id": "done",
+      "name": "Chain Complete",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [4800, 300]
+    }
+
+  ],
+  "connections": {
+    "Start": {
+      "main": [[{"node": "Run: ppc-tacos-optimizer", "type": "main", "index": 0}]]
+    },
+    "Run: ppc-tacos-optimizer": {
+      "main": [[{"node": "If: TACoS OK?", "type": "main", "index": 0}]]
+    },
+    "If: TACoS OK?": {
+      "main": [
+        [{"node": "Wait 1", "type": "main", "index": 0}],
+        [{"node": "Alert: TACoS Failed", "type": "main", "index": 0}]
+      ]
+    },
+    "Alert: TACoS Failed": {
+      "main": [[{"node": "Wait 1", "type": "main", "index": 0}]]
+    },
+    "Wait 1": {
+      "main": [[{"node": "Run: ppc-portfolio-summary", "type": "main", "index": 0}]]
+    },
+    "Run: ppc-portfolio-summary": {
+      "main": [[{"node": "If: Portfolio OK?", "type": "main", "index": 0}]]
+    },
+    "If: Portfolio OK?": {
+      "main": [
+        [{"node": "Wait 2", "type": "main", "index": 0}],
+        [{"node": "Alert: Portfolio Failed", "type": "main", "index": 0}]
+      ]
+    },
+    "Alert: Portfolio Failed": {
+      "main": [[{"node": "Wait 2", "type": "main", "index": 0}]]
+    },
+    "Wait 2": {
+      "main": [[{"node": "Run: keyword-rank-optimizer", "type": "main", "index": 0}]]
+    },
+    "Run: keyword-rank-optimizer": {
+      "main": [[{"node": "If: Rank OK?", "type": "main", "index": 0}]]
+    },
+    "If: Rank OK?": {
+      "main": [
+        [{"node": "Wait 3", "type": "main", "index": 0}],
+        [{"node": "Alert: Rank Failed", "type": "main", "index": 0}]
+      ]
+    },
+    "Alert: Rank Failed": {
+      "main": [[{"node": "Wait 3", "type": "main", "index": 0}]]
+    },
+    "Wait 3": {
+      "main": [[{"node": "Run: ppc-bid-recommender", "type": "main", "index": 0}]]
+    },
+    "Run: ppc-bid-recommender": {
+      "main": [[{"node": "If: Bids OK?", "type": "main", "index": 0}]]
+    },
+    "If: Bids OK?": {
+      "main": [
+        [{"node": "Wait 4", "type": "main", "index": 0}],
+        [{"node": "Alert: Bids Failed", "type": "main", "index": 0}]
+      ]
+    },
+    "Alert: Bids Failed": {
+      "main": [[{"node": "Wait 4", "type": "main", "index": 0}]]
+    },
+    "Wait 4": {
+      "main": [[{"node": "Run: ppc-search-term-harvester", "type": "main", "index": 0}]]
+    },
+    "Run: ppc-search-term-harvester": {
+      "main": [[{"node": "If: Harvest OK?", "type": "main", "index": 0}]]
+    },
+    "If: Harvest OK?": {
+      "main": [
+        [{"node": "Chain Complete", "type": "main", "index": 0}],
+        [{"node": "Alert: Harvest Failed", "type": "main", "index": 0}]
+      ]
+    },
+    "Alert: Harvest Failed": {
+      "main": [[{"node": "Chain Complete", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Jerusalem"
+  }
+}

@@ -62,6 +62,91 @@ Cross-references **PPC spend per keyword** with **organic rank movement** to ans
 
 ---
 
+## AUTONOMOUS Mode
+
+**When the prompt contains "AUTONOMOUS":** This skill runs as part of the Monday data pipeline (biweekly) with no human interaction. It analyzes ALL portfolios account-wide and saves the full rank-spend matrix — but does not route to other skills.
+
+### What Changes in Autonomous Mode
+
+| Aspect | Normal Mode | Autonomous Mode |
+|--------|-------------|-----------------|
+| Scope | User-selected or account-wide | **Always account-wide** |
+| User approval (Step 11) | Soft gate — routing options | **Skipped** — analysis saved, no routing |
+| BA enrichment (Step 4b) | Optional | **Skip** — saves time, PPC + rank data sufficient |
+| Keyword universe (Step 5) | Conditional | **Include** — full opportunity analysis |
+| Slack notification | Skip (orchestrator handles) | Skip |
+| Output | Brief MD + matrix JSON + radar snapshot | Brief MD + matrix JSON + radar snapshot + **autonomous analysis JSON** |
+| Lesson updates | Write run log | Write run log (same) |
+
+### Autonomous Output
+
+Save at: `outputs/research/ppc-agent/rank-optimizer/{YYYY-MM-DD}-autonomous-analysis.json`
+
+```json
+{
+  "skill": "keyword-rank-optimizer",
+  "run_date": "YYYY-MM-DD",
+  "mode": "autonomous",
+  "duration_min": 0,
+  "portfolios_processed": 0,
+  "portfolios_failed": 0,
+  "errors": [],
+  "data_quality_notes": [],
+  "findings": {
+    "efficiency_score": 0,
+    "portfolios": [
+      {
+        "portfolio": "", "slug": "",
+        "keywords_tracked": 0,
+        "efficiency_pct": 0,
+        "classifications": {
+          "wasting_money": [
+            {
+              "keyword": "", "search_volume": 0,
+              "rank_current": 0, "rank_7d_ago": 0, "rank_28d_ago": 0, "rank_trend": "",
+              "spend_7d": 0, "acos": 0, "orders_7d": 0,
+              "campaign": "", "campaign_type": "",
+              "action": "", "rationale": ""
+            }
+          ],
+          "reduce_spend": [],
+          "protect": [],
+          "maintain": [],
+          "redirect": [],
+          "monitor": []
+        },
+        "rank_alerts": [{"keyword": "", "drop": 0, "urgency": ""}]
+      }
+    ],
+    "summary": {
+      "total_wasting": {"count": 0, "weekly_spend": 0},
+      "total_reduce": {"count": 0, "savings_potential": 0},
+      "total_protect": 0,
+      "total_redirect": {"count": 0, "total_sv": 0},
+      "reallocation_plan": [{"from": "", "savings": 0, "to": "", "action": ""}]
+    },
+    "ppc_only_keywords": [{"keyword": "", "campaign": "", "spend_7d": 0}]
+  }
+}
+```
+
+### Autonomous Flow
+
+1. Follow Steps 1-10 exactly as normal (load data, fetch rank, build matrix, classify, compute reallocation, compare previous)
+2. **Stop before Step 11** — do NOT present routing options
+3. Save all normal outputs (brief MD, rank-spend matrix JSON, rank radar snapshot JSON)
+4. **Additionally** save the autonomous analysis JSON above
+5. Update agent-state.json with `last_rank_optimizer` date
+6. Update LESSONS.md as normal
+
+### Error Handling in Autonomous
+
+- If DataDive rank data fails entirely: save output with `errors: ["DataDive unavailable"]` — this skill cannot produce meaningful output without rank data, but save what PPC data was collected
+- If niche keywords API fails: skip REDIRECT analysis, note in `data_quality_notes`
+- Always save the rank radar snapshot if rank data was fetched — other skills depend on it
+
+---
+
 ## Process
 
 ### Step 1: Read Lessons (Mandatory)

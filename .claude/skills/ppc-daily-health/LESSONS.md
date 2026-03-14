@@ -4,6 +4,28 @@
 
 *(New entries go at the TOP)*
 
+### Run: 2026-03-14
+**Result:** Success
+
+**What happened:**
+- 171 ENABLED campaigns — identical to Mar 13. Total daily budget $2,668.
+- SB 401 resolved after 12 days — first clean SB data. TACoS 17.47%, margin 15.89%.
+- Big rank drops today: Fairy Sewing 34→23 (-11), Cat&Hat 20→10 (-10), LH Pencil Cases 13→9 (-4).
+- 2 REDs: Needlepoint (68.7% ACoS, 2 AWAITING_ENABLE campaigns now 4d overdue) + 4 Flowers (crisis day 31, 0 top-10).
+- 9-portfolio Mar 12 review backlog still unactioned (2d overdue). Princess Lacing re-audit due tomorrow.
+- Fixed 80 curly quotes (40 left + 40 right) in agent-state.json that caused JSON parse failure.
+
+**What didn't work:**
+- agent-state.json had Unicode curly quotes causing json.loads() to fail. Fixed by binary replace before updating.
+
+**Lesson learned:**
+- agent-state.json contains curly quotes — always open with binary mode and replace before json.load(). Or use `json.loads(content.replace('\u201c', '"').replace('\u201d', '"'))`.
+- Single-day rank drops of -10 or more (Fairy Sewing, Cat&Hat) may be DataDive volatility. Do NOT escalate to RED on single-day signals — flag as YELLOW watch.
+
+**Tokens/cost:** ~22K tokens, 0 API cost
+
+---
+
 ### Run: 2026-03-13
 **Result:** Success
 
@@ -69,6 +91,10 @@
 ---
 
 ## Known Issues
+
+### 4. agent-state.json contains Unicode curly quotes
+**Impact:** HIGH — json.load() fails with "Expecting property name enclosed in double quotes" at any curly-quoted key.
+**Rule:** When reading agent-state.json in Python, open in binary mode and replace `\xe2\x80\x9c` + `\xe2\x80\x9d` with `"` before parsing.
 
 ### 1. RULE: Never pause a campaign based on a single week of zero conversions
 **Impact:** HIGH — Premature pausing kills campaigns that may just be in a rough patch.

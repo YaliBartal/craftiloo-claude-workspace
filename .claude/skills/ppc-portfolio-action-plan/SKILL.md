@@ -194,64 +194,66 @@ Build the brief following this exact section structure (proven in the March 2 Fu
 | # | Campaign | Type | 30d Spend | 30d Sales | ACoS | Orders | CVR | CPC | TOS% | Status |
 {Status flags: BLEEDING / ABOVE TARGET / EFFICIENT / STAR / DORMANT / PAUSED}
 
-## Portfolio Structure Health Score
+## Portfolio Structure Audit
 
-**This section evaluates how well-structured the portfolio is — not just performance, but architecture.**
+**This section looks at what the portfolio is made of — campaign types, targeting approach, and where spend is actually going. The goal isn't to hit exact benchmarks. It's to spot when things are lopsided and nudge toward better balance.**
 
-### Campaign Type Inventory
-| Type | Required | Found | Status | 30d Spend | % of Portfolio |
-|------|----------|-------|--------|-----------|----------------|
-| Auto | 1 | {n} | OK / MISSING / EXCESS | $ | % |
-| MK Broad | 1 | {n} | OK / MISSING / EXCESS | $ | % |
-| SK (single keyword exact) | ~3+ (top KWs) | {n} | OK / LOW / EXCESS | $ | % |
-| MK (root phrase) | ~2+ | {n} | OK / LOW | $ | % |
-| PT (product targeting) | 1 | {n} | OK / MISSING | $ | % |
-| Shield | 1 (if applicable) | {n} | OK / MISSING / N/A | $ | % |
-| Low-bid Discovery | 1-2 | {n} | OK / MISSING | $ | % |
+### Campaign Mix
 
-### Spend Distribution Assessment
-| Metric | Value | Benchmark | Status |
-|--------|-------|-----------|--------|
-| MK Broad % of total spend | % | <30% ideal, >40% = cannibalization risk | OK / WARNING / CRITICAL |
-| Auto % of total spend | % | <20% ideal, >35% = too much auto reliance | OK / WARNING / CRITICAL |
-| SK % of total spend | % | >40% ideal (precise targeting) | OK / LOW / CRITICAL |
-| Top 1 campaign % of spend | % | <35% ideal, >50% = over-concentration | OK / WARNING / CRITICAL |
-| Single-keyword campaigns | {n} SK + {n} MK roots | More = better precision | COUNT |
+Classify every campaign and show the breakdown:
 
-**Healthy spend profile:** SK campaigns should capture the largest share of spend (40%+), followed by MK broad (15-30%), auto (10-20%), MK roots (10-15%), PT (5-10%). If auto+broad exceeds 50%, the portfolio is leaking — too much goes to uncontrolled matching.
+| Campaign | Targeting Type | Keywords/Targets | 30d Spend | % of Portfolio |
+|----------|---------------|-----------------|-----------|----------------|
+| {name} | Single-keyword exact (SK) | 1 keyword | $ | % |
+| {name} | Multi-keyword broad (MK Broad) | {n} keywords | $ | % |
+| {name} | Multi-keyword root (MK Root) | {n} keywords | $ | % |
+| {name} | Auto (discovery) | auto-targeted | $ | % |
+| {name} | Product targeting (PT) | {n} ASINs | $ | % |
 
-### Campaign Gap Analysis
-| Expected Campaign | Keyword / Target | Search Volume | Exists? | Action |
-|-------------------|-----------------|---------------|---------|--------|
-| SK {top keyword 1} | {keyword} | {SV} | YES / NO | — / CREATE |
-| SK {top keyword 2} | {keyword} | {SV} | YES / NO | — / CREATE |
-| SK {top keyword 3} | {keyword} | {SV} | YES / NO | — / CREATE |
-| MK {root 1} | {root} | {combined SV} | YES / NO | — / CREATE |
-| PT competitor | {ASINs} | — | YES / NO | — / CREATE |
+**Targeting type definitions:**
+- **Single-keyword exact (SK):** One keyword, exact match. Maximum control over bid and placement for that term.
+- **Multi-keyword broad (MK Broad):** Multiple keywords, broad match. Casts a wide net — good for discovery, but less control per keyword.
+- **Multi-keyword root (MK Root):** A few related keywords, phrase/exact. Focused but covers a theme.
+- **Auto:** Amazon picks the targeting. Useful for discovery, but you have no direct keyword control.
+- **Product targeting (PT):** Targets specific ASINs or categories. Different intent than keyword campaigns.
 
-{Cross-reference DataDive niche keywords (top 10 by SV) against existing SK campaigns. Every keyword with SV >3,000 that ranks top 20 should have a dedicated SK campaign.}
+### Spend Balance Summary
 
-### Structure Health Grade
+| Category | Campaigns | 30d Spend | % of Total |
+|----------|-----------|-----------|------------|
+| Single-target (SK) | {n} | $ | % |
+| Multi-target (MK Broad + MK Root) | {n} | $ | % |
+| Auto | {n} | $ | % |
+| Product targeting | {n} | $ | % |
+| **Total** | {n} | $ | 100% |
 
-Score each dimension (0-10), then combine:
+Also note:
+- **Top campaign concentration:** {name} accounts for {X}% of total spend — flag if >50%
+- **Broad + Auto share:** {X}% combined — flag if >50% (means most spend goes to uncontrolled matching)
+- **Single-target share:** {X}% — flag if <20% (means very little spend is precisely controlled)
 
-| Dimension | Score | Weight | Weighted |
-|-----------|-------|--------|----------|
-| **Campaign type completeness** (all types present) | /10 | 25% | |
-| **Spend distribution balance** (SK-dominant, not broad-heavy) | /10 | 25% | |
-| **Keyword coverage** (top SV keywords have SK campaigns) | /10 | 25% | |
-| **Single-targeting precision** (# of single-KW campaigns vs portfolio size) | /10 | 15% | |
-| **Negative keyword hygiene** (campaigns have negatives, no cannibalization) | /10 | 10% | |
-| **TOTAL** | | 100% | **/10** |
+### What This Mix Tells Us
 
-**Grading:**
-- **9-10:** Excellent structure — focus on performance optimization only
-- **7-8:** Good structure — minor gaps to fill
-- **5-6:** Needs work — missing campaign types or poor spend distribution
-- **3-4:** Structural problems — broad/auto dominating, key campaigns missing
-- **1-2:** Rebuild needed — portfolio architecture is fundamentally wrong
+**Write 3-5 plain-language observations. No scores, no grades. Just note what stands out.**
 
-**This grade feeds into the overall Health Score** alongside performance metrics. A portfolio can have good ACoS but terrible structure (e.g., all spend going through a single broad campaign with no SK isolation).
+Things to look for:
+- Is one campaign type eating most of the budget? (e.g., "MK Broad takes 55% of spend — the portfolio leans heavily on broad matching")
+- Is there almost no single-keyword targeting? (e.g., "Only 1 SK campaign out of 8 total — most spend goes through multi-keyword or auto campaigns")
+- Are there obvious campaign types missing? (e.g., "No product targeting campaign exists" or "No auto campaign for discovery")
+- Is there a single campaign doing all the work? (e.g., "One campaign accounts for 62% of spend — if it underperforms, the whole portfolio suffers")
+- Does the mix make sense for the portfolio's stage? (e.g., a Launch portfolio leaning on auto/broad is normal for discovery; a mature Scaling portfolio still dominated by broad may have outgrown its structure)
+
+**Don't prescribe exact percentages.** Just flag when something looks off-balance. The user can decide how aggressively to restructure.
+
+### Campaign Gap Check
+
+Cross-reference DataDive niche keywords (top 10 by search volume) against existing campaigns:
+
+| Keyword | Search Volume | Current Rank | Has Dedicated Campaign? | Notes |
+|---------|---------------|-------------|------------------------|-------|
+| {keyword} | {SV} | #{rank} | YES ({campaign}) / NO | {context — e.g., "covered by MK Broad but no isolated SK"} |
+
+**This isn't a "you must create all of these" list.** It's a visibility check — are the biggest keywords in the niche getting dedicated attention, or are they only being reached through broad/auto matching? Note what's missing and let the action plan decide priority.
 
 ## TOS Strategy Audit
 | Campaign | TOS% | Effective TOS Bid | TOS ACoS | ROS ACoS | PP ACoS | PP% | ROS% | Health |
@@ -420,19 +422,16 @@ Snapshot JSON structure:
     }
   ],
   "structure_audit": {
-    "auto": 1, "broad": 0, "sk": 3, "mk": 2, "pt": 1,
-    "missing": ["broad"], "complete": false,
-    "spend_distribution": {
-      "sk_pct": 0, "mk_broad_pct": 0, "auto_pct": 0,
-      "mk_root_pct": 0, "pt_pct": 0, "other_pct": 0
+    "campaign_counts": {"sk": 3, "mk_broad": 0, "mk_root": 2, "auto": 1, "pt": 1},
+    "spend_by_type": {
+      "single_target_pct": 0, "multi_target_pct": 0,
+      "auto_pct": 0, "pt_pct": 0
     },
-    "single_targeting_campaigns": 0,
-    "structure_health_grade": "6/10",
-    "structure_health_breakdown": {
-      "type_completeness": 0, "spend_balance": 0,
-      "keyword_coverage": 0, "targeting_precision": 0,
-      "negative_hygiene": 0
-    }
+    "top_campaign_concentration_pct": 0,
+    "broad_auto_combined_pct": 0,
+    "missing_types": ["broad"],
+    "observations": ["plain-language notes on balance issues"],
+    "keyword_gaps": [{"keyword": "", "sv": 0, "has_dedicated_campaign": false}]
   },
   "rank_data": {
     "keywords_tracked": 0,
@@ -478,8 +477,8 @@ Analyze every section of the brief and generate ALL applicable actions. Cover ev
 |--------------|-------------------|
 | Campaign Breakdown (bleeding campaigns) | `BID_DECREASE`, `BUDGET_DECREASE`, `CAMPAIGN_PAUSE` |
 | Campaign Breakdown (star performers) | `BUDGET_INCREASE`, `BID_INCREASE` |
-| Portfolio Structure Health (gaps) | `CAMPAIGN_CREATE` |
-| Portfolio Structure Health (spend imbalance) | `BID_DECREASE` / `BUDGET_DECREASE` (on over-dominant campaigns) |
+| Portfolio Structure Audit (gaps) | `CAMPAIGN_CREATE` |
+| Portfolio Structure Audit (spend imbalance) | `BID_DECREASE` / `BUDGET_DECREASE` (on over-dominant campaigns) |
 | TOS Strategy Audit (TOS bleeding) | `BID_DECREASE` (TOS modifier) |
 | TOS Strategy Audit (efficient but low TOS) | `BID_INCREASE` (TOS modifier) |
 | PP/ROS Decision Framework (under-spending, placement data supports) | `BID_INCREASE` (PP/ROS modifier) — only after ruling out structural causes |

@@ -2,198 +2,448 @@
   "name": "Friday PPC Chain",
   "nodes": [
     {
-      "parameters": {},
-      "id": "trigger-start",
-      "name": "Start",
-      "type": "n8n-nodes-base.executeWorkflowTrigger",
-      "typeVersion": 1,
-      "position": [240, 300],
-      "notes": "Called by master-scheduler on Friday at 7:00 UTC (9:00 AM IST)"
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * 5"
+            }
+          ]
+        }
+      },
+      "id": "fri-trigger",
+      "name": "Fri 9AM: Data Pipeline",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        300
+      ],
+      "notes": "9:00 AM IST Friday — 3-skill validation pipeline"
     },
-
     {
       "parameters": {
-        "command": "python3 /home/yali/workspace/automation/skill-runner.py ppc-portfolio-summary",
-        "timeout": 1200000
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"ppc-portfolio-summary\"}",
+        "options": {
+          "timeout": 1800000
+        }
       },
-      "id": "exec-portfolio",
-      "name": "1. Portfolio Summary",
-      "type": "n8n-nodes-base.executeCommand",
-      "typeVersion": 1,
-      "position": [480, 300]
+      "id": "run-portfolio",
+      "name": "Run: ppc-portfolio-summary",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        300
+      ],
+      "continueOnFail": true
     },
     {
       "parameters": {
         "conditions": {
-          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
-          "conditions": [{"id": "c1", "leftValue": "={{ $json.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cf1",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
           "combinator": "and"
         }
       },
       "id": "if-portfolio",
-      "name": "OK?",
+      "name": "Portfolio: OK?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [720, 300]
+      "position": [
+        760,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "#claude-alerts",
+          "mode": "name"
+        },
+        "text": ":warning: *ppc-portfolio-summary* failed in Friday chain (continuing...)\nExit: {{ $json.exitCode }}",
+        "otherOptions": {}
+      },
+      "id": "alert-portfolio",
+      "name": "Portfolio: Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [
+        1020,
+        420
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "70HStxb2Cc2FCmeX",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "minutes"
+      },
+      "id": "wait-portfolio",
+      "name": "Portfolio: Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1020,
+        300
+      ]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "https://slack.com/api/chat.postMessage",
-        "sendHeaders": true,
-        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
+        "url": "http://127.0.0.1:5680/run",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *ppc-portfolio-summary* failed in Friday chain.\\nContinuing with next skill...\"\n}"
+        "jsonBody": "{\"skill\": \"ppc-bid-recommender\"}",
+        "options": {
+          "timeout": 1800000
+        }
       },
-      "id": "alert-portfolio",
-      "name": "Alert: Portfolio",
+      "id": "run-bids",
+      "name": "Run: ppc-bid-recommender",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [960, 420]
-    },
-
-    {
-      "parameters": {"value": 120, "unit": "seconds"},
-      "id": "wait-1",
-      "name": "Wait 2min",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
-      "position": [1140, 300]
-    },
-
-    {
-      "parameters": {
-        "command": "python3 /home/yali/workspace/automation/skill-runner.py ppc-bid-recommender",
-        "timeout": 1200000
-      },
-      "id": "exec-bids",
-      "name": "2. Bid Recommender",
-      "type": "n8n-nodes-base.executeCommand",
-      "typeVersion": 1,
-      "position": [1380, 300]
+      "position": [
+        1280,
+        300
+      ],
+      "continueOnFail": true
     },
     {
       "parameters": {
         "conditions": {
-          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
-          "conditions": [{"id": "c2", "leftValue": "={{ $json.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cf2",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
           "combinator": "and"
         }
       },
       "id": "if-bids",
-      "name": "OK?",
+      "name": "Bids: OK?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [1620, 300]
+      "position": [
+        1540,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "#claude-alerts",
+          "mode": "name"
+        },
+        "text": ":warning: *ppc-bid-recommender* failed in Friday chain (continuing...)\nExit: {{ $json.exitCode }}",
+        "otherOptions": {}
+      },
+      "id": "alert-bids",
+      "name": "Bids: Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [
+        1800,
+        420
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "70HStxb2Cc2FCmeX",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "minutes"
+      },
+      "id": "wait-bids",
+      "name": "Bids: Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1800,
+        300
+      ]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "https://slack.com/api/chat.postMessage",
-        "sendHeaders": true,
-        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
+        "url": "http://127.0.0.1:5680/run",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *ppc-bid-recommender* failed in Friday chain.\\nContinuing with next skill...\"\n}"
+        "jsonBody": "{\"skill\": \"ppc-search-term-harvester\"}",
+        "options": {
+          "timeout": 1800000
+        }
       },
-      "id": "alert-bids",
-      "name": "Alert: Bids",
+      "id": "run-harvest",
+      "name": "Run: ppc-search-term-harvester",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [1860, 420]
-    },
-
-    {
-      "parameters": {"value": 120, "unit": "seconds"},
-      "id": "wait-2",
-      "name": "Wait 2min",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
-      "position": [2040, 300]
-    },
-
-    {
-      "parameters": {
-        "command": "python3 /home/yali/workspace/automation/skill-runner.py ppc-search-term-harvester",
-        "timeout": 1200000
-      },
-      "id": "exec-harvest",
-      "name": "3. Search Term Harvester",
-      "type": "n8n-nodes-base.executeCommand",
-      "typeVersion": 1,
-      "position": [2280, 300]
+      "position": [
+        2060,
+        300
+      ],
+      "continueOnFail": true
     },
     {
       "parameters": {
         "conditions": {
-          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
-          "conditions": [{"id": "c3", "leftValue": "={{ $json.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cf3",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
           "combinator": "and"
         }
       },
       "id": "if-harvest",
-      "name": "OK?",
+      "name": "Harvest: OK?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [2520, 300]
+      "position": [
+        2320,
+        300
+      ]
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "https://slack.com/api/chat.postMessage",
-        "sendHeaders": true,
-        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "{\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":warning: *ppc-search-term-harvester* failed in Friday chain.\\nThis was the last skill in the chain.\"\n}"
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "#claude-alerts",
+          "mode": "name"
+        },
+        "text": ":warning: *ppc-search-term-harvester* failed (last in Friday chain)\nExit: {{ $json.exitCode }}",
+        "otherOptions": {}
       },
       "id": "alert-harvest",
-      "name": "Alert: Harvest",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [2760, 420]
+      "name": "Harvest: Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [
+        2580,
+        420
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "70HStxb2Cc2FCmeX",
+          "name": "Slack account"
+        }
+      }
     },
-
     {
       "parameters": {},
-      "id": "done",
-      "name": "Chain Complete",
+      "id": "fri-done",
+      "name": "Friday Chain Complete",
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
-      "position": [2760, 300]
+      "position": [
+        2840,
+        300
+      ]
     }
   ],
   "connections": {
-    "Start": {
-      "main": [[{"node": "1. Portfolio Summary", "type": "main", "index": 0}]]
-    },
-    "1. Portfolio Summary": {
-      "main": [[{"node": "OK?", "type": "main", "index": 0}]]
-    },
-    "OK?": {
+    "Fri 9AM: Data Pipeline": {
       "main": [
-        [{"node": "Wait 2min", "type": "main", "index": 0}],
-        [{"node": "Alert: Portfolio", "type": "main", "index": 0}]
+        [
+          {
+            "node": "Run: ppc-portfolio-summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
-    "Alert: Portfolio": {
-      "main": [[{"node": "Wait 2min", "type": "main", "index": 0}]]
+    "Run: ppc-portfolio-summary": {
+      "main": [
+        [
+          {
+            "node": "Portfolio: OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
-    "Wait 2min": {
-      "main": [[{"node": "2. Bid Recommender", "type": "main", "index": 0}]]
+    "Portfolio: OK?": {
+      "main": [
+        [
+          {
+            "node": "Portfolio: Wait",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Portfolio: Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
-
-    "2. Bid Recommender": {
-      "main": [[{"node": "OK?", "type": "main", "index": 0}]]
+    "Portfolio: Alert": {
+      "main": [
+        [
+          {
+            "node": "Portfolio: Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
-
-    "3. Search Term Harvester": {
-      "main": [[{"node": "OK?", "type": "main", "index": 0}]]
+    "Portfolio: Wait": {
+      "main": [
+        [
+          {
+            "node": "Run: ppc-bid-recommender",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run: ppc-bid-recommender": {
+      "main": [
+        [
+          {
+            "node": "Bids: OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bids: OK?": {
+      "main": [
+        [
+          {
+            "node": "Bids: Wait",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Bids: Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bids: Alert": {
+      "main": [
+        [
+          {
+            "node": "Bids: Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bids: Wait": {
+      "main": [
+        [
+          {
+            "node": "Run: ppc-search-term-harvester",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run: ppc-search-term-harvester": {
+      "main": [
+        [
+          {
+            "node": "Harvest: OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Harvest: OK?": {
+      "main": [
+        [
+          {
+            "node": "Friday Chain Complete",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Harvest: Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "settings": {
     "executionOrder": "v1",
-    "timezone": "Asia/Jerusalem"
+    "timezone": "Asia/Jerusalem",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
   }
 }
