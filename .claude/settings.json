@@ -23,5 +23,63 @@
       "mcp__claude_ai_Apify__*",
       "mcp__claude_ai_Notion__*"
     ]
+  },
+  "env": {
+    "ENABLE_TOOL_SEARCH": "true"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/yali/workspace/.claude/hooks/secret-scanner.sh"
+          },
+          {
+            "type": "command",
+            "command": "bash /home/yali/workspace/.claude/hooks/block-md-creation.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/yali/workspace/.claude/hooks/block-env-read.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/yali/workspace/.claude/hooks/bash-safety.sh"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/yali/workspace/.claude/hooks/pre-compact-handoff.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/yali/workspace/.claude/hooks/session-end-reminder.sh"
+          }
+        ]
+      }
+    ]
   }
 }

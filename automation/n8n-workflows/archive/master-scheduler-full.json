@@ -1,0 +1,501 @@
+{
+  "_comment": "Craftiloo Master Skill Scheduler — complete new architecture (2026-03-13). ALL executions use skill-api HTTP (port 5680) — no executeCommand nodes (n8n is Docker, no host shell access). Monday pipeline calls sub-workflow yUafv7HE3fSAgliu. Tuesday and Friday autonomous sessions are inline. Weekly schedule: Mon data pipeline → Tue agent deep-dive → Fri agent validation.",
+  "name": "Craftiloo Skill Scheduler",
+  "nodes": [
+
+    {
+      "parameters": {},
+      "id": "done-success",
+      "name": "Done",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1200, 100],
+      "notes": "Shared success terminal. All IF success branches route here."
+    },
+
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Authorization", "value": "Bearer {{ $env.SLACK_BOT_TOKEN }}"}]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"channel\": \"#claude-alerts\",\n  \"text\": \":red_circle: *Skill failed* — check n8n executions for details.\\nTime: {{ $now.toISO() }}\"\n}"
+      },
+      "id": "shared-alert",
+      "name": "Slack: Alert Failure",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1200, 300],
+      "notes": "Shared failure alert. All IF failure branches route here."
+    },
+
+    {
+      "parameters": {
+        "rule": {"interval": [{"field": "cronExpression", "expression": "0 8 * * *"}]}
+      },
+      "id": "trigger-market-intel",
+      "name": "Daily 8AM: Market Intel",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 580],
+      "notes": "8:00 AM IST every day (timezone: Asia/Jerusalem)"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"daily-market-intel\"}",
+        "options": {"timeout": 1800000, "response": {"response": {"fullResponse": true}}}
+      },
+      "id": "exec-market-intel",
+      "name": "Run: daily-market-intel",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 580]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c-mi", "leftValue": "={{ $json.body.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-market-intel",
+      "name": "If: Market Intel OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 580]
+    },
+
+    {
+      "parameters": {
+        "rule": {"interval": [{"field": "cronExpression", "expression": "30 8 * * *"}]}
+      },
+      "id": "trigger-ppc-health",
+      "name": "Daily 8:30AM: PPC Health",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 820],
+      "notes": "8:30 AM IST every day (timezone: Asia/Jerusalem)"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"ppc-daily-health\"}",
+        "options": {"timeout": 1500000, "response": {"response": {"fullResponse": true}}}
+      },
+      "id": "exec-ppc-health",
+      "name": "Run: ppc-daily-health",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 820]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c-ph", "leftValue": "={{ $json.body.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-ppc-health",
+      "name": "If: PPC Health OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 820]
+    },
+
+    {
+      "parameters": {
+        "rule": {"interval": [{"field": "cronExpression", "expression": "0 9 * * 1"}]}
+      },
+      "id": "trigger-weekly-ppc",
+      "name": "Mon 9AM: Weekly PPC Analysis",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 1060],
+      "notes": "9:00 AM IST Monday. weekly-ppc-analysis runs ~25-30 min. Monday pipeline starts at 10:30 AM."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"weekly-ppc-analysis\"}",
+        "options": {"timeout": 2100000, "response": {"response": {"fullResponse": true}}}
+      },
+      "id": "exec-weekly-ppc",
+      "name": "Run: weekly-ppc-analysis",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 1060]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c-wp", "leftValue": "={{ $json.body.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-weekly-ppc",
+      "name": "If: Weekly PPC OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 1060]
+    },
+
+    {
+      "parameters": {
+        "rule": {"interval": [{"field": "cronExpression", "expression": "30 10 * * 1"}]}
+      },
+      "id": "trigger-monday-pipeline",
+      "name": "Mon 10:30AM: Monday Pipeline",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 1300],
+      "notes": "10:30 AM IST Monday. Starts AFTER weekly-ppc-analysis (~9:00-9:30 AM). Calls monday-pipeline sub-workflow (5 AUTONOMOUS skills). Sub-workflow handles its own failure alerts."
+    },
+    {
+      "parameters": {
+        "workflowId": "yUafv7HE3fSAgliu",
+        "options": {}
+      },
+      "id": "subworkflow-monday-pipeline",
+      "name": "Execute: Monday Pipeline",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [480, 1300],
+      "notes": "Sub-workflow ID: yUafv7HE3fSAgliu (Monday PPC Pipeline — Autonomous Data Collection). Self-managing: Slack alerts on each failure, continues to next skill regardless."
+    },
+
+    {
+      "parameters": {
+        "rule": {"interval": [{"field": "cronExpression", "expression": "0 12 * * 2"}]}
+      },
+      "id": "trigger-tue-agent",
+      "name": "Tue 12PM: PPC Agent Deep Dive",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 1540],
+      "notes": "12:00 PM IST Tuesday. Reads Monday pipeline files, synthesizes all data, produces brief + actions.json. Zero API writes — report only. ~55 min runtime."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"ppc-agent-autonomous-tuesday\"}",
+        "options": {"timeout": 3960000, "response": {"response": {"fullResponse": true}}}
+      },
+      "id": "exec-tue-agent",
+      "name": "Run: ppc-agent-autonomous-tuesday",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 1540]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c-ta", "leftValue": "={{ $json.body.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-tue-agent",
+      "name": "If: Tue Agent OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 1540]
+    },
+
+    {
+      "parameters": {
+        "rule": {"interval": [{"field": "cronExpression", "expression": "0 9 * * 4"}]}
+      },
+      "id": "trigger-competitors",
+      "name": "Thu 9AM: Competitors",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 1780],
+      "notes": "9:00 AM IST Thursday"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"competitor-price-serp-tracker\"}",
+        "options": {"timeout": 2400000, "response": {"response": {"fullResponse": true}}}
+      },
+      "id": "exec-competitors",
+      "name": "Run: competitor-price-serp-tracker",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 1780]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c-co", "leftValue": "={{ $json.body.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-competitors",
+      "name": "If: Competitors OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 1780]
+    },
+
+    {
+      "parameters": {
+        "rule": {"interval": [{"field": "cronExpression", "expression": "0 12 * * 5"}]}
+      },
+      "id": "trigger-fri-agent",
+      "name": "Fri 12PM: PPC Agent Validation",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 2020],
+      "notes": "12:00 PM IST Friday. Validates action items applied since Tuesday. Before/after comparison, WORKED/FAILED verdicts. Zero bid/budget writes. ~40 min runtime."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"ppc-agent-autonomous-friday\"}",
+        "options": {"timeout": 2880000, "response": {"response": {"fullResponse": true}}}
+      },
+      "id": "exec-fri-agent",
+      "name": "Run: ppc-agent-autonomous-friday",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 2020]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c-fa", "leftValue": "={{ $json.body.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-fri-agent",
+      "name": "If: Fri Agent OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 2020]
+    },
+
+    {
+      "parameters": {
+        "rule": {"interval": [{"field": "cronExpression", "expression": "0 9 * * 0"}]}
+      },
+      "id": "trigger-ba-weekly",
+      "name": "Sun 9AM: Brand Analytics",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 2260],
+      "notes": "9:00 AM IST Sunday"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"brand-analytics-weekly\"}",
+        "options": {"timeout": 2100000, "response": {"response": {"fullResponse": true}}}
+      },
+      "id": "exec-ba-weekly",
+      "name": "Run: brand-analytics-weekly",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 2260]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c-ba", "leftValue": "={{ $json.body.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-ba-weekly",
+      "name": "If: BA Weekly OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 2260]
+    },
+
+    {
+      "parameters": {
+        "rule": {"interval": [{"field": "cronExpression", "expression": "0 10 1 * *"}]}
+      },
+      "id": "trigger-monthly",
+      "name": "1st 10AM: Monthly Review",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 2500],
+      "notes": "10:00 AM IST 1st of each month"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"ppc-monthly-review\"}",
+        "options": {"timeout": 2400000, "response": {"response": {"fullResponse": true}}}
+      },
+      "id": "exec-monthly",
+      "name": "Run: ppc-monthly-review",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 2500]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "strict"},
+          "conditions": [{"id": "c-mo", "leftValue": "={{ $json.body.exitCode }}", "rightValue": 0, "operator": {"type": "number", "operation": "equals"}}],
+          "combinator": "and"
+        }
+      },
+      "id": "if-monthly",
+      "name": "If: Monthly OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [720, 2500]
+    }
+
+  ],
+  "connections": {
+    "Daily 8AM: Market Intel": {
+      "main": [[{"node": "Run: daily-market-intel", "type": "main", "index": 0}]]
+    },
+    "Run: daily-market-intel": {
+      "main": [[{"node": "If: Market Intel OK?", "type": "main", "index": 0}]]
+    },
+    "If: Market Intel OK?": {
+      "main": [
+        [{"node": "Done", "type": "main", "index": 0}],
+        [{"node": "Slack: Alert Failure", "type": "main", "index": 0}]
+      ]
+    },
+
+    "Daily 8:30AM: PPC Health": {
+      "main": [[{"node": "Run: ppc-daily-health", "type": "main", "index": 0}]]
+    },
+    "Run: ppc-daily-health": {
+      "main": [[{"node": "If: PPC Health OK?", "type": "main", "index": 0}]]
+    },
+    "If: PPC Health OK?": {
+      "main": [
+        [{"node": "Done", "type": "main", "index": 0}],
+        [{"node": "Slack: Alert Failure", "type": "main", "index": 0}]
+      ]
+    },
+
+    "Mon 9AM: Weekly PPC Analysis": {
+      "main": [[{"node": "Run: weekly-ppc-analysis", "type": "main", "index": 0}]]
+    },
+    "Run: weekly-ppc-analysis": {
+      "main": [[{"node": "If: Weekly PPC OK?", "type": "main", "index": 0}]]
+    },
+    "If: Weekly PPC OK?": {
+      "main": [
+        [{"node": "Done", "type": "main", "index": 0}],
+        [{"node": "Slack: Alert Failure", "type": "main", "index": 0}]
+      ]
+    },
+
+    "Mon 10:30AM: Monday Pipeline": {
+      "main": [[{"node": "Execute: Monday Pipeline", "type": "main", "index": 0}]]
+    },
+
+    "Tue 12PM: PPC Agent Deep Dive": {
+      "main": [[{"node": "Run: ppc-agent-autonomous-tuesday", "type": "main", "index": 0}]]
+    },
+    "Run: ppc-agent-autonomous-tuesday": {
+      "main": [[{"node": "If: Tue Agent OK?", "type": "main", "index": 0}]]
+    },
+    "If: Tue Agent OK?": {
+      "main": [
+        [{"node": "Done", "type": "main", "index": 0}],
+        [{"node": "Slack: Alert Failure", "type": "main", "index": 0}]
+      ]
+    },
+
+    "Thu 9AM: Competitors": {
+      "main": [[{"node": "Run: competitor-price-serp-tracker", "type": "main", "index": 0}]]
+    },
+    "Run: competitor-price-serp-tracker": {
+      "main": [[{"node": "If: Competitors OK?", "type": "main", "index": 0}]]
+    },
+    "If: Competitors OK?": {
+      "main": [
+        [{"node": "Done", "type": "main", "index": 0}],
+        [{"node": "Slack: Alert Failure", "type": "main", "index": 0}]
+      ]
+    },
+
+    "Fri 12PM: PPC Agent Validation": {
+      "main": [[{"node": "Run: ppc-agent-autonomous-friday", "type": "main", "index": 0}]]
+    },
+    "Run: ppc-agent-autonomous-friday": {
+      "main": [[{"node": "If: Fri Agent OK?", "type": "main", "index": 0}]]
+    },
+    "If: Fri Agent OK?": {
+      "main": [
+        [{"node": "Done", "type": "main", "index": 0}],
+        [{"node": "Slack: Alert Failure", "type": "main", "index": 0}]
+      ]
+    },
+
+    "Sun 9AM: Brand Analytics": {
+      "main": [[{"node": "Run: brand-analytics-weekly", "type": "main", "index": 0}]]
+    },
+    "Run: brand-analytics-weekly": {
+      "main": [[{"node": "If: BA Weekly OK?", "type": "main", "index": 0}]]
+    },
+    "If: BA Weekly OK?": {
+      "main": [
+        [{"node": "Done", "type": "main", "index": 0}],
+        [{"node": "Slack: Alert Failure", "type": "main", "index": 0}]
+      ]
+    },
+
+    "1st 10AM: Monthly Review": {
+      "main": [[{"node": "Run: ppc-monthly-review", "type": "main", "index": 0}]]
+    },
+    "Run: ppc-monthly-review": {
+      "main": [[{"node": "If: Monthly OK?", "type": "main", "index": 0}]]
+    },
+    "If: Monthly OK?": {
+      "main": [
+        [{"node": "Done", "type": "main", "index": 0}],
+        [{"node": "Slack: Alert Failure", "type": "main", "index": 0}]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Jerusalem",
+    "callerPolicy": "workflowsFromSameOwner"
+  }
+}

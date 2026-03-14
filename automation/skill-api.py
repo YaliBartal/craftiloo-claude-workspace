@@ -31,14 +31,35 @@ from threading import Lock
 START_TIME = time.time()
 RUNNER_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "skill-runner.py")
 WORKSPACE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ALLOWED_SKILLS = {
+CONFIG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.yaml")
+ALLOWED_FLAGS = {"--dry-run", "--verbose", "--no-git"}
+
+# Fallback list used only if config.yaml cannot be read at startup
+_FALLBACK_SKILLS = {
     "daily-market-intel", "ppc-daily-health", "weekly-ppc-analysis",
     "ppc-tacos-optimizer", "ppc-portfolio-summary", "keyword-rank-optimizer",
     "ppc-bid-recommender", "ppc-search-term-harvester",
     "competitor-price-serp-tracker", "brand-analytics-weekly", "ppc-monthly-review",
     "ppc-agent", "ppc-agent-autonomous-tuesday", "ppc-agent-autonomous-friday",
 }
-ALLOWED_FLAGS = {"--dry-run", "--verbose", "--no-git"}
+
+
+def _load_allowed_skills() -> set:
+    """Load skill names from config.yaml. Falls back to hardcoded list on error."""
+    try:
+        import yaml
+        with open(CONFIG_PATH) as f:
+            cfg = yaml.safe_load(f)
+        skills = set(cfg.get("skills", {}).keys())
+        if skills:
+            print(f"[skill-api] Loaded {len(skills)} skills from config.yaml", file=sys.stderr)
+            return skills
+    except Exception as e:
+        print(f"[skill-api] Warning: could not load config.yaml ({e}), using fallback list", file=sys.stderr)
+    return _FALLBACK_SKILLS
+
+
+ALLOWED_SKILLS = _load_allowed_skills()
 
 run_lock = Lock()
 

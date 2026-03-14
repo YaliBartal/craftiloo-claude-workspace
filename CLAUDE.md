@@ -121,6 +121,38 @@ Knowledge is split into **shared context files** (cross-skill) and **skill-speci
 
 ---
 
+## Context Management Protocol
+
+**Context pressure thresholds — output quality degrades sharply and silently:**
+
+| Context % | What's Happening | Required Action |
+|-----------|-----------------|-----------------|
+| 0–50% | Normal operation | Work freely |
+| 50–70% | Minor slowdown | Prefer shorter outputs; use `save_path` for data |
+| **70%** | **Precision drops noticeably** | **Run /compact at next logical break** |
+| **85%** | **Hallucinations increase** | **Stop current task, /compact immediately** |
+| **90%+** | **Erratic behavior** | **Write handoff → /clear → fresh session** |
+
+**Strategic compaction in long skill runs — follow this phase structure:**
+- **Phase 1:** Fetch all API data, save everything to disk via `save_path` — do NOT analyze yet
+- **→ COMPACT HERE** (note all file paths written before compacting)
+- **Phase 2:** Re-read saved files from disk, perform analysis, write intermediate findings
+- **→ COMPACT HERE if context >60%** (optional second compact)
+- **Phase 3:** Write final outputs, update LESSONS.md, send Slack notification
+
+**Before any /compact or /clear — always write a handoff file first:**
+- Path: `outputs/research/handoffs/YYYY-MM-DD-HHMM-[topic]-handoff.md`
+- Must include: task status, files written (with paths), key findings/numbers, pending work, resume instructions
+- The next session reads this handoff before starting
+
+**Context efficiency rules:**
+- Never pass raw API data through context — use `save_path` for any output >1KB
+- Read only needed file sections (use `offset` + `limit` params on large files)
+- Parallel API calls over sequential — batching cuts turns and context load in half
+- The moment all data is fetched and saved to disk = the right time to compact
+
+---
+
 ## Organization & File Management Standards
 
 **CRITICAL: Follow these standards for ALL work, ALL skills, ALL outputs.**

@@ -1,0 +1,735 @@
+{
+  "name": "Tuesday PPC Chain",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * 2"
+            }
+          ]
+        }
+      },
+      "id": "tue-trigger",
+      "name": "Tue 9AM: Data Pipeline",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        300
+      ],
+      "notes": "9:00 AM IST Tuesday — 5-skill data collection pipeline"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"ppc-tacos-optimizer\"}",
+        "options": {
+          "timeout": 1800000
+        }
+      },
+      "id": "run-tacos",
+      "name": "Run: ppc-tacos-optimizer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        300
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "ct1",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-tacos",
+      "name": "Tacos: OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        760,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "#claude-alerts",
+          "mode": "name"
+        },
+        "text": ":warning: *ppc-tacos-optimizer* failed in Tuesday chain (continuing...)\nExit: {{ $json.exitCode }}",
+        "otherOptions": {}
+      },
+      "id": "alert-tacos",
+      "name": "Tacos: Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [
+        1020,
+        420
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "70HStxb2Cc2FCmeX",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "minutes"
+      },
+      "id": "wait-tacos",
+      "name": "Tacos: Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1020,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"ppc-portfolio-summary\"}",
+        "options": {
+          "timeout": 1800000
+        }
+      },
+      "id": "run-portfolio",
+      "name": "Run: ppc-portfolio-summary",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1280,
+        300
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "ct2",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-portfolio",
+      "name": "Portfolio: OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1540,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "#claude-alerts",
+          "mode": "name"
+        },
+        "text": ":warning: *ppc-portfolio-summary* failed in Tuesday chain (continuing...)\nExit: {{ $json.exitCode }}",
+        "otherOptions": {}
+      },
+      "id": "alert-portfolio",
+      "name": "Portfolio: Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [
+        1800,
+        420
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "70HStxb2Cc2FCmeX",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "minutes"
+      },
+      "id": "wait-portfolio",
+      "name": "Portfolio: Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1800,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"keyword-rank-optimizer\"}",
+        "options": {
+          "timeout": 1800000
+        }
+      },
+      "id": "run-rank",
+      "name": "Run: keyword-rank-optimizer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2060,
+        300
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "ct3",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-rank",
+      "name": "Rank: OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2320,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "#claude-alerts",
+          "mode": "name"
+        },
+        "text": ":warning: *keyword-rank-optimizer* failed in Tuesday chain (continuing...)\nExit: {{ $json.exitCode }}",
+        "otherOptions": {}
+      },
+      "id": "alert-rank",
+      "name": "Rank: Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [
+        2580,
+        420
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "70HStxb2Cc2FCmeX",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "minutes"
+      },
+      "id": "wait-rank",
+      "name": "Rank: Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2580,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"ppc-bid-recommender\"}",
+        "options": {
+          "timeout": 1800000
+        }
+      },
+      "id": "run-bids",
+      "name": "Run: ppc-bid-recommender",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2840,
+        300
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "ct4",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-bids",
+      "name": "Bids: OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3100,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "#claude-alerts",
+          "mode": "name"
+        },
+        "text": ":warning: *ppc-bid-recommender* failed in Tuesday chain (continuing...)\nExit: {{ $json.exitCode }}",
+        "otherOptions": {}
+      },
+      "id": "alert-bids",
+      "name": "Bids: Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [
+        3360,
+        420
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "70HStxb2Cc2FCmeX",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "minutes"
+      },
+      "id": "wait-bids",
+      "name": "Bids: Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3360,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5680/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"skill\": \"ppc-search-term-harvester\"}",
+        "options": {
+          "timeout": 1800000
+        }
+      },
+      "id": "run-harvest",
+      "name": "Run: ppc-search-term-harvester",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3620,
+        300
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "ct5",
+              "leftValue": "={{ $json.exitCode }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-harvest",
+      "name": "Harvest: OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3880,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "#claude-alerts",
+          "mode": "name"
+        },
+        "text": ":warning: *ppc-search-term-harvester* failed (last in Tuesday chain)\nExit: {{ $json.exitCode }}",
+        "otherOptions": {}
+      },
+      "id": "alert-harvest",
+      "name": "Harvest: Alert",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [
+        4140,
+        420
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "70HStxb2Cc2FCmeX",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "tue-done",
+      "name": "Tuesday Chain Complete",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        4400,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Tue 9AM: Data Pipeline": {
+      "main": [
+        [
+          {
+            "node": "Run: ppc-tacos-optimizer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run: ppc-tacos-optimizer": {
+      "main": [
+        [
+          {
+            "node": "Tacos: OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tacos: OK?": {
+      "main": [
+        [
+          {
+            "node": "Tacos: Wait",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tacos: Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tacos: Alert": {
+      "main": [
+        [
+          {
+            "node": "Tacos: Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tacos: Wait": {
+      "main": [
+        [
+          {
+            "node": "Run: ppc-portfolio-summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run: ppc-portfolio-summary": {
+      "main": [
+        [
+          {
+            "node": "Portfolio: OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Portfolio: OK?": {
+      "main": [
+        [
+          {
+            "node": "Portfolio: Wait",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Portfolio: Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Portfolio: Alert": {
+      "main": [
+        [
+          {
+            "node": "Portfolio: Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Portfolio: Wait": {
+      "main": [
+        [
+          {
+            "node": "Run: keyword-rank-optimizer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run: keyword-rank-optimizer": {
+      "main": [
+        [
+          {
+            "node": "Rank: OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rank: OK?": {
+      "main": [
+        [
+          {
+            "node": "Rank: Wait",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rank: Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rank: Alert": {
+      "main": [
+        [
+          {
+            "node": "Rank: Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rank: Wait": {
+      "main": [
+        [
+          {
+            "node": "Run: ppc-bid-recommender",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run: ppc-bid-recommender": {
+      "main": [
+        [
+          {
+            "node": "Bids: OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bids: OK?": {
+      "main": [
+        [
+          {
+            "node": "Bids: Wait",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Bids: Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bids: Alert": {
+      "main": [
+        [
+          {
+            "node": "Bids: Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bids: Wait": {
+      "main": [
+        [
+          {
+            "node": "Run: ppc-search-term-harvester",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run: ppc-search-term-harvester": {
+      "main": [
+        [
+          {
+            "node": "Harvest: OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Harvest: OK?": {
+      "main": [
+        [
+          {
+            "node": "Tuesday Chain Complete",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Harvest: Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Jerusalem",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  }
+}

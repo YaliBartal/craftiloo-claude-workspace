@@ -31,9 +31,19 @@
       "Bash(node --version:*)",
       "Bash(cmd /c \"node --version\")",
       "Bash(cmd:*)",
-      "Bash(powershell:*)"
-      "Bash(git add:*)",
+      "Bash(powershell:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd GitHub MCP and merge permissions\n\n- Add GitHub MCP to CLAUDE.md services table\n- Merge local and remote permission settings\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "apify",
+    "notion",
+    "asana",
+    "slack",
+    "github",
+    "sellerboard",
+    "datadive",
+    "amazon-sp-api",
+    "amazon-ads-api"
+  ]
 }

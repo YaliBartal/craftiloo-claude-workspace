@@ -37,7 +37,7 @@ output_location: outputs/research/ppc-agent/rank-optimizer/
 
 Cross-references **PPC spend per keyword** with **organic rank movement** to answer: "Are we spending on the right keywords?" Classifies every keyword into one of six action categories, identifies wasted spend, flags keywords where we already rank well enough to reduce PPC, and discovers untapped high-value keywords we should target.
 
-**Cadence:** Weekly (after Weekly PPC Analysis provides fresh targeting data)
+**Cadence:** Bi-weekly in autonomous pipeline — odd ISO weeks only (week 11, 13, 15…) / Weekly when run interactively
 **Token budget:** <60K tokens, <6 minutes
 
 ---

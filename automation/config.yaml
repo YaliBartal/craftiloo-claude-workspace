@@ -82,23 +82,28 @@ skills:
     slack_channel: "#claude-ppc-updates"
     schedule: "Daily 8:30 AM IST"
 
-  # === MONDAY ===
+  # === SUNDAY (continued — after brand-analytics-weekly) ===
 
   weekly-ppc-analysis:
-    timeout_minutes: 30
+    timeout_minutes: 50
     max_turns: 80
     slack_channel: "#claude-ppc-updates"
-    schedule: "Monday 9:00 AM IST"
+    schedule: "Sunday 10:00 AM IST"
 
-  # === MONDAY (data collection pipeline — 5 skills sequential) ===
+  # === MONDAY (data collection pipeline — 3 skills every week, +1 alternating each week) ===
+  # Even ISO weeks: tacos runs, keyword-rank skips
+  # Odd ISO weeks:  keyword-rank runs, tacos skips
 
   ppc-tacos-optimizer:
     timeout_minutes: 25
     max_turns: 30
     prompt: |
-      Run the ppc-tacos-optimizer skill. AUTONOMOUS
+      FIRST: Check ISO week parity with this exact command:
+        WEEK=$(date +%V | sed 's/^0//'); echo $((WEEK % 2))
+      If result is 1 (odd week): output "Bi-weekly skip: tacos runs on even weeks (current week $(date +%V)). No action taken." and stop immediately.
+      If result is 0 (even week): proceed with the ppc-tacos-optimizer skill. AUTONOMOUS
     slack_channel: "#claude-ppc-updates"
-    schedule: "Monday 9:00 AM IST"
+    schedule: "Monday 10:00 AM IST"
 
   ppc-portfolio-summary:
     timeout_minutes: 25
@@ -106,15 +111,18 @@ skills:
     prompt: |
       Run the ppc-portfolio-summary skill. AUTONOMOUS
     slack_channel: "#claude-ppc-updates"
-    schedule: "Monday 9:30 AM IST"
+    schedule: "Monday 10:35 AM IST"
 
   keyword-rank-optimizer:
     timeout_minutes: 25
     max_turns: 30
     prompt: |
-      Run the keyword-rank-optimizer skill. AUTONOMOUS
+      FIRST: Check ISO week parity with this exact command:
+        WEEK=$(date +%V | sed 's/^0//'); echo $((WEEK % 2))
+      If result is 0 (even week): output "Bi-weekly skip: keyword-rank runs on odd weeks (current week $(date +%V)). No action taken." and stop immediately.
+      If result is 1 (odd week): proceed with the keyword-rank-optimizer skill. AUTONOMOUS
     slack_channel: "#claude-ppc-updates"
-    schedule: "Monday 10:00 AM IST"
+    schedule: "Monday 11:10 AM IST"
 
   ppc-bid-recommender:
     timeout_minutes: 25
@@ -122,7 +130,7 @@ skills:
     prompt: |
       Run the ppc-bid-recommender skill. AUTONOMOUS
     slack_channel: "#claude-ppc-updates"
-    schedule: "Monday 10:30 AM IST"
+    schedule: "Monday 11:45 AM IST"
 
   ppc-search-term-harvester:
     timeout_minutes: 25
@@ -130,17 +138,24 @@ skills:
     prompt: |
       Run the ppc-search-term-harvester skill. AUTONOMOUS
     slack_channel: "#claude-ppc-updates"
-    schedule: "Monday 11:00 AM IST"
+    schedule: "Monday 12:20 PM IST"
 
-  # === TUESDAY (autonomous deep-dive session — reads Monday pipeline files) ===
+  # === TUESDAY (autonomous deep-dive session — reads Sunday weekly-ppc + Monday pipeline) ===
 
   ppc-agent-autonomous-tuesday:
     timeout_minutes: 55
     max_turns: 80
     prompt: |
       Run the ppc-agent skill. AUTONOMOUS Tuesday session.
-      Read today's Monday pipeline files, cross-reference all data sources,
-      synthesize findings, and produce the weekly brief + actions.json.
+
+      Data sources to read (in this order):
+      1. Sunday's weekly-ppc-analysis output — find the most recent snapshot in
+         outputs/research/ppc-weekly/snapshots/ (should be <48h old, from yesterday).
+      2. Yesterday's Monday pipeline files — find all autonomous-*.json files written
+         yesterday across outputs/research/ppc-agent/ subdirectories.
+
+      Cross-reference all data sources, synthesize findings, and produce the
+      weekly brief + actions.json.
       Do NOT make any API write calls. Report only.
     slack_channel: "#claude-ppc-updates"
     git_add_paths:
@@ -148,15 +163,23 @@ skills:
       - outputs/research/ppc-agent/state/
     schedule: "Tuesday 12:00 PM IST"
 
-  # === FRIDAY (autonomous validation session — validates applied actions) ===
+  # === FRIDAY (autonomous validation session — validates PREVIOUS week's Tuesday actions) ===
 
   ppc-agent-autonomous-friday:
     timeout_minutes: 40
     max_turns: 50
     prompt: |
       Run the ppc-agent skill. AUTONOMOUS Friday session.
-      Validate action items applied since Tuesday's session.
-      Compare before/after metrics, score each action, update validation records.
+
+      Goal: Validate action items from LAST WEEK's Tuesday session (not this week's).
+      Step 1: List all session folders in outputs/research/ppc-agent/sessions/ sorted
+              by date. Find the Tuesday session from ~10 days ago — last week's, NOT
+              this week's Tuesday which is only 3 days old.
+      Step 2: Load that session's actions.json.
+      Step 3: Pull current metrics and compare to the baseline from that session date.
+      Step 4: Score each action as WORKED / PARTIAL / INCONCLUSIVE / FAILED.
+      Step 5: Write validation results back to that session's folder.
+
       Do NOT make any bid/budget write calls. Validation only.
     slack_channel: "#claude-ppc-updates"
     git_add_paths:

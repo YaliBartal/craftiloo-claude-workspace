@@ -82,6 +82,10 @@ class SkillConfig:
         self.min_gap_minutes = skill.get("min_gap_minutes", defaults.get("min_gap_minutes", 2))
         self.slack_channel = skill.get("slack_channel", "")
         self.allowed_tools = skill.get("allowed_tools", defaults.get("allowed_tools", []))
+        # Healthchecks.io dead man's switch URL (per-skill override OR env var HC_{SKILL}_URL)
+        self.healthcheck_url = skill.get("healthcheck_url", defaults.get("healthcheck_url", ""))
+        # Optional: list of glob patterns (relative to workspace) that must exist after a successful run
+        self.expected_outputs = skill.get("expected_outputs", defaults.get("expected_outputs", []))
 
         # Prompt: skill-specific or default
         default_prompt = f"Run the {skill_name} skill."
@@ -109,9 +113,10 @@ class RunLock:
     """File-based lock to prevent concurrent skill runs.
     Also enforces min_gap_minutes between runs."""
 
-    def __init__(self, lockfile: str, min_gap_minutes: int):
+    def __init__(self, lockfile: str, min_gap_minutes: int, skill_name: str = ""):
         self.lockfile = lockfile
         self.min_gap_minutes = min_gap_minutes
+        self.skill_name = skill_name
         self._fd = None
 
     def acquire(self) -> bool:
@@ -128,8 +133,7 @@ class RunLock:
         try:
             self._fd = open(self.lockfile, "w")
             fcntl.flock(self._fd.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
-            # Write PID and skill name for debugging
-            self._fd.write(f"{os.getpid()}\n")
+            self._fd.write(f"{os.getpid()}\n{self.skill_name}\n")
             self._fd.flush()
             return True
         except (OSError, IOError):
@@ -218,6 +222,7 @@ class GitManager:
         """Stage files, commit, push. Returns commit info."""
         result = {
             "success": False,
+            "push_failed": False,
             "sha_after": "unknown",
             "files_changed": [],
             "output": "",
@@ -259,8 +264,8 @@ class GitManager:
 
             if push_r.returncode != 0:
                 result["output"] += "\nPush failed (commit was local only)"
-                # Still mark success since commit worked
                 result["success"] = True
+                result["push_failed"] = True
                 return result
 
             result["success"] = True
@@ -507,7 +512,7 @@ def main():
     error_msg = None
 
     # 5. Acquire lock
-    lock = RunLock(config.lockfile, config.min_gap_minutes)
+    lock = RunLock(config.lockfile, config.min_gap_minutes, args.skill)
     if not lock.acquire():
         error_msg = "Lock conflict: another skill is running or min gap not met"
         logger.finish(5, "", {}, error_msg, {"timeout": config.timeout_minutes, "max_turns": config.max_turns})
@@ -550,14 +555,41 @@ def main():
 
         # 8. Run Claude
         exit_code, output = run_claude(config, verbose=args.verbose)
+        claude_succeeded = (exit_code == 0)
 
         # 9. Git commit/push (only on success)
         if config.git_commit and not args.no_git and exit_code == 0:
             commit_info = git.commit_and_push(args.skill, config.commit_prefix)
             git_info.update(commit_info)
             if not commit_info["success"]:
-                # Don't fail the whole run for a git push issue
-                error_msg = f"Git commit/push issue: {commit_info.get('output', '')}"
+                exit_code = 3
+                error_msg = f"Git commit failed: {commit_info.get('output', '')}"
+            elif commit_info.get("push_failed"):
+                exit_code = 3
+                error_msg = f"Git push failed (outputs committed locally only): {commit_info.get('output', '')}"
+
+        # 9b. Validate expected outputs (soft warning — does not change exit_code)
+        if exit_code == 0 and config.expected_outputs:
+            import glob as _glob
+            missing = [
+                p for p in config.expected_outputs
+                if not _glob.glob(os.path.join(config.workspace, p))
+            ]
+            if missing:
+                warning = f"Expected outputs not found: {missing}"
+                error_msg = f"{error_msg} | {warning}" if error_msg else warning
+
+        # 9c. Ping Healthchecks.io — fires whenever Claude itself succeeded (push failures don't block this)
+        if claude_succeeded:
+            hc_url = config.healthcheck_url or os.environ.get(
+                f"HC_{args.skill.upper().replace('-', '_')}_URL", ""
+            )
+            if hc_url:
+                try:
+                    import urllib.request as _req
+                    _req.urlopen(hc_url, timeout=10)
+                except Exception:
+                    pass  # Never fail the run because of monitoring
 
         # 10. Write structured log
         run_config = {
