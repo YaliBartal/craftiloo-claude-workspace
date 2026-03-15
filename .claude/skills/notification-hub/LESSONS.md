@@ -22,6 +22,23 @@ _None yet._
 
 ## Recent Runs (last 3)
 
+### Run: 2026-03-15 (ppc-daily-health)
+**Result:** Success
+**Calling skill:** ppc-daily-health
+
+**What happened:**
+- Posted to `#claude-morning-brief` (workspace: craft) — standalone (no thread from market-intel available)
+- 2 RED, 13 YELLOW, 3 GREEN. Key wins + Cat & Hat crash + Fairy Sewing 2-day decline surfaced
+- Skipped #claude-alerts per user efficiency instructions
+
+**What didn't work:**
+- Nothing
+
+**Lesson learned:**
+- No new lessons
+
+---
+
 ### Run: 2026-03-15
 **Result:** Success
 **Calling skill:** daily-market-intel

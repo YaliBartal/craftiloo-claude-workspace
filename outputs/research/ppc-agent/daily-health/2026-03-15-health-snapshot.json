@@ -1,0 +1,90 @@
+{
+  "date": "2026-03-15",
+  "run": "morning",
+  "data_source": "Market Intel (Mar 15 snapshot — SB Mar 7-13) + Live Campaigns (Mar 15, 171 ENABLED) + DataDive Rank Radars (15 ASINs) + agent-state.json",
+  "api_status": {
+    "amazon_ads_api": "OK — 171 ENABLED campaigns fetched",
+    "datadive_rank_radars": "OK — 15 radars fetched live",
+    "market_intel_snapshot": "TODAY — Mar 15 snapshot exists",
+    "seller_board": "LIVE — SB data Mar 7-13"
+  },
+  "account": {
+    "total_revenue_7d": 30092,
+    "total_spend_7d": 5278,
+    "tacos": 17.54,
+    "organic_ratio": 70,
+    "net_profit_7d": 5976,
+    "profit_margin": 19.74,
+    "active_campaigns": 171,
+    "total_daily_budget": 2668,
+    "orders_yesterday": 159,
+    "revenue_yesterday": 1942.28,
+    "net_top10_9radars": 86,
+    "net_top10_9radars_prev": 91,
+    "net_top10_9radars_change": -5,
+    "net_top10_all15radars": 165,
+    "note": "ACoS 34.2% from Feb 27-Mar 5 weekly report (most recent available). TACoS/revenue from SB Mar 7-13. 9-radar subset for day-over-day."
+  },
+  "portfolios": [
+    {"name": "Catch All Auto", "stage": "General", "acos": 20.4, "budget_daily": 355, "campaigns": 6, "rank_top10": null, "rank_change": null, "status": "GREEN", "note": "Discovery engine, stable"},
+    {"name": "CS Backpack Charms", "stage": "Scaling", "acos": 26.8, "budget_daily": 265, "campaigns": 15, "rank_top10": null, "rank_change": null, "status": "GREEN", "note": "BSR 4,401 improving, approaching #1 badge"},
+    {"name": "Embroidery for Kids", "stage": "Scaling", "acos": 33.6, "budget_daily": 111, "campaigns": 8, "rank_top10": 24, "rank_change": 3, "status": "GREEN", "note": "B09X55KL2C SURGE: emb kit beginners 101→22 (SV 31K)"},
+    {"name": "Fuse Beads", "stage": "Scaling", "acos": 24.6, "budget_daily": 270, "campaigns": 16, "rank_top10": 6, "rank_change": -1, "status": "YELLOW", "note": "perler beads 23→10 + fuse beads 15→10 won. Overall count -1"},
+    {"name": "Fairy Family", "stage": "Scaling", "acos": 31.2, "budget_daily": 297, "campaigns": 20, "rank_top10": 15, "rank_change": -8, "status": "YELLOW", "note": "2nd consecutive drop (34→23→15). Top revenue. Escalate tomorrow if drops again"},
+    {"name": "Cross And Embroidery Kits", "stage": "Launch", "acos": 34.6, "budget_daily": 155, "campaigns": 9, "rank_top10": 5, "rank_change": null, "status": "YELLOW", "note": "Review 3d overdue. Loss-making B0F6YTG1CH (-$35/7d)"},
+    {"name": "Princess Lacing Cards", "stage": "Launch", "acos": 59.0, "budget_daily": 168, "campaigns": 10, "rank_top10": 10, "rank_change": 1, "status": "YELLOW", "note": "Re-audit DUE TODAY (Mar 8 listing push)"},
+    {"name": "Latch Hook Kits", "stage": "Scaling", "acos": 41.5, "budget_daily": 229, "campaigns": 13, "rank_top10": 8, "rank_change": -1, "status": "YELLOW", "note": "B0F8R652FX BSR 9,180→13,563 (-4,383), subcat #2→#5"},
+    {"name": "Biggie Beads", "stage": "Scaling", "acos": 36.1, "budget_daily": 151, "campaigns": 8, "rank_top10": 13, "rank_change": 1, "status": "YELLOW", "note": "Lost fuse beads kit + hama beads (101+). BSR +5,382"},
+    {"name": "Cat And Hat Knitting", "stage": "Late Launch", "acos": 38.6, "budget_daily": 172, "campaigns": 12, "rank_top10": 9, "rank_change": -1, "status": "YELLOW", "note": "RANK CRASH: beginner knitting kit 4→45 (SV 1,217). BSR +5,249. Monitor"},
+    {"name": "Latch Hook Pillow", "stage": "Late Launch", "acos": 46.1, "budget_daily": 95, "campaigns": 10, "rank_top10": 15, "rank_change": null, "status": "YELLOW", "note": "LH Owl Pillow top10=15. Launch ACoS tolerance"},
+    {"name": "Shield All", "stage": "General", "acos": 34.2, "budget_daily": 50, "campaigns": 11, "rank_top10": null, "rank_change": null, "status": "YELLOW", "note": "P1 review gate 3d overdue"},
+    {"name": "Stitch Dictionary All", "stage": "Scaling", "acos": null, "budget_daily": 135, "campaigns": 14, "rank_top10": null, "rank_change": null, "status": "YELLOW", "note": "13 of 14 campaigns dormant"},
+    {"name": "Bunny Knitting Loom Kit", "stage": "Scaling", "acos": 37.3, "budget_daily": 34, "campaigns": 2, "rank_top10": 23, "rank_change": null, "status": "YELLOW", "note": "Strong top10 (23/50). Stable"},
+    {"name": "Punch Needle", "stage": "Unknown", "acos": null, "budget_daily": 40, "campaigns": 2, "rank_top10": 0, "rank_change": 0, "status": "YELLOW", "note": "Near-dormant"},
+    {"name": "4 Flowers Embroidery", "stage": "Scaling", "acos": 48.0, "budget_daily": 75, "campaigns": 7, "rank_top10": 0, "rank_change": 0, "status": "RED", "note": "Crisis day 32. 0 top-10. Loss-making. P1 audit overdue"},
+    {"name": "Needlepoint", "stage": "Scaling", "acos": 68.7, "budget_daily": 47, "campaigns": 7, "rank_top10": 1, "rank_change": null, "status": "RED", "note": "Review DUE TODAY. 2 SK campaigns AWAITING_ENABLE day 5. Low stock 101 units"},
+    {"name": "Dessert Family", "stage": "Scaling", "acos": null, "budget_daily": 0, "campaigns": 0, "rank_top10": 0, "rank_change": 0, "status": "PAUSED", "note": "OOS day 33+. 1 unit left"}
+  ],
+  "rank_radar_summary": [
+    {"product": "CS Kits", "asin": "B0B1927HCG", "top10": 35, "top50": 38, "total_keywords": 38},
+    {"product": "10 Embroidery", "asin": "B09X55KL2C", "top10": 24, "top50": 51, "total_keywords": 55},
+    {"product": "Bunny Knitting", "asin": "B0DKD2S3JT", "top10": 23, "top50": 42, "total_keywords": 50},
+    {"product": "LH Owl Pillow", "asin": "B0FHMRQWRX", "top10": 15, "top50": 33, "total_keywords": 50},
+    {"product": "Fairy Sewing", "asin": "B09WQSBZY7", "top10": 15, "top50": 60, "total_keywords": 87, "vs_prev": -8, "trend": "declining"},
+    {"product": "Biggie Beads", "asin": "B07D6D95NG", "top10": 13, "top50": 25, "total_keywords": 38, "vs_prev": 1},
+    {"product": "LH Pencil Cases", "asin": "B08FYH13CL", "top10": 8, "top50": 23, "total_keywords": 53, "vs_prev": -1},
+    {"product": "Princess Lacing", "asin": "B0FQC7YFX6", "top10": 10, "top50": 31, "total_keywords": 52, "vs_prev": 1},
+    {"product": "Mini Fuse Beads", "asin": "B09THLVFZK", "top10": 6, "top50": 16, "total_keywords": 18, "vs_prev": -1},
+    {"product": "Cat & Hat Knitting", "asin": "B0F8DG32H5", "top10": 9, "top50": 59, "total_keywords": 81, "vs_prev": -1, "trend": "declining"},
+    {"product": "CS & Emb Kits", "asin": "B0F8QZZQQM", "top10": 5, "top50": 19, "total_keywords": 51},
+    {"product": "Needlepoint Cat", "asin": "B09HVDNFMR", "top10": 1, "top50": 8, "total_keywords": 50},
+    {"product": "Dessert", "asin": "B096MYBLS1", "top10": 1, "top50": 17, "total_keywords": 50, "vs_prev": 1},
+    {"product": "4 Flowers", "asin": "B0DC69M3YD", "top10": 0, "top50": 29, "total_keywords": 67, "vs_prev": 0, "trend": "crisis"},
+    {"product": "Punch Needle", "asin": "B092SW839H", "top10": 0, "top50": 2, "total_keywords": 25}
+  ],
+  "red_flags": [
+    "Needlepoint: 68.7% ACoS. 2 SK campaigns AWAITING_ENABLE since Mar 10 (5 days). Review DUE TODAY. Enable IDs 241563077173400 + 257183338184758. Low stock B09HVSLBS6 101 units.",
+    "4 Flowers Embroidery: Crisis day 32 — 0 top-10 (67 tracked). Loss-making -$62/7d. P1 audit overdue."
+  ],
+  "yellow_flags": [
+    "Cat & Hat: RANK CRASH beginner knitting kit 4→45 (SV 1,217). BSR +5,249 overnight. Monitor — escalate to action plan if persists tomorrow.",
+    "Fairy Sewing: 2nd consecutive rank drop (34→23→15). Top revenue product. Escalate if continues.",
+    "Biggie Beads: Lost fuse beads kit 58→101 + hama beads 39→101. BSR +5,382.",
+    "LH Rainbow Heart B0F8R652FX: BSR dropped +4,383 (9,180→13,563), subcat #2→#5.",
+    "Princess Lacing: Listing re-audit DUE TODAY (from Mar 8 push).",
+    "Needlepoint: 7-day post-restructure review DUE TODAY.",
+    "Overdue review backlog: 12+ reviews 3d overdue (Mar 12 group + 5 listing re-audits from Mar 6 push)."
+  ],
+  "positive_notes": [
+    "B09X55KL2C: emb kit for beginners 101→22 (SV 31,705) — major organic win.",
+    "B09THLVFZK: perler beads 23→10 (SV 88K), fuse beads 15→10 (SV 35K).",
+    "B08DDJCQKF approaching BSR #1 subcategory badge.",
+    "SB profit $5,976/7d (+24% WoW). Margin 19.74% healthy."
+  ],
+  "pending_actions_count": 38,
+  "p1_count": 4,
+  "red_count": 2,
+  "yellow_count": 13,
+  "green_count": 3,
+  "paused_count": 1
+}

@@ -4,6 +4,28 @@
 
 *(New entries go at the TOP)*
 
+### Run: 2026-03-15
+**Result:** Success
+
+**What happened:**
+- 171 ENABLED campaigns — identical to Mar 14. Total daily budget $2,668.
+- 2 REDs: Needlepoint (68.7% ACoS, 2 AWAITING_ENABLE campaigns now 5d) + 4 Flowers (crisis day 32, 0 top-10).
+- NEW: Cat & Hat B0F8DG32H5 rank crash — beginner knitting kit 4→45 (SV 1,217). BSR +5,249. Flag as YELLOW, escalate if tomorrow still down.
+- WIN: B09X55KL2C emb kit for beginners 101→22 (SV 31K) + B09THLVFZK perler beads 23→10 (SV 88K).
+- Fairy Sewing 2nd consecutive decline (34→23→15). Top revenue product — watching closely.
+- 15 rank radars returned today (up from 9 tracked yesterday), total top10 = 165.
+
+**What didn't work:**
+- Campaign API returned 82K chars again — saved to file, parsed with Python JSON block extraction (same as Mar 13 approach).
+
+**Lesson learned:**
+- Cat & Hat rank crash may be DataDive volatility (like the Feb 23 lesson) but beginner knitting kit is a high-SV keyword. Treat as YELLOW URGENT, not RED, until 2nd day confirms.
+- When market intel snapshot has different top10 values than DataDive live API (due to `updated_at` timestamps being yesterday), use market intel snapshot for the 9 ASINs it explicitly tracks. DataDive API can be stale by 1-2 days.
+
+**Tokens/cost:** ~22K tokens, 0 API cost
+
+---
+
 ### Run: 2026-03-14
 **Result:** Success
 
