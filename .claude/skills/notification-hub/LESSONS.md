@@ -22,6 +22,23 @@ _None yet._
 
 ## Recent Runs (last 3)
 
+### Run: 2026-03-15 (weekly-ppc-analysis)
+**Result:** Success
+**Calling skill:** weekly-ppc-analysis
+
+**What happened:**
+- Posted to `#claude-ppc-updates` (workspace: craft)
+- Key story: account flat (ACoS 34.2%→34.0%) masking TOS over-push problem; Latch Hook/Needlepoint wins vs Fuse Beads/Fairy Family deterioration
+- Skipped #claude-alerts per user efficiency instructions
+
+**What didn't work:**
+- Nothing
+
+**Lesson learned:**
+- No new lessons
+
+---
+
 ### Run: 2026-03-15 (ppc-daily-health)
 **Result:** Success
 **Calling skill:** ppc-daily-health

@@ -1,0 +1,5042 @@
+[
+  {
+    "purchases7d": 0,
+    "cost": 1.24,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 200590672288098,
+    "clicks": 4,
+    "impressions": 2842,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.55,
+    "placementClassification": "Off Amazon",
+    "campaignId": 200590672288098,
+    "clicks": 7,
+    "impressions": 1000,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.62,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 200590672288098,
+    "clicks": 2,
+    "impressions": 431,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPA auto"
+  },
+  {
+    "purchases7d": 13,
+    "cost": 88.3,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 200590672288098,
+    "clicks": 101,
+    "impressions": 1941,
+    "sales7d": 282.44,
+    "campaignName": "fairy sewing - SPA auto"
+  },
+  {
+    "purchases7d": 11,
+    "cost": 105.22,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 274398997879424,
+    "clicks": 293,
+    "impressions": 150055,
+    "sales7d": 355.72,
+    "campaignName": "catch all - SPA auto 0.39"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.16,
+    "placementClassification": "Off Amazon",
+    "campaignId": 274398997879424,
+    "clicks": 8,
+    "impressions": 3789,
+    "sales7d": 0,
+    "campaignName": "catch all - SPA auto 0.39"
+  },
+  {
+    "purchases7d": 5,
+    "cost": 31.45,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 274398997879424,
+    "clicks": 111,
+    "impressions": 20478,
+    "sales7d": 110.9,
+    "campaignName": "catch all - SPA auto 0.39"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 0.74,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 274398997879424,
+    "clicks": 5,
+    "impressions": 26,
+    "sales7d": 65.96,
+    "campaignName": "catch all - SPA auto 0.39"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 8.35,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 134267091287176,
+    "clicks": 26,
+    "impressions": 12223,
+    "sales7d": 0,
+    "campaignName": "catch all - SPA auto 0.49"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.33,
+    "placementClassification": "Off Amazon",
+    "campaignId": 134267091287176,
+    "clicks": 4,
+    "impressions": 949,
+    "sales7d": 0,
+    "campaignName": "catch all - SPA auto 0.49"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 3.96,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 134267091287176,
+    "clicks": 12,
+    "impressions": 2243,
+    "sales7d": 21.98,
+    "campaignName": "catch all - SPA auto 0.49"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 1.32,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 134267091287176,
+    "clicks": 4,
+    "impressions": 75,
+    "sales7d": 17.98,
+    "campaignName": "catch all - SPA auto 0.49"
+  },
+  {
+    "purchases7d": 4,
+    "cost": 25.64,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 192588175553238,
+    "clicks": 89,
+    "impressions": 49170,
+    "sales7d": 83.72,
+    "campaignName": "catch all - SPA auto 0.29"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.91,
+    "placementClassification": "Off Amazon",
+    "campaignId": 192588175553238,
+    "clicks": 39,
+    "impressions": 9336,
+    "sales7d": 0,
+    "campaignName": "catch all - SPA auto 0.29"
+  },
+  {
+    "purchases7d": 32,
+    "cost": 197.26,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 192588175553238,
+    "clicks": 599,
+    "impressions": 54337,
+    "sales7d": 696.36,
+    "campaignName": "catch all - SPA auto 0.29"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 10.04,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 192588175553238,
+    "clicks": 28,
+    "impressions": 1297,
+    "sales7d": 43.96,
+    "campaignName": "catch all - SPA auto 0.29"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 50357682143387,
+    "clicks": 0,
+    "impressions": 32,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM SK latch hook kits for beginners TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 50357682143387,
+    "clicks": 0,
+    "impressions": 35,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM SK latch hook kits for beginners TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 4.35,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 50357682143387,
+    "clicks": 3,
+    "impressions": 88,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM SK latch hook kits for beginners TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 3.43,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 84662042674582,
+    "clicks": 7,
+    "impressions": 2483,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM SK doll making kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 84662042674582,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM SK doll making kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 84662042674582,
+    "clicks": 0,
+    "impressions": 137,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM SK doll making kit TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 3.79,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 84662042674582,
+    "clicks": 3,
+    "impressions": 99,
+    "sales7d": 35.96,
+    "campaignName": "fairy sewing - SPM SK doll making kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.8,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 145201311633066,
+    "clicks": 2,
+    "impressions": 56,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM SK embroidery for beginners TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 145201311633066,
+    "clicks": 0,
+    "impressions": 15,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM SK embroidery for beginners TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 145201311633066,
+    "clicks": 0,
+    "impressions": 25,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM SK embroidery for beginners TOS"
+  },
+  {
+    "purchases7d": 12,
+    "cost": 82.31,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 194578560916118,
+    "clicks": 107,
+    "impressions": 15083,
+    "sales7d": 248.76,
+    "campaignName": "fairy sewing - SPM SK kids sewing kits age 5-8 TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.79,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 194578560916118,
+    "clicks": 1,
+    "impressions": 114,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM SK kids sewing kits age 5-8 TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 14.3,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 194578560916118,
+    "clicks": 10,
+    "impressions": 120,
+    "sales7d": 17.98,
+    "campaignName": "fairy sewing - SPM SK kids sewing kits age 5-8 TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 270847961108342,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM SK toddler sewing kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 6.93,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 270847961108342,
+    "clicks": 4,
+    "impressions": 49,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM SK toddler sewing kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 114445931131831,
+    "clicks": 0,
+    "impressions": 5,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 114445931131831,
+    "clicks": 0,
+    "impressions": 131,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 12.66,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 114445931131831,
+    "clicks": 13,
+    "impressions": 128,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.94,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 218889381864980,
+    "clicks": 2,
+    "impressions": 120,
+    "sales7d": 0,
+    "campaignName": "fuse beads - 48 mini - SPA SK perler beads bulk"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.94,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 218889381864980,
+    "clicks": 2,
+    "impressions": 184,
+    "sales7d": 0,
+    "campaignName": "fuse beads - 48 mini - SPA SK perler beads bulk"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 29.46,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 218889381864980,
+    "clicks": 25,
+    "impressions": 468,
+    "sales7d": 69.94,
+    "campaignName": "fuse beads - 48 mini - SPA SK perler beads bulk"
+  },
+  {
+    "purchases7d": 3,
+    "cost": 20.86,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 44316151159540,
+    "clicks": 40,
+    "impressions": 9905,
+    "sales7d": 61.94,
+    "campaignName": "cross embroidery - small kit SPM SK cross stitch kits TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 44316151159540,
+    "clicks": 0,
+    "impressions": 42,
+    "sales7d": 0,
+    "campaignName": "cross embroidery - small kit SPM SK cross stitch kits TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 6.84,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 44316151159540,
+    "clicks": 12,
+    "impressions": 2475,
+    "sales7d": 19.98,
+    "campaignName": "cross embroidery - small kit SPM SK cross stitch kits TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 21.58,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 44316151159540,
+    "clicks": 27,
+    "impressions": 483,
+    "sales7d": 41.96,
+    "campaignName": "cross embroidery - small kit SPM SK cross stitch kits TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 71307692964721,
+    "clicks": 0,
+    "impressions": 34,
+    "sales7d": 0,
+    "campaignName": "biggie beads - SPM MK large perler TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 95143615191804,
+    "clicks": 0,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "biggie beads - SPM MK large fuse TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 95143615191804,
+    "clicks": 0,
+    "impressions": 15,
+    "sales7d": 0,
+    "campaignName": "biggie beads - SPM MK large fuse TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 95143615191804,
+    "clicks": 0,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "biggie beads - SPM MK large fuse TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.68,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 269507392038455,
+    "clicks": 2,
+    "impressions": 1709,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM SK 2.6mm fuse beads TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 269507392038455,
+    "clicks": 0,
+    "impressions": 281,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM SK 2.6mm fuse beads TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 12.65,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 269507392038455,
+    "clicks": 7,
+    "impressions": 154,
+    "sales7d": 65.96,
+    "campaignName": "fuse beads - mini - SPM SK 2.6mm fuse beads TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 137609927917035,
+    "clicks": 0,
+    "impressions": 4,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM SK latch hook pencil case TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 0.73,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 137609927917035,
+    "clicks": 1,
+    "impressions": 8,
+    "sales7d": 19.98,
+    "campaignName": "latch hook kits - SPM SK latch hook pencil case TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 137609927917035,
+    "clicks": 0,
+    "impressions": 4,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM SK latch hook pencil case TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 8.69,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 14040247015662,
+    "clicks": 14,
+    "impressions": 2007,
+    "sales7d": 24.98,
+    "campaignName": "latch hook kits - SPM MK auto winners exact"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 14040247015662,
+    "clicks": 0,
+    "impressions": 15,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MK auto winners exact"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 2.73,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 14040247015662,
+    "clicks": 4,
+    "impressions": 415,
+    "sales7d": 19.98,
+    "campaignName": "latch hook kits - SPM MK auto winners exact"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 2.67,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 14040247015662,
+    "clicks": 4,
+    "impressions": 11,
+    "sales7d": 59.94,
+    "campaignName": "latch hook kits - SPM MK auto winners exact"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 270472026768698,
+    "clicks": 0,
+    "impressions": 3,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - SPM SK cross stitch for kids 8-12 TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 270472026768698,
+    "clicks": 0,
+    "impressions": 23,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - SPM SK cross stitch for kids 8-12 TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 270472026768698,
+    "clicks": 0,
+    "impressions": 3,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - SPM SK cross stitch for kids 8-12 TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 241563077173400,
+    "clicks": 0,
+    "impressions": 94,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK needlepoint for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.12,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 241563077173400,
+    "clicks": 2,
+    "impressions": 78,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK needlepoint for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 5.96,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 241563077173400,
+    "clicks": 6,
+    "impressions": 29,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK needlepoint for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 257183338184758,
+    "clicks": 0,
+    "impressions": 80,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK needlepoint kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 257183338184758,
+    "clicks": 0,
+    "impressions": 58,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK needlepoint kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.46,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 257183338184758,
+    "clicks": 3,
+    "impressions": 43,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK needlepoint kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.71,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 42122197345124,
+    "clicks": 4,
+    "impressions": 619,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.19,
+    "placementClassification": "Off Amazon",
+    "campaignId": 42122197345124,
+    "clicks": 2,
+    "impressions": 74,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 3,
+    "cost": 25.31,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 42122197345124,
+    "clicks": 60,
+    "impressions": 5644,
+    "sales7d": 56.74,
+    "campaignName": "needlepoint - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 5,
+    "cost": 18.45,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 42122197345124,
+    "clicks": 32,
+    "impressions": 701,
+    "sales7d": 161.82,
+    "campaignName": "needlepoint - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 3.04,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 73257765455257,
+    "clicks": 8,
+    "impressions": 1292,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK needlepoint pouch kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.37,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 73257765455257,
+    "clicks": 5,
+    "impressions": 488,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK needlepoint pouch kit TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 6.17,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 73257765455257,
+    "clicks": 14,
+    "impressions": 215,
+    "sales7d": 17.98,
+    "campaignName": "needlepoint - SPM SK needlepoint pouch kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 8.04,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 311459404488143,
+    "clicks": 12,
+    "impressions": 1544,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPM MK broad"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 311459404488143,
+    "clicks": 0,
+    "impressions": 16,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPM MK broad"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.06,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 311459404488143,
+    "clicks": 2,
+    "impressions": 149,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPM MK broad"
+  },
+  {
+    "purchases7d": 3,
+    "cost": 19.61,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 311459404488143,
+    "clicks": 16,
+    "impressions": 251,
+    "sales7d": 59.94,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPM MK broad"
+  },
+  {
+    "purchases7d": 4,
+    "cost": 23.44,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 353429750115312,
+    "clicks": 39,
+    "impressions": 7279,
+    "sales7d": 84.92,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPM MK broad 2"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 353429750115312,
+    "clicks": 0,
+    "impressions": 39,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPM MK broad 2"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 4.46,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 353429750115312,
+    "clicks": 8,
+    "impressions": 970,
+    "sales7d": 39.96,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPM MK broad 2"
+  },
+  {
+    "purchases7d": 36,
+    "cost": 282.23,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 353429750115312,
+    "clicks": 231,
+    "impressions": 2553,
+    "sales7d": 725.28,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPM MK broad 2"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 5.22,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 524399322139801,
+    "clicks": 10,
+    "impressions": 3568,
+    "sales7d": 0,
+    "campaignName": "fuse beads - 48 mini - SPA auto broad"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.36,
+    "placementClassification": "Off Amazon",
+    "campaignId": 524399322139801,
+    "clicks": 23,
+    "impressions": 12209,
+    "sales7d": 0,
+    "campaignName": "fuse beads - 48 mini - SPA auto broad"
+  },
+  {
+    "purchases7d": 3,
+    "cost": 15.52,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 524399322139801,
+    "clicks": 31,
+    "impressions": 12559,
+    "sales7d": 98.94,
+    "campaignName": "fuse beads - 48 mini - SPA auto broad"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 62.64,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 524399322139801,
+    "clicks": 72,
+    "impressions": 1667,
+    "sales7d": 0,
+    "campaignName": "fuse beads - 48 mini - SPA auto broad"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 546586309361386,
+    "clicks": 0,
+    "impressions": 123,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 546586309361386,
+    "clicks": 0,
+    "impressions": 27,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.29,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 546586309361386,
+    "clicks": 1,
+    "impressions": 338,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPA auto"
+  },
+  {
+    "purchases7d": 9,
+    "cost": 108.51,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 546586309361386,
+    "clicks": 145,
+    "impressions": 2476,
+    "sales7d": 179.82,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 444894936495447,
+    "clicks": 0,
+    "impressions": 11,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MP competitor ASINs wide"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 444894936495447,
+    "clicks": 0,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MP competitor ASINs wide"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.31,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 444894936495447,
+    "clicks": 1,
+    "impressions": 128,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MP competitor ASINs wide"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 444894936495447,
+    "clicks": 0,
+    "impressions": 20,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MP competitor ASINs wide"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.15,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 511620486420327,
+    "clicks": 6,
+    "impressions": 758,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.22,
+    "placementClassification": "Off Amazon",
+    "campaignId": 511620486420327,
+    "clicks": 2,
+    "impressions": 878,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPA auto"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 5.91,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 511620486420327,
+    "clicks": 16,
+    "impressions": 1131,
+    "sales7d": 19.98,
+    "campaignName": "latch hook kits - SPA auto"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 4.58,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 511620486420327,
+    "clicks": 7,
+    "impressions": 127,
+    "sales7d": 19.98,
+    "campaignName": "latch hook kits - SPA auto"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 12.11,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 457899923734217,
+    "clicks": 16,
+    "impressions": 4925,
+    "sales7d": 44.96,
+    "campaignName": "latch hook kits - SPM MK latch hook root exact"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 457899923734217,
+    "clicks": 0,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MK latch hook root exact"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 6.68,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 457899923734217,
+    "clicks": 8,
+    "impressions": 2800,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MK latch hook root exact"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 32.3,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 457899923734217,
+    "clicks": 22,
+    "impressions": 1570,
+    "sales7d": 24.98,
+    "campaignName": "latch hook kits - SPM MK latch hook root exact"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.08,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 381587421028993,
+    "clicks": 2,
+    "impressions": 320,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - B09X55KL2C - SPM MK embroidery for kids exact"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 381587421028993,
+    "clicks": 0,
+    "impressions": 65,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - B09X55KL2C - SPM MK embroidery for kids exact"
+  },
+  {
+    "purchases7d": 4,
+    "cost": 28.52,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 381587421028993,
+    "clicks": 26,
+    "impressions": 157,
+    "sales7d": 91.92,
+    "campaignName": "embroidery for kids - B09X55KL2C - SPM MK embroidery for kids exact"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 418445128533030,
+    "clicks": 0,
+    "impressions": 6,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 418445128533030,
+    "clicks": 0,
+    "impressions": 2,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 418445128533030,
+    "clicks": 0,
+    "impressions": 33,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 390180579716853,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - B09X55KL2C - SPA auto TOS low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 390180579716853,
+    "clicks": 0,
+    "impressions": 14,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - B09X55KL2C - SPA auto TOS low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.15,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 390180579716853,
+    "clicks": 1,
+    "impressions": 19,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - B09X55KL2C - SPA auto TOS low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 369595481013488,
+    "clicks": 0,
+    "impressions": 197,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B09WQSBZY7 fairy - SPM MP product targeting low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 369595481013488,
+    "clicks": 0,
+    "impressions": 5,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B09WQSBZY7 fairy - SPM MP product targeting low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 369595481013488,
+    "clicks": 0,
+    "impressions": 85,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B09WQSBZY7 fairy - SPM MP product targeting low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 369595481013488,
+    "clicks": 0,
+    "impressions": 0,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B09WQSBZY7 fairy - SPM MP product targeting low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 545787479014269,
+    "clicks": 0,
+    "impressions": 4,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPM MK manual low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.08,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 545787479014269,
+    "clicks": 1,
+    "impressions": 90,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPM MK manual low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 534466935351230,
+    "clicks": 0,
+    "impressions": 47,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - B09X55KL2C - SPM MP product targeting low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 380377457874946,
+    "clicks": 0,
+    "impressions": 4,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - B09X55KL2C - SPM MK manual research low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 380377457874946,
+    "clicks": 0,
+    "impressions": 75,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - B09X55KL2C - SPM MK manual research low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.1,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 330753309504409,
+    "clicks": 2,
+    "impressions": 290,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B09WQSBZY7 fairy - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 330753309504409,
+    "clicks": 0,
+    "impressions": 9,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B09WQSBZY7 fairy - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 530308194927791,
+    "clicks": 0,
+    "impressions": 6,
+    "sales7d": 0,
+    "campaignName": "stitch dictionary - cat - SPM MK manual low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 530308194927791,
+    "clicks": 0,
+    "impressions": 39,
+    "sales7d": 0,
+    "campaignName": "stitch dictionary - cat - SPM MK manual low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.19,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 347834918794567,
+    "clicks": 4,
+    "impressions": 21083,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B09WQSBZY7 fairy - SPM MK manual low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 347834918794567,
+    "clicks": 0,
+    "impressions": 91,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B09WQSBZY7 fairy - SPM MK manual low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.08,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 347834918794567,
+    "clicks": 1,
+    "impressions": 332,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B09WQSBZY7 fairy - SPM MK manual low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 282769301324838,
+    "clicks": 0,
+    "impressions": 25,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B0BNDVTTSH ballerina - SPA auto TOS low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 282769301324838,
+    "clicks": 0,
+    "impressions": 2,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B0BNDVTTSH ballerina - SPA auto TOS low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 330669479750073,
+    "clicks": 0,
+    "impressions": 22,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B0BNDVTTSH ballerina - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 330669479750073,
+    "clicks": 0,
+    "impressions": 6,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B0BNDVTTSH ballerina - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 367289590134428,
+    "clicks": 0,
+    "impressions": 59,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - B09X55KL2C - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.2,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 367289590134428,
+    "clicks": 2,
+    "impressions": 70,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - B09X55KL2C - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 367289590134428,
+    "clicks": 0,
+    "impressions": 2,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - B09X55KL2C - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 284212591559552,
+    "clicks": 0,
+    "impressions": 0,
+    "sales7d": 0,
+    "campaignName": "stitch dictionary - elephant - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 284212591559552,
+    "clicks": 0,
+    "impressions": 4,
+    "sales7d": 0,
+    "campaignName": "stitch dictionary - elephant - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 462281675540427,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPA auto TOS low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 462281675540427,
+    "clicks": 0,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPA auto TOS low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 462281675540427,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPA auto TOS low bid"
+  },
+  {
+    "purchases7d": 20,
+    "cost": 136.93,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 352155109175473,
+    "clicks": 338,
+    "impressions": 234721,
+    "sales7d": 430.6,
+    "campaignName": "catch all - SPA auto NGO (old)"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 4.1,
+    "placementClassification": "Off Amazon",
+    "campaignId": 352155109175473,
+    "clicks": 47,
+    "impressions": 12943,
+    "sales7d": 0,
+    "campaignName": "catch all - SPA auto NGO (old)"
+  },
+  {
+    "purchases7d": 23,
+    "cost": 89.78,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 352155109175473,
+    "clicks": 246,
+    "impressions": 31206,
+    "sales7d": 496.52,
+    "campaignName": "catch all - SPA auto NGO (old)"
+  },
+  {
+    "purchases7d": 18,
+    "cost": 116.54,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 352155109175473,
+    "clicks": 193,
+    "impressions": 4586,
+    "sales7d": 412.62,
+    "campaignName": "catch all - SPA auto NGO (old)"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 465199092942357,
+    "clicks": 0,
+    "impressions": 0,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B09WQSBZY7 fairy - SPA auto TOS low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 465199092942357,
+    "clicks": 0,
+    "impressions": 3,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B09WQSBZY7 fairy - SPA auto TOS low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.1,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 417602612011663,
+    "clicks": 1,
+    "impressions": 1313,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B0BNDVTTSH ballerina - SPM MK manual low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 417602612011663,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B0BNDVTTSH ballerina - SPM MK manual low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 417602612011663,
+    "clicks": 0,
+    "impressions": 74,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - B0BNDVTTSH ballerina - SPM MK manual low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 338444438819994,
+    "clicks": 0,
+    "impressions": 9,
+    "sales7d": 0,
+    "campaignName": "stitch dictionary - cat - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 338444438819994,
+    "clicks": 0,
+    "impressions": 10,
+    "sales7d": 0,
+    "campaignName": "stitch dictionary - cat - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 338444438819994,
+    "clicks": 0,
+    "impressions": 3,
+    "sales7d": 0,
+    "campaignName": "stitch dictionary - cat - SPA auto low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 469234636780040,
+    "clicks": 0,
+    "impressions": 69,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - B08DDJCQKF girl - SPM MP product targeting low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 398032683394506,
+    "clicks": 0,
+    "impressions": 4,
+    "sales7d": 0,
+    "campaignName": "fuse beads - B07PXN4K8N 22000 - SPM MP product targeting low bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 398032683394506,
+    "clicks": 0,
+    "impressions": 27,
+    "sales7d": 0,
+    "campaignName": "fuse beads - B07PXN4K8N 22000 - SPM MP product targeting low bid"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 16.66,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 405205635215074,
+    "clicks": 43,
+    "impressions": 8276,
+    "sales7d": 21.98,
+    "campaignName": "fairy sewing - SPM MK sewing kit kids root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 405205635215074,
+    "clicks": 0,
+    "impressions": 37,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM MK sewing kit kids root TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 6.54,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 405205635215074,
+    "clicks": 8,
+    "impressions": 121,
+    "sales7d": 20.68,
+    "campaignName": "fairy sewing - SPM MK sewing kit kids root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 308562725737173,
+    "clicks": 0,
+    "impressions": 12,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MK rug root exact TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 308562725737173,
+    "clicks": 0,
+    "impressions": 87,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MK rug root exact TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 308562725737173,
+    "clicks": 0,
+    "impressions": 63,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MK rug root exact TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 7.22,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 384501457274846,
+    "clicks": 12,
+    "impressions": 23160,
+    "sales7d": 0,
+    "campaignName": "Biggie Auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 10.02,
+    "placementClassification": "Off Amazon",
+    "campaignId": 384501457274846,
+    "clicks": 27,
+    "impressions": 10727,
+    "sales7d": 0,
+    "campaignName": "Biggie Auto"
+  },
+  {
+    "purchases7d": 4,
+    "cost": 35.81,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 384501457274846,
+    "clicks": 56,
+    "impressions": 18727,
+    "sales7d": 99.92,
+    "campaignName": "Biggie Auto"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 16.69,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 384501457274846,
+    "clicks": 22,
+    "impressions": 887,
+    "sales7d": 49.96,
+    "campaignName": "Biggie Auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 539441065400489,
+    "clicks": 0,
+    "impressions": 11,
+    "sales7d": 0,
+    "campaignName": "biggie beads - SPM MK biggie root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 539441065400489,
+    "clicks": 0,
+    "impressions": 29,
+    "sales7d": 0,
+    "campaignName": "biggie beads - SPM MK biggie root TOS"
+  },
+  {
+    "purchases7d": 3,
+    "cost": 8.23,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 417324377096629,
+    "clicks": 21,
+    "impressions": 5139,
+    "sales7d": 61.94,
+    "campaignName": "fairy sewing - SPM SK sewing kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 417324377096629,
+    "clicks": 0,
+    "impressions": 8,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM SK sewing kit for kids TOS"
+  },
+  {
+    "purchases7d": 9,
+    "cost": 112.56,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 417324377096629,
+    "clicks": 69,
+    "impressions": 847,
+    "sales7d": 195.8,
+    "campaignName": "fairy sewing - SPM SK sewing kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 493619120082777,
+    "clicks": 0,
+    "impressions": 71,
+    "sales7d": 0,
+    "campaignName": "fuse beads - 48 mini - SPM SK mini perler beads TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.06,
+    "placementClassification": "Off Amazon",
+    "campaignId": 493619120082777,
+    "clicks": 1,
+    "impressions": 368,
+    "sales7d": 0,
+    "campaignName": "fuse beads - 48 mini - SPM SK mini perler beads TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.08,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 493619120082777,
+    "clicks": 3,
+    "impressions": 337,
+    "sales7d": 0,
+    "campaignName": "fuse beads - 48 mini - SPM SK mini perler beads TOS push"
+  },
+  {
+    "purchases7d": 11,
+    "cost": 183.78,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 493619120082777,
+    "clicks": 187,
+    "impressions": 3635,
+    "sales7d": 366.64,
+    "campaignName": "fuse beads - 48 mini - SPM SK mini perler beads TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 495740578607391,
+    "clicks": 0,
+    "impressions": 9,
+    "sales7d": 0,
+    "campaignName": "biggie beads - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.12,
+    "placementClassification": "Off Amazon",
+    "campaignId": 495740578607391,
+    "clicks": 2,
+    "impressions": 1961,
+    "sales7d": 0,
+    "campaignName": "biggie beads - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 495740578607391,
+    "clicks": 0,
+    "impressions": 24,
+    "sales7d": 0,
+    "campaignName": "biggie beads - SPA auto"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 4.39,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 495740578607391,
+    "clicks": 6,
+    "impressions": 86,
+    "sales7d": 49.96,
+    "campaignName": "biggie beads - SPA auto"
+  },
+  {
+    "purchases7d": 9,
+    "cost": 98.69,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 451807131748150,
+    "clicks": 90,
+    "impressions": 17807,
+    "sales7d": 296.22,
+    "campaignName": "fuse beads - mini - SPM MK mini root TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 451807131748150,
+    "clicks": 0,
+    "impressions": 35,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MK mini root TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.98,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 451807131748150,
+    "clicks": 3,
+    "impressions": 864,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MK mini root TOS push"
+  },
+  {
+    "purchases7d": 3,
+    "cost": 26.72,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 451807131748150,
+    "clicks": 25,
+    "impressions": 157,
+    "sales7d": 98.94,
+    "campaignName": "fuse beads - mini - SPM MK mini root TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 409059613193543,
+    "clicks": 0,
+    "impressions": 54,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MK multi root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 409059613193543,
+    "clicks": 0,
+    "impressions": 61,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MK multi root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 409059613193543,
+    "clicks": 0,
+    "impressions": 154,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MK multi root TOS"
+  },
+  {
+    "purchases7d": 3,
+    "cost": 98.65,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 409059613193543,
+    "clicks": 91,
+    "impressions": 997,
+    "sales7d": 100.94,
+    "campaignName": "fuse beads - mini - SPM MK multi root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 496512505603236,
+    "clicks": 0,
+    "impressions": 299,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM SK competitor KW TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 496512505603236,
+    "clicks": 0,
+    "impressions": 78,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM SK competitor KW TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.72,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 496512505603236,
+    "clicks": 1,
+    "impressions": 83,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM SK competitor KW TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 3.65,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 420410022305575,
+    "clicks": 7,
+    "impressions": 938,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM MK sewing kit root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 420410022305575,
+    "clicks": 0,
+    "impressions": 22,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM MK sewing kit root TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 8.25,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 420410022305575,
+    "clicks": 6,
+    "impressions": 62,
+    "sales7d": 39.96,
+    "campaignName": "fairy sewing - SPM MK sewing kit root TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 13.08,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 525516345508137,
+    "clicks": 26,
+    "impressions": 3104,
+    "sales7d": 49.96,
+    "campaignName": "SO | Embroidery Kit | B0DC69M3YD | SPM | SK |  embroidery kits for adults TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.51,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 525516345508137,
+    "clicks": 1,
+    "impressions": 75,
+    "sales7d": 0,
+    "campaignName": "SO | Embroidery Kit | B0DC69M3YD | SPM | SK |  embroidery kits for adults TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.74,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 525516345508137,
+    "clicks": 1,
+    "impressions": 11,
+    "sales7d": 0,
+    "campaignName": "SO | Embroidery Kit | B0DC69M3YD | SPM | SK |  embroidery kits for adults TOS"
+  },
+  {
+    "purchases7d": 6,
+    "cost": 21.42,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 365377278886208,
+    "clicks": 40,
+    "impressions": 4113,
+    "sales7d": 158.86,
+    "campaignName": "fairy sewing - SPM MK kids sewing kit root"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 365377278886208,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM MK kids sewing kit root"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 365377278886208,
+    "clicks": 0,
+    "impressions": 10,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM MK kids sewing kit root"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 35.2,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 365377278886208,
+    "clicks": 31,
+    "impressions": 274,
+    "sales7d": 17.98,
+    "campaignName": "fairy sewing - SPM MK kids sewing kit root"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 557043974674181,
+    "clicks": 0,
+    "impressions": 68,
+    "sales7d": 0,
+    "campaignName": "shield product - bunny knitting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 557043974674181,
+    "clicks": 0,
+    "impressions": 11,
+    "sales7d": 0,
+    "campaignName": "shield product - bunny knitting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.86,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 557043974674181,
+    "clicks": 4,
+    "impressions": 113,
+    "sales7d": 0,
+    "campaignName": "shield product - bunny knitting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 5.88,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 557043974674181,
+    "clicks": 6,
+    "impressions": 117,
+    "sales7d": 0,
+    "campaignName": "shield product - bunny knitting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 451322907435771,
+    "clicks": 0,
+    "impressions": 227,
+    "sales7d": 0,
+    "campaignName": "shield product - embroidery for kids"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.25,
+    "placementClassification": "Off Amazon",
+    "campaignId": 451322907435771,
+    "clicks": 1,
+    "impressions": 130,
+    "sales7d": 0,
+    "campaignName": "shield product - embroidery for kids"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 6.75,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 451322907435771,
+    "clicks": 9,
+    "impressions": 343,
+    "sales7d": 0,
+    "campaignName": "shield product - embroidery for kids"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 24.9,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 451322907435771,
+    "clicks": 22,
+    "impressions": 296,
+    "sales7d": 16.98,
+    "campaignName": "shield product - embroidery for kids"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 342533675718898,
+    "clicks": 0,
+    "impressions": 39,
+    "sales7d": 0,
+    "campaignName": "4 flowers - B0BWSGRTB1 - SPM MP brand ASINs"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 342533675718898,
+    "clicks": 0,
+    "impressions": 3,
+    "sales7d": 0,
+    "campaignName": "4 flowers - B0BWSGRTB1 - SPM MP brand ASINs"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 1.78,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 342533675718898,
+    "clicks": 4,
+    "impressions": 257,
+    "sales7d": 24.98,
+    "campaignName": "4 flowers - B0BWSGRTB1 - SPM MP brand ASINs"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 342533675718898,
+    "clicks": 0,
+    "impressions": 12,
+    "sales7d": 0,
+    "campaignName": "4 flowers - B0BWSGRTB1 - SPM MP brand ASINs"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.36,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 363414756362888,
+    "clicks": 2,
+    "impressions": 702,
+    "sales7d": 0,
+    "campaignName": "shield product - latch hook kits"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 363414756362888,
+    "clicks": 0,
+    "impressions": 15,
+    "sales7d": 0,
+    "campaignName": "shield product - latch hook kits"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 12.92,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 363414756362888,
+    "clicks": 19,
+    "impressions": 2081,
+    "sales7d": 24.98,
+    "campaignName": "shield product - latch hook kits"
+  },
+  {
+    "purchases7d": 5,
+    "cost": 35.21,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 363414756362888,
+    "clicks": 32,
+    "impressions": 650,
+    "sales7d": 124.9,
+    "campaignName": "shield product - latch hook kits"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 365967498919724,
+    "clicks": 0,
+    "impressions": 3,
+    "sales7d": 0,
+    "campaignName": "shield product - dessert sewing"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 365967498919724,
+    "clicks": 0,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "shield product - dessert sewing"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 365967498919724,
+    "clicks": 0,
+    "impressions": 4,
+    "sales7d": 0,
+    "campaignName": "shield product - dessert sewing"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.33,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 365967498919724,
+    "clicks": 1,
+    "impressions": 22,
+    "sales7d": 0,
+    "campaignName": "shield product - dessert sewing"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 465088244495263,
+    "clicks": 0,
+    "impressions": 5,
+    "sales7d": 0,
+    "campaignName": "shield product - fairy sewing exact"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.23,
+    "placementClassification": "Off Amazon",
+    "campaignId": 465088244495263,
+    "clicks": 1,
+    "impressions": 137,
+    "sales7d": 0,
+    "campaignName": "shield product - fairy sewing exact"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.24,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 465088244495263,
+    "clicks": 4,
+    "impressions": 876,
+    "sales7d": 0,
+    "campaignName": "shield product - fairy sewing exact"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 29.48,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 465088244495263,
+    "clicks": 26,
+    "impressions": 467,
+    "sales7d": 17.98,
+    "campaignName": "shield product - fairy sewing exact"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.49,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 442370005643256,
+    "clicks": 1,
+    "impressions": 245,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.13,
+    "placementClassification": "Off Amazon",
+    "campaignId": 442370005643256,
+    "clicks": 1,
+    "impressions": 164,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 1.41,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 442370005643256,
+    "clicks": 3,
+    "impressions": 359,
+    "sales7d": 19.98,
+    "campaignName": "embroidery for kids - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 11,
+    "cost": 80.88,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 442370005643256,
+    "clicks": 90,
+    "impressions": 736,
+    "sales7d": 239.78,
+    "campaignName": "embroidery for kids - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 4.31,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 516544362198886,
+    "clicks": 6,
+    "impressions": 1343,
+    "sales7d": 0,
+    "campaignName": "shield product - cross stitch kits"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.28,
+    "placementClassification": "Off Amazon",
+    "campaignId": 516544362198886,
+    "clicks": 1,
+    "impressions": 271,
+    "sales7d": 0,
+    "campaignName": "shield product - cross stitch kits"
+  },
+  {
+    "purchases7d": 12,
+    "cost": 49.46,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 516544362198886,
+    "clicks": 62,
+    "impressions": 6611,
+    "sales7d": 227.76,
+    "campaignName": "shield product - cross stitch kits"
+  },
+  {
+    "purchases7d": 7,
+    "cost": 57.6,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 516544362198886,
+    "clicks": 69,
+    "impressions": 904,
+    "sales7d": 130.86,
+    "campaignName": "shield product - cross stitch kits"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 367973817596127,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MP top competitor ASINs high bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 367973817596127,
+    "clicks": 0,
+    "impressions": 15,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MP top competitor ASINs high bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 5.89,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 367973817596127,
+    "clicks": 7,
+    "impressions": 1282,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MP top competitor ASINs high bid"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 9.7,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 367973817596127,
+    "clicks": 8,
+    "impressions": 296,
+    "sales7d": 24.98,
+    "campaignName": "latch hook kits - SPM MP top competitor ASINs high bid"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 411137402525129,
+    "clicks": 0,
+    "impressions": 0,
+    "sales7d": 0,
+    "campaignName": "SO | Embroidery Kit | B0DC69M3YD | SPM | PT | 4 flowers"
+  },
+  {
+    "purchases7d": 12,
+    "cost": 82.28,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 442314287721734,
+    "clicks": 139,
+    "impressions": 14754,
+    "sales7d": 277.44,
+    "campaignName": "shield brand name - manual and broad"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 3.2,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 442314287721734,
+    "clicks": 3,
+    "impressions": 175,
+    "sales7d": 0,
+    "campaignName": "shield brand name - manual and broad"
+  },
+  {
+    "purchases7d": 6,
+    "cost": 6.8,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 442314287721734,
+    "clicks": 11,
+    "impressions": 70,
+    "sales7d": 123.88,
+    "campaignName": "shield brand name - manual and broad"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 5.4,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 483685655952741,
+    "clicks": 5,
+    "impressions": 833,
+    "sales7d": 44.96,
+    "campaignName": "fairy sewing - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 483685655952741,
+    "clicks": 0,
+    "impressions": 118,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.58,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 483685655952741,
+    "clicks": 3,
+    "impressions": 170,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 24.34,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 483685655952741,
+    "clicks": 17,
+    "impressions": 263,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 297546335847145,
+    "clicks": 0,
+    "impressions": 22,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 297546335847145,
+    "clicks": 0,
+    "impressions": 23,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.62,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 297546335847145,
+    "clicks": 2,
+    "impressions": 602,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 5,
+    "cost": 90.16,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 297546335847145,
+    "clicks": 79,
+    "impressions": 905,
+    "sales7d": 197.88,
+    "campaignName": "fuse beads - mini - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 14.34,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 452348817646551,
+    "clicks": 24,
+    "impressions": 11612,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - ballerina - SPM SK crafts for kids TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.4,
+    "placementClassification": "Off Amazon",
+    "campaignId": 452348817646551,
+    "clicks": 2,
+    "impressions": 335,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - ballerina - SPM SK crafts for kids TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.46,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 452348817646551,
+    "clicks": 2,
+    "impressions": 249,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - ballerina - SPM SK crafts for kids TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 12.75,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 452348817646551,
+    "clicks": 7,
+    "impressions": 124,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - ballerina - SPM SK crafts for kids TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.05,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 390466866098720,
+    "clicks": 3,
+    "impressions": 75,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - SPM SK beginner cross stitch kits TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 390466866098720,
+    "clicks": 0,
+    "impressions": 54,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - SPM SK beginner cross stitch kits TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 390466866098720,
+    "clicks": 0,
+    "impressions": 21,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - SPM SK beginner cross stitch kits TOS push"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 5.25,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 390466866098720,
+    "clicks": 7,
+    "impressions": 70,
+    "sales7d": 19.98,
+    "campaignName": "cross stitch charms - SPM SK beginner cross stitch kits TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 414897142693610,
+    "clicks": 0,
+    "impressions": 11,
+    "sales7d": 0,
+    "campaignName": "fuse beads - 48 mini - SPM SK mini perler TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 414897142693610,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "fuse beads - 48 mini - SPM SK mini perler TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.84,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 414897142693610,
+    "clicks": 3,
+    "impressions": 14,
+    "sales7d": 0,
+    "campaignName": "fuse beads - 48 mini - SPM SK mini perler TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 328307551065979,
+    "clicks": 0,
+    "impressions": 23,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM MP shield brand self target"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 328307551065979,
+    "clicks": 0,
+    "impressions": 26,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM MP shield brand self target"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.85,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 328307551065979,
+    "clicks": 3,
+    "impressions": 73,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM MP shield brand self target"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.58,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 505687158991410,
+    "clicks": 1,
+    "impressions": 252,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MK mini root other TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 505687158991410,
+    "clicks": 0,
+    "impressions": 5,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MK mini root other TOS push"
+  },
+  {
+    "purchases7d": 7,
+    "cost": 32.62,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 505687158991410,
+    "clicks": 26,
+    "impressions": 329,
+    "sales7d": 230.86,
+    "campaignName": "fuse beads - mini - SPM MK mini root other TOS push"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 324277551583565,
+    "clicks": 0,
+    "impressions": 55,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - SPM defence brand shield"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 324277551583565,
+    "clicks": 0,
+    "impressions": 3,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - SPM defence brand shield"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 1.92,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 324277551583565,
+    "clicks": 2,
+    "impressions": 9,
+    "sales7d": 19.98,
+    "campaignName": "cross stitch charms - SPM defence brand shield"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 9.01,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 476503955320337,
+    "clicks": 13,
+    "impressions": 1034,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM defence brand KW"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 476503955320337,
+    "clicks": 0,
+    "impressions": 47,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM defence brand KW"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 476503955320337,
+    "clicks": 0,
+    "impressions": 3,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM defence brand KW"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 2.16,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 390986596386530,
+    "clicks": 5,
+    "impressions": 169,
+    "sales7d": 19.98,
+    "campaignName": "latch hook kits - SPM MK for kids root TOS"
+  },
+  {
+    "purchases7d": 5,
+    "cost": 10.5,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 390986596386530,
+    "clicks": 14,
+    "impressions": 1647,
+    "sales7d": 104.9,
+    "campaignName": "latch hook kits - SPM MK for kids root TOS"
+  },
+  {
+    "purchases7d": 5,
+    "cost": 32.26,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 390986596386530,
+    "clicks": 24,
+    "impressions": 803,
+    "sales7d": 111.9,
+    "campaignName": "latch hook kits - SPM MK for kids root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 558680582588533,
+    "clicks": 0,
+    "impressions": 286,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM MK other root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 558680582588533,
+    "clicks": 0,
+    "impressions": 3,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM MK other root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.5,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 558680582588533,
+    "clicks": 1,
+    "impressions": 214,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM MK other root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 558680582588533,
+    "clicks": 0,
+    "impressions": 5,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM MK other root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 449540884891211,
+    "clicks": 0,
+    "impressions": 20,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM SK fairy sewing kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 449540884891211,
+    "clicks": 0,
+    "impressions": 4,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM SK fairy sewing kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.4,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 449540884891211,
+    "clicks": 3,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM SK fairy sewing kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 436541520771091,
+    "clicks": 0,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM MK knitting kit root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 436541520771091,
+    "clicks": 0,
+    "impressions": 2,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM MK knitting kit root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 436541520771091,
+    "clicks": 0,
+    "impressions": 11,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM MK knitting kit root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.31,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 551689374359625,
+    "clicks": 1,
+    "impressions": 143,
+    "sales7d": 0,
+    "campaignName": "cross embroidery - small kit SPM MK broad and phrase"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 551689374359625,
+    "clicks": 0,
+    "impressions": 54,
+    "sales7d": 0,
+    "campaignName": "cross embroidery - small kit SPM MK broad and phrase"
+  },
+  {
+    "purchases7d": 4,
+    "cost": 39.5,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 551689374359625,
+    "clicks": 47,
+    "impressions": 652,
+    "sales7d": 70.92,
+    "campaignName": "cross embroidery - small kit SPM MK broad and phrase"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.38,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 540731611504720,
+    "clicks": 3,
+    "impressions": 505,
+    "sales7d": 0,
+    "campaignName": "cross embroidery - small kit SPM MK cross stitch root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 540731611504720,
+    "clicks": 0,
+    "impressions": 79,
+    "sales7d": 0,
+    "campaignName": "cross embroidery - small kit SPM MK cross stitch root TOS"
+  },
+  {
+    "purchases7d": 6,
+    "cost": 30.92,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 540731611504720,
+    "clicks": 36,
+    "impressions": 369,
+    "sales7d": 107.88,
+    "campaignName": "cross embroidery - small kit SPM MK cross stitch root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.39,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 353947742933344,
+    "clicks": 1,
+    "impressions": 193,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK knitting kit for beginners TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 353947742933344,
+    "clicks": 0,
+    "impressions": 38,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK knitting kit for beginners TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 353947742933344,
+    "clicks": 0,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK knitting kit for beginners TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.1,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 435648657448276,
+    "clicks": 5,
+    "impressions": 399,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM MK other root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 435648657448276,
+    "clicks": 0,
+    "impressions": 2,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM MK other root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 435648657448276,
+    "clicks": 0,
+    "impressions": 0,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM MK other root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.15,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 468885209912268,
+    "clicks": 2,
+    "impressions": 471,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM SK hook rug kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.22,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 468885209912268,
+    "clicks": 2,
+    "impressions": 100,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM SK hook rug kits for kids TOS"
+  },
+  {
+    "purchases7d": 3,
+    "cost": 9.43,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 468885209912268,
+    "clicks": 9,
+    "impressions": 92,
+    "sales7d": 74.94,
+    "campaignName": "latch hook pillow - SPM SK hook rug kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.45,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 411352796073981,
+    "clicks": 1,
+    "impressions": 519,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM SK latch hook kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 411352796073981,
+    "clicks": 0,
+    "impressions": 73,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM SK latch hook kit for kids TOS"
+  },
+  {
+    "purchases7d": 14,
+    "cost": 97.17,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 411352796073981,
+    "clicks": 67,
+    "impressions": 1078,
+    "sales7d": 374.7,
+    "campaignName": "latch hook pillow - SPM SK latch hook kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.93,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 518311510221488,
+    "clicks": 5,
+    "impressions": 1093,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 518311510221488,
+    "clicks": 0,
+    "impressions": 52,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.97,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 518311510221488,
+    "clicks": 8,
+    "impressions": 932,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPA auto"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 7.42,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 518311510221488,
+    "clicks": 10,
+    "impressions": 178,
+    "sales7d": 26.98,
+    "campaignName": "cat knitting - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 288627398113245,
+    "clicks": 0,
+    "impressions": 8,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK knitting kit for kids ages 8-12 TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 288627398113245,
+    "clicks": 0,
+    "impressions": 0,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK knitting kit for kids ages 8-12 TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.73,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 288627398113245,
+    "clicks": 2,
+    "impressions": 29,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK knitting kit for kids ages 8-12 TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.4,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 310123971196621,
+    "clicks": 3,
+    "impressions": 990,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM MK latch hook kit root TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 1.47,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 310123971196621,
+    "clicks": 3,
+    "impressions": 808,
+    "sales7d": 24.98,
+    "campaignName": "latch hook pillow - SPM MK latch hook kit root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 4.4,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 310123971196621,
+    "clicks": 5,
+    "impressions": 212,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM MK latch hook kit root TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 15.1,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 445458354271564,
+    "clicks": 29,
+    "impressions": 6405,
+    "sales7d": 48.96,
+    "campaignName": "latch hook pillow - SPM MK broad"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 445458354271564,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM MK broad"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 5.15,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 445458354271564,
+    "clicks": 10,
+    "impressions": 4719,
+    "sales7d": 24.98,
+    "campaignName": "latch hook pillow - SPM MK broad"
+  },
+  {
+    "purchases7d": 7,
+    "cost": 45.98,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 445458354271564,
+    "clicks": 48,
+    "impressions": 1739,
+    "sales7d": 174.86,
+    "campaignName": "latch hook pillow - SPM MK broad"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.2,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 513939450761735,
+    "clicks": 4,
+    "impressions": 1170,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK knitting kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.22,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 513939450761735,
+    "clicks": 2,
+    "impressions": 131,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK knitting kit for kids TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 6.15,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 513939450761735,
+    "clicks": 5,
+    "impressions": 72,
+    "sales7d": 46.96,
+    "campaignName": "cat knitting - SPM SK knitting kit for kids TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 2.96,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 326196665351483,
+    "clicks": 7,
+    "impressions": 1220,
+    "sales7d": 22.98,
+    "campaignName": "cat knitting - SPM MK broad"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.19,
+    "placementClassification": "Off Amazon",
+    "campaignId": 326196665351483,
+    "clicks": 1,
+    "impressions": 74,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM MK broad"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.39,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 326196665351483,
+    "clicks": 3,
+    "impressions": 428,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM MK broad"
+  },
+  {
+    "purchases7d": 3,
+    "cost": 31.42,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 326196665351483,
+    "clicks": 28,
+    "impressions": 634,
+    "sales7d": 75.94,
+    "campaignName": "cat knitting - SPM MK broad"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 494352861026210,
+    "clicks": 0,
+    "impressions": 32,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 494352861026210,
+    "clicks": 0,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.23,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 494352861026210,
+    "clicks": 1,
+    "impressions": 21,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPA auto"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 2.99,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 494352861026210,
+    "clicks": 6,
+    "impressions": 137,
+    "sales7d": 24.98,
+    "campaignName": "latch hook pillow - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 466580407735272,
+    "clicks": 0,
+    "impressions": 3,
+    "sales7d": 0,
+    "campaignName": "cross embroidery - small kit SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 466580407735272,
+    "clicks": 0,
+    "impressions": 74,
+    "sales7d": 0,
+    "campaignName": "cross embroidery - small kit SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.23,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 466580407735272,
+    "clicks": 1,
+    "impressions": 41,
+    "sales7d": 0,
+    "campaignName": "cross embroidery - small kit SPA auto"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 15.65,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 466580407735272,
+    "clicks": 30,
+    "impressions": 550,
+    "sales7d": 21.98,
+    "campaignName": "cross embroidery - small kit SPA auto"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 4.15,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 466225032811222,
+    "clicks": 8,
+    "impressions": 1596,
+    "sales7d": 16.98,
+    "campaignName": "cross embroidery - small kit SPM SK cross stitch kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 466225032811222,
+    "clicks": 0,
+    "impressions": 127,
+    "sales7d": 0,
+    "campaignName": "cross embroidery - small kit SPM SK cross stitch kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 8.51,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 466225032811222,
+    "clicks": 9,
+    "impressions": 98,
+    "sales7d": 0,
+    "campaignName": "cross embroidery - small kit SPM SK cross stitch kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.52,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 350108554440602,
+    "clicks": 1,
+    "impressions": 360,
+    "sales7d": 0,
+    "campaignName": "shield product - latch hook pillow"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 350108554440602,
+    "clicks": 0,
+    "impressions": 2,
+    "sales7d": 0,
+    "campaignName": "shield product - latch hook pillow"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 5.6,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 350108554440602,
+    "clicks": 11,
+    "impressions": 1431,
+    "sales7d": 0,
+    "campaignName": "shield product - latch hook pillow"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 12.02,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 350108554440602,
+    "clicks": 16,
+    "impressions": 227,
+    "sales7d": 44.96,
+    "campaignName": "shield product - latch hook pillow"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.77,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 413866374359755,
+    "clicks": 3,
+    "impressions": 492,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM SK latch hook pillow kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 413866374359755,
+    "clicks": 0,
+    "impressions": 62,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM SK latch hook pillow kit TOS"
+  },
+  {
+    "purchases7d": 4,
+    "cost": 31.12,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 524947739371988,
+    "clicks": 53,
+    "impressions": 9826,
+    "sales7d": 79.92,
+    "campaignName": "fairy sewing - SPM SK sewing for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 524947739371988,
+    "clicks": 0,
+    "impressions": 66,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM SK sewing for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.24,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 524947739371988,
+    "clicks": 2,
+    "impressions": 108,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM SK sewing for kids TOS"
+  },
+  {
+    "purchases7d": 4,
+    "cost": 29.51,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 524947739371988,
+    "clicks": 24,
+    "impressions": 189,
+    "sales7d": 78.23,
+    "campaignName": "fairy sewing - SPM SK sewing for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.35,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 326254274361894,
+    "clicks": 1,
+    "impressions": 57,
+    "sales7d": 0,
+    "campaignName": "bunny knitting - SPM knitting for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 326254274361894,
+    "clicks": 0,
+    "impressions": 2,
+    "sales7d": 0,
+    "campaignName": "bunny knitting - SPM knitting for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 326254274361894,
+    "clicks": 0,
+    "impressions": 9,
+    "sales7d": 0,
+    "campaignName": "bunny knitting - SPM knitting for kids TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 7.92,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 326254274361894,
+    "clicks": 7,
+    "impressions": 66,
+    "sales7d": 26.98,
+    "campaignName": "bunny knitting - SPM knitting for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 380434172742191,
+    "clicks": 0,
+    "impressions": 0,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM SK latch hook kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 380434172742191,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM SK latch hook kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 421297229940806,
+    "clicks": 0,
+    "impressions": 20,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM SK beginner latch hook kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 421297229940806,
+    "clicks": 0,
+    "impressions": 9,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM SK beginner latch hook kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.16,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 421297229940806,
+    "clicks": 1,
+    "impressions": 13,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM SK beginner latch hook kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 503291840839530,
+    "clicks": 0,
+    "impressions": 24,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MK latch hook kit root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 503291840839530,
+    "clicks": 0,
+    "impressions": 5,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MK latch hook kit root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 503291840839530,
+    "clicks": 0,
+    "impressions": 57,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM MK latch hook kit root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 320070276918880,
+    "clicks": 0,
+    "impressions": 15,
+    "sales7d": 0,
+    "campaignName": "latch hook kits - SPM SK latch hook kits for beginners TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 8.57,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 316614216936661,
+    "clicks": 19,
+    "impressions": 3280,
+    "sales7d": 38.66,
+    "campaignName": "fairy sewing - SPM SK sewing kit for kids ages 8-12 TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 316614216936661,
+    "clicks": 0,
+    "impressions": 18,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM SK sewing kit for kids ages 8-12 TOS"
+  },
+  {
+    "purchases7d": 4,
+    "cost": 22.88,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 316614216936661,
+    "clicks": 19,
+    "impressions": 271,
+    "sales7d": 79.92,
+    "campaignName": "fairy sewing - SPM SK sewing kit for kids ages 8-12 TOS"
+  },
+  {
+    "purchases7d": 8,
+    "cost": 102.76,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 331838355911626,
+    "clicks": 124,
+    "impressions": 15098,
+    "sales7d": 187.8,
+    "campaignName": "fairy sewing - SPM MK broad"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 331838355911626,
+    "clicks": 0,
+    "impressions": 28,
+    "sales7d": 0,
+    "campaignName": "fairy sewing - SPM MK broad"
+  },
+  {
+    "purchases7d": 3,
+    "cost": 22.17,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 331838355911626,
+    "clicks": 22,
+    "impressions": 2111,
+    "sales7d": 65.94,
+    "campaignName": "fairy sewing - SPM MK broad"
+  },
+  {
+    "purchases7d": 9,
+    "cost": 32.22,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 331838355911626,
+    "clicks": 27,
+    "impressions": 295,
+    "sales7d": 187.82,
+    "campaignName": "fairy sewing - SPM MK broad"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 0.51,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 409740398136017,
+    "clicks": 1,
+    "impressions": 440,
+    "sales7d": 24.98,
+    "campaignName": "shield product - cross and embroidery"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 409740398136017,
+    "clicks": 0,
+    "impressions": 2,
+    "sales7d": 0,
+    "campaignName": "shield product - cross and embroidery"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 409740398136017,
+    "clicks": 0,
+    "impressions": 15,
+    "sales7d": 0,
+    "campaignName": "shield product - cross and embroidery"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 9.88,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 409740398136017,
+    "clicks": 11,
+    "impressions": 174,
+    "sales7d": 0,
+    "campaignName": "shield product - cross and embroidery"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 0.86,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 292341791769587,
+    "clicks": 2,
+    "impressions": 100,
+    "sales7d": 24.98,
+    "campaignName": "shield product - cat knitting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 292341791769587,
+    "clicks": 0,
+    "impressions": 49,
+    "sales7d": 0,
+    "campaignName": "shield product - cat knitting"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 16.52,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 292341791769587,
+    "clicks": 39,
+    "impressions": 1530,
+    "sales7d": 22.98,
+    "campaignName": "shield product - cat knitting"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 2.96,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 292341791769587,
+    "clicks": 4,
+    "impressions": 75,
+    "sales7d": 49.96,
+    "campaignName": "shield product - cat knitting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 476731433753477,
+    "clicks": 0,
+    "impressions": 58,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.19,
+    "placementClassification": "Off Amazon",
+    "campaignId": 476731433753477,
+    "clicks": 1,
+    "impressions": 112,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 6.0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 476731433753477,
+    "clicks": 12,
+    "impressions": 3485,
+    "sales7d": 47.96,
+    "campaignName": "latch hook pillow - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 8,
+    "cost": 50.37,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 476731433753477,
+    "clicks": 54,
+    "impressions": 1717,
+    "sales7d": 196.84,
+    "campaignName": "latch hook pillow - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 521042691449120,
+    "clicks": 0,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 521042691449120,
+    "clicks": 0,
+    "impressions": 36,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.41,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 521042691449120,
+    "clicks": 4,
+    "impressions": 339,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 1.88,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 521042691449120,
+    "clicks": 3,
+    "impressions": 65,
+    "sales7d": 22.98,
+    "campaignName": "cat knitting - SPM MP product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.16,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 457220499383709,
+    "clicks": 2,
+    "impressions": 269,
+    "sales7d": 0,
+    "campaignName": "cross embroidery -  both SPM product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 457220499383709,
+    "clicks": 0,
+    "impressions": 30,
+    "sales7d": 0,
+    "campaignName": "cross embroidery -  both SPM product targeting"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 11.28,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 457220499383709,
+    "clicks": 28,
+    "impressions": 1726,
+    "sales7d": 15.97,
+    "campaignName": "cross embroidery -  both SPM product targeting"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 13.45,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 457220499383709,
+    "clicks": 24,
+    "impressions": 351,
+    "sales7d": 43.96,
+    "campaignName": "cross embroidery -  both SPM product targeting"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 5.18,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 513250035569495,
+    "clicks": 7,
+    "impressions": 1335,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 513250035569495,
+    "clicks": 0,
+    "impressions": 2,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.83,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 513250035569495,
+    "clicks": 1,
+    "impressions": 304,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 18.82,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 513250035569495,
+    "clicks": 13,
+    "impressions": 242,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 311962155538874,
+    "clicks": 0,
+    "impressions": 0,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - SPM SK embroidery kit for beginners TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 31.1,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 554379436829100,
+    "clicks": 26,
+    "impressions": 14333,
+    "sales7d": 49.96,
+    "campaignName": "biggie beads - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 554379436829100,
+    "clicks": 0,
+    "impressions": 1694,
+    "sales7d": 0,
+    "campaignName": "biggie beads - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 4,
+    "cost": 13.55,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 554379436829100,
+    "clicks": 13,
+    "impressions": 1796,
+    "sales7d": 99.92,
+    "campaignName": "biggie beads - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 12,
+    "cost": 74.52,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 554379436829100,
+    "clicks": 54,
+    "impressions": 1177,
+    "sales7d": 299.76,
+    "campaignName": "biggie beads - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 4.94,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 372981829297208,
+    "clicks": 12,
+    "impressions": 1581,
+    "sales7d": 19.98,
+    "campaignName": "needlepoint - SPA auto TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.39,
+    "placementClassification": "Off Amazon",
+    "campaignId": 372981829297208,
+    "clicks": 10,
+    "impressions": 1599,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPA auto TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 19.81,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 372981829297208,
+    "clicks": 49,
+    "impressions": 4170,
+    "sales7d": 35.96,
+    "campaignName": "needlepoint - SPA auto TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.12,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 372981829297208,
+    "clicks": 5,
+    "impressions": 84,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPA auto TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.44,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 304521381065387,
+    "clicks": 2,
+    "impressions": 157,
+    "sales7d": 0,
+    "campaignName": "biggie beads - SPM SK 10mm fuse beads TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 304521381065387,
+    "clicks": 0,
+    "impressions": 19,
+    "sales7d": 0,
+    "campaignName": "biggie beads - SPM SK 10mm fuse beads TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 2.84,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 304521381065387,
+    "clicks": 2,
+    "impressions": 20,
+    "sales7d": 24.98,
+    "campaignName": "biggie beads - SPM SK 10mm fuse beads TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 11.32,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 400878727568208,
+    "clicks": 27,
+    "impressions": 2141,
+    "sales7d": 53.94,
+    "campaignName": "needlepoint - SPM MK broad and phrase TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 400878727568208,
+    "clicks": 0,
+    "impressions": 30,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM MK broad and phrase TOS"
+  },
+  {
+    "purchases7d": 6,
+    "cost": 18.44,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 400878727568208,
+    "clicks": 46,
+    "impressions": 2776,
+    "sales7d": 124.86,
+    "campaignName": "needlepoint - SPM MK broad and phrase TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 12.12,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 400878727568208,
+    "clicks": 21,
+    "impressions": 440,
+    "sales7d": 35.96,
+    "campaignName": "needlepoint - SPM MK broad and phrase TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.08,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 390763449770493,
+    "clicks": 1,
+    "impressions": 269,
+    "sales7d": 0,
+    "campaignName": "biggie beads - SPM SK biggie beads TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 3.36,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 390763449770493,
+    "clicks": 3,
+    "impressions": 61,
+    "sales7d": 74.94,
+    "campaignName": "biggie beads - SPM SK biggie beads TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 6.71,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 390763449770493,
+    "clicks": 7,
+    "impressions": 46,
+    "sales7d": 49.96,
+    "campaignName": "biggie beads - SPM SK biggie beads TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.05,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 408514915378721,
+    "clicks": 6,
+    "impressions": 481,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK kids needlepoint kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 408514915378721,
+    "clicks": 0,
+    "impressions": 55,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK kids needlepoint kit TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 2.78,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 408514915378721,
+    "clicks": 3,
+    "impressions": 37,
+    "sales7d": 17.98,
+    "campaignName": "needlepoint - SPM SK kids needlepoint kit TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 6.07,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 424611391216881,
+    "clicks": 19,
+    "impressions": 924,
+    "sales7d": 17.98,
+    "campaignName": "needlepoint - SPM SK needlepoint kits for beginners TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 424611391216881,
+    "clicks": 0,
+    "impressions": 81,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK needlepoint kits for beginners TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 424611391216881,
+    "clicks": 0,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK needlepoint kits for beginners TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 500165166136541,
+    "clicks": 0,
+    "impressions": 266,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK needlepoint kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.2,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 500165166136541,
+    "clicks": 3,
+    "impressions": 61,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK needlepoint kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.8,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 500165166136541,
+    "clicks": 1,
+    "impressions": 46,
+    "sales7d": 0,
+    "campaignName": "needlepoint - SPM SK needlepoint kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.11,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 310858826990920,
+    "clicks": 2,
+    "impressions": 529,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM SK embroidery starter kit beginner TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 310858826990920,
+    "clicks": 0,
+    "impressions": 25,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM SK embroidery starter kit beginner TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 3.99,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 310858826990920,
+    "clicks": 3,
+    "impressions": 51,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM SK embroidery starter kit beginner TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 304214536644297,
+    "clicks": 0,
+    "impressions": 289,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK loom animals kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 304214536644297,
+    "clicks": 0,
+    "impressions": 9,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK loom animals kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 304214536644297,
+    "clicks": 0,
+    "impressions": 24,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK loom animals kit for kids TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 3.52,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 309035836424147,
+    "clicks": 8,
+    "impressions": 1140,
+    "sales7d": 39.96,
+    "campaignName": "cross stitch charms - SPM SK cross stitch kits for beginners TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 0.42,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 309035836424147,
+    "clicks": 1,
+    "impressions": 224,
+    "sales7d": 21.98,
+    "campaignName": "cross stitch charms - SPM SK cross stitch kits for beginners TOS"
+  },
+  {
+    "purchases7d": 5,
+    "cost": 43.58,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 309035836424147,
+    "clicks": 44,
+    "impressions": 750,
+    "sales7d": 99.9,
+    "campaignName": "cross stitch charms - SPM SK cross stitch kits for beginners TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 4.35,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 357755239286850,
+    "clicks": 7,
+    "impressions": 3596,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM SK fuse bead kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 357755239286850,
+    "clicks": 0,
+    "impressions": 3,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM SK fuse bead kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.32,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 357755239286850,
+    "clicks": 2,
+    "impressions": 937,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM SK fuse bead kit TOS"
+  },
+  {
+    "purchases7d": 6,
+    "cost": 87.1,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 357755239286850,
+    "clicks": 65,
+    "impressions": 705,
+    "sales7d": 199.88,
+    "campaignName": "fuse beads - mini - SPM SK fuse bead kit TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 5.98,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 479619148408536,
+    "clicks": 6,
+    "impressions": 456,
+    "sales7d": 26.98,
+    "campaignName": "cat knitting - SPM SK loom kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.98,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 479619148408536,
+    "clicks": 1,
+    "impressions": 87,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK loom kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 3.13,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 479619148408536,
+    "clicks": 2,
+    "impressions": 18,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK loom kit for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 328030652670886,
+    "clicks": 0,
+    "impressions": 3,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - SPM MK general adult root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 328030652670886,
+    "clicks": 0,
+    "impressions": 3,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - SPM MK general adult root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 328030652670886,
+    "clicks": 0,
+    "impressions": 10,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - SPM MK general adult root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 328030652670886,
+    "clicks": 0,
+    "impressions": 8,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - SPM MK general adult root TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.35,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 536527652001300,
+    "clicks": 11,
+    "impressions": 7339,
+    "sales7d": 0,
+    "campaignName": "catch all - SPA auto 0.15"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.08,
+    "placementClassification": "Off Amazon",
+    "campaignId": 536527652001300,
+    "clicks": 18,
+    "impressions": 7224,
+    "sales7d": 0,
+    "campaignName": "catch all - SPA auto 0.15"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 4.0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 536527652001300,
+    "clicks": 29,
+    "impressions": 2426,
+    "sales7d": 20.68,
+    "campaignName": "catch all - SPA auto 0.15"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.49,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 536527652001300,
+    "clicks": 3,
+    "impressions": 9,
+    "sales7d": 0,
+    "campaignName": "catch all - SPA auto 0.15"
+  },
+  {
+    "purchases7d": 11,
+    "cost": 41.08,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 294828151510965,
+    "clicks": 229,
+    "impressions": 112026,
+    "sales7d": 235.78,
+    "campaignName": "catch all - SPA auto 0.19"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.97,
+    "placementClassification": "Off Amazon",
+    "campaignId": 294828151510965,
+    "clicks": 28,
+    "impressions": 9355,
+    "sales7d": 0,
+    "campaignName": "catch all - SPA auto 0.19"
+  },
+  {
+    "purchases7d": 14,
+    "cost": 40.9,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 294828151510965,
+    "clicks": 221,
+    "impressions": 21173,
+    "sales7d": 280.72,
+    "campaignName": "catch all - SPA auto 0.19"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.22,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 294828151510965,
+    "clicks": 1,
+    "impressions": 39,
+    "sales7d": 0,
+    "campaignName": "catch all - SPA auto 0.19"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 3.35,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 346818126626032,
+    "clicks": 5,
+    "impressions": 884,
+    "sales7d": 0,
+    "campaignName": "cross stitch charms - SPM SK cross stitch kits for kids TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 3.75,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 346818126626032,
+    "clicks": 3,
+    "impressions": 194,
+    "sales7d": 39.96,
+    "campaignName": "cross stitch charms - SPM SK cross stitch kits for kids TOS"
+  },
+  {
+    "purchases7d": 6,
+    "cost": 17.79,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 346818126626032,
+    "clicks": 17,
+    "impressions": 181,
+    "sales7d": 118.68,
+    "campaignName": "cross stitch charms - SPM SK cross stitch kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.51,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 302478995958892,
+    "clicks": 2,
+    "impressions": 1191,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.45,
+    "placementClassification": "Off Amazon",
+    "campaignId": 302478995958892,
+    "clicks": 3,
+    "impressions": 1372,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPA auto"
+  },
+  {
+    "purchases7d": 6,
+    "cost": 56.36,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 302478995958892,
+    "clicks": 91,
+    "impressions": 10618,
+    "sales7d": 122.88,
+    "campaignName": "princess lacing - SPA auto"
+  },
+  {
+    "purchases7d": 4,
+    "cost": 35.88,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 302478995958892,
+    "clicks": 38,
+    "impressions": 751,
+    "sales7d": 79.92,
+    "campaignName": "princess lacing - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.43,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 315940128550056,
+    "clicks": 1,
+    "impressions": 88,
+    "sales7d": 0,
+    "campaignName": "punch needle - SPM SK kids punch needle kit TOS PUSH"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 315940128550056,
+    "clicks": 0,
+    "impressions": 9,
+    "sales7d": 0,
+    "campaignName": "punch needle - SPM SK kids punch needle kit TOS PUSH"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 315940128550056,
+    "clicks": 0,
+    "impressions": 23,
+    "sales7d": 0,
+    "campaignName": "punch needle - SPM SK kids punch needle kit TOS PUSH"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 349621253408852,
+    "clicks": 0,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "punch needle - SPM SK punch needle kit for kids ages 8-12"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 349621253408852,
+    "clicks": 0,
+    "impressions": 24,
+    "sales7d": 0,
+    "campaignName": "punch needle - SPM SK punch needle kit for kids ages 8-12"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.87,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 349621253408852,
+    "clicks": 3,
+    "impressions": 30,
+    "sales7d": 0,
+    "campaignName": "punch needle - SPM SK punch needle kit for kids ages 8-12"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 560718841724672,
+    "clicks": 0,
+    "impressions": 94,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 560718841724672,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.6,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 560718841724672,
+    "clicks": 1,
+    "impressions": 219,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 17.91,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 560718841724672,
+    "clicks": 18,
+    "impressions": 285,
+    "sales7d": 39.96,
+    "campaignName": "princess lacing - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 303272232039028,
+    "clicks": 0,
+    "impressions": 0,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM SK sewing cards for kids ages 4-8 TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 303272232039028,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM SK sewing cards for kids ages 4-8 TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 3.03,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 303272232039028,
+    "clicks": 3,
+    "impressions": 35,
+    "sales7d": 19.98,
+    "campaignName": "princess lacing - SPM SK sewing cards for kids ages 4-8 TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 354892910621679,
+    "clicks": 0,
+    "impressions": 0,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM SK sewing cards for kids ages 3-5 TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 16.05,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 354892910621679,
+    "clicks": 11,
+    "impressions": 97,
+    "sales7d": 39.96,
+    "campaignName": "princess lacing - SPM SK sewing cards for kids ages 3-5 TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 403877806630707,
+    "clicks": 0,
+    "impressions": 0,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM SK lacing cards for kids ages 4-8 TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 403877806630707,
+    "clicks": 0,
+    "impressions": 0,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM SK lacing cards for kids ages 4-8 TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 18.31,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 403877806630707,
+    "clicks": 11,
+    "impressions": 123,
+    "sales7d": 39.96,
+    "campaignName": "princess lacing - SPM SK lacing cards for kids ages 4-8 TOS"
+  },
+  {
+    "purchases7d": 6,
+    "cost": 53.35,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 487800929938065,
+    "clicks": 75,
+    "impressions": 15256,
+    "sales7d": 199.86,
+    "campaignName": "fuse beads - mini - SPM MK broad mini root"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.55,
+    "placementClassification": "Off Amazon",
+    "campaignId": 487800929938065,
+    "clicks": 2,
+    "impressions": 556,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MK broad mini root"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 7.21,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 487800929938065,
+    "clicks": 10,
+    "impressions": 2542,
+    "sales7d": 65.96,
+    "campaignName": "fuse beads - mini - SPM MK broad mini root"
+  },
+  {
+    "purchases7d": 8,
+    "cost": 113.18,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 487800929938065,
+    "clicks": 101,
+    "impressions": 1787,
+    "sales7d": 335.8,
+    "campaignName": "fuse beads - mini - SPM MK broad mini root"
+  },
+  {
+    "purchases7d": 4,
+    "cost": 20.13,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 369353866282446,
+    "clicks": 39,
+    "impressions": 6371,
+    "sales7d": 95.92,
+    "campaignName": "embroidery for kids - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.28,
+    "placementClassification": "Off Amazon",
+    "campaignId": 369353866282446,
+    "clicks": 2,
+    "impressions": 200,
+    "sales7d": 0,
+    "campaignName": "embroidery for kids - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 2,
+    "cost": 3.67,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 369353866282446,
+    "clicks": 7,
+    "impressions": 1465,
+    "sales7d": 47.96,
+    "campaignName": "embroidery for kids - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 8,
+    "cost": 111.66,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 369353866282446,
+    "clicks": 130,
+    "impressions": 948,
+    "sales7d": 189.44,
+    "campaignName": "embroidery for kids - SPM MK broad TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.82,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 287366946714119,
+    "clicks": 1,
+    "impressions": 177,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MK broad shinshin creation root"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 287366946714119,
+    "clicks": 0,
+    "impressions": 1,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MK broad shinshin creation root"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 287366946714119,
+    "clicks": 0,
+    "impressions": 23,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MK broad shinshin creation root"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.4,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 287366946714119,
+    "clicks": 3,
+    "impressions": 7,
+    "sales7d": 0,
+    "campaignName": "fuse beads - mini - SPM MK broad shinshin creation root"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.68,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 534155725258823,
+    "clicks": 1,
+    "impressions": 131,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM SK lacing cards TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 534155725258823,
+    "clicks": 0,
+    "impressions": 36,
+    "sales7d": 0,
+    "campaignName": "princess lacing - SPM SK lacing cards TOS"
+  },
+  {
+    "purchases7d": 3,
+    "cost": 56.55,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 534155725258823,
+    "clicks": 29,
+    "impressions": 552,
+    "sales7d": 55.92,
+    "campaignName": "princess lacing - SPM SK lacing cards TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.77,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 315988388205283,
+    "clicks": 9,
+    "impressions": 2945,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.49,
+    "placementClassification": "Off Amazon",
+    "campaignId": 315988388205283,
+    "clicks": 7,
+    "impressions": 1797,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPA auto"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 3.72,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 315988388205283,
+    "clicks": 12,
+    "impressions": 2983,
+    "sales7d": 24.98,
+    "campaignName": "4 flowers - SPA auto"
+  },
+  {
+    "purchases7d": 5,
+    "cost": 27.39,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 315988388205283,
+    "clicks": 49,
+    "impressions": 896,
+    "sales7d": 126.9,
+    "campaignName": "4 flowers - SPA auto"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.6,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 362520161818184,
+    "clicks": 3,
+    "impressions": 1309,
+    "sales7d": 0,
+    "campaignName": "cross embroidery - small kit SPM SK beginner cross stitch kits for kids TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 1.12,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 362520161818184,
+    "clicks": 2,
+    "impressions": 43,
+    "sales7d": 21.98,
+    "campaignName": "cross embroidery - small kit SPM SK beginner cross stitch kits for kids TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 7.75,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 362520161818184,
+    "clicks": 8,
+    "impressions": 145,
+    "sales7d": 19.98,
+    "campaignName": "cross embroidery - small kit SPM SK beginner cross stitch kits for kids TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 3.12,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 439203778364995,
+    "clicks": 6,
+    "impressions": 776,
+    "sales7d": 26.98,
+    "campaignName": "cat knitting - SPM SK loom knitting kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.08,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 439203778364995,
+    "clicks": 2,
+    "impressions": 119,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK loom knitting kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.08,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 439203778364995,
+    "clicks": 2,
+    "impressions": 45,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK loom knitting kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.95,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 537472154514066,
+    "clicks": 5,
+    "impressions": 1981,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK knitting beginner kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.61,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 537472154514066,
+    "clicks": 1,
+    "impressions": 66,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK knitting beginner kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 2.86,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 537472154514066,
+    "clicks": 2,
+    "impressions": 32,
+    "sales7d": 0,
+    "campaignName": "cat knitting - SPM SK knitting beginner kit TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 428985549652977,
+    "clicks": 0,
+    "impressions": 5,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM SK latch hook rug kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 428985549652977,
+    "clicks": 0,
+    "impressions": 0,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM SK latch hook rug kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 1.11,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 428985549652977,
+    "clicks": 1,
+    "impressions": 34,
+    "sales7d": 0,
+    "campaignName": "latch hook pillow - SPM SK latch hook rug kits for kids TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 7.39,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 377667215373720,
+    "clicks": 18,
+    "impressions": 1546,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM MK broad ultra targeted"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Off Amazon",
+    "campaignId": 377667215373720,
+    "clicks": 0,
+    "impressions": 17,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM MK broad ultra targeted"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 377667215373720,
+    "clicks": 0,
+    "impressions": 121,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM MK broad ultra targeted"
+  },
+  {
+    "purchases7d": 3,
+    "cost": 61.67,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 377667215373720,
+    "clicks": 58,
+    "impressions": 932,
+    "sales7d": 74.94,
+    "campaignName": "4 flowers - SPM MK broad ultra targeted"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 404885192371908,
+    "clicks": 0,
+    "impressions": 19,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM SK easy embroidery kits for beginners TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.43,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 404885192371908,
+    "clicks": 1,
+    "impressions": 9,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM SK easy embroidery kits for beginners TOS"
+  },
+  {
+    "purchases7d": 3,
+    "cost": 21.3,
+    "placementClassification": "Detail Page on-Amazon",
+    "campaignId": 483417459201567,
+    "clicks": 52,
+    "impressions": 5264,
+    "sales7d": 74.94,
+    "campaignName": "4 flowers - SPM SK beginners embroidery kit for adults TOS"
+  },
+  {
+    "purchases7d": 0,
+    "cost": 0.43,
+    "placementClassification": "Other on-Amazon",
+    "campaignId": 483417459201567,
+    "clicks": 1,
+    "impressions": 73,
+    "sales7d": 0,
+    "campaignName": "4 flowers - SPM SK beginners embroidery kit for adults TOS"
+  },
+  {
+    "purchases7d": 1,
+    "cost": 31.73,
+    "placementClassification": "Top of Search on-Amazon",
+    "campaignId": 483417459201567,
+    "clicks": 27,
+    "impressions": 277,
+    "sales7d": 24.98,
+    "campaignName": "4 flowers - SPM SK beginners embroidery kit for adults TOS"
+  }
+]

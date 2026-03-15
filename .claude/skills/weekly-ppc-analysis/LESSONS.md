@@ -8,13 +8,15 @@
 1. 5+ min PENDING is normal for 4 simultaneous reports — set expectations, poll every 30-60s
 2. `save_to_file` for ALL reports is the right pattern — even campaign report (184 rows) benefits from disk storage
 3. Use 3 parallel agents for data processing (campaigns+placements, search terms, targeting) — keeps main context clean
-4. Placement report validates TOS strategy — 58% spend goes to TOS at 32.7% ACoS with 12.4% CVR
-5. Phrase match is underutilized — 32.7% ACoS / 13.7% CVR vs exact's 41.2% ACoS / 9.4% CVR
-6. 3 financial data points is barely enough for trajectories — need 4+ weekly snapshots for "medium" confidence
+4. Placement report validates TOS strategy — watch for TOS spend expansion driving ACoS spikes (TOS +63% WoW was main culprit Mar 6-12)
+5. Phrase match is underutilized — consistently 30% ACoS / 13%+ CVR vs broad/exact at 36-37% ACoS
+6. Need 4+ weekly snapshots for "medium" trajectory confidence — now at 4 data points as of 2026-03-15
 7. Daily health snapshots have stale financial data (reuse latest weekly numbers) — don't count as independent financial data points
 8. Trajectory stored in summary.json enables future WoW trajectory comparison — the real value of 30d trending
 9. Portfolio grouping by campaign name prefix works reliably since naming is consistent
 10. Write Python scripts to files instead of inline bash for complex data with special characters
+11. Seller Board CSV via curl returns 0 bytes — use Python urllib.request with User-Agent header instead
+12. DataDive rank-radars endpoint returns `data.data.data[]` array — keyword details endpoint returns `data.keywords[]` list (not nested further)
 
 ## Known Issues
 
@@ -45,6 +47,10 @@ Added `placementClassification` to columns. Returns labeled placements. Confirme
 
 ## Recent Runs (last 3)
 
+### Run: 2026-03-15
+**Result:** ✅ Success — 179 campaigns, 4,004 search terms, 504 placements, 598 targeting
+**Key outcome:** Account ACoS flat (34.2%→34.0%) masking highly mixed portfolio performance. TOS spend +63% WoW is main villain. Latch Hook Pillow (-20.9pp) and Needlepoint (-41.2pp) massive wins. Zero-order spend worsened to 51% of budget ($2,621). Fuse beads worst deterioration (+15.8pp).
+
 ### Run: 2026-03-08 (Step 13b — Trajectories)
 **Result:** Success — 6 inflection points detected, trajectory data stored in summary.json
 **Key outcome:** Listing push + PPC deep dive → rank surge → ACoS improvement 5-10 days later (confirmed pattern)
@@ -52,7 +58,3 @@ Added `placementClassification` to columns. Returns labeled placements. Confirme
 ### Run: 2026-03-08
 **Result:** Success — first run with all 4 reports including placement (499 rows)
 **Key outcome:** Best week: ACoS 37.5%→34.2%, Net Profit +41.6%, zero-order waste -20.5%
-
-### Run: 2026-03-01 (post-restart)
-**Result:** Success — 166 campaigns, 4,001 search terms, 566 targeting fully visible
-**Key outcome:** 53.5% of PPC spend ($2,786/week) goes to zero-order search terms

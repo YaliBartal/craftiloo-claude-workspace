@@ -1,0 +1,580 @@
+{
+  "fairy_family": {
+    "asin": "B09WQSBZY7",
+    "total_kw": 87,
+    "top10_now": 36,
+    "improving": [
+      {
+        "kw": "kids sewing kit",
+        "sv": 12255,
+        "first": 11,
+        "last": 8,
+        "change": 3
+      },
+      {
+        "kw": "sewing kit for beginners",
+        "sv": 5867,
+        "first": 70,
+        "last": 66,
+        "change": 4
+      },
+      {
+        "kw": "kids sewing kits age 5-8",
+        "sv": 5669,
+        "first": 8,
+        "last": 5,
+        "change": 3
+      },
+      {
+        "kw": "beginner sewing kit",
+        "sv": 4594,
+        "first": 52,
+        "last": 40,
+        "change": 12
+      },
+      {
+        "kw": "sewing for kids",
+        "sv": 3501,
+        "first": 7,
+        "last": 4,
+        "change": 3
+      }
+    ],
+    "declining": [
+      {
+        "kw": "sewing for beginners",
+        "sv": 2787,
+        "first": 59,
+        "last": 67,
+        "change": -8
+      },
+      {
+        "kw": "sewing cards for kids ages 4-8",
+        "sv": 1161,
+        "first": 72,
+        "last": 96,
+        "change": -24
+      },
+      {
+        "kw": "beginners sewing kit",
+        "sv": 939,
+        "first": 28,
+        "last": 43,
+        "change": -15
+      },
+      {
+        "kw": "puppet making kit for kids",
+        "sv": 651,
+        "first": 48,
+        "last": 61,
+        "change": -13
+      },
+      {
+        "kw": "embroidery kit kids",
+        "sv": 545,
+        "first": 62,
+        "last": 82,
+        "change": -20
+      }
+    ],
+    "stable_count": 55,
+    "improving_count": 21,
+    "declining_count": 11
+  },
+  "cross_stitch": {
+    "asin": "B0B1927HCG",
+    "total_kw": 38,
+    "top10_now": 36,
+    "improving": [],
+    "declining": [
+      {
+        "kw": "embroidery kit for kids",
+        "sv": 2903,
+        "first": 2,
+        "last": 8,
+        "change": -6
+      },
+      {
+        "kw": "easy cross stitch kits for beginners",
+        "sv": 1525,
+        "first": 4,
+        "last": 18,
+        "change": -14
+      }
+    ],
+    "stable_count": 36,
+    "improving_count": 0,
+    "declining_count": 2
+  },
+  "cat_hat_knitting": {
+    "asin": "B0F8DG32H5",
+    "total_kw": 81,
+    "top10_now": 18,
+    "improving": [
+      {
+        "kw": "kids crochet kit",
+        "sv": 5404,
+        "first": 75,
+        "last": 70,
+        "change": 5
+      },
+      {
+        "kw": "crochet kit for kids",
+        "sv": 5308,
+        "first": 101,
+        "last": 76,
+        "change": 25
+      },
+      {
+        "kw": "knitting for beginners",
+        "sv": 2764,
+        "first": 56,
+        "last": 53,
+        "change": 3
+      },
+      {
+        "kw": "knitting kit for kids",
+        "sv": 2107,
+        "first": 8,
+        "last": 5,
+        "change": 3
+      },
+      {
+        "kw": "knit kit for beginners",
+        "sv": 1335,
+        "first": 56,
+        "last": 52,
+        "change": 4
+      }
+    ],
+    "declining": [
+      {
+        "kw": "knitting kit for beginners",
+        "sv": 7280,
+        "first": 49,
+        "last": 58,
+        "change": -9
+      },
+      {
+        "kw": "knitting for beginners kit",
+        "sv": 3005,
+        "first": 47,
+        "last": 51,
+        "change": -4
+      },
+      {
+        "kw": "crochet loom",
+        "sv": 2670,
+        "first": 25,
+        "last": 33,
+        "change": -8
+      },
+      {
+        "kw": "crochet kits for kids",
+        "sv": 1785,
+        "first": 49,
+        "last": 66,
+        "change": -17
+      },
+      {
+        "kw": "crochet for kids ages 8-12",
+        "sv": 1662,
+        "first": 29,
+        "last": 41,
+        "change": -12
+      }
+    ],
+    "stable_count": 47,
+    "improving_count": 16,
+    "declining_count": 18
+  },
+  "embroidery_for_kids": {
+    "asin": "B09X55KL2C",
+    "total_kw": 55,
+    "top10_now": 25,
+    "improving": [
+      {
+        "kw": "embroidery kit beginner",
+        "sv": 2318,
+        "first": 101,
+        "last": 38,
+        "change": 63
+      },
+      {
+        "kw": "kids cross stitch kit",
+        "sv": 1554,
+        "first": 22,
+        "last": 16,
+        "change": 6
+      },
+      {
+        "kw": "beginner cross stitch kits for kids",
+        "sv": 1237,
+        "first": 16,
+        "last": 12,
+        "change": 4
+      },
+      {
+        "kw": "beginner embroidery kits",
+        "sv": 1163,
+        "first": 29,
+        "last": 23,
+        "change": 6
+      },
+      {
+        "kw": "sewing crafts for girls 8-12",
+        "sv": 789,
+        "first": 23,
+        "last": 20,
+        "change": 3
+      }
+    ],
+    "declining": [
+      {
+        "kw": "embroidery kit for beginners",
+        "sv": 31705,
+        "first": 32,
+        "last": 101,
+        "change": -69
+      },
+      {
+        "kw": "cross stitch kits for kids",
+        "sv": 2424,
+        "first": 22,
+        "last": 28,
+        "change": -6
+      },
+      {
+        "kw": "kids sewing kits ages 8-12",
+        "sv": 1100,
+        "first": 17,
+        "last": 20,
+        "change": -3
+      },
+      {
+        "kw": "kit de bordado",
+        "sv": 1087,
+        "first": 79,
+        "last": 82,
+        "change": -3
+      },
+      {
+        "kw": "beginner sewing kit for kids",
+        "sv": 870,
+        "first": 14,
+        "last": 25,
+        "change": -11
+      }
+    ],
+    "stable_count": 33,
+    "improving_count": 10,
+    "declining_count": 12
+  },
+  "mini_fuse_beads": {
+    "asin": "B09THLVFZK",
+    "total_kw": 18,
+    "top10_now": 9,
+    "improving": [
+      {
+        "kw": "melty beads",
+        "sv": 3921,
+        "first": 15,
+        "last": 11,
+        "change": 4
+      },
+      {
+        "kw": "iron beads",
+        "sv": 3491,
+        "first": 19,
+        "last": 16,
+        "change": 3
+      }
+    ],
+    "declining": [
+      {
+        "kw": "fuse beads",
+        "sv": 35828,
+        "first": 7,
+        "last": 10,
+        "change": -3
+      },
+      {
+        "kw": "fuse beads kit",
+        "sv": 8440,
+        "first": 11,
+        "last": 15,
+        "change": -4
+      },
+      {
+        "kw": "perler beads bulk",
+        "sv": 6642,
+        "first": 33,
+        "last": 101,
+        "change": -68
+      },
+      {
+        "kw": "melting beads",
+        "sv": 4096,
+        "first": 11,
+        "last": 14,
+        "change": -3
+      },
+      {
+        "kw": "perler beads pegboards",
+        "sv": 2319,
+        "first": 96,
+        "last": 101,
+        "change": -5
+      }
+    ],
+    "stable_count": 11,
+    "improving_count": 2,
+    "declining_count": 5
+  },
+  "princess_lacing": {
+    "asin": "B0FQC7YFX6",
+    "total_kw": 52,
+    "top10_now": 10,
+    "improving": [
+      {
+        "kw": "lacing cards for kids ages 4-8",
+        "sv": 2146,
+        "first": 11,
+        "last": 5,
+        "change": 6
+      },
+      {
+        "kw": "sewing cards for kids ages 3-5",
+        "sv": 1234,
+        "first": 12,
+        "last": 7,
+        "change": 5
+      },
+      {
+        "kw": "toddler sewing kits ages 2-4",
+        "sv": 863,
+        "first": 16,
+        "last": 8,
+        "change": 8
+      },
+      {
+        "kw": "lacing toys",
+        "sv": 788,
+        "first": 83,
+        "last": 72,
+        "change": 11
+      },
+      {
+        "kw": "toddler sewing",
+        "sv": 529,
+        "first": 12,
+        "last": 6,
+        "change": 6
+      }
+    ],
+    "declining": [
+      {
+        "kw": "toddler lacing toy",
+        "sv": 654,
+        "first": 62,
+        "last": 101,
+        "change": -39
+      },
+      {
+        "kw": "sewing for kids ages 3-5",
+        "sv": 564,
+        "first": 12,
+        "last": 15,
+        "change": -3
+      },
+      {
+        "kw": "toddler threading toys",
+        "sv": 553,
+        "first": 58,
+        "last": 64,
+        "change": -6
+      },
+      {
+        "kw": "crayola scissor skills activity kit",
+        "sv": 250,
+        "first": 33,
+        "last": 44,
+        "change": -11
+      },
+      {
+        "kw": "kids sewing cards",
+        "sv": 250,
+        "first": 9,
+        "last": 15,
+        "change": -6
+      }
+    ],
+    "stable_count": 32,
+    "improving_count": 11,
+    "declining_count": 9
+  },
+  "4_flowers": {
+    "asin": "B0DC69M3YD",
+    "total_kw": 67,
+    "top10_now": 0,
+    "improving": [
+      {
+        "kw": "needlepoint kits for adults",
+        "sv": 55787,
+        "first": 41,
+        "last": 38,
+        "change": 3
+      },
+      {
+        "kw": "needlepoint kits for beginners",
+        "sv": 7363,
+        "first": 48,
+        "last": 39,
+        "change": 9
+      },
+      {
+        "kw": "beginner cross stitch kits for adults",
+        "sv": 7124,
+        "first": 44,
+        "last": 41,
+        "change": 3
+      },
+      {
+        "kw": "needle point kit",
+        "sv": 3619,
+        "first": 56,
+        "last": 49,
+        "change": 7
+      },
+      {
+        "kw": "crewel embroidery kits for adults",
+        "sv": 3530,
+        "first": 81,
+        "last": 78,
+        "change": 3
+      }
+    ],
+    "declining": [
+      {
+        "kw": "needlepoint kit",
+        "sv": 27250,
+        "first": 64,
+        "last": 67,
+        "change": -3
+      },
+      {
+        "kw": "embroidery kits",
+        "sv": 19871,
+        "first": 63,
+        "last": 68,
+        "change": -5
+      },
+      {
+        "kw": "crossstitch kits adult",
+        "sv": 5962,
+        "first": 43,
+        "last": 46,
+        "change": -3
+      },
+      {
+        "kw": "beginner needlepoint kits for adults",
+        "sv": 3754,
+        "first": 22,
+        "last": 27,
+        "change": -5
+      },
+      {
+        "kw": "crossstitch kits adult beginner",
+        "sv": 3444,
+        "first": 60,
+        "last": 101,
+        "change": -41
+      }
+    ],
+    "stable_count": 39,
+    "improving_count": 16,
+    "declining_count": 12
+  },
+  "latch_hook_pillow": {
+    "asin": "B0FHMRQWRX",
+    "total_kw": 50,
+    "top10_now": 15,
+    "improving": [
+      {
+        "kw": "latch hook kit",
+        "sv": 19309,
+        "first": 66,
+        "last": 37,
+        "change": 29
+      },
+      {
+        "kw": "latch hook kits",
+        "sv": 11831,
+        "first": 101,
+        "last": 43,
+        "change": 58
+      },
+      {
+        "kw": "latch hook",
+        "sv": 10909,
+        "first": 101,
+        "last": 85,
+        "change": 16
+      },
+      {
+        "kw": "latch hook rug kit",
+        "sv": 2531,
+        "first": 78,
+        "last": 41,
+        "change": 37
+      },
+      {
+        "kw": "latch hook rug kits",
+        "sv": 1987,
+        "first": 70,
+        "last": 56,
+        "change": 14
+      }
+    ],
+    "declining": [
+      {
+        "kw": "rug making kit",
+        "sv": 3036,
+        "first": 23,
+        "last": 26,
+        "change": -3
+      },
+      {
+        "kw": "latch hook kits for beginners",
+        "sv": 1773,
+        "first": 13,
+        "last": 16,
+        "change": -3
+      },
+      {
+        "kw": "hook rug",
+        "sv": 1547,
+        "first": 25,
+        "last": 28,
+        "change": -3
+      },
+      {
+        "kw": "rug hook",
+        "sv": 619,
+        "first": 42,
+        "last": 45,
+        "change": -3
+      },
+      {
+        "kw": "hook and latch kit",
+        "sv": 250,
+        "first": 32,
+        "last": 46,
+        "change": -14
+      }
+    ],
+    "stable_count": 25,
+    "improving_count": 17,
+    "declining_count": 8
+  }
+}

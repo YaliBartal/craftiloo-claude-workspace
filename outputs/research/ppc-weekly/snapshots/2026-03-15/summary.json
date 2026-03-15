@@ -1,0 +1,106 @@
+{
+  "date": "2026-03-15",
+  "data_window": "Mar 6-12, 2026",
+  "account": {
+    "sp_spend": 5122.55,
+    "ppc_sales_7d": 15067.78,
+    "ppc_acos_7d": 34.0,
+    "ppc_orders": 634,
+    "ppc_clicks": 7657,
+    "ppc_cvr": 8.3,
+    "ppc_cpc": 0.67,
+    "total_revenue_sb": 25748,
+    "organic_sales_sb": 17129,
+    "organic_ratio": 66.5,
+    "tacos": 17.8,
+    "net_profit_sb": 4756,
+    "profit_margin": 18.5,
+    "sessions": 16111,
+    "total_ad_spend": 4595,
+    "sbv_ad_spend": 176,
+    "active_campaigns": 179,
+    "active_portfolios": 15
+  },
+  "search_terms": {
+    "total_terms": 3927,
+    "zero_order_terms": 3513,
+    "zero_order_spend": 2621,
+    "zero_order_pct_of_spend": 51.2,
+    "total_spend": 5122.33,
+    "total_sales": 14986.84,
+    "p1_negation_candidates": 39,
+    "estimated_weekly_savings": 399
+  },
+  "targeting": {
+    "total_entries": 598,
+    "auto_acos": 29.2,
+    "keyword_acos": 36.5,
+    "product_acos": 36.1,
+    "phrase_acos": 30.0,
+    "broad_acos": 36.7,
+    "exact_acos": 36.5,
+    "zero_order_targets_top10_spend": 196.58
+  },
+  "placement": {
+    "account_totals": {
+      "top_of_search": {"spend": 3124, "sales": 8224, "orders": 341, "acos": 38.0, "cvr": 11.0},
+      "detail_page": {"spend": 1163, "sales": 3554, "orders": 146, "acos": 32.7, "cvr": 6.3},
+      "other_on_amazon": {"spend": 801, "sales": 3289, "orders": 147, "acos": 24.4, "cvr": 7.4},
+      "off_amazon": {"spend": 30, "sales": 0, "orders": 0, "acos": null, "cvr": 0}
+    }
+  },
+  "portfolios": {
+    ".Catch All Auto": {"spend": 828, "sales": 3273, "acos": 25.3, "orders": 145, "cvr": 5.6, "campaigns": 6, "status": "HEALTHY"},
+    "fuse beads": {"spend": 939, "sales": 2328, "acos": 40.4, "orders": 67, "cvr": 7.0, "campaigns": 17, "status": "NEEDS ATTENTION"},
+    "fairy family": {"spend": 781, "sales": 1944, "acos": 40.2, "orders": 91, "cvr": 10.4, "campaigns": 25, "status": "NEEDS ATTENTION"},
+    "Cross stitch backpack charms": {"spend": 500, "sales": 1390, "acos": 35.9, "orders": 67, "cvr": 13.0, "campaigns": 15, "status": "WATCH"},
+    "Shield All": {"spend": 310, "sales": 1078, "acos": 28.8, "orders": 50, "cvr": 11.4, "campaigns": 7, "status": "HEALTHY"},
+    "Embroidery for kids": {"spend": 280, "sales": 702, "acos": 40.0, "orders": 31, "cvr": 9.2, "campaigns": 9, "status": "WATCH"},
+    "Latch Hook Pillow": {"spend": 250, "sales": 993, "acos": 25.2, "orders": 39, "cvr": 14.9, "campaigns": 10, "status": "TOP PERFORMER"},
+    "biggie beads": {"spend": 210, "sales": 799, "acos": 26.3, "orders": 28, "cvr": 12.0, "campaigns": 8, "status": "HEALTHY"},
+    "princess lacing cards": {"spend": 200, "sales": 339, "acos": 59.0, "orders": 17, "cvr": 8.2, "campaigns": 7, "status": "RED"},
+    "4 Flowers embroidery": {"spend": 167, "sales": 327, "acos": 51.2, "orders": 13, "cvr": 5.2, "campaigns": 6, "status": "RED"},
+    "Latch hook kits": {"spend": 141, "sales": 497, "acos": 28.5, "orders": 22, "cvr": 13.7, "campaigns": 13, "status": "HEALTHY"},
+    "Needlepoint": {"spend": 139, "sales": 507, "acos": 27.5, "orders": 22, "cvr": 7.1, "campaigns": 7, "status": "TOP PERFORMER"},
+    "Cat And Hat Knitting": {"spend": 89, "sales": 250, "acos": 35.7, "orders": 10, "cvr": 8.7, "campaigns": 12, "status": "WATCH"},
+    "Bunny Knitting loom kit": {"spend": 8, "sales": 27, "acos": 30.7, "orders": 1, "cvr": 12.5, "campaigns": 2, "status": "HEALTHY"},
+    "punch needle Plush heart": {"spend": 3, "sales": 0, "acos": null, "orders": 0, "campaigns": 2, "status": "DORMANT"},
+    "Stitch Dictionary All": {"spend": 0, "sales": 0, "acos": null, "orders": 0, "campaigns": 14, "status": "DORMANT"}
+  },
+  "rank_movement": {
+    "fairy_family": {"top_10": 36, "of": 87, "improving": 21, "declining": 11, "trend": "MIXED_IMPROVING"},
+    "cross_stitch": {"top_10": 36, "of": 38, "improving": 0, "declining": 2, "trend": "DOMINANT_BUT_SLIPPING"},
+    "embroidery_for_kids": {"top_10": 25, "of": 55, "improving": 10, "declining": 12, "trend": "CONCERN"},
+    "cat_hat_knitting": {"top_10": 18, "of": 81, "improving": 16, "declining": 18, "trend": "MIXED"},
+    "mini_fuse_beads": {"top_10": 9, "of": 18, "improving": 2, "declining": 5, "trend": "DECLINING"},
+    "princess_lacing": {"top_10": 10, "of": 52, "improving": 11, "declining": 9, "trend": "MIXED_IMPROVING"},
+    "4_flowers": {"top_10": 0, "of": 67, "improving": 16, "declining": 12, "trend": "SLOW_CLIMB"},
+    "latch_hook_pillow": {"top_10": 15, "of": 50, "improving": 17, "declining": 8, "trend": "SURGING"}
+  },
+  "trajectories": {
+    "data_points": 4,
+    "date_range": {"start": "2026-02-20", "end": "2026-03-15"},
+    "portfolio_acos": {
+      "latch_hook_pillow": {"start": 33.5, "end": 25.2, "delta": -8.3, "trend": "strongly_improving"},
+      "needlepoint": {"start": 81.3, "end": 27.5, "delta": -53.8, "trend": "strongly_improving"},
+      "fuse_beads": {"start": 31.8, "end": 40.4, "delta": 8.6, "trend": "declining"},
+      "fairy_family": {"start": 37.6, "end": 40.2, "delta": 2.6, "trend": "volatile"},
+      "cross_stitch": {"start": 35.5, "end": 35.9, "delta": 0.4, "trend": "stable"},
+      "biggie_beads": {"start": 22.3, "end": 26.3, "delta": 4.0, "trend": "slightly_declining"},
+      "latch_hook_kits": {"start": 31.5, "end": 28.5, "delta": -3.0, "trend": "improving"},
+      "shield_all": {"start": 24.0, "end": 28.8, "delta": 4.8, "trend": "slightly_declining"}
+    }
+  },
+  "p1_actions": [
+    "FUSE BEADS | Cut TOS modifier on SPM MK multi root TOS — 97.7% TOS ACoS, $99/wk",
+    "FUSE BEADS | Cut TOS on 48 mini SK TOS — 50.1% TOS ACoS, $185/wk",
+    "FAIRY FAMILY | Cut TOS on SPM SK sewing kit for kids TOS — 57.5% TOS ACoS, $121/wk",
+    "EMBROIDERY FOR KIDS | Cut TOS on SPM MK broad TOS — 58.9% TOS ACoS, $136/wk",
+    "ACCOUNT-WIDE | Negate top zero-order terms — $399/wk recoverable",
+    "PRINCESS LACING | Negate ASIN B0CP8VJ56S (3rd week, still open) — $12.66/wk 0 orders",
+    "EMBROIDERY FOR KIDS | Hero kw 'embroidery kit for beginners' (SV 31,705) dropped #32→#101 — investigate listing/rank",
+    "MINI FUSE BEADS | 'fuse beads' (SV 35,828) slipping #7→#10 — monitor closely",
+    "CROSS STITCH | 'easy cross stitch kits' dropped #4→#18 — check if competitor listing changed",
+    "LATCH HOOK PILLOW | Scale budget — rank surging, ACoS 25.2%, CVR 14.9% — highest ROI in account"
+  ]
+}
