@@ -1,0 +1,810 @@
+{
+  "reportSpecification" : {
+    "reportType" : "GET_BRAND_ANALYTICS_MARKET_BASKET_REPORT",
+    "reportOptions" : {
+      "reportPeriod" : "WEEK"
+    },
+    "dataStartTime" : "2026-03-01",
+    "dataEndTime" : "2026-03-07",
+    "marketplaceIds" : [ "ATVPDKIKX0DER" ]
+  },
+  "dataByAsin" : [ {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0C3YQ5RG1",
+    "purchasedWithAsin" : "1782216650",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.3333
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0C3YQ5RG1",
+    "purchasedWithAsin" : "B00003JATS",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.3333
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0C3YQ5RG1",
+    "purchasedWithAsin" : "B000CBHTGA",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.3333
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CP2KCF9R",
+    "purchasedWithAsin" : "B0CG355LHR",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.3333
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CP2KCF9R",
+    "purchasedWithAsin" : "B0D17QQKVL",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.3333
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CP2KCF9R",
+    "purchasedWithAsin" : "B0DC69M3YD",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.3333
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08DJYBH4D",
+    "purchasedWithAsin" : "B07PWJ32VK",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.1250
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08DJYBH4D",
+    "purchasedWithAsin" : "B08DDJCQKF",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.1250
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08DJYBH4D",
+    "purchasedWithAsin" : "B08NB4PX9Y",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.1250
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CRZ8M2G1",
+    "purchasedWithAsin" : "B0027ACP0O",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.1000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CRZ8M2G1",
+    "purchasedWithAsin" : "B006P1Z59E",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.1000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CRZ8M2G1",
+    "purchasedWithAsin" : "B013K9LDEO",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.1000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B092SW839H",
+    "purchasedWithAsin" : "0062868373",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.2000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B092SW839H",
+    "purchasedWithAsin" : "0375823026",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.2000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B092SW839H",
+    "purchasedWithAsin" : "0375828052",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.2000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B1935V5N",
+    "purchasedWithAsin" : "B0BZP5YYLP",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B1935V5N",
+    "purchasedWithAsin" : "B0C13JY5R1",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B1935V5N",
+    "purchasedWithAsin" : "B0CY2PV6YM",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B07PXN4K8N",
+    "purchasedWithAsin" : "0439691389",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0588
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B07PXN4K8N",
+    "purchasedWithAsin" : "0451481089",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0588
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B07PXN4K8N",
+    "purchasedWithAsin" : "B005LB7C4U",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0588
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BNDVTTSH",
+    "purchasedWithAsin" : "B09WQSBZY7",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.1346
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BNDVTTSH",
+    "purchasedWithAsin" : "B0DZH295YS",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0577
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BNDVTTSH",
+    "purchasedWithAsin" : "B091YDV22K",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0385
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09HVDNFMR",
+    "purchasedWithAsin" : "1524892483",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.1250
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09HVDNFMR",
+    "purchasedWithAsin" : "B00J7G1J7G",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.1250
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09HVDNFMR",
+    "purchasedWithAsin" : "B07Y3TN3NP",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.1250
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BWSGRTB1",
+    "purchasedWithAsin" : "1580374735",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BWSGRTB1",
+    "purchasedWithAsin" : "1982186186",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BWSGRTB1",
+    "purchasedWithAsin" : "B086VFV5M4",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CKTS6ZFZ",
+    "purchasedWithAsin" : "B07ZP2DYN3",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CKTS6ZFZ",
+    "purchasedWithAsin" : "B08RB68XRF",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CKTS6ZFZ",
+    "purchasedWithAsin" : "B0DRZF83QW",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09WQSBZY7",
+    "purchasedWithAsin" : "B0BNDVTTSH",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0405
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09WQSBZY7",
+    "purchasedWithAsin" : "B075DCH5T4",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0173
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09WQSBZY7",
+    "purchasedWithAsin" : "B0C2XYP6L3",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0173
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B18ZRRCQ",
+    "purchasedWithAsin" : "B08DDJCQKF",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CT962TMN",
+    "purchasedWithAsin" : "B09JZHKG4P",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CT962TMN",
+    "purchasedWithAsin" : "B0GC3WYGCT",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BXHJJMX1",
+    "purchasedWithAsin" : "B0CGZRHR6D",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.5000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BXHJJMX1",
+    "purchasedWithAsin" : "B0CH4DWT9J",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.5000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BXHJJMX1",
+    "purchasedWithAsin" : "B0DKC627R2",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.5000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08DDJCQKF",
+    "purchasedWithAsin" : "1913485048",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0157
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08DDJCQKF",
+    "purchasedWithAsin" : "B000IFZ6LA",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0157
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08DDJCQKF",
+    "purchasedWithAsin" : "B09M8DKHH6",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0157
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B18ZHYKR",
+    "purchasedWithAsin" : "B000ETLVXC",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.5000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B18ZHYKR",
+    "purchasedWithAsin" : "B08DDJCQKF",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.5000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B18ZHYKR",
+    "purchasedWithAsin" : "B08YS42GPG",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.5000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0FQC7YFX6",
+    "purchasedWithAsin" : "B0CXY8JMTK",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0667
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0FQC7YFX6",
+    "purchasedWithAsin" : "0064440133",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0333
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0FQC7YFX6",
+    "purchasedWithAsin" : "0064440346",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0333
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B07D6D95NG",
+    "purchasedWithAsin" : "B00004W3Y4",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0690
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B07D6D95NG",
+    "purchasedWithAsin" : "1339019124",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0345
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B07D6D95NG",
+    "purchasedWithAsin" : "B000R9AK5O",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0345
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BP8GCK1G",
+    "purchasedWithAsin" : "0316109215",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0357
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BP8GCK1G",
+    "purchasedWithAsin" : "0316109584",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0357
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BP8GCK1G",
+    "purchasedWithAsin" : "0316110698",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0357
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B2XL9D8D",
+    "purchasedWithAsin" : "0451469828",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.3333
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B2XL9D8D",
+    "purchasedWithAsin" : "0763690422",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.3333
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B2XL9D8D",
+    "purchasedWithAsin" : "1932319832",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.3333
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CDH84QDP",
+    "purchasedWithAsin" : "1787009599",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.2000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CDH84QDP",
+    "purchasedWithAsin" : "B00G9WR0RE",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.2000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CDH84QDP",
+    "purchasedWithAsin" : "B00IX8ASXK",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.2000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09HVSLBS6",
+    "purchasedWithAsin" : "B000Q5Z144",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.5000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09HVSLBS6",
+    "purchasedWithAsin" : "B07ND3WR64",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.5000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09HVSLBS6",
+    "purchasedWithAsin" : "B07Q1XCM3L",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.5000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B096MYBLS1",
+    "purchasedWithAsin" : "B08PKFHCMS",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B096MYBLS1",
+    "purchasedWithAsin" : "B0BNDVTTSH",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B096MYBLS1",
+    "purchasedWithAsin" : "B0FGW9Q9DP",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08L8BHD4Z",
+    "purchasedWithAsin" : "1667208675",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0667
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08L8BHD4Z",
+    "purchasedWithAsin" : "B0038N8SEG",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0667
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08L8BHD4Z",
+    "purchasedWithAsin" : "B0160JBGRA",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0667
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09THLVFZK",
+    "purchasedWithAsin" : "B09CPF1R18",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0361
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09THLVFZK",
+    "purchasedWithAsin" : "B0767D9YV2",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0241
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09THLVFZK",
+    "purchasedWithAsin" : "B0DT7D77H1",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0241
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B3PGPVV5",
+    "purchasedWithAsin" : "B0G2JMKSPG",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8R6J7JR",
+    "purchasedWithAsin" : "B0CLFXGM9J",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8R6J7JR",
+    "purchasedWithAsin" : "B0FX2PRPD7",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09HVCCNM2",
+    "purchasedWithAsin" : "B07XVDR169",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.5000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09HVCCNM2",
+    "purchasedWithAsin" : "B093YR1FK8",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.5000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09HVCCNM2",
+    "purchasedWithAsin" : "B09XMBZ85F",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.5000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B8TFW4MN",
+    "purchasedWithAsin" : "B09WQSBZY7",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.3333
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B8TFW4MN",
+    "purchasedWithAsin" : "B0BNDVTTSH",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.3333
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B8TFW4MN",
+    "purchasedWithAsin" : "0895551527",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.1667
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08FYH13CL",
+    "purchasedWithAsin" : "0593662067",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0345
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08FYH13CL",
+    "purchasedWithAsin" : "153621065X",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0345
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08FYH13CL",
+    "purchasedWithAsin" : "1645580342",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0345
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BVHMZFSQ",
+    "purchasedWithAsin" : "B07C5YGH8Z",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BVHMZFSQ",
+    "purchasedWithAsin" : "B0BM5PD5KB",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BVHMZFSQ",
+    "purchasedWithAsin" : "B0CG9F5W3Q",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 1.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0DKD2S3JT",
+    "purchasedWithAsin" : "1510784012",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0667
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0DKD2S3JT",
+    "purchasedWithAsin" : "1681473992",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0667
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0DKD2S3JT",
+    "purchasedWithAsin" : "1956397043",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0667
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09X55KL2C",
+    "purchasedWithAsin" : "B089T7PX27",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0351
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09X55KL2C",
+    "purchasedWithAsin" : "B0977NTKHY",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0351
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09X55KL2C",
+    "purchasedWithAsin" : "B0D5HLV2GX",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0351
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8DG32H5",
+    "purchasedWithAsin" : "0062367145",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0417
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8DG32H5",
+    "purchasedWithAsin" : "0593307771",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0417
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8DG32H5",
+    "purchasedWithAsin" : "0593885856",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0417
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8QZZQQM",
+    "purchasedWithAsin" : "B0DFHN42QB",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.4286
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8QZZQQM",
+    "purchasedWithAsin" : "B0B7JHN4F1",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.2857
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8QZZQQM",
+    "purchasedWithAsin" : "B0CV1F5CFS",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.2857
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8R652FX",
+    "purchasedWithAsin" : "B0FHMRQWRX",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0811
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8R652FX",
+    "purchasedWithAsin" : "006289594X",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0270
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8R652FX",
+    "purchasedWithAsin" : "0679873031",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0270
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0FHMRQWRX",
+    "purchasedWithAsin" : "B0F8R652FX",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.2143
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0FHMRQWRX",
+    "purchasedWithAsin" : "0143125478",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0714
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0FHMRQWRX",
+    "purchasedWithAsin" : "1466287713",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0714
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0DC69M3YD",
+    "purchasedWithAsin" : "B0CQKT59XY",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.1250
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0DC69M3YD",
+    "purchasedWithAsin" : "0063451964",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0625
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0DC69M3YD",
+    "purchasedWithAsin" : "B000NW84U8",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0625
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F6YTG1CH",
+    "purchasedWithAsin" : "0744059828",
+    "purchasedWithRank" : 1,
+    "combinationPct" : 0.0625
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F6YTG1CH",
+    "purchasedWithAsin" : "0744059836",
+    "purchasedWithRank" : 2,
+    "combinationPct" : 0.0625
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F6YTG1CH",
+    "purchasedWithAsin" : "1432123890",
+    "purchasedWithRank" : 3,
+    "combinationPct" : 0.0625
+  } ]
+}

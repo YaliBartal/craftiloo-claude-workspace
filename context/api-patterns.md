@@ -25,6 +25,7 @@
 - **"Other on-Amazon" placement has no bid modifier.** Only TOS and Product Page modifiers exist. To reduce "Other" waste, lower the DEFAULT BID
 - **Bid recommendation API** may return HTTP 429 — use search term CPC data as fallback
 - **Calendar-aligned date ranges only.** Never use `LAST_7_DAYS` (rolling window causes WoW drift). Use explicit start/end dates (Mar 1-7, Mar 8-14)
+- **⚠️ Placement modifier updates silently fail.** `update_sp_campaigns` returns HTTP 200 for TOS/PP/ROS `placementBidding` changes, but values don't persist. Campaign state (ENABLED/PAUSED) and budget changes DO work. Confirmed on 2026-03-05 (9 Shield All campaigns) and again 2026-03-15. **Mandatory verification:** After ANY placement modifier change, call `list_sp_campaigns` for the modified campaign(s) and compare returned `placementBidding` against requested values. If mismatch: retry once, verify again, log as FAILED if still wrong. See ppc-bid-recommender SKILL.md Step 8 VERIFY for full procedure. Root cause TBD — may need separate API call for placement bidding vs campaign state
 
 ## Amazon SP-API
 
@@ -37,7 +38,7 @@
 - **Sales & Traffic report** may not contain all ASINs — always fetch Seller Board as backup for CVR/sessions
 - **Brand Analytics weekly = Sun-Sat.** Use `periods_back=2` on Sun/Mon (48h SLA — most recent week may not be ready)
 - **SQP requires `asins` param** (space-separated, max 200 chars). All other BA reports don't
-- **Search Terms BA report:** 591 MB compressed, ~8.3M rows. Must stream-download as .gz + use `ijson` streaming parser. JSON structure: flat `dataByDepartmentAndSearchTerm[]` array
+- **Search Terms BA report:** 591 MB compressed, ~8.3M rows. Pass `save_path` ending in `.gz` to `get_report_document` — this triggers streaming bytes to disk (no RAM decompression). Then run `filter_search_terms.py` with our ASINs to extract only relevant rows (~86 matches for our 41 active ASINs). JSON structure: flat `dataByDepartmentAndSearchTerm[]` array. **Each row = one (searchTerm, ASIN, rank) triplet**: fields are `searchTerm`, `departmentName`, `searchFrequencyRank`, `clickedAsin`, `clickedItemName`, `clickShareRank` (1/2/3), `clickShare`, `conversionShare`. NOT `clickedAsin1/2/3` — that format does not exist.
 - **BA processing times:** market_basket ~45s, sqp/scp/repeat ~60s, search_terms ~5min
 - **`update_listing` rejects `UNKNOWN` product_type** — always specify a valid type
 
@@ -59,6 +60,7 @@
 - **Review scrapers capped at ~8 reviews** (1 page). `junglee` and `axesso_data` both ignore `maxReviews`/`maxPages`. Workaround: run with explicit page URLs (`?pageNumber=2&sortBy=recent`)
 - **`epctex/amazon-reviews-scraper`** requires paid rental — remove from fallback lists
 - **axesso keyword scan input format:** `{"input": [{"keyword": "...", "country": "US"}]}`. Position field: `searchResultPosition` (0-indexed)
+- **axesso actor MUST use internal ID `9GmEDf8sr9Jyb6b3X`** — slug format `axesso_data/amazon-search-scraper` or `axesso_data~amazon-search-scraper` returns 404 on both sync and async endpoints. Use `run_actor("9GmEDf8sr9Jyb6b3X", ...)` (confirmed 2026-03-15)
 - **All numeric fields from scrapers can be null or string type** — always use safe_float/safe_int conversion
 
 ## DataDive

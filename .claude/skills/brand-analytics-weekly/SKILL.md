@@ -36,7 +36,7 @@ output_location: outputs/research/brand-analytics/
 Pulls all 5 Brand Analytics report types weekly, saves raw data for historical archive, compares against previous week's data, and produces a digest surfacing click share movements, conversion funnel changes, new keyword opportunities, competitor movements, bundle intelligence, and loyalty trends.
 
 **Cadence:** Weekly (Monday or Tuesday — after Sunday close + 48h SLA)
-**Token budget:** <45K tokens, <8 minutes
+**Token budget:** <45K tokens, <25 minutes (search_terms streaming adds ~8-10 min)
 
 ---
 
@@ -47,6 +47,23 @@ Pulls all 5 Brand Analytics report types weekly, saves raw data for historical a
 - **5 BA API calls** + file reads for previous week comparison
 - **No Apify/DataDive calls** — this skill is purely Brand Analytics + context files
 - **Save raw data to disk** — other skills read from the archive instead of pulling their own BA reports
+
+---
+
+## Context Management
+
+**Estimated token cost:** 30–45K tokens (within budget — no compaction needed in normal runs)
+
+**Bottleneck:** Search Terms takes ~8-10 min total (5min generation + 2-3min streaming download + 1-2min ijson filter). All other reports take ~45–60s each.
+
+**If context approaches 60% mid-run** (e.g., large search terms report + previous week comparison):
+- Save current findings to `outputs/research/brand-analytics/briefs/YYYY-MM-DD-interim.md`
+- Compact, then continue at Step 5 (WoW Deltas)
+
+**Before any compact — save to handoff:**
+- Which reports are downloaded and their file paths
+- Current week vs previous week date ranges confirmed
+- Any reports still PENDING
 
 ---
 
@@ -96,12 +113,48 @@ Poll → download. Per keyword: `searchQuery`, `impressions`, `clicks`, `cartAdd
 
 #### 3c. Search Terms (Top Clicked ASINs)
 
+**⚠️ This is the large report (591MB compressed / 3GB+ decompressed). Use the streaming procedure below — NOT a plain `get_report_document` call.**
+
+**Step 1 — Create the report** (launch alongside the others):
 ```
 create_brand_analytics_report(report_name="search_terms", period="WEEK", periods_back=2)
 ```
-Poll → download. Per keyword: top 3 clicked ASINs with `clickShare`, `conversionShare`.
 
-**Processing time: ~5 minutes.** This is the slowest report. Start it first.
+**Step 2 — Poll until DONE** (every 60s, up to 15 attempts — this report takes ~5 min)
+
+**Step 3 — Stream-download as .gz** (set `save_path` ending in `.gz` to trigger byte-streaming mode):
+```
+get_report_document(
+    document_id="...",
+    save_path="/tmp/search-terms-{YYYY-MM-DD}.gz"
+)
+```
+This streams ~591MB directly to disk. No decompression in memory. Takes ~2-3 min. Returns the .gz path when done.
+
+**Step 4 — Filter for our ASINs** (run via Bash — takes ~1-2 min, ~50MB RAM):
+```bash
+python3 /home/yali/workspace/outputs/research/brand-analytics/scripts/filter_search_terms.py \
+  /tmp/search-terms-{YYYY-MM-DD}.gz \
+  {space-separated list of all active ASINs from sku-asin-mapping.json} \
+  --output /home/yali/workspace/outputs/research/brand-analytics/weekly/{YYYY-MM-DD}/search-terms-raw.json
+```
+Output: only rows where our ASINs appear in positions 1, 2, or 3. Typically ~5,000-20,000 rows.
+
+**Step 5 — Clean up the .gz** (free ~591MB disk):
+```bash
+python3 -c "import os; os.remove('/tmp/search-terms-{YYYY-MM-DD}.gz')"
+```
+
+**Actual row fields (one row per ASIN per term):** `searchTerm`, `departmentName`, `searchFrequencyRank`, `clickedAsin`, `clickedItemName`, `clickShareRank` (1/2/3), `clickShare`, `conversionShare`
+
+**Important:** Each search term appears up to 3 times — once per rank position. Field is `clickedAsin` (not `clickedAsin1/2/3`).
+
+**Processing time: ~8-10 minutes total** (5min report generation + 2-3min download + 1-2min filter).
+
+**If any step fails:**
+- Step 3 timeout → retry once; if still failing, skip Search Terms and note in digest
+- Step 4 error → check that ijson is installed (`pip install ijson`); check .gz file exists
+- Step 5 can be skipped if Bash fails — .gz auto-expires from /tmp on reboot
 
 #### 3d. Market Basket
 
@@ -439,7 +492,9 @@ If Slack MCP is unavailable, skip and note in run log.
 | Issue | Response |
 |-------|----------|
 | SQP report fails | Continue with SCP (provides ASIN-level funnel). Note: "SQP unavailable — keyword-level analysis limited to Search Terms report" |
-| Search Terms report fails (slowest) | Continue with SQP for keyword data. Note: "Search Terms unavailable — competitor click share analysis skipped" |
+| Search Terms stream-download fails | Retry once with fresh `get_report_document` call (use same document_id — URL stays valid). If still failing, continue without Search Terms and note in digest. |
+| Search Terms filter script fails | Check ijson installed. Check .gz file exists and is non-zero size. If unrecoverable, continue without competitor ASIN data. |
+| Search Terms report fails (other) | Continue with SQP for keyword data. Note: "Search Terms unavailable — competitor click share analysis skipped" |
 | Market Basket report fails | Skip "Bundle Intelligence" section |
 | Repeat Purchase report fails | Skip "Customer Loyalty Trends" section |
 | SCP report fails | Critical — this is the core ASIN-level data. Note prominently: "SCP unavailable — portfolio organic health section skipped" |

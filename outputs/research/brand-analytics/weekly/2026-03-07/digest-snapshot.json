@@ -1,0 +1,59 @@
+{
+  "run_date": "2026-03-15",
+  "period": {"start": "2026-03-01", "end": "2026-03-07"},
+  "previous_week": "2026-02-22-2026-02-28",
+  "click_share_movers": {
+    "gaining": [
+      {"keyword": "small fuse beads", "asin": "B09THLVFZK", "portfolio": "Fuse Beads", "click_share": 33.3, "delta": 23.0},
+      {"keyword": "mini perler beads kit", "asin": "B09THLVFZK", "portfolio": "Fuse Beads", "click_share": 35.6, "delta": 14.3},
+      {"keyword": "beginner cross stitch kits for kids", "asin": "B08DDJCQKF", "portfolio": "Cross Embroidery Kits", "click_share": 27.5, "delta": 10.1},
+      {"keyword": "fuse bead kits", "asin": "B09THLVFZK", "portfolio": "Fuse Beads", "click_share": 8.7, "delta": 6.8}
+    ],
+    "losing": [
+      {"keyword": "embroidery kits for kids", "asin": "B09X55KL2C", "portfolio": "Embroidery for Kids", "click_share": 14.8, "delta": -26.4},
+      {"keyword": "kids needlepoint kits age 5-8", "asin": "B08DDJCQKF", "portfolio": "Cross Embroidery Kits", "click_share": 19.4, "delta": -12.8},
+      {"keyword": "perler beads mini", "asin": "B09THLVFZK", "portfolio": "Fuse Beads", "click_share": 11.8, "delta": -13.7}
+    ]
+  },
+  "funnel_alerts": [
+    {"keyword": "fuse bead kits", "asin": "B09THLVFZK", "click_share": 8.7, "purchases": 0, "bottleneck": "clicks-to-purchases"},
+    {"keyword": "perler beads mini", "asin": "B09THLVFZK", "click_share": 11.8, "purchases": 0, "bottleneck": "clicks-to-purchases"}
+  ],
+  "new_keywords": [],
+  "competitor_movements": [
+    {"keyword": "embroidery kits for kids", "asin": "B09X55KL2C", "click_share_drop": -26.4, "priority": "HIGH"}
+  ],
+  "bundle_opportunities": [
+    {"our_asin": "B0BNDVTTSH", "co_purchased_asin": "B09WQSBZY7", "frequency_pct": 0.13, "is_new": false, "note": "cross-portfolio self-bundle"},
+    {"our_asin": "B0CP2KCF9R", "co_purchased_asin": "B0DC69M3YD", "frequency_pct": 0.33, "is_new": false, "note": "own product co-purchase"},
+    {"our_asin": "B08DJYBH4D", "co_purchased_asin": "B08DDJCQKF", "frequency_pct": 0.12, "is_new": false, "note": "embroidery + cross stitch cross-sell"}
+  ],
+  "loyalty_trends": [
+    {"asin": "B0F8QZZQQM", "product": "2in1 Cross Stitch & Embroidery", "repeat_rate": 10.0, "wow_change": null},
+    {"asin": "B08DJYBH4D", "product": "5 Stamped Embroidery Kit", "repeat_rate": 9.1, "wow_change": null},
+    {"asin": "B08FYH13CL", "product": "Latch Hook Pencil Cases Heart", "repeat_rate": 5.6, "wow_change": null},
+    {"asin": "B09WQSBZY7", "product": "Fairy Sewing Kit", "repeat_rate": 2.5, "repeat_revenue_weekly": 144}
+  ],
+  "portfolio_organic_health": [
+    {"asin": "B08DDJCQKF", "portfolio": "Cross Embroidery Kits", "impressions": 70195, "clicks": 1274, "purchases": 121},
+    {"asin": "B09THLVFZK", "portfolio": "Fuse Beads", "impressions": 62123, "clicks": 1510, "purchases": 77},
+    {"asin": "B09WQSBZY7", "portfolio": "Fairy Family", "impressions": 51421, "clicks": 971, "purchases": 73, "impressions_wow_pct": 19, "clicks_wow_pct": 31, "purchases_wow_pct": 46},
+    {"asin": "B0F8R652FX", "portfolio": "Latch Hook Pillow", "impressions": 26676, "clicks": 518, "purchases": 30},
+    {"asin": "B09X55KL2C", "portfolio": "Embroidery for Kids", "impressions": 24108, "clicks": 583, "purchases": 49}
+  ],
+  "summary": {
+    "total_impressions": 430189,
+    "total_clicks": 7940,
+    "total_purchases": 503,
+    "impressions_wow_pct": -4,
+    "clicks_wow_pct": 2,
+    "purchases_wow_pct": 17,
+    "keywords_gaining_share": 4,
+    "keywords_losing_share": 1,
+    "funnel_alerts_count": 2,
+    "new_keywords_count": 0,
+    "competitor_alerts_count": 1,
+    "reports_succeeded": 5,
+    "reports_failed": 0
+  }
+}

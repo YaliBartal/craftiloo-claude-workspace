@@ -1,0 +1,11 @@
+{
+  "run_date": "2026-03-15",
+  "period": "WEEK",
+  "period_dates": {"start": "2026-03-01", "end": "2026-03-07"},
+  "reports_pulled": ["scp", "sqp_batch1", "sqp_batch2", "sqp_batch3", "search_terms", "market_basket", "repeat_purchase"],
+  "reports_failed": [],
+  "asin_batches": 3,
+  "previous_week_available": true,
+  "previous_week_folder": "2026-03-09",
+  "notes": "Search Terms fix: actual field name is 'clickedAsin' (not 'clickedAsin1/2/3'). SP-API MCP not available — SQP B3 downloaded via direct Python script. OOM fix deployed in server.py."
+}

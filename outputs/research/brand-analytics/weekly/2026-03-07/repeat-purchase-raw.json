@@ -1,0 +1,543 @@
+{
+  "reportSpecification" : {
+    "reportType" : "GET_BRAND_ANALYTICS_REPEAT_PURCHASE_REPORT",
+    "reportOptions" : {
+      "reportPeriod" : "WEEK"
+    },
+    "dataStartTime" : "2026-03-01",
+    "dataEndTime" : "2026-03-07",
+    "marketplaceIds" : [ "ATVPDKIKX0DER" ]
+  },
+  "dataByAsin" : [ {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B07D6D95NG",
+    "orders" : 52,
+    "uniqueCustomers" : 52,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B07PXN4K8N",
+    "orders" : 29,
+    "uniqueCustomers" : 29,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09THLVFZK",
+    "orders" : 161,
+    "uniqueCustomers" : 161,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BVHMZFSQ",
+    "orders" : 3,
+    "uniqueCustomers" : 3,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CRZ8M2G1",
+    "orders" : 18,
+    "uniqueCustomers" : 18,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08DDJCQKF",
+    "orders" : 202,
+    "uniqueCustomers" : 201,
+    "repeatCustomersPctTotal" : 0.0050,
+    "repeatPurchaseRevenue" : {
+      "amount" : 19.98,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0048
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08DJYBH4D",
+    "orders" : 12,
+    "uniqueCustomers" : 11,
+    "repeatCustomersPctTotal" : 0.0909,
+    "repeatPurchaseRevenue" : {
+      "amount" : 19.98,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0833
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08FYH13CL",
+    "orders" : 39,
+    "uniqueCustomers" : 36,
+    "repeatCustomersPctTotal" : 0.0556,
+    "repeatPurchaseRevenue" : {
+      "amount" : 239.76,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.2308
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B08L8BHD4Z",
+    "orders" : 27,
+    "uniqueCustomers" : 26,
+    "repeatCustomersPctTotal" : 0.0385,
+    "repeatPurchaseRevenue" : {
+      "amount" : 21.98,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0375
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B092SW839H",
+    "orders" : 7,
+    "uniqueCustomers" : 7,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B096MYBLS1",
+    "orders" : 1,
+    "uniqueCustomers" : 1,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09HVCCNM2",
+    "orders" : 10,
+    "uniqueCustomers" : 10,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09HVDNFMR",
+    "orders" : 20,
+    "uniqueCustomers" : 20,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09HVDYMDK",
+    "orders" : null,
+    "uniqueCustomers" : null,
+    "repeatCustomersPctTotal" : null,
+    "repeatPurchaseRevenue" : null,
+    "repeatPurchaseRevenuePctTotal" : null
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09HVSLBS6",
+    "orders" : 5,
+    "uniqueCustomers" : 5,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09WQSBZY7",
+    "orders" : 252,
+    "uniqueCustomers" : 244,
+    "repeatCustomersPctTotal" : 0.0246,
+    "repeatPurchaseRevenue" : {
+      "amount" : 143.84,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0299
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B09X55KL2C",
+    "orders" : 94,
+    "uniqueCustomers" : 93,
+    "repeatCustomersPctTotal" : 0.0108,
+    "repeatPurchaseRevenue" : {
+      "amount" : 23.98,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0100
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B18ZHYKR",
+    "orders" : 7,
+    "uniqueCustomers" : 7,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B18ZRRCQ",
+    "orders" : 2,
+    "uniqueCustomers" : 2,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B1935V5N",
+    "orders" : 1,
+    "uniqueCustomers" : 1,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B2XL9D8D",
+    "orders" : 6,
+    "uniqueCustomers" : 6,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B3PGPVV5",
+    "orders" : 1,
+    "uniqueCustomers" : 1,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0B8TFW4MN",
+    "orders" : 8,
+    "uniqueCustomers" : 8,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BNDVTTSH",
+    "orders" : 72,
+    "uniqueCustomers" : 71,
+    "repeatCustomersPctTotal" : 0.0141,
+    "repeatPurchaseRevenue" : {
+      "amount" : 17.98,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0132
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BP8GCK1G",
+    "orders" : 35,
+    "uniqueCustomers" : 35,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BPDCDXNK",
+    "orders" : null,
+    "uniqueCustomers" : null,
+    "repeatCustomersPctTotal" : null,
+    "repeatPurchaseRevenue" : null,
+    "repeatPurchaseRevenuePctTotal" : null
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BWSGRTB1",
+    "orders" : 3,
+    "uniqueCustomers" : 3,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0BXHJJMX1",
+    "orders" : 3,
+    "uniqueCustomers" : 3,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0C3YQ5RG1",
+    "orders" : 4,
+    "uniqueCustomers" : 4,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CDH84QDP",
+    "orders" : 6,
+    "uniqueCustomers" : 6,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CKTS6ZFZ",
+    "orders" : 1,
+    "uniqueCustomers" : 1,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CP2KCF9R",
+    "orders" : 4,
+    "uniqueCustomers" : 4,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CQHMJWR9",
+    "orders" : null,
+    "uniqueCustomers" : null,
+    "repeatCustomersPctTotal" : null,
+    "repeatPurchaseRevenue" : null,
+    "repeatPurchaseRevenuePctTotal" : null
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CSPRD746",
+    "orders" : 1,
+    "uniqueCustomers" : 1,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CT962TMN",
+    "orders" : 2,
+    "uniqueCustomers" : 2,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0CY2SXF6P",
+    "orders" : 2,
+    "uniqueCustomers" : 2,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0DC69M3YD",
+    "orders" : 24,
+    "uniqueCustomers" : 24,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0DKD2S3JT",
+    "orders" : 20,
+    "uniqueCustomers" : 20,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F6YTG1CH",
+    "orders" : 21,
+    "uniqueCustomers" : 21,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8DG32H5",
+    "orders" : 36,
+    "uniqueCustomers" : 36,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8QZZQQM",
+    "orders" : 11,
+    "uniqueCustomers" : 10,
+    "repeatCustomersPctTotal" : 0.1000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 21.98,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0909
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8R652FX",
+    "orders" : 67,
+    "uniqueCustomers" : 66,
+    "repeatCustomersPctTotal" : 0.0152,
+    "repeatPurchaseRevenue" : {
+      "amount" : 24.98,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0149
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0F8R6J7JR",
+    "orders" : 2,
+    "uniqueCustomers" : 2,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0FHMRQWRX",
+    "orders" : 21,
+    "uniqueCustomers" : 21,
+    "repeatCustomersPctTotal" : 0.0000,
+    "repeatPurchaseRevenue" : {
+      "amount" : 0.00,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0000
+  }, {
+    "startDate" : "2026-03-01",
+    "endDate" : "2026-03-07",
+    "asin" : "B0FQC7YFX6",
+    "orders" : 42,
+    "uniqueCustomers" : 40,
+    "repeatCustomersPctTotal" : 0.0500,
+    "repeatPurchaseRevenue" : {
+      "amount" : 39.96,
+      "currencyCode" : "USD"
+    },
+    "repeatPurchaseRevenuePctTotal" : 0.0455
+  } ]
+}
