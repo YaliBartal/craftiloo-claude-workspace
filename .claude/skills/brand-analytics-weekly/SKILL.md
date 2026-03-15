@@ -86,14 +86,14 @@ Read in parallel:
 
 ### Step 3: Pull All 5 BA Reports
 
-**Timing note:** Run on Tuesday or later. Weekly reports cover Sun-Sat and have a 48h SLA after period close. Using `periods_back=2` ensures we get a completed week.
+**Timing note:** Runs Wednesday 2:00 PM IST. Weekly reports cover Sun-Sat; 48h SLA clears ~Tuesday 2 PM IST. Using `periods_back=1` gives the most recent completed week (3-4 days old vs 8-9 days old with `periods_back=1`).
 
 **Launch all 5 reports in parallel:**
 
 #### 3a. Search Catalog Performance (SCP)
 
 ```
-create_brand_analytics_report(report_name="scp", period="WEEK", periods_back=2)
+create_brand_analytics_report(report_name="scp", period="WEEK", periods_back=1)
 ```
 Poll → download. Per ASIN: `impressions`, `clicks`, `cartAdds`, `purchases`, `clickShare`, `conversionShare`.
 
@@ -104,7 +104,7 @@ Poll → download. Per ASIN: `impressions`, `clicks`, `cartAdds`, `purchases`, `
 Get hero ASINs from `context/sku-asin-mapping.json`. Batch into groups of max 200 chars (space-separated).
 
 ```
-create_brand_analytics_report(report_name="sqp", period="WEEK", periods_back=2, asins="{batch}")
+create_brand_analytics_report(report_name="sqp", period="WEEK", periods_back=1, asins="{batch}")
 ```
 
 If >200 chars of ASINs, run multiple SQP calls (one per batch). Merge results.
@@ -117,7 +117,7 @@ Poll → download. Per keyword: `searchQuery`, `impressions`, `clicks`, `cartAdd
 
 **Step 1 — Create the report** (launch alongside the others):
 ```
-create_brand_analytics_report(report_name="search_terms", period="WEEK", periods_back=2)
+create_brand_analytics_report(report_name="search_terms", period="WEEK", periods_back=1)
 ```
 
 **Step 2 — Poll until DONE** (every 60s, up to 15 attempts — this report takes ~5 min)
@@ -159,14 +159,14 @@ python3 -c "import os; os.remove('/tmp/search-terms-{YYYY-MM-DD}.gz')"
 #### 3d. Market Basket
 
 ```
-create_brand_analytics_report(report_name="market_basket", period="WEEK", periods_back=2)
+create_brand_analytics_report(report_name="market_basket", period="WEEK", periods_back=1)
 ```
 Poll → download. Per ASIN: co-purchased products with frequency.
 
 #### 3e. Repeat Purchase
 
 ```
-create_brand_analytics_report(report_name="repeat_purchase", period="WEEK", periods_back=2)
+create_brand_analytics_report(report_name="repeat_purchase", period="WEEK", periods_back=1)
 ```
 Poll → download. Per ASIN: `orders`, `uniqueCustomers`, `repeatCustomerCount`, `repeatPurchaseRevenue`.
 
@@ -504,7 +504,7 @@ If Slack MCP is unavailable, skip and note in run log.
 | >200 chars of ASINs for SQP | Batch into multiple SQP calls. Merge results. |
 | PPC weekly snapshot >14 days old | Skip "PPC vs Organic Efficiency" section. Note: "PPC data stale — run weekly PPC analysis for cross-reference" |
 | Report returns 0 rows | Note: "Report returned empty — may indicate data not yet available for this period" |
-| `periods_back=2` returns same period as last run | Skip — data already archived. Note: "No new weekly period available yet" |
+| `periods_back=1` returns same period as last run | Skip — data already archived. Note: "No new weekly period available yet" |
 
 ---
 

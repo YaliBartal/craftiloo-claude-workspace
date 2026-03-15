@@ -71,8 +71,8 @@ Security: skill names and flags are whitelisted. Command injection is not possib
 | **Every day** | 7:00 AM | health-check.sh (cron) | — | — |
 | **Every day** | 8:00 AM | daily-market-intel | Full | 25 min |
 | **Every day** | 8:30 AM | ppc-daily-health | Full | 20 min |
-| **Sunday** | 9:00 AM | brand-analytics-weekly | Full | 30 min |
 | **Sunday** | 10:00 AM | weekly-ppc-analysis | Full | 50 min |
+| **Wednesday** | 2:00 PM | brand-analytics-weekly | Full | 50 min |
 | **Monday** | 10:00 AM | ppc-tacos-optimizer | AUTONOMOUS — even ISO weeks only | 25 min |
 | **Monday** | 10:35 AM | ppc-portfolio-summary | AUTONOMOUS — every week | 25 min |
 | **Monday** | 11:10 AM | keyword-rank-optimizer | AUTONOMOUS — odd ISO weeks only | 25 min |

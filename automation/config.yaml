@@ -187,6 +187,18 @@ skills:
       - outputs/research/ppc-agent/state/
     schedule: "Friday 12:00 PM IST"
 
+  # === WEDNESDAY (inventory) ===
+
+  inventory-weekly-health:
+    timeout_minutes: 40
+    max_turns: 50
+    prompt: |
+      Run the inventory-weekly-health skill. AUTONOMOUS weekly run.
+      Pull all inventory data, update seasonal model, analyze, write brief, post to Slack.
+      If any products are CRITICAL or LOW, include reorder recommendations in the brief.
+    slack_channel: "#claude-inventory"
+    schedule: "Wednesday 9:00 AM IST"
+
   # === THURSDAY ===
 
   competitor-price-serp-tracker:
@@ -198,10 +210,13 @@ skills:
   # === SUNDAY ===
 
   brand-analytics-weekly:
-    timeout_minutes: 30
-    max_turns: 40
+    timeout_minutes: 50
+    max_turns: 60
+    git_add_paths:
+      - outputs/research/brand-analytics/
+      - .claude/skills/brand-analytics-weekly/
     slack_channel: "#claude-product-updates"
-    schedule: "Sunday 9:00 AM IST"
+    schedule: "Wednesday 2:00 PM IST"
 
   # === MONTHLY (1st of month) ===
 
