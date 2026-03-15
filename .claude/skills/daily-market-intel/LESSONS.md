@@ -18,6 +18,7 @@
 11. **Apify axesso 20-keyword scan WILL OVERFLOW the subagent context** — batch into ≤5 keywords per subagent (4 parallel agents). Do NOT try to run all 20 in one subagent.
 12. **Axesso actor does NOT return badge data** (Overall Pick, Amazon's Choice). Carry forward badges from previous snapshot and note in report.
 13. Seller Board 401 issue: if SB returns 401, it can persist for days (12 days in Mar 2026). Tokens expire in SB → Settings → Automation → Reports. Always try on each run — issue may self-resolve.
+14. **Axesso actor MUST use internal ID `9GmEDf8sr9Jyb6b3X`** — slug format (`axesso_data/amazon-search-scraper` or tilde format) returns 404 on both sync and async endpoints. Confirmed by 2 independent agents on 2026-03-15. Also documented in `context/api-patterns.md`.
 # Lessons Learned — Daily Market Intel
 
 > **Living document.** Claude MUST read this before every run and write to it after every run.
@@ -43,6 +44,11 @@
 ## Run Log
 
 <!-- Add new entries at the TOP (newest first). Use this exact format: -->
+
+### Run: 2026-03-15 (Full Daily Market Intel)
+**Result:** Full success. All 9 agents completed. Big wins: B09X55KL2C "emb kit for beginners" 101→22 (SV 31K). B09THLVFZK "perler beads" 23→10 (SV 88K). B08DDJCQKF #1 on emb kit for kids + needlepoint kits for kids. SB profit +24% WoW ($5,976 vs $4,824). Alerts: B0F8DG32H5 beginner knitting kit 4→45 overnight; B07D6D95NG lost fuse beads kit (101); B0FQC7YFX6 BSR declining. QUEFE BSR 1,714 dominating perler beads. Axesso internal ID confirmed: `9GmEDf8sr9Jyb6b3X`.
+**Sources:** SP-API (28 calls) + DataDive (9 radars+11 niches) + Apify (20 SERP 4×5 + 32 BSR) + Seller Board ✅
+**Output:** `briefs/2026-03-15.md`, `snapshots/2026-03-15.json`
 
 ### Run: 2026-03-14 (Full Daily Market Intel)
 **Result:** Full success. SB 401 resolved — first fresh SB data since Mar 2. B09WQSBZY7 top revenue at $4,977/7d. B0DC69M3YD crisis deepening (lost needlepoint kits for adults SV 55,787). B09X55KL2C lost embroidery kit for beginners 28→101. B09THLVFZK dropped on perler beads 8→23. B0F8DG32H5 recovering on multiple knitting terms. Axesso confirmed: no badge data — carry forward from snapshot.

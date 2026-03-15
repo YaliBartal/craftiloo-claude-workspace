@@ -22,6 +22,23 @@ _None yet._
 
 ## Recent Runs (last 3)
 
+### Run: 2026-03-15
+**Result:** Success
+**Calling skill:** daily-market-intel
+
+**What happened:**
+- Posted to `#claude-morning-brief` (workspace: craft)
+- Key items: Profit +24% WoW, B09X55KL2C "emb kit for beginners" 101→22, B09THLVFZK "perler beads" 23→10, B0F8DG32H5 knitting crash, QUEFE BSR 1,714 threat
+- Skipped #claude-alerts per user efficiency instructions
+
+**What didn't work:**
+- Nothing
+
+**Lesson learned:**
+- No new lessons
+
+---
+
 ### Run: 2026-03-14
 **Result:** Success
 **Calling skill:** daily-market-intel
